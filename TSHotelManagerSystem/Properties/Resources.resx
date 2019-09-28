@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="1545891726" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1545891726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_b1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="清理中2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\清理中2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="隐藏" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\隐藏.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="经理部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\经理部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中餐厅-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\中餐厅-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理-ib1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理-ib1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="修改a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\修改a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="库存管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\库存管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="预约管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\预约管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="资产管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\资产管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="空房22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\空房22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="酒店部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\酒店部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="中餐厅-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\中餐厅-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="商品消费-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\商品消费-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="财务信息-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\财务信息-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="添 加-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\添 加-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐厅管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐厅管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="客房管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\客房管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐厅管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐厅管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="房卡管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\房卡管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="会员管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\会员管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索--1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\搜索--1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="添 加a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\添 加a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="会员管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\会员管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="可住房" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\可住房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="获取用户编号-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取用户编号-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="已住房" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\已住房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="水电管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\水电管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="扩展功能-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\扩展功能-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修中22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修中22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="消费管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\消费管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="后勤部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\后勤部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="资产管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\资产管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="预约管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\预约管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="客房管理-ia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\客房管理-ia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="会员管理2-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\会员管理2-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="商品消费-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\商品消费-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="扩展功能-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\扩展功能-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="消费管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\消费管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="监管统计-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\监管统计-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="监管统计-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\监管统计-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="内部飞鸽-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\内部飞鸽-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="预约管理-aa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\预约管理-aa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理-ia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理-ia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="客房管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\客房管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="清理中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\清理中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="空房" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\空房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="更多扩展-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\更多扩展-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="内部飞鸽-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\内部飞鸽-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="部门联动-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\部门联动-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="工程维修-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\工程维修-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐厅物资-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐厅物资-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索--1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\搜索--1a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="后勤管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\后勤管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐厅物资-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐厅物资-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="人事管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人事管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="人事管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人事管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="西餐厅-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\西餐厅-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="西餐厅-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\西餐厅-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐饮部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐饮部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="工程维修-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\工程维修-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="更多扩展-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\更多扩展-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="库存管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\库存管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修中1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修中1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="获取用户编号" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取用户编号.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="水电管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\水电管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="部门管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\部门管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="房卡管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\房卡管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="修改" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\修改.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="后勤管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\后勤管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="脏房" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\脏房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="行政管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\行政管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="网页预约-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\网页预约-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="已入住" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\已入住.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="部门管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\部门管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="部门联动-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\部门联动-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="财务信息-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\财务信息-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="客房管理-ib1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\客房管理-ib1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="显示" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\显示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="网页预约-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\网页预约-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="脏房2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\脏房2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name=")1G~Q~(21]3JZZCFW68O7NF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\)1G~Q~(21]3JZZCFW68O7NF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="财务部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\财务部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="预约管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\预约管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="人事部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人事部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="导出 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\导出 (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="行政管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\行政管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修中2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修中2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修中221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修中221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
