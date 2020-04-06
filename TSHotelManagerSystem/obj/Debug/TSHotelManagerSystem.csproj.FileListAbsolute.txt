@@ -1,0 +1,224 @@
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe.config
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.pdb
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.exe
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.pdb
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+D:\项目库\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe.config
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.exe
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.pdb
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.pdb
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+E:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe.config
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.exe
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.pdb
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.exe
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TSHotelManagerSystem.pdb
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.BackOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.CantinOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.CustomerOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExecutiveOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExtendOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.RoomOption.resources
+F:\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExtendOption.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustomerManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WtiInfo.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\SideBar.dll
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackAdmin.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAdminEnter.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUnLockSystem.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUpLoad.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmTopChange.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeWorker.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmWorkerInfo.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangePosition.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddRoom.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckOutForm.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAboutUs.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WebSite.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThing.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.ResolveComReference.cache
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackupDatabase.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoSpend.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ucRoomList.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckIn.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSelectCustoInfo.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRestoreDatabase.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCashList.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckInfo.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThingManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCash.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.config
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.pdb
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.pdb
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.config
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.ResolveComReference.cache
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.pdb
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.pdb
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExtendOption.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAboutUs.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddRoom.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAdminEnter.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackAdmin.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackupDatabase.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCash.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCashList.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangePosition.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeWorker.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckIn.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckInfo.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckOutForm.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoSpend.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRestoreDatabase.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomStateManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSelectCustoInfo.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThing.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThingManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmTopChange.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmTopSkyLogo.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUpLoad.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustomerManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUnLockSystem.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmWorkerInfo.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.RoomOption.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ucRoomList.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WebSite.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WtiInfo.resources
+E:\专业\一学期小组项目\TopHotelManager1.3.1 Stable\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomStateManager.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmOperation.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeRoom.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserList.resources
+D:\项目库\TopHotelManager\TS酒店管理系统\TS酒店管理系统\TSHotelManagerSystem\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddWorker.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.config
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.ResolveComReference.cache
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.pdb
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.pdb
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojResolveAssemblyReference.cache
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExtendOption.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAboutUs.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddRoom.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddWorker.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAdminEnter.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackAdmin.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackupDatabase.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCash.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCashList.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangePosition.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeRoom.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeWorker.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckIn.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckInfo.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckOutForm.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoSpend.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmOperation.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserList.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRestoreDatabase.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomStateManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSelectCustoInfo.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThing.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThingManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmTopChange.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUpLoad.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustomerManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUnLockSystem.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmWorkerInfo.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ucRoomList.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WebSite.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WtiInfo.resources
+E:\专业\一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.Cache
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.config
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.pdb
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.ResolveComReference.cache
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ExtendOption.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAboutUs.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddRoom.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAddWorker.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmAdminEnter.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackAdmin.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmBackupDatabase.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCash.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCashList.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangePosition.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeRoom.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmChangeWorker.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckIn.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckInfo.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCheckOutForm.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustoSpend.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmOperation.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserList.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRestoreDatabase.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomStateManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSelectCustoInfo.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThing.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmSellThingManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmTopChange.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUpLoad.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmCustomerManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmLogin.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmMain.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmReserManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmRoomManager.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmUnLockSystem.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmWorkerInfo.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.Properties.Resources.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ucRoomList.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WebSite.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.WtiInfo.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.GenerateResource.cache
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.CopyComplete
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.pdb
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.manifest
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.application
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe.manifest
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.application
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.CoreCompileInputs.cache
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csprojAssemblyReference.cache

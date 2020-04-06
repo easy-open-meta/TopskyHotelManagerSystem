@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<script type="text/javascript"></script>
+<style type="text/css">
+	.a{
+		border: 0px solid ;
+		width:450px;
+		height:500px;
+		margin-left:40%;
+		<---padding-left: 5%; --->
+	}
+	h1{
+		margin-left:40px; 
+	}
+	.i{
+	}
+</style>
+<head>
+	<title>酒店管理系统</title>
+</head>
+<body>
+<div class="a">
+	<marquee>欢迎使用TS酒店管理系统网页预约功能</marquee>
+	<div><h1>预约信息表</h1></div>
+	<div class="d">
+		<form action="form_action.asp" method="get">
+		  <p>预约编号: <input type="text" name="fname" /></p>
+		  <p>客户姓名: <input type="text" name="lname" /></p>
+		  <p>预约号码: <input type="text" name="fname" /></p>
+		  <p>预约渠道: <select>
+					  <option>手机</option>
+					  <option>互联网</option>
+					  <option>客户端</option>
+					  <option>人工</option>
+					  </select>
+		  </p>
+		  <p>房间类型: <select>
+					  <option>标准单人间</option>
+					  <option>标准双人间</option>
+					  <option>豪华套房</option>
+					  <option>总统套房</option>
+					  </select>
+		  </p>
+		  <p>预约定金: <input type="text" name="lname" /></p>
+		  <p>预约日期: <input type="date" values="2018年11月6日"/></p>
+		  <p>预约人数: <input type="text" name="fname" /></p>
+		  <p>预约留言: <input type="textarea" name="lname" /></p>
+		  <input class="i" type="button" value="提交" />
+		  <input class="i" type="button" value="重置" />
+		</form>
+	</div>
+</div>
+</body>
+</html>

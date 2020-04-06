@@ -1,0 +1,468 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>TopSense酒店官网</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS -->
+<!-- Bootstrap CSS
+============================================ -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Icon Font CSS
+============================================ -->
+<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Plugins CSS
+============================================ -->
+<link rel="stylesheet" href="css/plugins.css">
+<!-- Style CSS
+============================================ -->
+<link rel="stylesheet" href="style.css">
+<!-- Modernizer JS
+============================================ -->
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script type="text/javascript">
+
+  function insert() {
+
+   $.ajax({
+
+    type: "POST",//方法
+
+    url: "insert.php" ,//表单接收url
+
+    data: $('#form1').serialize(),
+
+    success: function () {
+
+     //提交成功的提示词或者其他反馈代码
+
+     var result=document.getElementById("success");
+
+     result.innerHTML="成功!";
+
+    },
+
+    error : function() {
+
+     //提交失败的提示词或者其他反馈代码
+
+     var result=document.getElementById("success");
+
+     result.innerHTML="失败!";
+
+    }
+
+   });
+
+  }
+
+ </script>
+</head>
+
+<body>
+<!-- Body main wrapper start -->
+<div class="wrapper fix">
+
+<!-- Header Area Start -->
+<div id="header-area" class="header-area section">
+
+<!-- Header Top Start -->
+<div class="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="header-info text-left col-md-6">
+                <p><span>电话:</span> +86 0800 092 000</p>
+                <p><span>邮箱:</span> tshotel@topsky.com</p>
+            </div>
+            <div class="header-social text-right col-md-6 hidden-xs">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-rss"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Top End -->
+
+<!-- Header Bottom Start -->
+<div class="header-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               
+                <div class="navbar-header">
+                    <button class="menu-toggle navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+                        <i class="zmdi open zmdi-menu"></i>
+                        <i class="zmdi close zmdi-close"></i>
+                    </button>
+                    <a class="navbar-brand logo" href="onepage.html"><img src="img/logo.png" alt=""></a>
+                </div>
+                
+                <!---- Menu ---->
+                <div id="main-menu" class="main-menu onepage-nav collapse navbar-collapse float-right">
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="#hero-area">主页</a></li>
+                            <li><a href="#about-area">关于我们</a></li>
+                            <li><a href="#floor-plan-area">酒店评价</a></li>
+                            <li><a href="#feature-area">酒店特色</a></li>
+                            <li><a href="#gallery-area">酒店美照</a></li>
+                            <li><a href="#agent-area">预订房间</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Bottom End -->
+
+</div>
+<!-- Header Area End -->
+
+<!-- Hero Area Start -->
+<div id="hero-area" class="hero-area section">
+    
+    <!-- Hero Slider Start -->
+    <div class="hero-slider">
+        
+        <!-- Single Hero Item --> 
+        <div class="hero-item overlay" data-thumb="img/hero/thumb-1.jpg">
+            <img src="img/hero/1.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="hero-content col-xs-12">
+                        
+                        <h2>给你带来</h2>
+                        <h1>五星级享受</h1>
+                        <a href="#">酒店预订</a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Single Hero Item --> 
+        <div class="hero-item overlay" data-thumb="img/hero/thumb-2.jpg">
+            <img src="img/hero/2.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="hero-content col-xs-12">
+                        
+                        <h2>欢迎来到</h2>
+                        <h1>TopSense酒店</h1>
+                        <a href="#">联系我们</a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Single Hero Item --> 
+        <div class="hero-item overlay" data-thumb="img/hero/thumb-3.jpg">
+            <img src="img/hero/3.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="hero-content col-xs-12">
+                        
+                        <h2>欢迎来到</h2>
+                        <h1>TopSense酒店</h1>
+                        <a href="#">联系我们</a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <!---- Hero Slider End ---->
+    
+</div>
+<!-- Hero Area End -->
+
+<!-- About Area Start -->
+<div id="about-area" class="about-area section pb-120 pt-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                
+                <div class="about-image float-left hidden-sm"><img src="img/about/LOGO.png" alt=""></div>
+                
+                <div class="about-content fix">
+                    <h1>关于 <span>我们</span></h1>
+                    <h4>酒店详情</h4>
+                    <p>TopSense酒店, 创建于2019年，一直以“客户至上，极致服务”理念. 是 全国唯一获得了国际酒店协会的“酒店金奖”的服务性酒店, 优质服务不 只是体现在接待, 更多的是体现在客户住店时全身心的舒服, 仿佛就像置身 在天堂.</p>
+                    
+                    <div class="funfact fix">
+                        
+                        <div class="single-funfact text-center">
+                            <h2 class="counter">2500</h2>
+                            <p>平方英尺</p>
+                        </div>
+                        
+                        <div class="single-funfact text-center">
+                            <h2 class="counter">2000</h2>
+                            <p>房间</p>
+                        </div>
+                        
+                        <div class="single-funfact text-center">
+                            <h2 class="counter">60</h2>
+                            <p>自由泳池</p>
+                        </div>
+                        
+                        <div class="single-funfact text-center">
+                            <h2 class="counter">200</h2>
+                            <p>停车场</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Area End -->
+
+<!-- Floor Plan Area Start -->
+<div id="floor-plan-area" class="floor-plan-area section pb-120 pt-120">
+    <div class="container">
+        <div class="row">
+            
+            <div class="floor-plan-image col-lg-5 col-md-6 col-xs-12 float-right">
+                <img src="img/floor-plan/2.png" alt="">
+            </div>
+            <div class="floor-plan-content col-lg-7 col-md-6 col-xs-12">
+                <h2>社会对<span>酒店的评价</span></h2>
+                <p>在酒店创立之初我们就一直不断地提升自己, 在这其中我们也接受着来自社会媒体对我们的监督, 对于各种建议我们会认真聆听. 只希望能够为客户带来更多不同的惊喜!</p>
+                <ol>
+                    <li>毫不夸张地说，Top Sense酒店不负美名，带来的服务绝对是一流的。
+                    ————新浪资讯.</li>
+                    <li>受到各方关注的酒店，无论是服务还是质量都是绝赞的！————美团评论.</li>
+                    <li>近乎完美的要求，获得金奖毋容置疑！————国际酒店协会会长.</li>
+                </ol>
+                <a href="floor.html">更多评价</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Floor Plan Area End -->
+
+<!-- Feature Area Start -->
+<div id="feature-area" class="feature-area section pb-20 pt-80">
+    <div class="container">
+        <div class="row">
+            
+            <div class="feature-wrapper col-md-8">
+                <h2>Awesome Features</h2>
+                <p>Anything embarrassing hide in the middle of text. All the Lorem Ipsum generators on</p>
+                
+                <div class="row">
+                    
+                    <div class="single-feature col-sm-6">
+                        <img src="img/feature/1.png" alt="">
+                        <h4>Awesome Amenities</h4>
+                        <p>Anything embarrassing hide in the middle of text. All the Lorem Ipsum generators on the</p>
+                    </div>
+
+                    <div class="single-feature col-sm-6">
+                        <img src="img/feature/2.png" alt="">
+                        <h4>Power and Energy</h4>
+                        <p>Anything embarrassing hide in the middle of text. All the Lorem Ipsum generators on the</p>
+                    </div>
+
+                    <div class="single-feature col-sm-6">
+                        <img src="img/feature/3.png" alt="">
+                        <h4>24 Hours Service</h4>
+                        <p>Anything embarrassing hide in the middle of text. All the Lorem Ipsum generators on the</p>
+                    </div>
+
+                    <div class="single-feature col-sm-6">
+                        <img src="img/feature/4.png" alt="">
+                        <h4>Good Neighbourhood</h4>
+                        <p>Anything embarrassing hide in the middle of text. All the Lorem Ipsum generators on the</p>
+                    </div>
+                
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Feature Area End -->
+
+<!-- Gallery Area Start -->
+<div id="gallery-area" class="gallery-area section pb-105 pt-120">
+    <div class="container">
+       
+        <div class="row">
+            
+            <div class="gallery-section-title text-center col-xs-12 mb-80">
+                <p>我们的酒店</p>
+                <h2>照片<span>画廊</span></h2>
+            </div>
+            
+        </div>
+        
+        <div class="row row-8">
+           
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/1-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/1.jpg" alt=""></a>
+            </div>
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/2-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/2.jpg" alt=""></a>
+            </div>
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/3-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/3.jpg" alt=""></a>
+            </div>
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/4-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/4.jpg" alt=""></a>
+            </div>
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/5-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/5.jpg" alt=""></a>
+            </div>
+            <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <a href="img/gallery/6-big.jpg" class="image gallery-popup overlay"><img src="img/gallery/6.jpg" alt=""></a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<!-- Gallery Area End -->
+
+<!-- Agent Area Start -->
+<div id="agent-area" class="agent-area section">
+    <div class="container">
+       
+        <div class="row">
+            
+            <div class="agent-image col-lg-5 col-lg-offset-1 col-sm-6 col-xs-12">
+                <img src="img/agent/1.png" alt="">
+            </div>
+            <div class="agent-content col-lg-5 col-sm-6 col-xs-12">
+                <h2>预约 <span>我们的酒店</span></h2>
+                <div class="agent-contact-form fix">
+                
+                <h3>预订须知：</h3>
+                <h5>Reser Description</h5>
+                <p>1、每人只可预订一次，以预订电话为准，不能多次预订。
+                   2、预订最高期限为三天，若超过三天不到前台登记入住，则自动默认取消预订。           
+                   3、如有不清楚的地方，可以拨打前台电话：+86
+                   0800 092 000</p>
+
+                <ul class="agent-contact-info fix">
+
+                    <li><span>电话 :</span> +86 0800 092 000</li>
+                    <li><span>邮箱 :</span> tshotel@topsky.com</li>
+                    <li><span>网页 :</span> topsky.com</li>
+                    <li><span>地址 :</span> 广东省珠海市Top Sense酒店大厦a1-a11</li>
+                </ul>
+                <form action="insert.php" method="post" target="_blank" onsubmit="return false" id="form1" >
+                        <div class="input-box-2">
+                            <div class="input-box"><input type="text" placeholder="名字：" name="firstname"></div>
+                            <div class="input-box"><input type="text" placeholder="电话号码：" name="tel"></div>
+                            <div class="input-box"><input type="text" placeholder="房间号码：" name="roomNo"></div>
+                            <div class="input-box"><input type="date" placeholder="起始日期：" name="StartDay"></div>
+                            <div class="input-box"><input type="date" placeholder="截止日期：" name="EndDay"></div>
+                        </div>
+                        <div class="input-box"><textarea placeholder="预订备注：" name="remark"></textarea></div>
+                        <div class="input-box submit-box"><input type="submit" value="预订"></div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- Agent Area End -->
+
+<!-- Newsletter Area Start -->
+<div id="newsletter-area" class="newsletter-area section pb-120 pt-120">
+    <div class="container">
+       
+        <div class="row">
+            
+            <div class="newsletter-section-title text-center col-xs-12 mb-45">
+                <h2>订阅 <span>TopSense酒店资讯</span></h2>
+            </div>
+            
+        </div>
+       
+        <div class="row">
+            
+            <div class="col-xs-12 text-center">
+                
+                <form action="#" id="subscribe-form">
+                    <input type="email" placeholder="你的邮箱地址">
+                    <input type="submit" value="订阅">
+                </form>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<!-- Newsletter Area End -->
+
+<!-- Footer Area Start -->
+<div id="footer-area" class="footer-area section">
+    <div class="container">
+       
+        <div class="row">
+           
+            <!-- Copyright -->
+            <div class="copyright text-left col-sm-6 col-xs-12">
+                <p>Copyright &copy; 2019.天阶科技 All rights reserved.粤网[文]备案号：TS903-1143332 <a href="http://www.cssmoban.com/" target="_blank" title="TS官网">天阶科技</a><a href="http://www.cssmoban.com/" title="TS软件网" target="_blank"></a></p>
+            </div>
+            
+            <!-- Author Credit -->
+            <div class="author-credit text-right col-sm-6 col-xs-12">
+                <p>Created by 天阶科技</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<!-- Footer Area End -->
+
+
+</div>
+<!-- Body main wrapper end -->
+
+<!-- JS -->
+
+<!-- jQuery JS
+============================================ -->
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap JS
+============================================ -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins JS
+============================================ -->
+<script src="js/plugins.js"></script>
+<!-- Ajax Mail JS
+============================================ -->
+<script src="js/ajax-mail.js"></script>
+<!-- Main JS
+============================================ -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
