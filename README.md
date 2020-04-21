@@ -1,3 +1,7 @@
+[![star](https://gitee.com/yjj0720/TopskyHotelManagerSystem/badge/star.svg?theme=dark)](https://gitee.com/yjj0720/TopskyHotelManagerSystem/stargazers)
+
+[![Fork me on Gitee](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_3.svg)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
+
 # TopskyHotelManagerSystem
 
 - 一款针对中小型酒店设计的管理系统。
@@ -25,3 +29,5 @@
 
 - 运行部署：
 - 用VS2017以上的版本打开.sln文件即可。
+
+[![jackson0720/TopskyHotelManagerSystem](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
