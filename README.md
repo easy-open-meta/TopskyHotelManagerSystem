@@ -1,7 +1,5 @@
 <p align="center">
 	<a target="_blank" href="https://gitee.com/yjj0720/TopskyHotelManagerSystem/master/LICENSE">
-        [![star](https://gitee.com/yjj0720/TopskyHotelManagerSystem/badge/star.svg?theme=dark)]          (https://gitee.com/yjj0720/TopskyHotelManagerSystem/stargazers)
-        ![language](https://img.shields.io/badge/language-C#-brightgreen.svg?style=plastic)
 </p>
 
 # TopskyHotelManagerSystem
