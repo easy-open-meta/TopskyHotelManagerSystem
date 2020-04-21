@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -23,35 +17,35 @@ namespace TSHotelManagerSystem
         #region 窗体加载事件方法
         private void FrmCheckIn_Load(object sender, EventArgs e)
         {
-            
-                txtRoomNo.Text = ucRoomList.rm_RoomNo;
-                Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);
-                RoomType t = RoomTypeManager.SelectRoomTypeByRoomNo(txtRoomNo.Text);
-                txtType.Text = t.RoomName;
-                txtMoney.Text = r.RoomMoney.ToString();
-                txtRoomPosition.Text = r.RoomPosition;
-                txtState.Text = r.RoomState;
-                txtState.Text = RoomManager.SelectRoomStateNameByRoomNo(txtRoomNo.Text).ToString();
-                List<Custo> ctos = CustoService.SelectCanUseCustoAll();
-                List<Room> roms = RoomManager.SelectCanUseRoomAll();
-                for (int i = 0; i < roms.Count; i++)
-                {
-                    txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
-                }
-                for (int j = 0; j < ctos.Count; j++)
-                {
-                    txtCustoNo.AutoCompleteCustomSource.Add(ctos[j].CustoNo);
-                }
-                try
-                {
-                    txtCustoNo.Text = "";
-                }
-                catch
-                {
-                    txtCustoNo.Text = ucRoomList.rm_CustoNo;
-                }
-            
-        } 
+
+            txtRoomNo.Text = ucRoomList.rm_RoomNo;
+            Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);
+            RoomType t = RoomTypeManager.SelectRoomTypeByRoomNo(txtRoomNo.Text);
+            txtType.Text = t.RoomName;
+            txtMoney.Text = r.RoomMoney.ToString();
+            txtRoomPosition.Text = r.RoomPosition;
+            txtState.Text = r.RoomState;
+            txtState.Text = RoomManager.SelectRoomStateNameByRoomNo(txtRoomNo.Text).ToString();
+            List<Custo> ctos = CustoService.SelectCanUseCustoAll();
+            List<Room> roms = RoomManager.SelectCanUseRoomAll();
+            for (int i = 0; i < roms.Count; i++)
+            {
+                txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
+            }
+            for (int j = 0; j < ctos.Count; j++)
+            {
+                txtCustoNo.AutoCompleteCustomSource.Add(ctos[j].CustoNo);
+            }
+            try
+            {
+                txtCustoNo.Text = "";
+            }
+            catch
+            {
+                txtCustoNo.Text = ucRoomList.rm_CustoNo;
+            }
+
+        }
         #endregion
 
         #region 房间编号输入框的值发生改变时的事件方法
@@ -82,7 +76,7 @@ namespace TSHotelManagerSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        } 
+        }
         #endregion
 
         #region 验证输入完整性
@@ -91,7 +85,7 @@ namespace TSHotelManagerSystem
         /// </summary>
         private bool CheckInupt()
         {
-            if(txtCustoNo.Text=="")
+            if (txtCustoNo.Text == "")
             {
                 MessageBox.Show("请输入客户编号！", "来自小T的提示");
                 txtCustoNo.Focus();
@@ -171,7 +165,7 @@ namespace TSHotelManagerSystem
         #region 客户编号输入框的值发生改变时候的事件方法
         private void txtCustoNo_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         #endregion
 

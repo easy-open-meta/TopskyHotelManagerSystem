@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.Models;
@@ -33,7 +26,7 @@ namespace TSHotelManagerSystem
         #endregion
 
         #region 调用淡出淡入效果函数
-        [System.Runtime.InteropServices.DllImport("user32.dll")] 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
         #endregion
 
         #region 窗体淡出淡入方法
@@ -62,7 +55,7 @@ namespace TSHotelManagerSystem
         {
             formOld = this.Location;
             mouseOld = MousePosition;
-        } 
+        }
         #endregion
 
         #region 记录窗体移动的坐标
@@ -82,7 +75,7 @@ namespace TSHotelManagerSystem
         private void picMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-            
+
         }
         #endregion
 
@@ -93,14 +86,14 @@ namespace TSHotelManagerSystem
         }
         #endregion
 
-        
+
 
         #region 窗体打开时淡入效果
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             //FrmTopSkyLogo frm = new FrmTopSkyLogo();
             //frm.ShowDialog();
-            
+
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
             AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
@@ -121,13 +114,13 @@ namespace TSHotelManagerSystem
         /// <returns></returns>
         private bool CheckInput()
         {
-            if (txtWorkerId.Text=="")
+            if (txtWorkerId.Text == "")
             {
                 MessageBox.Show("请输入员工编号！", "输入提示");
                 txtWorkerId.Focus();
                 return false;
             }
-            if(txtWorkerPwd.Text=="")
+            if (txtWorkerPwd.Text == "")
             {
                 MessageBox.Show("请输入员工密码！", "输入提示");
                 txtWorkerPwd.Focus();
@@ -137,7 +130,7 @@ namespace TSHotelManagerSystem
         }
         #endregion
 
-        
+
 
         #region 登录图片点击事件
         private void picLogin_Click(object sender, EventArgs e)
@@ -155,6 +148,7 @@ namespace TSHotelManagerSystem
                         w = WorkerManager.SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
                         if (w != null) //判断员工密码是否正确
                         {
+                            LoginInfo.WorkerNo = w.WorkerId;
                             LoginInfo.WorkerName = w.WorkerName;
                             LoginInfo.WorkerClub = w.WorkerClub;
                             LoginInfo.WorkerPosition = w.WorkerPosition;

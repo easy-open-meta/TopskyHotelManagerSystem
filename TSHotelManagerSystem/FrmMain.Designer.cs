@@ -56,7 +56,12 @@
             this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.fadeTimer = new System.Windows.Forms.Timer(this.components);
             this.picCommodity = new System.Windows.Forms.PictureBox();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pnlCheckInfo = new System.Windows.Forms.Panel();
+            this.lblClose = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCheckDay = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFormSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,6 +71,7 @@
             this.panel1.SuspendLayout();
             this.cmsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).BeginInit();
+            this.pnlCheckInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTime
@@ -89,7 +95,7 @@
             this.lblUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblUserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUserName.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUserName.Location = new System.Drawing.Point(170, 8);
+            this.lblUserName.Location = new System.Drawing.Point(148, 8);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(183, 21);
             this.lblUserName.TabIndex = 3;
@@ -115,6 +121,7 @@
             // tmrFont
             // 
             this.tmrFont.Enabled = true;
+            this.tmrFont.Interval = 50;
             this.tmrFont.Tick += new System.EventHandler(this.tmrFont_Tick);
             // 
             // picClose
@@ -153,7 +160,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 23);
             this.label1.TabIndex = 14;
@@ -233,6 +240,7 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "TS酒店管理系统";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // cmsMain
             // 
@@ -324,14 +332,87 @@
             this.picCommodity.TabStop = false;
             this.picCommodity.Click += new System.EventHandler(this.picCommodity_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel1.Location = new System.Drawing.Point(298, 7);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(51, 20);
+            this.linkLabel1.TabIndex = 26;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "未打卡";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Green;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pnlCheckInfo
+            // 
+            this.pnlCheckInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCheckInfo.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.打卡;
+            this.pnlCheckInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCheckInfo.Controls.Add(this.lblClose);
+            this.pnlCheckInfo.Controls.Add(this.label4);
+            this.pnlCheckInfo.Controls.Add(this.lblCheckDay);
+            this.pnlCheckInfo.Controls.Add(this.label2);
+            this.pnlCheckInfo.Location = new System.Drawing.Point(295, 30);
+            this.pnlCheckInfo.Name = "pnlCheckInfo";
+            this.pnlCheckInfo.Size = new System.Drawing.Size(95, 97);
+            this.pnlCheckInfo.TabIndex = 27;
+            this.pnlCheckInfo.Visible = false;
+            // 
+            // lblClose
+            // 
+            this.lblClose.AutoSize = true;
+            this.lblClose.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblClose.Location = new System.Drawing.Point(73, 6);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(17, 20);
+            this.lblClose.TabIndex = 3;
+            this.lblClose.Text = "×";
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(18, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "天";
+            // 
+            // lblCheckDay
+            // 
+            this.lblCheckDay.AutoSize = true;
+            this.lblCheckDay.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCheckDay.Location = new System.Drawing.Point(9, 35);
+            this.lblCheckDay.Name = "lblCheckDay";
+            this.lblCheckDay.Size = new System.Drawing.Size(49, 20);
+            this.lblCheckDay.TabIndex = 1;
+            this.lblCheckDay.Text = "36500";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(8, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "您已打卡：";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.main_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1013, 589);
+            this.Controls.Add(this.pnlCheckInfo);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.picCommodity);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMID);
@@ -364,6 +445,8 @@
             this.panel1.ResumeLayout(false);
             this.cmsMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).EndInit();
+            this.pnlCheckInfo.ResumeLayout(false);
+            this.pnlCheckInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,7 +478,12 @@
         private System.Windows.Forms.Timer fadeTimer;
         private System.Windows.Forms.PictureBox picCommodity;
         private System.Windows.Forms.ToolStripMenuItem tsmiAboutUs;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         public System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel pnlCheckInfo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCheckDay;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblClose;
     }
 }

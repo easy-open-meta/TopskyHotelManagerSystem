@@ -1,19 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.DataVisualization.Charting;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-using ChartDirector;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
@@ -39,7 +26,7 @@ namespace TSHotelManagerSystem
                 series.Points.AddXY(Convert.ToDouble(custo[0].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[0].Money.ToString())));
                 series.Points.AddXY(Convert.ToDouble(custo[1].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[1].Money.ToString())));
                 series.Points.AddXY(Convert.ToDouble(custo[2].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[2].Money.ToString())));
-         
+
                 //series.Points.AddY(Convert.ToDouble(custo[2].Years.ToString()));
                 //遍历时不需要类型转换
                 // Populate new series with data
@@ -64,10 +51,10 @@ namespace TSHotelManagerSystem
             s1.LegendText = legendText;
             this.chart1.Series.Add(s1);
         }
-        
 
 
-        
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -79,16 +66,16 @@ namespace TSHotelManagerSystem
 
         }
 
-       
+
         //画曲线图
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

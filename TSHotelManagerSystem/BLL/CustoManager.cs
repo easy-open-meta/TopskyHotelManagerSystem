@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class CustoManager
+    public class CustoManager
     {
         public static int InsertCusto(Custo cto)
         {
@@ -85,7 +81,7 @@ namespace TSHotelManagerSystem.BLL
                 card = SelectCardInfoByCustoNo(CustoNo);
             }
             return CustoNo;
-        } 
+        }
         #endregion
     }
 }

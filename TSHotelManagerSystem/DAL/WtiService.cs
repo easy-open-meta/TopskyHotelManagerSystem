@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
@@ -66,7 +63,7 @@ namespace TSHotelManagerSystem.DAL
             dr.Close();
             DBHelper.Closecon();
             return w;
-        } 
+        }
         #endregion
 
         #region 获取所有水电费信息
@@ -83,7 +80,7 @@ namespace TSHotelManagerSystem.DAL
             {
                 Wti w = new Wti();
                 w.CustoNo = dr["CustoNo"].ToString();
-                w.EndDate =Convert.ToDateTime(dr["EndDate"]);
+                w.EndDate = Convert.ToDateTime(dr["EndDate"]);
                 w.PowerUse = (decimal)dr["PowerUse"];
                 w.Record = dr["Record"].ToString();
                 w.RoomNo = dr["RoomNo"].ToString();
@@ -142,7 +139,7 @@ namespace TSHotelManagerSystem.DAL
             sql += " RoomNo='{2}' and UseDate='{3}' and EndDate='{4}'";
             sql = string.Format(sql, w.WaterUse, w.PowerUse, w.RoomNo, w.UseDate, w.EndDate);
             return DBHelper.ExecuteNonQuery(sql);
-        } 
+        }
         #endregion
 
         #region 删除水电费信息:根据房间编号
@@ -171,7 +168,7 @@ namespace TSHotelManagerSystem.DAL
             string sql = " delete from WTINFO where RoomNo='{0}' and UseDate='{1}' and EndDate='{2}'";
             sql = string.Format(sql, roomno, usedate, enddate);
             return DBHelper.ExecuteNonQuery(sql);
-        } 
+        }
         #endregion
     }
 }

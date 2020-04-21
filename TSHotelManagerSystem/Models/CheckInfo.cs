@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TSHotelManagerSystem.Models
+﻿namespace TSHotelManagerSystem.Models
 {
-   public class CheckInfo
+    public class CheckInfo
     {
         public string CheckNo { get; set; }
         public string CheckClub { get; set; }

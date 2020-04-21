@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -118,13 +110,13 @@ namespace TSHotelManagerSystem
                         }
                     }
                 }
-                
+
             }
             catch
             {
 
             }
-            
+
             picAddCusto.BackgroundImage = Resources.添_加a;
         }
         #endregion
@@ -221,7 +213,7 @@ namespace TSHotelManagerSystem
                     }
                 }
                 xlApp.Quit();
-                GC.Collect(); 
+                GC.Collect();
             }
             #endregion
         }
@@ -300,7 +292,7 @@ namespace TSHotelManagerSystem
 
         private void txtCardID_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void gbCustoInfo_Enter(object sender, EventArgs e)

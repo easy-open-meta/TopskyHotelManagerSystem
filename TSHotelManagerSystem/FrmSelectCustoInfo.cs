@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.Models;
@@ -29,7 +22,7 @@ namespace TSHotelManagerSystem
         public static string co_CustoPassportType;
         public static string co_CustoAddress;
         public static string co_CustoType;
-        public static string co_CustoID; 
+        public static string co_CustoID;
         #endregion
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TSHotelManagerSystem.DAL
 {
@@ -25,7 +18,7 @@ namespace TSHotelManagerSystem.DAL
             return con;
         }
 
-        
+
 
         public static void Opencon()
         {
@@ -58,7 +51,7 @@ namespace TSHotelManagerSystem.DAL
             return n;
         }
 
-        
+
 
         public static SqlDataReader ExecuteReader(string sql)
         {
@@ -69,7 +62,7 @@ namespace TSHotelManagerSystem.DAL
             return dr;
         }
         public static object ExecuteScalar(string sql,
-            CommandType type=CommandType.Text,
+            CommandType type = CommandType.Text,
             params SqlParameter[] para)
         {
             object obj = 0;
@@ -82,7 +75,7 @@ namespace TSHotelManagerSystem.DAL
             Closecon();
             return obj;
         }
-        
-        
+
+
     }
 }

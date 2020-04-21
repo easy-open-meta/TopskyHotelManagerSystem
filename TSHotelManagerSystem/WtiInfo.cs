@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
@@ -172,7 +165,7 @@ namespace TSHotelManagerSystem
         #region 修改图片点击事件
         private void picUpdate_Click(object sender, EventArgs e)
         {
-            
+
             //判断房间编号、开始使用时间和结束使用时间是否为空
             if (txtRoomNo.Text != "" && dtpUseDate.Text != "" && dtpEndDate.Text != "")
             {
@@ -212,7 +205,7 @@ namespace TSHotelManagerSystem
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if(btnOk.Text=="修改")
+            if (btnOk.Text == "修改")
             {
                 //获取房间编号和使用时间
                 string no = txtRoomNo.Text;
@@ -222,7 +215,7 @@ namespace TSHotelManagerSystem
                 Wti w = WtiService.SelectWtiInfoByRoomNoAndTime(no, usedate, enddate);
                 string water = txtWaterUse.Text;
                 string power = txtPowerUse.Text;
-                if(water!=w.WaterUse.ToString()||power!=w.PowerUse.ToString())
+                if (water != w.WaterUse.ToString() || power != w.PowerUse.ToString())
                 {
                     Wti w2 = new Wti()
                     {

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TSHotelManagerSystem.Models
 {
-   public class Custo
+    public class Custo
     {
         public string CustoNo { get; set; }
         public string CustoName { get; set; }

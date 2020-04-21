@@ -1,20 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class WorkerManager
+    public class WorkerManager
     {
+        #region 修改员工信息
+        /// <summary>
+        /// 修改员工信息
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+        public static int UpdateWorker(Worker worker)
+        {
+            return WorkerService.UpdateWorker(worker);
+        }
+        #endregion
 
+        #region 添加员工信息
+        /// <summary>
+        /// 添加员工信息
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
         public static int AddWorker(Worker worker)
         {
             return WorkerService.AddWorker(worker);
         }
+        #endregion
 
         #region 获取所有工作人员信息
         /// <summary>

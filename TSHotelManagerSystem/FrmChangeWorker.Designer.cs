@@ -83,6 +83,7 @@
             this.btnGoodBad.TabIndex = 2;
             this.btnGoodBad.Text = "奖罚情况";
             this.btnGoodBad.UseVisualStyleBackColor = false;
+            this.btnGoodBad.Click += new System.EventHandler(this.btnGoodBad_Click);
             // 
             // btnCheck
             // 
@@ -98,6 +99,7 @@
             this.btnCheck.TabIndex = 3;
             this.btnCheck.Text = "打卡考勤";
             this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // lblWorker
             // 

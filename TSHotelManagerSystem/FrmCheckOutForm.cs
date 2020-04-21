@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.Models;
@@ -97,7 +90,7 @@ namespace TSHotelManagerSystem
             CustoNo.Text = ucRoomList.rm_CustoNo;
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
             string rn = txtRoomNo.Text.ToString();
-            string rs = rn.Substring(0,2);
+            string rs = rn.Substring(0, 2);
 
             CmpSetDgv();
             if (ucRoomList.co_CheckTime.ToString() == "0001-01-01 00:00:00")
@@ -140,7 +133,7 @@ namespace TSHotelManagerSystem
                 PowerUse = Convert.ToDecimal(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 3 * 1),
                 WaterUse = Convert.ToDecimal(Convert.ToDouble(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 80 * 0.002),
                 RoomNo = txtRoomNo.Text,
-                Record ="admin",
+                Record = "admin",
                 UseDate = Convert.ToDateTime(DateTime.Parse(dtpCheckTime.Text)),
             };
 
@@ -160,10 +153,10 @@ namespace TSHotelManagerSystem
             catch
             {
 
-                
+
             }
-            
-            
+
+
             #endregion
 
             #region 加载消费信息
@@ -175,11 +168,11 @@ namespace TSHotelManagerSystem
             {
                 result = 0;
             }
-            else 
+            else
             {
                 result = Convert.ToDouble(SpendManager.SelectMoneyByRoomNoAndTime(RoomNo));
             }
-            
+
             #endregion
 
             if (cboCustoType.Text == "钻石会员")
@@ -191,7 +184,7 @@ namespace TSHotelManagerSystem
             }
             else if (cboCustoType.Text == "白金会员")
             {
-                
+
                 double m = result + sum;
                 lblGetReceipts.Text = m.ToString();
                 lblVIPPrice.Text = Convert.ToString(m * 0.80);
@@ -220,7 +213,7 @@ namespace TSHotelManagerSystem
 
             }
 
-        } 
+        }
         #endregion
 
         #region 关闭
@@ -341,7 +334,7 @@ namespace TSHotelManagerSystem
             btnChangePay.Visible = false;
         }
 
-        
+
         private void btnChangePay_Click(object sender, EventArgs e)
         {
             DialogResult ret = MessageBox.Show("请选择支付类型：是:支付宝，否:微信？", "T仔的提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -357,7 +350,7 @@ namespace TSHotelManagerSystem
 
         private void txtCardNo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCardNo.TextLength == 19|| txtCardNo.TextLength <= 16)
+            if (txtCardNo.TextLength == 19 || txtCardNo.TextLength <= 16)
             {
                 lblState.Text = "该卡为有效银行卡，可进行消费";
                 lblState.ForeColor = Color.Green;

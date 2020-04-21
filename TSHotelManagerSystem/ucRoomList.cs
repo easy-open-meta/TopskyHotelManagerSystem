@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.Models;
 using TSHotelManagerSystem.Properties;
-using TSHotelManagerSystem.DAL;
-using DevComponents.DotNetBar.Metro;
-using TSHotelManagerSystem.BLL;
-using System.Drawing.Drawing2D;
-using System.Data.SqlClient;
-using System.Runtime.InteropServices;
 
 namespace TSHotelManagerSystem
 {
@@ -22,7 +14,7 @@ namespace TSHotelManagerSystem
     {
         FrmRoomManager frm = null;
 
-        
+
 
         public ucRoomList()
         {
@@ -158,7 +150,7 @@ namespace TSHotelManagerSystem
         private void ucRoomList_MouseEnter(object sender, EventArgs e)
         {
             //lblState.ForeColor = Color.Red;
-            
+
 
         }
         #endregion
@@ -185,7 +177,7 @@ namespace TSHotelManagerSystem
             lblRoomNo.Text = romCustoInfo.RoomNo;
             lblRoomType.Text = romCustoInfo.typeName;
             co_CheckTime = romCustoInfo.CheckTime.ToString();
-            
+
             us_CustoNo = romRoomInfo.CustoNo;
             us_CustoName = romRoomInfo.CustoName;
             us_CustoSex = romRoomInfo.CustoSex;
@@ -263,7 +255,7 @@ namespace TSHotelManagerSystem
                 tsmiChangeRoom.Enabled = false;
                 tsmiReserRoom.Enabled = true;
             }
-            
+
 
         }
         #endregion
@@ -278,7 +270,7 @@ namespace TSHotelManagerSystem
                 rm_RoomType = lblRoomType.Text;
                 rm_RoomMoney = Convert.ToDecimal(romCustoInfo.RoomMoney).ToString();
                 rm_RoomStateId = 4;
-               DialogResult dr = MessageBox.Show("欢迎入住，请先注册客户信息！", "友情提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("欢迎入住，请先注册客户信息！", "友情提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
                     FrmReserList frm = new FrmReserList();
@@ -291,7 +283,7 @@ namespace TSHotelManagerSystem
                 //FrmCheckIn frm = new FrmCheckIn();
                 //frm.Show();
             }
-            else 
+            else
             {
                 rm_CustoNo = lblCustoNo.Text;
                 rm_RoomNo = lblRoomNo.Text;
@@ -300,9 +292,9 @@ namespace TSHotelManagerSystem
                 FrmCheckIn frm = new FrmCheckIn();
                 frm.Show();
             }
-            
-            
-            
+
+
+
         }
         #endregion
 
@@ -323,7 +315,7 @@ namespace TSHotelManagerSystem
         {
 
             if (lblCustoNo.Text == "")
-            { 
+            {
                 Room r = RoomManager.SelectRoomByRoomNo(lblRoomNo.Text);
                 if (r.RoomStateId == 0)
                 {
@@ -345,7 +337,7 @@ namespace TSHotelManagerSystem
                 FrmCheckOutForm frm = new FrmCheckOutForm();
                 frm.Show();
             }
-        } 
+        }
         #endregion
 
         private void tsmiSelectUserInfo_Click(object sender, EventArgs e)
@@ -379,7 +371,7 @@ namespace TSHotelManagerSystem
                 FrmChangeRoom frm = new FrmChangeRoom();
                 frm.Show();
             }
-            
+
         }
 
         private void tsmiReserRoom_Click(object sender, EventArgs e)

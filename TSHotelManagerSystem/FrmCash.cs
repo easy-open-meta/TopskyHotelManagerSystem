@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem
@@ -53,7 +45,7 @@ namespace TSHotelManagerSystem
             dgvCashList.AutoGenerateColumns = false;
             dgvCashList.DataSource = CashManager.SelectCashInfoAll();
             Random random = new Random();
-            txtCashNo.Text = "CN"+random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
+            txtCashNo.Text = "CN" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
 
 
         }
@@ -82,7 +74,7 @@ namespace TSHotelManagerSystem
                         #region 获取添加操作日志所需的信息
                         Operation o = new Operation();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = AdminInfo.adminType+AdminInfo.admingroup + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim();
+                        o.Operationlog = AdminInfo.adminType + AdminInfo.admingroup + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim();
                         o.OperationAccount = AdminInfo.adminType + AdminInfo.admingroup;
                         #endregion
                         OperationManager.InsertOperationLog(o);
@@ -93,7 +85,7 @@ namespace TSHotelManagerSystem
                                 Ctrol.Text = "";
                             }
                         }
-                        
+
                     }
                     else
                     {

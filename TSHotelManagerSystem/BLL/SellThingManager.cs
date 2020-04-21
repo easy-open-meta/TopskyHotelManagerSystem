@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
@@ -23,12 +19,12 @@ namespace TSHotelManagerSystem.BLL
 
         public static int UpdateSellThing(string stock, string sellNo)
         {
-            return SellService.UpdateSellThing(stock,sellNo);
+            return SellService.UpdateSellThing(stock, sellNo);
         }
 
         public static int DeleteSellThing(string roomNo, string time)
         {
-            return SellService.DeleteSellThing(roomNo,time);
+            return SellService.DeleteSellThing(roomNo, time);
         }
 
         public static List<SellThing> SelectThingByName(string Name)

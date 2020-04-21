@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -68,7 +63,7 @@ namespace TSHotelManagerSystem
                     flpHistory.Controls.Add(ucHistory);
                 }
             }
-            else
+            else if (label13.Text == "员工信息添加页")
             {
                 Random random = new Random();
                 Pwd.Text = RandKey.ToString();
@@ -83,7 +78,76 @@ namespace TSHotelManagerSystem
                 cboWorkerFace.SelectedIndex = 0;
                 cboWorkerPosition.SelectedIndex = 0;
             }
+            else
+            {
+                DialogResult dr = MessageBox.Show("修改操作仅能修改性别、电话号码、联系地址、登录密码、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK && Pwd.Text != null)
+                {
+                    WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
+                    WorkerName.Text = FrmChangeWorker.wk_WorkerName;
+                    cboSex.Text = FrmChangeWorker.wk_WorkerSex;
+                    cboWorkerPosition.Text = FrmChangeWorker.wk_WorkerPosition;
+                    cboWorkerFace.Text = FrmChangeWorker.wk_WorkerFace;
+                    //Pwd.Text = "***************";
+                    dtpBirthday.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerBirthday);
+                    dtpTime.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerTime);
+                    WorkerID.Text = FrmChangeWorker.wk_WorkerID;
+                    txtAddress.Text = FrmChangeWorker.wk_WorkerAddress;
+                    WorkerTel.Text = FrmChangeWorker.wk_WorkerTel;
+                    cboEducation.Text = FrmChangeWorker.wk_WorkerEducation;
+                    cboClub.Text = FrmChangeWorker.wk_WorkerClub;
+                    this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
+                    btnAdd.Text = "修改";
+                    this.btnAdd.Click -= new EventHandler(btnAdd_Click);
+                    this.btnAdd.Click += new EventHandler(btnUpd_Click);
+                    WorkerTel.ReadOnly = false;
+                    txtAddress.ReadOnly = false;
+                    Pwd.ReadOnly = false;
+                    List<WorkerHistory> workerHistories = WorkerHistoryManager.SelectHistoryByWorkerId(WorkerNo.Text);
+                    for (int i = 0; i < workerHistories.Count; i++)
+                    {
+                        ucHistory = new ucHistory();
+                        ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
+                        ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
+                        ucHistory.txtPosition.Text = workerHistories[i].Postion.ToString();
+                        ucHistory.txtCompany.Text = workerHistories[i].Company.ToString();
+                        flpHistory.Controls.Add(ucHistory);
+                    }
+                }
+            }
+        }
 
+        private void btnUpd_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("是否确认修改员工信息？", "修改提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                #region 员工信息代码块
+                Worker worker = new Worker
+                {
+                    WorkerId = WorkerNo.Text.Trim(),
+                    WorkerSex = cboSex.Text,
+                    WorkerTel = WorkerTel.Text,
+                    WorkerAddress = txtAddress.Text,
+                    WorkerPwd = Pwd.Text,
+                    WorkerFace = cboWorkerFace.Text,
+                    WorkerEduction = cboEducation.Text
+                };
+                int i = WorkerManager.UpdateWorker(worker);
+                if (i > 0)
+                {
+                    MessageBox.Show("信息修改成功！");
+                }
+                else
+                {
+                    MessageBox.Show("服务器繁忙！");
+                }
+                #endregion
+            }
+            else
+            {
+                MessageBox.Show("修改操作已取消！");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -127,7 +191,7 @@ namespace TSHotelManagerSystem
                         #region 判断履历和信息代码块
                         if (n > 0 && j > 0)
                         {
-                            MessageBox.Show("员工信息/履历添加成功！该员工登录密码为："+Pwd.Text+"，请提醒员工妥善保管！");
+                            MessageBox.Show("员工信息/履历添加成功！该员工登录密码为：" + Pwd.Text + "，请提醒员工妥善保管！");
                             #region 获取添加操作日志所需的信息
                             Operation o = new Operation();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -157,7 +221,7 @@ namespace TSHotelManagerSystem
                 this.Close();
             }
         }
-        
+
 
         private void WorkerID_Validated(object sender, EventArgs e)
         {

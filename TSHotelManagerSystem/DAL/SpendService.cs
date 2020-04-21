@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class SpendService
+    public class SpendService
     {
         #region 添加消费信息
         /// <summary>
@@ -20,7 +17,7 @@ namespace TSHotelManagerSystem.DAL
         {
             int n = 0;
             string sql = "insert CUSTOSPEND values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')";
-            sql = string.Format(sql, s.RoomNo, s.CustoNo, s.SpendName, s.SpendAmount, s.SpendPrice, s.SpendMoney, s.SpendTime,s.MoneyState);
+            sql = string.Format(sql, s.RoomNo, s.CustoNo, s.SpendName, s.SpendAmount, s.SpendPrice, s.SpendMoney, s.SpendTime, s.MoneyState);
             n = DBHelper.ExecuteNonQuery(sql);
             return n;
         }
@@ -166,7 +163,7 @@ namespace TSHotelManagerSystem.DAL
         /// <param name="roomno"></param>
         /// <param name="checktime"></param>
         /// <returns></returns>
-        public static int UpdateMoneyState(string roomno,string checktime)
+        public static int UpdateMoneyState(string roomno, string checktime)
         {
             string sql = "update CUSTOSPEND set MoneyState='已结算' where RoomNo='{0}' and SpendTime between '{1}' AND GETDATE()";
             sql = string.Format(sql, roomno, checktime);

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -54,7 +47,7 @@ namespace TSHotelManagerSystem
             cboCustoType.SelectedIndex = 0;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ReserManager.SelectReserAll();
-            
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -96,7 +89,7 @@ namespace TSHotelManagerSystem
             txtCustoNo.Text = cardId;
             txtCustoName.Text = dataGridView1.SelectedRows[0].Cells["clCustoName"].Value.ToString();
             txtTel.Text = dataGridView1.SelectedRows[0].Cells["clCustoTel"].Value.ToString();
-            
+
         }
 
         private void txtCardID_Validated(object sender, EventArgs e)
@@ -164,6 +157,6 @@ namespace TSHotelManagerSystem
 
             return;
 
-    }
+        }
     }
 }

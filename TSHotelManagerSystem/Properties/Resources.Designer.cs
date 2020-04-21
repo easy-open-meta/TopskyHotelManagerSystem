@@ -523,6 +523,16 @@ namespace TSHotelManagerSystem.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 打卡 {
+            get {
+                object obj = ResourceManager.GetObject("打卡", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 扩展功能_ia {
             get {
                 object obj = ResourceManager.GetObject("扩展功能-ia", resourceCulture);

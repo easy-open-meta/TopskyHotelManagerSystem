@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.Properties;
 
@@ -47,7 +40,7 @@ namespace TSHotelManagerSystem
             wk_WorkerTime = FrmTopChange.wk_WorkerTime;
             wk_WorkerFace = FrmTopChange.wk_WorkerFace;
             wk_WorkerEducation = FrmTopChange.wk_WorkerEducation;
-            lblWorker.Text = FrmTopChange.wk_WorkerClub + FrmTopChange.wk_WorkerPosition+"："+FrmTopChange.wk_WorkerName+"的操作界面";
+            lblWorker.Text = FrmTopChange.wk_WorkerClub + FrmTopChange.wk_WorkerPosition + "：" + FrmTopChange.wk_WorkerName + "的操作界面";
             if (wk_WorkerClub == "餐饮部")
             {
                 this.BackgroundImage = Resources.餐饮部界面;
@@ -76,10 +69,23 @@ namespace TSHotelManagerSystem
 
         private void btnWatchInfo_Click(object sender, EventArgs e)
         {
-            FrmAddWorker aff = new FrmAddWorker();
-            aff.label13.Text = "员工信息查看页";
-            aff.ShowDialog();
-            
+            DialogResult dr = MessageBox.Show("你要查看信息还是修改信息？('是'则为查看信息/‘否’则为修改信息/'取消'则为取消操作)", "系统提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                FrmAddWorker aff = new FrmAddWorker();
+                aff.label13.Text = "员工信息查看页";
+                aff.ShowDialog();
+            }
+            else if (dr == DialogResult.No)
+            {
+                FrmAddWorker frmAddWorker = new FrmAddWorker();
+                frmAddWorker.label13.Text = "员工信息修改页";
+                frmAddWorker.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("操作取消！");
+            }
         }
 
         private void btnUpWorker_Click(object sender, EventArgs e)
@@ -91,6 +97,18 @@ namespace TSHotelManagerSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            FrmWorkerCheckInfo frm = new FrmWorkerCheckInfo();
+            frm.Show();
+        }
+
+        private void btnGoodBad_Click(object sender, EventArgs e)
+        {
+            FrmGoodOrBad frm = new FrmGoodOrBad();
+            frm.Show();
         }
     }
 }

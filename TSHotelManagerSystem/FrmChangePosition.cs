@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
+using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem
 {
@@ -50,9 +45,16 @@ namespace TSHotelManagerSystem
             if (n > 0)
             {
                 MessageBox.Show("任命已生效!");
+                #region 获取添加操作日志所需的信息
+                Operation o = new Operation();
+                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
+                o.Operationlog = AdminInfo.admingroup + AdminInfo.adminType + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升为" + cboNewClub.Text + cboNewPosition.Text;
+                o.OperationAccount = AdminInfo.admingroup + AdminInfo.adminType;
+                #endregion
+                OperationManager.InsertOperationLog(o);
             }
-            
-            
+
+
         }
     }
 }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class RoomTypeManager
+    public class RoomTypeManager
     {
         #region 获取所有房间类型
         /// <summary>

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -72,11 +65,11 @@ namespace TSHotelManagerSystem
             MessageBox.Show("删除商品成功!");
             foreach (Control c in pnlSellThingInfo.Controls)
             {
-                    if (c is TextBox)
-                        c.Text = "";
+                if (c is TextBox)
+                    c.Text = "";
             }
         }
-        
+
 
         private void btnAddSellThing_Click(object sender, EventArgs e)
         {
@@ -101,9 +94,9 @@ namespace TSHotelManagerSystem
         private void dgvSellthing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtSellNo.Text = dgvSellthing.SelectedRows[0].Cells["SellNo"].Value.ToString();
-            txtSellName.Text= dgvSellthing.SelectedRows[0].Cells["SellName"].Value.ToString();
-            txtSellPrice.Text= dgvSellthing.SelectedRows[0].Cells["SellPrice"].Value.ToString();
-            txtformat.Text= dgvSellthing.SelectedRows[0].Cells["format"].Value.ToString();
+            txtSellName.Text = dgvSellthing.SelectedRows[0].Cells["SellName"].Value.ToString();
+            txtSellPrice.Text = dgvSellthing.SelectedRows[0].Cells["SellPrice"].Value.ToString();
+            txtformat.Text = dgvSellthing.SelectedRows[0].Cells["format"].Value.ToString();
             txtStock.Text = dgvSellthing.SelectedRows[0].Cells["Stock"].Value.ToString();
         }
 
@@ -126,5 +119,5 @@ namespace TSHotelManagerSystem
         }
     }
 }
-        
-  
+
+

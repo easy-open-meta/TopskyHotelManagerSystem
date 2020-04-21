@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TSHotelManagerSystem.DAL;
+﻿using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class AdminManager
+    public class AdminManager
     {
         #region 根据超管密码查询管理类型和权限
         /// <summary>

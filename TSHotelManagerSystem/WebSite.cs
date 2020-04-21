@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TSHotelManagerSystem
@@ -22,6 +15,6 @@ namespace TSHotelManagerSystem
             webBrowser1.Navigate(Application.StartupPath + "\\网页端\\index.html");
         }
 
-        
+
     }
 }

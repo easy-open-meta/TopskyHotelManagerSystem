@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net;
 using System.Runtime.InteropServices;
-using TSHotelManagerSystem.Properties;
+using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.Models;
-using DevComponents.DotNetBar;
 using TSHotelManagerSystem.DAL;
+using TSHotelManagerSystem.Models;
+using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem
 {
@@ -35,7 +31,7 @@ namespace TSHotelManagerSystem
             this.returnForm1 = F1;
         }
 
-        
+
 
         public static FrmMain Main;//全局保存主窗口实例对象
         //private MyRoom Myroom;//房态图对象
@@ -49,7 +45,7 @@ namespace TSHotelManagerSystem
         #endregion
 
         #region 窗体渐变相关代码
-        private bool showing = true; 
+        private bool showing = true;
         #endregion
 
         #region 记录鼠标和窗体坐标的方法
@@ -97,14 +93,58 @@ namespace TSHotelManagerSystem
         #region 定时器：当前系统时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = System.DateTime.Now.ToLongTimeString();
+            string netTime = GetNetDateTime();
+            if (netTime != "")
+            {
+                lblTime.Text = Convert.ToDateTime(netTime).ToString("HH:mm:ss");
+            }
+            else
+            {
+                lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+        }
+        #endregion
+
+        #region 获取网络时间
+        public static string GetNetDateTime()
+        {//获取网络时间
+            WebRequest request = null;
+            WebResponse response = null;
+            WebHeaderCollection headerCollection = null;
+            string datetime = string.Empty;
+            try
+            {
+                request = WebRequest.Create("https://www.baidu.com");
+                request.Timeout = 3000;
+                request.Credentials = CredentialCache.DefaultCredentials;
+                response = request.GetResponse();
+                headerCollection = response.Headers;
+                foreach (var h in headerCollection.AllKeys)
+                {
+                    if (h == "Date")
+                    {
+                        datetime = headerCollection[h];
+                    }
+                }
+                return datetime;
+            }
+            catch (Exception) { return datetime; }
+            finally
+            {
+                if (request != null)
+                { request.Abort(); }
+                if (response != null)
+                { response.Close(); }
+                if (headerCollection != null)
+                { headerCollection.Clear(); }
+            }
         }
         #endregion
 
         #region 从数据库读取文字滚动的内容
         static FontsManager fontsManager = new FontsManager();
         List<Fonts> fonts = fontsManager.SelectFontAll();
-        int fontn = 0; 
+        int fontn = 0;
         #endregion
 
         #region 定时器：文字滚动间隔
@@ -121,7 +161,7 @@ namespace TSHotelManagerSystem
                 lblScroll.Text = fonts[fontn].FontsMess;
                 lblScroll.Location = new Point(panel1.Width, lblScroll.Location.Y);
             }
-            
+
         }
         #endregion
 
@@ -130,38 +170,47 @@ namespace TSHotelManagerSystem
         {
             notifyIcon1.Dispose();
             Application.Exit();
-            
+
         }
         #endregion
 
         #region 窗体最小化
         private void picFormSize_Click(object sender, EventArgs e)
         {
-                WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
         #endregion
 
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            CheckUpdate();
-            lblUserName.Text = LoginInfo.WorkerName + "【" + LoginInfo.WorkerClub +LoginInfo.WorkerPosition+ "】";
-            notifyIcon1.Text = "TS酒店管理系统-" + lblUserName.Text;
+            lblUserName.Text = LoginInfo.WorkerName + "【" + LoginInfo.WorkerClub + LoginInfo.WorkerPosition + "】";
+            notifyIcon1.Text = "TS酒店管理系统" + lblUserName.Text + "-版本号：" + Application.ProductVersion.ToString();
             wk_WorkerName = LoginInfo.WorkerName;
             Opacity = 0.0; //窗体透明度为0
             fadeTimer.Start(); //计时开始
             picRoom.BackgroundImage = Resources.预订管理ab;
             picExtend.BackgroundImage = Resources.扩展功能_ib;
             picCustomer.BackgroundImage = Resources.用户管理_ib;
+            CheckUpdate();
             pnlMID.Controls.Clear();
             FrmRoomManager frm1 = new FrmRoomManager();
             frm1.TopLevel = false;
             pnlMID.Controls.Add(frm1);
             frm1.Show();
+            int n = (int)WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo);
+            if (n > 0)
+            {
+                linkLabel1.Text = "已打卡";
+                linkLabel1.ForeColor = Color.Green;
+                linkLabel1.LinkColor = Color.Green;
+            }
+
+
+
         }
         #endregion
 
-        
 
         #region 客房管理列表弹出事件方法
         private void picRoom_Click(object sender, EventArgs e)
@@ -169,7 +218,7 @@ namespace TSHotelManagerSystem
             //picReser.BackgroundImage = Resources.预约管理;
             picRoom.BackgroundImage = Resources.预订管理ab;
             picExtend.BackgroundImage = Resources.扩展功能_ib;
-            picCustomer.BackgroundImage = Resources.用户管理_ib ;
+            picCustomer.BackgroundImage = Resources.用户管理_ib;
             picCommodity.BackgroundImage = Resources.商品消费_ia;
             pnlMID.Controls.Clear();
             FrmRoomManager frm1 = new FrmRoomManager();
@@ -177,14 +226,14 @@ namespace TSHotelManagerSystem
             pnlMID.Controls.Add(frm1);
             frm1.Show();
 
-            
+
         }
         #endregion
 
         #region 用户管理列表弹出事件方法
         private void picCustomer_Click(object sender, EventArgs e)
         {
-           
+
             ////picReser.BackgroundImage = Resources.预约管理;
             picRoom.BackgroundImage = Resources.预订管理_aa;
             picCustomer.BackgroundImage = Resources.用户管理_ia;
@@ -213,7 +262,7 @@ namespace TSHotelManagerSystem
             frm1.TopLevel = false;
             pnlMID.Controls.Add(frm1);
             frm1.Show();
-        } 
+        }
         #endregion
 
         #region 关闭按钮鼠标事件
@@ -277,7 +326,7 @@ namespace TSHotelManagerSystem
         #endregion
 
         #region 计算后台系统的入口点击事件方法
-        int i = 0; 
+        int i = 0;
         #endregion
 
         #region 后台系统入口事件方法
@@ -286,9 +335,9 @@ namespace TSHotelManagerSystem
             i++;
             if (i < 3)
             {
-               
+
             }
-            else if (i % 3==0)
+            else if (i % 3 == 0)
             {
                 FrmAdminEnter frm = new FrmAdminEnter();
                 frm.Show();
@@ -300,7 +349,7 @@ namespace TSHotelManagerSystem
                 #endregion
                 OperationManager.InsertOperationLog(o);
             }
-            
+
         }
         #endregion
 
@@ -314,7 +363,7 @@ namespace TSHotelManagerSystem
         #region 检查软件更新版本事件方法
         private void tsmiCheckUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请到：https://github.com/NF-TopSky-Team/TopskyHotelManagerSystem" + "获取该软件的最新版本！");
+            MessageBox.Show("请到：https://gitee.com/yjj0720/TopskyHotelManagerSystem" + "获取该软件的最新版本！");
         }
         #endregion
 
@@ -329,7 +378,7 @@ namespace TSHotelManagerSystem
         private void tsmiExitSystem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-           
+
         }
         #endregion
 
@@ -350,7 +399,7 @@ namespace TSHotelManagerSystem
 
         private void tsmiSelectUserAdmin_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void picCommodity_Click(object sender, EventArgs e)
@@ -367,28 +416,11 @@ namespace TSHotelManagerSystem
             frm1.Show();
         }
 
-        private void tsmiBackUpDatabase_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show("为出于安全考虑，新版本的数据库备份已搬家至后台！","T仔的提醒");
-        }
-
-        private void picReser_Click(object sender, EventArgs e)
-        {
-            //picReser.BackgroundImage = Resources.预约管理_aa;
-            //picRoom.BackgroundImage = Resources.预订管理_aa;
-            //picCustomer.BackgroundImage = Resources.用户管理_ib;
-            //picExtend.BackgroundImage = Resources.扩展功能_ib;
-            //picCommodity.BackgroundImage = Resources.商品消费_ia;
-            //pnlMID.Controls.Clear();
-            //FrmReserManager frm1 = new FrmReserManager();
-            //frm1.TopLevel = false;
-            //pnlMID.Controls.Add(frm1);
-            //frm1.Show();
-        }
+        
 
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
-            
+
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -410,6 +442,68 @@ namespace TSHotelManagerSystem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            int n = (int)WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo);
+            if (n > 0)
+            {
+                linkLabel1.Text = "已打卡";
+                linkLabel1.ForeColor = Color.Green;
+                linkLabel1.LinkColor = Color.Green;
+                pnlCheckInfo.Visible = true;
+                lblCheckDay.Text = Convert.ToString(WorkerCheckManager.SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
+            }
+            else
+            {
+                linkLabel1.Text = "未打卡";
+                linkLabel1.ForeColor = Color.Red;
+                linkLabel1.LinkColor = Color.Red;
+                DialogResult dr = MessageBox.Show("你今天还未打卡哦，请先打卡吧！", "打卡提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    WorkerCheck workerCheck = new WorkerCheck
+                    {
+                        WorkerNo = LoginInfo.WorkerNo,
+                        CheckWay = "系统界面",
+                        CheckTime = DateTime.Parse(GetNetDateTime())
+
+                    };
+                    int j = WorkerCheckManager.AddCheckInfo(workerCheck);
+                    if (j > 0)
+                    {
+                        lblCheckDay.Text = Convert.ToString(WorkerCheckManager.SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
+                        MessageBox.Show("打卡成功！你已累计打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        linkLabel1.Text = "已打卡";
+                        linkLabel1.ForeColor = Color.Green;
+                        linkLabel1.LinkColor = Color.Green;
+                        pnlCheckInfo.Visible = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("服务器错误，请稍后再试！");
+                    }
+                }
+            }
+
+
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            pnlCheckInfo.Visible = false;
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
         }

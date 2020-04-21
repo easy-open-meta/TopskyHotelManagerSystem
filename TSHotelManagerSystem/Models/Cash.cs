@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TSHotelManagerSystem.Models
 {
-   public class Cash
+    public class Cash
     {
         public string CashNo { get; set; }
         public string CashName { get; set; }

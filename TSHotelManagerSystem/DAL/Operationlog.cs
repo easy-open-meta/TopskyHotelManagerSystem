@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class Operationlog
+    public class Operationlog
     {
         public static List<OperationLog> SelectOperationlogAll()
         {

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -33,7 +26,7 @@ namespace TSHotelManagerSystem
             SqlConnection con = DBHelper.GetConnection();
             con.Open();
             int n = DBHelper.ExecuteNonQuery(sql);
-            MessageBox.Show("上传成功，上传日期为："+DateTime.Now.ToShortDateString()+"");
+            MessageBox.Show("上传成功，上传日期为：" + DateTime.Now.ToShortDateString() + "");
             #region 获取添加操作日志所需的信息
             Operation o = new Operation();
             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -86,15 +79,15 @@ namespace TSHotelManagerSystem
             CmpSetDgv();
             cboSelectClub.SelectedIndex = 0;
             dgvNoticeList.AutoGenerateColumns = false;
-            dgvNoticeList.DataSource=NoticeManager.SelectNoticeAll();
+            dgvNoticeList.DataSource = NoticeManager.SelectNoticeAll();
         }
 
         private void dgvNoticeList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             pnlUpLoad.Visible = true;
             txtUpLoadNo.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticeNo"].Value.ToString();
-            txtNoticeTheme.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticetheme"].Value.ToString();
-            rtbNoticeContent.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticeContent"].Value.ToString();
+            txtNoticeTheme.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticetheme"].Value.ToString();
+            rtbNoticeContent.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticeContent"].Value.ToString();
             //cboSelectClub.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticeClub"].ToString();
             //txtNoticePerson.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticePerson"].ToString();
         }

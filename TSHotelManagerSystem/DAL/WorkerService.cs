@@ -1,21 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class WorkerService
+    public class WorkerService
     {
+
+        #region 修改员工信息
+        /// <summary>
+        /// 修改员工信息
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+        public static int UpdateWorker(Worker worker)
+        {
+            string sql = "update WORKERINFO set WorkerTel = '"+worker.WorkerTel+"',WorkerAddress = '"+worker.WorkerAddress+"',WorkerPwd = '"+worker.WorkerPwd+"',WorkerFace = '"+worker.WorkerFace+"',WorkerEducation = '"+worker.WorkerEduction+"',WorkerSex = '"+worker.WorkerSex+"' where WorkerId = '"+worker.WorkerId+"'";
+            return DBHelper.ExecuteNonQuery(sql);
+        }
+        #endregion
+
+
+        #region 添加员工信息
+        /// <summary>
+        /// 添加员工信息
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
         public static int AddWorker(Worker worker)
         {
             string sql = "insert into WORKERINFO values('" + worker.WorkerId + "','" + worker.WorkerName + "','" + worker.WorkerBirth + "','" + worker.WorkerSex + "','" + worker.WorkerTel + "','" + worker.WorkerClub + "','" + worker.WorkerAddress + "','" + worker.WorkerPosition + "','" + worker.CardId + "','" + worker.WorkerPwd + "','" + worker.WorkerTime + "','" + worker.WorkerFace + "','" + worker.WorkerEduction + "')";
             return DBHelper.ExecuteNonQuery(sql);
         }
-
+        #endregion
 
         #region 获取所有工作人员信息
         /// <summary>
@@ -99,7 +117,7 @@ namespace TSHotelManagerSystem.DAL
             string sql = "select * from WORKERINFO where WorkerId='{0}' and WorkerPwd='{1}'";
             sql = string.Format(sql, id, pwd);
             SqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if(dr.Read())
+            if (dr.Read())
             {
                 w = new Worker();
                 w.WorkerId = (string)dr["WorkerId"];
@@ -118,7 +136,7 @@ namespace TSHotelManagerSystem.DAL
             dr.Close();
             DBHelper.Closecon();
             return w;
-        } 
+        }
         #endregion
     }
 }

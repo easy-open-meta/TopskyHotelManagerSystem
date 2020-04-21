@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class NoticeService
+    public class NoticeService
     {
         #region 获取所有公告信息
         /// <summary>

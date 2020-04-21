@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class FontsManager
+    public class FontsManager
     {
         public List<Fonts> SelectFontAll()
         {
@@ -27,6 +23,6 @@ namespace TSHotelManagerSystem.BLL
             DBHelper.Closecon();
             return fonts;
         }
-        
+
     }
 }

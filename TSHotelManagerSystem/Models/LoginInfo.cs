@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TSHotelManagerSystem.Models
+﻿namespace TSHotelManagerSystem.Models
 {
     public static class LoginInfo
     {
+        /// <summary>
+        /// 存储当前员工编号
+        /// </summary>
+        public static string WorkerNo = "";
+
         /// <summary>
         /// 存储当前员工姓名
         /// </summary>

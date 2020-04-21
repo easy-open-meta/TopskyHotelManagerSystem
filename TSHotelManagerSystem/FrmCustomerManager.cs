@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
-using Excel = Microsoft.Office.Interop.Excel;
 using TSHotelManagerSystem.Properties;
-using System.Text.RegularExpressions;
 
 namespace TSHotelManagerSystem
 {
@@ -135,9 +127,9 @@ namespace TSHotelManagerSystem
             catch
             {
 
-                
+
             }
-            
+
             picAddCusto.BackgroundImage = Resources.添_加a;
 
 
@@ -407,11 +399,11 @@ namespace TSHotelManagerSystem
             {
                 MessageBox.Show("请正确输入证件号码！");
             }
-            
+
             cboPassport.SelectedIndex = 0;
-            
+
             return;
-            
+
         }
     }
 

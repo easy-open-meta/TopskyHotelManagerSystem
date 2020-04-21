@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using System.Data.SqlClient;
+using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
-using TSHotelManagerSystem.BLL;
 
 namespace TSHotelManagerSystem
 {
@@ -33,7 +24,7 @@ namespace TSHotelManagerSystem
             Random random = new Random();
             string reserid = "";
             reserid = "R" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
-            string sql1 = string.Format("insert Reser values('"+reserid+"','" + txtCustoName.Text + "','" + txtCustoTel.Text + "','" + cboReserWay.Text + "','" + cboReserRoomNo.Text + "','" + dtpBouDate.Value.ToString() + "','" + dtpEndDate.Value.ToString() + "','" + txtRemark.Text + "')");
+            string sql1 = string.Format("insert Reser values('" + reserid + "','" + txtCustoName.Text + "','" + txtCustoTel.Text + "','" + cboReserWay.Text + "','" + cboReserRoomNo.Text + "','" + dtpBouDate.Value.ToString() + "','" + dtpEndDate.Value.ToString() + "','" + txtRemark.Text + "')");
             string sql2 = string.Format("update Room set RoomStateId='4' where RoomNo='" + cboReserRoomNo.Text + "'");
             if (DBHelper.ExecuteNonQuery(sql1) > 0 && DBHelper.ExecuteNonQuery(sql2) > 0)
             {
@@ -47,7 +38,7 @@ namespace TSHotelManagerSystem
                 OperationManager.InsertOperationLog(o);
                 this.Close();
             }
-            
+
 
         }
 

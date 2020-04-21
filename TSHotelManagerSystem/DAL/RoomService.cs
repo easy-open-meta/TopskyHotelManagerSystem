@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class RoomService
+    public class RoomService
     {
         #region 获取所有房间信息
         /// <summary>
@@ -87,7 +83,7 @@ namespace TSHotelManagerSystem.DAL
 
         }
         #endregion
-        
+
         #region 根据房间状态来查询可使用的房间
         /// <summary>
         /// 根据房间状态来查询可使用的房间
@@ -126,7 +122,7 @@ namespace TSHotelManagerSystem.DAL
         }
         #endregion
 
-        
+
 
         #region 根据房间编号查询房间信息
         /// <summary>
@@ -163,7 +159,7 @@ namespace TSHotelManagerSystem.DAL
             return room;
         }
         #endregion
-        
+
         #region 根据房间编号退房（退房）
         /// <summary>
         /// 根据房间编号退房（退房）
@@ -173,8 +169,8 @@ namespace TSHotelManagerSystem.DAL
         public static int UpdateRoomByRoomNo(string room)
         {
             string sql = "update ROOM set CustoNo=Null,CheckTime=null,";
-            sql+="CheckOutTime =GETDATE(),PersonNum=Null,";
-                sql+="RoomStateId='3' where RoomNo='" + room + "'";
+            sql += "CheckOutTime =GETDATE(),PersonNum=Null,";
+            sql += "RoomStateId='3' where RoomNo='" + room + "'";
             return DBHelper.ExecuteNonQuery(sql);
         }
         #endregion
@@ -307,7 +303,7 @@ namespace TSHotelManagerSystem.DAL
         /// <param name="roomno"></param>
         /// <param name="stateid"></param>
         /// <returns></returns>
-        public static int UpdateRoomStateByRoomNo(string roomno,int stateid)
+        public static int UpdateRoomStateByRoomNo(string roomno, int stateid)
         {
             string sql = "update ROOM set RoomStateId='" + stateid + "' where RoomNo='" + roomno + "'";
             return DBHelper.ExecuteNonQuery(sql);

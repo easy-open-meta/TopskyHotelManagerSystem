@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 using TSHotelManagerSystem.Properties;
-using System.Text.RegularExpressions;
 
 namespace TSHotelManagerSystem
 {
@@ -31,14 +22,14 @@ namespace TSHotelManagerSystem
 
         //定义委托类型的变量
         public static ReLoadRoomList Reload;
-        
-        
+
+
 
         public FrmRoomManager()
         {
             InitializeComponent();
             Reload = LoadRoom;
-            
+
 
         }
 
@@ -62,8 +53,8 @@ namespace TSHotelManagerSystem
             lblFix.Text = RoomManager.SelectFixingRoomAllByRoomState().ToString();
             lblReser.Text = RoomManager.SelectReseredRoomAllByRoomState().ToString();
 
-            
-            
+
+
 
 
 
@@ -86,7 +77,7 @@ namespace TSHotelManagerSystem
         #endregion
 
 
-        
+
 
         private void tmrGetData_Tick(object sender, EventArgs e)
         {
@@ -169,7 +160,7 @@ namespace TSHotelManagerSystem
         private void picRefrech_Click(object sender, EventArgs e)
         {
             LoadRoom();
-            
+
         }
 
         private void LoadRoom()

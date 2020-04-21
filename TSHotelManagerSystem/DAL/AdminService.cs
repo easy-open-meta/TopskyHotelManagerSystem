@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class AdminService
+    public class AdminService
     {
         #region 根据超管密码查询员工类型和权限
         /// <summary>
@@ -45,7 +40,7 @@ namespace TSHotelManagerSystem.DAL
         {
             Admin a = null;
             string sql = "select * from ADMININFO where AdminPassword='{0}'";
-            sql = string.Format(sql,pwd);
+            sql = string.Format(sql, pwd);
             SqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {

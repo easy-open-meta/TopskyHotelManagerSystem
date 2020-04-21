@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.BLL
 {
-   public class CustoTypeManager
+    public class CustoTypeManager
     {
         #region 查询所有会员等级名称
         /// <summary>
@@ -32,7 +28,7 @@ namespace TSHotelManagerSystem.BLL
             DBHelper.Closecon();
 
             return types;
-        } 
+        }
         #endregion
 
         #region 根据会员等级编号查询会员等级名称

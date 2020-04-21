@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class CustoService
+    public class CustoService
     {
 
         public static List<CustoSpend> SelectAllMoney()
@@ -90,7 +86,7 @@ namespace TSHotelManagerSystem.DAL
             dr.Close();
             DBHelper.Closecon();
             return cto;
-        } 
+        }
         #endregion
 
         public static Custo SelectCustoInfoByCardId(string input)

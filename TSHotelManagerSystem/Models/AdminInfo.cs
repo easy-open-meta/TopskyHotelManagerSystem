@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TSHotelManagerSystem.Models
+﻿namespace TSHotelManagerSystem.Models
 {
-   public class AdminInfo
+    public class AdminInfo
     {
         /// <summary>
         /// 存储当前超管姓名

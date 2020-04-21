@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using TSHotelManagerSystem.Models;
+﻿using System.Data.SqlClient;
 
 namespace TSHotelManagerSystem.DAL
 {
@@ -28,7 +22,7 @@ namespace TSHotelManagerSystem.DAL
             dr.Close();
             DBHelper.Closecon();
             return name;
-        } 
+        }
         #endregion
     }
 }

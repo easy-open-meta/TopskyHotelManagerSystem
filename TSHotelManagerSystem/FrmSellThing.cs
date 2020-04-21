@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem
@@ -158,14 +151,14 @@ namespace TSHotelManagerSystem
                     //清空
                 }
             }
-        } 
+        }
         #endregion
 
         #region 根据客户编号加载消费信息的方法
         private void LoadSpendInfo(string room)
         {
             dgvRoomSell.DataSource = SpendManager.SelectSpendByCustoNo(room);
-        } 
+        }
         #endregion
 
         #region 商品加载事件方法
@@ -202,7 +195,7 @@ namespace TSHotelManagerSystem
                 txtPrice.Focus();
                 return false;
             }
-            if (nudNum.Value <=0)
+            if (nudNum.Value <= 0)
             {
                 MessageBox.Show("数量不能小于0", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 txtPrice.Focus();
@@ -252,7 +245,7 @@ namespace TSHotelManagerSystem
                         #region 获取添加操作日志所需的信息
                         Operation o = new Operation();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = LoginInfo.WorkerClub+LoginInfo.WorkerPosition+LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + dgvRoomSell.SelectedRows[0].Cells["CustoNo"].Value.ToString() + "进行了消费商品:"+txtSellName.Text+"操作！";
+                        o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + dgvRoomSell.SelectedRows[0].Cells["CustoNo"].Value.ToString() + "进行了消费商品:" + txtSellName.Text + "操作！";
                         o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
                         #endregion
                         OperationManager.InsertOperationLog(o);
@@ -318,7 +311,7 @@ namespace TSHotelManagerSystem
                 }
             }
             catch { return; }
-        } 
+        }
         #endregion
     }
 }

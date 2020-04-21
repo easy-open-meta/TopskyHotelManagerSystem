@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
 {
-   public class ReserService
+    public class ReserService
     {
 
         public static List<Reser> SelectReserAll()
@@ -46,7 +43,7 @@ namespace TSHotelManagerSystem.DAL
         public static Reser SelectReserInfoByRoomNo(string no)
         {
             Reser res = null;
-            string sql = "select * from RESER r,ROOM rm where r.ReserRoom = rm.RoomNo and r.ReserRoom = '"+no+"'";
+            string sql = "select * from RESER r,ROOM rm where r.ReserRoom = rm.RoomNo and r.ReserRoom = '" + no + "'";
             SqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
@@ -74,7 +71,7 @@ namespace TSHotelManagerSystem.DAL
         {
             string sql = "delete from RESER where ReserId = '" + rid + "'";
             return DBHelper.ExecuteNonQuery(sql);
-            
+
         }
 
 
@@ -88,6 +85,6 @@ namespace TSHotelManagerSystem.DAL
             return DBHelper.ExecuteNonQuery(sql);
         }
 
-        
+
     }
 }

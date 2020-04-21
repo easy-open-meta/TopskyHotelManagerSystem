@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem.DAL
@@ -24,7 +21,7 @@ namespace TSHotelManagerSystem.DAL
                 SellThing s = new SellThing();
                 s.SellNo = dr["SellNo"].ToString();
                 s.SellName = dr["SellName"].ToString();
-                s.SellPrice =Convert.ToDecimal(dr["SellPrice"]);
+                s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
                 s.format = (string)dr["format"];
                 s.Stock = (int)dr["Stock"];
                 ls.Add(s);
@@ -88,11 +85,11 @@ namespace TSHotelManagerSystem.DAL
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public static int UpdateSellThing(string stock,string sellNo)
+        public static int UpdateSellThing(string stock, string sellNo)
         {
             int n = 0;
             string sql = "update SELLTHING set Stock='{0}' where SellNo='{1}'";
-            sql = string.Format(sql,stock,sellNo);
+            sql = string.Format(sql, stock, sellNo);
             n = DBHelper.ExecuteNonQuery(sql);
             return n;
         }
@@ -102,7 +99,7 @@ namespace TSHotelManagerSystem.DAL
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public static int DeleteSellThing(string roomNo,string time)
+        public static int DeleteSellThing(string roomNo, string time)
         {
             string sql = "delete from CUSTOSPEND where RoomNo='{0}' and SpendTime='{1}'";
             sql = string.Format(sql, roomNo, time);
@@ -135,7 +132,7 @@ namespace TSHotelManagerSystem.DAL
             return s;
         }
 
-        
+
 
         public static SellThing SelectSellInfoBySellNo(string SellNo)
         {
@@ -165,7 +162,7 @@ namespace TSHotelManagerSystem.DAL
             sql = string.Format(sql, st.SellNo, st.SellName, st.SellPrice,
                 st.format, st.Stock);
             return DBHelper.ExecuteNonQuery(sql);
-        } 
+        }
         #endregion
     }
 }

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
@@ -67,7 +61,7 @@ namespace TSHotelManagerSystem
                 #region 获取添加操作日志所需的信息
                 Operation o = new Operation();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.adminType + AdminInfo.admingroup + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为："+cboRoomType.Text;
+                o.Operationlog = AdminInfo.adminType + AdminInfo.admingroup + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text;
                 o.OperationAccount = AdminInfo.adminType + AdminInfo.admingroup;
                 #endregion
                 OperationManager.InsertOperationLog(o);
@@ -76,7 +70,7 @@ namespace TSHotelManagerSystem
             {
                 MessageBox.Show("房间信息不完整，请重试！");
             }
-            
+
         }
 
 

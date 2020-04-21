@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.Models;
 
@@ -44,7 +38,7 @@ namespace TSHotelManagerSystem
 
         private void llbCheckGroup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
         }
 
         private void llbUpLoadLog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -54,12 +48,12 @@ namespace TSHotelManagerSystem
             frm1.TopLevel = false;
             pnlLook.Controls.Add(frm1);
             frm1.Show();
-            pnlWorkerPage.Visible=false;
+            pnlWorkerPage.Visible = false;
         }
 
         private void llbWorkerManager_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
             pnlLook.Controls.Clear();
             FrmTopChange frm1 = new FrmTopChange();
             frm1.TopLevel = false;
@@ -81,12 +75,12 @@ namespace TSHotelManagerSystem
 
         private void FrmBackAdmin_Deactivate(object sender, EventArgs e)
         {
-           
+
         }
 
         private void llbWorkerUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
         }
 
         private void llbCashList_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -159,17 +153,17 @@ namespace TSHotelManagerSystem
 
         private void btnCash_MouseEnter(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnCash_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnWTI_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCash_Click(object sender, EventArgs e)
@@ -297,12 +291,12 @@ namespace TSHotelManagerSystem
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pnlLook_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void FrmBackAdmin_MouseClick(object sender, MouseEventArgs e)
@@ -400,7 +394,7 @@ namespace TSHotelManagerSystem
                 frm1.Show();
                 pnlCashPage.Visible = false;
             }
-            
+
         }
 
         private void llbBackCash_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -116,6 +116,8 @@
     <Compile Include="BLL\RoomTypeManager.cs" />
     <Compile Include="BLL\SellThingManager.cs" />
     <Compile Include="BLL\SpendManager.cs" />
+    <Compile Include="BLL\WorkerCheckManager.cs" />
+    <Compile Include="BLL\WorkerGoodBadManager.cs" />
     <Compile Include="BLL\WorkerHistoryManager.cs" />
     <Compile Include="BLL\WorkerManager.cs" />
     <Compile Include="BLL\WtiManager.cs" />
@@ -131,12 +133,13 @@
     <Compile Include="DAL\RoomTypeService.cs" />
     <Compile Include="DAL\SellService.cs" />
     <Compile Include="DAL\SpendService.cs" />
+    <Compile Include="DAL\WorkerCheckService.cs" />
+    <Compile Include="DAL\WorkerGoodBadService.cs" />
     <Compile Include="DAL\WorkerHistoryService.cs" />
     <Compile Include="DAL\WorkerService.cs" />
     <Compile Include="DAL\WtiService.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="DAL\RoomService.cs" />
-    <Compile Include="Demo.cs" />
     <Compile Include="FrmChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +248,12 @@
     <Compile Include="FrmCustoSpend.Designer.cs">
       <DependentUpon>FrmCustoSpend.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGoodOrBad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodOrBad.Designer.cs">
+      <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +344,12 @@
     <Compile Include="FrmUnLockSystem.Designer.cs">
       <DependentUpon>FrmUnLockSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWorkerCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWorkerCheckInfo.Designer.cs">
+      <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminInfo.cs" />
     <Compile Include="Models\Cash.cs" />
@@ -354,6 +369,8 @@
     <Compile Include="Models\SellThing.cs" />
     <Compile Include="Models\Spend.cs" />
     <Compile Include="Models\Worker.cs" />
+    <Compile Include="Models\WorkerCheck.cs" />
+    <Compile Include="Models\WorkerGoodBad.cs" />
     <Compile Include="Models\WorkerHistory.cs" />
     <Compile Include="Models\Wti.cs" />
     <Compile Include="Program.cs" />
@@ -436,6 +453,9 @@
     <EmbeddedResource Include="FrmCustoSpend.resx">
       <DependentUpon>FrmCustoSpend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodOrBad.resx">
+      <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOperation.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -481,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnLockSystem.resx">
       <DependentUpon>FrmUnLockSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWorkerCheckInfo.resx">
+      <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -835,6 +858,7 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\打卡.png" />
     <Content Include="bitbug_favicon %281%29.ico" />
     <None Include="Resources\77377282_p0_master1200.jpg" />
     <None Include="Resources\main_bg.png" />

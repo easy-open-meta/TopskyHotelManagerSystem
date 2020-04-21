@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.Models;
@@ -38,7 +31,7 @@ namespace TSHotelManagerSystem
                 if (RoomManager.UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) > 0)
                 {
                     MessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示");
-                    FrmRoomManager.Reload() ;
+                    FrmRoomManager.Reload();
                     this.Close();
                 }
                 else
@@ -50,7 +43,7 @@ namespace TSHotelManagerSystem
             {
                 MessageBox.Show("不能设置已住状态", "来自小T的提示");
             }
-        } 
+        }
         #endregion
     }
 }
