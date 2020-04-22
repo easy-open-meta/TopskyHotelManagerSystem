@@ -1,4 +1,4 @@
-# TopskyHotelManagerSystem
+<h2 align="center">TopskyHotelManagerSystem</h3>
 <p align="center">
 	<a href='https://gitee.com/yjj0720/TopskyHotelManagerSystem/stargazers'><img src='https://gitee.com/yjj0720/TopskyHotelManagerSystem/badge/star.svg?theme=dark' alt='star'></img></a>
         <a href='https://img.shields.io/travis/antvis/g2.svg'><img src="https://img.shields.io/travis/antvis/g2.svg" alt=""></img>
