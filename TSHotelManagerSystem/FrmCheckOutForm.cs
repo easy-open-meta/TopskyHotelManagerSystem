@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
@@ -164,7 +164,7 @@ namespace TSHotelManagerSystem
             dgvSpendList.DataSource = SpendManager.SelectSpendInfoRoomNo(RoomNo);
             dgvSpendList.AutoGenerateColumns = false;
             double result = 0;
-            if (DBNull.Value.Equals(result))
+            if (dgvSpendList.Rows.Count == 0)
             {
                 result = 0;
             }
