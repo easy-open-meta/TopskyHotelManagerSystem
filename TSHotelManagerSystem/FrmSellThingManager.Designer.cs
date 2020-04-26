@@ -44,7 +44,6 @@
             this.btnAddSellThing = new System.Windows.Forms.Button();
             this.btnDeleteSellThing = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pnlSellThingInfo = new System.Windows.Forms.Panel();
             this.picGetCustoNo = new System.Windows.Forms.PictureBox();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -186,7 +185,7 @@
             this.btnAddSellThing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddSellThing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSellThing.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAddSellThing.Location = new System.Drawing.Point(790, 87);
+            this.btnAddSellThing.Location = new System.Drawing.Point(790, 127);
             this.btnAddSellThing.Name = "btnAddSellThing";
             this.btnAddSellThing.Size = new System.Drawing.Size(187, 36);
             this.btnAddSellThing.TabIndex = 109;
@@ -200,7 +199,7 @@
             this.btnDeleteSellThing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeleteSellThing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSellThing.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDeleteSellThing.Location = new System.Drawing.Point(790, 129);
+            this.btnDeleteSellThing.Location = new System.Drawing.Point(790, 169);
             this.btnDeleteSellThing.Name = "btnDeleteSellThing";
             this.btnDeleteSellThing.Size = new System.Drawing.Size(187, 36);
             this.btnDeleteSellThing.TabIndex = 109;
@@ -214,27 +213,13 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(790, 171);
+            this.button2.Location = new System.Drawing.Point(790, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 36);
             this.button2.TabIndex = 109;
             this.button2.Text = "修改商品信息";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(790, 213);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 36);
-            this.button3.TabIndex = 110;
-            this.button3.Text = "商品账单";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pnlSellThingInfo
             // 
@@ -365,7 +350,6 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(989, 495);
             this.Controls.Add(this.pnlSellThingInfo);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDeleteSellThing);
             this.Controls.Add(this.btnAddSellThing);
@@ -402,7 +386,6 @@
         private System.Windows.Forms.Button btnAddSellThing;
         private System.Windows.Forms.Button btnDeleteSellThing;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel pnlSellThingInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStock;

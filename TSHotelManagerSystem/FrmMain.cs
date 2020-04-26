@@ -74,23 +74,7 @@ namespace TSHotelManagerSystem
         }
         #endregion
 
-        #region 判断版本号
-        private void CheckUpdate()
-        {
-            string newversion = CheckInfoService.CheckBaseVersion();
-
-            string version = Application.ProductVersion.ToString();
-            if (version != newversion)
-            {
-                MessageBox.Show("旧版已停止使用，请到github或gitee仓库更新最新发行版！");
-                Application.Exit();
-                //调用系统默认的浏览器
-                System.Diagnostics.Process.Start("https://gitee.com/yjj0720/TopskyHotelManagerSystem/releases");
-            }
-        }
-        #endregion
-
-        #region 定时器：当前系统时间
+        #region 定时器：获取网络时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
             string netTime = GetNetDateTime();
@@ -192,7 +176,7 @@ namespace TSHotelManagerSystem
             picRoom.BackgroundImage = Resources.预订管理ab;
             picExtend.BackgroundImage = Resources.扩展功能_ib;
             picCustomer.BackgroundImage = Resources.用户管理_ib;
-            CheckUpdate();
+            //CheckUpdate();
             pnlMID.Controls.Clear();
             FrmRoomManager frm1 = new FrmRoomManager();
             frm1.TopLevel = false;

@@ -38,7 +38,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(48, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(354, 26);
@@ -65,10 +67,16 @@
             this.btnUnLock.UseVisualStyleBackColor = true;
             this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmUnLockSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources._770e7b52ecafc807247aad51bb6c6b43;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(448, 137);
             this.Controls.Add(this.btnUnLock);
             this.Controls.Add(this.txtUnLockPwd);

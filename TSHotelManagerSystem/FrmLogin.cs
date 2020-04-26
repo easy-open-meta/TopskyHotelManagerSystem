@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
+using TSHotelManagerSystem.DAL;
 using TSHotelManagerSystem.Models;
 using TSHotelManagerSystem.Properties;
 
@@ -9,9 +11,11 @@ namespace TSHotelManagerSystem
 {
     public partial class FrmLogin : Form
     {
-        public FrmLogin()
+        FrmStart f = null;
+        public FrmLogin(FrmStart frm)
         {
             InitializeComponent();
+            f = frm;
             #region 防止背景闪屏方法
             this.DoubleBuffered = true;//设置本窗体
             SetStyle(ControlStyles.UserPaint, true);
@@ -82,21 +86,21 @@ namespace TSHotelManagerSystem
         #region 关闭窗体事件方法
         private void picClose_Click(object sender, EventArgs e)
         {
+            f.Close();
             Application.Exit();
         }
         #endregion
-
-
 
         #region 窗体打开时淡入效果
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             //FrmTopSkyLogo frm = new FrmTopSkyLogo();
             //frm.ShowDialog();
-
+            
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
             AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
+            //CheckUpdate();
         }
         #endregion
 
@@ -152,9 +156,10 @@ namespace TSHotelManagerSystem
                             LoginInfo.WorkerName = w.WorkerName;
                             LoginInfo.WorkerClub = w.WorkerClub;
                             LoginInfo.WorkerPosition = w.WorkerPosition;
-                            FrmMain fm = new FrmMain(this);
+
+                            FrmMain frm = new FrmMain(this);
                             this.Hide();//隐藏登录窗体
-                            fm.Show();//打开主窗体
+                            frm.Show();//打开主窗体
                             #region 获取添加操作日志所需的信息
                             Operation o = new Operation();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -162,7 +167,6 @@ namespace TSHotelManagerSystem
                             o.OperationAccount = txtWorkerId.Text;
                             #endregion
                             OperationManager.InsertOperationLog(o);
-
                         }
                         else
                         {

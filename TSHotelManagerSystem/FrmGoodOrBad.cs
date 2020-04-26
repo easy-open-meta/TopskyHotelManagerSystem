@@ -19,8 +19,37 @@ namespace TSHotelManagerSystem
             InitializeComponent();
         }
 
+        public void CmpSetDgv()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.DgvGoodBadList.AllowUserToAddRows = false;
+            this.DgvGoodBadList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            this.DgvGoodBadList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvGoodBadList.BackgroundColor = System.Drawing.Color.White;
+            this.DgvGoodBadList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DgvGoodBadList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("苹方-简", 11, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DgvGoodBadList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvGoodBadList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvGoodBadList.EnableHeadersVisualStyles = false;
+            this.DgvGoodBadList.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.DgvGoodBadList.ReadOnly = true;
+            this.DgvGoodBadList.RowHeadersVisible = false;
+            this.DgvGoodBadList.RowTemplate.Height = 23;
+            this.DgvGoodBadList.RowTemplate.ReadOnly = true;
+        }
+
+
         private void FrmGoodOrBad_Load(object sender, EventArgs e)
         {
+            CmpSetDgv();
             lblWorkerNo.Text = FrmTopChange.wk_WorkerNo;
             lblName.Text = FrmTopChange.wk_WorkerName;
             lblDate.Text = FrmTopChange.wk_WorkerTime.Substring(0,9);
@@ -71,6 +100,11 @@ namespace TSHotelManagerSystem
                 MessageBox.Show("信息不能为空！");
             }
             
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -71,7 +71,8 @@ namespace TSHotelManagerSystem
             int n = RoomManager.UpdateRoomInfo(r);
             int j = ReserManager.DeleteReserInfo(dataGridView1.SelectedRows[0].Cells["clReserId"].Value.ToString());
             MessageBox.Show("操作成功");
-
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = ReserManager.SelectReserAll();
             //LoadCustomer();
             foreach (Control Ctrol in gbCustoInfo.Controls)
             {

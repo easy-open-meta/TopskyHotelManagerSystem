@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.DgvGoodBadList = new System.Windows.Forms.DataGridView();
+            this.clWorkerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGBInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGBType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGBOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGBTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,11 +41,6 @@
             this.lblWorkerNo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.clWorkerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGBInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGBType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGBOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGBTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,6 +71,36 @@
             this.DgvGoodBadList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvGoodBadList.Size = new System.Drawing.Size(489, 232);
             this.DgvGoodBadList.TabIndex = 0;
+            // 
+            // clWorkerNo
+            // 
+            this.clWorkerNo.DataPropertyName = "WorkNo";
+            this.clWorkerNo.HeaderText = "员工编号";
+            this.clWorkerNo.Name = "clWorkerNo";
+            // 
+            // clGBInfo
+            // 
+            this.clGBInfo.DataPropertyName = "GBInfo";
+            this.clGBInfo.HeaderText = "奖罚情况";
+            this.clGBInfo.Name = "clGBInfo";
+            // 
+            // clGBType
+            // 
+            this.clGBType.DataPropertyName = "TypeName";
+            this.clGBType.HeaderText = "奖罚类型";
+            this.clGBType.Name = "clGBType";
+            // 
+            // clGBOperation
+            // 
+            this.clGBOperation.DataPropertyName = "GBOperation";
+            this.clGBOperation.HeaderText = "记录人";
+            this.clGBOperation.Name = "clGBOperation";
+            // 
+            // clGBTime
+            // 
+            this.clGBTime.DataPropertyName = "GBTime";
+            this.clGBTime.HeaderText = "奖罚日期";
+            this.clGBTime.Name = "clGBTime";
             // 
             // label1
             // 
@@ -148,36 +178,6 @@
             this.lblDate.Size = new System.Drawing.Size(65, 20);
             this.lblDate.TabIndex = 6;
             this.lblDate.Text = "入职日期";
-            // 
-            // clWorkerNo
-            // 
-            this.clWorkerNo.DataPropertyName = "WorkNo";
-            this.clWorkerNo.HeaderText = "员工编号";
-            this.clWorkerNo.Name = "clWorkerNo";
-            // 
-            // clGBInfo
-            // 
-            this.clGBInfo.DataPropertyName = "GBInfo";
-            this.clGBInfo.HeaderText = "奖罚情况";
-            this.clGBInfo.Name = "clGBInfo";
-            // 
-            // clGBType
-            // 
-            this.clGBType.DataPropertyName = "TypeName";
-            this.clGBType.HeaderText = "奖罚类型";
-            this.clGBType.Name = "clGBType";
-            // 
-            // clGBOperation
-            // 
-            this.clGBOperation.DataPropertyName = "GBOperation";
-            this.clGBOperation.HeaderText = "记录人";
-            this.clGBOperation.Name = "clGBOperation";
-            // 
-            // clGBTime
-            // 
-            this.clGBTime.DataPropertyName = "GBTime";
-            this.clGBTime.HeaderText = "奖罚日期";
-            this.clGBTime.Name = "clGBTime";
             // 
             // btnAdd
             // 
@@ -268,6 +268,7 @@
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmGoodOrBad
             // 

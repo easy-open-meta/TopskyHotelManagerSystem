@@ -66,6 +66,10 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Design, Version=10.0.0.3, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -121,6 +125,9 @@
     <Compile Include="BLL\WorkerHistoryManager.cs" />
     <Compile Include="BLL\WorkerManager.cs" />
     <Compile Include="BLL\WtiManager.cs" />
+    <Compile Include="CircleProgramBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\AdminService.cs" />
     <Compile Include="DAL\CashService.cs" />
     <Compile Include="DAL\CheckInfoService.cs" />
@@ -295,6 +302,12 @@
     </Compile>
     <Compile Include="FrmSellThingManager.Designer.cs">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStart.Designer.cs">
+      <DependentUpon>FrmStart.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTopChange.cs">
       <SubType>Form</SubType>
@@ -476,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSellThingManager.resx">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStart.resx">
+      <DependentUpon>FrmStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTopChange.resx">
       <DependentUpon>FrmTopChange.cs</DependentUpon>
@@ -858,6 +874,8 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
+    <None Include="Resources\c92311ec80b20a729e525a3f7035363c.jpg" />
     <None Include="bin\Debug\打卡.png" />
     <Content Include="bitbug_favicon %281%29.ico" />
     <None Include="Resources\77377282_p0_master1200.jpg" />

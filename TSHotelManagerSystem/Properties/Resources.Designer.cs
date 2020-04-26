@@ -83,6 +83,16 @@ namespace TSHotelManagerSystem.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _770e7b52ecafc807247aad51bb6c6b43 {
+            get {
+                object obj = ResourceManager.GetObject("770e7b52ecafc807247aad51bb6c6b43", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap _77377282_p0_master1200 {
             get {
                 object obj = ResourceManager.GetObject("77377282_p0_master1200", resourceCulture);
@@ -106,6 +116,16 @@ namespace TSHotelManagerSystem.Properties {
         internal static System.Drawing.Bitmap button {
             get {
                 object obj = ResourceManager.GetObject("button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap c92311ec80b20a729e525a3f7035363c {
+            get {
+                object obj = ResourceManager.GetObject("c92311ec80b20a729e525a3f7035363c", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -224,3 +224,4 @@ D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.
 D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.ucHistory.resources
 D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmWorkerCheckInfo.resources
 D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmGoodOrBad.resources
+D:\实战项目库\高职一学年一学期小组项目\TSHotelManagerSystem1.3.2\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.FrmStart.resources
