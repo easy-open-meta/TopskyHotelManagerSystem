@@ -6,6 +6,9 @@
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
 
+- 特别鸣谢：
+- [遗失情缘](https://blog.lost520.cn/))提供的圆形进度条加载效果！
+
 - 一款针对中小型酒店设计的管理系统。
 
 - 本项目说明：
