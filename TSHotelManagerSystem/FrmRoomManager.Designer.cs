@@ -78,7 +78,7 @@
             this.flpRoom.BackColor = System.Drawing.Color.Transparent;
             this.flpRoom.Location = new System.Drawing.Point(172, 36);
             this.flpRoom.Name = "flpRoom";
-            this.flpRoom.Size = new System.Drawing.Size(829, 415);
+            this.flpRoom.Size = new System.Drawing.Size(832, 415);
             this.flpRoom.TabIndex = 71;
             // 
             // pnlRoomState
@@ -105,7 +105,7 @@
             this.lblReser.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblReser.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblReser.ForeColor = System.Drawing.Color.Black;
-            this.lblReser.Location = new System.Drawing.Point(124, 201);
+            this.lblReser.Location = new System.Drawing.Point(120, 201);
             this.lblReser.Name = "lblReser";
             this.lblReser.Size = new System.Drawing.Size(21, 22);
             this.lblReser.TabIndex = 14;
@@ -117,7 +117,7 @@
             this.lblFix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(167)))), ((int)(((byte)(203)))));
             this.lblFix.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblFix.ForeColor = System.Drawing.Color.Black;
-            this.lblFix.Location = new System.Drawing.Point(124, 153);
+            this.lblFix.Location = new System.Drawing.Point(120, 153);
             this.lblFix.Name = "lblFix";
             this.lblFix.Size = new System.Drawing.Size(21, 22);
             this.lblFix.TabIndex = 13;
@@ -130,9 +130,10 @@
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox5.Location = new System.Drawing.Point(4, 191);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(155, 41);
+            this.pictureBox5.Size = new System.Drawing.Size(156, 41);
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             this.pictureBox5.MouseHover += new System.EventHandler(this.pictureBox5_MouseHover);
             // 
@@ -143,9 +144,10 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Location = new System.Drawing.Point(5, 144);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(155, 41);
+            this.pictureBox4.Size = new System.Drawing.Size(156, 41);
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             this.pictureBox4.MouseHover += new System.EventHandler(this.pictureBox4_MouseHover);
             // 
@@ -154,7 +156,7 @@
             this.lblNotClear.AutoSize = true;
             this.lblNotClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(155)))), ((int)(((byte)(138)))));
             this.lblNotClear.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblNotClear.Location = new System.Drawing.Point(124, 106);
+            this.lblNotClear.Location = new System.Drawing.Point(120, 106);
             this.lblNotClear.Name = "lblNotClear";
             this.lblNotClear.Size = new System.Drawing.Size(21, 22);
             this.lblNotClear.TabIndex = 11;
@@ -165,7 +167,7 @@
             this.lblCheck.AutoSize = true;
             this.lblCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(195)))), ((int)(((byte)(96)))));
             this.lblCheck.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCheck.Location = new System.Drawing.Point(124, 60);
+            this.lblCheck.Location = new System.Drawing.Point(120, 60);
             this.lblCheck.Name = "lblCheck";
             this.lblCheck.Size = new System.Drawing.Size(21, 22);
             this.lblCheck.TabIndex = 10;
@@ -176,7 +178,7 @@
             this.lblCanUse.AutoSize = true;
             this.lblCanUse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.lblCanUse.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCanUse.Location = new System.Drawing.Point(124, 12);
+            this.lblCanUse.Location = new System.Drawing.Point(120, 12);
             this.lblCanUse.Name = "lblCanUse";
             this.lblCanUse.Size = new System.Drawing.Size(21, 22);
             this.lblCanUse.TabIndex = 9;
@@ -189,9 +191,10 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Location = new System.Drawing.Point(4, 97);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(155, 41);
+            this.pictureBox3.Size = new System.Drawing.Size(156, 41);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
             this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
             // 
@@ -202,9 +205,10 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(4, 50);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(156, 41);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             this.pictureBox2.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
             // 
@@ -215,7 +219,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -352,9 +356,9 @@
             this.picRefrech.BackColor = System.Drawing.Color.Transparent;
             this.picRefrech.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.获取用户编号;
             this.picRefrech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRefrech.Location = new System.Drawing.Point(971, 7);
+            this.picRefrech.Location = new System.Drawing.Point(971, 4);
             this.picRefrech.Name = "picRefrech";
-            this.picRefrech.Size = new System.Drawing.Size(25, 23);
+            this.picRefrech.Size = new System.Drawing.Size(32, 29);
             this.picRefrech.TabIndex = 94;
             this.picRefrech.TabStop = false;
             this.picRefrech.Click += new System.EventHandler(this.picRefrech_Click);
@@ -501,6 +505,7 @@
             this.Name = "FrmRoomManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRoomManager";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.FrmRoomManager_Load);
             this.pnlRoomState.ResumeLayout(false);
             this.pnlRoomState.PerformLayout();

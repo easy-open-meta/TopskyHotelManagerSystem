@@ -136,7 +136,7 @@ namespace TSHotelManagerSystem
             {
                 return;
             }
-            g.SmoothingMode = SmoothingMode.AntiAlias;  //使绘图质量最高，即消除锯齿
+            g.SmoothingMode = SmoothingMode.HighQuality;  //使绘图质量最高，即消除锯齿
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.CompositingQuality = CompositingQuality.HighQuality;
             //1、绘制背景

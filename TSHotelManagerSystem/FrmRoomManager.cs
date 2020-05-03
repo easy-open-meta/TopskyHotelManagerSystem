@@ -160,7 +160,25 @@ namespace TSHotelManagerSystem
         private void picRefrech_Click(object sender, EventArgs e)
         {
             LoadRoom();
+        }
 
+
+        private void LoadRoomByState(int stateid)
+        {
+            flpRoom.Controls.Clear();
+            romsty = RoomService.SelectRoomByRoomState(stateid);
+            for (int i = 0; i < romsty.Count; i++)
+            {
+                romt = new ucRoomList(this);
+                romt.Tag = romsty[i].RoomNo;
+                romt.romCustoInfo = romsty[i];
+                flpRoom.Controls.Add(romt);
+            }
+            lblRoomNo.Text = "";
+            lblRoomPosition.Text = "";
+            lblRoomState.Text = "";
+            lblCustoNo.Text = "";
+            lblCheckTime.Text = "";
         }
 
         private void LoadRoom()
@@ -183,7 +201,7 @@ namespace TSHotelManagerSystem
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            LoadRoomByState(0);
         }
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
@@ -239,6 +257,27 @@ namespace TSHotelManagerSystem
         private void btnZT_MouseHover(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            flpRoom.Controls.Clear();
+            LoadRoomByState(1);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            LoadRoomByState(3);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            LoadRoomByState(2);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            LoadRoomByState(4);
         }
     }
 }

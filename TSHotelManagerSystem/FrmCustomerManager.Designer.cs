@@ -104,7 +104,7 @@
             this.dgvCustomerList.RowTemplate.Height = 23;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.ShowEditingIcon = false;
-            this.dgvCustomerList.Size = new System.Drawing.Size(970, 290);
+            this.dgvCustomerList.Size = new System.Drawing.Size(981, 290);
             this.dgvCustomerList.TabIndex = 0;
             this.dgvCustomerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellClick);
             // 
@@ -197,7 +197,7 @@
             this.gbCustoInfo.Controls.Add(this.cboSex);
             this.gbCustoInfo.Controls.Add(this.txtTel);
             this.gbCustoInfo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gbCustoInfo.Location = new System.Drawing.Point(14, 310);
+            this.gbCustoInfo.Location = new System.Drawing.Point(19, 310);
             this.gbCustoInfo.Name = "gbCustoInfo";
             this.gbCustoInfo.Size = new System.Drawing.Size(905, 131);
             this.gbCustoInfo.TabIndex = 73;
@@ -422,7 +422,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(942, 429);
+            this.label1.Location = new System.Drawing.Point(947, 429);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.TabIndex = 79;
@@ -432,7 +432,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(941, 367);
+            this.label5.Location = new System.Drawing.Point(946, 367);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 17);
             this.label5.TabIndex = 76;
@@ -447,7 +447,7 @@
             // 
             this.picAddCusto.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.添_加a;
             this.picAddCusto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picAddCusto.Location = new System.Drawing.Point(940, 325);
+            this.picAddCusto.Location = new System.Drawing.Point(945, 325);
             this.picAddCusto.Name = "picAddCusto";
             this.picAddCusto.Size = new System.Drawing.Size(40, 40);
             this.picAddCusto.TabIndex = 20;
@@ -458,7 +458,7 @@
             // 
             this.picSearch.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.搜索__1a;
             this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSearch.Location = new System.Drawing.Point(940, 387);
+            this.picSearch.Location = new System.Drawing.Point(945, 387);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(40, 40);
             this.picSearch.TabIndex = 21;
@@ -470,7 +470,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(994, 453);
+            this.ClientSize = new System.Drawing.Size(1005, 454);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbCustoInfo);
             this.Controls.Add(this.dgvCustomerList);

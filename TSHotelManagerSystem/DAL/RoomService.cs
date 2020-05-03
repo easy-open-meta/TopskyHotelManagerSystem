@@ -7,6 +7,44 @@ namespace TSHotelManagerSystem.DAL
 {
     public class RoomService
     {
+        /// <summary>
+        /// 根据房间状态获取相应状态的房间信息
+        /// </summary>
+        /// <param name="stateid"></param>
+        /// <returns></returns>
+        public static List<Room> SelectRoomByRoomState(int stateid)
+        {
+            List<Room> rooms = new List<Room>();
+            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType = t.RoomType and r.RoomStateId = rs.RoomStateId and r.RoomStateId = " + stateid;
+            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            while (dr.Read())
+            {
+                Room room = new Room();
+                room.RoomNo = (string)dr["RoomNo"];
+                room.CustoNo = dr["CustoNo"].ToString();
+                room.RoomMoney = (decimal)dr["RoomMoney"];
+                room.PersonNum = Convert.ToString(dr["PersonNum"]);
+                if (!DBNull.Value.Equals(dr["CheckTime"]))
+                {
+                    room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
+                }
+                if (!DBNull.Value.Equals(dr["CheckOutTime"]))
+                {
+                    room.CheckOutTime = DateTime.Parse(dr["CheckOutTime"].ToString());
+                }
+                room.RoomStateId = (int)dr["RoomStateId"];
+                room.RoomState = (string)dr["RoomState"];
+                room.RoomType = (int)dr["RoomType"];
+                room.RoomPosition = (string)dr["RoomPosition"];
+                room.typeName = (string)dr["RoomName"];
+                rooms.Add(room);
+            }
+            dr.Close();
+            DBHelper.Closecon();
+            return rooms;
+        }
+
+
         #region 获取所有房间信息
         /// <summary>
         /// 获取所有房间信息
@@ -121,8 +159,6 @@ namespace TSHotelManagerSystem.DAL
             return rooms;
         }
         #endregion
-
-
 
         #region 根据房间编号查询房间信息
         /// <summary>

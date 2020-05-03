@@ -8,6 +8,16 @@ namespace TSHotelManagerSystem.BLL
 {
     public class RoomManager
     {
+        /// <summary>
+        /// 根据房间状态获取相应状态的房间信息
+        /// </summary>
+        /// <param name="stateid"></param>
+        /// <returns></returns>
+        public static List<Room> SelectRoomByRoomState(int stateid)
+        {
+            return RoomService.SelectRoomByRoomState(stateid);
+        }
+
         public List<Room> SelectRoomAll()
         {
             return RoomService.SelectRoomAll();

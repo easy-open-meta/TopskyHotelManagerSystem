@@ -53,7 +53,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("苹方-简", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(110, 8);
+            this.label14.Location = new System.Drawing.Point(109, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(134, 41);
             this.label14.TabIndex = 43;
@@ -224,9 +224,9 @@
             this.btnReserList.FlatAppearance.BorderSize = 0;
             this.btnReserList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReserList.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReserList.Location = new System.Drawing.Point(114, 55);
+            this.btnReserList.Location = new System.Drawing.Point(85, 60);
             this.btnReserList.Name = "btnReserList";
-            this.btnReserList.Size = new System.Drawing.Size(128, 25);
+            this.btnReserList.Size = new System.Drawing.Size(203, 25);
             this.btnReserList.TabIndex = 71;
             this.btnReserList.Text = "预约列表";
             this.btnReserList.UseVisualStyleBackColor = true;
