@@ -91,12 +91,6 @@ namespace TSHotelManagerSystem
                 txtCustoNo.Focus();
                 return false;
             }
-            if (txtCheckNum.Text == "")
-            {
-                MessageBox.Show("请输入入住天数！", "来自小T的提示");
-                txtCheckNum.Focus();
-                return false;
-            }
             if (txtPersonNum.Text == "")
             {
                 MessageBox.Show("请输入入住人数！", "来自小T的提示");
@@ -112,17 +106,6 @@ namespace TSHotelManagerSystem
         {
             if (CheckInupt())
             {
-                #region 获取添加消费信息所需的信息
-                //Spend s = new Spend();
-                //s.RoomNo = txtRoomNo.Text;
-                //s.CustoNo = txtCustoNo.Text;
-                //s.SpendName = "住房";
-                //s.SpendAmount = Convert.ToInt32(txtCheckNum.Text);
-                //s.SpendPrice = Convert.ToDecimal(txtMoney.Text);
-                //s.SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtMoney.Text));
-                //s.SpendTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                //s.MoneyState = "未结算";
-                #endregion
 
                 if (CustoManager.SelectCustoByCustoNo(txtCustoNo.Text) != null)
                 {

@@ -120,7 +120,7 @@ namespace TSHotelManagerSystem
             {
                 btnCash.Enabled = true;
                 btnWTI.Enabled = true;
-                btnCheckGroup.Enabled = true;
+                btnCheckGroup.Enabled = false;
                 btnRoom.Enabled = true;
                 btnCusto.Enabled = true;
                 btnBackManager.Enabled = true;
@@ -131,11 +131,11 @@ namespace TSHotelManagerSystem
             {
                 btnCash.Enabled = true;
                 btnWTI.Enabled = true;
-                btnCheckGroup.Enabled = true;
+                btnCheckGroup.Enabled = false;
                 btnRoom.Enabled = true;
                 btnCusto.Enabled = true;
                 btnBackManager.Enabled = true;
-                btnWorker.Enabled = false;
+                btnWorker.Enabled = true;
                 btnWorkerLog.Enabled = false;
             }
         }
@@ -480,6 +480,11 @@ namespace TSHotelManagerSystem
             frm1.TopLevel = false;
             pnlLook.Controls.Add(frm1);
             frm1.Show();
+        }
+
+        private void tsmiWorkerManager_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

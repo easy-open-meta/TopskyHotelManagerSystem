@@ -163,7 +163,6 @@
             this.Pwd.Location = new System.Drawing.Point(300, 92);
             this.Pwd.Name = "Pwd";
             this.Pwd.PasswordChar = '*';
-            this.Pwd.ReadOnly = true;
             this.Pwd.Size = new System.Drawing.Size(148, 24);
             this.Pwd.TabIndex = 45;
             // 

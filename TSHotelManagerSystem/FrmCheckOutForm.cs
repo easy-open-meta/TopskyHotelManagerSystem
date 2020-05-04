@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
@@ -276,6 +276,7 @@ namespace TSHotelManagerSystem
                     }
                     MessageBox.Show("结算成功！", "系统提示");
                     FrmRoomManager.Reload();
+                    
                     #region 获取添加操作日志所需的信息
                     Operation o = new Operation();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -299,6 +300,7 @@ namespace TSHotelManagerSystem
                             return;
                         }
                         MessageBox.Show("结算成功！", "系统提示");
+                        FrmRoomManager.Reload();
                         #region 获取添加操作日志所需的信息
                         Operation o = new Operation();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));

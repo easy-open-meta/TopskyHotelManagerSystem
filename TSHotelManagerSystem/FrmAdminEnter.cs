@@ -24,6 +24,7 @@ namespace TSHotelManagerSystem
                     AdminInfo.Password = a.AdminPassword;
                     AdminInfo.adminType = a.AdminType;
                     AdminInfo.admingroup = a.AdminGroup;
+                    AdminInfo.adminpwd = txtAdminPassword.Text;
                     FrmBackAdmin fm = new FrmBackAdmin();
                     fm.Show();//打开主窗体
 

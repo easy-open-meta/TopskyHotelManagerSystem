@@ -29,9 +29,29 @@ namespace TSHotelManagerSystem
             Main = this;//储存主窗口实例对象
             // 接受Form1对象
             this.returnForm1 = F1;
+            Stop = StopUseExit;
+            Start = StartUseExit;
         }
 
+        public delegate void StopUseList();
+        //定义委托类型的变量
+        public static StopUseList Stop;
 
+        public delegate void StarUseList();
+        //定义委托类型的变量
+        public static StarUseList Start;
+
+        public void StopUseExit()
+        {
+            notifyIcon1.Visible = false;
+            tsmiExitSystem.Enabled = false;
+        }
+
+        public void StartUseExit()
+        {
+            notifyIcon1.Visible = true;
+            tsmiExitSystem.Enabled = true;
+        }
 
         public static FrmMain Main;//全局保存主窗口实例对象
         //private MyRoom Myroom;//房态图对象

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtCheckNum = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtRoomPosition = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCustoNo = new System.Windows.Forms.TextBox();
@@ -64,7 +62,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(321, 336);
+            this.btnClose.Location = new System.Drawing.Point(322, 300);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(74, 35);
@@ -73,30 +71,10 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtCheckNum
-            // 
-            this.txtCheckNum.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCheckNum.Location = new System.Drawing.Point(366, 28);
-            this.txtCheckNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCheckNum.Name = "txtCheckNum";
-            this.txtCheckNum.Size = new System.Drawing.Size(113, 24);
-            this.txtCheckNum.TabIndex = 102;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(293, 31);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "入住天数";
-            // 
             // txtRoomPosition
             // 
             this.txtRoomPosition.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRoomPosition.Location = new System.Drawing.Point(96, 118);
+            this.txtRoomPosition.Location = new System.Drawing.Point(383, 82);
             this.txtRoomPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRoomPosition.Name = "txtRoomPosition";
             this.txtRoomPosition.ReadOnly = true;
@@ -107,7 +85,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(23, 31);
+            this.label17.Location = new System.Drawing.Point(40, 32);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(56, 17);
@@ -119,7 +97,7 @@
             this.txtCustoNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustoNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustoNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustoNo.Location = new System.Drawing.Point(96, 28);
+            this.txtCustoNo.Location = new System.Drawing.Point(113, 29);
             this.txtCustoNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoNo.MaxLength = 6;
             this.txtCustoNo.Name = "txtCustoNo";
@@ -131,7 +109,7 @@
             // txtPersonNum
             // 
             this.txtPersonNum.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPersonNum.Location = new System.Drawing.Point(366, 58);
+            this.txtPersonNum.Location = new System.Drawing.Point(383, 22);
             this.txtPersonNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPersonNum.Name = "txtPersonNum";
             this.txtPersonNum.Size = new System.Drawing.Size(113, 24);
@@ -140,7 +118,7 @@
             // txtMoney
             // 
             this.txtMoney.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtMoney.Location = new System.Drawing.Point(366, 88);
+            this.txtMoney.Location = new System.Drawing.Point(383, 52);
             this.txtMoney.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.ReadOnly = true;
@@ -152,7 +130,7 @@
             this.txtRoomNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtRoomNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtRoomNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRoomNo.Location = new System.Drawing.Point(96, 28);
+            this.txtRoomNo.Location = new System.Drawing.Point(113, 22);
             this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRoomNo.Name = "txtRoomNo";
             this.txtRoomNo.Size = new System.Drawing.Size(113, 24);
@@ -163,7 +141,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(23, 121);
+            this.label8.Location = new System.Drawing.Point(310, 85);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 17);
@@ -174,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(293, 61);
+            this.label7.Location = new System.Drawing.Point(310, 25);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 17);
@@ -185,7 +163,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(293, 91);
+            this.label6.Location = new System.Drawing.Point(310, 55);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
@@ -196,7 +174,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(23, 91);
+            this.label5.Location = new System.Drawing.Point(40, 85);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 17);
@@ -207,7 +185,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(23, 61);
+            this.label2.Location = new System.Drawing.Point(40, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
@@ -218,7 +196,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(23, 31);
+            this.label1.Location = new System.Drawing.Point(40, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
@@ -230,7 +208,7 @@
             this.btnCheckIn.BackColor = System.Drawing.Color.Transparent;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCheckIn.Location = new System.Drawing.Point(164, 336);
+            this.btnCheckIn.Location = new System.Drawing.Point(165, 300);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(74, 35);
@@ -242,7 +220,7 @@
             // txtType
             // 
             this.txtType.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtType.Location = new System.Drawing.Point(96, 58);
+            this.txtType.Location = new System.Drawing.Point(113, 52);
             this.txtType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtType.Name = "txtType";
             this.txtType.ReadOnly = true;
@@ -252,7 +230,7 @@
             // txtState
             // 
             this.txtState.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtState.Location = new System.Drawing.Point(96, 88);
+            this.txtState.Location = new System.Drawing.Point(113, 82);
             this.txtState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtState.Name = "txtState";
             this.txtState.ReadOnly = true;
@@ -276,11 +254,9 @@
             this.gbRoomInfo.Controls.Add(this.txtRoomNo);
             this.gbRoomInfo.Controls.Add(this.txtState);
             this.gbRoomInfo.Controls.Add(this.label2);
-            this.gbRoomInfo.Controls.Add(this.txtCheckNum);
             this.gbRoomInfo.Controls.Add(this.txtType);
             this.gbRoomInfo.Controls.Add(this.txtMoney);
             this.gbRoomInfo.Controls.Add(this.txtPersonNum);
-            this.gbRoomInfo.Controls.Add(this.label3);
             this.gbRoomInfo.Controls.Add(this.label5);
             this.gbRoomInfo.Controls.Add(this.txtRoomPosition);
             this.gbRoomInfo.Controls.Add(this.label8);
@@ -289,7 +265,7 @@
             this.gbRoomInfo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gbRoomInfo.Location = new System.Drawing.Point(12, 39);
             this.gbRoomInfo.Name = "gbRoomInfo";
-            this.gbRoomInfo.Size = new System.Drawing.Size(536, 150);
+            this.gbRoomInfo.Size = new System.Drawing.Size(536, 128);
             this.gbRoomInfo.TabIndex = 108;
             this.gbRoomInfo.TabStop = false;
             this.gbRoomInfo.Text = "房间信息";
@@ -305,7 +281,7 @@
             this.gbCustoInfo.Controls.Add(this.label17);
             this.gbCustoInfo.Controls.Add(this.txtCustoNo);
             this.gbCustoInfo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gbCustoInfo.Location = new System.Drawing.Point(12, 195);
+            this.gbCustoInfo.Location = new System.Drawing.Point(12, 170);
             this.gbCustoInfo.Name = "gbCustoInfo";
             this.gbCustoInfo.Size = new System.Drawing.Size(536, 117);
             this.gbCustoInfo.TabIndex = 109;
@@ -317,7 +293,7 @@
             this.txtCustoType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustoType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustoType.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustoType.Location = new System.Drawing.Point(366, 63);
+            this.txtCustoType.Location = new System.Drawing.Point(383, 64);
             this.txtCustoType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoType.MaxLength = 6;
             this.txtCustoType.Name = "txtCustoType";
@@ -328,7 +304,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(293, 66);
+            this.label11.Location = new System.Drawing.Point(310, 67);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 17);
@@ -339,7 +315,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(23, 66);
+            this.label10.Location = new System.Drawing.Point(40, 67);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 17);
@@ -351,7 +327,7 @@
             this.txtCustoTel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustoTel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustoTel.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustoTel.Location = new System.Drawing.Point(96, 63);
+            this.txtCustoTel.Location = new System.Drawing.Point(113, 64);
             this.txtCustoTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoTel.MaxLength = 6;
             this.txtCustoTel.Name = "txtCustoTel";
@@ -362,7 +338,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(293, 31);
+            this.label9.Location = new System.Drawing.Point(310, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 17);
@@ -374,7 +350,7 @@
             this.txtCustoName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustoName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustoName.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustoName.Location = new System.Drawing.Point(366, 28);
+            this.txtCustoName.Location = new System.Drawing.Point(383, 29);
             this.txtCustoName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoName.MaxLength = 6;
             this.txtCustoName.Name = "txtCustoName";
@@ -386,7 +362,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(560, 394);
+            this.ClientSize = new System.Drawing.Size(560, 351);
             this.Controls.Add(this.gbCustoInfo);
             this.Controls.Add(this.gbRoomInfo);
             this.Controls.Add(this.label4);
@@ -410,8 +386,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtCheckNum;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRoomPosition;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtCustoNo;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TSHotelManagerSystem.Models;
 using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem
@@ -27,6 +28,16 @@ namespace TSHotelManagerSystem
 
         private void FrmChangeWorker_Load(object sender, EventArgs e)
         {
+            if(AdminInfo.adminType != "总经理")
+            {
+                btnUpWorker.Enabled = false;
+                btnUpWorker.Text = "权限不足";
+                btnCheck.Enabled = false;
+                btnCheck.Text = "权限不足";
+                btnGoodBad.Enabled = false;
+                btnGoodBad.Text = "权限不足";
+            }
+
             wk_WorkerNo = FrmTopChange.wk_WorkerNo;
             wk_WorkerName = FrmTopChange.wk_WorkerName;
             wk_WorkerBirthday = FrmTopChange.wk_WorkerBirthday;

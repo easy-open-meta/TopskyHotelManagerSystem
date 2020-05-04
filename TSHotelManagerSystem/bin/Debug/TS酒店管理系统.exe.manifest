@@ -4,7 +4,7 @@
   <description asmv2:iconFile="bitbug_favicon (1).ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="TS酒店管理系统" version="1.4.0.7" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="TS酒店管理系统" version="1.4.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="TS酒店管理系统.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TS酒店管理系统.exe" size="5787128">
-      <assemblyIdentity name="TS酒店管理系统" version="1.4.0.7" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TS酒店管理系统.exe" size="5788664">
+      <assemblyIdentity name="TS酒店管理系统" version="1.4.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T3q+Kn5zmP3AbOrePppmqaQQQ0FOZGMbe4b4WULZiRQ=</dsig:DigestValue>
+        <dsig:DigestValue>ipZJimvRLCHGWBB82gvSJFUrlohA+cWfYGS9k5BjH4s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

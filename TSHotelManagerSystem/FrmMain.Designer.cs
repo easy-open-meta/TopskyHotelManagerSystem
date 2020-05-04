@@ -466,8 +466,6 @@
         private System.Windows.Forms.PictureBox picExtend;
         private System.Windows.Forms.Panel pnlMID;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeUser;
@@ -485,5 +483,7 @@
         private System.Windows.Forms.Label lblCheckDay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblClose;
+        public System.Windows.Forms.NotifyIcon notifyIcon1;
+        public System.Windows.Forms.ContextMenuStrip cmsMain;
     }
 }

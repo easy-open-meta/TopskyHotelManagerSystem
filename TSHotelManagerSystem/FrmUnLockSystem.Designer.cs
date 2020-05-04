@@ -41,17 +41,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(48, 20);
+            this.label1.Location = new System.Drawing.Point(28, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(354, 26);
+            this.label1.Size = new System.Drawing.Size(392, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前系统已锁定，请输入密码进行解锁！";
+            this.label1.Text = "当前系统已锁定，请输入超管密码进行解锁！";
             // 
             // txtUnLockPwd
             // 
             this.txtUnLockPwd.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtUnLockPwd.Location = new System.Drawing.Point(95, 54);
             this.txtUnLockPwd.Name = "txtUnLockPwd";
+            this.txtUnLockPwd.PasswordChar = '*';
             this.txtUnLockPwd.Size = new System.Drawing.Size(259, 34);
             this.txtUnLockPwd.TabIndex = 1;
             this.txtUnLockPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnLockPwd_KeyDown);
@@ -86,7 +87,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmUnLockSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmUnLockSystem";
+            this.Text = "系统锁定";
             this.Deactivate += new System.EventHandler(this.FrmUnLockSystem_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUnLockSystem_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUnLockSystem_FormClosed);

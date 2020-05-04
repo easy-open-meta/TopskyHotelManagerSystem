@@ -187,33 +187,34 @@
             this.tsmiRestoreDatabase,
             this.tsmiAdminSet});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(149, 92);
+            this.cmsMain.Size = new System.Drawing.Size(181, 114);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiWorkerManager
             // 
             this.tsmiWorkerManager.Name = "tsmiWorkerManager";
-            this.tsmiWorkerManager.Size = new System.Drawing.Size(148, 22);
+            this.tsmiWorkerManager.Size = new System.Drawing.Size(180, 22);
             this.tsmiWorkerManager.Text = "员工登入设置";
+            this.tsmiWorkerManager.Click += new System.EventHandler(this.tsmiWorkerManager_Click);
             // 
             // tsmiBackUpDatabase
             // 
             this.tsmiBackUpDatabase.Name = "tsmiBackUpDatabase";
-            this.tsmiBackUpDatabase.Size = new System.Drawing.Size(148, 22);
+            this.tsmiBackUpDatabase.Size = new System.Drawing.Size(180, 22);
             this.tsmiBackUpDatabase.Text = "数据库备份";
             this.tsmiBackUpDatabase.Click += new System.EventHandler(this.tsmiBackUpDatabase_Click);
             // 
             // tsmiRestoreDatabase
             // 
             this.tsmiRestoreDatabase.Name = "tsmiRestoreDatabase";
-            this.tsmiRestoreDatabase.Size = new System.Drawing.Size(148, 22);
+            this.tsmiRestoreDatabase.Size = new System.Drawing.Size(180, 22);
             this.tsmiRestoreDatabase.Text = "数据库还原";
             this.tsmiRestoreDatabase.Click += new System.EventHandler(this.tsmiRestoreDatabase_Click);
             // 
             // tsmiAdminSet
             // 
             this.tsmiAdminSet.Name = "tsmiAdminSet";
-            this.tsmiAdminSet.Size = new System.Drawing.Size(148, 22);
+            this.tsmiAdminSet.Size = new System.Drawing.Size(180, 22);
             this.tsmiAdminSet.Text = "管理员设置";
             // 
             // label1

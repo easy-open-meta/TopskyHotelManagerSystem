@@ -22,9 +22,21 @@ namespace TSHotelManagerSystem
         public static string wk_WorkerFace;
         public static string wk_WorkerEducation;
 
+        public delegate void ReLoadWorkerList();
+
+
+        //定义委托类型的变量
+        public static ReLoadWorkerList Reload;
+
         public FrmTopChange()
         {
             InitializeComponent();
+            Reload = LoadWorker;
+        }
+
+        private void LoadWorker()
+        {
+            dgvWorkerList.DataSource = WorkerService.SelectWorkerAll();
         }
 
         public void CmpSetDgv()
@@ -57,7 +69,13 @@ namespace TSHotelManagerSystem
         private void FrmTopChange_Load(object sender, EventArgs e)
         {
             CmpSetDgv();
+            dgvWorkerList.AutoGenerateColumns = false;
             dgvWorkerList.DataSource = WorkerService.SelectWorkerAll();
+            if (AdminInfo.adminType != "总经理")
+            {
+                btnAddWorker.Enabled = false;
+                btnAddWorker.Text = "权限不足";
+            }
         }
 
         private void dgvWorkerList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -84,23 +102,17 @@ namespace TSHotelManagerSystem
             }
         }
 
-        private void tsmiRefresh_Click(object sender, EventArgs e)
-        {
-            dgvWorkerList.DataSource = WorkerService.SelectWorkerAll();
-        }
+        
 
-        private void cmsMain_Opening(object sender, CancelEventArgs e)
-        {
-            if (AdminInfo.adminType != "总经理")
-            {
-                tsmiAddWorker.Enabled = false;
-            }
-        }
-
-        private void tsmiAddWorker_Click(object sender, EventArgs e)
+        private void btnAddWorker_Click(object sender, EventArgs e)
         {
             FrmAddWorker frm = new FrmAddWorker();
             frm.Show();
+        }
+
+        private void btnRefush_Click(object sender, EventArgs e)
+        {
+            LoadWorker();
         }
     }
 }

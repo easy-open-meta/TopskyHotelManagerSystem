@@ -46,19 +46,6 @@ namespace TSHotelManagerSystem
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
             }
-
-            lblCanUse.Text = RoomManager.SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = RoomManager.SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = RoomManager.SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = RoomManager.SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = RoomManager.SelectReseredRoomAllByRoomState().ToString();
-
-
-
-
-
-
-
         }
         #endregion
 
@@ -81,6 +68,11 @@ namespace TSHotelManagerSystem
 
         private void tmrGetData_Tick(object sender, EventArgs e)
         {
+            lblCanUse.Text = RoomManager.SelectCanUseRoomAllByRoomState().ToString();
+            lblCheck.Text = RoomManager.SelectNotUseRoomAllByRoomState().ToString();
+            lblNotClear.Text = RoomManager.SelectNotClearRoomAllByRoomState().ToString();
+            lblFix.Text = RoomManager.SelectFixingRoomAllByRoomState().ToString();
+            lblReser.Text = RoomManager.SelectReseredRoomAllByRoomState().ToString();
             lblRoomNo.Text = ucRoomList.co_RoomNo;
             lblCustoNo.Text = ucRoomList.co_CustoNo;
             lblRoomPosition.Text = ucRoomList.co_RoomPosition;

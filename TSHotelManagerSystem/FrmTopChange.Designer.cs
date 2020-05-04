@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvWorkerList = new System.Windows.Forms.DataGridView();
-            this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAddWorker = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddWorker = new System.Windows.Forms.Button();
+            this.btnRefush = new System.Windows.Forms.Button();
             this.clWorkerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clWorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clWorkerBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +46,6 @@
             this.clWorkerFace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clWorkerEducation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkerList)).BeginInit();
-            this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvWorkerList
@@ -72,7 +69,6 @@
             this.clWorkerTime,
             this.clWorkerFace,
             this.clWorkerEducation});
-            this.dgvWorkerList.ContextMenuStrip = this.cmsMain;
             this.dgvWorkerList.Location = new System.Drawing.Point(2, 1);
             this.dgvWorkerList.Name = "dgvWorkerList";
             this.dgvWorkerList.ReadOnly = true;
@@ -80,32 +76,35 @@
             this.dgvWorkerList.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkerList.RowTemplate.Height = 23;
             this.dgvWorkerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWorkerList.Size = new System.Drawing.Size(984, 493);
+            this.dgvWorkerList.Size = new System.Drawing.Size(984, 465);
             this.dgvWorkerList.TabIndex = 0;
             this.dgvWorkerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkerList_CellClick);
             // 
-            // cmsMain
+            // btnAddWorker
             // 
-            this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiRefresh,
-            this.tsmiAddWorker});
-            this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(125, 48);
-            this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
+            this.btnAddWorker.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.button;
+            this.btnAddWorker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddWorker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddWorker.Location = new System.Drawing.Point(911, 470);
+            this.btnAddWorker.Name = "btnAddWorker";
+            this.btnAddWorker.Size = new System.Drawing.Size(75, 23);
+            this.btnAddWorker.TabIndex = 1;
+            this.btnAddWorker.Text = "添加员工";
+            this.btnAddWorker.UseVisualStyleBackColor = true;
+            this.btnAddWorker.Click += new System.EventHandler(this.btnAddWorker_Click);
             // 
-            // tsmiRefresh
+            // btnRefush
             // 
-            this.tsmiRefresh.Name = "tsmiRefresh";
-            this.tsmiRefresh.Size = new System.Drawing.Size(124, 22);
-            this.tsmiRefresh.Text = "刷新列表";
-            this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
-            // 
-            // tsmiAddWorker
-            // 
-            this.tsmiAddWorker.Name = "tsmiAddWorker";
-            this.tsmiAddWorker.Size = new System.Drawing.Size(124, 22);
-            this.tsmiAddWorker.Text = "添加员工";
-            this.tsmiAddWorker.Click += new System.EventHandler(this.tsmiAddWorker_Click);
+            this.btnRefush.BackgroundImage = global::TSHotelManagerSystem.Properties.Resources.button;
+            this.btnRefush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefush.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRefush.Location = new System.Drawing.Point(830, 470);
+            this.btnRefush.Name = "btnRefush";
+            this.btnRefush.Size = new System.Drawing.Size(75, 23);
+            this.btnRefush.TabIndex = 2;
+            this.btnRefush.Text = "刷新列表";
+            this.btnRefush.UseVisualStyleBackColor = true;
+            this.btnRefush.Click += new System.EventHandler(this.btnRefush_Click);
             // 
             // clWorkerNo
             // 
@@ -169,6 +168,7 @@
             this.clWorkerID.HeaderText = "身份证号码";
             this.clWorkerID.Name = "clWorkerID";
             this.clWorkerID.ReadOnly = true;
+            this.clWorkerID.Visible = false;
             // 
             // clWorkerPwd
             // 
@@ -205,6 +205,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(989, 497);
+            this.Controls.Add(this.btnRefush);
+            this.Controls.Add(this.btnAddWorker);
             this.Controls.Add(this.dgvWorkerList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTopChange";
@@ -212,7 +214,6 @@
             this.Text = "FrmTopChange";
             this.Load += new System.EventHandler(this.FrmTopChange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkerList)).EndInit();
-            this.cmsMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -220,9 +221,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvWorkerList;
-        private System.Windows.Forms.ContextMenuStrip cmsMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRefresh;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAddWorker;
+        private System.Windows.Forms.Button btnAddWorker;
+        private System.Windows.Forms.Button btnRefush;
         private System.Windows.Forms.DataGridViewTextBoxColumn clWorkerNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clWorkerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clWorkerBirth;

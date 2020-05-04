@@ -543,6 +543,8 @@
     <EmbeddedResource Include="WtiInfo.resx">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\启用任务管理器.reg" />
+    <None Include="bin\Debug\禁用任务管理器.reg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

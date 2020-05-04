@@ -192,6 +192,7 @@ namespace TSHotelManagerSystem
                         if (n > 0 && j > 0)
                         {
                             MessageBox.Show("员工信息/履历添加成功！该员工登录密码为：" + Pwd.Text + "，请提醒员工妥善保管！");
+                            FrmTopChange.Reload();
                             #region 获取添加操作日志所需的信息
                             Operation o = new Operation();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));

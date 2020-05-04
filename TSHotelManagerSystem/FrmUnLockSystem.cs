@@ -1,22 +1,42 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using TSHotelManagerSystem.Models;
 
 namespace TSHotelManagerSystem
 {
     public partial class FrmUnLockSystem : Form
     {
+
         public FrmUnLockSystem()
         {
             InitializeComponent();
         }
 
+        private const int SC_CLOSE = 0xF060;
+
+        private const int MF_ENABLED = 0x00000000;
+
+        private const int MF_GRAYED = 0x00000001;
+
+        private const int MF_DISABLED = 0x00000002;
+
+
+
+        [DllImport("user32.dll", EntryPoint = "GetSystemMenu")]
+
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, int bRevert);
+
+        [DllImport("User32.dll")]
+
+        public static extern bool EnableMenuItem(IntPtr hMenu, int uIDEnableItem, int uEnable);
+
         private void FrmUnLockSystem_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-
-
+            //HookStop();
         }
 
         private void FrmUnLockSystem_Deactivate(object sender, EventArgs e)
@@ -26,9 +46,9 @@ namespace TSHotelManagerSystem
 
         private void btnUnLock_Click(object sender, EventArgs e)
         {
-            if (txtUnLockPwd.Text != "admin")
+            if (txtUnLockPwd.Text != AdminInfo.adminpwd)
             {
-                MessageBox.Show("密码错误! 请输入当前登陆密码解锁!");
+                MessageBox.Show("密码错误! 请输入当前超管密码解锁!");
                 txtUnLockPwd.Text = "";
                 txtUnLockPwd.Focus();
             }
@@ -37,8 +57,10 @@ namespace TSHotelManagerSystem
                 this.Close();
                 string regPath = Application.StartupPath + @"\启用任务管理器.reg";
                 ExecuteReg(regPath);
+                FrmMain.Start();
             }
         }
+
 
         private void FrmUnLockSystem_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -52,25 +74,44 @@ namespace TSHotelManagerSystem
 
         private void FrmUnLockSystem_Load(object sender, EventArgs e)
         {
-            //Timer t = new Timer();
-            //t.Interval = 200;
-            //t.Tick += delegate
-            //{
-            //    this.Activate();
-            //    Process[] p = Process.GetProcesses();
-            //    foreach (Process p1 in p)
-            //    {
-            //        try
-            //        {
-            //            if (p1.ProcessName.ToLower().Trim() == "任务管理器")//这里判断是任务管理器   
-            //            { p1.Kill(); break; }
-            //        }
-            //        catch { }
-            //    }
-            //};
-            //t.Start();
             string regPath = Application.StartupPath + @"\禁用任务管理器.reg";
             ExecuteReg(regPath);
+            FrmMain.Stop();
+            //HookStart();
+            Process[] ps = Process.GetProcessesByName("TS酒店管理系统");
+            if (ps.Length < 0)
+            {
+                foreach (Process p in ps)
+                    p.Kill();
+                FrmMain.Start();
+            }
+            IntPtr hMenu = GetSystemMenu(this.Handle, 0);
+            EnableMenuItem(hMenu, SC_CLOSE, MF_DISABLED | MF_GRAYED);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_NOCLOSE = 0x200;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
+                return cp;
+            }
+
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg == 0x84 && m.Result == (IntPtr)2) // 不让拖动标题栏
+            {
+                m.Result = (IntPtr)1;
+            }
+            if (m.Msg == 0xA3)                         // 双击标题栏无反应
+            {
+                m.WParam = System.IntPtr.Zero;
+            }
         }
 
         /// <summary>  
@@ -88,10 +129,10 @@ namespace TSHotelManagerSystem
 
         private void FrmUnLockSystem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F4 && e.Alt)
+            if (e.KeyCode == Keys.F4 && e.Modifiers == Keys.Alt) 
             {
-                e.Handled = true;
                 MessageBox.Show("请输入解锁密码！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                e.Handled = true;
             }
         }
 

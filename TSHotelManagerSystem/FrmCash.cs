@@ -46,7 +46,11 @@ namespace TSHotelManagerSystem
             dgvCashList.DataSource = CashManager.SelectCashInfoAll();
             Random random = new Random();
             txtCashNo.Text = "CN" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
-
+            if (AdminInfo.adminType != "财务经理" && AdminInfo.adminType != "总经理")
+            {
+                btnOK.Enabled = false;
+                btnOK.Text = "权限不足";
+            }
 
         }
 

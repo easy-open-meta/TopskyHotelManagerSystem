@@ -17,6 +17,8 @@
         /// </summary>
         public static string admingroup = "";
 
+        public static string adminpwd = "";
+
 
 
     }
