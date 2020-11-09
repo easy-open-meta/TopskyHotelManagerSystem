@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem

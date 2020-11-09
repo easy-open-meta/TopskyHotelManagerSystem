@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using TSHotelManagerSystem.Models;
+using Core;
 using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem

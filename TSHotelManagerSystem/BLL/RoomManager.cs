@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.BLL
 {

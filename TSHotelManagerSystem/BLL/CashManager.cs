@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.BLL
 {
@@ -12,7 +12,7 @@ namespace TSHotelManagerSystem.BLL
             return CashService.SelectCashInfoAll();
         }
 
-        public static object AddCashInfo(Models.Cash cash)
+        public static object AddCashInfo(Cash cash)
         {
             return CashService.AddCashInfo(cash);
         }

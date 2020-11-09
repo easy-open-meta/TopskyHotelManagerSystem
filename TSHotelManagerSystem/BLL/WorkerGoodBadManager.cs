@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.BLL
 {

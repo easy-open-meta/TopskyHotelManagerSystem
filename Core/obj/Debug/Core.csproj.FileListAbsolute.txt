@@ -1,0 +1,5 @@
+D:\Gitee\TopskyHotelManagerSystem\Core\bin\Debug\Core.dll
+D:\Gitee\TopskyHotelManagerSystem\Core\bin\Debug\Core.pdb
+D:\Gitee\TopskyHotelManagerSystem\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\Gitee\TopskyHotelManagerSystem\Core\obj\Debug\Core.dll
+D:\Gitee\TopskyHotelManagerSystem\Core\obj\Debug\Core.pdb

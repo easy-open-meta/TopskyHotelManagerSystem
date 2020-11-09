@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem
 {
@@ -61,7 +61,7 @@ namespace TSHotelManagerSystem
                 DialogResult dr = MessageBox.Show("请确认信息没有错误，一旦录入则无法修改！", "警告提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
-                    Models.Cash cash = new Models.Cash();
+                    Cash cash = new Cash();
                     cash.CashNo = txtCashNo.Text.Trim();
                     cash.CashName = txtCashName.Text.Trim();
                     cash.CashPrice = txtCashMoney.Text.Trim();

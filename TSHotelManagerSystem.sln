@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSHotelManagerSystem", "TSH
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{308F4014-DB18-4942-BCCB-4EC191148EA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{8854DCB7-F2D7-4276-8D10-C7A124436145}.Release|Any CPU.Build.0 = Release|Any CPU
 		{308F4014-DB18-4942-BCCB-4EC191148EA0}.Debug|Any CPU.ActiveCfg = Debug
 		{308F4014-DB18-4942-BCCB-4EC191148EA0}.Release|Any CPU.ActiveCfg = Release
+		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

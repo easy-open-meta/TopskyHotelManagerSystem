@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem

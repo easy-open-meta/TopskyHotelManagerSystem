@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem
 {

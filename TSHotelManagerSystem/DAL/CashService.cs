@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.DAL
 {
     public class CashService
     {
 
-        public static object AddCashInfo(Models.Cash cash)
+        public static object AddCashInfo(Cash cash)
         {
             string sql = "insert into cashinfo values('" + cash.CashNo + "','" + cash.CashName + "','" + cash.CashPrice + "','" + cash.CashClub + "','" + cash.CashTime + "','" + cash.CashSource + "','" + cash.CashPerson + "')";
             return DBHelper.ExecuteNonQuery(sql);

@@ -363,29 +363,6 @@
     <Compile Include="FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\AdminInfo.cs" />
-    <Compile Include="Models\Cash.cs" />
-    <Compile Include="Models\CheckInfo.cs" />
-    <Compile Include="Models\CustoSpend.cs" />
-    <Compile Include="Models\CustoType.cs" />
-    <Compile Include="Models\Fonts.cs" />
-    <Compile Include="Models\LoginInfo.cs" />
-    <Compile Include="Models\Notice.cs" />
-    <Compile Include="Models\Operation.cs" />
-    <Compile Include="Models\OperationLog.cs" />
-    <Compile Include="Models\Reser.cs" />
-    <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\RoomStatic.cs" />
-    <Compile Include="Models\RoomType.cs" />
-    <Compile Include="Models\Custo.cs" />
-    <Compile Include="Models\SellThing.cs" />
-    <Compile Include="Models\Spend.cs" />
-    <Compile Include="Models\Worker.cs" />
-    <Compile Include="Models\WorkerCheck.cs" />
-    <Compile Include="Models\WorkerGoodBad.cs" />
-    <Compile Include="Models\WorkerHistory.cs" />
-    <Compile Include="Models\Wti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucHistory.cs">
@@ -912,6 +889,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

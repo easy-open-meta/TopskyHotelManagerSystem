@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.DAL
 {

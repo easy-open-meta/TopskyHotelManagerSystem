@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using TSHotelManagerSystem.DAL;
-using TSHotelManagerSystem.Models;
+using Core;
 
 namespace TSHotelManagerSystem.BLL
 {
