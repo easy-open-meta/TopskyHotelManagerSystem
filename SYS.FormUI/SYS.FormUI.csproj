@@ -107,24 +107,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AdminManager.cs" />
-    <Compile Include="BLL\CashManager.cs" />
-    <Compile Include="BLL\CheckInfoManager.cs" />
-    <Compile Include="BLL\CustoManager.cs" />
-    <Compile Include="BLL\CustoTypeManager.cs" />
-    <Compile Include="BLL\FontsManager.cs" />
-    <Compile Include="BLL\NoticeManager.cs" />
-    <Compile Include="BLL\OperationManager.cs" />
-    <Compile Include="BLL\ReserManager.cs" />
-    <Compile Include="BLL\RoomManager.cs" />
-    <Compile Include="BLL\RoomTypeManager.cs" />
-    <Compile Include="BLL\SellThingManager.cs" />
-    <Compile Include="BLL\SpendManager.cs" />
-    <Compile Include="BLL\WorkerCheckManager.cs" />
-    <Compile Include="BLL\WorkerGoodBadManager.cs" />
-    <Compile Include="BLL\WorkerHistoryManager.cs" />
-    <Compile Include="BLL\WorkerManager.cs" />
-    <Compile Include="BLL\WtiManager.cs" />
     <Compile Include="CircleProgramBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -879,6 +861,10 @@
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Manager\SYS.Manager.csproj">
+      <Project>{c60df246-c4fc-4045-91e5-093b0aa4d4ef}</Project>
+      <Name>SYS.Manager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

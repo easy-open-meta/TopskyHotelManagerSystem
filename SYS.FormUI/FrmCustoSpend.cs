@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 
 namespace SYS.FormUI
 {

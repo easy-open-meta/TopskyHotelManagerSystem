@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 

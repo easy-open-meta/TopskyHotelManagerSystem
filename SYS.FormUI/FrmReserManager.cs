@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 using SYS.Core;
 using SYS.Application;
 

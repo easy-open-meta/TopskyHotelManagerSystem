@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 using SYS.Core;
 using SYS.Application;
 using SYS.FormUI.Properties;

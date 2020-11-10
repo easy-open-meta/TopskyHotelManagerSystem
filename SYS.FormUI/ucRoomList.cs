@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 

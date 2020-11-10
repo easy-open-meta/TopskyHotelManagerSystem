@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SYS.FormUI.BLL;
+using SYS.Manager;
 using SYS.Core;
 
 namespace SYS.FormUI
