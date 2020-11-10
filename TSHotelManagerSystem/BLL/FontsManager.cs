@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using TSHotelManagerSystem.DAL;
+using Core;
 using Core;
 
 namespace TSHotelManagerSystem.BLL

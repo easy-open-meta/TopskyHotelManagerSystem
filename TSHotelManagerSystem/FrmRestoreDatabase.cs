@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using TSHotelManagerSystem.DAL;
+using Core;
 
 namespace TSHotelManagerSystem
 {

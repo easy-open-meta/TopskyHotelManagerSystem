@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TSHotelManagerSystem.DAL;
+using SYS.Application;
 using ThreadState = System.Threading.ThreadState;
 
 namespace TSHotelManagerSystem

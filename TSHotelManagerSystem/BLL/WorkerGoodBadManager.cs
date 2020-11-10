@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TSHotelManagerSystem.DAL;
 using Core;
+using SYS.Application;
 
 namespace TSHotelManagerSystem.BLL
 {

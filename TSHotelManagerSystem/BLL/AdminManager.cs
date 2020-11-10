@@ -1,6 +1,5 @@
 ﻿using Core;
-using TSHotelManagerSystem.DAL;
-using Core;
+using SYS.Application;
 
 namespace TSHotelManagerSystem.BLL
 {

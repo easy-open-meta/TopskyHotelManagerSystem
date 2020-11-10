@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,30 +42,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
-    <Compile Include="AdminInfo.cs" />
-    <Compile Include="Cash.cs" />
-    <Compile Include="CheckInfo.cs" />
-    <Compile Include="Custo.cs" />
-    <Compile Include="CustoSpend.cs" />
-    <Compile Include="CustoType.cs" />
-    <Compile Include="Fonts.cs" />
-    <Compile Include="LoginInfo.cs" />
-    <Compile Include="Notice.cs" />
-    <Compile Include="Operation.cs" />
-    <Compile Include="OperationLog.cs" />
+    <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="Zero\Admin.cs" />
+    <Compile Include="Zero\AdminInfo.cs" />
+    <Compile Include="Business\Cash.cs" />
+    <Compile Include="Room\CheckInfo.cs" />
+    <Compile Include="Customer\Custo.cs" />
+    <Compile Include="Customer\CustoSpend.cs" />
+    <Compile Include="Customer\CustoType.cs" />
+    <Compile Include="Util\Fonts.cs" />
+    <Compile Include="Zero\LoginInfo.cs" />
+    <Compile Include="Zero\Notice.cs" />
+    <Compile Include="Zero\Operation.cs" />
+    <Compile Include="Zero\OperationLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reser.cs" />
-    <Compile Include="Room.cs" />
-    <Compile Include="RoomStatic.cs" />
-    <Compile Include="RoomType.cs" />
-    <Compile Include="SellThing.cs" />
-    <Compile Include="Spend.cs" />
-    <Compile Include="Worker.cs" />
-    <Compile Include="WorkerCheck.cs" />
-    <Compile Include="WorkerGoodBad.cs" />
-    <Compile Include="WorkerHistory.cs" />
-    <Compile Include="Wti.cs" />
+    <Compile Include="Business\Reser.cs" />
+    <Compile Include="Room\Room.cs" />
+    <Compile Include="Room\RoomStatic.cs" />
+    <Compile Include="Room\RoomType.cs" />
+    <Compile Include="Business\SellThing.cs" />
+    <Compile Include="Business\Spend.cs" />
+    <Compile Include="Worker\Worker.cs" />
+    <Compile Include="Worker\WorkerCheck.cs" />
+    <Compile Include="Worker\WorkerGoodBad.cs" />
+    <Compile Include="Worker\WorkerHistory.cs" />
+    <Compile Include="Business\Wti.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using TSHotelManagerSystem.DAL;
 using Core;
-
+using SYS.Application;
 namespace TSHotelManagerSystem
 {
     public partial class WtiInfo : Form

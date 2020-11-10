@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using TSHotelManagerSystem.DAL;
 using Core;
+using SYS.Application;
 
 namespace TSHotelManagerSystem.BLL
 {

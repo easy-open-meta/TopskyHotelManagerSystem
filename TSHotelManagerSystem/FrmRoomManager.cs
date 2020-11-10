@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.DAL;
 using Core;
+using SYS.Application;
 using TSHotelManagerSystem.Properties;
 
 namespace TSHotelManagerSystem

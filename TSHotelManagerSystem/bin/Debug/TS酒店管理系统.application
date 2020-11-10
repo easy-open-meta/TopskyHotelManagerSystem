@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TS酒店管理系统.exe.manifest" size="7374">
+    <dependentAssembly dependencyType="install" codebase="TS酒店管理系统.exe.manifest" size="8629">
       <assemblyIdentity name="TS酒店管理系统.exe" version="1.4.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5/i9+IOenJgUsIyHZEl85A0FS14iQJPtwJqbSt8ttHk=</dsig:DigestValue>
+        <dsig:DigestValue>r0GXQedlj85DPWyIL6KuAhwGRWPyiMx+x6ro02NryoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

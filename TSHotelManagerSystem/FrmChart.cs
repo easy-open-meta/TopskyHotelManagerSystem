@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using TSHotelManagerSystem.DAL;
 using Core;
+using SYS.Application;
 
 namespace TSHotelManagerSystem
 {

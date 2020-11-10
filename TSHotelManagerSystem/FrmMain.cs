@@ -6,7 +6,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TSHotelManagerSystem.BLL;
-using TSHotelManagerSystem.DAL;
+using Core;
 using Core;
 using TSHotelManagerSystem.Properties;
 

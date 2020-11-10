@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using TSHotelManagerSystem.DAL;
 using Core;
+using SYS.Application;
 
 namespace TSHotelManagerSystem.BLL
 {

@@ -128,25 +128,6 @@
     <Compile Include="CircleProgramBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\AdminService.cs" />
-    <Compile Include="DAL\CashService.cs" />
-    <Compile Include="DAL\CheckInfoService.cs" />
-    <Compile Include="DAL\CustoTypeService.cs" />
-    <Compile Include="DAL\NoticeService.cs" />
-    <Compile Include="DAL\Operationlog.cs" />
-    <Compile Include="DAL\OperationService.cs" />
-    <Compile Include="DAL\ReserService.cs" />
-    <Compile Include="DAL\CustoService.cs" />
-    <Compile Include="DAL\RoomTypeService.cs" />
-    <Compile Include="DAL\SellService.cs" />
-    <Compile Include="DAL\SpendService.cs" />
-    <Compile Include="DAL\WorkerCheckService.cs" />
-    <Compile Include="DAL\WorkerGoodBadService.cs" />
-    <Compile Include="DAL\WorkerHistoryService.cs" />
-    <Compile Include="DAL\WorkerService.cs" />
-    <Compile Include="DAL\WtiService.cs" />
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="DAL\RoomService.cs" />
     <Compile Include="FrmChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -891,11 +872,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application\SYS.Application.csproj">
+      <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
+      <Name>SYS.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
