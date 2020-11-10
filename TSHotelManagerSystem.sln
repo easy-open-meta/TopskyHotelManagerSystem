@@ -9,7 +9,7 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Application", "Application\SYS.Application.csproj", "{600F4CC8-4323-4237-A55C-BFEF4B67D57C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Application", "SYS.Application\SYS.Application.csproj", "{600F4CC8-4323-4237-A55C-BFEF4B67D57C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

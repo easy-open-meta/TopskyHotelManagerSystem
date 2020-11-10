@@ -1,9 +1,0 @@
-E:\MyProject\Application\bin\Debug\Core.dll
-E:\MyProject\Application\bin\Debug\Core.pdb
-E:\MyProject\Application\obj\Debug\SYS.Application.csprojAssemblyReference.cache
-E:\MyProject\Application\obj\Debug\SYS.Application.csproj.CoreCompileInputs.cache
-E:\MyProject\Application\obj\Debug\SYS.Application.csproj.CopyComplete
-E:\MyProject\Application\bin\Debug\SYS.Application.dll
-E:\MyProject\Application\bin\Debug\SYS.Application.pdb
-E:\MyProject\Application\obj\Debug\SYS.Application.dll
-E:\MyProject\Application\obj\Debug\SYS.Application.pdb
