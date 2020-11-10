@@ -1,0 +1,10 @@
+E:\MyProject\Core\bin\Debug\Core.dll
+E:\MyProject\Core\bin\Debug\Core.pdb
+E:\MyProject\Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
+E:\MyProject\Core\obj\Debug\Core.dll
+E:\MyProject\Core\obj\Debug\Core.pdb
+E:\MyProject\SYS.Core\bin\Debug\SYS.Core.dll
+E:\MyProject\SYS.Core\bin\Debug\SYS.Core.pdb
+E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
+E:\MyProject\SYS.Core\obj\Debug\SYS.Core.dll
+E:\MyProject\SYS.Core\obj\Debug\SYS.Core.pdb

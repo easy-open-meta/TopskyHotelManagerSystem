@@ -9,8 +9,8 @@ E:\MyProject\Application\obj\Debug\SYS.Application.dll
 E:\MyProject\Application\obj\Debug\SYS.Application.pdb
 E:\MyProject\SYS.Application\bin\Debug\SYS.Application.dll
 E:\MyProject\SYS.Application\bin\Debug\SYS.Application.pdb
-E:\MyProject\SYS.Application\bin\Debug\Core.dll
-E:\MyProject\SYS.Application\bin\Debug\Core.pdb
+E:\MyProject\SYS.Application\bin\Debug\SYS.Core.dll
+E:\MyProject\SYS.Application\bin\Debug\SYS.Core.pdb
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.csprojAssemblyReference.cache
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.csproj.CopyComplete

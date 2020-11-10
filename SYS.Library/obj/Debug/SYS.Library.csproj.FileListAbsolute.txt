@@ -1,0 +1,14 @@
+E:\MyProject\SYS.Library\bin\Debug\SYS.Library.dll
+E:\MyProject\SYS.Library\bin\Debug\SYS.Library.pdb
+E:\MyProject\SYS.Library\bin\Debug\SYS.Application.dll
+E:\MyProject\SYS.Library\bin\Debug\SYS.Core.dll
+E:\MyProject\SYS.Library\bin\Debug\TS酒店管理系统.exe
+E:\MyProject\SYS.Library\bin\Debug\SYS.Application.pdb
+E:\MyProject\SYS.Library\bin\Debug\SYS.Core.pdb
+E:\MyProject\SYS.Library\bin\Debug\TS酒店管理系统.pdb
+E:\MyProject\SYS.Library\bin\Debug\TS酒店管理系统.exe.config
+E:\MyProject\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
+E:\MyProject\SYS.Library\obj\Debug\SYS.Library.csproj.CopyComplete
+E:\MyProject\SYS.Library\obj\Debug\SYS.Library.dll
+E:\MyProject\SYS.Library\obj\Debug\SYS.Library.pdb
+E:\MyProject\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache

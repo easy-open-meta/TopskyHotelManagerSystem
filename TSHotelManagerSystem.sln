@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1267
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSHotelManagerSystem", "TSHotelManagerSystem\TSHotelManagerSystem.csproj", "{8854DCB7-F2D7-4276-8D10-C7A124436145}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.FormUI", "SYS.FormUI\SYS.FormUI.csproj", "{8854DCB7-F2D7-4276-8D10-C7A124436145}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{308F4014-DB18-4942-BCCB-4EC191148EA0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Core", "SYS.Core\SYS.Core.csproj", "{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Application", "SYS.Application\SYS.Application.csproj", "{600F4CC8-4323-4237-A55C-BFEF4B67D57C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Library", "SYS.Library\SYS.Library.csproj", "{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +21,6 @@ Global
 		{8854DCB7-F2D7-4276-8D10-C7A124436145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8854DCB7-F2D7-4276-8D10-C7A124436145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8854DCB7-F2D7-4276-8D10-C7A124436145}.Release|Any CPU.Build.0 = Release|Any CPU
-		{308F4014-DB18-4942-BCCB-4EC191148EA0}.Debug|Any CPU.ActiveCfg = Debug
-		{308F4014-DB18-4942-BCCB-4EC191148EA0}.Release|Any CPU.ActiveCfg = Release
 		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,6 +29,10 @@ Global
 		{600F4CC8-4323-4237-A55C-BFEF4B67D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{600F4CC8-4323-4237-A55C-BFEF4B67D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{600F4CC8-4323-4237-A55C-BFEF4B67D57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

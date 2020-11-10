@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-using Core;
+using SYS.Core;
 
 namespace SYS.Application
 {

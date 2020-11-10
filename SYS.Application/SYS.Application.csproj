@@ -62,9 +62,9 @@
     <Compile Include="Business\WtiService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
+    <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
-      <Name>Core</Name>
+      <Name>SYS.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

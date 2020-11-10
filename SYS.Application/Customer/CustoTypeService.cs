@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using SYS.Core;
 using System.Data.SqlClient;
 
 namespace SYS.Application
