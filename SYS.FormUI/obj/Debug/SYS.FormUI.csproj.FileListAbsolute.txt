@@ -147,3 +147,5 @@ E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.application
 E:\MyProject\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CopyComplete
 E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
+E:\MyProject\SYS.FormUI\bin\Debug\Costura.dll
+E:\MyProject\SYS.FormUI\bin\Debug\Costura.xml

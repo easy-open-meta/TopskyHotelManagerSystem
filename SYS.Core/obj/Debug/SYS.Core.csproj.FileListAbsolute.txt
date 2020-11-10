@@ -8,3 +8,4 @@ E:\MyProject\SYS.Core\bin\Debug\SYS.Core.pdb
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.dll
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.pdb
+E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache

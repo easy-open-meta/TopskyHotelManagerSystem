@@ -43,6 +43,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Costura.dll" size="4096">
+      <assemblyIdentity name="Costura" version="3.0.0.0" publicKeyToken="9919EF960D84173D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>JDSQSWMT+K3sdF4QN1G+R2C/jSzUVAnYZHIvnQd7GN4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyControls.dll" size="7680">
       <assemblyIdentity name="MyControls" version="1.0.6915.14131" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -110,7 +122,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iY7vF11PzvCZj824p83BHXSUCFUQ4A/ZFHQfFb6vX+0=</dsig:DigestValue>
+        <dsig:DigestValue>2NKqboVeBS/DX+jlsjxlLLNb9/djVyN6A/tp/U4WA3g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,6 +133,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>LgASxHpNmlPEQxLy5FaoB3fZkz9TIXrZ7P91GBtbQ4E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="FodyWeavers.xml" size="65" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rZnjr4v+Mo+qBjPI1ir+kBGKtAXdKsUHRdhc5R8enBY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TS酒店管理系统.exe.config" size="328">
