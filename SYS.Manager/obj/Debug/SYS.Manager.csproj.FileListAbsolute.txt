@@ -1,11 +1,11 @@
-E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csprojAssemblyReference.cache
-E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Manager.dll
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Manager.pdb
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Application.dll
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Core.dll
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Application.pdb
 E:\MyProject\SYS.Manager\bin\Debug\SYS.Core.pdb
+E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csprojAssemblyReference.cache
+E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csproj.CopyComplete
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.dll
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.pdb

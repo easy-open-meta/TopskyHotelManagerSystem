@@ -2,7 +2,7 @@
 using SYS.Core;
 using SYS.Application;
 
-namespace SYS.FormUI
+namespace SYS.Manager
 {
     public class WorkerCheckManager
     {

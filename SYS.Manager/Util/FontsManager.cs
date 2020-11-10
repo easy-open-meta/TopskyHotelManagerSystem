@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using SYS.Core;
 
-namespace SYS.FormUI
+namespace SYS.Manager
 {
     public class FontsManager
     {
