@@ -320,12 +320,12 @@ E:\MyProject\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe.manifest
 E:\MyProject\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.application
 E:\MyProject\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.exe
 E:\MyProject\TSHotelManagerSystem\bin\Debug\TS酒店管理系统.pdb
-E:\MyProject\TSHotelManagerSystem\bin\Debug\Application.dll
 E:\MyProject\TSHotelManagerSystem\bin\Debug\Core.dll
-E:\MyProject\TSHotelManagerSystem\bin\Debug\Application.pdb
 E:\MyProject\TSHotelManagerSystem\bin\Debug\Core.pdb
 E:\MyProject\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe.manifest
 E:\MyProject\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.application
 E:\MyProject\TSHotelManagerSystem\obj\Debug\TSHotelManagerSystem.csproj.CopyComplete
 E:\MyProject\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.exe
 E:\MyProject\TSHotelManagerSystem\obj\Debug\TS酒店管理系统.pdb
+E:\MyProject\TSHotelManagerSystem\bin\Debug\SYS.Application.dll
+E:\MyProject\TSHotelManagerSystem\bin\Debug\SYS.Application.pdb
