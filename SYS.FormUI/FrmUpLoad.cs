@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
@@ -22,7 +22,7 @@ namespace SYS.FormUI
         {
             string sql = "insert UPLOADINFO(NoticeNo,Noticetheme,NoticeTime,NoticeContent,NoticeClub,NoticePerson)";
             sql += " values('" + txtUpLoadNo.Text + "','" + txtNoticeTheme.Text + "','" + dtpUpLoadDate.Value.ToShortDateString() + "','" + rtbNoticeContent.Text + "','" + cboSelectClub.Text + "','Admin')";
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             con.Open();
             int n = DBHelper.ExecuteNonQuery(sql);
             MessageBox.Show("上传成功，上传日期为：" + DateTime.Now.ToShortDateString() + "");

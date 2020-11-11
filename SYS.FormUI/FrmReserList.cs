@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
@@ -58,7 +58,7 @@ namespace SYS.FormUI
         {
             string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType)";
             sql += " values('" + txtCustoNo.Text + "','" + txtCustoName.Text + "','" + cboSex.Text + "','" + txtTel.Text + "','" + cboPassport.SelectedIndex + "','" + txtCardID.Text + "','" + txtCustoAdress.Text + "','" + dtpBirthday.Value + "','" + cboCustoType.SelectedIndex + "') ";
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             con.Open();
             int i = DBHelper.ExecuteNonQuery(sql);
             Room r = new Room();
@@ -123,9 +123,9 @@ namespace SYS.FormUI
             string sex = "";
             if (identityCard.Length == 18)
             {
-                SqlConnection con = DBHelper.GetConnection();
+                MySqlConnection con = DBHelper.GetConnection();
                 con.Open();
-                SqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
+                MySqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
                 birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
                 sex = identityCard.Substring(14, 3);
                 while (dr.Read())

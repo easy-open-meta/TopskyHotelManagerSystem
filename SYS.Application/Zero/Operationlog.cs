@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -11,7 +11,7 @@ namespace SYS.Application
         {
             List<OperationLog> custos = new List<OperationLog>();
             string sql = "select * from operationlog order by OperationTime desc";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 OperationLog cso = new OperationLog();

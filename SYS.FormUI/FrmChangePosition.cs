@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
@@ -39,7 +39,7 @@ namespace SYS.FormUI
         private void btnOK_Click(object sender, EventArgs e)
         {
             string sql = "update WORKERINFO set WorkerClub='" + cboNewClub.Text + "',WorkerPosition='" + cboNewPosition.Text + "' where WorkerId='" + txtworkerId.Text + "'";
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             int n = DBHelper.ExecuteNonQuery(sql);
             if (n > 0)
             {

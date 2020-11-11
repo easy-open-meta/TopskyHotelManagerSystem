@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -17,7 +17,7 @@ namespace SYS.Application
         {
             Wti w = null;
             string sql = "select * from WTINFO where RoomNo like '%" + roomNo + "%'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 w = new Wti();
@@ -48,7 +48,7 @@ namespace SYS.Application
             Wti w = null;
             string sql = "select * from WTINFO where RoomNo='" + roomno +
                 "' and UseDate='" + usedate + "' and EndDate='" + enddate + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 w = new Wti();
@@ -75,7 +75,7 @@ namespace SYS.Application
         {
             List<Wti> wti = new List<Wti>();
             string sql = "select * from WTINFO";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Wti w = new Wti();

@@ -1,25 +1,28 @@
-﻿using System.Configuration;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SYS.Core
 {
     public class DBHelper
     {
-        private static string conStr = ConfigurationManager.AppSettings["conSqlStr"];
-        private static SqlConnection con = null;
+        private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
+        private static MySqlConnection con = null;
 
-        public static SqlConnection GetConnection()
+        public static MySqlConnection GetConnection()
         {
             if (con == null || con.ConnectionString == "")
             {
-                con = new SqlConnection(conStr);
+                con = new MySqlConnection(conStr);
             }
             return con;
         }
-
-
-
+        
         public static void Opencon()
         {
             if (con.State == ConnectionState.Closed)
@@ -38,12 +41,12 @@ namespace SYS.Core
 
         public static int ExecuteNonQuery(string sql, //SQL语句
            CommandType type = CommandType.Text,   //命令类型：SQL文本，存储过程，表
-           params SqlParameter[] para)          //SQL参数列表
+           params MySqlParameter[] para)          //SQL参数列表
         {
             int n = 0;
-            SqlConnection con = GetConnection();
+            MySqlConnection con = GetConnection();
             Opencon();
-            SqlCommand com = new SqlCommand(sql, con);
+            MySqlCommand com = new MySqlCommand(sql, con);
             com.CommandType = type;
             com.Parameters.AddRange(para);
             n = com.ExecuteNonQuery();
@@ -53,22 +56,23 @@ namespace SYS.Core
 
 
 
-        public static SqlDataReader ExecuteReader(string sql)
+        public static MySqlDataReader ExecuteReader(string sql)
         {
-            SqlConnection con = GetConnection();
+            MySqlConnection con = GetConnection();
             Opencon();
-            SqlCommand com = new SqlCommand(sql, con);
-            SqlDataReader dr = com.ExecuteReader();
+            MySqlCommand com = new MySqlCommand(sql, con);
+            MySqlDataReader dr = com.ExecuteReader();
             return dr;
         }
+
         public static object ExecuteScalar(string sql,
             CommandType type = CommandType.Text,
-            params SqlParameter[] para)
+            params MySqlParameter[] para)
         {
             object obj = 0;
-            SqlConnection con = GetConnection();
+            MySqlConnection con = GetConnection();
             Opencon();
-            SqlCommand com = new SqlCommand(sql, con);
+            MySqlCommand com = new MySqlCommand(sql, con);
             com.CommandType = type;
             com.Parameters.AddRange(para);
             obj = com.ExecuteScalar();

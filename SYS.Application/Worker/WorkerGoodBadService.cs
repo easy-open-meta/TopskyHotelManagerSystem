@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +21,9 @@ namespace SYS.Application
         {
             List<WorkerGoodBad> gb = new List<WorkerGoodBad>();
             string sql = "select * from WorkerGoodBad wgb,GBType gbt where wgb.GBType = gbt.GBType and wgb.WorkNo = '" + wn + "'";
-            SqlConnection conn = DBHelper.GetConnection();
+            MySqlConnection conn = DBHelper.GetConnection();
             conn.Open();
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 WorkerGoodBad goodBad = new WorkerGoodBad();

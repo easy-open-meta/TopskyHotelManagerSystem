@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 using SYS.Application;
 
@@ -37,7 +37,7 @@ namespace SYS.Manager
         {
             List<Room> rooms = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='0'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room room = new Room();

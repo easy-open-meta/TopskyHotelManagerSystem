@@ -44,6 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MySql.Data.dll" />
+    <Content Include="MySql.Data.EntityFramework.dll" />
+    <Content Include="MySql.Web.dll" />
     <Content Include="SYS.Application.dll" />
     <Content Include="SYS.Core.dll" />
     <Content Include="SYS.Manager.dll" />

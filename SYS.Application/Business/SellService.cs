@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -15,7 +16,7 @@ namespace SYS.Application
         {
             List<SellThing> ls = new List<SellThing>();
             string sql = "select * from Sellthing";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 SellThing s = new SellThing();
@@ -40,7 +41,7 @@ namespace SYS.Application
         {
             SellThing s = new SellThing();
             string sql = "select * from Sellthing where SellNo='" + No + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 s = new SellThing();
@@ -64,7 +65,7 @@ namespace SYS.Application
         {
             List<SellThing> ls = new List<SellThing>();
             string sql = "select * from Sellthing where SellName like '%" + Name + "%' or SellNo like '%" + Name + "%' or SellPrice like '%" + Name + "%' or format like '%" + Name + "%'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 SellThing s = new SellThing();
@@ -117,7 +118,7 @@ namespace SYS.Application
             SellThing s = null;
             string sql = "select * from SELLTHING where SellName='{0}' and SellPrice='{1}'";
             sql = string.Format(sql, name, price);
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 s = new SellThing();
@@ -138,7 +139,7 @@ namespace SYS.Application
         {
             SellThing st = null;
             string sql = "select * from SellThing where SellNo='" + SellNo + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 st = new SellThing();

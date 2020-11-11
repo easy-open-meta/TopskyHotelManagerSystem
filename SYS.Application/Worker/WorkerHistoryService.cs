@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -18,7 +18,7 @@ namespace SYS.Application
         {
             List<WorkerHistory> why = new List<WorkerHistory>();
             string sql = "SELECT * FROM WORKERINFO wi,WORKERHISTORY wh where wi.WorkerId = wh.WorkerId and wi.WorkerId = '" + wid + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 WorkerHistory workerHistory = new WorkerHistory();

@@ -9,3 +9,15 @@ E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.csproj.CopyComplete
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.dll
 E:\MyProject\SYS.Manager\obj\Debug\SYS.Manager.pdb
+E:\MyProject\SYS.Manager\bin\Debug\MySql.Data.dll
+E:\MyProject\SYS.Manager\bin\Debug\Google.Protobuf.dll
+E:\MyProject\SYS.Manager\bin\Debug\Zstandard.Net.dll
+E:\MyProject\SYS.Manager\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\MyProject\SYS.Manager\bin\Debug\BouncyCastle.Crypto.dll
+E:\MyProject\SYS.Manager\bin\Debug\Ubiety.Dns.Core.dll
+E:\MyProject\SYS.Manager\bin\Debug\Renci.SshNet.dll
+E:\MyProject\SYS.Manager\bin\Debug\System.Buffers.dll
+E:\MyProject\SYS.Manager\bin\Debug\K4os.Compression.LZ4.dll
+E:\MyProject\SYS.Manager\bin\Debug\K4os.Hash.xxHash.dll
+E:\MyProject\SYS.Manager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\MyProject\SYS.Manager\bin\Debug\MySql.Data.xml

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Manager
@@ -10,7 +10,7 @@ namespace SYS.Manager
         {
             List<Fonts> fonts = new List<Fonts>();
             string sql = "select * from Fonts";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Fonts font = new Fonts();

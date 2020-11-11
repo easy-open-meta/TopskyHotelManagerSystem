@@ -149,3 +149,17 @@ E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
 E:\MyProject\SYS.FormUI\bin\Debug\Costura.dll
 E:\MyProject\SYS.FormUI\bin\Debug\Costura.xml
+E:\MyProject\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.config
+E:\MyProject\SYS.FormUI\bin\Debug\MySql.Data.dll
+E:\MyProject\SYS.FormUI\bin\Debug\MySql.Data.EntityFramework.dll
+E:\MyProject\SYS.FormUI\bin\Debug\MySql.Web.dll
+E:\MyProject\SYS.FormUI\bin\Debug\Google.Protobuf.dll
+E:\MyProject\SYS.FormUI\bin\Debug\Zstandard.Net.dll
+E:\MyProject\SYS.FormUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\MyProject\SYS.FormUI\bin\Debug\BouncyCastle.Crypto.dll
+E:\MyProject\SYS.FormUI\bin\Debug\Ubiety.Dns.Core.dll
+E:\MyProject\SYS.FormUI\bin\Debug\Renci.SshNet.dll
+E:\MyProject\SYS.FormUI\bin\Debug\System.Buffers.dll
+E:\MyProject\SYS.FormUI\bin\Debug\K4os.Compression.LZ4.dll
+E:\MyProject\SYS.FormUI\bin\Debug\K4os.Hash.xxHash.dll
+E:\MyProject\SYS.FormUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll

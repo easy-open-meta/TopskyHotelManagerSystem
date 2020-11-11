@@ -201,7 +201,7 @@ namespace SYS.FormUI
             frm1.TopLevel = false;
             pnlMID.Controls.Add(frm1);
             frm1.Show();
-            int n = (int)WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo);
+            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
@@ -451,7 +451,7 @@ namespace SYS.FormUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int n = (int)WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo);
+            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";

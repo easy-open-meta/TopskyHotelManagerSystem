@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -12,7 +13,7 @@ namespace SYS.Application
         {
             string version = null;
             string sql = "select* from baseversion";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 version = dr["base_version"].ToString();
@@ -27,7 +28,7 @@ namespace SYS.Application
 
             List<CheckInfo> cif = new List<CheckInfo>();
             string sql = "select * from CHECKINFO";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
 

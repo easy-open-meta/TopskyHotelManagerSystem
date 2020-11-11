@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
@@ -149,9 +149,9 @@ namespace SYS.FormUI
             string sql = "select count(*) from ROOM where RoomNo=@RoomNo";
             int n = (int)DBHelper.ExecuteScalar(sql,
                     CommandType.Text,
-                    new SqlParameter[]
+                    new MySqlParameter[]
                     {
-                        new SqlParameter("@RoomNo",txtRoomNo.Text)
+                        new MySqlParameter("@RoomNo",txtRoomNo.Text)
                     }
                     );
             if (n > 0)

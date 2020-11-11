@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -35,7 +35,7 @@ namespace SYS.Application
             List<Spend> spends = new List<Spend>();
             string sql = "select * from CUSTOSPEND c,ROOM r where c.RoomNo=r.RoomNo";
             sql += " and c.RoomNo = '" + RoomNo + "' and SpendTime between r.CheckTime AND GETDATE()";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Spend spend = new Spend();
@@ -64,7 +64,7 @@ namespace SYS.Application
         {
             List<Spend> ls = new List<Spend>();
             string sql = "select * from CUSTOSPEND where CustoNo like '%" + No + "%' or RoomNo like '%" + No + "%'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Spend s = new Spend();
@@ -93,7 +93,7 @@ namespace SYS.Application
         {
             List<Spend> ls = new List<Spend>();
             string sql = "select * from CUSTOSPEND";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Spend s = new Spend();
@@ -122,7 +122,7 @@ namespace SYS.Application
         {
             List<Spend> ls = new List<Spend>();
             string sql = "select * from CUSTOSPEND c,ROOM r where c.RoomNo=r.RoomNo and c.RoomNo = '" + RoomNo + "' and c.MoneyState = '未结算' and SpendTime between r.CheckTime AND GETDATE()";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Spend s = new Spend();

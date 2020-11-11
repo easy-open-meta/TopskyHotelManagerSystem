@@ -8,4 +8,16 @@ E:\MyProject\SYS.Core\bin\Debug\SYS.Core.pdb
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.dll
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.pdb
-E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
+E:\MyProject\SYS.Core\bin\Debug\MySql.Data.dll
+E:\MyProject\SYS.Core\bin\Debug\Google.Protobuf.dll
+E:\MyProject\SYS.Core\bin\Debug\Zstandard.Net.dll
+E:\MyProject\SYS.Core\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\MyProject\SYS.Core\bin\Debug\BouncyCastle.Crypto.dll
+E:\MyProject\SYS.Core\bin\Debug\Ubiety.Dns.Core.dll
+E:\MyProject\SYS.Core\bin\Debug\Renci.SshNet.dll
+E:\MyProject\SYS.Core\bin\Debug\System.Buffers.dll
+E:\MyProject\SYS.Core\bin\Debug\K4os.Compression.LZ4.dll
+E:\MyProject\SYS.Core\bin\Debug\K4os.Hash.xxHash.dll
+E:\MyProject\SYS.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\MyProject\SYS.Core\bin\Debug\MySql.Data.xml
+E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete

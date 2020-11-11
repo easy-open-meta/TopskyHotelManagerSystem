@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -12,7 +12,7 @@ namespace SYS.Application
         {
             List<Reser> rss = new List<Reser>();
             string sql = "select * from RESER";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Reser rs = new Reser();
@@ -44,7 +44,7 @@ namespace SYS.Application
         {
             Reser res = null;
             string sql = "select * from RESER r,ROOM rm where r.ReserRoom = rm.RoomNo and r.ReserRoom = '" + no + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 res = new Reser();

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -12,7 +12,7 @@ namespace SYS.Application
         {
             List<CustoSpend> custos = new List<CustoSpend>();
             string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 CustoSpend cso = new CustoSpend();
@@ -29,7 +29,7 @@ namespace SYS.Application
         {
             List<Custo> custos = new List<Custo>();
             string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p where u.CustoType=t.UserType and u.PassportType=p.PassportId";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Custo cso = new Custo();
@@ -67,9 +67,9 @@ namespace SYS.Application
         public static Custo SelectCustoByCustoNo(string cno)
         {
             Custo cto = null;
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             con.Open();
-            SqlDataReader dr = DBHelper.ExecuteReader("select * from USERINFO where CustoNo='" + cno + "'");
+            MySqlDataReader dr = DBHelper.ExecuteReader("select * from USERINFO where CustoNo='" + cno + "'");
             if (dr.Read())
             {
                 cto = new Custo();
@@ -93,7 +93,7 @@ namespace SYS.Application
         {
             Custo cto = null;
             string sql = "select * from USERINFO u,PASSPORTTYPE p,USERTYPE ut where u.PassportType=p.PassportId and u.CustoType=ut.UserType and CustoID = '" + input + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 cto = new Custo();
@@ -118,7 +118,7 @@ namespace SYS.Application
         {
             List<Custo> custos = new List<Custo>();
             string sql = "select * from USERINFO";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Custo custo = new Custo();

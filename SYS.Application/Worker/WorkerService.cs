@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -44,7 +44,7 @@ namespace SYS.Application
         {
             List<Worker> workers = new List<Worker>();
             string sql = "select * from WORKERINFO";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Worker worker = new Worker();
@@ -79,7 +79,7 @@ namespace SYS.Application
         {
             Worker w = null;
             string sql = "select * from WORKERINFO where WorkerId='" + workerId + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 w = new Worker();
@@ -116,7 +116,7 @@ namespace SYS.Application
             Worker w = null;
             string sql = "select * from WORKERINFO where WorkerId='{0}' and WorkerPwd='{1}'";
             sql = string.Format(sql, id, pwd);
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 w = new Worker();

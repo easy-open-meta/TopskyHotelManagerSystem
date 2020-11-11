@@ -1,7 +1,7 @@
 ﻿using SYS.Core;
 using System;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -30,8 +30,8 @@ namespace SYS.FormUI
         private void btnStart_Click(object sender, EventArgs e)
         {
             string strDB = txtBackUpName.Text.ToString().Trim();
-            SqlConnection con = DBHelper.GetConnection();
-            SqlCommand cmdBK = new SqlCommand();
+            MySqlConnection con = DBHelper.GetConnection();
+            MySqlCommand cmdBK = new MySqlCommand();
             cmdBK.CommandType = CommandType.Text;
             cmdBK.Connection = con;
             cmdBK.CommandText = "restore database TSHotelDB from disk='" + txtBackUpPath.Text + ".bak'";

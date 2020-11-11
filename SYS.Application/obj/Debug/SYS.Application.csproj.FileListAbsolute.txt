@@ -16,3 +16,16 @@ E:\MyProject\SYS.Application\obj\Debug\SYS.Application.csproj.CoreCompileInputs.
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.csproj.CopyComplete
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.dll
 E:\MyProject\SYS.Application\obj\Debug\SYS.Application.pdb
+E:\MyProject\SYS.Application\bin\Debug\MySql.Data.dll
+E:\MyProject\SYS.Application\bin\Debug\MySql.Data.EntityFramework.dll
+E:\MyProject\SYS.Application\bin\Debug\MySql.Web.dll
+E:\MyProject\SYS.Application\bin\Debug\Google.Protobuf.dll
+E:\MyProject\SYS.Application\bin\Debug\Zstandard.Net.dll
+E:\MyProject\SYS.Application\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\MyProject\SYS.Application\bin\Debug\BouncyCastle.Crypto.dll
+E:\MyProject\SYS.Application\bin\Debug\Ubiety.Dns.Core.dll
+E:\MyProject\SYS.Application\bin\Debug\Renci.SshNet.dll
+E:\MyProject\SYS.Application\bin\Debug\System.Buffers.dll
+E:\MyProject\SYS.Application\bin\Debug\K4os.Compression.LZ4.dll
+E:\MyProject\SYS.Application\bin\Debug\K4os.Hash.xxHash.dll
+E:\MyProject\SYS.Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll

@@ -1,5 +1,5 @@
 ﻿using SYS.Core;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace SYS.Application
 {
@@ -15,7 +15,7 @@ namespace SYS.Application
         {
             string name = "";
             string sql = "select * from USERTYPE where UserType=" + CustoTypeId;
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 name = dr["TypeName"].ToString();

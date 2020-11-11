@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -16,7 +16,7 @@ namespace SYS.Application
         {
             List<Room> rooms = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType = t.RoomType and r.RoomStateId = rs.RoomStateId and r.RoomStateId = " + stateid;
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room room = new Room();
@@ -54,7 +54,7 @@ namespace SYS.Application
         {
             List<Room> rooms = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room room = new Room();
@@ -92,7 +92,7 @@ namespace SYS.Application
         {
             List<Room> rs = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and t.RoomName='" + TypeName + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room r = new Room();
@@ -131,7 +131,7 @@ namespace SYS.Application
         {
             List<Room> rooms = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='0'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room room = new Room();
@@ -170,7 +170,7 @@ namespace SYS.Application
         {
             Room room = null;
             string sql = "select * from room where RoomNo='" + no + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 room = new Room();
@@ -235,7 +235,7 @@ namespace SYS.Application
             string sql = "update Room set CustoNo='{1}',CheckTime='{2}',CheckOutTime=Null,";
             sql += "RoomStateId ='{3}',PersonNum='{4}' where RoomNo='{0}'";
             sql = string.Format(sql, r.RoomNo, r.CustoNo, r.CheckTime, r.RoomStateId, r.PersonNum);
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             return DBHelper.ExecuteNonQuery(sql);
         }
         #endregion
@@ -369,7 +369,7 @@ namespace SYS.Application
         {
             List<Room> rooms = new List<Room>();
             string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='1'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room room = new Room();
@@ -407,7 +407,7 @@ namespace SYS.Application
         {
             List<Room> rs = new List<Room>();
             string sql = "select * from ROOMSTATE";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Room r = new Room();

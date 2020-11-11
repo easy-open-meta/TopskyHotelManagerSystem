@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -15,7 +15,7 @@ namespace SYS.Application
         {
             Admin a = null;
             string sql = "select * from ADMININFO where AdminPassword='" + adminpass + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 a = new Admin();
@@ -41,7 +41,7 @@ namespace SYS.Application
             Admin a = null;
             string sql = "select * from ADMININFO where AdminPassword='{0}'";
             sql = string.Format(sql, pwd);
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 a = new Admin();

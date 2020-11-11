@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -15,7 +15,7 @@ namespace SYS.Application
         {
             List<RoomType> types = new List<RoomType>();
             string sql = "select * from ROOMTYPE";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 RoomType type = new RoomType();
@@ -40,7 +40,7 @@ namespace SYS.Application
         {
             RoomType roomtype = null;
             string sql = "select t.RoomName from ROOMTYPE t,ROOM r where t.RoomType=r.RoomType and r.RoomNo='" + no + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 roomtype = new RoomType();

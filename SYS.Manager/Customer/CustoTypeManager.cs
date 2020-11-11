@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 using SYS.Application;
 
@@ -16,7 +16,7 @@ namespace SYS.Manager
         {
             List<CustoType> types = new List<CustoType>();
             string sql = "select * from USERTYPE";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 CustoType type = new CustoType();

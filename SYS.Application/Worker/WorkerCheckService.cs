@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -17,7 +17,7 @@ namespace SYS.Application
             List<WorkerCheck> workerChecks = new List<WorkerCheck>();
             string sql = "select * from WorkerCheck where WorkerNo = '" + wid + "'";
             DBHelper.Opencon();
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 WorkerCheck workerCheck = new WorkerCheck();
@@ -59,7 +59,7 @@ namespace SYS.Application
         /// <returns></returns>
         public static object SelectToDayCheckInfoByWorkerNo(string wkn)
         {
-            string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+"' and DateDiff(dd,CheckTime,getdate())=0";
+            string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+"' and DATEDIFF(workercheck.CheckTime,CURRENT_DATE()) = 0";
             return DBHelper.ExecuteScalar(sql);
         }
 

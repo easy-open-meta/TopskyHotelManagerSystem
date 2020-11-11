@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 
 namespace SYS.Application
@@ -12,10 +12,10 @@ namespace SYS.Application
             string sql = "insert OPERATIONLOG(OperationTime,OperationLog,OperationAccount) values(@OperationTime," +
                 "@OperationLog,@OperationAccount)";
             n = DBHelper.ExecuteNonQuery(sql, CommandType.Text,
-                new SqlParameter[] {
-                    new SqlParameter("@OperationTime",opr.OperationTime),
-                    new SqlParameter("@OperationLog",opr.Operationlog),
-                    new SqlParameter("@OperationAccount",opr.OperationAccount),
+                new MySqlParameter[] {
+                    new MySqlParameter("@OperationTime",opr.OperationTime),
+                    new MySqlParameter("@OperationLog",opr.Operationlog),
+                    new MySqlParameter("@OperationAccount",opr.OperationAccount),
                 });
             return n;
         }

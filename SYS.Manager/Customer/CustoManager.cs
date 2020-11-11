@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SYS.Core;
 using SYS.Application;
 
@@ -14,16 +14,16 @@ namespace SYS.Manager
             string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType) values(@CustoNo," +
                 "@CustoName,@CustoSex,@CustoTel,@PassportType,@CustoID,@CustoAdress,@CustoBirth,@CustoType)";
             n = DBHelper.ExecuteNonQuery(sql, CommandType.Text,
-                new SqlParameter[] {
-                    new SqlParameter("@CustoNo",cto.CustoNo),
-                    new SqlParameter("@CustoName",cto.CustoName),
-                    new SqlParameter("@CustoSex",cto.CustoSex),
-                    new SqlParameter("@CustoTel",cto.CustoTel),
-                    new SqlParameter("@PassportType",cto.PassportType),
-                    new SqlParameter("@CustoID",cto.CustoID),
-                    new SqlParameter("@CustoAdress",cto.CustoAdress),
-                    new SqlParameter("@CustoBirth",cto.CustoBirth),
-                    new SqlParameter("@CustoType",cto.CustoType)
+                new MySqlParameter[] {
+                    new MySqlParameter("@CustoNo",cto.CustoNo),
+                    new MySqlParameter("@CustoName",cto.CustoName),
+                    new MySqlParameter("@CustoSex",cto.CustoSex),
+                    new MySqlParameter("@CustoTel",cto.CustoTel),
+                    new MySqlParameter("@PassportType",cto.PassportType),
+                    new MySqlParameter("@CustoID",cto.CustoID),
+                    new MySqlParameter("@CustoAdress",cto.CustoAdress),
+                    new MySqlParameter("@CustoBirth",cto.CustoBirth),
+                    new MySqlParameter("@CustoType",cto.CustoType)
                 });
             return n;
         }
@@ -32,7 +32,7 @@ namespace SYS.Manager
         {
             Custo c = null;
             string sql = "select * from USERINFO where CustoNo='" + CustoNo + "'";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql);
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 c = new Custo();

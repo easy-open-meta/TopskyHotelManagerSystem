@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using SYS.Manager;
@@ -260,9 +260,9 @@ namespace SYS.FormUI
             string sex = "";
             if (identityCard.Length == 18)
             {
-                SqlConnection con = DBHelper.GetConnection();
+                MySqlConnection con = DBHelper.GetConnection();
                 con.Open();
-                SqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
+                MySqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
                 birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
                 sex = identityCard.Substring(14, 3);
                 while (dr.Read())

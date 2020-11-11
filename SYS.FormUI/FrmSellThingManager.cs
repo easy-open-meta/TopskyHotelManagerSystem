@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
@@ -58,7 +58,7 @@ namespace SYS.FormUI
 
         private void btnDeleteSellThing_Click(object sender, EventArgs e)
         {
-            SqlConnection con = DBHelper.GetConnection();
+            MySqlConnection con = DBHelper.GetConnection();
             con.Open();
             string sql = "delete from SellThing where SellNo='" + txtSellNo.Text + "'";
             int n = DBHelper.ExecuteNonQuery(sql);
