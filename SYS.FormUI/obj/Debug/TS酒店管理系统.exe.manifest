@@ -122,7 +122,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2NKqboVeBS/DX+jlsjxlLLNb9/djVyN6A/tp/U4WA3g=</dsig:DigestValue>
+        <dsig:DigestValue>76ckk+2FZOBEWHHZ9njVLXyXN4wAn9ZWM7o46E3wpuk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -144,13 +144,13 @@
       <dsig:DigestValue>rZnjr4v+Mo+qBjPI1ir+kBGKtAXdKsUHRdhc5R8enBY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TS酒店管理系统.exe.config" size="328">
+  <file name="TS酒店管理系统.exe.config" size="305">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>USt3BRyOTD1QAjhVsUDWFzlc+q3cBCx46IJTfTi0cL0=</dsig:DigestValue>
+      <dsig:DigestValue>1wRQ2yXmuC7K/g7yIu87zZPHAD7Oqtz/wYkqiIFvNpc=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
