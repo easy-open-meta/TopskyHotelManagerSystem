@@ -6,6 +6,15 @@
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
 
+
+ **
+最新告示：
+1、酒店管理系统的数据库已迁移至MySQL，特告知！
+2、旧版已无法使用，请移步至【统计】——【发行版】中下载最新版本。
+** 
+
+
+
 - 特别鸣谢：
 - [遗失情缘](https://blog.lost520.cn/)提供的圆形进度条加载效果！
 

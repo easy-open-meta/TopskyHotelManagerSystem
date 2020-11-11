@@ -10,11 +10,11 @@ namespace SYS.FormUI
 {
     public partial class FrmLogin : Form
     {
-        //FrmStart f = null;
-        public FrmLogin(/*FrmStart frm*/)
+        FrmStart f = null;
+        public FrmLogin(FrmStart frm)
         {
             InitializeComponent();
-            //f = frm;
+            f = frm;
             #region 防止背景闪屏方法
             this.DoubleBuffered = true;//设置本窗体
             SetStyle(ControlStyles.UserPaint, true);
@@ -85,7 +85,7 @@ namespace SYS.FormUI
         #region 关闭窗体事件方法
         private void picClose_Click(object sender, EventArgs e)
         {
-            //f.Close();
+            f.Close();
             System.Windows.Forms.Application.Exit();
         }
         #endregion
