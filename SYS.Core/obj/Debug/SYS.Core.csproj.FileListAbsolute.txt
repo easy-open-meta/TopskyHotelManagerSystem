@@ -21,4 +21,3 @@ E:\MyProject\SYS.Core\bin\Debug\K4os.Hash.xxHash.dll
 E:\MyProject\SYS.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\MyProject\SYS.Core\bin\Debug\MySql.Data.xml
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
-E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
