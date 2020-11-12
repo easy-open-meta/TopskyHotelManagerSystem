@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,8 +10,7 @@ namespace SYS.Core
 {
     public class DBHelper
     {
-        //private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
-        private static string conStr = "Server=134.175.239.108;Database=tshoteldb;Uid=root;Pwd=root;";
+        private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
         private static MySqlConnection con = null;
 
         public static MySqlConnection GetConnection()
