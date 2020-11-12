@@ -59,7 +59,7 @@ namespace SYS.FormUI
                         this.Invoke(new Action(() =>
                         {
                             CheckUpdate();
-                            FrmLogin f = new FrmLogin(this);
+                            FrmLogin f = new FrmLogin(/*this*/);
                             f.Show();
                             this.Visible = false;
                         }

@@ -10,11 +10,11 @@ namespace SYS.FormUI
 {
     public partial class FrmLogin : Form
     {
-        FrmStart f = null;
-        public FrmLogin(FrmStart frm)
+        //FrmStart f = null;
+        public FrmLogin(/*FrmStart frm*/)
         {
             InitializeComponent();
-            f = frm;
+            //f = frm;
             #region 防止背景闪屏方法
             this.DoubleBuffered = true;//设置本窗体
             SetStyle(ControlStyles.UserPaint, true);
@@ -85,7 +85,7 @@ namespace SYS.FormUI
         #region 关闭窗体事件方法
         private void picClose_Click(object sender, EventArgs e)
         {
-            f.Close();
+            //f.Close();
             System.Windows.Forms.Application.Exit();
         }
         #endregion
@@ -95,11 +95,32 @@ namespace SYS.FormUI
         {
             //FrmTopSkyLogo frm = new FrmTopSkyLogo();
             //frm.ShowDialog();
-            
+            CheckUpdate();
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
             AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
             //CheckUpdate();
+        }
+        #endregion
+
+        #region 判断版本号
+        private void CheckUpdate()
+        {
+            string newversion = CheckInfoManager.CheckBaseVersion();
+
+            string version = System.Windows.Forms.Application.ProductVersion.ToString();
+            if (version != newversion)
+            {
+                MessageBox.Show("旧版已停止使用，请到github或gitee仓库更新最新发行版！", "系统提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Windows.Forms.Application.Exit();
+                this.Visible = false;
+                //调用系统默认的浏览器
+                System.Diagnostics.Process.Start("https://gitee.com/yjj0720/TopskyHotelManagerSystem/releases");
+            }
+            else
+            {
+                MessageBox.Show("当前已为最新版本，无需更新！", "系统提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         #endregion
 

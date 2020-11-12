@@ -1,0 +1,1362 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TS酒店管理系统</name>
+    </assembly>
+    <members>
+        <member name="M:SYS.FormUI.CircleProgramBar.#ctor">
+            <summary>
+            /圆形进度条
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.CircleProgramBar.InitControl">
+            <summary>
+            初始化控件参数
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.CircleProgramBar.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.CircleProgramBar.Progress">
+            <summary>
+            进度值
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmChart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmChart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmChart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmExtendOption.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmExtendOption.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmExtendOption.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmAboutUs.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmAboutUs.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmAboutUs.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmAddRoom.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmAddRoom.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmAddRoom.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmAddWorker.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmAddWorker.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmAddWorker.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmAdminEnter.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmAdminEnter.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmAdminEnter.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmBackAdmin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmBackAdmin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmBackAdmin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmBackupDatabase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmBackupDatabase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmBackupDatabase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCash.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCash.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCash.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCashList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCashList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCashList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmChangePosition.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangePosition.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangePosition.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmChangeRoom.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangeRoom.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangeRoom.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmChangeWorker.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangeWorker.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmChangeWorker.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckIn.CheckInupt">
+            <summary>
+            验证输入完整性
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCheckIn.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckIn.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckIn.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCheckInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCheckOutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckOutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCheckOutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCustoManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustoManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustoManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCustoSpend.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustoSpend.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustoSpend.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmGoodOrBad.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmGoodOrBad.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmGoodOrBad.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmOperation.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmOperation.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmOperation.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmReserList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmReserList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmReserList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmRestoreDatabase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmRestoreDatabase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmRestoreDatabase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmRoomStateManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmRoomStateManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmRoomStateManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmSelectCustoInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmSelectCustoInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmSelectCustoInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmSellThing.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmSellThing.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmSellThing.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmSellThingManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmSellThingManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmSellThingManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmStart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmStart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmStart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmTopChange.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmTopChange.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmTopChange.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmUpLoad.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmUpLoad.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmUpLoad.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmCustomerManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustomerManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmCustomerManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmLogin.CheckInput">
+            <summary>
+            检验输入完整性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SYS.FormUI.FrmLogin.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmLogin.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmLogin.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要修改
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmReserManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmReserManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmReserManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmRoomManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmRoomManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmRoomManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmUnLockSystem.ExecuteReg(System.String)">
+            <summary>  
+            执行注册表导入  
+            </summary>  
+            <param name="regPath">注册表文件路径</param>  
+        </member>
+        <member name="F:SYS.FormUI.FrmUnLockSystem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmUnLockSystem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmUnLockSystem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.FrmWorkerCheckInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.FrmWorkerCheckInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.FrmWorkerCheckInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.Program.Main">
+            <summary>
+            应用程序的主入口点。
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.ucHistory.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.ucHistory.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:SYS.FormUI.ucHistory.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要修改
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.ucRoomList.CanPenetrate">
+            <summary>
+            使窗口有鼠标穿透功能
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.ucRoomList.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.ucRoomList.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:SYS.FormUI.ucRoomList.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要修改
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.WebSite.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WebSite.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.WebSite.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.FirstTime">
+            <summary>
+            初始化使用时间
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.LoadWtiInfo">
+            <summary>
+            加载水电费信息到Dgv
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.LoadToolTip">
+            <summary>
+            加载鼠标到关联控件显示信息
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.CheckInput">
+            <summary>
+            检查输入完整性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.FendTextBox">
+            <summary>
+            遍历文本框(禁用)
+            </summary>
+        </member>
+        <member name="F:SYS.FormUI.WtiInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SYS.FormUI.WtiInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SYS.FormUI.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources._1545891726">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources._1G_Q__21_3JZZCFW68O7NF">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources._770e7b52ecafc807247aad51bb6c6b43">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources._77377282_p0_master1200">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Background">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.button">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.c92311ec80b20a729e525a3f7035363c">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.delete2_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.delete2a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Login_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Login_a1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Login_b">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.Login_b1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.main_bg">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.中餐厅_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.中餐厅_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.人事管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.人事管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.人事部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.会员管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.会员管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.会员管理2_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.修改">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.修改a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.内部飞鸽_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.内部飞鸽_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.可住房">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.可住房_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.后勤管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.后勤管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.后勤部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.商品消费_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.商品消费_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.客房管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.客房管理_ia1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.客房管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.客房管理_ib1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.导出__4_">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.工程维修_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.工程维修_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.已住房">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.已住房_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.已入住">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.已预约">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.库存管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.库存管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.房卡管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.房卡管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.打卡">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.扩展功能_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.扩展功能_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.搜索__1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.搜索__1a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.显示">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.更多扩展_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.更多扩展_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.水电管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.水电管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.消费管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.消费管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.添_加_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.添_加a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.清理中">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.清理中2">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.清理中2_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.用户管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.用户管理_ia1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.用户管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.用户管理_ib1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.监管统计_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.监管统计_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.空房">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.空房22">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.经理部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中2">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中22">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.维修中221">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.网页预约_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.网页预约_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.脏房">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.脏房2">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.脏房2_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.获取用户编号">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.获取用户编号_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.行政管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.行政管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.西餐厅_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.西餐厅_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.财务信息_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.财务信息_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.财务部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.资产管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.资产管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.部门管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.部门管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.部门联动_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.部门联动_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.酒店部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.隐藏">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约房">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约房_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约管理">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约管理_aa">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预约管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预订管理">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预订管理_a">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预订管理_aa">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.预订管理ab">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.餐厅物资_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.餐厅物资_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.餐厅管理_ia">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.餐厅管理_ib">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:SYS.FormUI.Properties.Resources.餐饮部界面">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+    </members>
+</doc>
