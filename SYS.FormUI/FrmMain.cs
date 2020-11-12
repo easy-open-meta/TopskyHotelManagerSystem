@@ -190,8 +190,8 @@ namespace SYS.FormUI
             lblUserName.Text = LoginInfo.WorkerName + "【" + LoginInfo.WorkerClub + LoginInfo.WorkerPosition + "】";
             notifyIcon1.Text = "TS酒店管理系统" + lblUserName.Text + "-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
             wk_WorkerName = LoginInfo.WorkerName;
-            Opacity = 0.0; //窗体透明度为0
-            fadeTimer.Start(); //计时开始
+            //Opacity = 0.0; //窗体透明度为0
+            //fadeTimer.Start(); //计时开始
             picRoom.BackgroundImage = Resources.预订管理ab;
             picExtend.BackgroundImage = Resources.扩展功能_ib;
             picCustomer.BackgroundImage = Resources.用户管理_ib;

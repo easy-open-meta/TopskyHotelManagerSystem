@@ -33,8 +33,8 @@ namespace SYS.Application
         public static List<Spend> SelectSpendByRoomNo(string RoomNo)
         {
             List<Spend> spends = new List<Spend>();
-            string sql = "select * from CUSTOSPEND c,ROOM r where c.RoomNo=r.RoomNo";
-            sql += " and c.RoomNo = '" + RoomNo + "' and SpendTime between r.CheckTime AND GETDATE()";
+            string sql = "select * from CUSTOSPEND inner join ROOM where CUSTOSPEND.RoomNo=ROOM.RoomNo";
+            sql += " and CUSTOSPEND.RoomNo = '" + RoomNo + "' and CUSTOSPEND.SpendTime between ROOM.CheckTime AND CURRENT_DATE()";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -121,7 +121,7 @@ namespace SYS.Application
         public static List<Spend> SelectSpendInfoRoomNo(string RoomNo)
         {
             List<Spend> ls = new List<Spend>();
-            string sql = "select * from CUSTOSPEND c,ROOM r where c.RoomNo=r.RoomNo and c.RoomNo = '" + RoomNo + "' and c.MoneyState = '未结算' and SpendTime between r.CheckTime AND GETDATE()";
+            string sql = "select * from CUSTOSPEND inner join ROOM where CUSTOSPEND.RoomNo=ROOM.RoomNo and CUSTOSPEND.RoomNo = '"+ RoomNo + "' and CUSTOSPEND.MoneyState = '未结算'";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -150,8 +150,7 @@ namespace SYS.Application
         /// <returns></returns>
         public static object SelectMoneyByRoomNoAndTime(string roomno)
         {
-            string sql = "select convert(decimal(15,2),SUM(SpendMoney)) from CUSTOSPEND c,ROOM r where c.RoomNo=r.RoomNo ";
-            sql += "and c.RoomNo = '" + roomno + "' and SpendTime between r.CheckTime AND GETDATE()";
+            string sql = "select CONVERT(SUM(CUSTOSPEND.SpendMoney),decimal(15,2)) from CUSTOSPEND inner join ROOM where CUSTOSPEND.RoomNo = ROOM.RoomNo and CUSTOSPEND.RoomNo = '"+ roomno + "' and CUSTOSPEND.SpendTime between ROOM.CheckTime AND CURRENT_DATE()";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -165,7 +164,7 @@ namespace SYS.Application
         /// <returns></returns>
         public static int UpdateMoneyState(string roomno, string checktime)
         {
-            string sql = "update CUSTOSPEND set MoneyState='已结算' where RoomNo='{0}' and SpendTime between '{1}' AND GETDATE()";
+            string sql = "update CUSTOSPEND set MoneyState='已结算' where RoomNo='{0}' and SpendTime between '{1}' AND CURRENT_DATE()";
             sql = string.Format(sql, roomno, checktime);
             return DBHelper.ExecuteNonQuery(sql);
         }

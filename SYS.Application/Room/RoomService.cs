@@ -7,6 +7,7 @@ namespace SYS.Application
 {
     public class RoomService
     {
+        #region 根据房间状态获取相应状态的房间信息
         /// <summary>
         /// 根据房间状态获取相应状态的房间信息
         /// </summary>
@@ -43,7 +44,7 @@ namespace SYS.Application
             DBHelper.Closecon();
             return rooms;
         }
-
+        #endregion
 
         #region 获取所有房间信息
         /// <summary>
@@ -205,7 +206,7 @@ namespace SYS.Application
         public static int UpdateRoomByRoomNo(string room)
         {
             string sql = "update ROOM set CustoNo=Null,CheckTime=null,";
-            sql += "CheckOutTime =GETDATE(),PersonNum=Null,";
+            sql += "CheckOutTime =CURRENT_DATE(),PersonNum=Null,";
             sql += "RoomStateId='3' where RoomNo='" + room + "'";
             return DBHelper.ExecuteNonQuery(sql);
         }
@@ -219,7 +220,8 @@ namespace SYS.Application
         /// <returns></returns>
         public static object DayByRoomNo(string roomno)
         {
-            string sql = "select DATEDIFF(DAY,CheckTime,GETDATE()) from ROOM where RoomNo='" + roomno + "'";
+            string sql = "select DATEDIFF(CURRENT_DATE(),CheckTime) from ROOM where RoomNo='" + roomno + "'";
+            //DATEDIFF(workercheck.CheckTime,CURRENT_DATE()) = 0
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion

@@ -93,7 +93,7 @@ namespace SYS.FormUI
             string rs = rn.Substring(0, 2);
 
             CmpSetDgv();
-            if (ucRoomList.co_CheckTime.ToString() == "0001-01-01 00:00:00")
+            if (ucRoomList.co_CheckTime == null)
             {
                 dtpCheckTime.Value = DateTime.Now;
             }

@@ -21,3 +21,10 @@ E:\MyProject\SYS.Core\bin\Debug\K4os.Hash.xxHash.dll
 E:\MyProject\SYS.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\MyProject\SYS.Core\bin\Debug\MySql.Data.xml
 E:\MyProject\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.pdb
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb

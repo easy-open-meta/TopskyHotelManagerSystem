@@ -362,6 +362,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAboutUs.resx">
       <DependentUpon>FrmAboutUs.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddRoom.resx">
       <DependentUpon>FrmAddRoom.cs</DependentUpon>

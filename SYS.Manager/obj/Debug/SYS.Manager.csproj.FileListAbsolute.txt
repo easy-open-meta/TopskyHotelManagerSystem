@@ -21,3 +21,14 @@ E:\MyProject\SYS.Manager\bin\Debug\K4os.Compression.LZ4.dll
 E:\MyProject\SYS.Manager\bin\Debug\K4os.Hash.xxHash.dll
 E:\MyProject\SYS.Manager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\MyProject\SYS.Manager\bin\Debug\MySql.Data.xml
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Manager.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Manager.pdb
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Application.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Core.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Application.pdb
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Core.pdb
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\obj\Debug\SYS.Manager.csprojAssemblyReference.cache
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\obj\Debug\SYS.Manager.csproj.CoreCompileInputs.cache
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\obj\Debug\SYS.Manager.csproj.CopyComplete
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\obj\Debug\SYS.Manager.dll
+D:\Gitee\TopskyHotelManagerSystem\SYS.Manager\obj\Debug\SYS.Manager.pdb
