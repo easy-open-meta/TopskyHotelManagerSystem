@@ -27,3 +27,4 @@ D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompile
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache

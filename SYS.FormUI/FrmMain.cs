@@ -96,7 +96,9 @@ namespace SYS.FormUI
         #region 定时器：获取网络时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
+
             string netTime = GetNetDateTime();
+
             if (netTime != "")
             {
                 lblTime.Text = Convert.ToDateTime(netTime).ToString("HH:mm:ss");
@@ -297,36 +299,6 @@ namespace SYS.FormUI
 
         #endregion
 
-        #region 窗体渐变效果
-        private void fadeTimer_Tick(object sender, EventArgs e)
-        {
-            double d = 0.10;
-            if (showing)
-            {
-                if (Opacity + d >= 1.0)
-                {
-                    Opacity = 1.0;
-                    fadeTimer.Stop();
-                }
-                else
-                {
-                    Opacity += d;
-                }
-            }
-            else
-            {
-                if (Opacity - d <= 0.0)
-                {
-                    Opacity = 0.0;
-                    fadeTimer.Stop();
-                }
-                else
-                {
-                    Opacity -= d;
-                }
-            }
-        }
-        #endregion
 
         #region 计算后台系统的入口点击事件方法
         int i = 0;

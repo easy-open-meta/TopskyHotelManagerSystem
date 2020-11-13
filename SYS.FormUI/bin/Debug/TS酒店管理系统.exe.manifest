@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SYS.Core.dll" size="24064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SYS.Core.dll" size="24576">
       <assemblyIdentity name="SYS.Core" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>33WTpARbS1xwcWnPPKTSNGPkohqEgtU+7ggSpsChdfI=</dsig:DigestValue>
+        <dsig:DigestValue>gE280SlqMzoBihFpbWCIR57KHoY6VTF4bDaGKVIohEo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TS酒店管理系统.exe" size="7003640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TS酒店管理系统.exe" size="7004664">
       <assemblyIdentity name="TS酒店管理系统" version="1.4.2.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3SYyPmbA7/v7cDsNEcnm/bp8hjVTQ0LHC4WuOXJam+M=</dsig:DigestValue>
+        <dsig:DigestValue>Fh/9iyVLYMbJOJc5NKhUTsihAI85iitNk/RR3HH4omo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

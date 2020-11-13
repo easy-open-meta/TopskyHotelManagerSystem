@@ -155,6 +155,9 @@ namespace SYS.FormUI
             {
                 if (WorkerName.Text != null && ucHistory.txtCompany.Text != null && cboSex.Text != null)
                 {
+                    string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
+                    string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
+
                     #region 员工信息添加代码块
                     Worker worker = new Worker
                     {
@@ -162,11 +165,11 @@ namespace SYS.FormUI
                         WorkerName = WorkerName.Text.Trim(),
                         WorkerBirth = dtpBirthday.Value,
                         WorkerSex = cboSex.Text,
-                        WorkerTel = WorkerTel.Text,
+                        WorkerTel = NewTel,
                         WorkerClub = cboClub.Text,
                         WorkerAddress = txtAddress.Text,
                         WorkerPosition = cboWorkerPosition.Text,
-                        CardId = WorkerID.Text,
+                        CardId = NewID,
                         WorkerPwd = Pwd.Text,
                         WorkerTime = dtpTime.Value,
                         WorkerFace = cboWorkerFace.Text,

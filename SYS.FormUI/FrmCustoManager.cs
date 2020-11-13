@@ -80,7 +80,8 @@ namespace SYS.FormUI
             txtCustoAdress.Text = dgvCustomerList.SelectedRows[0].Cells["clCustoAdress"].Value.ToString();
             dtpBirthday.Text = dgvCustomerList.SelectedRows[0].Cells["clCustoBirth"].Value.ToString();
             cboCustoType.Text = dgvCustomerList.SelectedRows[0].Cells["clCustoType"].Value.ToString();
-
+            txtCardID.ReadOnly = true;
+            txtTel.ReadOnly = true;
         }
         #endregion
 
@@ -95,11 +96,11 @@ namespace SYS.FormUI
                 }
                 else
                 {
-                    string CustoID = txtCardID.Text.ToString();
-                    
+                    string NewID = Md5LockedUtil.MD5Encrypt32(txtCardID.Text.ToString());
+                    string NewTel = Md5LockedUtil.MD5Encrypt32(txtTel.Text.ToString());
 
                     string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType)";
-                    sql += " values('" + txtCustoNo.Text + "','" + txtCustoName.Text + "','" + cboSex.Text + "','" + txtTel.Text + "','" + cboPassport.SelectedIndex + "','" + txtCardID.Text + "','" + txtCustoAdress.Text + "','" + dtpBirthday.Value + "','" + cboCustoType.SelectedIndex + "') ";
+                    sql += " values('" + txtCustoNo.Text + "','" + txtCustoName.Text + "','" + cboSex.Text + "','" + NewTel + "','" + cboPassport.SelectedIndex + "','" + NewID + "','" + txtCustoAdress.Text + "','" + dtpBirthday.Value + "','" + cboCustoType.SelectedIndex + "') ";
                     MySqlConnection con = DBHelper.GetConnection();
                     con.Open();
                     int i = DBHelper.ExecuteNonQuery(sql);
