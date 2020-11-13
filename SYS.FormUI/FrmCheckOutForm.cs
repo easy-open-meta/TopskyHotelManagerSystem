@@ -170,7 +170,7 @@ namespace SYS.FormUI
             }
             else
             {
-                result = Convert.ToDouble(SpendManager.SelectMoneyByRoomNoAndTime(RoomNo));
+                result = Convert.ToDouble(SpendManager.SelectMoneyByRoomNoAndTime(RoomNo, CustoNo.Text.ToString()));
             }
 
             #endregion
@@ -206,6 +206,7 @@ namespace SYS.FormUI
             }
             else if (cboCustoType.Text == "普通用户")
             {
+                //39525
                 double m = result + sum;
                 lblGetReceipts.Text = m.ToString();
                 lblVIPPrice.Text = Convert.ToString(m);

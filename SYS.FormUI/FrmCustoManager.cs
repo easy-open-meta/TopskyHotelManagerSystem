@@ -95,6 +95,9 @@ namespace SYS.FormUI
                 }
                 else
                 {
+                    string CustoID = txtCardID.Text.ToString();
+                    
+
                     string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType)";
                     sql += " values('" + txtCustoNo.Text + "','" + txtCustoName.Text + "','" + cboSex.Text + "','" + txtTel.Text + "','" + cboPassport.SelectedIndex + "','" + txtCardID.Text + "','" + txtCustoAdress.Text + "','" + dtpBirthday.Value + "','" + cboCustoType.SelectedIndex + "') ";
                     MySqlConnection con = DBHelper.GetConnection();

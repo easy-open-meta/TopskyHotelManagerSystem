@@ -25,17 +25,6 @@ D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.pdb
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\MySql.Data.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Google.Protobuf.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Zstandard.Net.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\BouncyCastle.Crypto.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Ubiety.Dns.Core.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Renci.SshNet.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\System.Memory.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\System.Buffers.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\K4os.Compression.LZ4.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\K4os.Hash.xxHash.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.pdb
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.pdb
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache

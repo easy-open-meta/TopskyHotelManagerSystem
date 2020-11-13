@@ -148,9 +148,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public static object SelectMoneyByRoomNoAndTime(string roomno)
+        public static object SelectMoneyByRoomNoAndTime(string roomno,string custono)
         {
-            string sql = "select CONVERT(SUM(CUSTOSPEND.SpendMoney),decimal(15,2)) from CUSTOSPEND inner join ROOM where CUSTOSPEND.RoomNo = ROOM.RoomNo and CUSTOSPEND.RoomNo = '"+ roomno + "' and CUSTOSPEND.SpendTime between ROOM.CheckTime AND CURRENT_DATE()";
+            string sql = "select CONVERT(SUM(CUSTOSPEND.SpendMoney),DECIMAL(15,2)) from CUSTOSPEND inner join ROOM where CUSTOSPEND.RoomNo = ROOM.RoomNo and CUSTOSPEND.RoomNo = '"+roomno+"' AND ROOM.CustoNo = '"+ custono + "' and CUSTOSPEND.MoneyState = '未结算'";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion

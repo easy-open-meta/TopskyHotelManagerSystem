@@ -35,10 +35,11 @@ namespace SYS.Manager
         /// 根据房间编号、入住时间到当前时间查询消费总金额
         /// </summary>
         /// <param name="roomno"></param>
+        /// <param name="custono"></param>
         /// <returns></returns>
-        public static object SelectMoneyByRoomNoAndTime(string roomno)
+        public static object SelectMoneyByRoomNoAndTime(string roomno,string custono)
         {
-            return SpendService.SelectMoneyByRoomNoAndTime(roomno);
+            return SpendService.SelectMoneyByRoomNoAndTime(roomno, custono);
         }
         #endregion
 
