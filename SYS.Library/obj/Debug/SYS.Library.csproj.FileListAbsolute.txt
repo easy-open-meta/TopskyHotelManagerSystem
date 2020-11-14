@@ -20,15 +20,3 @@ E:\MyProject\SYS.Library\bin\Debug\System.Buffers.dll
 E:\MyProject\SYS.Library\bin\Debug\K4os.Compression.LZ4.dll
 E:\MyProject\SYS.Library\bin\Debug\K4os.Hash.xxHash.dll
 E:\MyProject\SYS.Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.pdb
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\MySql.Data.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.pdb
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.pdb
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CopyComplete
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
-D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
