@@ -9,6 +9,9 @@
 - 特别鸣谢：
 - [遗失情缘](https://blog.lost520.cn/)提供的圆形进度条加载效果！
 
+- 引用的开源项目：
+1. Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)
+
 - 本项目说明：
 - 一切开发请遵照MIT开源协议进行
 - 有bug欢迎提出issue！或进行评论
@@ -20,10 +23,10 @@
 - 系统开发环境：
 - 操作系统：Windows 10(x64)
 - 开发工具：Microsoft Visual Studio 2015(初版)/Microsoft Visual Studio 2019(最新版)
-- 数据库管理工具：Microsoft SQL Server 2008 R2
+- 数据库管理工具：Microsoft SQL Server 2008 R2/MySQL v8.0.22
 - 开发语言：C#语言、T-SQL语言
 - 开发平台：.Net
-- 开发框架：.Net Framework 4.5.2
+- 开发框架：.Net Framework 4.5.2/.Net Framework 4.6.1
 - 开发技术：.NET WinForm
 
 - 项目作者：
