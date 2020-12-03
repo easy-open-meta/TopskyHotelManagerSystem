@@ -98,7 +98,7 @@ namespace SYS.FormUI
             //FrmTopSkyLogo frm = new FrmTopSkyLogo();
             //frm.ShowDialog();
             
-            //CheckUpdate();
+            CheckUpdate();
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
             AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
