@@ -3,10 +3,11 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmReserList : Form
+    public partial class FrmReserList : UIForm
     {
         public FrmReserList()
         {

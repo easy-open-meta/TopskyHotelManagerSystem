@@ -42,7 +42,7 @@
             this.pnlExtendMID.BackColor = System.Drawing.Color.SkyBlue;
             this.pnlExtendMID.Location = new System.Drawing.Point(1, 36);
             this.pnlExtendMID.Name = "pnlExtendMID";
-            this.pnlExtendMID.Size = new System.Drawing.Size(991, 417);
+            this.pnlExtendMID.Size = new System.Drawing.Size(1020, 417);
             this.pnlExtendMID.TabIndex = 12;
             // 
             // picMore
@@ -83,18 +83,18 @@
             this.picCall.Click += new System.EventHandler(this.picCall_Click);
             this.picCall.MouseEnter += new System.EventHandler(this.picCall_MouseEnter);
             // 
-            // ExtendOption
+            // FrmExtendOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(994, 453);
+            this.ClientSize = new System.Drawing.Size(1033, 456);
             this.Controls.Add(this.pnlExtendMID);
             this.Controls.Add(this.picMore);
             this.Controls.Add(this.picWeb);
             this.Controls.Add(this.picCall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ExtendOption";
+            this.Name = "FrmExtendOption";
             this.Text = "ExtendOption";
             this.Load += new System.EventHandler(this.ExtendOption_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picMore)).EndInit();

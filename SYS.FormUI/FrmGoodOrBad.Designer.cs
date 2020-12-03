@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGoodOrBad));
             this.DgvGoodBadList = new System.Windows.Forms.DataGridView();
             this.clWorkerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.clGBType,
             this.clGBOperation,
             this.clGBTime});
-            this.DgvGoodBadList.Location = new System.Drawing.Point(12, 311);
+            this.DgvGoodBadList.Location = new System.Drawing.Point(29, 350);
             this.DgvGoodBadList.MultiSelect = false;
             this.DgvGoodBadList.Name = "DgvGoodBadList";
             this.DgvGoodBadList.RowTemplate.Height = 23;
@@ -102,25 +102,14 @@
             this.clGBTime.HeaderText = "奖罚日期";
             this.clGBTime.Name = "clGBTime";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "员工奖罚情况页";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(32, 35);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(49, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "员工编号：";
             // 
@@ -128,10 +117,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(179, 35);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(196, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "员工姓名：";
             // 
@@ -139,10 +128,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(340, 35);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(357, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "入职日期：";
             // 
@@ -150,10 +139,10 @@
             // 
             this.lblWorkerNo.AutoSize = true;
             this.lblWorkerNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblWorkerNo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblWorkerNo.Location = new System.Drawing.Point(100, 35);
+            this.lblWorkerNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblWorkerNo.Location = new System.Drawing.Point(117, 74);
             this.lblWorkerNo.Name = "lblWorkerNo";
-            this.lblWorkerNo.Size = new System.Drawing.Size(65, 20);
+            this.lblWorkerNo.Size = new System.Drawing.Size(64, 17);
             this.lblWorkerNo.TabIndex = 4;
             this.lblWorkerNo.Text = "员工编号";
             // 
@@ -161,10 +150,10 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblName.Location = new System.Drawing.Point(251, 35);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblName.Location = new System.Drawing.Point(268, 74);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(65, 20);
+            this.lblName.Size = new System.Drawing.Size(64, 17);
             this.lblName.TabIndex = 5;
             this.lblName.Text = "员工姓名";
             // 
@@ -172,10 +161,10 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblDate.Location = new System.Drawing.Point(416, 35);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDate.Location = new System.Drawing.Point(433, 74);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(65, 20);
+            this.lblDate.Size = new System.Drawing.Size(64, 17);
             this.lblDate.TabIndex = 6;
             this.lblDate.Text = "入职日期";
             // 
@@ -184,8 +173,8 @@
             this.btnAdd.BackgroundImage = global::SYS.FormUI.Properties.Resources.button;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAdd.Location = new System.Drawing.Point(420, 234);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAdd.Location = new System.Drawing.Point(437, 273);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(81, 29);
             this.btnAdd.TabIndex = 7;
@@ -197,10 +186,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(32, 72);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(49, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 20);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "奖罚类型：";
             // 
@@ -208,10 +197,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(32, 113);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(49, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.Size = new System.Drawing.Size(78, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "奖罚时间：";
             // 
@@ -219,16 +208,16 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(32, 153);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(49, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.Size = new System.Drawing.Size(78, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "奖罚情况：";
             // 
             // RtbGBInfo
             // 
-            this.RtbGBInfo.Location = new System.Drawing.Point(117, 150);
+            this.RtbGBInfo.Location = new System.Drawing.Point(134, 189);
             this.RtbGBInfo.Name = "RtbGBInfo";
             this.RtbGBInfo.Size = new System.Drawing.Size(297, 152);
             this.RtbGBInfo.TabIndex = 11;
@@ -237,23 +226,23 @@
             // CboType
             // 
             this.CboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboType.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CboType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CboType.FormattingEnabled = true;
             this.CboType.Items.AddRange(new object[] {
             "奖励",
             "惩罚"});
-            this.CboType.Location = new System.Drawing.Point(117, 67);
+            this.CboType.Location = new System.Drawing.Point(134, 106);
             this.CboType.Name = "CboType";
-            this.CboType.Size = new System.Drawing.Size(121, 28);
+            this.CboType.Size = new System.Drawing.Size(121, 25);
             this.CboType.TabIndex = 12;
             // 
             // DtpDate
             // 
-            this.DtpDate.CalendarFont = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DtpDate.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DtpDate.Location = new System.Drawing.Point(117, 109);
+            this.DtpDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DtpDate.Location = new System.Drawing.Point(134, 148);
             this.DtpDate.Name = "DtpDate";
-            this.DtpDate.Size = new System.Drawing.Size(121, 27);
+            this.DtpDate.Size = new System.Drawing.Size(121, 23);
             this.DtpDate.TabIndex = 13;
             // 
             // btnClose
@@ -261,8 +250,8 @@
             this.btnClose.BackgroundImage = global::SYS.FormUI.Properties.Resources.button;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(420, 273);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClose.Location = new System.Drawing.Point(437, 312);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 29);
             this.btnClose.TabIndex = 14;
@@ -272,11 +261,10 @@
             // 
             // FrmGoodOrBad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BackgroundImage = global::SYS.FormUI.Properties.Resources.main_bg;
-            this.ClientSize = new System.Drawing.Size(513, 555);
+            this.ClientSize = new System.Drawing.Size(586, 631);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.DtpDate);
             this.Controls.Add(this.CboType);
@@ -291,12 +279,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.DgvGoodBadList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGoodOrBad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGoodOrBad";
+            this.ShowIcon = true;
+            this.ShowRadius = false;
+            this.ShowShadow = true;
+            this.Style = Sunny.UI.UIStyle.Custom;
+            this.Text = "员工奖罚情况页";
             this.Load += new System.EventHandler(this.FrmGoodOrBad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoodBadList)).EndInit();
             this.ResumeLayout(false);
@@ -307,7 +297,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvGoodBadList;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

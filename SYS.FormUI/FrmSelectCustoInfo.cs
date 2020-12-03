@@ -38,7 +38,7 @@ namespace SYS.FormUI
             txtCustoName.Text = c.CustoName;
             txtPassportNum.Text = c.CustoID;
             txtTel.Text = c.CustoTel;
-            cboCustoSex.Text = c.CustoSex;
+            cboCustoSex.Text = c.CustoSex == 1 ? "男" : "女";
             cboCustoType.SelectedIndex = c.CustoType;
             cboPassportType.SelectedIndex = c.PassportType;
             dtpBirth.Value = c.CustoBirth;

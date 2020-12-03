@@ -63,7 +63,7 @@ namespace SYS.Application
         public static List<Spend> SelectSpendByCustoNo(string No)
         {
             List<Spend> ls = new List<Spend>();
-            string sql = "select * from CUSTOSPEND where CustoNo like '%" + No + "%' or RoomNo like '%" + No + "%'";
+            string sql = "select * from CUSTOSPEND where RoomNo = '" + No + "' and MoneyState = '未结算'";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {

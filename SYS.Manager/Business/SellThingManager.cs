@@ -32,7 +32,7 @@ namespace SYS.Manager
             return SellService.SelectSellThingByName(Name);
         }
 
-        public static SellThing SelectSellThingByNameAndPrice(string name, string price)
+        public static SellThing SelectSellThingByNameAndPrice(string name,string price)
         {
             return SellService.SelectSellThingByNameAndPrice(name, price);
         }

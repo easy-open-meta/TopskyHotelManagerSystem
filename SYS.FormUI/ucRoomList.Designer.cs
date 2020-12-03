@@ -101,10 +101,10 @@
             // 
             this.lblCustoNo.AutoSize = true;
             this.lblCustoNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustoNo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCustoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCustoNo.Location = new System.Drawing.Point(21, 59);
             this.lblCustoNo.Name = "lblCustoNo";
-            this.lblCustoNo.Size = new System.Drawing.Size(65, 20);
+            this.lblCustoNo.Size = new System.Drawing.Size(62, 17);
             this.lblCustoNo.TabIndex = 10;
             this.lblCustoNo.Text = "CustoNo";
             this.lblCustoNo.Click += new System.EventHandler(this.lblCustoNo_Click);
@@ -113,10 +113,10 @@
             // 
             this.lblRoomType.AutoSize = true;
             this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoomType.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomType.Location = new System.Drawing.Point(21, 3);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(27, 20);
+            this.lblRoomType.Size = new System.Drawing.Size(27, 17);
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "RT";
             this.lblRoomType.Click += new System.EventHandler(this.lblRoomType_Click);
@@ -125,11 +125,11 @@
             // 
             this.lblRoomNo.AutoSize = true;
             this.lblRoomNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoomNo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomNo.ForeColor = System.Drawing.Color.Red;
             this.lblRoomNo.Location = new System.Drawing.Point(27, 31);
             this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(64, 20);
+            this.lblRoomNo.Size = new System.Drawing.Size(63, 17);
             this.lblRoomNo.TabIndex = 8;
             this.lblRoomNo.Text = "RoomNo";
             this.lblRoomNo.Click += new System.EventHandler(this.lblRoomNo_Click);

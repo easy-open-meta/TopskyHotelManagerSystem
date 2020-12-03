@@ -38,6 +38,13 @@ namespace SYS.FormUI
         #region 房间加载事件方法
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.pnlRoomInfo.Controls)
+            {
+                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    label.Font = UI_FontUtil.SetChildControlsFont();
+                }
+            }
             romsty = RoomService.SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
             {
@@ -82,7 +89,7 @@ namespace SYS.FormUI
             }
             else
             {
-                lblCheckTime.Text = ucRoomList.co_CheckTime.Substring(0, 15);
+                lblCheckTime.Text = Convert.ToDateTime(ucRoomList.co_CheckTime).ToShortDateString();
             }
 
             lblRoomState.Text = ucRoomList.co_RoomState;

@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmGoodOrBad : Form
+    public partial class FrmGoodOrBad : UIForm
     {
         public FrmGoodOrBad()
         {

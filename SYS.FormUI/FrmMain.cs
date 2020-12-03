@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
@@ -97,7 +98,7 @@ namespace SYS.FormUI
         private void tmrDate_Tick(object sender, EventArgs e)
         {
 
-            string netTime = GetNetDateTime();
+            string netTime = /*GetNetDateTime()*/"";
 
             if (netTime != "")
             {
@@ -156,7 +157,7 @@ namespace SYS.FormUI
         private void tmrFont_Tick(object sender, EventArgs e)
         {
             lblScroll.Location = new Point(lblScroll.Location.X - 8, lblScroll.Location.Y);
-            if (lblScroll.Location.X + lblScroll.Width <= 8)
+            if (lblScroll.Location.X + lblScroll.Width <= 5)
             {
                 fontn++;
                 if (fontn == fonts.Count)
@@ -171,27 +172,56 @@ namespace SYS.FormUI
         #endregion
 
         #region 退出当前程序
-        private void picClose_Click(object sender, EventArgs e)
+        private void picClose_Click_1(object sender, EventArgs e)
         {
             notifyIcon1.Dispose();
             System.Windows.Forms.Application.Exit();
-
         }
         #endregion
 
         #region 窗体最小化
-        private void picFormSize_Click(object sender, EventArgs e)
+        private void picFormSize_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
         #endregion
 
+        #region 窗体边框阴影效果变量申明
+
+        const int CS_DropSHADOW = 0x20000;
+        const int GCL_STYLE = (-26);
+        //声明Win32 API
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SetClassLong(IntPtr hwnd, int nIndex, int dwNewLong);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetClassLong(IntPtr hwnd, int nIndex);
+
+        #endregion
+
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            lblUserName.Text = LoginInfo.WorkerName + "【" + LoginInfo.WorkerClub + LoginInfo.WorkerPosition + "】";
-            notifyIcon1.Text = "TS酒店管理系统" + lblUserName.Text + "-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
+            SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
+            foreach (Control label in Controls)
+            {
+                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    label.Font = UI_FontUtil.SetMainFont();
+                }
+            }
+            foreach (Control label in this.panel1.Controls)
+            {
+                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    label.Font = UI_FontUtil.SetMainFont();
+                }
+            }
+            lblName.Text = LoginInfo.WorkerName;
+            lblPart.Text = LoginInfo.WorkerClub;
+            lblPosition.Text = LoginInfo.WorkerPosition;
+            notifyIcon1.Text = "TS酒店管理系统" + lblTime + "-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
             wk_WorkerName = LoginInfo.WorkerName;
+            Information.Text = LoginInfo.WorkerNo + "个人信息：";
             //Opacity = 0.0; //窗体透明度为0
             //fadeTimer.Start(); //计时开始
             picRoom.BackgroundImage = Resources.预订管理ab;
@@ -259,14 +289,16 @@ namespace SYS.FormUI
             picRoom.BackgroundImage = Resources.预订管理_aa;
             picCustomer.BackgroundImage = Resources.用户管理_ib;
             picCommodity.BackgroundImage = Resources.商品消费_ia;
-            picExtend.BackgroundImage = Resources.扩展功能_ia;
-            pnlMID.Controls.Clear();
-            FrmExtendOption frm = new FrmExtendOption();
-            frm.TopLevel = false;
-            FrmExtendOption frm1 = new FrmExtendOption();
-            frm1.TopLevel = false;
-            pnlMID.Controls.Add(frm1);
-            frm1.Show();
+            //picExtend.BackgroundImage = Resources.扩展功能_ia;
+            //pnlMID.Controls.Clear();
+            UIMessageTip.ShowError("界面维护，请稍后重试");
+            return;
+            //FrmExtendOption frm = new FrmExtendOption();
+            //frm.TopLevel = false;
+            //FrmExtendOption frm1 = new FrmExtendOption();
+            //frm1.TopLevel = false;
+            //pnlMID.Controls.Add(frm1);
+            //frm1.Show();
         }
         #endregion
 
@@ -319,8 +351,8 @@ namespace SYS.FormUI
                 #region 获取添加操作日志所需的信息
                 Operation o = new Operation();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = lblUserName.Text + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
-                o.OperationAccount = lblUserName.Text;
+                o.Operationlog = lblName.Text + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
+                o.OperationAccount = lblName.Text;
                 #endregion
                 OperationManager.InsertOperationLog(o);
             }
@@ -481,6 +513,66 @@ namespace SYS.FormUI
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void uiTitlePanel1_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Information_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void PepCenter_Click(object sender, EventArgs e)
+        {
+            this.Information.Visible = true;
+        }
+
+        private void picFormSize_MouseHover(object sender, EventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
+            this.picFormSize.Radius = 20;
+        }
+
+        private void picFormSize_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+            this.picFormSize.Radius = 20;
+        }
+
+        private void picClose_MouseHover(object sender, EventArgs e)
+        {
+            this.picClose.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
+            this.picClose.Radius = 20;
+        }
+
+        private void picClose_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.picClose.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+            this.picClose.Radius = 20;
+        }
+
+        private void picFormSize_MouseLeave_1(object sender, EventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.Transparent;
+            this.picFormSize.BackgroundImage = Resources.arrow_down_b;
+            this.picFormSize.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
+            this.picFormSize.Radius = 20;
+        }
+
+        private void picClose_MouseLeave_1(object sender, EventArgs e)
+        {
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.BackgroundImage = Resources.close;
+            this.picClose.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
+            this.picClose.Radius = 20;
+        }
+
+        private void Information_MouseLeave(object sender, EventArgs e)
+        {
+            this.Information.Visible = false;
         }
     }
 }

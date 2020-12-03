@@ -33,16 +33,17 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>bin\Debug\TS酒店管理系统.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,8 +71,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>SYS.FormUI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -93,7 +93,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\netchartdir.dll</HintPath>
     </Reference>
+    <Reference Include="SunnyUI, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SunnyUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
@@ -111,6 +116,12 @@
     <Compile Include="CircleProgramBar.cs">
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FrmAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminMain.Designer.cs">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmChart.cs">
       <SubType>Form</SubType>
@@ -226,6 +237,12 @@
     <Compile Include="FrmGoodOrBad.Designer.cs">
       <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInputs.Designer.cs">
+      <DependentUpon>FrmInputs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +290,12 @@
     </Compile>
     <Compile Include="FrmStart.Designer.cs">
       <DependentUpon>FrmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTopChange.cs">
       <SubType>Form</SubType>
@@ -354,6 +377,9 @@
     <Compile Include="WtiInfo.Designer.cs">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAdminMain.resx">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmChart.resx">
       <DependentUpon>FrmChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +438,9 @@
     <EmbeddedResource Include="FrmGoodOrBad.resx">
       <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInputs.resx">
+      <DependentUpon>FrmInputs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOperation.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStart.resx">
       <DependentUpon>FrmStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTest.resx">
+      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTopChange.resx">
       <DependentUpon>FrmTopChange.cs</DependentUpon>
@@ -486,6 +518,9 @@
     <EmbeddedResource Include="WtiInfo.resx">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\PF-Mdi.ttf" />
+    <None Include="bin\Debug\PingFang-SC-Regular.ttf" />
+    <None Include="bin\Debug\STHeiti-Medium.ttc" />
     <None Include="bin\Debug\启用任务管理器.reg" />
     <None Include="bin\Debug\禁用任务管理器.reg" />
     <None Include="packages.config" />
@@ -812,6 +847,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\arrow-down-b.png" />
+    <None Include="Resources\minus %281%29.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\close.png" />
     <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
     <None Include="Resources\c92311ec80b20a729e525a3f7035363c.jpg" />
     <None Include="bin\Debug\打卡.png" />

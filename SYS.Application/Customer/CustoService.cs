@@ -7,6 +7,18 @@ namespace SYS.Application
 {
     public class CustoService
     {
+        #region 添加客户信息
+        public static int InsertCustomerInfo(Custo custo)
+        {
+            string NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
+            string NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
+
+            string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType)";
+            sql += " values('" + custo.CustoNo + "','" + custo.CustoName + "','" + custo.CustoSex + "','" + NewTel + "','" + custo.PassportType + "','" + NewID + "','" + custo.CustoAdress + "','" + custo.CustoBirth + "','" + custo.CustoType + "') ";
+            
+            return DBHelper.ExecuteNonQuery(sql);
+        }
+        #endregion
 
         public static List<CustoSpend> SelectAllMoney()
         {
@@ -28,16 +40,16 @@ namespace SYS.Application
         public static List<Custo> SelectCustoAll()
         {
             List<Custo> custos = new List<Custo>();
-            string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p where u.CustoType=t.UserType and u.PassportType=p.PassportId";
+            string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p,sextype s where u.CustoType=t.UserType and u.PassportType=p.PassportId and s.sexId = u.CustoSex";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
                 Custo cso = new Custo();
                 cso.CustoNo = (string)dr["CustoNo"];
                 cso.CustoName = dr["CustoName"].ToString();
-                cso.CustoSex = (string)dr["CustoSex"];
+                cso.SexName = Convert.ToString(dr["SexName"]);
                 cso.CustoTel = Convert.ToString(dr["CustoTel"]);
-                cso.PassportType = (int)dr["PassportType"];
+                cso.PassportType = Convert.ToInt32(dr["PassportType"]);
                 cso.CustoID = dr["CustoID"].ToString();
                 if (!DBNull.Value.Equals(dr["CustoAdress"]))
                 {
@@ -48,7 +60,7 @@ namespace SYS.Application
                     cso.CustoAdress = "";
                 }
                 cso.CustoBirth = DateTime.Parse(dr["CustoBirth"].ToString());
-                cso.CustoType = (int)dr["CustoType"];
+                cso.CustoType = Convert.ToInt32(dr["CustoType"]);
                 cso.typeName = (string)dr["TypeName"];
                 cso.PassportName = (string)dr["PassportName"];
                 custos.Add(cso);
@@ -75,7 +87,7 @@ namespace SYS.Application
                 cto = new Custo();
                 cto.CustoNo = dr["CustoNo"].ToString();
                 cto.CustoName = dr["CustoName"].ToString();
-                cto.CustoSex = dr["CustoSex"].ToString();
+                cto.CustoSex = Convert.ToInt32(dr["CustoSex"]);
                 cto.CustoTel = dr["CustoTel"].ToString();
                 cto.PassportType = Convert.ToInt32(dr["PassportType"].ToString());
                 cto.CustoID = dr["CustoID"].ToString();
@@ -99,14 +111,14 @@ namespace SYS.Application
                 cto = new Custo();
                 cto.CustoNo = (string)dr["CustoNo"];
                 cto.CustoName = (string)dr["CustoName"];
-                cto.CustoSex = (string)dr["CustoSex"].ToString();
+                cto.CustoSex = Convert.ToInt32(dr["CustoSex"]);
                 cto.CustoTel = (string)dr["CustoTel"];
-                cto.PassportType = (int)dr["PassportType"];
+                cto.PassportType = Convert.ToInt32(dr["PassportType"]);
                 cto.PassportName = (string)dr["PassportName"];
                 cto.CustoID = (string)dr["CustoID"];
                 cto.CustoAdress = (string)dr["CustoAdress"];
                 cto.CustoBirth = DateTime.Parse(dr["CustoBirth"].ToString());
-                cto.CustoType = (int)dr["CustoType"];
+                cto.CustoType = Convert.ToInt32(dr["CustoType"]);
                 cto.typeName = (string)dr["TypeName"];
             }
             dr.Close();

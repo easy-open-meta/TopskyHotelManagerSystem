@@ -8,25 +8,13 @@ namespace SYS.Manager
 {
     public class CustoManager
     {
-        public static int InsertCusto(Custo cto)
+        #region 添加客户信息
+        public static int InsertCustomerInfo(Custo custo)
         {
-            int n = 0;
-            string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType) values(@CustoNo," +
-                "@CustoName,@CustoSex,@CustoTel,@PassportType,@CustoID,@CustoAdress,@CustoBirth,@CustoType)";
-            n = DBHelper.ExecuteNonQuery(sql, CommandType.Text,
-                new MySqlParameter[] {
-                    new MySqlParameter("@CustoNo",cto.CustoNo),
-                    new MySqlParameter("@CustoName",cto.CustoName),
-                    new MySqlParameter("@CustoSex",cto.CustoSex),
-                    new MySqlParameter("@CustoTel",cto.CustoTel),
-                    new MySqlParameter("@PassportType",cto.PassportType),
-                    new MySqlParameter("@CustoID",cto.CustoID),
-                    new MySqlParameter("@CustoAdress",cto.CustoAdress),
-                    new MySqlParameter("@CustoBirth",cto.CustoBirth),
-                    new MySqlParameter("@CustoType",cto.CustoType)
-                });
-            return n;
+            return CustoService.InsertCustomerInfo(custo);
         }
+        #endregion
+
 
         public static Custo SelectCardInfoByCustoNo(string CustoNo)
         {
@@ -38,7 +26,7 @@ namespace SYS.Manager
                 c = new Custo();
                 c.CustoNo = Convert.ToString(dr["CustoNo"]);
                 c.CustoName = Convert.ToString(dr["CustoName"]);
-                c.CustoSex = Convert.ToString(dr["CustoSex"]);
+                c.CustoSex = Convert.ToInt32(dr["CustoSex"]);
                 c.CustoTel = Convert.ToString(dr["CustoTel"]);
                 c.CustoID = Convert.ToString(dr["CustoID"]);
                 c.CustoAdress = Convert.ToString(dr["CustoAdress"]);

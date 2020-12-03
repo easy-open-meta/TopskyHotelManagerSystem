@@ -29,48 +29,77 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvOperationlog = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvOperationlog = new Sunny.UI.UIDataGridView();
             this.clOperationTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOperationLog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOperationlog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clOperationAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperationlog)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvOperationlog
             // 
+            this.dgvOperationlog.AllowUserToAddRows = false;
+            this.dgvOperationlog.AllowUserToDeleteRows = false;
+            this.dgvOperationlog.AllowUserToResizeColumns = false;
+            this.dgvOperationlog.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvOperationlog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOperationlog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOperationlog.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOperationlog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOperationlog.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOperationlog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOperationlog.ColumnHeadersHeight = 32;
+            this.dgvOperationlog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvOperationlog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clOperationTime,
-            this.clOperationLog,
+            this.clOperationlog,
             this.clOperationAccount});
-            this.dgvOperationlog.Location = new System.Drawing.Point(12, 17);
+            this.dgvOperationlog.EnableHeadersVisualStyles = false;
+            this.dgvOperationlog.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.dgvOperationlog.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.dgvOperationlog.Location = new System.Drawing.Point(1, 2);
+            this.dgvOperationlog.MultiSelect = false;
             this.dgvOperationlog.Name = "dgvOperationlog";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOperationlog.RowTemplate.Height = 23;
+            this.dgvOperationlog.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOperationlog.RowTemplate.Height = 29;
+            this.dgvOperationlog.SelectedIndex = -1;
             this.dgvOperationlog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOperationlog.Size = new System.Drawing.Size(965, 461);
-            this.dgvOperationlog.TabIndex = 0;
+            this.dgvOperationlog.ShowGridLine = true;
+            this.dgvOperationlog.Size = new System.Drawing.Size(985, 492);
+            this.dgvOperationlog.Style = Sunny.UI.UIStyle.Custom;
+            this.dgvOperationlog.TabIndex = 1;
             // 
             // clOperationTime
             // 
             this.clOperationTime.DataPropertyName = "OperationTime";
             this.clOperationTime.HeaderText = "操作时间";
             this.clOperationTime.Name = "clOperationTime";
+            this.clOperationTime.ReadOnly = true;
             // 
-            // clOperationLog
+            // clOperationlog
             // 
-            this.clOperationLog.DataPropertyName = "OperationLog";
-            this.clOperationLog.HeaderText = "日志详情";
-            this.clOperationLog.Name = "clOperationLog";
+            this.clOperationlog.DataPropertyName = "Operationlog";
+            this.clOperationlog.HeaderText = "操作日志";
+            this.clOperationlog.Name = "clOperationlog";
+            this.clOperationlog.ReadOnly = true;
             // 
             // clOperationAccount
             // 
             this.clOperationAccount.DataPropertyName = "OperationAccount";
-            this.clOperationAccount.HeaderText = "操作账号";
+            this.clOperationAccount.HeaderText = "操作人";
             this.clOperationAccount.Name = "clOperationAccount";
+            this.clOperationAccount.ReadOnly = true;
             // 
             // FrmOperation
             // 
@@ -90,9 +119,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvOperationlog;
+        private Sunny.UI.UIDataGridView dgvOperationlog;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOperationTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clOperationLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOperationlog;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOperationAccount;
     }
 }

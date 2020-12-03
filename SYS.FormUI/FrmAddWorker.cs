@@ -5,10 +5,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmAddWorker : Form
+    public partial class FrmAddWorker : UIForm
     {
         public FrmAddWorker()
         {
@@ -27,7 +28,7 @@ namespace SYS.FormUI
                 RandKey = ran.Next(100000000, 999999999);
             }
             pictureBox1.LoadAsync("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587209835893&di=02964b1de4a1ef4f938f7d3ae12b5b17&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F11%2F25%2F0ef5a188956c2717db96d72d58524dec.jpg");
-            if (label13.Text == "员工信息查看页")
+            if (this.Text == "员工信息查看页")
             {
                 foreach (Control control in pnlInfo.Controls)
                 {
@@ -57,19 +58,23 @@ namespace SYS.FormUI
                     ucHistory = new ucHistory();
                     ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
                     ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
-                    ucHistory.txtPosition.Text = workerHistories[i].Postion.ToString();
-                    ucHistory.txtCompany.Text = workerHistories[i].Company.ToString();
+                    ucHistory.txtPosition.Text = workerHistories[i].Postion;
+                    ucHistory.txtCompany.Text = workerHistories[i].Company;
                     flpHistory.Controls.Add(ucHistory);
                 }
             }
-            else if (label13.Text == "员工信息添加页")
+            else if (this.Text == "员工信息添加页")
             {
                 Random random = new Random();
                 Pwd.Text = RandKey.ToString();
                 WorkerNo.Text = "WK" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 ucHistory = new ucHistory();
-                ucHistory.txtCompany.ReadOnly = false;
-                ucHistory.txtPosition.ReadOnly = false;
+                //ucHistory.txtCompany.ReadOnly = false;
+                //ucHistory.txtPosition.ReadOnly = false;
+                ucHistory.dtpStartDate.Enabled = true;
+                ucHistory.dtpEndDate.Enabled = true;
+                ucHistory.txtCompany.Enabled = true;
+                ucHistory.txtPosition.Enabled = true;
                 flpHistory.Controls.Add(ucHistory);
                 cboClub.SelectedIndex = 0;
                 cboEducation.SelectedIndex = 0;
@@ -108,8 +113,8 @@ namespace SYS.FormUI
                         ucHistory = new ucHistory();
                         ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
                         ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
-                        ucHistory.txtPosition.Text = workerHistories[i].Postion.ToString();
-                        ucHistory.txtCompany.Text = workerHistories[i].Company.ToString();
+                        ucHistory.txtPosition.Text = workerHistories[i].Postion;
+                        ucHistory.txtCompany.Text = workerHistories[i].Company;
                         flpHistory.Controls.Add(ucHistory);
                     }
                 }
@@ -153,7 +158,7 @@ namespace SYS.FormUI
         {
             try
             {
-                if (WorkerName.Text != null && ucHistory.txtCompany.Text != null && cboSex.Text != null)
+                if (WorkerName.Text != null /*&& ucHistory.txtCompany.Text != null*/ && cboSex.Text != null)
                 {
                     string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
                     string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());

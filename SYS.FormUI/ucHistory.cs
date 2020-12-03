@@ -8,5 +8,10 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
+
+        private void ucHistory_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

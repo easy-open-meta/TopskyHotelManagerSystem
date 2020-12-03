@@ -39,28 +39,28 @@
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomNo.Location = new System.Drawing.Point(29, 31);
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomNo.Location = new System.Drawing.Point(29, 48);
             this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(68, 17);
+            this.lblRoomNo.Size = new System.Drawing.Size(67, 15);
             this.lblRoomNo.TabIndex = 0;
             this.lblRoomNo.Text = "房间编号：";
             // 
             // cboState
             // 
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboState.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(112, 72);
+            this.cboState.Location = new System.Drawing.Point(112, 85);
             this.cboState.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(140, 25);
+            this.cboState.Size = new System.Drawing.Size(140, 23);
             this.cboState.TabIndex = 1;
             // 
             // btnOk
             // 
-            this.btnOk.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOk.Location = new System.Drawing.Point(90, 125);
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOk.Location = new System.Drawing.Point(90, 138);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(87, 41);
@@ -72,41 +72,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(29, 76);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(29, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "房间状态：";
             // 
             // txtRoomNo
             // 
-            this.txtRoomNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRoomNo.Location = new System.Drawing.Point(112, 27);
+            this.txtRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRoomNo.Location = new System.Drawing.Point(112, 48);
             this.txtRoomNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRoomNo.Name = "txtRoomNo";
             this.txtRoomNo.ReadOnly = true;
-            this.txtRoomNo.Size = new System.Drawing.Size(140, 24);
+            this.txtRoomNo.Size = new System.Drawing.Size(140, 21);
             this.txtRoomNo.TabIndex = 4;
             // 
             // FrmRoomStateManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 183);
+            this.ClientSize = new System.Drawing.Size(280, 193);
             this.Controls.Add(this.txtRoomNo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.lblRoomNo);
-            this.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRoomStateManager";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowIcon = true;
             this.Text = "修改房间状态";
             this.Load += new System.EventHandler(this.FrmRoomStateManager_Load);
             this.ResumeLayout(false);

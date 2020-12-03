@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
+using SYS.Application;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -95,7 +97,8 @@ namespace SYS.FormUI
         {
             //FrmTopSkyLogo frm = new FrmTopSkyLogo();
             //frm.ShowDialog();
-            CheckUpdate();
+            
+            //CheckUpdate();
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
             AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
@@ -159,7 +162,7 @@ namespace SYS.FormUI
         #region 登录图片点击事件
         private void picLogin_Click(object sender, EventArgs e)
         {
-            picLogin.BackgroundImage = Resources.Login_b;
+            //picLogin.BackgroundImage = Resources.Login_b;
             try
             {
                 if (CheckInput())//检验输入完整性
@@ -208,16 +211,10 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 登录按钮鼠标事件方法
-        private void picLogin_MouseEnter(object sender, EventArgs e)
-        {
-            picLogin.BackgroundImage = Resources.Login_b1;
-        }
 
-        private void FrmLogin_MouseLeave(object sender, EventArgs e)
+        private void picLogin_Click_1(object sender, EventArgs e)
         {
-            picLogin.BackgroundImage = Resources.Login_a;
+
         }
-        #endregion
     }
 }

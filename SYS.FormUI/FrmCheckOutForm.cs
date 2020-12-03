@@ -144,7 +144,7 @@ namespace SYS.FormUI
                 CustoName.Text = cto.CustoName;
                 txtCustoName.Text = cto.CustoName;
                 txtTel.Text = cto.CustoTel;
-                cboCustoSex.Text = cto.CustoSex;
+                cboCustoSex.Text = cto.CustoSex == 1 ? "男" : "女";
                 cboCustoType.SelectedIndex = cto.CustoType;
                 cboPassportType.SelectedIndex = cto.PassportType;
                 dtpBirth.Value = cto.CustoBirth;

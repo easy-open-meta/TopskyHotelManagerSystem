@@ -27,8 +27,8 @@ namespace SYS.FormUI
         {
             InitializeComponent();
             this.frm = frm;
+            
         }
-
         #region 房态图圆角代码
         public GraphicsPath GetRoundRectPath(RectangleF rect, float radius)
         {
@@ -101,8 +101,8 @@ namespace SYS.FormUI
        int nIndex
        );
         /// <summary>
-                /// 使窗口有鼠标穿透功能
-                /// </summary>
+        /// 使窗口有鼠标穿透功能
+        /// </summary>
         public void CanPenetrate()
         {
             uint intExTemp = GetWindowLong(this.Handle, GWL_EXSTYLE);
@@ -171,6 +171,13 @@ namespace SYS.FormUI
         #region 房态图加载事件方法
         private void ucRoomList_Load(object sender, EventArgs e)
         {
+            foreach (Control label in Controls)
+            {
+                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    label.Font = UI_FontUtil.SetRoomControlsFont();
+                }
+            }
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
             lblCustoNo.Text = romCustoInfo.CustoNo;
@@ -180,7 +187,7 @@ namespace SYS.FormUI
 
             us_CustoNo = romRoomInfo.CustoNo;
             us_CustoName = romRoomInfo.CustoName;
-            us_CustoSex = romRoomInfo.CustoSex;
+            us_CustoSex = romRoomInfo.CustoSex == 1 ? "男" : "女";
             us_CustoTel = romRoomInfo.CustoTel;
             us_CustoID = romRoomInfo.CustoID;
             us_CustoBirthday = Convert.ToDateTime(romRoomInfo.CustoBirth).ToString();

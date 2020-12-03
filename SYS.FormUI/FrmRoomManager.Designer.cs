@@ -76,9 +76,9 @@
             // 
             this.flpRoom.AutoScroll = true;
             this.flpRoom.BackColor = System.Drawing.Color.Transparent;
-            this.flpRoom.Location = new System.Drawing.Point(172, 36);
+            this.flpRoom.Location = new System.Drawing.Point(189, 36);
             this.flpRoom.Name = "flpRoom";
-            this.flpRoom.Size = new System.Drawing.Size(832, 415);
+            this.flpRoom.Size = new System.Drawing.Size(838, 415);
             this.flpRoom.TabIndex = 71;
             // 
             // pnlRoomState
@@ -96,18 +96,18 @@
             this.pnlRoomState.Controls.Add(this.pictureBox1);
             this.pnlRoomState.Location = new System.Drawing.Point(2, 3);
             this.pnlRoomState.Name = "pnlRoomState";
-            this.pnlRoomState.Size = new System.Drawing.Size(164, 235);
+            this.pnlRoomState.Size = new System.Drawing.Size(181, 235);
             this.pnlRoomState.TabIndex = 5;
             // 
             // lblReser
             // 
             this.lblReser.AutoSize = true;
             this.lblReser.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblReser.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblReser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblReser.ForeColor = System.Drawing.Color.Black;
-            this.lblReser.Location = new System.Drawing.Point(120, 201);
+            this.lblReser.Location = new System.Drawing.Point(134, 201);
             this.lblReser.Name = "lblReser";
-            this.lblReser.Size = new System.Drawing.Size(21, 22);
+            this.lblReser.Size = new System.Drawing.Size(19, 20);
             this.lblReser.TabIndex = 14;
             this.lblReser.Text = "0";
             // 
@@ -115,11 +115,11 @@
             // 
             this.lblFix.AutoSize = true;
             this.lblFix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(167)))), ((int)(((byte)(203)))));
-            this.lblFix.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblFix.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblFix.ForeColor = System.Drawing.Color.Black;
-            this.lblFix.Location = new System.Drawing.Point(120, 153);
+            this.lblFix.Location = new System.Drawing.Point(134, 153);
             this.lblFix.Name = "lblFix";
-            this.lblFix.Size = new System.Drawing.Size(21, 22);
+            this.lblFix.Size = new System.Drawing.Size(19, 20);
             this.lblFix.TabIndex = 13;
             this.lblFix.Text = "0";
             // 
@@ -127,10 +127,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.BackgroundImage = global::SYS.FormUI.Properties.Resources.预约房;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(4, 191);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(156, 41);
+            this.pictureBox5.Size = new System.Drawing.Size(174, 41);
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
@@ -141,10 +141,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BackgroundImage = global::SYS.FormUI.Properties.Resources.维修中2;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(5, 144);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(156, 41);
+            this.pictureBox4.Size = new System.Drawing.Size(174, 41);
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -155,10 +155,10 @@
             // 
             this.lblNotClear.AutoSize = true;
             this.lblNotClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(155)))), ((int)(((byte)(138)))));
-            this.lblNotClear.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblNotClear.Location = new System.Drawing.Point(120, 106);
+            this.lblNotClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblNotClear.Location = new System.Drawing.Point(134, 106);
             this.lblNotClear.Name = "lblNotClear";
-            this.lblNotClear.Size = new System.Drawing.Size(21, 22);
+            this.lblNotClear.Size = new System.Drawing.Size(19, 20);
             this.lblNotClear.TabIndex = 11;
             this.lblNotClear.Text = "0";
             // 
@@ -166,10 +166,10 @@
             // 
             this.lblCheck.AutoSize = true;
             this.lblCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(195)))), ((int)(((byte)(96)))));
-            this.lblCheck.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCheck.Location = new System.Drawing.Point(120, 60);
+            this.lblCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCheck.Location = new System.Drawing.Point(134, 60);
             this.lblCheck.Name = "lblCheck";
-            this.lblCheck.Size = new System.Drawing.Size(21, 22);
+            this.lblCheck.Size = new System.Drawing.Size(19, 20);
             this.lblCheck.TabIndex = 10;
             this.lblCheck.Text = "0";
             // 
@@ -177,10 +177,10 @@
             // 
             this.lblCanUse.AutoSize = true;
             this.lblCanUse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
-            this.lblCanUse.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCanUse.Location = new System.Drawing.Point(120, 12);
+            this.lblCanUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCanUse.Location = new System.Drawing.Point(134, 12);
             this.lblCanUse.Name = "lblCanUse";
-            this.lblCanUse.Size = new System.Drawing.Size(21, 22);
+            this.lblCanUse.Size = new System.Drawing.Size(19, 20);
             this.lblCanUse.TabIndex = 9;
             this.lblCanUse.Text = "0";
             // 
@@ -188,10 +188,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BackgroundImage = global::SYS.FormUI.Properties.Resources.脏房2;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(4, 97);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(156, 41);
+            this.pictureBox3.Size = new System.Drawing.Size(174, 41);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -202,10 +202,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox2.BackgroundImage = global::SYS.FormUI.Properties.Resources.已住房;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(4, 50);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(156, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(174, 41);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -216,10 +216,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = global::SYS.FormUI.Properties.Resources.可住房;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(174, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -242,106 +242,106 @@
             this.pnlRoomInfo.Controls.Add(this.label1);
             this.pnlRoomInfo.Location = new System.Drawing.Point(2, 244);
             this.pnlRoomInfo.Name = "pnlRoomInfo";
-            this.pnlRoomInfo.Size = new System.Drawing.Size(164, 207);
+            this.pnlRoomInfo.Size = new System.Drawing.Size(181, 207);
             this.pnlRoomInfo.TabIndex = 72;
             // 
             // lblRoomState
             // 
             this.lblRoomState.AutoSize = true;
-            this.lblRoomState.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomState.Location = new System.Drawing.Point(58, 185);
+            this.lblRoomState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomState.Location = new System.Drawing.Point(80, 185);
             this.lblRoomState.Name = "lblRoomState";
-            this.lblRoomState.Size = new System.Drawing.Size(42, 17);
+            this.lblRoomState.Size = new System.Drawing.Size(10, 15);
             this.lblRoomState.TabIndex = 16;
-            this.lblRoomState.Text = "label9";
+            this.lblRoomState.Text = " ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(1, 185);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 17);
+            this.label11.Size = new System.Drawing.Size(67, 15);
             this.label11.TabIndex = 15;
             this.label11.Text = "房间状态：";
             // 
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomNo.Location = new System.Drawing.Point(58, 5);
+            this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomNo.Location = new System.Drawing.Point(80, 5);
             this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(42, 17);
+            this.lblRoomNo.Size = new System.Drawing.Size(10, 15);
             this.lblRoomNo.TabIndex = 14;
-            this.lblRoomNo.Text = "label7";
+            this.lblRoomNo.Text = " ";
             // 
             // lblCustoNo
             // 
             this.lblCustoNo.AutoSize = true;
-            this.lblCustoNo.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCustoNo.Location = new System.Drawing.Point(58, 50);
+            this.lblCustoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCustoNo.Location = new System.Drawing.Point(80, 50);
             this.lblCustoNo.Name = "lblCustoNo";
-            this.lblCustoNo.Size = new System.Drawing.Size(42, 17);
+            this.lblCustoNo.Size = new System.Drawing.Size(10, 15);
             this.lblCustoNo.TabIndex = 12;
-            this.lblCustoNo.Text = "label7";
+            this.lblCustoNo.Text = " ";
             // 
             // lblRoomPosition
             // 
             this.lblRoomPosition.AutoSize = true;
-            this.lblRoomPosition.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomPosition.Location = new System.Drawing.Point(58, 140);
+            this.lblRoomPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoomPosition.Location = new System.Drawing.Point(80, 140);
             this.lblRoomPosition.Name = "lblRoomPosition";
-            this.lblRoomPosition.Size = new System.Drawing.Size(42, 17);
+            this.lblRoomPosition.Size = new System.Drawing.Size(10, 15);
             this.lblRoomPosition.TabIndex = 10;
-            this.lblRoomPosition.Text = "label8";
+            this.lblRoomPosition.Text = " ";
             // 
             // lblCheckTime
             // 
             this.lblCheckTime.AutoSize = true;
-            this.lblCheckTime.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCheckTime.Location = new System.Drawing.Point(58, 95);
+            this.lblCheckTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCheckTime.Location = new System.Drawing.Point(80, 95);
             this.lblCheckTime.Name = "lblCheckTime";
-            this.lblCheckTime.Size = new System.Drawing.Size(42, 17);
+            this.lblCheckTime.Size = new System.Drawing.Size(10, 15);
             this.lblCheckTime.TabIndex = 9;
-            this.lblCheckTime.Text = "label7";
+            this.lblCheckTime.Text = " ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(1, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "所在区域：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(1, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "入住时间：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(1, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "客户编号：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(1, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "房间号码：";
             // 
@@ -356,7 +356,7 @@
             this.picRefrech.BackColor = System.Drawing.Color.Transparent;
             this.picRefrech.BackgroundImage = global::SYS.FormUI.Properties.Resources.获取用户编号;
             this.picRefrech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRefrech.Location = new System.Drawing.Point(971, 4);
+            this.picRefrech.Location = new System.Drawing.Point(980, 4);
             this.picRefrech.Name = "picRefrech";
             this.picRefrech.Size = new System.Drawing.Size(32, 29);
             this.picRefrech.TabIndex = 94;
@@ -370,8 +370,8 @@
             this.btnZT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnZT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnZT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnZT.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnZT.Location = new System.Drawing.Point(858, 3);
+            this.btnZT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnZT.Location = new System.Drawing.Point(867, 3);
             this.btnZT.Name = "btnZT";
             this.btnZT.Size = new System.Drawing.Size(108, 31);
             this.btnZT.TabIndex = 74;
@@ -387,8 +387,8 @@
             this.btnQL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnQL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnQL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnQL.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQL.Location = new System.Drawing.Point(745, 3);
+            this.btnQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnQL.Location = new System.Drawing.Point(754, 3);
             this.btnQL.Name = "btnQL";
             this.btnQL.Size = new System.Drawing.Size(108, 31);
             this.btnQL.TabIndex = 74;
@@ -404,8 +404,8 @@
             this.btnHS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnHS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHS.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnHS.Location = new System.Drawing.Point(632, 3);
+            this.btnHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnHS.Location = new System.Drawing.Point(641, 3);
             this.btnHS.Name = "btnHS";
             this.btnHS.Size = new System.Drawing.Size(108, 31);
             this.btnHS.TabIndex = 74;
@@ -421,8 +421,8 @@
             this.btnHD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnHD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHD.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnHD.Location = new System.Drawing.Point(519, 3);
+            this.btnHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnHD.Location = new System.Drawing.Point(528, 3);
             this.btnHD.Name = "btnHD";
             this.btnHD.Size = new System.Drawing.Size(108, 31);
             this.btnHD.TabIndex = 74;
@@ -438,8 +438,8 @@
             this.btnBS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBS.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnBS.Location = new System.Drawing.Point(406, 3);
+            this.btnBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBS.Location = new System.Drawing.Point(415, 3);
             this.btnBS.Name = "btnBS";
             this.btnBS.Size = new System.Drawing.Size(108, 31);
             this.btnBS.TabIndex = 74;
@@ -455,8 +455,8 @@
             this.btnBD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBD.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnBD.Location = new System.Drawing.Point(293, 3);
+            this.btnBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBD.Location = new System.Drawing.Point(302, 3);
             this.btnBD.Name = "btnBD";
             this.btnBD.Size = new System.Drawing.Size(108, 31);
             this.btnBD.TabIndex = 74;
@@ -472,8 +472,8 @@
             this.btnAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAll.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAll.Location = new System.Drawing.Point(180, 3);
+            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAll.Location = new System.Drawing.Point(189, 3);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(108, 31);
             this.btnAll.TabIndex = 73;
@@ -488,7 +488,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1008, 454);
+            this.ClientSize = new System.Drawing.Size(1033, 456);
             this.Controls.Add(this.picRefrech);
             this.Controls.Add(this.btnZT);
             this.Controls.Add(this.btnQL);

@@ -31,17 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.tmrDate = new System.Windows.Forms.Timer(this.components);
             this.lblScroll = new System.Windows.Forms.Label();
             this.tmrFont = new System.Windows.Forms.Timer(this.components);
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picFormSize = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.picRoom = new System.Windows.Forms.PictureBox();
-            this.picCustomer = new System.Windows.Forms.PictureBox();
-            this.picExtend = new System.Windows.Forms.PictureBox();
             this.pnlMID = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -54,23 +47,36 @@
             this.tsmiCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAboutUs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picCommodity = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.picFormSize = new Sunny.UI.UIButton();
+            this.picClose = new Sunny.UI.UIButton();
             this.pnlCheckInfo = new System.Windows.Forms.Panel();
             this.lblClose = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCheckDay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFormSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).BeginInit();
+            this.picCommodity = new System.Windows.Forms.PictureBox();
+            this.picExtend = new System.Windows.Forms.PictureBox();
+            this.picCustomer = new System.Windows.Forms.PictureBox();
+            this.picRoom = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.PepCenter = new Sunny.UI.UIAvatar();
+            this.Information = new Sunny.UI.UITitlePanel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.lblPosition = new Sunny.UI.UILabel();
+            this.lblPart = new Sunny.UI.UILabel();
+            this.lblName = new Sunny.UI.UILabel();
             this.panel1.SuspendLayout();
             this.cmsMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).BeginInit();
             this.pnlCheckInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.Information.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTime
@@ -81,24 +87,11 @@
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTime.Location = new System.Drawing.Point(349, 7);
+            this.lblTime.Location = new System.Drawing.Point(7, 29);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(74, 20);
             this.lblTime.TabIndex = 2;
             this.lblTime.Text = "NowTime";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUserName.Location = new System.Drawing.Point(148, 8);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(183, 21);
-            this.lblUserName.TabIndex = 3;
-            this.lblUserName.Text = "Admin【管理员】";
             // 
             // tmrDate
             // 
@@ -110,9 +103,9 @@
             // 
             this.lblScroll.BackColor = System.Drawing.Color.Transparent;
             this.lblScroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblScroll.Location = new System.Drawing.Point(-7, 5);
+            this.lblScroll.Location = new System.Drawing.Point(-7, 11);
             this.lblScroll.Name = "lblScroll";
-            this.lblScroll.Size = new System.Drawing.Size(633, 25);
+            this.lblScroll.Size = new System.Drawing.Size(633, 29);
             this.lblScroll.TabIndex = 0;
             this.lblScroll.Text = "欢迎使用TS酒店管理系统，若遇bug等问题请向工程部进行反馈！";
             this.lblScroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,38 +113,8 @@
             // tmrFont
             // 
             this.tmrFont.Enabled = true;
+            this.tmrFont.Interval = 500;
             this.tmrFont.Tick += new System.EventHandler(this.tmrFont_Tick);
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.BackColor = System.Drawing.Color.Transparent;
-            this.picClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picClose.BackgroundImage")));
-            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Location = new System.Drawing.Point(978, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(35, 35);
-            this.picClose.TabIndex = 11;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            this.picClose.MouseEnter += new System.EventHandler(this.picClose_MouseEnter);
-            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave);
-            // 
-            // picFormSize
-            // 
-            this.picFormSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picFormSize.BackColor = System.Drawing.Color.Transparent;
-            this.picFormSize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFormSize.BackgroundImage")));
-            this.picFormSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picFormSize.Location = new System.Drawing.Point(937, 0);
-            this.picFormSize.Name = "picFormSize";
-            this.picFormSize.Size = new System.Drawing.Size(35, 35);
-            this.picFormSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picFormSize.TabIndex = 12;
-            this.picFormSize.TabStop = false;
-            this.picFormSize.Click += new System.EventHandler(this.picFormSize_Click);
-            this.picFormSize.MouseEnter += new System.EventHandler(this.picFormSize_MouseEnter);
-            this.picFormSize.MouseLeave += new System.EventHandler(this.picFormSize_MouseLeave);
             // 
             // label1
             // 
@@ -164,71 +127,22 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "TS酒店管理系统";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 30);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(147, 97);
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // picRoom
-            // 
-            this.picRoom.BackColor = System.Drawing.Color.Transparent;
-            this.picRoom.BackgroundImage = global::SYS.FormUI.Properties.Resources.客房管理_ib;
-            this.picRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRoom.Location = new System.Drawing.Point(165, 44);
-            this.picRoom.Name = "picRoom";
-            this.picRoom.Size = new System.Drawing.Size(124, 83);
-            this.picRoom.TabIndex = 16;
-            this.picRoom.TabStop = false;
-            this.picRoom.Click += new System.EventHandler(this.picRoom_Click);
-            // 
-            // picCustomer
-            // 
-            this.picCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.picCustomer.BackgroundImage = global::SYS.FormUI.Properties.Resources.用户管理_ib;
-            this.picCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCustomer.Location = new System.Drawing.Point(396, 44);
-            this.picCustomer.Name = "picCustomer";
-            this.picCustomer.Size = new System.Drawing.Size(133, 83);
-            this.picCustomer.TabIndex = 17;
-            this.picCustomer.TabStop = false;
-            this.picCustomer.Click += new System.EventHandler(this.picCustomer_Click);
-            // 
-            // picExtend
-            // 
-            this.picExtend.BackColor = System.Drawing.Color.Transparent;
-            this.picExtend.BackgroundImage = global::SYS.FormUI.Properties.Resources.扩展功能_ib;
-            this.picExtend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picExtend.Location = new System.Drawing.Point(863, 44);
-            this.picExtend.Name = "picExtend";
-            this.picExtend.Size = new System.Drawing.Size(120, 83);
-            this.picExtend.TabIndex = 21;
-            this.picExtend.TabStop = false;
-            this.picExtend.Click += new System.EventHandler(this.picExtend_Click);
-            // 
             // pnlMID
             // 
             this.pnlMID.BackColor = System.Drawing.Color.Transparent;
             this.pnlMID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlMID.Location = new System.Drawing.Point(4, 133);
+            this.pnlMID.Location = new System.Drawing.Point(4, 162);
             this.pnlMID.Name = "pnlMID";
-            this.pnlMID.Size = new System.Drawing.Size(1005, 454);
+            this.pnlMID.Size = new System.Drawing.Size(1033, 456);
             this.pnlMID.TabIndex = 23;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblScroll);
-            this.panel1.Location = new System.Drawing.Point(432, 1);
+            this.panel1.Location = new System.Drawing.Point(295, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 37);
+            this.panel1.Size = new System.Drawing.Size(615, 51);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -314,25 +228,13 @@
             this.tsmiExitSystem.Text = "退出系统";
             this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
             // 
-            // picCommodity
-            // 
-            this.picCommodity.BackColor = System.Drawing.Color.Transparent;
-            this.picCommodity.BackgroundImage = global::SYS.FormUI.Properties.Resources.商品消费_ia;
-            this.picCommodity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCommodity.Location = new System.Drawing.Point(636, 44);
-            this.picCommodity.Name = "picCommodity";
-            this.picCommodity.Size = new System.Drawing.Size(120, 83);
-            this.picCommodity.TabIndex = 25;
-            this.picCommodity.TabStop = false;
-            this.picCommodity.Click += new System.EventHandler(this.picCommodity_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(298, 7);
+            this.linkLabel1.Location = new System.Drawing.Point(162, 7);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(50, 17);
             this.linkLabel1.TabIndex = 26;
@@ -340,6 +242,47 @@
             this.linkLabel1.Text = "未打卡";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Green;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // picFormSize
+            // 
+            this.picFormSize.BackColor = System.Drawing.Color.Transparent;
+            this.picFormSize.BackgroundImage = global::SYS.FormUI.Properties.Resources.arrow_down_b;
+            this.picFormSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFormSize.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picFormSize.FillColor = System.Drawing.Color.Transparent;
+            this.picFormSize.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picFormSize.Location = new System.Drawing.Point(961, 1);
+            this.picFormSize.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picFormSize.Name = "picFormSize";
+            this.picFormSize.Radius = 20;
+            this.picFormSize.Size = new System.Drawing.Size(35, 35);
+            this.picFormSize.Style = Sunny.UI.UIStyle.Custom;
+            this.picFormSize.StyleCustomMode = true;
+            this.picFormSize.TabIndex = 29;
+            this.picFormSize.Click += new System.EventHandler(this.picFormSize_Click_1);
+            this.picFormSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picFormSize_MouseDown);
+            this.picFormSize.MouseLeave += new System.EventHandler(this.picFormSize_MouseLeave_1);
+            this.picFormSize.MouseHover += new System.EventHandler(this.picFormSize_MouseHover);
+            // 
+            // picClose
+            // 
+            this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.BackgroundImage = global::SYS.FormUI.Properties.Resources.close;
+            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picClose.FillColor = System.Drawing.Color.Transparent;
+            this.picClose.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picClose.Location = new System.Drawing.Point(1002, 1);
+            this.picClose.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picClose.Name = "picClose";
+            this.picClose.Radius = 20;
+            this.picClose.Size = new System.Drawing.Size(35, 35);
+            this.picClose.Style = Sunny.UI.UIStyle.Custom;
+            this.picClose.TabIndex = 28;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click_1);
+            this.picClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picClose_MouseDown);
+            this.picClose.MouseLeave += new System.EventHandler(this.picClose_MouseLeave_1);
+            this.picClose.MouseHover += new System.EventHandler(this.picClose_MouseHover);
             // 
             // pnlCheckInfo
             // 
@@ -350,7 +293,7 @@
             this.pnlCheckInfo.Controls.Add(this.label4);
             this.pnlCheckInfo.Controls.Add(this.lblCheckDay);
             this.pnlCheckInfo.Controls.Add(this.label2);
-            this.pnlCheckInfo.Location = new System.Drawing.Point(295, 30);
+            this.pnlCheckInfo.Location = new System.Drawing.Point(295, 55);
             this.pnlCheckInfo.Name = "pnlCheckInfo";
             this.pnlCheckInfo.Size = new System.Drawing.Size(95, 97);
             this.pnlCheckInfo.TabIndex = 27;
@@ -397,13 +340,177 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "您已打卡：";
             // 
+            // picCommodity
+            // 
+            this.picCommodity.BackColor = System.Drawing.Color.Transparent;
+            this.picCommodity.BackgroundImage = global::SYS.FormUI.Properties.Resources.商品消费_ia;
+            this.picCommodity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCommodity.Location = new System.Drawing.Point(634, 69);
+            this.picCommodity.Name = "picCommodity";
+            this.picCommodity.Size = new System.Drawing.Size(120, 83);
+            this.picCommodity.TabIndex = 25;
+            this.picCommodity.TabStop = false;
+            this.picCommodity.Click += new System.EventHandler(this.picCommodity_Click);
+            // 
+            // picExtend
+            // 
+            this.picExtend.BackColor = System.Drawing.Color.Transparent;
+            this.picExtend.BackgroundImage = global::SYS.FormUI.Properties.Resources.扩展功能_ib;
+            this.picExtend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picExtend.Location = new System.Drawing.Point(860, 69);
+            this.picExtend.Name = "picExtend";
+            this.picExtend.Size = new System.Drawing.Size(120, 83);
+            this.picExtend.TabIndex = 21;
+            this.picExtend.TabStop = false;
+            this.picExtend.Click += new System.EventHandler(this.picExtend_Click);
+            // 
+            // picCustomer
+            // 
+            this.picCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.picCustomer.BackgroundImage = global::SYS.FormUI.Properties.Resources.用户管理_ib;
+            this.picCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCustomer.Location = new System.Drawing.Point(395, 69);
+            this.picCustomer.Name = "picCustomer";
+            this.picCustomer.Size = new System.Drawing.Size(133, 83);
+            this.picCustomer.TabIndex = 17;
+            this.picCustomer.TabStop = false;
+            this.picCustomer.Click += new System.EventHandler(this.picCustomer_Click);
+            // 
+            // picRoom
+            // 
+            this.picRoom.BackColor = System.Drawing.Color.Transparent;
+            this.picRoom.BackgroundImage = global::SYS.FormUI.Properties.Resources.客房管理_ib;
+            this.picRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRoom.Location = new System.Drawing.Point(165, 69);
+            this.picRoom.Name = "picRoom";
+            this.picRoom.Size = new System.Drawing.Size(124, 83);
+            this.picRoom.TabIndex = 16;
+            this.picRoom.TabStop = false;
+            this.picRoom.Click += new System.EventHandler(this.picRoom_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 55);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(155, 97);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // PepCenter
+            // 
+            this.PepCenter.AvatarSize = 45;
+            this.PepCenter.BackColor = System.Drawing.Color.Transparent;
+            this.PepCenter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.PepCenter.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.PepCenter.Location = new System.Drawing.Point(981, 42);
+            this.PepCenter.MinimumSize = new System.Drawing.Size(1, 1);
+            this.PepCenter.Name = "PepCenter";
+            this.PepCenter.Size = new System.Drawing.Size(56, 47);
+            this.PepCenter.Style = Sunny.UI.UIStyle.Custom;
+            this.PepCenter.SymbolSize = 40;
+            this.PepCenter.TabIndex = 0;
+            this.PepCenter.Text = "uiAvatar1";
+            this.PepCenter.Click += new System.EventHandler(this.PepCenter_Click);
+            // 
+            // Information
+            // 
+            this.Information.BackColor = System.Drawing.Color.Transparent;
+            this.Information.Controls.Add(this.lblPosition);
+            this.Information.Controls.Add(this.lblPart);
+            this.Information.Controls.Add(this.lblName);
+            this.Information.Controls.Add(this.uiLabel3);
+            this.Information.Controls.Add(this.uiLabel2);
+            this.Information.Controls.Add(this.uiLabel1);
+            this.Information.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Information.ForeColor = System.Drawing.Color.White;
+            this.Information.Location = new System.Drawing.Point(883, 90);
+            this.Information.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Information.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Information.Name = "Information";
+            this.Information.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
+            this.Information.Size = new System.Drawing.Size(150, 128);
+            this.Information.TabIndex = 0;
+            this.Information.Text = "个人信息：";
+            this.Information.Visible = false;
+            this.Information.Leave += new System.EventHandler(this.Information_Leave);
+            this.Information.MouseLeave += new System.EventHandler(this.Information_MouseLeave);
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.Location = new System.Drawing.Point(3, 46);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(65, 23);
+            this.uiLabel1.TabIndex = 0;
+            this.uiLabel1.Text = "用户名：";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel2
+            // 
+            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel2.Location = new System.Drawing.Point(3, 70);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(65, 23);
+            this.uiLabel2.TabIndex = 1;
+            this.uiLabel2.Text = "部   门：";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.Location = new System.Drawing.Point(3, 94);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(65, 23);
+            this.uiLabel3.TabIndex = 2;
+            this.uiLabel3.Text = "职   务：";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblPosition.Location = new System.Drawing.Point(74, 94);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(65, 23);
+            this.lblPosition.TabIndex = 5;
+            this.lblPosition.Text = "职   务";
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPart
+            // 
+            this.lblPart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblPart.Location = new System.Drawing.Point(74, 70);
+            this.lblPart.Name = "lblPart";
+            this.lblPart.Size = new System.Drawing.Size(65, 23);
+            this.lblPart.TabIndex = 4;
+            this.lblPart.Text = "部   门";
+            this.lblPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblName.Location = new System.Drawing.Point(74, 46);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(65, 23);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "用户名";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1013, 589);
+            this.ClientSize = new System.Drawing.Size(1037, 618);
+            this.Controls.Add(this.Information);
+            this.Controls.Add(this.PepCenter);
+            this.Controls.Add(this.picFormSize);
+            this.Controls.Add(this.picClose);
             this.Controls.Add(this.pnlCheckInfo);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.picCommodity);
@@ -414,9 +521,6 @@
             this.Controls.Add(this.picRoom);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.picFormSize);
-            this.Controls.Add(this.picClose);
-            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblTime);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -429,17 +533,16 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove_1);
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFormSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).EndInit();
             this.panel1.ResumeLayout(false);
             this.cmsMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).EndInit();
             this.pnlCheckInfo.ResumeLayout(false);
             this.pnlCheckInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Information.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,8 +553,6 @@
         private System.Windows.Forms.Timer tmrDate;
         private System.Windows.Forms.Label lblScroll;
         private System.Windows.Forms.Timer tmrFont;
-        private System.Windows.Forms.PictureBox picClose;
-        private System.Windows.Forms.PictureBox picFormSize;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox picRoom;
@@ -468,7 +569,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiExitSystem;
         private System.Windows.Forms.PictureBox picCommodity;
         private System.Windows.Forms.ToolStripMenuItem tsmiAboutUs;
-        public System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel pnlCheckInfo;
         private System.Windows.Forms.Label label4;
@@ -477,5 +577,15 @@
         private System.Windows.Forms.Label lblClose;
         public System.Windows.Forms.NotifyIcon notifyIcon1;
         public System.Windows.Forms.ContextMenuStrip cmsMain;
+        private Sunny.UI.UIButton picClose;
+        private Sunny.UI.UIButton picFormSize;
+        private Sunny.UI.UIAvatar PepCenter;
+        private Sunny.UI.UITitlePanel Information;
+        private Sunny.UI.UILabel lblPosition;
+        private Sunny.UI.UILabel lblPart;
+        private Sunny.UI.UILabel lblName;
+        private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UILabel uiLabel2;
+        private Sunny.UI.UILabel uiLabel1;
     }
 }

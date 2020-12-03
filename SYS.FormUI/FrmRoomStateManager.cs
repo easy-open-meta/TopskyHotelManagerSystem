@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmRoomStateManager : Form
+    public partial class FrmRoomStateManager : UIForm
     {
         public FrmRoomStateManager()
         {

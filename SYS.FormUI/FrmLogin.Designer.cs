@@ -29,43 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.txtWorkerId = new System.Windows.Forms.TextBox();
-            this.txtWorkerPwd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.picMin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
-            this.picLogin = new System.Windows.Forms.PictureBox();
+            this.picLogin = new Sunny.UI.UIButton();
+            this.txtWorkerId = new Sunny.UI.UITextBox();
+            this.txtWorkerPwd = new Sunny.UI.UITextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtWorkerId
-            // 
-            this.txtWorkerId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtWorkerId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorkerId.Font = new System.Drawing.Font("苹方-简", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWorkerId.Location = new System.Drawing.Point(581, 165);
-            this.txtWorkerId.Margin = new System.Windows.Forms.Padding(0);
-            this.txtWorkerId.MaxLength = 8;
-            this.txtWorkerId.Name = "txtWorkerId";
-            this.txtWorkerId.Size = new System.Drawing.Size(214, 34);
-            this.txtWorkerId.TabIndex = 0;
-            this.txtWorkerId.WordWrap = false;
-            // 
-            // txtWorkerPwd
-            // 
-            this.txtWorkerPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtWorkerPwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorkerPwd.Font = new System.Drawing.Font("苹方-简", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWorkerPwd.Location = new System.Drawing.Point(581, 227);
-            this.txtWorkerPwd.Margin = new System.Windows.Forms.Padding(0);
-            this.txtWorkerPwd.MaxLength = 11;
-            this.txtWorkerPwd.Name = "txtWorkerPwd";
-            this.txtWorkerPwd.PasswordChar = '*';
-            this.txtWorkerPwd.Size = new System.Drawing.Size(214, 34);
-            this.txtWorkerPwd.TabIndex = 1;
-            this.txtWorkerPwd.WordWrap = false;
             // 
             // label2
             // 
@@ -105,14 +77,63 @@
             // picLogin
             // 
             this.picLogin.BackColor = System.Drawing.Color.Transparent;
-            this.picLogin.BackgroundImage = global::SYS.FormUI.Properties.Resources.Login_a1;
-            this.picLogin.Location = new System.Drawing.Point(581, 302);
+            this.picLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.picLogin.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.picLogin.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.picLogin.Location = new System.Drawing.Point(581, 313);
+            this.picLogin.MinimumSize = new System.Drawing.Size(1, 1);
             this.picLogin.Name = "picLogin";
-            this.picLogin.Size = new System.Drawing.Size(176, 59);
-            this.picLogin.TabIndex = 10;
-            this.picLogin.TabStop = false;
+            this.picLogin.Radius = 30;
+            this.picLogin.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.picLogin.Size = new System.Drawing.Size(184, 60);
+            this.picLogin.Style = Sunny.UI.UIStyle.LightBlue;
+            this.picLogin.TabIndex = 15;
+            this.picLogin.Text = "登      录";
             this.picLogin.Click += new System.EventHandler(this.picLogin_Click);
-            this.picLogin.MouseEnter += new System.EventHandler(this.picLogin_MouseEnter);
+            // 
+            // txtWorkerId
+            // 
+            this.txtWorkerId.BackColor = System.Drawing.Color.Transparent;
+            this.txtWorkerId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtWorkerId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtWorkerId.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtWorkerId.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtWorkerId.Location = new System.Drawing.Point(581, 164);
+            this.txtWorkerId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtWorkerId.Maximum = 2147483647D;
+            this.txtWorkerId.Minimum = -2147483648D;
+            this.txtWorkerId.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtWorkerId.Name = "txtWorkerId";
+            this.txtWorkerId.Padding = new System.Windows.Forms.Padding(5);
+            this.txtWorkerId.Radius = 20;
+            this.txtWorkerId.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtWorkerId.Size = new System.Drawing.Size(214, 35);
+            this.txtWorkerId.Style = Sunny.UI.UIStyle.Custom;
+            this.txtWorkerId.TabIndex = 16;
+            this.txtWorkerId.Text = "UITEXTBOX1";
+            // 
+            // txtWorkerPwd
+            // 
+            this.txtWorkerPwd.BackColor = System.Drawing.Color.Transparent;
+            this.txtWorkerPwd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtWorkerPwd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtWorkerPwd.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtWorkerPwd.Location = new System.Drawing.Point(581, 227);
+            this.txtWorkerPwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtWorkerPwd.Maximum = 2147483647D;
+            this.txtWorkerPwd.Minimum = -2147483648D;
+            this.txtWorkerPwd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtWorkerPwd.Name = "txtWorkerPwd";
+            this.txtWorkerPwd.Padding = new System.Windows.Forms.Padding(5);
+            this.txtWorkerPwd.PasswordChar = '*';
+            this.txtWorkerPwd.Radius = 20;
+            this.txtWorkerPwd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtWorkerPwd.Size = new System.Drawing.Size(214, 35);
+            this.txtWorkerPwd.Style = Sunny.UI.UIStyle.Custom;
+            this.txtWorkerPwd.TabIndex = 17;
+            this.txtWorkerPwd.Text = "uitextbox1";
             // 
             // FrmLogin
             // 
@@ -121,12 +142,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 429);
+            this.Controls.Add(this.txtWorkerPwd);
+            this.Controls.Add(this.txtWorkerId);
             this.Controls.Add(this.picLogin);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.picMin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtWorkerPwd);
-            this.Controls.Add(this.txtWorkerId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
@@ -135,24 +156,21 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseDown);
-            this.MouseLeave += new System.EventHandler(this.FrmLogin_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtWorkerId;
-        private System.Windows.Forms.TextBox txtWorkerPwd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox picMin;
         private System.Windows.Forms.PictureBox picClose;
-        private System.Windows.Forms.PictureBox picLogin;
+        private Sunny.UI.UIButton picLogin;
+        private Sunny.UI.UITextBox txtWorkerId;
+        private Sunny.UI.UITextBox txtWorkerPwd;
     }
 }
 

@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1545891726" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1545891726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Login_b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_b1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +148,8 @@
   <data name="资产管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\资产管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="用户管理-ia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理-ia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="空房22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\空房22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -195,6 +192,9 @@
   </data>
   <data name="搜索--1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\搜索--1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="添 加a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添 加a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,6 +277,9 @@
   <data name="监管统计-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\监管统计-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="人事管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人事管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="用户管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\用户管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -286,8 +289,8 @@
   <data name="预约管理-aa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约管理-aa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="用户管理-ia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\用户管理-ia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="预订管理ab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\预订管理ab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="预订管理-aa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预订管理-aa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -303,6 +306,9 @@
   </data>
   <data name="西餐厅-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\西餐厅-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="空房" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\空房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,8 +328,8 @@
   <data name="餐厅物资-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\餐厅物资-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="搜索--1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\搜索--1a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login_a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,8 +394,8 @@
   <data name="清理中" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\清理中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="预订管理ab" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\预订管理ab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1545891726" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1545891726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="已入住" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已入住.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -415,11 +421,14 @@
   <data name="打卡" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\打卡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="770e7b52ecafc807247aad51bb6c6b43" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\770e7b52ecafc807247aad51bb6c6b43.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="已住房-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住房-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="人事管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\人事管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="财务信息-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\财务信息-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -435,6 +444,9 @@
   </data>
   <data name="可住房-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\可住房-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索--1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\搜索--1a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="网页预约-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\网页预约-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,7 +478,7 @@
   <data name="获取用户编号-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\获取用户编号-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="770e7b52ecafc807247aad51bb6c6b43" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\770e7b52ecafc807247aad51bb6c6b43.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-down-b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-down-b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

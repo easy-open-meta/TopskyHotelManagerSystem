@@ -23,7 +23,7 @@ namespace SYS.Application
                 s.SellName = dr["SellName"].ToString();
                 s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
                 s.format = (string)dr["format"];
-                s.Stock = (int)dr["Stock"];
+                s.Stock = Convert.ToInt32(dr["Stock"]);
                 ls.Add(s);
             }
             dr.Close();
@@ -112,10 +112,10 @@ namespace SYS.Application
         /// <param name="name"></param>
         /// <param name="price"></param>
         /// <returns></returns>
-        public static SellThing SelectSellThingByNameAndPrice(string name, string price)
+        public static SellThing SelectSellThingByNameAndPrice(string name,string price)
         {
             SellThing s = null;
-            string sql = "select * from SELLTHING where SellName='{0}' and SellPrice='{1}'";
+            string sql = "select * from SELLTHING where SellName='{0}' and SellPrice = '{1}'";
             sql = string.Format(sql, name, price);
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())

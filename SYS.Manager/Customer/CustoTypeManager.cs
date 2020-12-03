@@ -14,20 +14,7 @@ namespace SYS.Manager
         /// <returns></returns>
         public static List<CustoType> SelectCustoTypesAll()
         {
-            List<CustoType> types = new List<CustoType>();
-            string sql = "select * from USERTYPE";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                CustoType type = new CustoType();
-                type.UserType = (int)dr["UserType"];
-                type.TypeName = dr["TypeName"].ToString();
-                types.Add(type);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-
-            return types;
+            return CustoTypeService.SelectCustoTypesAll();
         }
         #endregion
 
@@ -40,6 +27,28 @@ namespace SYS.Manager
         public static string SelectTypeNameByCustoTypeId(int CustoTypeId)
         {
             return CustoTypeService.SelectTypeNameByCustoTypeId(CustoTypeId);
+        }
+        #endregion
+
+        #region 查询所有证件类型
+        /// <summary>
+        /// 查询所有证件类型
+        /// </summary>
+        /// <returns></returns>
+        public static List<PassPortType> SelectPassPortTypeAll()
+        {
+            return CustoTypeService.SelectPassPortTypeAll();
+        }
+        #endregion
+
+        #region 查询所有性别类型
+        /// <summary>
+        /// 查询所有性别类型
+        /// </summary>
+        /// <returns></returns>
+        public static List<SexType> SelectSexTypeAll()
+        {
+            return CustoTypeService.SelectSexTypeAll();
         }
         #endregion
     }

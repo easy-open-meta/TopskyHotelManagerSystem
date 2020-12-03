@@ -84,13 +84,13 @@ namespace SYS.FormUI
             if (dr == DialogResult.Yes)
             {
                 FrmAddWorker aff = new FrmAddWorker();
-                aff.label13.Text = "员工信息查看页";
+                aff.Text = "员工信息查看页";
                 aff.ShowDialog();
             }
             else if (dr == DialogResult.No)
             {
                 FrmAddWorker frmAddWorker = new FrmAddWorker();
-                frmAddWorker.label13.Text = "员工信息修改页";
+                frmAddWorker.Text = "员工信息修改页";
                 frmAddWorker.ShowDialog();
             }
             else
