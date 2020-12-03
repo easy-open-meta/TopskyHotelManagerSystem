@@ -11,10 +11,12 @@
 
 - 引用的开源项目：
 1. Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)
+2.SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。[SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
 
 - 本项目说明：
-- 一切开发请遵照MIT开源协议进行
+- 一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议，需要用到时请务必在项目介绍加上对应描述。
 - 有bug欢迎提出issue！或进行评论
+- 本系统部分页面基于SunnyUI.Net控件库进行创建，在此特别声明！
 -  **关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!** 
 
 - 开发目的：
