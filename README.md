@@ -10,8 +10,10 @@
 - [遗失情缘](https://blog.lost520.cn/)提供的圆形进度条加载效果！
 
 - 引用的开源项目：
-1. Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)
-2.SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。[SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
+1. Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)<br/>
+2.SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。<br/>
+[SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
+
 
 - 本项目说明：
 - 一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议，需要用到时请务必在项目介绍加上对应描述。
