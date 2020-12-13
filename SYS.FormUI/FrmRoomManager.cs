@@ -38,13 +38,22 @@ namespace SYS.FormUI
         #region 房间加载事件方法
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.pnlRoomInfo.Controls)
+            foreach (Control label in this.Controls)
             {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                if (label.GetType().ToString() == "Sunny.UI.UIButton")
                 {
                     label.Font = UI_FontUtil.SetChildControlsFont();
                 }
             }
+
+            foreach (Control item in this.pnlRoomInfo.Controls)
+            {
+                if (item.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    item.Font = UI_FontUtil.SetChildControlsFont();
+                }
+            }
+
             romsty = RoomService.SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
             {

@@ -5,6 +5,9 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,47 +15,94 @@ namespace SYS.Core
 {
     public class UI_FontUtil
     {
-        
         public static Font SetMainFont()
         {
-            PrivateFontCollection font = new PrivateFontCollection();
-            var str = AppDomain.CurrentDomain.BaseDirectory + "PF-Mdi.ttf";
-            font.AddFontFile(str);//字体的路径及名字
-            Font myFont = new Font(font.Families[0].Name, 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
+            byte[] fontData = new byte[stream.Length];
+            stream.Read(fontData, 0, (int)stream.Length);
+            stream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+            FontFamily family = new FontFamily(pfc.Families[0].Name);
+            Font myFont = new Font(family, 12);
             return myFont;
         }
 
         public static Font SetControlFont()
         {
-            PrivateFontCollection font = new PrivateFontCollection();
-            var str = AppDomain.CurrentDomain.BaseDirectory + "PF-Mdi.ttf";
-            font.AddFontFile(str);//字体的路径及名字
-            Font myFont = new Font(font.Families[0].Name, 16F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(134)));
-            //pfc.AddFontFile(path);
-            //System.Drawing.Font fn = new Font(pfc.Families[0], 12, FontStyle.Regular);//Fixedsys Excelsior 3.01
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
+            byte[] fontData = new byte[stream.Length];
+            stream.Read(fontData, 0, (int)stream.Length);
+            stream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+            FontFamily family = new FontFamily(pfc.Families[0].Name);
+            Font myFont = new Font(family, 14);
             return myFont;
         }
 
         public static Font SetChildControlsFont()
         {
-            PrivateFontCollection font = new PrivateFontCollection();
-            var str = AppDomain.CurrentDomain.BaseDirectory + "PF-Mdi.ttf";
-            font.AddFontFile(str);//字体的路径及名字
-            Font myFont = new Font(font.Families[0].Name, 13F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            //pfc.AddFontFile(path);
-            //System.Drawing.Font fn = new Font(pfc.Families[0], 12, FontStyle.Regular);//Fixedsys Excelsior 3.01
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
+            byte[] fontData = new byte[stream.Length];
+            stream.Read(fontData, 0, (int)stream.Length);
+            stream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+            FontFamily family = new FontFamily(pfc.Families[0].Name);
+            Font myFont = new Font(family, 12);
             return myFont;
         }
 
         public static Font SetRoomControlsFont()
         {
-            PrivateFontCollection font = new PrivateFontCollection();
-            var str = AppDomain.CurrentDomain.BaseDirectory + "PF-Mdi.ttf";
-            font.AddFontFile(str);//字体的路径及名字
-            Font myFont = new Font(font.Families[0].Name, 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            //pfc.AddFontFile(path);
-            //System.Drawing.Font fn = new Font(pfc.Families[0], 12, FontStyle.Regular);//Fixedsys Excelsior 3.01
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
+            byte[] fontData = new byte[stream.Length];
+            stream.Read(fontData, 0, (int)stream.Length);
+            stream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+            FontFamily family = new FontFamily(pfc.Families[0].Name);
+            Font myFont = new Font(family, 10);
             return myFont;
         }
+
+        
     }
 }

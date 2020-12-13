@@ -28,3 +28,16 @@ D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplet
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
 D:\Gitee\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.Resource.resources
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.GenerateResource.cache
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resource.resx
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resource.Designer.cs
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.xml
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resources\GFont.otf

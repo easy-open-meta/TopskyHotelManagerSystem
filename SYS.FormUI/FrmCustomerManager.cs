@@ -21,6 +21,10 @@ namespace SYS.FormUI
         #region 用户管理界面加载事件方法
         private void FrmCustomerManager_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.SetChildControlsFont();
+            }
             LoadCustomer();
             LoadCustoType();
             //txtCustoNo.ReadOnly = true;

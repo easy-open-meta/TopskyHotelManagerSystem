@@ -171,7 +171,7 @@ namespace SYS.FormUI
         #region 房态图加载事件方法
         private void ucRoomList_Load(object sender, EventArgs e)
         {
-            foreach (Control label in Controls)
+            foreach (Control label in this.Controls)
             {
                 if (label.GetType().ToString() == "System.Windows.Forms.Label")
                 {

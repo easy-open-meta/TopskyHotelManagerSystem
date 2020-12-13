@@ -97,23 +97,14 @@ namespace SYS.FormUI
         #region 定时器：获取网络时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
-
-            string netTime = /*GetNetDateTime()*/"";
-
-            if (netTime != "")
-            {
-                lblTime.Text = Convert.ToDateTime(netTime).ToString("HH:mm:ss");
-            }
-            else
-            {
-                lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
-            }
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
         #endregion
 
         #region 获取网络时间
         public static string GetNetDateTime()
-        {//获取网络时间
+        {
+            //获取网络时间
             WebRequest request = null;
             WebResponse response = null;
             WebHeaderCollection headerCollection = null;
@@ -156,18 +147,12 @@ namespace SYS.FormUI
         #region 定时器：文字滚动间隔
         private void tmrFont_Tick(object sender, EventArgs e)
         {
-            lblScroll.Location = new Point(lblScroll.Location.X - 8, lblScroll.Location.Y);
-            if (lblScroll.Location.X + lblScroll.Width <= 5)
+            fontn++;
+            if (fontn == fonts.Count)
             {
-                fontn++;
-                if (fontn == fonts.Count)
-                {
-                    fontn = 0;
-                }
-                lblScroll.Text = fonts[fontn].FontsMess;
-                lblScroll.Location = new Point(panel1.Width, lblScroll.Location.Y);
+                fontn = 0;
             }
-
+            lblScroll.Text = fonts[fontn].FontsMess;
         }
         #endregion
 
@@ -202,26 +187,39 @@ namespace SYS.FormUI
         private void FrmMain_Load(object sender, EventArgs e)
         {
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
-            foreach (Control label in Controls)
+            foreach (Control label in this.Controls)
             {
                 if (label.GetType().ToString() == "System.Windows.Forms.Label")
                 {
                     label.Font = UI_FontUtil.SetMainFont();
                 }
             }
-            foreach (Control label in this.panel1.Controls)
-            {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    label.Font = UI_FontUtil.SetMainFont();
-                }
+            DateTime tmCur = DateTime.Now;
+
+            if (tmCur.Hour < 8 || tmCur.Hour > 18)
+            {//晚上
+                label3.Text = "(*´▽｀)ノノ晚上好,";
+                label5.Text = LoginInfo.WorkerName;
             }
-            lblName.Text = LoginInfo.WorkerName;
-            lblPart.Text = LoginInfo.WorkerClub;
-            lblPosition.Text = LoginInfo.WorkerPosition;
-            notifyIcon1.Text = "TS酒店管理系统" + lblTime + "-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
+            else if (tmCur.Hour > 8 && tmCur.Hour < 12)
+            {//上午
+                label3.Text = "上午好,";
+                label5.Text = LoginInfo.WorkerName;
+            }
+            else
+            {//下午
+                label3.Text = "下午好,";
+                label5.Text = LoginInfo.WorkerName;
+            }
+            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+            if (n > 0)
+            {
+                linkLabel1.Text = "已打卡";
+                linkLabel1.ForeColor = Color.Green;
+                linkLabel1.LinkColor = Color.Green;
+            }
+            notifyIcon1.Text = "TS酒店管理系统-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
             wk_WorkerName = LoginInfo.WorkerName;
-            Information.Text = LoginInfo.WorkerNo + "个人信息：";
             //Opacity = 0.0; //窗体透明度为0
             //fadeTimer.Start(); //计时开始
             picRoom.BackgroundImage = Resources.预订管理ab;
@@ -233,13 +231,7 @@ namespace SYS.FormUI
             frm1.TopLevel = false;
             pnlMID.Controls.Add(frm1);
             frm1.Show();
-            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
-            if (n > 0)
-            {
-                linkLabel1.Text = "已打卡";
-                linkLabel1.ForeColor = Color.Green;
-                linkLabel1.LinkColor = Color.Green;
-            }
+            
 
 
 
@@ -351,8 +343,8 @@ namespace SYS.FormUI
                 #region 获取添加操作日志所需的信息
                 Operation o = new Operation();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = lblName.Text + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
-                o.OperationAccount = lblName.Text;
+                o.Operationlog = LoginInfo.WorkerNo + LoginInfo.WorkerName + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
+                o.OperationAccount = LoginInfo.WorkerNo;
                 #endregion
                 OperationManager.InsertOperationLog(o);
             }
@@ -370,7 +362,8 @@ namespace SYS.FormUI
         #region 检查软件更新版本事件方法
         private void tsmiCheckUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请到：https://gitee.com/yjj0720/TopskyHotelManagerSystem" + "获取该软件的最新版本！");
+            //调用系统默认的浏览器
+            System.Diagnostics.Process.Start("https://gitee.com/yjj0720/TopskyHotelManagerSystem/releases");
         }
         #endregion
 
@@ -527,7 +520,7 @@ namespace SYS.FormUI
 
         private void PepCenter_Click(object sender, EventArgs e)
         {
-            this.Information.Visible = true;
+            //this.Information.Visible = true;
         }
 
         private void picFormSize_MouseHover(object sender, EventArgs e)
@@ -572,7 +565,7 @@ namespace SYS.FormUI
 
         private void Information_MouseLeave(object sender, EventArgs e)
         {
-            this.Information.Visible = false;
+           // this.Information.Visible = false;
         }
     }
 }

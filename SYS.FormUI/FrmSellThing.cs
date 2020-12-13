@@ -20,6 +20,12 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmSellThing_Load(object sender, EventArgs e)
         {
+
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.SetChildControlsFont();
+            }
+
             List<Room> roms = RoomManager.SelectRoomByStateAll();
             for (int i = 0; i < roms.Count; i++)
             {

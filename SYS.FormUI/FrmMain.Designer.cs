@@ -32,11 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.lblTime = new System.Windows.Forms.Label();
             this.tmrDate = new System.Windows.Forms.Timer(this.components);
-            this.lblScroll = new System.Windows.Forms.Label();
-            this.tmrFont = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMID = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiMain = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,15 +57,10 @@
             this.picCustomer = new System.Windows.Forms.PictureBox();
             this.picRoom = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.PepCenter = new Sunny.UI.UIAvatar();
-            this.Information = new Sunny.UI.UITitlePanel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
-            this.uiLabel3 = new Sunny.UI.UILabel();
-            this.lblPosition = new Sunny.UI.UILabel();
-            this.lblPart = new Sunny.UI.UILabel();
-            this.lblName = new Sunny.UI.UILabel();
-            this.panel1.SuspendLayout();
+            this.lblScroll = new Sunny.UI.UIScrollingText();
+            this.tmrFont = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.cmsMain.SuspendLayout();
             this.pnlCheckInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).BeginInit();
@@ -76,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.Information.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTime
@@ -99,23 +90,6 @@
             this.tmrDate.Interval = 1000;
             this.tmrDate.Tick += new System.EventHandler(this.tmrDate_Tick);
             // 
-            // lblScroll
-            // 
-            this.lblScroll.BackColor = System.Drawing.Color.Transparent;
-            this.lblScroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblScroll.Location = new System.Drawing.Point(-7, 11);
-            this.lblScroll.Name = "lblScroll";
-            this.lblScroll.Size = new System.Drawing.Size(633, 29);
-            this.lblScroll.TabIndex = 0;
-            this.lblScroll.Text = "欢迎使用TS酒店管理系统，若遇bug等问题请向工程部进行反馈！";
-            this.lblScroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tmrFont
-            // 
-            this.tmrFont.Enabled = true;
-            this.tmrFont.Interval = 500;
-            this.tmrFont.Tick += new System.EventHandler(this.tmrFont_Tick);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -135,16 +109,6 @@
             this.pnlMID.Name = "pnlMID";
             this.pnlMID.Size = new System.Drawing.Size(1033, 456);
             this.pnlMID.TabIndex = 23;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblScroll);
-            this.panel1.Location = new System.Drawing.Point(295, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 51);
-            this.panel1.TabIndex = 24;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // notifyIcon1
             // 
@@ -167,27 +131,27 @@
             this.tsmiAboutUs,
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(144, 160);
+            this.cmsMain.Size = new System.Drawing.Size(181, 182);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiMain
             // 
             this.tsmiMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiMain.Name = "tsmiMain";
-            this.tsmiMain.Size = new System.Drawing.Size(143, 24);
+            this.tsmiMain.Size = new System.Drawing.Size(180, 24);
             this.tsmiMain.Text = "主界面";
             this.tsmiMain.Click += new System.EventHandler(this.tsmiMain_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // tsmiChangeUser
             // 
             this.tsmiChangeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiChangeUser.Name = "tsmiChangeUser";
-            this.tsmiChangeUser.Size = new System.Drawing.Size(143, 24);
+            this.tsmiChangeUser.Size = new System.Drawing.Size(180, 24);
             this.tsmiChangeUser.Text = "切换用户";
             this.tsmiChangeUser.Click += new System.EventHandler(this.tsmiChangeUser_Click);
             // 
@@ -195,20 +159,20 @@
             // 
             this.tsmiLockScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiLockScreen.Name = "tsmiLockScreen";
-            this.tsmiLockScreen.Size = new System.Drawing.Size(143, 24);
+            this.tsmiLockScreen.Size = new System.Drawing.Size(180, 24);
             this.tsmiLockScreen.Text = "快速锁屏";
             this.tsmiLockScreen.Click += new System.EventHandler(this.tsmiLockScreen_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // tsmiCheckUpdate
             // 
             this.tsmiCheckUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiCheckUpdate.Name = "tsmiCheckUpdate";
-            this.tsmiCheckUpdate.Size = new System.Drawing.Size(143, 24);
+            this.tsmiCheckUpdate.Size = new System.Drawing.Size(180, 24);
             this.tsmiCheckUpdate.Text = "检查更新";
             this.tsmiCheckUpdate.Click += new System.EventHandler(this.tsmiCheckUpdate_Click);
             // 
@@ -216,7 +180,7 @@
             // 
             this.tsmiAboutUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiAboutUs.Name = "tsmiAboutUs";
-            this.tsmiAboutUs.Size = new System.Drawing.Size(143, 24);
+            this.tsmiAboutUs.Size = new System.Drawing.Size(180, 24);
             this.tsmiAboutUs.Text = "关于我们";
             this.tsmiAboutUs.Click += new System.EventHandler(this.tsmiAboutUs_Click);
             // 
@@ -224,7 +188,7 @@
             // 
             this.tsmiExitSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiExitSystem.Name = "tsmiExitSystem";
-            this.tsmiExitSystem.Size = new System.Drawing.Size(143, 24);
+            this.tsmiExitSystem.Size = new System.Drawing.Size(180, 24);
             this.tsmiExitSystem.Text = "退出系统";
             this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
             // 
@@ -401,104 +365,51 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // PepCenter
+            // lblScroll
             // 
-            this.PepCenter.AvatarSize = 45;
-            this.PepCenter.BackColor = System.Drawing.Color.Transparent;
-            this.PepCenter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.PepCenter.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.PepCenter.Location = new System.Drawing.Point(981, 42);
-            this.PepCenter.MinimumSize = new System.Drawing.Size(1, 1);
-            this.PepCenter.Name = "PepCenter";
-            this.PepCenter.Size = new System.Drawing.Size(56, 47);
-            this.PepCenter.Style = Sunny.UI.UIStyle.Custom;
-            this.PepCenter.SymbolSize = 40;
-            this.PepCenter.TabIndex = 0;
-            this.PepCenter.Text = "uiAvatar1";
-            this.PepCenter.Click += new System.EventHandler(this.PepCenter_Click);
+            this.lblScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.lblScroll.Interval = 1000;
+            this.lblScroll.Location = new System.Drawing.Point(267, 7);
+            this.lblScroll.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lblScroll.Name = "lblScroll";
+            this.lblScroll.Size = new System.Drawing.Size(688, 42);
+            this.lblScroll.TabIndex = 0;
             // 
-            // Information
+            // tmrFont
             // 
-            this.Information.BackColor = System.Drawing.Color.Transparent;
-            this.Information.Controls.Add(this.lblPosition);
-            this.Information.Controls.Add(this.lblPart);
-            this.Information.Controls.Add(this.lblName);
-            this.Information.Controls.Add(this.uiLabel3);
-            this.Information.Controls.Add(this.uiLabel2);
-            this.Information.Controls.Add(this.uiLabel1);
-            this.Information.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Information.ForeColor = System.Drawing.Color.White;
-            this.Information.Location = new System.Drawing.Point(883, 90);
-            this.Information.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Information.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Information.Name = "Information";
-            this.Information.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
-            this.Information.Size = new System.Drawing.Size(150, 128);
-            this.Information.TabIndex = 0;
-            this.Information.Text = "个人信息：";
-            this.Information.Visible = false;
-            this.Information.Leave += new System.EventHandler(this.Information_Leave);
-            this.Information.MouseLeave += new System.EventHandler(this.Information_MouseLeave);
+            this.tmrFont.Enabled = true;
+            this.tmrFont.Interval = 1000;
+            this.tmrFont.Tick += new System.EventHandler(this.tmrFont_Tick);
             // 
-            // uiLabel1
+            // label3
             // 
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.Location = new System.Drawing.Point(3, 46);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(65, 23);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "用户名：";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(97, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "NowTime";
             // 
-            // uiLabel2
+            // label5
             // 
-            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel2.Location = new System.Drawing.Point(3, 70);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(65, 23);
-            this.uiLabel2.TabIndex = 1;
-            this.uiLabel2.Text = "部   门：";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel3
-            // 
-            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel3.Location = new System.Drawing.Point(3, 94);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(65, 23);
-            this.uiLabel3.TabIndex = 2;
-            this.uiLabel3.Text = "职   务：";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblPosition.Location = new System.Drawing.Point(74, 94);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(65, 23);
-            this.lblPosition.TabIndex = 5;
-            this.lblPosition.Text = "职   务";
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPart
-            // 
-            this.lblPart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblPart.Location = new System.Drawing.Point(74, 70);
-            this.lblPart.Name = "lblPart";
-            this.lblPart.Size = new System.Drawing.Size(65, 23);
-            this.lblPart.TabIndex = 4;
-            this.lblPart.Text = "部   门";
-            this.lblPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblName.Location = new System.Drawing.Point(74, 46);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(65, 23);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "用户名";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(169, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "NowTime";
             // 
             // FrmMain
             // 
@@ -507,14 +418,14 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1037, 618);
-            this.Controls.Add(this.Information);
-            this.Controls.Add(this.PepCenter);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblScroll);
             this.Controls.Add(this.picFormSize);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.pnlCheckInfo);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.picCommodity);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMID);
             this.Controls.Add(this.picExtend);
             this.Controls.Add(this.picCustomer);
@@ -533,7 +444,6 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove_1);
-            this.panel1.ResumeLayout(false);
             this.cmsMain.ResumeLayout(false);
             this.pnlCheckInfo.ResumeLayout(false);
             this.pnlCheckInfo.PerformLayout();
@@ -542,7 +452,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.Information.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,15 +460,12 @@
         #endregion
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer tmrDate;
-        private System.Windows.Forms.Label lblScroll;
-        private System.Windows.Forms.Timer tmrFont;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox picRoom;
         private System.Windows.Forms.PictureBox picCustomer;
         private System.Windows.Forms.PictureBox picExtend;
         private System.Windows.Forms.Panel pnlMID;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem tsmiMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeUser;
@@ -579,13 +485,9 @@
         public System.Windows.Forms.ContextMenuStrip cmsMain;
         private Sunny.UI.UIButton picClose;
         private Sunny.UI.UIButton picFormSize;
-        private Sunny.UI.UIAvatar PepCenter;
-        private Sunny.UI.UITitlePanel Information;
-        private Sunny.UI.UILabel lblPosition;
-        private Sunny.UI.UILabel lblPart;
-        private Sunny.UI.UILabel lblName;
-        private Sunny.UI.UILabel uiLabel3;
-        private Sunny.UI.UILabel uiLabel2;
-        private Sunny.UI.UILabel uiLabel1;
+        private System.Windows.Forms.Timer tmrFont;
+        private Sunny.UI.UIScrollingText lblScroll;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

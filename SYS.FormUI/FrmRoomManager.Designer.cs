@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRoomManager));
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlRoomState = new System.Windows.Forms.Panel();
             this.lblReser = new System.Windows.Forms.Label();
@@ -55,13 +54,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tmrGetData = new System.Windows.Forms.Timer(this.components);
             this.picRefrech = new System.Windows.Forms.PictureBox();
-            this.btnZT = new System.Windows.Forms.Button();
-            this.btnQL = new System.Windows.Forms.Button();
-            this.btnHS = new System.Windows.Forms.Button();
-            this.btnHD = new System.Windows.Forms.Button();
-            this.btnBS = new System.Windows.Forms.Button();
-            this.btnBD = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
+            this.btnAll = new Sunny.UI.UIButton();
+            this.btnBD = new Sunny.UI.UIButton();
+            this.btnBS = new Sunny.UI.UIButton();
+            this.btnHD = new Sunny.UI.UIButton();
+            this.btnHS = new Sunny.UI.UIButton();
+            this.btnQL = new Sunny.UI.UIButton();
+            this.btnZT = new Sunny.UI.UIButton();
             this.pnlRoomState.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -363,124 +362,89 @@
             this.picRefrech.TabStop = false;
             this.picRefrech.Click += new System.EventHandler(this.picRefrech_Click);
             // 
-            // btnZT
+            // btnAll
             // 
-            this.btnZT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnZT.BackgroundImage")));
-            this.btnZT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnZT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnZT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnZT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnZT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnZT.Location = new System.Drawing.Point(867, 3);
-            this.btnZT.Name = "btnZT";
-            this.btnZT.Size = new System.Drawing.Size(108, 31);
-            this.btnZT.TabIndex = 74;
-            this.btnZT.Text = "总统套房";
-            this.btnZT.UseVisualStyleBackColor = true;
-            this.btnZT.Click += new System.EventHandler(this.btnZT_Click);
-            this.btnZT.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
-            // 
-            // btnQL
-            // 
-            this.btnQL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQL.BackgroundImage")));
-            this.btnQL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnQL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnQL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnQL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQL.Location = new System.Drawing.Point(754, 3);
-            this.btnQL.Name = "btnQL";
-            this.btnQL.Size = new System.Drawing.Size(108, 31);
-            this.btnQL.TabIndex = 74;
-            this.btnQL.Text = "情侣套房";
-            this.btnQL.UseVisualStyleBackColor = true;
-            this.btnQL.Click += new System.EventHandler(this.btnQL_Click);
-            this.btnQL.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
-            // 
-            // btnHS
-            // 
-            this.btnHS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHS.BackgroundImage")));
-            this.btnHS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnHS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnHS.Location = new System.Drawing.Point(641, 3);
-            this.btnHS.Name = "btnHS";
-            this.btnHS.Size = new System.Drawing.Size(108, 31);
-            this.btnHS.TabIndex = 74;
-            this.btnHS.Text = "豪华双人间";
-            this.btnHS.UseVisualStyleBackColor = true;
-            this.btnHS.Click += new System.EventHandler(this.btnHS_Click);
-            this.btnHS.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
-            // 
-            // btnHD
-            // 
-            this.btnHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHD.BackgroundImage")));
-            this.btnHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnHD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnHD.Location = new System.Drawing.Point(528, 3);
-            this.btnHD.Name = "btnHD";
-            this.btnHD.Size = new System.Drawing.Size(108, 31);
-            this.btnHD.TabIndex = 74;
-            this.btnHD.Text = "豪华单人间";
-            this.btnHD.UseVisualStyleBackColor = true;
-            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
-            this.btnHD.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
-            // 
-            // btnBS
-            // 
-            this.btnBS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBS.BackgroundImage")));
-            this.btnBS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnBS.Location = new System.Drawing.Point(415, 3);
-            this.btnBS.Name = "btnBS";
-            this.btnBS.Size = new System.Drawing.Size(108, 31);
-            this.btnBS.TabIndex = 74;
-            this.btnBS.Text = "标准双人间";
-            this.btnBS.UseVisualStyleBackColor = true;
-            this.btnBS.Click += new System.EventHandler(this.btnBS_Click);
-            this.btnBS.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAll.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAll.Location = new System.Drawing.Point(189, 3);
+            this.btnAll.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(108, 31);
+            this.btnAll.TabIndex = 0;
+            this.btnAll.Text = "全部房间";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnBD
             // 
-            this.btnBD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBD.BackgroundImage")));
-            this.btnBD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBD.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnBD.Location = new System.Drawing.Point(302, 3);
+            this.btnBD.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnBD.Name = "btnBD";
             this.btnBD.Size = new System.Drawing.Size(108, 31);
-            this.btnBD.TabIndex = 74;
+            this.btnBD.TabIndex = 1;
             this.btnBD.Text = "标准单人间";
-            this.btnBD.UseVisualStyleBackColor = true;
             this.btnBD.Click += new System.EventHandler(this.btnBD_Click);
-            this.btnBD.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
             // 
-            // btnAll
+            // btnBS
             // 
-            this.btnAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAll.BackgroundImage")));
-            this.btnAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAll.Location = new System.Drawing.Point(189, 3);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(108, 31);
-            this.btnAll.TabIndex = 73;
-            this.btnAll.Text = "全部";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
-            this.btnAll.MouseHover += new System.EventHandler(this.btnZT_MouseHover);
+            this.btnBS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBS.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnBS.Location = new System.Drawing.Point(415, 3);
+            this.btnBS.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnBS.Name = "btnBS";
+            this.btnBS.Size = new System.Drawing.Size(108, 31);
+            this.btnBS.TabIndex = 2;
+            this.btnBS.Text = "标准双人间";
+            this.btnBS.Click += new System.EventHandler(this.btnBS_Click);
+            // 
+            // btnHD
+            // 
+            this.btnHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHD.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnHD.Location = new System.Drawing.Point(528, 3);
+            this.btnHD.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnHD.Name = "btnHD";
+            this.btnHD.Size = new System.Drawing.Size(108, 31);
+            this.btnHD.TabIndex = 3;
+            this.btnHD.Text = "豪华单人间";
+            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
+            // 
+            // btnHS
+            // 
+            this.btnHS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHS.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnHS.Location = new System.Drawing.Point(641, 3);
+            this.btnHS.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnHS.Name = "btnHS";
+            this.btnHS.Size = new System.Drawing.Size(108, 31);
+            this.btnHS.TabIndex = 4;
+            this.btnHS.Text = "豪华双人间";
+            this.btnHS.Click += new System.EventHandler(this.btnHS_Click);
+            // 
+            // btnQL
+            // 
+            this.btnQL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQL.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnQL.Location = new System.Drawing.Point(754, 3);
+            this.btnQL.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnQL.Name = "btnQL";
+            this.btnQL.Size = new System.Drawing.Size(108, 31);
+            this.btnQL.TabIndex = 5;
+            this.btnQL.Text = "情侣套房";
+            this.btnQL.Click += new System.EventHandler(this.btnQL_Click);
+            // 
+            // btnZT
+            // 
+            this.btnZT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZT.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnZT.Location = new System.Drawing.Point(867, 3);
+            this.btnZT.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnZT.Name = "btnZT";
+            this.btnZT.Size = new System.Drawing.Size(108, 31);
+            this.btnZT.TabIndex = 6;
+            this.btnZT.Text = "总统套房";
+            this.btnZT.Click += new System.EventHandler(this.btnZT_Click);
             // 
             // FrmRoomManager
             // 
@@ -489,7 +453,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1033, 456);
-            this.Controls.Add(this.picRefrech);
             this.Controls.Add(this.btnZT);
             this.Controls.Add(this.btnQL);
             this.Controls.Add(this.btnHS);
@@ -497,6 +460,7 @@
             this.Controls.Add(this.btnBS);
             this.Controls.Add(this.btnBD);
             this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.picRefrech);
             this.Controls.Add(this.pnlRoomInfo);
             this.Controls.Add(this.pnlRoomState);
             this.Controls.Add(this.flpRoom);
@@ -543,17 +507,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer tmrGetData;
-        private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.Button btnBD;
-        private System.Windows.Forms.Button btnBS;
-        private System.Windows.Forms.Button btnHD;
-        private System.Windows.Forms.Button btnHS;
-        private System.Windows.Forms.Button btnQL;
-        private System.Windows.Forms.Button btnZT;
         private System.Windows.Forms.PictureBox picRefrech;
         public System.Windows.Forms.Label lblFix;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.Label lblReser;
+        private Sunny.UI.UIButton btnAll;
+        private Sunny.UI.UIButton btnBD;
+        private Sunny.UI.UIButton btnBS;
+        private Sunny.UI.UIButton btnHD;
+        private Sunny.UI.UIButton btnHS;
+        private Sunny.UI.UIButton btnQL;
+        private Sunny.UI.UIButton btnZT;
     }
 }

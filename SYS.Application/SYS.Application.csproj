@@ -78,6 +78,7 @@
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
