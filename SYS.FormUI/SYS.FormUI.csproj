@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8854DCB7-F2D7-4276-8D10-C7A124436145}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SYS.FormUI</RootNamespace>
+    <AssemblyName>TS酒店管理系统</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\Admin\Desktop\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.4.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\TS酒店管理系统.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4CFC6407EAAE3B4D84510B17FBE22638DBF289B5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TSHotelManagerSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SYS.FormUI.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="MyControls, Version=1.0.6915.14131, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MyControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SYS.Library\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.2.2.9\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CircleProgramBar.cs">
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FrmAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminMain.Designer.cs">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChart.Designer.cs">
+      <DependentUpon>FrmChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtendOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtendOption.Designer.cs">
+      <DependentUpon>FrmExtendOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAboutUs.Designer.cs">
+      <DependentUpon>FrmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddRoom.Designer.cs">
+      <DependentUpon>FrmAddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddWorker.Designer.cs">
+      <DependentUpon>FrmAddWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminEnter.Designer.cs">
+      <DependentUpon>FrmAdminEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBackAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackAdmin.Designer.cs">
+      <DependentUpon>FrmBackAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBackUpDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackUpDatabase.Designer.cs">
+      <DependentUpon>FrmBackUpDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCash.Designer.cs">
+      <DependentUpon>FrmCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCashList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCashList.Designer.cs">
+      <DependentUpon>FrmCashList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePosition.Designer.cs">
+      <DependentUpon>FrmChangePosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeRoom.Designer.cs">
+      <DependentUpon>FrmChangeRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeWorker.Designer.cs">
+      <DependentUpon>FrmChangeWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckIn.Designer.cs">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckInfo.Designer.cs">
+      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckOutForm.Designer.cs">
+      <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustoManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustoManager.Designer.cs">
+      <DependentUpon>FrmCustoManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustoSpend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustoSpend.Designer.cs">
+      <DependentUpon>FrmCustoSpend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGoodOrBad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodOrBad.Designer.cs">
+      <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInputs.Designer.cs">
+      <DependentUpon>FrmInputs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperation.Designer.cs">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReserList.Designer.cs">
+      <DependentUpon>FrmReserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRestoreDatabase.Designer.cs">
+      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRoomStateManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoomStateManager.Designer.cs">
+      <DependentUpon>FrmRoomStateManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectCustoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectCustoInfo.Designer.cs">
+      <DependentUpon>FrmSelectCustoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSellThing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSellThing.Designer.cs">
+      <DependentUpon>FrmSellThing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSellThingManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSellThingManager.Designer.cs">
+      <DependentUpon>FrmSellThingManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStart.Designer.cs">
+      <DependentUpon>FrmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTopChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTopChange.Designer.cs">
+      <DependentUpon>FrmTopChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpLoad.Designer.cs">
+      <DependentUpon>FrmUpLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerManager.Designer.cs">
+      <DependentUpon>FrmCustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReserManager.Designer.cs">
+      <DependentUpon>FrmReserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoomManager.Designer.cs">
+      <DependentUpon>FrmRoomManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnLockSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnLockSystem.Designer.cs">
+      <DependentUpon>FrmUnLockSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWorkerCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWorkerCheckInfo.Designer.cs">
+      <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHistory.Designer.cs">
+      <DependentUpon>ucHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRoomList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRoomList.Designer.cs">
+      <DependentUpon>ucRoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebSite.Designer.cs">
+      <DependentUpon>WebSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WtiInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WtiInfo.Designer.cs">
+      <DependentUpon>WtiInfo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAdminMain.resx">
+      <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChart.resx">
+      <DependentUpon>FrmChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtendOption.resx">
+      <DependentUpon>FrmExtendOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAboutUs.resx">
+      <DependentUpon>FrmAboutUs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddRoom.resx">
+      <DependentUpon>FrmAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddWorker.resx">
+      <DependentUpon>FrmAddWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminEnter.resx">
+      <DependentUpon>FrmAdminEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackAdmin.resx">
+      <DependentUpon>FrmBackAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackUpDatabase.resx">
+      <DependentUpon>FrmBackUpDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCash.resx">
+      <DependentUpon>FrmCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCashList.resx">
+      <DependentUpon>FrmCashList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangePosition.resx">
+      <DependentUpon>FrmChangePosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeRoom.resx">
+      <DependentUpon>FrmChangeRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeWorker.resx">
+      <DependentUpon>FrmChangeWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckIn.resx">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckInfo.resx">
+      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckOutForm.resx">
+      <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustoManager.resx">
+      <DependentUpon>FrmCustoManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustoSpend.resx">
+      <DependentUpon>FrmCustoSpend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodOrBad.resx">
+      <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInputs.resx">
+      <DependentUpon>FrmInputs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReserList.resx">
+      <DependentUpon>FrmReserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRestoreDatabase.resx">
+      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoomStateManager.resx">
+      <DependentUpon>FrmRoomStateManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectCustoInfo.resx">
+      <DependentUpon>FrmSelectCustoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSellThing.resx">
+      <DependentUpon>FrmSellThing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSellThingManager.resx">
+      <DependentUpon>FrmSellThingManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStart.resx">
+      <DependentUpon>FrmStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTest.resx">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTopChange.resx">
+      <DependentUpon>FrmTopChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpLoad.resx">
+      <DependentUpon>FrmUpLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerManager.resx">
+      <DependentUpon>FrmCustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReserManager.resx">
+      <DependentUpon>FrmReserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoomManager.resx">
+      <DependentUpon>FrmRoomManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnLockSystem.resx">
+      <DependentUpon>FrmUnLockSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWorkerCheckInfo.resx">
+      <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ucHistory.resx">
+      <DependentUpon>ucHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRoomList.resx">
+      <DependentUpon>ucRoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebSite.resx">
+      <DependentUpon>WebSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WtiInfo.resx">
+      <DependentUpon>WtiInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\启用任务管理器.reg" />
+    <None Include="bin\Debug\禁用任务管理器.reg" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TSHotelManagerSystem_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\餐厅管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\餐厅管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行政管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行政管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\后勤管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\后勤管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\客房管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\客房管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\扩展功能-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\扩展功能-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\部门管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\部门管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\部门联动-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\部门联动-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\财务信息-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\财务信息-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\餐厅物资-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\餐厅物资-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\房卡管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\房卡管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\更多扩展-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\更多扩展-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\工程维修-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\工程维修-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\会员管理2-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\会员管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\会员管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\监管统计-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\监管统计-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\客房管理-ia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\客房管理-ib1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\库存管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\库存管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\内部飞鸽-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\内部飞鸽-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\人事管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\人事管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\水电管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\水电管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\网页预约-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\网页预约-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\西餐厅-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\西餐厅-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\消费管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\消费管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户管理-ia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户管理-ib1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\预约管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\预约管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\中餐厅-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\中餐厅-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\资产管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\资产管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\搜索--1a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\添 加a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\搜索--1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\添 加-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\财务部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\餐饮部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\后勤部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\经理部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\酒店部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\人事部界面.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\显示.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\隐藏.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\商品消费-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\商品消费-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导出 %284%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\空房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清理中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\维修中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已入住.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\脏房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\空房22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\可住房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清理中2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已住房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\脏房2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\获取用户编号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\获取用户编号-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\预约管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\预约管理-aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\维修中1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\维修中22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\arrow-down-b.png" />
+    <None Include="Resources\minus %281%29.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
+    <None Include="Resources\c92311ec80b20a729e525a3f7035363c.jpg" />
+    <None Include="bin\Debug\打卡.png" />
+    <Content Include="bitbug_favicon %281%29.ico" />
+    <None Include="Resources\77377282_p0_master1200.jpg" />
+    <None Include="Resources\main_bg.png" />
+    <None Include="Resources\button.bmp" />
+    <None Include="Resources\Background.jpg" />
+    <None Include="Resources\已预约.png" />
+    <None Include="Resources\预约房-a.png" />
+    <None Include="Resources\脏房2-a.png" />
+    <None Include="Resources\已住房-a.png" />
+    <None Include="Resources\维修中-a.png" />
+    <None Include="Resources\清理中2-a.png" />
+    <None Include="Resources\可住房-a.png" />
+    <None Include="Resources\预约房.png" />
+    <None Include="Resources\预订管理ab.png" />
+    <None Include="Resources\预订管理-aa.png" />
+    <None Include="Resources\预订管理-a.png" />
+    <None Include="Resources\预订管理.png" />
+    <None Include="Resources\维修中221.png" />
+    <None Include="Resources\维修中2.png" />
+    <None Include="Resources\1545891726.png" />
+    <None Include="Resources\%291G~Q~%2821]3JZZCFW68O7NF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SYS.Application\SYS.Application.csproj">
+      <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
+      <Name>SYS.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
+      <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
+      <Name>SYS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Manager\SYS.Manager.csproj">
+      <Project>{c60df246-c4fc-4045-91e5-093b0aa4d4ef}</Project>
+      <Name>SYS.Manager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.4.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
