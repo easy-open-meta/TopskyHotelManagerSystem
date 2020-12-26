@@ -28,11 +28,11 @@
 
 ##### 4、**关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!**
 
-### 开发目的：
+# 开发目的：
 
 ##### 在现如今发展迅速的酒店行业，随着酒店的日常工作增加，已经很难用人工去进行处理，一些繁琐的数据也可能会因为人工的失误而造成酒店的一些损失，因此很需要一款可以协助酒店进行内部管理的管理软件。
 
-#### 系统开发环境：
+# 系统开发环境：
 
 **操作系统：Windows 10(x64)**
 
@@ -50,7 +50,7 @@
 
 **开发技术：.NET WinForm**
 
-### 项目作者：
+# 项目作者：
 
 **杨俊杰(即本账号，项目组长,核心代码编写和后期项目整合)**
 
@@ -58,6 +58,16 @@
 
 **宾华安(数据库，提供数据库管理支持)**
 
-### 项目运行部署：
+# 项目运行部署：
+
+**下载并安装Microsoft Visual Studio Professional 2017及以上版本，并通过下载Zip包解压，打开.sln后缀格式文件运行。**
+
+# 数据库运行部署(本地)：
+
+**作者及开发团队强烈建议使用MySQL数据库，安装MySQL数据库并开启服务，通过可视化管理工具对数据库进行建立，可通过打开执行数据库脚本文件夹内的.sql后缀格式文件进行快速建立数据表和导入数据，执行步骤(以MySQL数据库为例)：**
+
+**1、通过可视化管理工具打开Table.sql文件进行数据表建立。**
+
+**2、随后打开Data.sql文件进行数据导入。
 
 [![jackson0720/TopskyHotelManagerSystem](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
