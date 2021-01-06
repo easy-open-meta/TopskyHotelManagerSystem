@@ -123,6 +123,12 @@
     <Compile Include="FrmAdminMain.Designer.cs">
       <DependentUpon>FrmAdminMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBackgroundSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackgroundSystem.Designer.cs">
+      <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAdminMain.resx">
       <DependentUpon>FrmAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackgroundSystem.resx">
+      <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChart.resx">
       <DependentUpon>FrmChart.cs</DependentUpon>
