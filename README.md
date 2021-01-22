@@ -94,4 +94,4 @@
 **2、随后打开Data.sql文件进行数据导入。**
 
 
-[![jackson0720/TopskyHotelManagerSystem](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
+[![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
