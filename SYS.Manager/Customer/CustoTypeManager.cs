@@ -41,15 +41,5 @@ namespace SYS.Manager
         }
         #endregion
 
-        #region 查询所有性别类型
-        /// <summary>
-        /// 查询所有性别类型
-        /// </summary>
-        /// <returns></returns>
-        public static List<SexType> SelectSexTypeAll()
-        {
-            return CustoTypeService.SelectSexTypeAll();
-        }
-        #endregion
     }
 }

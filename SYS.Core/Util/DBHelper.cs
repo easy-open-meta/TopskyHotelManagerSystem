@@ -10,7 +10,9 @@ namespace SYS.Core
 {
     public class DBHelper
     {
-        private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
+        //private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
+        private static string conStr = "";
+
         private static MySqlConnection con = null;
 
         public static MySqlConnection GetConnection()

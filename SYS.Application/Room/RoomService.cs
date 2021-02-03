@@ -16,7 +16,7 @@ namespace SYS.Application
         public static List<Room> SelectRoomByRoomState(int stateid)
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType = t.RoomType and r.RoomStateId = rs.RoomStateId and r.RoomStateId = " + stateid;
+            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType = t.RoomType and r.RoomStateId = rs.RoomStateId and r.RoomStateId = " + stateid + " order by r.RoomNo asc";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -24,7 +24,7 @@ namespace SYS.Application
                 room.RoomNo = (string)dr["RoomNo"];
                 room.CustoNo = dr["CustoNo"].ToString();
                 room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
+                
                 if (!DBNull.Value.Equals(dr["CheckTime"]))
                 {
                     room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
@@ -46,6 +46,45 @@ namespace SYS.Application
         }
         #endregion
 
+
+        #region 根据房间状态来查询可使用的房间
+        /// <summary>
+        /// 根据房间状态来查询可使用的房间
+        /// </summary>
+        /// <returns></returns>
+        public static List<Room> SelectCanUseRoomAll()
+        {
+            List<Room> rooms = new List<Room>();
+            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='0'";
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
+            while (dr.Read())
+            {
+                Room room = new Room();
+                room.RoomNo = (string)dr["RoomNo"];
+                room.CustoNo = dr["CustoNo"].ToString();
+                room.RoomMoney = (decimal)dr["RoomMoney"];
+                if (!DBNull.Value.Equals(dr["CheckTime"]))
+                {
+                    room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
+                }
+                if (!DBNull.Value.Equals(dr["CheckOutTime"]))
+                {
+                    room.CheckOutTime = DateTime.Parse(dr["CheckOutTime"].ToString());
+                }
+                room.RoomStateId = (int)dr["RoomStateId"];
+                room.RoomState = (string)dr["RoomState"];
+                room.RoomType = (int)dr["RoomType"];
+                room.RoomPosition = (string)dr["RoomPosition"];
+                room.typeName = (string)dr["RoomName"];
+                rooms.Add(room);
+            }
+            dr.Close();
+            DBHelper.Closecon();
+            return rooms;
+        }
+        #endregion
+
+
         #region 获取所有房间信息
         /// <summary>
         /// 获取所有房间信息
@@ -54,7 +93,7 @@ namespace SYS.Application
         public static List<Room> SelectRoomAll()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId";
+            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId order by r.RoomNo asc";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -62,7 +101,6 @@ namespace SYS.Application
                 room.RoomNo = (string)dr["RoomNo"];
                 room.CustoNo = dr["CustoNo"].ToString();
                 room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
                 if (!DBNull.Value.Equals(dr["CheckTime"]))
                 {
                     room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
@@ -92,7 +130,7 @@ namespace SYS.Application
         public static List<Room> SelectRoomByTypeName(string TypeName)
         {
             List<Room> rs = new List<Room>();
-            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and t.RoomName='" + TypeName + "'";
+            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and t.RoomName='" + TypeName + "' order by r.RoomNo asc";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -100,7 +138,6 @@ namespace SYS.Application
                 r.RoomNo = (string)dr["RoomNo"];
                 r.CustoNo = dr["CustoNo"].ToString();
                 r.RoomMoney = (decimal)dr["RoomMoney"];
-                r.PersonNum = Convert.ToString(dr["PersonNum"]);
                 if (!DBNull.Value.Equals(dr["CheckTime"]))
                 {
                     r.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
@@ -123,44 +160,6 @@ namespace SYS.Application
         }
         #endregion
 
-        #region 根据房间状态来查询可使用的房间
-        /// <summary>
-        /// 根据房间状态来查询可使用的房间
-        /// </summary>
-        /// <returns></returns>
-        public static List<Room> SelectCanUseRoomAll()
-        {
-            List<Room> rooms = new List<Room>();
-            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='0'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Room room = new Room();
-                room.RoomNo = (string)dr["RoomNo"];
-                room.CustoNo = dr["CustoNo"].ToString();
-                room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
-                if (!DBNull.Value.Equals(dr["CheckTime"]))
-                {
-                    room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
-                }
-                if (!DBNull.Value.Equals(dr["CheckOutTime"]))
-                {
-                    room.CheckOutTime = DateTime.Parse(dr["CheckOutTime"].ToString());
-                }
-                room.RoomStateId = (int)dr["RoomStateId"];
-                room.RoomState = (string)dr["RoomState"];
-                room.RoomType = (int)dr["RoomType"];
-                room.RoomPosition = (string)dr["RoomPosition"];
-                room.typeName = (string)dr["RoomName"];
-                rooms.Add(room);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return rooms;
-        }
-        #endregion
-
         #region 根据房间编号查询房间信息
         /// <summary>
         /// 根据房间编号查询房间信息
@@ -178,7 +177,6 @@ namespace SYS.Application
                 room.RoomNo = (string)dr["RoomNo"];
                 room.CustoNo = dr["CustoNo"].ToString();
                 room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
                 if (!DBNull.Value.Equals(dr["CheckTime"]))
                 {
                     room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
@@ -206,7 +204,7 @@ namespace SYS.Application
         public static int UpdateRoomByRoomNo(string room)
         {
             string sql = "update ROOM set CustoNo=Null,CheckTime=null,";
-            sql += "CheckOutTime =CURRENT_DATE(),PersonNum=Null,";
+            sql += "CheckOutTime =CURRENT_DATE(),";
             sql += "RoomStateId='3' where RoomNo='" + room + "'";
             return DBHelper.ExecuteNonQuery(sql);
         }
@@ -220,8 +218,7 @@ namespace SYS.Application
         /// <returns></returns>
         public static object DayByRoomNo(string roomno)
         {
-            string sql = "select DATEDIFF(CURRENT_DATE(),CheckTime) from ROOM where RoomNo='" + roomno + "'";
-            //DATEDIFF(workercheck.CheckTime,CURRENT_DATE()) = 0
+            string sql = "select DATEDIFF(CURRENT_DATE(),CheckTime) as total from ROOM where RoomNo = '" + roomno + "'";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -235,8 +232,23 @@ namespace SYS.Application
         public static int UpdateRoomInfo(Room r)
         {
             string sql = "update Room set CustoNo='{1}',CheckTime='{2}',CheckOutTime=Null,";
-            sql += "RoomStateId ='{3}',PersonNum='{4}' where RoomNo='{0}'";
-            sql = string.Format(sql, r.RoomNo, r.CustoNo, r.CheckTime, r.RoomStateId, r.PersonNum);
+            sql += "RoomStateId ='{3}' where RoomNo='{0}'";
+            sql = string.Format(sql, r.RoomNo, r.CustoNo, r.CheckTime, r.RoomStateId);
+            MySqlConnection con = DBHelper.GetConnection();
+            return DBHelper.ExecuteNonQuery(sql);
+        }
+        #endregion
+
+        #region 根据房间编号修改房间信息（预约）
+        /// <summary>
+        /// 根据房间编号修改房间信息（预约）
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public static int UpdateRoomInfoWithReser(Room r)
+        {
+            string sql = "update Room set RoomStateId ='{1}' where RoomNo='{0}'";
+            sql = string.Format(sql, r.RoomNo, r.RoomStateId);
             MySqlConnection con = DBHelper.GetConnection();
             return DBHelper.ExecuteNonQuery(sql);
         }
@@ -250,7 +262,7 @@ namespace SYS.Application
         public static object SelectCanUseRoomAllByRoomState()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select Count(*) from ROOM where RoomStateId='0'";
+            string sql = "select Count(*) from ROOM where RoomStateId='0' order by RoomNo asc";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -263,7 +275,7 @@ namespace SYS.Application
         public static object SelectNotUseRoomAllByRoomState()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select Count(*) from ROOM where RoomStateId='1'";
+            string sql = "select Count(*) from ROOM where RoomStateId='1' order by RoomNo asc";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -290,7 +302,7 @@ namespace SYS.Application
         public static object SelectNotClearRoomAllByRoomState()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select Count(*) from ROOM where RoomStateId='3'";
+            string sql = "select Count(*) from ROOM where RoomStateId='3' order by RoomNo asc";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -303,7 +315,7 @@ namespace SYS.Application
         public static object SelectFixingRoomAllByRoomState()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select Count(*) from ROOM where RoomStateId='2'";
+            string sql = "select Count(*) from ROOM where RoomStateId='2' order by RoomNo asc";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -316,7 +328,7 @@ namespace SYS.Application
         public static object SelectReseredRoomAllByRoomState()
         {
             List<Room> rooms = new List<Room>();
-            string sql = "select Count(*) from ROOM where RoomStateId='4'";
+            string sql = "select Count(*) from ROOM where RoomStateId='4' order by RoomNo asc";
             return DBHelper.ExecuteScalar(sql);
         }
         #endregion
@@ -378,7 +390,6 @@ namespace SYS.Application
                 room.RoomNo = (string)dr["RoomNo"];
                 room.CustoNo = dr["CustoNo"].ToString();
                 room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
                 if (!DBNull.Value.Equals(dr["CheckTime"]))
                 {
                     room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());

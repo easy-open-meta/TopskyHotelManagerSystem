@@ -3,6 +3,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using SYS.Core;
 using SYS.Application;
+using System.Collections.Generic;
 
 namespace SYS.Manager
 {
@@ -15,27 +16,35 @@ namespace SYS.Manager
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static List<CustoSpend> SelectAllMoney()
+        {
+            return CustoService.SelectAllMoney();
+        }
+
+        public static List<Custo> SelectCustoAll()
+        {
+            return CustoService.SelectCustoAll();
+        }
+
+
+        public static Custo SelectCustoInfoByCardId(string input)
+        {
+            return CustoService.SelectCustoInfoByCardId(input);
+        }
 
         public static Custo SelectCardInfoByCustoNo(string CustoNo)
         {
-            Custo c = null;
-            string sql = "select * from USERINFO where CustoNo='" + CustoNo + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                c = new Custo();
-                c.CustoNo = Convert.ToString(dr["CustoNo"]);
-                c.CustoName = Convert.ToString(dr["CustoName"]);
-                c.CustoSex = Convert.ToInt32(dr["CustoSex"]);
-                c.CustoTel = Convert.ToString(dr["CustoTel"]);
-                c.CustoID = Convert.ToString(dr["CustoID"]);
-                c.CustoAdress = Convert.ToString(dr["CustoAdress"]);
-                c.CustoBirth = Convert.ToDateTime(dr["CustoBirth"]);
-                c.CustoType = Convert.ToInt32(dr["CustoType"]);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return c;
+            return CustoService.SelectCardInfoByCustoNo(CustoNo);
+        }
+
+
+        public static List<Custo> SelectCanUseCustoAll()
+        {
+            return CustoService.SelectCanUseCustoAll();
         }
 
         #region 根据客户编号查询客户信息

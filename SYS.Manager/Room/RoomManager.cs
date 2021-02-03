@@ -18,7 +18,7 @@ namespace SYS.Manager
             return RoomService.SelectRoomByRoomState(stateid);
         }
 
-        public List<Room> SelectRoomAll()
+        public static List<Room> SelectRoomAll()
         {
             return RoomService.SelectRoomAll();
         }
@@ -28,6 +28,19 @@ namespace SYS.Manager
             return RoomService.SelectRoomByRoomNo(no);
         }
 
+
+        #region 获取房间分区的信息
+        /// <summary>
+        /// 获取房间分区的信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<Room> SelectRoomByTypeName(string TypeName)
+        {
+            return RoomService.SelectRoomByTypeName(TypeName);
+        }
+        #endregion
+
+
         #region 根据房间状态来查询可使用的房间
         /// <summary>
         /// 根据房间状态来查询可使用的房间
@@ -35,34 +48,7 @@ namespace SYS.Manager
         /// <returns></returns>
         public static List<Room> SelectCanUseRoomAll()
         {
-            List<Room> rooms = new List<Room>();
-            string sql = "select * from ROOM r,ROOMTYPE t,ROOMSTATE rs where r.RoomType=t.RoomType and r.RoomStateId=rs.RoomStateId and r.RoomStateId='0'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Room room = new Room();
-                room.RoomNo = (string)dr["RoomNo"];
-                room.CustoNo = dr["CustoNo"].ToString();
-                room.RoomMoney = (decimal)dr["RoomMoney"];
-                room.PersonNum = Convert.ToString(dr["PersonNum"]);
-                if (!DBNull.Value.Equals(dr["CheckTime"]))
-                {
-                    room.CheckTime = DateTime.Parse(dr["CheckTime"].ToString());
-                }
-                if (!DBNull.Value.Equals(dr["CheckOutTime"]))
-                {
-                    room.CheckOutTime = DateTime.Parse(dr["CheckOutTime"].ToString());
-                }
-                room.RoomStateId = (int)dr["RoomStateId"];
-                room.RoomState = (string)dr["RoomState"];
-                room.RoomType = (int)dr["RoomType"];
-                room.RoomPosition = (string)dr["RoomPosition"];
-                room.typeName = (string)dr["RoomName"];
-                rooms.Add(room);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return rooms;
+            return RoomService.SelectCanUseRoomAll();
         }
         #endregion
 
@@ -99,6 +85,18 @@ namespace SYS.Manager
         public static int UpdateRoomInfo(Room r)
         {
             return RoomService.UpdateRoomInfo(r);
+        }
+        #endregion
+
+        #region 根据房间编号修改房间信息（预约）
+        /// <summary>
+        /// 根据房间编号修改房间信息（预约）
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public static int UpdateRoomInfoWithReser(Room r)
+        {
+            return RoomService.UpdateRoomInfoWithReser(r);
         }
         #endregion
 

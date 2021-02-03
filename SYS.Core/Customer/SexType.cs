@@ -17,5 +17,10 @@ namespace SYS.Core
         /// 性别名称
         /// </summary>
         public string sexName { get; set; }
+
+        /// <summary>
+        /// 删除标记
+        /// </summary>
+        public int delete_mk { get; set; }
     }
 }

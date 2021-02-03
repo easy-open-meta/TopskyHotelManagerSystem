@@ -11,9 +11,9 @@ namespace SYS.Manager
         /// </summary>
         /// <param name="workerId"></param>
         /// <returns></returns>
-        public static Admin SelectMangerByPass(string adminpass)
+        public static Admin SelectMangerByPass(string adminaccount, string adminpass)
         {
-            return AdminService.SelectMangerByPass(adminpass);
+            return AdminService.SelectMangerByPass(adminaccount,adminpass);
         }
         #endregion
 

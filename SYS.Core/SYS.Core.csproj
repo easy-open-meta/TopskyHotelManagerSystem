@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -57,6 +61,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="Util\IDCardUtil.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Util\Md5LockedUtil.cs" />
     <Compile Include="Util\UI-FontUtil.cs" />
     <Compile Include="Zero\Admin.cs" />
@@ -67,7 +74,10 @@
     <Compile Include="Customer\CustoSpend.cs" />
     <Compile Include="Customer\CustoType.cs" />
     <Compile Include="Util\Fonts.cs" />
+    <Compile Include="Zero\Dept.cs" />
+    <Compile Include="Zero\Education.cs" />
     <Compile Include="Zero\LoginInfo.cs" />
+    <Compile Include="Zero\Nation.cs" />
     <Compile Include="Zero\Notice.cs" />
     <Compile Include="Zero\Operation.cs" />
     <Compile Include="Zero\OperationLog.cs" />
@@ -83,6 +93,7 @@
     <Compile Include="Worker\WorkerGoodBad.cs" />
     <Compile Include="Worker\WorkerHistory.cs" />
     <Compile Include="Business\Wti.cs" />
+    <Compile Include="Zero\Position.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\MySql.Data.dll" />
@@ -97,10 +108,16 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\GFont.otf">
+    <EmbeddedResource Include="Resources\Mono.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Mono-l.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
