@@ -16,7 +16,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="worker"></param>
         /// <returns></returns>
-        public int UpdateWorker(Worker worker)
+        [HttpPost]
+        public int UpdateWorker([FromBody]Worker worker)
         {
             return WorkerService.UpdateWorker(worker);
         }
@@ -28,7 +29,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="worker"></param>
         /// <returns></returns>
-        public int AddWorker(Worker worker)
+        [HttpPost]
+        public int AddWorker([FromBody]Worker worker)
         {
             return WorkerService.AddWorker(worker);
         }
@@ -39,6 +41,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 获取所有工作人员信息
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Worker> SelectWorkerAll()
         {
             return WorkerService.SelectWorkerAll();
@@ -51,7 +54,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="workerId"></param>
         /// <returns></returns>
-        public Worker SelectWorkerInfoByWorkerId(string workerId)
+        [HttpGet]
+        public Worker SelectWorkerInfoByWorkerId([FromUri]string workerId)
         {
             return WorkerService.SelectWorkerInfoByWorkerId(workerId);
         }
@@ -66,7 +70,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="pwd"></param>
         /// 登录密码
         /// <returns></returns>
-        public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd)
+        [HttpPost]
+        public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd([FromBody]string id, string pwd)
         {
             return WorkerService.SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
         }

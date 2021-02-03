@@ -16,7 +16,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="adminaccount"></param>
         /// <param name="adminpass"></param>
         /// <returns></returns>
-        public Admin SelectMangerByPass(string adminaccount, string adminpass)
+        [HttpPost]
+        public Admin SelectMangerByPass([FromBody]string adminaccount, string adminpass)
         {
             return AdminService.SelectMangerByPass(adminaccount,adminpass);
         }
@@ -29,7 +30,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="pwd"></param>
         /// 登录名称
         /// <returns></returns>
-        public Admin SelectAdminInfoByadminpwd(string pwd)
+        [HttpPost]
+        public Admin SelectAdminInfoByadminpwd([FromBody]string pwd)
         {
             return AdminService.SelectAdminInfoByadminpwd(pwd);
         }

@@ -15,6 +15,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有会员等级名称
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<CustoType> SelectCustoTypesAll()
         {
             return CustoTypeService.SelectCustoTypesAll();
@@ -27,7 +28,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="CustoTypeId"></param>
         /// <returns></returns>
-        public string SelectTypeNameByCustoTypeId(int CustoTypeId)
+        [HttpGet]
+        public string SelectTypeNameByCustoTypeId([FromUri]int CustoTypeId)
         {
             return CustoTypeService.SelectTypeNameByCustoTypeId(CustoTypeId);
         }
@@ -38,6 +40,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有证件类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<PassPortType> SelectPassPortTypeAll()
         {
             return CustoTypeService.SelectPassPortTypeAll();

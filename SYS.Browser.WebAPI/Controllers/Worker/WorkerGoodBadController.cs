@@ -5,20 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using SYS.Core;
 using SYS.Application;
+using System.Web.Http;
 
 namespace SYS.Browser.WebAPI.Controllers
 {
     /// <summary>
     /// 员工奖惩信息控制器
     /// </summary>
-    public class WorkerGoodBadController
+    public class WorkerGoodBadController:ApiController
     {
         /// <summary>
         /// 添加奖惩信息
         /// </summary>
         /// <param name="goodBad"></param>
         /// <returns></returns>
-        public int AddGoodBad(WorkerGoodBad goodBad)
+        [HttpPost]
+        public int AddGoodBad([FromBody]WorkerGoodBad goodBad)
         {
             return WorkerGoodBadService.AddGoodBad(goodBad);
         }
@@ -28,7 +30,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="wn"></param>
         /// <returns></returns>
-        public List<WorkerGoodBad> SelectAllGoodBadByWorkNo(string wn)
+        [HttpGet]
+        public List<WorkerGoodBad> SelectAllGoodBadByWorkNo([FromUri]string wn)
         {
             return WorkerGoodBadService.SelectAllGoodBadByWorkNo(wn); 
         }

@@ -15,6 +15,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 获取所有房间类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<RoomType> SelectRoomTypesAll()
         {
             return RoomTypeService.SelectRoomTypesAll();
@@ -27,7 +28,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="no"></param>
         /// <returns></returns>
-        public RoomType SelectRoomTypeByRoomNo(string no)
+        [HttpPost]
+        public RoomType SelectRoomTypeByRoomNo([FromBody]string no)
         {
             return RoomTypeService.SelectRoomTypeByRoomNo(no);
         }

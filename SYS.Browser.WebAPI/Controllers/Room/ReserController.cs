@@ -15,7 +15,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="no"></param>
         /// <returns></returns>
-        public Reser SelectReserInfoByRoomNo(string no)
+        [HttpGet]
+        public Reser SelectReserInfoByRoomNo([FromUri]string no)
         {
             Reser r = ReserService.SelectReserInfoByRoomNo(no);
             return r;
@@ -26,7 +27,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="rid"></param>
         /// <returns></returns>
-        public int DeleteReserInfo(string rid)
+        [HttpDelete]
+        public int DeleteReserInfo([FromBody]string rid)
         {
             return ReserService.DeleteReserInfo(rid);
         }
@@ -35,6 +37,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有预约信息
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Reser> SelectReserAll()
         {
             return ReserService.SelectReserAll();
@@ -45,7 +48,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="r"></param>
         /// <returns></returns>
-        public int InserReserInfo(Reser r)
+        [HttpPost]
+        public int InserReserInfo([FromBody]Reser r)
         {
             return ReserService.InserReserInfo(r);
         }

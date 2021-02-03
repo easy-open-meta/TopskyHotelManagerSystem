@@ -16,7 +16,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="stateid"></param>
         /// <returns></returns>
-        public List<Room> SelectRoomByRoomState(int stateid)
+        [HttpGet]
+        public List<Room> SelectRoomByRoomState([FromUri]int stateid)
         {
             return RoomService.SelectRoomByRoomState(stateid);
         }
@@ -25,18 +26,19 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有房间信息
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Room> SelectRoomAll()
         {
             return RoomService.SelectRoomAll();
         }
-        
+
         /// <summary>
         /// 根据房间编号查询房间信息
         /// </summary>
         /// <param name="no"></param>
         /// <returns></returns>
-
-        public Room SelectRoomByRoomNo(string no)
+        [HttpGet]
+        public Room SelectRoomByRoomNo([FromUri]string no)
         {
             return RoomService.SelectRoomByRoomNo(no);
         }
@@ -47,7 +49,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 获取房间分区的信息
         /// </summary>
         /// <returns></returns>
-        public List<Room> SelectRoomByTypeName(string TypeName)
+        [HttpGet]
+        public List<Room> SelectRoomByTypeName([FromUri]string TypeName)
         {
             return RoomService.SelectRoomByTypeName(TypeName);
         }
@@ -59,6 +62,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 根据房间状态来查询可使用的房间
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Room> SelectCanUseRoomAll()
         {
             return RoomService.SelectCanUseRoomAll();
@@ -71,7 +75,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="room"></param>
         /// <returns></returns>
-        public int UpdateRoomByRoomNo(string room)
+        [HttpGet]
+        public int UpdateRoomByRoomNo([FromUri]string room)
         {
             return RoomService.UpdateRoomByRoomNo(room);
         }
@@ -83,7 +88,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public object DayByRoomNo(string roomno)
+        [HttpGet]
+        public object DayByRoomNo([FromUri]string roomno)
         {
             return RoomService.DayByRoomNo(roomno);
         }
@@ -95,7 +101,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="r"></param>
         /// <returns></returns>
-        public int UpdateRoomInfo(Room r)
+        [HttpPost]
+        public int UpdateRoomInfo([FromBody]Room r)
         {
             return RoomService.UpdateRoomInfo(r);
         }
@@ -107,7 +114,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="r"></param>
         /// <returns></returns>
-        public int UpdateRoomInfoWithReser(Room r)
+        [HttpPost]
+        public int UpdateRoomInfoWithReser([FromBody]Room r)
         {
             return RoomService.UpdateRoomInfoWithReser(r);
         }
@@ -118,6 +126,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询可入住房间数量
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public object SelectCanUseRoomAllByRoomState()
         {
             return RoomService.SelectCanUseRoomAllByRoomState();
@@ -129,6 +138,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询已入住房间数量
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public object SelectNotUseRoomAllByRoomState()
         {
             return RoomService.SelectNotUseRoomAllByRoomState();
@@ -140,6 +150,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询脏房间数量
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public object SelectNotClearRoomAllByRoomState()
         {
             return RoomService.SelectNotClearRoomAllByRoomState();
@@ -151,6 +162,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询维修房间数量
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public object SelectFixingRoomAllByRoomState()
         {
             return RoomService.SelectFixingRoomAllByRoomState();
@@ -162,7 +174,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 根据房间编号查询房间价格
         /// </summary>
         /// <returns></returns>
-        public object SelectRoomByRoomPrice(string r)
+        [HttpGet]
+        public object SelectRoomByRoomPrice([FromUri]string r)
         {
             return RoomService.SelectRoomByRoomPrice(r);
         }
@@ -173,6 +186,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询预约房数量
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public object SelectReseredRoomAllByRoomState()
         {
             return RoomService.SelectReseredRoomAllByRoomState();
@@ -185,7 +199,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public object SelectRoomStateNameByRoomNo(string roomno)
+        [HttpGet]
+        public object SelectRoomStateNameByRoomNo([FromUri]string roomno)
         {
             return RoomService.SelectRoomStateNameByRoomNo(roomno);
         }
@@ -198,7 +213,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="roomno"></param>
         /// <param name="stateid"></param>
         /// <returns></returns>
-        public int UpdateRoomStateByRoomNo(string roomno, int stateid)
+        [HttpPost]
+        public int UpdateRoomStateByRoomNo([FromBody]string roomno, int stateid)
         {
             return RoomService.UpdateRoomStateByRoomNo(roomno, stateid);
         }
@@ -210,9 +226,10 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public object InsertRoom(Room rn)
+        [HttpPost]
+        public object InsertRoom([FromBody]Room roomno)
         {
-            return RoomService.InsertRoom(rn);
+            return RoomService.InsertRoom(roomno);
         }
         #endregion
 
@@ -221,6 +238,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有可消费（已住）房间
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Room> SelectRoomByStateAll()
         {
             return RoomService.SelectRoomByStateAll();
@@ -232,6 +250,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 获取所有房间状态
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Room> SelectRoomStateAll()
         {
             return RoomService.SelectRoomStateAll();
@@ -244,7 +263,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public object SelectRoomStateIdByRoomNo(string roomno)
+        [HttpGet]
+        public object SelectRoomStateIdByRoomNo([FromUri]string roomno)
         {
             return RoomService.SelectRoomStateIdByRoomNo(roomno);
         }

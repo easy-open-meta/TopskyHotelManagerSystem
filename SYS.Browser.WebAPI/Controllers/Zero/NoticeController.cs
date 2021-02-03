@@ -15,6 +15,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 获取所有公告信息
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Notice> SelectNoticeAll()
         {
             return NoticeService.SelectNoticeAll();

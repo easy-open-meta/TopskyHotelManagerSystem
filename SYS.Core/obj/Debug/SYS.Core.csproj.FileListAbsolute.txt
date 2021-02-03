@@ -42,3 +42,4 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache

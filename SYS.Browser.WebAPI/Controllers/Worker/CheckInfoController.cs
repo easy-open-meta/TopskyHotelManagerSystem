@@ -14,6 +14,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有部门监管信息
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<CheckInfo> SelectCheckInfoAll()
         {
 

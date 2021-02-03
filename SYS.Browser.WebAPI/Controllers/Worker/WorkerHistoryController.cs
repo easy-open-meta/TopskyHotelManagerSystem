@@ -16,7 +16,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="workerHistory"></param>
         /// <param name="wid"></param>
         /// <returns></returns>
-        public int AddHistoryByWorkerId(WorkerHistory workerHistory, string wid)
+        [HttpPost]
+        public int AddHistoryByWorkerId([FromBody]WorkerHistory workerHistory, string wid)
         {
             return WorkerHistoryService.AddHistoryByWorkerId(workerHistory, wid);
         }
@@ -26,7 +27,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="wid"></param>
         /// <returns></returns>
-        public List<WorkerHistory> SelectHistoryByWorkerId(string wid)
+        [HttpGet]
+        public List<WorkerHistory> SelectHistoryByWorkerId([FromUri]string wid)
         {
             return WorkerHistoryService.SelectHistoryByWorkerId(wid);
         }

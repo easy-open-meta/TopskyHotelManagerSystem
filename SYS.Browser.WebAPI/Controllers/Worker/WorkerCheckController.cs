@@ -15,7 +15,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="wid"></param>
         /// <returns></returns>
-        public List<WorkerCheck> SelectCheckInfoByWorkerNo(string wid)
+        [HttpGet]
+        public List<WorkerCheck> SelectCheckInfoByWorkerNo([FromUri]string wid)
         {
             return WorkerCheckService.SelectCheckInfoByWorkerNo(wid);
         }
@@ -25,7 +26,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        public object SelectWorkerCheckDaySumByWorkerNo(string wkn)
+        [HttpGet]
+        public object SelectWorkerCheckDaySumByWorkerNo([FromUri]string wkn)
         {
             return WorkerCheckService.SelectWorkerCheckDaySumByWorkerNo(wkn);
         }
@@ -36,7 +38,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        public object SelectToDayCheckInfoByWorkerNo(string wkn)
+        [HttpPost]
+        public object SelectToDayCheckInfoByWorkerNo([FromUri]string wkn)
         {
             return WorkerCheckService.SelectToDayCheckInfoByWorkerNo(wkn);
         }
@@ -46,7 +49,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="workerCheck"></param>
         /// <returns></returns>
-        public int AddCheckInfo(WorkerCheck workerCheck)
+        [HttpPost]
+        public int AddCheckInfo([FromBody]WorkerCheck workerCheck)
         {
             return WorkerCheckService.AddCheckInfo(workerCheck);
         }

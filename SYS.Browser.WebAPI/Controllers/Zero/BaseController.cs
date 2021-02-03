@@ -20,6 +20,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有性别类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<SexType> SelectSexTypeAll()
         {
             return new BaseService().SelectSexTypeAll();
@@ -29,7 +30,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询性别类型
         /// </summary>
         /// <returns></returns>
-        public SexType SelectSexType(SexType sexType)
+        [HttpGet]
+        public SexType SelectSexType([FromUri]SexType sexType)
         {
             return new BaseService().SelectSexType(sexType);
         }
@@ -39,7 +41,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int AddSexType(SexType sexType)
+        [HttpPost]
+        public int AddSexType([FromBody]SexType sexType)
         {
             return new BaseService().AddSexType(sexType);
         }
@@ -49,7 +52,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int DelSexType(SexType sexType)
+        [HttpDelete]
+        public int DelSexType([FromBody]SexType sexType)
         {
             return new BaseService().DelSexType(sexType);
         }
@@ -59,7 +63,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int UpdSexType(SexType sexType)
+        [HttpPost]
+        public int UpdSexType([FromBody]SexType sexType)
         {
             return new BaseService().UpdSexType(sexType);
         }
@@ -72,6 +77,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有职位类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Position> SelectPositionAll()
         {
             return new BaseService().SelectPositionAll();
@@ -81,7 +87,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询职位类型
         /// </summary>
         /// <returns></returns>
-        public Position SelectPosition(Position position)
+        [HttpGet]
+        public Position SelectPosition([FromUri]Position position)
         {
             return new BaseService().SelectPosition(position);
         }
@@ -91,7 +98,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int AddPosition(Position position)
+        [HttpPost]
+        public int AddPosition([FromBody]Position position)
         {
             return new BaseService().AddPosition(position);
         }
@@ -101,7 +109,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int DelPosition(Position position)
+        [HttpDelete]
+        public int DelPosition([FromBody]Position position)
         {
             return new BaseService().DelPosition(position);
         }
@@ -111,7 +120,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int UpdPosition(Position position)
+        [HttpPost]
+        public int UpdPosition([FromBody]Position position)
         {
             return new BaseService().UpdPosition(position);
         }
@@ -124,6 +134,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有民族类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Nation> SelectNationAll()
         {
             return new BaseService().SelectNationAll();
@@ -133,7 +144,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询民族类型
         /// </summary>
         /// <returns></returns>
-        public Nation SelectNation(Nation nation)
+        [HttpGet]
+        public Nation SelectNation([FromUri]Nation nation)
         {
             return new BaseService().SelectNation(nation);
         }
@@ -143,7 +155,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int AddNation(Nation nation)
+        [HttpPost]
+        public int AddNation([FromBody]Nation nation)
         {
             return new BaseService().AddNation(nation);
         }
@@ -153,7 +166,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int DelNation(Nation nation)
+        [HttpDelete]
+        public int DelNation([FromBody]Nation nation)
         {
             return new BaseService().DelNation(nation);
         }
@@ -163,7 +177,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int UpdNation(Nation nation)
+        [HttpPost]
+        public int UpdNation([FromBody]Nation nation)
         {
             return new BaseService().UpdNation(nation);
         }
@@ -176,6 +191,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有学历类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Education> SelectEducationAll()
         {
             return new BaseService().SelectEducationAll();
@@ -185,7 +201,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询学历类型
         /// </summary>
         /// <returns></returns>
-        public Education SelectEducation(Education education)
+        [HttpGet]
+        public Education SelectEducation([FromUri]Education education)
         {
             return new BaseService().SelectEducation(education);
         }
@@ -195,7 +212,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int AddEducation(Education education)
+        [HttpPost]
+        public int AddEducation([FromBody]Education education)
         {
             return new BaseService().AddEducation(education);
         }
@@ -205,7 +223,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int DelEducation(Education education)
+        [HttpDelete]
+        public int DelEducation([FromBody]Education education)
         {
             return new BaseService().DelEducation(education);
         }
@@ -215,7 +234,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int UpdEducation(Education education)
+        [HttpPost]
+        public int UpdEducation([FromBody]Education education)
         {
             return new BaseService().UpdEducation(education);
         }
@@ -228,6 +248,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有部门类型
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Dept> SelectDeptAll()
         {
             return new BaseService().SelectDeptAll();
@@ -237,7 +258,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询部门类型
         /// </summary>
         /// <returns></returns>
-        public Dept SelectDept(Dept dept)
+        [HttpGet]
+        public Dept SelectDept([FromUri]Dept dept)
         {
             return new BaseService().SelectDept(dept);
         }
@@ -247,7 +269,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int AddDept(Dept dept)
+        [HttpPost]
+        public int AddDept([FromBody]Dept dept)
         {
             return new BaseService().AddDept(dept);
         }
@@ -257,7 +280,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int DelDept(Dept dept)
+        [HttpDelete]
+        public int DelDept([FromBody]Dept dept)
         {
             return new BaseService().DelDept(dept);
         }
@@ -267,7 +291,8 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int UpdDept(Dept dept)
+        [HttpPost]
+        public int UpdDept([FromBody]Dept dept)
         {
             return new BaseService().UpdDept(dept);
         }

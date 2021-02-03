@@ -14,6 +14,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// 查询所有宣传联动内容(跑马灯)
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Fonts> SelectFontAll()
         {
             return FontsService.SelectFontAll();

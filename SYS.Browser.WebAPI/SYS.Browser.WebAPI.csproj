@@ -111,7 +111,6 @@
     <Compile Include="Controllers\Room\ReserController.cs" />
     <Compile Include="Controllers\Room\RoomController.cs" />
     <Compile Include="Controllers\Room\RoomTypeController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\Util\FontsController.cs" />
     <Compile Include="Controllers\Worker\CheckInfoController.cs" />
     <Compile Include="Controllers\Worker\WorkerCheckController.cs" />
