@@ -17,10 +17,7 @@
         /// </summary>
         public static string admingroup = "";
 
-        /// <summary>
-        /// 存储当前超管名称
-        /// </summary>
-        public static string adminName = "";
+        public static string adminpwd = "";
 
 
 

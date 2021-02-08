@@ -7,7 +7,6 @@ namespace SYS.Application
 {
     public class WtiService
     {
-       
         #region 根据房间编号查询水电费信息
         /// <summary>
         /// 根据房间编号查询水电费信息

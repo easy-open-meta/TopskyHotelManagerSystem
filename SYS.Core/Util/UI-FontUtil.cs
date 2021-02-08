@@ -20,7 +20,7 @@ namespace SYS.Core
             PrivateFontCollection pfc = new PrivateFontCollection();
             ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.Mono.ttf");
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
             byte[] fontData = new byte[stream.Length];
             stream.Read(fontData, 0, (int)stream.Length);
             stream.Close();
@@ -33,7 +33,7 @@ namespace SYS.Core
                 }
             }
             FontFamily family = new FontFamily(pfc.Families[0].Name);
-            Font myFont = new Font(family, 11);
+            Font myFont = new Font(family, 12);
             return myFont;
         }
 
@@ -42,7 +42,7 @@ namespace SYS.Core
             PrivateFontCollection pfc = new PrivateFontCollection();
             ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.Mono.ttf");
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
             byte[] fontData = new byte[stream.Length];
             stream.Read(fontData, 0, (int)stream.Length);
             stream.Close();
@@ -64,7 +64,29 @@ namespace SYS.Core
             PrivateFontCollection pfc = new PrivateFontCollection();
             ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.Mono.ttf");
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
+            byte[] fontData = new byte[stream.Length];
+            stream.Read(fontData, 0, (int)stream.Length);
+            stream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+            FontFamily family = new FontFamily(pfc.Families[0].Name);
+            Font myFont = new Font(family, 12);
+            return myFont;
+        }
+
+        public static Font SetRoomControlsFont()
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.GFont.otf");
             byte[] fontData = new byte[stream.Length];
             stream.Read(fontData, 0, (int)stream.Length);
             stream.Close();
@@ -78,28 +100,6 @@ namespace SYS.Core
             }
             FontFamily family = new FontFamily(pfc.Families[0].Name);
             Font myFont = new Font(family, 10);
-            return myFont;
-        }
-
-        public static Font SetRoomControlsFont()
-        {
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            ResourceManager rm = new ResourceManager("SYS.Core.Resource", Assembly.GetExecutingAssembly());
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream("SYS.Core.Resources.Mono.ttf");
-            byte[] fontData = new byte[stream.Length];
-            stream.Read(fontData, 0, (int)stream.Length);
-            stream.Close();
-
-            unsafe
-            {
-                fixed (byte* pFontData = fontData)
-                {
-                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
-                }
-            }
-            FontFamily family = new FontFamily(pfc.Families[0].Name);
-            Font myFont = new Font(family, 9);
             return myFont;
         }
 

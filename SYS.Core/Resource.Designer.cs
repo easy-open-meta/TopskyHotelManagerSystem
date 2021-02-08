@@ -63,19 +63,9 @@ namespace SYS.Core {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        public static byte[] Mono {
+        public static byte[] GFont {
             get {
-                object obj = ResourceManager.GetObject("Mono", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        public static byte[] Mono_l {
-            get {
-                object obj = ResourceManager.GetObject("Mono_l", resourceCulture);
+                object obj = ResourceManager.GetObject("GFont", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -11,17 +11,17 @@ namespace SYS.Application
         /// </summary>
         /// <param name="workerId"></param>
         /// <returns></returns>
-        public static Admin SelectMangerByPass(string adminaccount,string adminpass)
+        public static Admin SelectMangerByPass(string adminpass)
         {
             Admin a = null;
-            string sql = string.Format("select * from ADMININFO where AdminAccount = '{0}' and AdminPassword='{1}'", adminaccount, adminpass);
+            string sql = "select * from ADMININFO where AdminPassword='" + adminpass + "'";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
             {
                 a = new Admin();
+                a.AdminPassword = (string)dr["AdminPassword"];
                 a.AdminType = dr["AdminType"].ToString();
-                a.AdminName = dr["AdminName"].ToString();
-                a.IsAdmin = (int)dr["IsAdmin"];
+                a.AdminGroup = dr["AdminName"].ToString();
             }
             dr.Close();
             DBHelper.Closecon();

@@ -32,11 +32,6 @@ D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreC
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CopyComplete
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
 D:\Gitee\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resources\Mono.ttf
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resources\Mono-l.ttf
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resource.resx
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resource.Designer.cs
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Util\IDCardUtil.cs
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.pdb
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.dll
@@ -44,11 +39,12 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.C
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\MySql.Data.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.pdb
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.pdb
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.xml
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.dll.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CopyComplete
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Application.xml
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resource.resx
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resource.Designer.cs
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Core.xml
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resources\GFont.otf
