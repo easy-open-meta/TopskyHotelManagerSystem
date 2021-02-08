@@ -18,6 +18,8 @@ namespace SYS.Manager
         }
         #endregion
 
+
+
         #region 添加员工信息
         /// <summary>
         /// 添加员工信息
@@ -35,7 +37,7 @@ namespace SYS.Manager
         /// 获取所有工作人员信息
         /// </summary>
         /// <returns></returns>
-        public List<Worker> SelectWorkerAll()
+        public static List<Worker> SelectWorkerAll()
         {
             return WorkerService.SelectWorkerAll();
         }

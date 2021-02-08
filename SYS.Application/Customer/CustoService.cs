@@ -40,7 +40,7 @@ namespace SYS.Application
         public static List<Custo> SelectCustoAll()
         {
             List<Custo> custos = new List<Custo>();
-            string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p,sextype s where u.CustoType=t.UserType and u.PassportType=p.PassportId and s.sexId = u.CustoSex";
+            string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p,sextype s where u.CustoType=t.UserType and u.PassportType=p.PassportId and s.sexId = u.CustoSex order by u.CustoNo asc";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
             {
@@ -68,6 +68,29 @@ namespace SYS.Application
             dr.Close();
             DBHelper.Closecon();
             return custos;
+        }
+
+
+        public static Custo SelectCardInfoByCustoNo(string CustoNo)
+        {
+            Custo c = null;
+            string sql = "select * from USERINFO where CustoNo='" + CustoNo + "'";
+            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
+            if (dr.Read())
+            {
+                c = new Custo();
+                c.CustoNo = Convert.ToString(dr["CustoNo"]);
+                c.CustoName = Convert.ToString(dr["CustoName"]);
+                c.CustoSex = Convert.ToInt32(dr["CustoSex"]);
+                c.CustoTel = Convert.ToString(dr["CustoTel"]);
+                c.CustoID = Convert.ToString(dr["CustoID"]);
+                c.CustoAdress = Convert.ToString(dr["CustoAdress"]);
+                c.CustoBirth = Convert.ToDateTime(dr["CustoBirth"]);
+                c.CustoType = Convert.ToInt32(dr["CustoType"]);
+            }
+            dr.Close();
+            DBHelper.Closecon();
+            return c;
         }
 
         #region 根据客户编号查询客户信息
