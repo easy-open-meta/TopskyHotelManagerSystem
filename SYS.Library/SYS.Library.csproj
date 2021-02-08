@@ -54,7 +54,6 @@
     <Content Include="MySql.Web.dll" />
     <Content Include="SYS.Application.dll" />
     <Content Include="SYS.Core.dll" />
-    <Content Include="SYS.Core.xml" />
     <Content Include="SYS.Manager.dll" />
   </ItemGroup>
   <ItemGroup>

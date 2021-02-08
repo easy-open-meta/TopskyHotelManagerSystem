@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
 // 有关程序集的一般信息由以下
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NF-TopSky小组")]
 [assembly: AssemblyProduct("TS酒店管理系统")]
-[assembly: AssemblyCopyright("Copyright © TopSky小组 2018-2021")]
+[assembly: AssemblyCopyright("Copyright © TopSky小组 2018-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
