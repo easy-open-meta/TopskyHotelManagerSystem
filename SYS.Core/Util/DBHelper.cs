@@ -14,7 +14,6 @@ namespace SYS.Core
         private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
 =======
         //private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
-        private static string conStr = "Server=134.175.239.108;Database=tshoteldb;Uid=root;Pwd=yjj0720.;";
 
 >>>>>>> InitProject_v1.4.8_happy_new_year
         private static MySqlConnection con = null;
