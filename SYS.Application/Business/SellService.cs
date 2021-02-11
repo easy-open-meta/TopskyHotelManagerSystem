@@ -1,34 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class SellService
+    /// <summary>
+    /// 商品信息接口实现类
+    /// </summary>
+    public class SellService:Repository<SellThing>,ISellService
     {
         /// <summary>
         /// 查询所有商品
         /// </summary>
         /// <returns></returns>
-        public static List<SellThing> SelectSellThingAll()
+        public List<SellThing> SelectSellThingAll()
         {
-            List<SellThing> ls = new List<SellThing>();
-            string sql = "select * from Sellthing";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                SellThing s = new SellThing();
-                s.SellNo = dr["SellNo"].ToString();
-                s.SellName = dr["SellName"].ToString();
-                s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
-                s.format = (string)dr["format"];
-                s.Stock = Convert.ToInt32(dr["Stock"]);
-                ls.Add(s);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return ls;
+            List<SellThing> sellThings = new List<SellThing>();
+            sellThings = base.GetList(a => a.delete_mk == 0);
+            return sellThings;
         }
 
         /// <summary>
@@ -36,22 +27,10 @@ namespace SYS.Application
         /// </summary>
         /// <param name="No"></param>
         /// <returns></returns>
-        public static SellThing SelectSellThingByNo(string No)
+        public SellThing SelectSellThingByNo(string No)
         {
             SellThing s = new SellThing();
-            string sql = "select * from Sellthing where SellNo='" + No + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                s = new SellThing();
-                s.SellNo = dr["SellNo"].ToString();
-                s.SellName = dr["SellName"].ToString();
-                s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
-                s.format = (string)dr["format"];
-                s.Stock = (int)dr["Stock"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            s = base.GetSingle(a => a.SellNo == No && a.delete_mk != 0);
             return s;
         }
 
@@ -60,50 +39,44 @@ namespace SYS.Application
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public static List<SellThing> SelectSellThingByName(string Name)
+        public List<SellThing> SelectSellThingByName(string Name)
         {
-            List<SellThing> ls = new List<SellThing>();
-            string sql = "select * from Sellthing where SellName like '%" + Name + "%' or SellNo like '%" + Name + "%' or SellPrice like '%" + Name + "%' or format like '%" + Name + "%'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                SellThing s = new SellThing();
-                s.SellNo = dr["SellNo"].ToString();
-                s.SellName = dr["SellName"].ToString();
-                s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
-                s.format = (string)dr["format"];
-                s.Stock = (int)dr["Stock"];
-                ls.Add(s);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return ls;
+            List<SellThing> sellThings = new List<SellThing>();
+            sellThings = base.GetList(a => a.SellName.Contains(Name) || a.SellNo.Contains(Name) || a.SellPrice == Convert.ToDecimal(Name) || a.format.Contains(Name));
+            return sellThings;
         }
 
         /// <summary>
         /// 修改商品
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="stock"></param>
+        /// <param name="sellNo"></param>
         /// <returns></returns>
-        public static int UpdateSellThing(string stock, string sellNo)
+        public bool UpdateSellThing(string stock, string sellNo)
         {
-            int n = 0;
-            string sql = "update SELLTHING set Stock='{0}' where SellNo='{1}'";
-            sql = string.Format(sql, stock, sellNo);
-            n = DBHelper.ExecuteNonQuery(sql);
-            return n;
+            return base.Update(a => new SellThing() 
+            {
+                Stock = Convert.ToInt32(stock),
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.SellNo == sellNo);
         }
 
         /// <summary>
         /// 撤回客户消费信息
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="roomNo"></param>
+        /// <param name="time"></param>
         /// <returns></returns>
-        public static int DeleteSellThing(string roomNo, string time)
+        public bool DeleteSellThing(string roomNo, string time)
         {
-            string sql = "delete from CUSTOSPEND where RoomNo='{0}' and SpendTime='{1}'";
-            sql = string.Format(sql, roomNo, time);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Spend>().Update(a => new Spend()
+            {
+                delete_mk = 1,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.RoomNo == roomNo && a.SpendTime >= Convert.ToDateTime(time));
+
         }
 
         /// <summary>
@@ -112,56 +85,35 @@ namespace SYS.Application
         /// <param name="name"></param>
         /// <param name="price"></param>
         /// <returns></returns>
-        public static SellThing SelectSellThingByNameAndPrice(string name,string price)
+        public SellThing SelectSellThingByNameAndPrice(string name,string price)
         {
-            SellThing s = null;
-            string sql = "select * from SELLTHING where SellName='{0}' and SellPrice = '{1}'";
-            sql = string.Format(sql, name, price);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                s = new SellThing();
-                s.SellNo = dr["SellNo"].ToString();
-                s.SellName = dr["SellName"].ToString();
-                s.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
-                s.format = (string)dr["format"];
-                s.Stock = (int)dr["Stock"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return s;
+            SellThing sellThing = null;
+            sellThing = base.GetSingle(a => a.SellName == name && a.SellPrice == Convert.ToDecimal(price));
+            return sellThing;
         }
 
 
-
-        public static SellThing SelectSellInfoBySellNo(string SellNo)
+        /// <summary>
+        /// 根据商品编号查询商品信息
+        /// </summary>
+        /// <param name="SellNo"></param>
+        /// <returns></returns>
+        public SellThing SelectSellInfoBySellNo(string SellNo)
         {
             SellThing st = null;
-            string sql = "select * from SellThing where SellNo='" + SellNo + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                st = new SellThing();
-                st.SellNo = Convert.ToString(dr["SellNo"]);
-                st.SellName = Convert.ToString(dr["SellName"]);
-                st.SellPrice = Convert.ToDecimal(dr["SellPrice"]);
-                st.format = Convert.ToString(dr["format"]);
-                st.Stock = Convert.ToInt32(dr["Stock"]);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            st = base.GetSingle(a => a.SellNo == SellNo && a.delete_mk != 1);
             return st;
         }
 
         #region 添加商品
-        public static int InsertSellThing(SellThing st)
+        /// <summary>
+        /// 添加商品
+        /// </summary>
+        /// <param name="st"></param>
+        /// <returns></returns>
+        public bool InsertSellThing(SellThing st)
         {
-            string sql = "insert SellThing (SellNo,SellName,SellPrice,";
-            sql += "format,Stock) values ";
-            sql += "('{0}','{1}','{2}','{3}','{4}')";
-            sql = string.Format(sql, st.SellNo, st.SellName, st.SellPrice,
-                st.format, st.Stock);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(st);
         }
         #endregion
     }

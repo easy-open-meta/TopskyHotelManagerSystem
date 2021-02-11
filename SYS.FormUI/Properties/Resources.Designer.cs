@@ -103,6 +103,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _lock {
+            get {
+                object obj = ResourceManager.GetObject("lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_b {
             get {
                 object obj = ResourceManager.GetObject("arrow-down-b", resourceCulture);
@@ -353,7 +363,21 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap 内部飞鸽_ib {
+=======
+        internal static System.Drawing.Bitmap settings2 {
+            get {
+                object obj = ResourceManager.GetObject("settings2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 人事部界面 {
+>>>>>>> InitProject_v1.4.8_happy_new_year
             get {
                 object obj = ResourceManager.GetObject("内部飞鸽-ib", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -463,7 +487,21 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap 客房管理_ib1 {
+=======
+        internal static System.Drawing.Bitmap 增加_添加_加减__1_ {
+            get {
+                object obj = ResourceManager.GetObject("增加 添加 加减 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 客房icon {
+>>>>>>> InitProject_v1.4.8_happy_new_year
             get {
                 object obj = ResourceManager.GetObject("客房管理-ib1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -723,7 +761,31 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap 清理中 {
+=======
+        internal static System.Drawing.Bitmap 添加__增加___加 {
+            get {
+                object obj = ResourceManager.GetObject("添加  增加   加", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 組織圖塊 {
+            get {
+                object obj = ResourceManager.GetObject("組織圖塊", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 经理部界面 {
+>>>>>>> InitProject_v1.4.8_happy_new_year
             get {
                 object obj = ResourceManager.GetObject("清理中", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

@@ -28,7 +28,7 @@ namespace SYS.FormUI
 
         private void FrmChangeWorker_Load(object sender, EventArgs e)
         {
-            if(AdminInfo.adminType != "总经理")
+            if(AdminInfo.Type != "总经理")
             {
                 btnUpWorker.Enabled = false;
                 btnUpWorker.Text = "权限不足";
@@ -38,20 +38,20 @@ namespace SYS.FormUI
                 btnGoodBad.Text = "权限不足";
             }
 
-            wk_WorkerNo = FrmTopChange.wk_WorkerNo;
-            wk_WorkerName = FrmTopChange.wk_WorkerName;
-            wk_WorkerBirthday = FrmTopChange.wk_WorkerBirthday;
-            wk_WorkerSex = FrmTopChange.wk_WorkerSex;
-            wk_WorkerTel = FrmTopChange.wk_WorkerTel;
-            wk_WorkerClub = FrmTopChange.wk_WorkerClub;
-            wk_WorkerAddress = FrmTopChange.wk_WorkerAddress;
-            wk_WorkerPosition = FrmTopChange.wk_WorkerPosition;
-            wk_WorkerID = FrmTopChange.wk_WorkerID;
-            wk_WorkerPwd = FrmTopChange.wk_WorkerPwd;
-            wk_WorkerTime = FrmTopChange.wk_WorkerTime;
-            wk_WorkerFace = FrmTopChange.wk_WorkerFace;
-            wk_WorkerEducation = FrmTopChange.wk_WorkerEducation;
-            lblWorker.Text = FrmTopChange.wk_WorkerClub + FrmTopChange.wk_WorkerPosition + "：" + FrmTopChange.wk_WorkerName + "的操作界面";
+            wk_WorkerNo = FrmWorkerManager.wk_WorkerNo;
+            wk_WorkerName = FrmWorkerManager.wk_WorkerName;
+            wk_WorkerBirthday = FrmWorkerManager.wk_WorkerBirthday;
+            wk_WorkerSex = FrmWorkerManager.wk_WorkerSex;
+            wk_WorkerTel = FrmWorkerManager.wk_WorkerTel;
+            wk_WorkerClub = FrmWorkerManager.wk_WorkerClub;
+            wk_WorkerAddress = FrmWorkerManager.wk_WorkerAddress;
+            wk_WorkerPosition = FrmWorkerManager.wk_WorkerPosition;
+            wk_WorkerID = FrmWorkerManager.wk_WorkerID;
+            wk_WorkerPwd = FrmWorkerManager.wk_WorkerPwd;
+            wk_WorkerTime = FrmWorkerManager.wk_WorkerTime;
+            wk_WorkerFace = FrmWorkerManager.wk_WorkerFace;
+            wk_WorkerEducation = FrmWorkerManager.wk_WorkerEducation;
+            lblWorker.Text = FrmWorkerManager.wk_WorkerClub + FrmWorkerManager.wk_WorkerPosition + "：" + FrmWorkerManager.wk_WorkerName + "的操作界面";
             if (wk_WorkerClub == "餐饮部")
             {
                 this.BackgroundImage = Resources.餐饮部界面;

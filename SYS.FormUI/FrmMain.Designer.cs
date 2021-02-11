@@ -259,7 +259,11 @@
             this.pnlCheckInfo.Controls.Add(this.label2);
             this.pnlCheckInfo.Location = new System.Drawing.Point(295, 55);
             this.pnlCheckInfo.Name = "pnlCheckInfo";
+<<<<<<< HEAD:SYS.FormUI/FrmMain.Designer.cs
             this.pnlCheckInfo.Size = new System.Drawing.Size(95, 97);
+=======
+            this.pnlCheckInfo.Size = new System.Drawing.Size(88, 73);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppMain/FrmMain.Designer.cs
             this.pnlCheckInfo.TabIndex = 27;
             this.pnlCheckInfo.Visible = false;
             // 
@@ -267,7 +271,7 @@
             // 
             this.lblClose.AutoSize = true;
             this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblClose.Location = new System.Drawing.Point(73, 6);
+            this.lblClose.Location = new System.Drawing.Point(66, 5);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(16, 17);
             this.lblClose.TabIndex = 3;

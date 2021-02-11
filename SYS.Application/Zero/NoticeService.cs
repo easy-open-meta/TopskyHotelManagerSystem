@@ -1,35 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class NoticeService
+    /// <summary>
+    /// 公告信息接口实现类
+    /// </summary>
+    public class NoticeService:Repository<Notice>, INoticeService
     {
         #region 获取所有公告信息
         /// <summary>
         /// 获取所有公告信息
         /// </summary>
         /// <returns></returns>
-        public static List<Notice> SelectNoticeAll()
+        public List<Notice> SelectNoticeAll()
         {
             List<Notice> ntc = new List<Notice>();
-            string sql = "select * from UPLOADINFO";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Notice ntcs = new Notice();
-                ntcs.NoticeNo = (string)dr["NoticeNo"];
-                ntcs.Noticetheme = dr["Noticetheme"].ToString();
-                ntcs.NoticeTime = DateTime.Parse(dr["NoticeTime"].ToString());
-                ntcs.NoticeContent = Convert.ToString(dr["NoticeContent"]);
-                ntcs.NoticeClub = (string)dr["NoticeClub"];
-                ntcs.NoticePerson = Convert.ToString(dr["NoticePerson"]);
-                ntc.Add(ntcs);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            ntc = base.GetList(a => a.delete_mk != 1);
             return ntc;
         }
         #endregion

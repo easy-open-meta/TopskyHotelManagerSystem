@@ -29,5 +29,17 @@ namespace SYS.Manager
             return AdminService.SelectAdminInfoByadminpwd(pwd);
         }
         #endregion
+
+        #region 根据超管账号查询对应的密码
+        /// <summary>
+        /// 根据超管账号查询对应的密码
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static Admin SelectAdminPwdByAccount(string account)
+        {
+            return AdminService.SelectAdminPwdByAccount(account);
+        }
+        #endregion
     }
 }

@@ -53,7 +53,11 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
+<<<<<<< HEAD:SYS.FormUI/FrmInputs.cs
             List<SexType> listSexType = CustoTypeManager.SelectSexTypeAll();
+=======
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmInputs.cs
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";
@@ -96,7 +100,7 @@ namespace SYS.FormUI
                         MessageBox.Show("添加成功");
 
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = "编号："+ LoginInfo.WorkerNo + "【"+FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "插入了一条数据！";
                         o.OperationAccount = LoginInfo.WorkerNo;

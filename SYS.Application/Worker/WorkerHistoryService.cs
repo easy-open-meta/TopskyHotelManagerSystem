@@ -1,36 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class WorkerHistoryService
+    /// <summary>
+    /// 员工履历接口实现类
+    /// </summary>
+    public class WorkerHistoryService:Repository<WorkerHistory>, IWorkerHistoryService
     {
-
-        public static int AddHistoryByWorkerId(WorkerHistory workerHistory, string wid)
+        /// <summary>
+        /// 根据工号添加员工履历
+        /// </summary>
+        /// <param name="workerHistory"></param>
+        /// <returns></returns>
+        public bool AddHistoryByWorkerId(WorkerHistory workerHistory)
         {
-            string sql = "insert into WorkerHistory values('" + wid + "','" + workerHistory.StartDate + "','" + workerHistory.EndDate + "','" + workerHistory.Postion + "','" + workerHistory.Company + "')";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(workerHistory);
         }
 
-        public static List<WorkerHistory> SelectHistoryByWorkerId(string wid)
+        /// <summary>
+        /// 根据工号查询履历信息
+        /// </summary>
+        /// <param name="wid"></param>
+        /// <returns></returns>
+        public List<WorkerHistory> SelectHistoryByWorkerId(string wid)
         {
             List<WorkerHistory> why = new List<WorkerHistory>();
-            string sql = "SELECT * FROM WORKERINFO wi,WORKERHISTORY wh where wi.WorkerId = wh.WorkerId and wi.WorkerId = '" + wid + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                WorkerHistory workerHistory = new WorkerHistory();
-                workerHistory.WorkerId = dr["WorkerId"].ToString();
-                workerHistory.StartDate = DateTime.Parse(dr["StartDate"].ToString());
-                workerHistory.EndDate = DateTime.Parse(dr["EndDate"].ToString());
-                workerHistory.Postion = dr["Position"].ToString();
-                workerHistory.Company = dr["Company"].ToString();
-                why.Add(workerHistory);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            why = base.GetList(a => a.delete_mk != 1 && a.WorkerId == wid);
             return why;
         }
     }

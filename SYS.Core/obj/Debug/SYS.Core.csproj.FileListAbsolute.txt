@@ -34,10 +34,27 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Google.Protobuf.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Zstandard.Net.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Ubiety.Dns.Core.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\System.Memory.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\System.Buffers.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\K4os.Compression.LZ4.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\K4os.Hash.xxHash.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\System.Numerics.Vectors.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
+<<<<<<< HEAD
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.Resource.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.GenerateResource.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resource.resx
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resource.Designer.cs
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.xml
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Resources\GFont.otf
+=======
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SqlSugar.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Common.dll
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Common.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Common.dll.config
+>>>>>>> InitProject_v1.4.8_happy_new_year

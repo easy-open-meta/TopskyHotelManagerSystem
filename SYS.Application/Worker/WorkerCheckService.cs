@@ -1,41 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class WorkerCheckService
+    /// <summary>
+    /// 员工打卡接口实现类
+    /// </summary>
+    public class WorkerCheckService:Repository<WorkerCheck>, IWorkerCheckService
     {
         /// <summary>
         /// 根据员工编号查询其所有的打卡记录
         /// </summary>
         /// <param name="wid"></param>
         /// <returns></returns>
-        public static List<WorkerCheck> SelectCheckInfoByWorkerNo(string wid)
+        public List<WorkerCheck> SelectCheckInfoByWorkerNo(string wid)
         {
             List<WorkerCheck> workerChecks = new List<WorkerCheck>();
-            string sql = "select * from WorkerCheck where WorkerNo = '" + wid + "'";
-            DBHelper.Opencon();
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
+            workerChecks = base.GetList(a => a.WorkerNo == wid && a.delete_mk != 1);
+            workerChecks.ForEach(source =>
             {
-                WorkerCheck workerCheck = new WorkerCheck();
-                workerCheck.WorkerNo = dr["WorkerNo"].ToString();
-                workerCheck.CheckTime = (DateTime)dr["CheckTime"];
-                workerCheck.CheckWay = dr["CheckWay"].ToString();
-                if (Convert.ToInt32(dr["CheckState"]) == 0)
-                {
-                    workerCheck.CheckState = "打卡成功";
-                }
-                else
-                {
-                    workerCheck.CheckState = "打卡失败";
-                }
-                workerChecks.Add(workerCheck);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+                source.CheckStateNm = source.CheckState == 0 ? "打卡成功" : "打卡失败";
+            });
             return workerChecks;
         }
 
@@ -45,10 +33,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        public static object SelectWorkerCheckDaySumByWorkerNo(string wkn)
+        public object SelectWorkerCheckDaySumByWorkerNo(string wkn)
         {
-            string sql = "SELECT COUNT(*) FROM WORKERCHECK WHERE workerNo = '" + wkn + "'";
-            return DBHelper.ExecuteScalar(sql);
+            return base.GetList(a => a.WorkerNo == wkn && a.delete_mk != 1).Count;
         }
 
 
@@ -57,10 +44,10 @@ namespace SYS.Application
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        public static object SelectToDayCheckInfoByWorkerNo(string wkn)
+        public object SelectToDayCheckInfoByWorkerNo(string wkn)
         {
-            string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+"' and DATEDIFF(workercheck.CheckTime,CURRENT_DATE()) = 0";
-            return DBHelper.ExecuteScalar(sql);
+            //string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+ "' and DATEDIFF(CURRENT_DATE(),workercheck.CheckTime)";
+            return base.GetList(a => a.WorkerNo == wkn && a.delete_mk != 1 && a.CheckTime >= DateTime.Now).Count;
         }
 
         /// <summary>
@@ -68,10 +55,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="workerCheck"></param>
         /// <returns></returns>
-        public static int AddCheckInfo(WorkerCheck workerCheck)
+        public bool AddCheckInfo(WorkerCheck workerCheck)
         {
-            string sql = "insert into WORKERCHECK values('" + workerCheck.WorkerNo + "','"+workerCheck.CheckTime+"','" + workerCheck.CheckWay + "','0')";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(workerCheck);
         }
     }
 }

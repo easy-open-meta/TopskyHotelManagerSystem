@@ -33,10 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbCustoInfo = new System.Windows.Forms.GroupBox();
-            this.txtCardID = new Sunny.UI.UITextBox();
+            this.txtCustoNo = new Sunny.UI.UITextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dgvCustomerList = new Sunny.UI.UIDataGridView();
+            this.btnSerach = new Sunny.UI.UIButton();
+            this.btnAddCusto = new Sunny.UI.UIButton();
             this.CustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,15 +51,18 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSerach = new Sunny.UI.UIButton();
-            this.btnAddCusto = new Sunny.UI.UIButton();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCustoInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCustoInfo
             // 
-            this.gbCustoInfo.Controls.Add(this.txtCardID);
+            this.gbCustoInfo.Controls.Add(this.txtCustoNo);
             this.gbCustoInfo.Controls.Add(this.label2);
             this.gbCustoInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gbCustoInfo.Location = new System.Drawing.Point(12, 383);
@@ -67,21 +72,21 @@
             this.gbCustoInfo.TabStop = false;
             this.gbCustoInfo.Text = "条件搜索栏";
             // 
-            // txtCardID
+            // txtCustoNo
             // 
-            this.txtCardID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCardID.FillColor = System.Drawing.Color.White;
-            this.txtCardID.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCardID.Location = new System.Drawing.Point(327, 16);
-            this.txtCardID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCardID.Maximum = 2147483647D;
-            this.txtCardID.Minimum = -2147483648D;
-            this.txtCardID.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtCardID.Name = "txtCardID";
-            this.txtCardID.Padding = new System.Windows.Forms.Padding(5);
-            this.txtCardID.Radius = 20;
-            this.txtCardID.Size = new System.Drawing.Size(204, 33);
-            this.txtCardID.TabIndex = 88;
+            this.txtCustoNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustoNo.FillColor = System.Drawing.Color.White;
+            this.txtCustoNo.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCustoNo.Location = new System.Drawing.Point(327, 16);
+            this.txtCustoNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustoNo.Maximum = 2147483647D;
+            this.txtCustoNo.Minimum = -2147483648D;
+            this.txtCustoNo.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtCustoNo.Name = "txtCustoNo";
+            this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
+            this.txtCustoNo.Radius = 20;
+            this.txtCustoNo.Size = new System.Drawing.Size(204, 33);
+            this.txtCustoNo.TabIndex = 88;
             // 
             // label2
             // 
@@ -91,7 +96,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 87;
-            this.label2.Text = "证件号码";
+            this.label2.Text = "客户编号";
             // 
             // toolTip1
             // 
@@ -133,7 +138,12 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
             this.dgvCustomerList.EnableHeadersVisualStyles = false;
             this.dgvCustomerList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvCustomerList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -150,6 +160,32 @@
             this.dgvCustomerList.Size = new System.Drawing.Size(1009, 365);
             this.dgvCustomerList.Style = Sunny.UI.UIStyle.Custom;
             this.dgvCustomerList.TabIndex = 83;
+            // 
+            // btnSerach
+            // 
+            this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSerach.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnSerach.Location = new System.Drawing.Point(815, 426);
+            this.btnSerach.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSerach.Name = "btnSerach";
+            this.btnSerach.Radius = 30;
+            this.btnSerach.Size = new System.Drawing.Size(103, 49);
+            this.btnSerach.TabIndex = 84;
+            this.btnSerach.Text = "搜    索";
+            this.btnSerach.Click += new System.EventHandler(this.btnSerach_BtnClick);
+            // 
+            // btnAddCusto
+            // 
+            this.btnAddCusto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCusto.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAddCusto.Location = new System.Drawing.Point(924, 426);
+            this.btnAddCusto.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAddCusto.Name = "btnAddCusto";
+            this.btnAddCusto.Radius = 30;
+            this.btnAddCusto.Size = new System.Drawing.Size(103, 49);
+            this.btnAddCusto.TabIndex = 85;
+            this.btnAddCusto.Text = "添加客户";
+            this.btnAddCusto.Click += new System.EventHandler(this.btnAddCusto_BtnClick);
             // 
             // CustoNo
             // 
@@ -239,8 +275,9 @@
             this.Column4.ReadOnly = true;
             this.Column4.Visible = false;
             // 
-            // btnSerach
+            // Column5
             // 
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
             this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerach.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnSerach.Location = new System.Drawing.Point(781, 389);
@@ -251,9 +288,17 @@
             this.btnSerach.TabIndex = 84;
             this.btnSerach.Text = "搜    索";
             this.btnSerach.Click += new System.EventHandler(this.btnSerach_BtnClick);
+=======
+            this.Column5.DataPropertyName = "delete_mk";
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             // 
-            // btnAddCusto
+            // Column6
             // 
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
             this.btnAddCusto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCusto.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnAddCusto.Location = new System.Drawing.Point(890, 389);
@@ -264,6 +309,37 @@
             this.btnAddCusto.TabIndex = 85;
             this.btnAddCusto.Text = "添加客户";
             this.btnAddCusto.Click += new System.EventHandler(this.btnAddCusto_BtnClick);
+=======
+            this.Column6.DataPropertyName = "datains_usr";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datains_date";
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "datachg_usr";
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "datachg_date";
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             // 
             // FrmCustomerManager
             // 
@@ -292,6 +368,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label2;
         private Sunny.UI.UIDataGridView dgvCustomerList;
+        private Sunny.UI.UIButton btnSerach;
+        private Sunny.UI.UITextBox txtCustoNo;
+        private Sunny.UI.UIButton btnAddCusto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoSex;
@@ -304,8 +383,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private Sunny.UI.UIButton btnSerach;
-        private Sunny.UI.UITextBox txtCardID;
-        private Sunny.UI.UIButton btnAddCusto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

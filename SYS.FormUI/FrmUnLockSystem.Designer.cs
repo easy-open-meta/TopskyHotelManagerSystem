@@ -41,7 +41,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
             this.label1.Location = new System.Drawing.Point(28, 20);
+=======
+            this.label1.Location = new System.Drawing.Point(54, 37);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 26);
             this.label1.TabIndex = 0;
@@ -62,6 +66,7 @@
             this.btnUnLock.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUnLock.Location = new System.Drawing.Point(178, 97);
             this.btnUnLock.Name = "btnUnLock";
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
             this.btnUnLock.Size = new System.Drawing.Size(92, 32);
             this.btnUnLock.TabIndex = 2;
             this.btnUnLock.Text = "解   锁";
@@ -71,6 +76,18 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+=======
+            this.btnUnLock.Radius = 20;
+            this.btnUnLock.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnUnLock.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(127)))), ((int)(((byte)(128)))));
+            this.btnUnLock.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.btnUnLock.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.btnUnLock.Size = new System.Drawing.Size(101, 40);
+            this.btnUnLock.Style = Sunny.UI.UIStyle.Red;
+            this.btnUnLock.TabIndex = 113;
+            this.btnUnLock.Text = "解      锁";
+            this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             // 
             // FrmUnLockSystem
             // 
@@ -86,8 +103,18 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmUnLockSystem";
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统锁定";
+=======
+            this.Padding = new System.Windows.Forms.Padding(0);
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ShowInTaskbar = false;
+            this.ShowTitle = false;
+            this.Style = Sunny.UI.UIStyle.Custom;
+            this.Text = "系统已锁定！";
+            this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             this.Deactivate += new System.EventHandler(this.FrmUnLockSystem_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUnLockSystem_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUnLockSystem_FormClosed);

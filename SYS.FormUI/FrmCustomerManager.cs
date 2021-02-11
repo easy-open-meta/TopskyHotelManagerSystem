@@ -214,7 +214,7 @@ namespace SYS.FormUI
                 worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
                 MessageBox.Show(fileName + "信息导出成功", "来自T仔提示", MessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
-                Operation o = new Operation();
+                OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "用户信息!";
                 o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition;
@@ -361,13 +361,17 @@ namespace SYS.FormUI
 
         private void btnSerach_BtnClick(object sender, EventArgs e)
         {
-            if (txtCardID.Text != "")
+            if (txtCustoNo.Text != "")
             {
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.cs
                 dgvCustomerList.DataSource = CustoService.SelectCustoInfoByCardId(txtCardID.Text);
+=======
+                dgvCustomerList.DataSource = CustoManager.SelectCustoInfoByCardId(txtCustoNo.Text);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.cs
             }
             else
             {
-                MessageBox.Show("请输入证件号码！");
+                MessageBox.Show("请输入客户编号！");
             }
         }
 

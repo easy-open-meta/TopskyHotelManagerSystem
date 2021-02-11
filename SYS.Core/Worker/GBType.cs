@@ -31,7 +31,10 @@ namespace SYS.Application
         /// 资料新增日期
         /// </summary>
         public DateTime? datains_date { get; set; }
+<<<<<<< HEAD:SYS.Core/Worker/GBType.cs
 
+=======
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Core/Zero/Nation.cs
         /// <summary>
         /// 资料更新人
         /// </summary>
@@ -41,5 +44,9 @@ namespace SYS.Application
         /// 资料更新日期
         /// </summary>
         public DateTime? datachg_date { get; set; }
+<<<<<<< HEAD:SYS.Core/Worker/GBType.cs
+=======
+
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Core/Zero/Nation.cs
     }
 }
