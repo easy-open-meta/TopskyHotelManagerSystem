@@ -11,7 +11,10 @@ using System.Collections.Generic;
 =======
 using Sunny.UI;
 using SYS.Application;
+<<<<<<< HEAD:SYS.FormUI/FrmLogin.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppInterface/FrmLogin.cs
+=======
+>>>>>>> master:SYS.FormUI/AppInterface/FrmLogin.cs
 
 namespace SYS.FormUI
 {
@@ -197,10 +200,14 @@ namespace SYS.FormUI
                             o.datains_date = DateTime.Now;
                             #endregion
 <<<<<<< HEAD:SYS.FormUI/FrmLogin.cs
+<<<<<<< HEAD:SYS.FormUI/FrmLogin.cs
                             OperationManager.InsertOperationLog(o);
 =======
                             new OperationlogService().InsertOperationLog(o);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppInterface/FrmLogin.cs
+=======
+                            new OperationlogService().InsertOperationLog(o);
+>>>>>>> master:SYS.FormUI/AppInterface/FrmLogin.cs
                         }
                         else
                         {

@@ -28,7 +28,10 @@ namespace SYS.Core
         /// 房间状态
         /// </summary>
         [SqlSugar.SugarColumn(IsIgnore = true)]
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
         public string RoomState { get; set; }
         public decimal RoomMoney { get; set; }
         public string PersonNum { get; set; }
@@ -39,7 +42,10 @@ namespace SYS.Core
         /// 客户类型名称
         /// </summary>
         [SqlSugar.SugarColumn(IsIgnore = true)]
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
         public string typeName { get; set; }
         /// <summary>
         /// 房间名称

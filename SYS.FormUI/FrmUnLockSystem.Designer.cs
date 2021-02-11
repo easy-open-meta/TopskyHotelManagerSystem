@@ -42,10 +42,14 @@
             this.label1.Font = new System.Drawing.Font("苹方-简", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
 <<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
             this.label1.Location = new System.Drawing.Point(28, 20);
 =======
             this.label1.Location = new System.Drawing.Point(54, 37);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
+=======
+            this.label1.Location = new System.Drawing.Point(54, 37);
+>>>>>>> master:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 26);
             this.label1.TabIndex = 0;
@@ -87,7 +91,10 @@
             this.btnUnLock.TabIndex = 113;
             this.btnUnLock.Text = "解      锁";
             this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             // 
             // FrmUnLockSystem
             // 
@@ -104,9 +111,12 @@
             this.MinimizeBox = false;
             this.Name = "FrmUnLockSystem";
 <<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.Designer.cs
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统锁定";
 =======
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmUnLockSystem.Designer.cs
             this.Padding = new System.Windows.Forms.Padding(0);
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ShowInTaskbar = false;

@@ -13,7 +13,10 @@ using Sunny.UI;
 =======
 using System.Management;
 using SYS.Application;
+<<<<<<< HEAD:SYS.FormUI/FrmMain.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppMain/FrmMain.cs
+=======
+>>>>>>> master:SYS.FormUI/AppMain/FrmMain.cs
 
 namespace SYS.FormUI
 {
@@ -192,6 +195,7 @@ namespace SYS.FormUI
         private void FrmMain_Load(object sender, EventArgs e)
         {
 <<<<<<< HEAD:SYS.FormUI/FrmMain.cs
+<<<<<<< HEAD:SYS.FormUI/FrmMain.cs
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
             foreach (Control label in this.Controls)
             {
@@ -201,6 +205,8 @@ namespace SYS.FormUI
                 }
             }
 =======
+=======
+>>>>>>> master:SYS.FormUI/AppMain/FrmMain.cs
             //foreach (Control item in this.Controls)
             //{
             //    if (item.GetType().ToString() == "System.Windows.Forms.Label")

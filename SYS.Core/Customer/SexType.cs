@@ -43,6 +43,9 @@ namespace SYS.Core
         /// 资料更新时间
         /// </summary>
         public DateTime datachg_date { get; set; }
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
     }
 }

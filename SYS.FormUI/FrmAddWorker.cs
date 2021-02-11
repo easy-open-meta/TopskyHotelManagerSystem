@@ -204,10 +204,13 @@ namespace SYS.FormUI
                             OperationLog o = new OperationLog();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
 <<<<<<< HEAD:SYS.FormUI/FrmAddWorker.cs
+<<<<<<< HEAD:SYS.FormUI/FrmAddWorker.cs
                             o.Operationlog = AdminInfo.admingroup + AdminInfo.adminType + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！";
                             o.OperationAccount = AdminInfo.admingroup + AdminInfo.adminType;
                             OperationManager.InsertOperationLog(o);
 =======
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmAddWorker.cs
                             o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！";
                             o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                             OperationlogManager.InsertOperationLog(o);

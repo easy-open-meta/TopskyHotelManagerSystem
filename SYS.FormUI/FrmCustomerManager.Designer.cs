@@ -278,6 +278,7 @@
             // Column5
             // 
 <<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
             this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerach.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnSerach.Location = new System.Drawing.Point(781, 389);
@@ -289,11 +290,14 @@
             this.btnSerach.Text = "搜    索";
             this.btnSerach.Click += new System.EventHandler(this.btnSerach_BtnClick);
 =======
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             this.Column5.DataPropertyName = "delete_mk";
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             // 
             // Column6
@@ -310,6 +314,11 @@
             this.btnAddCusto.Text = "添加客户";
             this.btnAddCusto.Click += new System.EventHandler(this.btnAddCusto_BtnClick);
 =======
+=======
+            // 
+            // Column6
+            // 
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             this.Column6.DataPropertyName = "datains_usr";
             this.Column6.HeaderText = "Column6";
             this.Column6.Name = "Column6";
@@ -339,7 +348,10 @@
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             this.Column9.Visible = false;
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.Designer.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCustomerManager.Designer.cs
             // 
             // FrmCustomerManager
             // 

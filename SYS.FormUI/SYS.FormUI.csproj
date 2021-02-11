@@ -90,10 +90,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\netchartdir.dll</HintPath>
     </Reference>
+=======
+>>>>>>> master
     <Reference Include="SqlSugar">
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
     </Reference>
@@ -180,10 +183,23 @@
     <Compile Include="AppUserControls\CtrlOrgPanel.Designer.cs">
       <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+<<<<<<< HEAD
     </Compile>
     <Compile Include="AppUserControls\ExtensionMethods.cs" />
     <Compile Include="AppUserControls\OrgCharGenerator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+=======
+    </Compile>
+    <Compile Include="AppUserControls\ExtensionMethods.cs" />
+    <Compile Include="AppUserControls\OrgCharGenerator.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\ucBaseInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
+      <DependentUpon>ucBaseInformation.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="AppUserControls\ucBaseInformation.cs">
       <SubType>UserControl</SubType>
@@ -227,6 +243,7 @@
     <Compile Include="FrmAdminEnter.Designer.cs">
       <DependentUpon>FrmAdminEnter.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmBackAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,17 +259,27 @@
     <Compile Include="FrmCash.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+>>>>>>> master
     <Compile Include="AppFunction\FrmCash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCash.Designer.cs">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmCashList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCashList.Designer.cs">
       <DependentUpon>FrmCashList.cs</DependentUpon>
+=======
+    <Compile Include="AppFunction\FrmCheckList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmCheckList.Designer.cs">
+      <DependentUpon>FrmCheckList.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="AppFunction\FrmCheckList.cs">
       <SubType>Form</SubType>
@@ -362,6 +389,7 @@
     <Compile Include="FrmSellThingManager.Designer.cs">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +413,19 @@
     </Compile>
     <Compile Include="FrmUpLoad.Designer.cs">
       <DependentUpon>FrmUpLoad.cs</DependentUpon>
+=======
+    <Compile Include="AppFunction\FrmWorkerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmWorkerManager.Designer.cs">
+      <DependentUpon>FrmWorkerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmUpLoadNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmUpLoadNotice.Designer.cs">
+      <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="AppFunction\FrmWorkerManager.cs">
       <SubType>Form</SubType>
@@ -466,11 +507,14 @@
     <Compile Include="WtiInfo.Designer.cs">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="FrmAdminMain.resx">
       <DependentUpon>FrmAdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChart.resx">
     </EmbeddedResource>
+=======
+>>>>>>> master
     <EmbeddedResource Include="AppFunction\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -583,6 +627,7 @@
     <EmbeddedResource Include="FrmSellThingManager.resx">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="FrmStart.resx">
       <DependentUpon>FrmStart.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,6 +639,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpLoad.resx">
       <DependentUpon>FrmUpLoad.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="AppFunction\FrmWorkerManager.resx">
+      <DependentUpon>FrmWorkerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmUpLoadNotice.resx">
+      <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
+>>>>>>> master
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmWorkerManager.resx">
       <DependentUpon>FrmWorkerManager.cs</DependentUpon>

@@ -260,10 +260,14 @@
             this.pnlCheckInfo.Location = new System.Drawing.Point(295, 55);
             this.pnlCheckInfo.Name = "pnlCheckInfo";
 <<<<<<< HEAD:SYS.FormUI/FrmMain.Designer.cs
+<<<<<<< HEAD:SYS.FormUI/FrmMain.Designer.cs
             this.pnlCheckInfo.Size = new System.Drawing.Size(95, 97);
 =======
             this.pnlCheckInfo.Size = new System.Drawing.Size(88, 73);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppMain/FrmMain.Designer.cs
+=======
+            this.pnlCheckInfo.Size = new System.Drawing.Size(88, 73);
+>>>>>>> master:SYS.FormUI/AppMain/FrmMain.Designer.cs
             this.pnlCheckInfo.TabIndex = 27;
             this.pnlCheckInfo.Visible = false;
             // 

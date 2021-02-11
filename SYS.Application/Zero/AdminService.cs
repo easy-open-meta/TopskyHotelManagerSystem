@@ -18,6 +18,7 @@ namespace SYS.Application
         /// <param name="adminpass"></param>
         /// <returns></returns>
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static Admin SelectMangerByPass(string adminpass)
         {
             Admin a = null;
@@ -40,6 +41,13 @@ namespace SYS.Application
             admin = base.GetSingle(a => a.AdminAccount == adminaccount && a.AdminPassword == adminpass);
             return admin;
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+        public Admin SelectMangerByPass(string adminaccount,string adminpass)
+        {
+            Admin admin = new Admin();
+            admin = base.GetSingle(a => a.AdminAccount == adminaccount && a.AdminPassword == adminpass);
+            return admin;
+>>>>>>> master
         }
         #endregion
 

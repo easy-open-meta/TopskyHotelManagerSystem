@@ -119,6 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
 <<<<<<< HEAD
+<<<<<<< HEAD
   <data name="Login_b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_b1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +163,14 @@
     <value>..\Resources\更多扩展-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 >>>>>>> InitProject_v1.4.8_happy_new_year
   </data>
+=======
+  <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="更多扩展-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\更多扩展-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+>>>>>>> master
   <data name="已住icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\已住icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -173,6 +182,7 @@
   </data>
   <data name="月亮" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\月亮.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+<<<<<<< HEAD
   </data>
   <data name="中餐厅-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\中餐厅-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -185,10 +195,13 @@
   </data>
   <data name="后勤管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\后勤管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+>>>>>>> master
   </data>
   <data name="添 加-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添 加-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <data name="维修中2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\维修中2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -242,10 +255,21 @@
   </data>
   <data name="已住房" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住房.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="获取用户编号" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取用户编号.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="获取用户编号-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取用户编号-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RoomState2-h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState2-h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
+  </data>
+  <data name="RoomState3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="水电管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\水电管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -279,6 +303,17 @@
   <data name="修改a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\修改a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+=======
+  <data name="RoomState4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="导出 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\导出 (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="修改a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\修改a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+>>>>>>> master
   <data name="已入住" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已入住.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -287,11 +322,15 @@
   </data>
   <data name="添加  增加   加" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添加  增加   加.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
   </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <data name="后勤部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\后勤部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,10 +349,24 @@
   </data>
   <data name="商品消费-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\商品消费-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="人事部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\人事部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="打卡" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\打卡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoomState1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="脏房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\脏房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
   <data name="扩展功能-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\扩展功能-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="维修中221" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\维修中221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,10 +423,15 @@
 =======
   <data name="人事部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\人事部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="添 加a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\添 加a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
-  <data name="打卡" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\打卡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="RoomState1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\RoomState1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -430,10 +488,21 @@
 <<<<<<< HEAD
   <data name="工程维修-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\工程维修-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="财务部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\财务部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="早上" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\早上.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RoomState4-h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState4-h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
+  </data>
+  <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="库存管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\库存管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -459,10 +528,18 @@
   </data>
   <data name="已预约" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已预约.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="搜索--1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\搜索--1a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="修改" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\修改.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="显示" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\显示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
+  <data name="770e7b52ecafc807247aad51bb6c6b43" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\770e7b52ecafc807247aad51bb6c6b43.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="预约管理-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约管理-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -528,10 +605,18 @@
   <data name="delete2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+  <data name="餐饮部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐饮部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="咖啡" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\咖啡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
+  <data name="RoomState5-h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState5-h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <data name="已住房-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住房-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -558,20 +643,51 @@
 <<<<<<< HEAD
   <data name="可住房-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\可住房-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="酒店部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\酒店部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="搜索--1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\搜索--1a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="搜索--1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\搜索--1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="客房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\客房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="预约房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\预约房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="经理部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\经理部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="增加 添加 加减 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\增加 添加 加减 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
+  </data>
+  <data name="RoomState3_fixed-h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState3_fixed-h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="网页预约-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\网页预约-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 =======
   <data name="RoomState3_fixed-h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\RoomState3_fixed-h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="已预约" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\已预约.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
   <data name="已预约" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已预约.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 >>>>>>> InitProject_v1.4.8_happy_new_year
   </data>
+<<<<<<< HEAD
   <data name="脏房2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\脏房2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -595,10 +711,21 @@
 <<<<<<< HEAD
   <data name="预约管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="settings2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="人事部界面" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\人事部界面.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-down-b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-down-b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
+  </data>
+  <data name="RoomState2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\RoomState2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="水电管理-ib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\水电管理-ib.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 =======
@@ -616,6 +743,14 @@
   <data name="arrow-down-b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 =======
+=======
+  <data name="77377282_p0_master1200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\77377282_p0_master1200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="更多扩展-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\更多扩展-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+>>>>>>> master
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -633,6 +768,9 @@
   </data>
   <data name="組織圖塊" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\組織圖塊.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
   </data>
 </root>

@@ -71,12 +71,17 @@ namespace SYS.FormUI
             CmpSetDgv();
             dgvWorkerList.AutoGenerateColumns = false;
 <<<<<<< HEAD:SYS.FormUI/FrmTopChange.cs
+<<<<<<< HEAD:SYS.FormUI/FrmTopChange.cs
             dgvWorkerList.DataSource = WorkerService.SelectWorkerAll();
             if (AdminInfo.adminType != "总经理")
 =======
             dgvWorkerList.DataSource = WorkerManager.SelectWorkerAll();
             if (AdminInfo.Type != "总经理")
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmWorkerManager.cs
+=======
+            dgvWorkerList.DataSource = WorkerManager.SelectWorkerAll();
+            if (AdminInfo.Type != "总经理")
+>>>>>>> master:SYS.FormUI/AppFunction/FrmWorkerManager.cs
             {
                 btnAddWorker.Enabled = false;
                 btnAddWorker.Text = "权限不足";

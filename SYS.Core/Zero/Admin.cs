@@ -20,6 +20,14 @@ namespace SYS.Core
 
         private string _AdminAccount;
         /// <summary>
+        /// 构造函数
+        /// </summary>
+        public Admin()
+        {
+        }
+
+        private string _AdminAccount;
+        /// <summary>
         /// 管理员账号
         /// </summary>
         public string AdminAccount { get { return this._AdminAccount; } set { this._AdminAccount = value; } }
@@ -47,7 +55,10 @@ namespace SYS.Core
         /// 是否为超级管理员
         /// </summary>
         public System.Int32 IsAdmin { get { return this._IsAdmin; } set { this._IsAdmin = value; } }
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
 
         private System.Int32 _DeleteMk;
         /// <summary>

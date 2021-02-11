@@ -19,6 +19,7 @@ namespace SYS.Application
         {
             List<Reser> rss = new List<Reser>();
 <<<<<<< HEAD:SYS.Application/Room/ReserService.cs
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "select * from RESER";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
@@ -48,6 +49,9 @@ namespace SYS.Application
 =======
             rss = base.GetList(a => a.delete_mk == 0);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
+=======
+            rss = base.GetList(a => a.delete_mk == 0);
+>>>>>>> master:SYS.Application/Business/ReserService.cs
             return rss;
         }
 
@@ -59,6 +63,7 @@ namespace SYS.Application
         public Reser SelectReserInfoByRoomNo(string no)
         {
             Reser res = null;
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
 <<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "select * from RESER r,ROOM rm where r.ReserRoom = rm.RoomNo and r.ReserRoom = '" + no + "'";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
@@ -84,6 +89,9 @@ namespace SYS.Application
 =======
             res = base.GetSingle(a => a.ReserRoom == no && a.delete_mk != 1);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
+=======
+            res = base.GetSingle(a => a.ReserRoom == no && a.delete_mk != 1);
+>>>>>>> master:SYS.Application/Business/ReserService.cs
             return res;
         }
 
@@ -111,6 +119,7 @@ namespace SYS.Application
         public bool InserReserInfo(Reser r)
         {
 <<<<<<< HEAD:SYS.Application/Room/ReserService.cs
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "insert WTINFO (CustoName,CustoTel,ReserWay,";
             sql += "ReserRoomNo,ReserDate,ReserEndDay,Remark) values ";
             sql += "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
@@ -120,6 +129,9 @@ namespace SYS.Application
 =======
             return base.Insert(r);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
+=======
+            return base.Insert(r);
+>>>>>>> master:SYS.Application/Business/ReserService.cs
         }
 
 

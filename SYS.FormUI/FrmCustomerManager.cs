@@ -364,10 +364,14 @@ namespace SYS.FormUI
             if (txtCustoNo.Text != "")
             {
 <<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.cs
+<<<<<<< HEAD:SYS.FormUI/FrmCustomerManager.cs
                 dgvCustomerList.DataSource = CustoService.SelectCustoInfoByCardId(txtCardID.Text);
 =======
                 dgvCustomerList.DataSource = CustoManager.SelectCustoInfoByCardId(txtCustoNo.Text);
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCustomerManager.cs
+=======
+                dgvCustomerList.DataSource = CustoManager.SelectCustoInfoByCardId(txtCustoNo.Text);
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCustomerManager.cs
             }
             else
             {

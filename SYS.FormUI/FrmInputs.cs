@@ -54,10 +54,14 @@ namespace SYS.FormUI
 
             #region 加载性别信息
 <<<<<<< HEAD:SYS.FormUI/FrmInputs.cs
+<<<<<<< HEAD:SYS.FormUI/FrmInputs.cs
             List<SexType> listSexType = CustoTypeManager.SelectSexTypeAll();
 =======
             List<SexType> listSexType = new BaseService().SelectSexTypeAll();
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmInputs.cs
+=======
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+>>>>>>> master:SYS.FormUI/AppFunction/FrmInputs.cs
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";

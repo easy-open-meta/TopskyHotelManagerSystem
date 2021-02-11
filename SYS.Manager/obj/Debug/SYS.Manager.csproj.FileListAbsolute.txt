@@ -64,4 +64,7 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.C
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SqlSugar.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Common.pdb
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Manager\bin\Debug\SYS.Common.dll.config
+<<<<<<< HEAD
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master

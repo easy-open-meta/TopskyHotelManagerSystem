@@ -18,7 +18,11 @@ namespace SYS.Common
                     DbType = SqlSugar.DbType.MySql,
                     InitKeyType = InitKeyType.Attribute,
                     IsAutoCloseConnection = true,
+<<<<<<< HEAD
                     ConnectionString = 
+=======
+                    ConnectionString = ""
+>>>>>>> master
                 });
 
                 base.Context.Aop.OnLogExecuting = (s, p) =>

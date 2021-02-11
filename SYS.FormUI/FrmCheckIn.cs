@@ -9,7 +9,10 @@ using SYS.Application;
 using Sunny.UI;
 using SYS.Application;
 using System.Transactions;
+<<<<<<< HEAD:SYS.FormUI/FrmCheckIn.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckIn.cs
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCheckIn.cs
 
 namespace SYS.FormUI
 {
@@ -32,6 +35,7 @@ namespace SYS.FormUI
             txtRoomPosition.Text = r.RoomPosition;
             txtState.Text = r.RoomState;
 <<<<<<< HEAD:SYS.FormUI/FrmCheckIn.cs
+<<<<<<< HEAD:SYS.FormUI/FrmCheckIn.cs
             txtState.Text = RoomManager.SelectRoomStateNameByRoomNo(txtRoomNo.Text).ToString();
             List<Custo> ctos = CustoService.SelectCanUseCustoAll();
             List<Room> roms = RoomManager.SelectCanUseRoomAll();
@@ -39,6 +43,10 @@ namespace SYS.FormUI
             List<Custo> ctos = new CustoService().SelectCustoAll();
             List<Room> roms = new RoomService().SelectCanUseRoomAll();
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckIn.cs
+=======
+            List<Custo> ctos = new CustoService().SelectCustoAll();
+            List<Room> roms = new RoomService().SelectCanUseRoomAll();
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCheckIn.cs
             for (int i = 0; i < roms.Count; i++)
             {
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
@@ -96,6 +104,7 @@ namespace SYS.FormUI
             if (CheckInupt())
             {
 <<<<<<< HEAD:SYS.FormUI/FrmCheckIn.cs
+<<<<<<< HEAD:SYS.FormUI/FrmCheckIn.cs
 
                 if (CustoManager.SelectCustoByCustoNo(txtCustoNo.Text) != null)
                 {
@@ -128,6 +137,11 @@ namespace SYS.FormUI
                 {
                     using (TransactionScope scope = new TransactionScope())
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckIn.cs
+=======
+                if (new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text) != null)
+                {
+                    using (TransactionScope scope = new TransactionScope())
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCheckIn.cs
                     {
                         Room r = new Room() 
                         {

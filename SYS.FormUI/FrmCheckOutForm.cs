@@ -9,7 +9,10 @@ using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using Sunny.UI;
 using SYS.Application;
+<<<<<<< HEAD:SYS.FormUI/FrmCheckOutForm.cs
 >>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckOutForm.cs
+=======
+>>>>>>> master:SYS.FormUI/AppFunction/FrmCheckOutForm.cs
 
 namespace SYS.FormUI
 {

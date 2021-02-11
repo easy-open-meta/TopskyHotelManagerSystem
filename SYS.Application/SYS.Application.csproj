@@ -74,7 +74,10 @@
     <Compile Include="Worker\IWorkerGoodBadService.cs" />
     <Compile Include="Worker\IWorkerHistoryService.cs" />
     <Compile Include="Worker\IWorkerService.cs" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     <Compile Include="Zero\AdminService.cs" />
     <Compile Include="Business\CashService.cs" />
     <Compile Include="Customer\CheckInfoService.cs" />
@@ -87,7 +90,10 @@
     <Compile Include="Zero\IBaseService.cs" />
     <Compile Include="Zero\INoticeService.cs" />
     <Compile Include="Zero\IOperationlogService.cs" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     <Compile Include="Zero\NoticeService.cs" />
     <Compile Include="Zero\Operationlog.cs" />
     <Compile Include="Zero\OperationService.cs" />

@@ -376,6 +376,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap settings2 {
+            get {
+                object obj = ResourceManager.GetObject("settings2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 人事部界面 {
 >>>>>>> InitProject_v1.4.8_happy_new_year
             get {
@@ -490,6 +500,16 @@ namespace SYS.FormUI.Properties {
 <<<<<<< HEAD
         internal static System.Drawing.Bitmap 客房管理_ib1 {
 =======
+        internal static System.Drawing.Bitmap 增加_添加_加减__1_ {
+            get {
+                object obj = ResourceManager.GetObject("增加 添加 加减 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 增加_添加_加减__1_ {
             get {
                 object obj = ResourceManager.GetObject("增加 添加 加减 (1)", resourceCulture);
@@ -762,8 +782,11 @@ namespace SYS.FormUI.Properties {
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
 <<<<<<< HEAD
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap 清理中 {
 =======
+=======
+>>>>>>> master
         internal static System.Drawing.Bitmap 添加__增加___加 {
             get {
                 object obj = ResourceManager.GetObject("添加  增加   加", resourceCulture);

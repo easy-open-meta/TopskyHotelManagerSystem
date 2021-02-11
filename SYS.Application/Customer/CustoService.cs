@@ -67,6 +67,7 @@ namespace SYS.Application
             //查询出所有客户信息
             List<Custo> custos = new List<Custo>();
 <<<<<<< HEAD
+<<<<<<< HEAD
             string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p,sextype s where u.CustoType=t.UserType and u.PassportType=p.PassportId and s.sexId = u.CustoSex";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
@@ -74,6 +75,10 @@ namespace SYS.Application
             custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
             custos.ForEach(source =>
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+            custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
+            custos.ForEach(source =>
+>>>>>>> master
             {
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
@@ -89,9 +94,12 @@ namespace SYS.Application
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         #region 根据客户编号查询客户信息
 =======
 >>>>>>> InitProject_v1.4.8_happy_new_year
+=======
+>>>>>>> master
         /// <summary>
         /// 根据客户编号查询客户信息
         /// </summary>
