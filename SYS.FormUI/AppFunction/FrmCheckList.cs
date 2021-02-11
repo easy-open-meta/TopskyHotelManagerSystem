@@ -4,9 +4,9 @@ using SYS.Manager;
 
 namespace SYS.FormUI
 {
-    public partial class FrmCashList : Form
+    public partial class FrmCheckList : Form
     {
-        public FrmCashList()
+        public FrmCheckList()
         {
             InitializeComponent();
         }

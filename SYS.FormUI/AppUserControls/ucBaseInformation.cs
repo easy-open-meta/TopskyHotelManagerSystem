@@ -66,6 +66,19 @@ namespace SYS.FormUI
         {
             //lbName.Enabled = true;
             //lbName.ReadOnly = false;
+            if (btnOperation.Text == "恢复")
+            {
+                FrmNation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
+                FrmNation.Accessed();
+                return;
+            }
+            if (btnOperation.Text == "新增")
+            {
+                lbName.Enabled = true;
+                lbName.ReadOnly = false;
+                return;
+            }
+
             FrmNation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
             FrmNation.operation();
             //MessageBox.Show(lbName.Text.Replace("名称:", string.Empty).ToString());
@@ -73,8 +86,8 @@ namespace SYS.FormUI
 
         private void lbName_MouseLeave(object sender, EventArgs e)
         {
-            lbName.Enabled = false;
-            lbName.ReadOnly = true;
+            //lbName.Enabled = false;
+            //lbName.ReadOnly = true;
             lbName.FillColor = Color.FromArgb(235, 243, 255);
             lbName.FillDisableColor = Color.FromArgb(235, 243, 255);
             lbName.RectColor = Color.FromArgb(235, 243, 255);
@@ -82,13 +95,14 @@ namespace SYS.FormUI
 
         private void lbName_MouseHover(object sender, EventArgs e)
         {
-            lbName.Enabled = true;
-            lbName.ReadOnly = false;
+            //lbName.Enabled = true;
+            //lbName.ReadOnly = false;
         }
 
         private void lbName_Validated(object sender, EventArgs e)
         {
-            
+            FrmNation.info = lbName.Text.ToString();
+            FrmNation.insert();
         }
     }
 }

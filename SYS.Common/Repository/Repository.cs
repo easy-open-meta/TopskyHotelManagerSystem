@@ -28,16 +28,5 @@ namespace SYS.Common
             }
         }
 
-        /// <summary>
-        /// 扩展方法，自带方法不能满足的时候可以添加新方法
-        /// </summary>
-        /// <returns></returns>
-        public List<T> CommQuery(string json)
-        {
-            T t = Context.Utilities.DeserializeObject<T>(json);
-            var list = base.Context.Queryable<T>().WhereClass(t).ToList();
-            return list;
-        }
     }
-}
 }

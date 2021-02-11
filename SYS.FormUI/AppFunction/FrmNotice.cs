@@ -1,4 +1,4 @@
-﻿using Sunny.UI;
+﻿using SYS.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,16 +11,17 @@ using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
-    public partial class FrmAdminMain : UIForm
+    public partial class FrmNotice : Form
     {
-        public FrmAdminMain()
+        public FrmNotice()
         {
             InitializeComponent();
         }
 
-        private void FrmAdminMain_Load(object sender, EventArgs e)
+        private void FrmNotice_Load(object sender, EventArgs e)
         {
-
+            dgvNoticeList.AutoGenerateColumns = false;
+            dgvNoticeList.DataSource = NoticeManager.SelectNoticeAll();
         }
     }
 }

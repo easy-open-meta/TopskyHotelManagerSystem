@@ -1,56 +1,41 @@
 ﻿using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class AdminService
+    /// <summary>
+    /// 管理员数据访问层
+    /// </summary>
+    public class AdminService:Repository<Admin>, IAdminService
     {
+
         #region 根据超管密码查询员工类型和权限
         /// <summary>
         /// 根据超管密码查询员工类型和权限
         /// </summary>
-        /// <param name="workerId"></param>
+        /// <param name="adminaccount"></param>
+        /// <param name="adminpass"></param>
         /// <returns></returns>
-        public static Admin SelectMangerByPass(string adminaccount,string adminpass)
+        public Admin SelectMangerByPass(string adminaccount,string adminpass)
         {
-            Admin a = null;
-            string sql = string.Format("select * from ADMININFO where AdminAccount = '{0}' and AdminPassword='{1}'", adminaccount, adminpass);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                a = new Admin();
-                a.AdminType = dr["AdminType"].ToString();
-                a.AdminName = dr["AdminName"].ToString();
-                a.IsAdmin = (int)dr["IsAdmin"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return a;
+            Admin admin = new Admin();
+            admin = base.GetSingle(a => a.AdminAccount == adminaccount && a.AdminPassword == adminpass);
+            return admin;
         }
         #endregion
 
-        #region 根据超管密码查询超管信息
+        #region 根据超管账号查询对应的密码
         /// <summary>
-        /// 根据超管密码查询超管信息
+        /// 根据超管账号查询对应的密码
         /// </summary>
-        /// <param name="pwd"></param>
-        /// 超管密码
+        /// <param name="account"></param>
         /// <returns></returns>
-        public static Admin SelectAdminInfoByadminpwd(string pwd)
+        public Admin SelectAdminPwdByAccount(string account)
         {
-            Admin a = null;
-            string sql = "select * from ADMININFO where AdminPassword='{0}'";
-            sql = string.Format(sql, pwd);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                a = new Admin();
-                a.AdminPassword = (string)dr["WorkerId"];
-                a.AdminType = dr["WorkerName"].ToString();
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return a;
+            Admin admin = new Admin();
+            admin = base.GetSingle(a => a.AdminAccount == account);
+            return admin;
         }
         #endregion
     }

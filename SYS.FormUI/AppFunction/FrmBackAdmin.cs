@@ -43,24 +43,13 @@ namespace SYS.FormUI
 
         private void llbUpLoadLog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pnlLook.Controls.Clear();
-            FrmUpLoad frm1 = new FrmUpLoad();
-            frm1.TopLevel = false;
-            pnlLook.Controls.Add(frm1);
-            frm1.Show();
-            pnlWorkerPage.Visible = false;
+            
         }
 
         private void llbWorkerManager_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            pnlLook.Controls.Clear();
-            FrmTopChange frm1 = new FrmTopChange();
-            frm1.TopLevel = false;
-            pnlLook.Controls.Add(frm1);
-            frm1.Show();
-            wk_AdminGroup = AdminInfo.admingroup;
-            pnlWorkerPage.Visible = false;
+            
         }
 
         private void llbAddRoom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -102,10 +91,10 @@ namespace SYS.FormUI
             frm1.Show();
             pnlCustoPage.Visible = false;
 
-            label5.Text = AdminInfo.admingroup + AdminInfo.adminType;
+            label5.Text = AdminInfo.Name;
             //label8.Text = "【"+AdminInfo.admingroup+"】";
 
-            if (AdminInfo.adminType == "总经理")
+            if (AdminInfo.Type == "总经理")
             {
                 btnCash.Enabled = true;
                 btnWTI.Enabled = true;
@@ -116,7 +105,7 @@ namespace SYS.FormUI
                 btnWorker.Enabled = true;
                 btnWorkerLog.Enabled = true;
             }
-            else if (AdminInfo.adminType == "财务经理")
+            else if (AdminInfo.Type == "财务经理")
             {
                 btnCash.Enabled = true;
                 btnWTI.Enabled = true;
@@ -127,7 +116,7 @@ namespace SYS.FormUI
                 btnWorker.Enabled = true;
                 btnWorkerLog.Enabled = false;
             }
-            else if (AdminInfo.adminType == "酒店经理")
+            else if (AdminInfo.Type == "酒店经理")
             {
                 btnCash.Enabled = true;
                 btnWTI.Enabled = true;
@@ -430,19 +419,19 @@ namespace SYS.FormUI
 
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
-            if (AdminInfo.admingroup == "总经理")
+            if (AdminInfo.Type == "总经理")
             {
                 tsmiBackUpDatabase.Enabled = true;
                 tsmiRestoreDatabase.Enabled = true;
                 tsmiWorkerManager.Enabled = true;
             }
-            else if (AdminInfo.admingroup == "经理")
+            else if (AdminInfo.Type == "经理")
             {
                 tsmiBackUpDatabase.Enabled = false;
                 tsmiRestoreDatabase.Enabled = false;
                 tsmiWorkerManager.Enabled = true;
             }
-            if (AdminInfo.admingroup == "监管小组")
+            if (AdminInfo.Type == "监管小组")
             {
                 tsmiBackUpDatabase.Enabled = false;
                 tsmiRestoreDatabase.Enabled = false;

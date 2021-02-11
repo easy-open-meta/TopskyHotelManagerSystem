@@ -1,23 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class WorkerService
+    /// <summary>
+    /// 员工信息接口实现类
+    /// </summary>
+    public class WorkerService:Repository<Worker>,IWorkerService
     {
-
         #region 修改员工信息
         /// <summary>
         /// 修改员工信息
         /// </summary>
         /// <param name="worker"></param>
         /// <returns></returns>
-        public static int UpdateWorker(Worker worker)
+        public bool UpdateWorker(Worker worker)
         {
-            string sql = "update WORKERINFO set WorkerTel = '"+worker.WorkerTel+"',WorkerAddress = '"+worker.WorkerAddress+"',WorkerPwd = '"+worker.WorkerPwd+"',WorkerFace = '"+worker.WorkerFace+"',WorkerEducation = '"+worker.WorkerEduction+"',WorkerSex = '"+worker.WorkerSex+"' where WorkerId = '"+worker.WorkerId+"'";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Worker()
+            {
+                WorkerTel = worker.WorkerTel,
+                WorkerAddress = worker.WorkerAddress,
+                WorkerPwd = worker.WorkerPwd,
+                WorkerFace = worker.WorkerFace,
+                WorkerEducation = worker.WorkerEducation,
+                WorkerSex = worker.WorkerSex,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            },a => a.WorkerId == worker.WorkerId);
+
         }
         #endregion
 
@@ -28,10 +42,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="worker"></param>
         /// <returns></returns>
-        public static int AddWorker(Worker worker)
+        public bool AddWorker(Worker worker)
         {
-            string sql = "insert into WORKERINFO values('" + worker.WorkerId + "','" + worker.WorkerName + "','" + worker.WorkerBirth + "','" + worker.WorkerSex + "','" + worker.WorkerTel + "','" + worker.WorkerClub + "','" + worker.WorkerAddress + "','" + worker.WorkerPosition + "','" + worker.CardId + "','" + worker.WorkerPwd + "','" + worker.WorkerTime + "','" + worker.WorkerFace + "','" + worker.WorkerEduction + "')";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(worker);
         }
         #endregion
 
@@ -40,31 +53,45 @@ namespace SYS.Application
         /// 获取所有工作人员信息
         /// </summary>
         /// <returns></returns>
-        public static List<Worker> SelectWorkerAll()
+        public List<Worker> SelectWorkerAll()
         {
+            //查询所有教育程度信息
+            List<Education> educations = new List<Education>();
+            educations = base.Change<Education>().GetList(a => a.delete_mk != 1);
+            //查询所有性别类型信息
+            List<SexType> sexTypes = new List<SexType>();
+            sexTypes = base.Change<SexType>().GetList(a => a.delete_mk != 1);
+            //查询所有民族类型信息
+            List<Nation> nations = new List<Nation>();
+            nations = base.Change<Nation>().GetList(a => a.delete_mk != 1);
+            //查询所有部门信息
+            List<Dept> depts = new List<Dept>();
+            depts = base.Change<Dept>().GetList(a => a.delete_mk != 1);
+            //查询所有职位信息
+            List<Position> positions = new List<Position>();
+            positions = base.Change<Position>().GetList(a => a.delete_mk != 1);
+            //查询所有员工信息
             List<Worker> workers = new List<Worker>();
-            string sql = "select * from WORKERINFO";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
+            workers = base.Change<Worker>().GetList(a => a.delete_mk != 1);
+            workers.ForEach(source =>
             {
-                Worker worker = new Worker();
-                worker.WorkerId = (string)dr["WorkerId"];
-                worker.WorkerName = dr["WorkerName"].ToString();
-                worker.WorkerBirth = DateTime.Parse(dr["WorkerBirthday"].ToString());
-                worker.WorkerSex = Convert.ToString(dr["WorkerSex"]);
-                worker.WorkerTel = (string)dr["WorkerTel"];
-                worker.WorkerClub = (string)dr["WorkerClub"];
-                worker.WorkerAddress = (string)dr["WorkerAddress"];
-                worker.WorkerPosition = (string)dr["WorkerPosition"];
-                worker.CardId = (string)dr["CardId"];
-                worker.WorkerPwd = (string)dr["WorkerPwd"];
-                worker.WorkerTime = DateTime.Parse(dr["WorkerTime"].ToString());
-                worker.WorkerFace = (string)dr["WorkerFace"];
-                worker.WorkerEduction = (string)dr["WorkerEducation"];
-                workers.Add(worker);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+                //性别类型
+                var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.WorkerSex);
+                source.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
+                //教育程度
+                var eduction = educations.FirstOrDefault(a => a.education_no == source.WorkerEducation);
+                source.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+                //民族类型
+                var nation = nations.FirstOrDefault(a => a.nation_no == source.WorkerNation);
+                source.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
+                //部门
+                var dept = depts.FirstOrDefault(a => a.dept_no == source.WorkerClub);
+                source.ClubName = string.IsNullOrEmpty(dept.dept_name) ? "" : dept.dept_name;
+                //职位
+                var position = positions.FirstOrDefault(a => a.position_no == source.WorkerPosition);
+                source.PositionName = string.IsNullOrEmpty(position.position_name) ? "" : position.position_name;
+            });
+            
             return workers;
         }
         #endregion
@@ -75,29 +102,25 @@ namespace SYS.Application
         /// </summary>
         /// <param name="workerId"></param>
         /// <returns></returns>
-        public static Worker SelectWorkerInfoByWorkerId(string workerId)
+        public Worker SelectWorkerInfoByWorkerId(string workerId)
         {
-            Worker w = null;
-            string sql = "select * from WORKERINFO where WorkerId='" + workerId + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                w = new Worker();
-                w.WorkerId = (string)dr["WorkerId"];
-                w.WorkerName = dr["WorkerName"].ToString();
-                w.WorkerBirth = DateTime.Parse(dr["WorkerBirthday"].ToString());
-                w.WorkerSex = Convert.ToString(dr["WorkerSex"]);
-                w.WorkerTel = (string)dr["WorkerTel"];
-                w.WorkerClub = (string)dr["WorkerClub"];
-                w.WorkerAddress = (string)dr["WorkerAddress"];
-                w.WorkerPosition = (string)dr["WorkerPosition"];
-                w.CardId = (string)dr["CardId"];
-                w.WorkerPwd = (string)dr["WorkerPwd"];
-                w.WorkerTime = DateTime.Parse(dr["WorkerTime"].ToString());
-                w.WorkerFace = (string)dr["WorkerFace"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            Worker w = new Worker();
+            w = base.Change<Worker>().GetSingle(a => a.WorkerId == workerId);
+            //性别类型
+            var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
+            w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
+            //教育程度
+            var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
+            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            //民族类型
+            var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
+            w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
+            //部门
+            var dept = base.Change<Dept>().GetSingle(a => a.dept_no == w.WorkerClub);
+            w.ClubName = string.IsNullOrEmpty(dept.dept_name) ? "" : dept.dept_name;
+            //职位
+            var position = base.Change<Position>().GetSingle(a => a.position_no == w.WorkerPosition);
+            w.PositionName = string.IsNullOrEmpty(position.position_name) ? "" : position.position_name;
             return w;
         }
         #endregion
@@ -111,30 +134,25 @@ namespace SYS.Application
         /// <param name="pwd"></param>
         /// 登录密码
         /// <returns></returns>
-        public static Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd)
+        public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd)
         {
-            Worker w = null;
-            string sql = "select * from WORKERINFO where WorkerId='{0}' and WorkerPwd='{1}'";
-            sql = string.Format(sql, id, pwd);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                w = new Worker();
-                w.WorkerId = (string)dr["WorkerId"];
-                w.WorkerName = dr["WorkerName"].ToString();
-                w.WorkerBirth = DateTime.Parse(dr["WorkerBirthday"].ToString());
-                w.WorkerSex = Convert.ToString(dr["WorkerSex"]);
-                w.WorkerTel = (string)dr["WorkerTel"];
-                w.WorkerClub = (string)dr["WorkerClub"];
-                w.WorkerAddress = (string)dr["WorkerAddress"];
-                w.WorkerPosition = (string)dr["WorkerPosition"];
-                w.CardId = (string)dr["CardId"];
-                w.WorkerPwd = (string)dr["WorkerPwd"];
-                w.WorkerTime = DateTime.Parse(dr["WorkerTime"].ToString());
-                w.WorkerFace = (string)dr["WorkerFace"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            Worker w = new Worker();
+            w = base.GetSingle(a => a.WorkerId == id && a.WorkerPwd == pwd);
+            //性别类型
+            var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
+            w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
+            //教育程度
+            var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
+            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            //民族类型
+            var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
+            w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
+            //部门
+            var dept = base.Change<Dept>().GetSingle(a => a.dept_no == w.WorkerClub);
+            w.ClubName = string.IsNullOrEmpty(dept.dept_name) ? "" : dept.dept_name;
+            //职位
+            var position = base.Change<Position>().GetSingle(a => a.position_no == w.WorkerPosition);
+            w.PositionName = string.IsNullOrEmpty(position.position_name) ? "" : position.position_name;
             return w;
         }
         #endregion

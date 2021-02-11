@@ -345,7 +345,7 @@
             this.pnlCheckInfo.Controls.Add(this.label2);
             this.pnlCheckInfo.Location = new System.Drawing.Point(173, 53);
             this.pnlCheckInfo.Name = "pnlCheckInfo";
-            this.pnlCheckInfo.Size = new System.Drawing.Size(92, 73);
+            this.pnlCheckInfo.Size = new System.Drawing.Size(88, 73);
             this.pnlCheckInfo.TabIndex = 27;
             this.pnlCheckInfo.Visible = false;
             // 
@@ -353,7 +353,7 @@
             // 
             this.lblClose.AutoSize = true;
             this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblClose.Location = new System.Drawing.Point(73, 6);
+            this.lblClose.Location = new System.Drawing.Point(66, 5);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(16, 17);
             this.lblClose.TabIndex = 3;

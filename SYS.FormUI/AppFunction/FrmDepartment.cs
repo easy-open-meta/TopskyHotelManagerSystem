@@ -1,4 +1,5 @@
 ﻿using Sunny.UI;
+using SYS.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,16 @@ namespace SYS.FormUI
 
         private void FrmDepartment_Load(object sender, EventArgs e)
         {
+            //var list = new BaseManager().SelectDeptAll();
+
+
 
         }
+
+        
+
     }
+
+    
+
 }

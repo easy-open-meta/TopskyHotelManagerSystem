@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace SYS.Application
     /// <summary>
     /// 基础信息接口实现类
     /// </summary>
-    public class BaseService: IBaseService
+    public class BaseService: Repository<SexType>,IBaseService
     {
 
         #region 性别模块
@@ -22,18 +23,7 @@ namespace SYS.Application
         public List<SexType> SelectSexTypeAll()
         {
             List<SexType> sexTypes = new List<SexType>();
-            string sql = "select * from sextype";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                SexType type = new SexType();
-                type.sexId = (int)dr["sexId"];
-                type.sexName = dr["sexName"].ToString();
-                type.delete_mk = (int)dr["delete_mk"];
-                sexTypes.Add(type);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            sexTypes = base.GetList();
             return sexTypes;
         }
 
@@ -43,18 +33,9 @@ namespace SYS.Application
         /// <returns></returns>
         public SexType SelectSexType(SexType sexType)
         {
-            sexType = new SexType();
-            string sql = string.Format("select * from sextype where sexId = {0}", sexType.sexId);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                sexType.sexId = (int)dr["sexId"];
-                sexType.sexName = dr["sexName"].ToString();
-                sexType.delete_mk = (int)dr["delete_mk"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return sexType;
+            SexType sexTypes = new SexType();
+            sexTypes = base.GetSingle(a => a.sexId == sexType.sexId);
+            return sexTypes;
         }
 
         /// <summary>
@@ -62,10 +43,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int AddSexType(SexType sexType)
+        public bool AddSexType(SexType sexType)
         {
-            string sql = string.Format("insert into sexType values('{0}','{1}')", sexType.sexId, sexType.sexName);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(sexType);
         }
 
         /// <summary>
@@ -73,10 +53,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int DelSexType(SexType sexType)
+        public bool DelSexType(SexType sexType)
         {
-            string sql = string.Format("update sexType set delete_mk = 1 where sexId = '[0]'", sexType.sexId);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new SexType()
+            {
+                delete_mk = sexType.delete_mk,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.sexId == sexType.sexId);
         }
 
         /// <summary>
@@ -84,10 +68,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        public int UpdSexType(SexType sexType)
+        public bool UpdSexType(SexType sexType)
         {
-            string sql = string.Format("update sexType set sexName = '{1}' where sexId = '[0]'", sexType.sexId,sexType.sexName);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new SexType()
+            {
+                sexName = sexType.sexName,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.sexId == sexType.sexId);
         }
 
         #endregion
@@ -101,24 +89,7 @@ namespace SYS.Application
         public List<Position> SelectPositionAll()
         {
             List<Position> positions = new List<Position>();
-            string sql = "select * from position";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Position position = new Position() 
-                {
-                    position_no = dr["position_no"].ToString(),
-                    position_name = dr["position_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-                positions.Add(position);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            positions = base.Change<Position>().GetList();
             return positions;
         }
 
@@ -129,23 +100,7 @@ namespace SYS.Application
         public Position SelectPosition(Position position)
         {
             Position position1 = new Position();
-            string sql = string.Format("select * from position where position_no = '{0}'",position.position_no);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                position1 = new Position()
-                {
-                    position_no = dr["position_no"].ToString(),
-                    position_name = dr["position_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            position1 = base.Change<Position>().GetSingle(a => a.position_no == position.position_no);
             return position1;
         }
 
@@ -154,11 +109,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int AddPosition(Position position)
+        public bool AddPosition(Position position)
         {
-            string sql = string.Format("insert into position(position_no,position_name,datains_usr,datains_date) values('{0}','{1}','{2}','{3}')"
-                , position.position_no,position.position_name,position.datains_usr,position.datains_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Position>().Insert(position);
         }
 
         /// <summary>
@@ -166,11 +119,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int DelPosition(Position position)
+        public bool DelPosition(Position position)
         {
-            string sql = string.Format("update position set delete_mk = 1,datachg_usr = '{1}',datachg_date = '{2}' where position_no = '{0}')"
-                , position.position_no, position.datachg_usr, position.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Position>().Update(a => new Position()
+            {
+                delete_mk = position.delete_mk,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.position_no == position.position_no);
         }
 
         /// <summary>
@@ -178,11 +134,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public int UpdPosition(Position position)
+        public bool UpdPosition(Position position)
         {
-            string sql = string.Format("update position set position_name = '{1}',datachg_usr = '{2}',datachg_date = '{3}' where position_no = '{0}')"
-                , position.position_no, position.position_name,position.datachg_date,position.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Position>().Update(a => new Position()
+            {
+                position_name = position.position_name,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.position_no == position.position_no);
         }
 
         #endregion
@@ -196,24 +155,7 @@ namespace SYS.Application
         public List<Nation> SelectNationAll()
         {
             List<Nation> nations = new List<Nation>();
-            string sql = "select * from nation where delete_mk = 0";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Nation nation = new Nation()
-                {
-                    nation_no = dr["nation_no"].ToString(),
-                    nation_name = dr["nation_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-                nations.Add(nation);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            nations = base.Change<Nation>().GetList();
             return nations;
         }
 
@@ -224,23 +166,7 @@ namespace SYS.Application
         public Nation SelectNation(Nation nation)
         {
             Nation nation1 = new Nation();
-            string sql = string.Format("select * from nation where nation_no = '{0}'", nation.nation_no);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                nation1 = new Nation()
-                {
-                    nation_no = dr["nation_no"].ToString(),
-                    nation_name = dr["nation_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            nation1 = base.Change<Nation>().GetSingle(a => a.nation_no.Equals(nation.nation_no));
             return nation1;
         }
 
@@ -249,11 +175,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int AddNation(Nation nation)
+        public bool AddNation(Nation nation)
         {
-            string sql = string.Format("insert into nation(nation_no,nation_name,datains_usr,datains_date) values('{0}','{1}','{2}','{3}')"
-                , nation.nation_no, nation.nation_name, nation.datains_usr, nation.datains_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Nation>().Insert(nation);
         }
 
         /// <summary>
@@ -261,11 +185,15 @@ namespace SYS.Application
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int DelNation(Nation nation)
+        public bool DelNation(Nation nation)
         {
-            string sql = string.Format("update nation set delete_mk = 1,datachg_usr = '{1}',datachg_date = '{2}' where nation_no = '{0}'"
-                , nation.nation_no, nation.datachg_usr, nation.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Nation>().Update(a => new Nation() 
+            {
+                delete_mk = nation.delete_mk,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.nation_no.Equals(nation.nation_no));
+
         }
 
         /// <summary>
@@ -273,11 +201,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        public int UpdNation(Nation nation)
+        public bool UpdNation(Nation nation)
         {
-            string sql = string.Format("update nation set nation_name = '{1}',datachg_usr = '{2}',datachg_date = '{3}' where nation_no = '{0}')"
-                , nation.nation_no, nation.nation_name, nation.datachg_date, nation.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Nation>().Update(a => new Nation()
+            {
+                nation_name = nation.nation_name,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.nation_no.Equals(nation.nation_no));
         }
 
         #endregion
@@ -291,24 +222,7 @@ namespace SYS.Application
         public List<Education> SelectEducationAll()
         {
             List<Education> educations = new List<Education>();
-            string sql = "select * from Education";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Education education = new Education()
-                {
-                    education_no = dr["education_no"].ToString(),
-                    education_name = dr["education_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-                educations.Add(education);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            educations = base.Change<Education>().GetList();
             return educations;
         }
 
@@ -319,23 +233,7 @@ namespace SYS.Application
         public Education SelectEducation(Education education)
         {
             Education education1 = new Education();
-            string sql = string.Format("select * from education where education_no = '{0}'", education.education_no);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                education1 = new Education()
-                {
-                    education_no = dr["education_no"].ToString(),
-                    education_name = dr["education_name"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            education1 = base.Change<Education>().GetSingle(a => a.education_no == education.education_no);
             return education1;
         }
 
@@ -344,11 +242,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int AddEducation(Education education)
+        public bool AddEducation(Education education)
         {
-            string sql = string.Format("insert into education(education_no,education_name,datains_usr,datains_date) values('{0}','{1}','{2}','{3}')"
-                , education.education_no, education.education_name, education.datains_usr, education.datains_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Education>().Insert(education);
         }
 
         /// <summary>
@@ -356,11 +252,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int DelEducation(Education education)
+        public bool DelEducation(Education education)
         {
-            string sql = string.Format("update education set delete_mk = 1,datachg_usr = '{1}',datachg_date = '{2}' where education_no = '{0}')"
-                , education.education_no, education.datachg_usr, education.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Education>().Update(a => new Education()
+            {
+                delete_mk = education.delete_mk,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.education_no == education.education_no);
         }
 
         /// <summary>
@@ -368,11 +267,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        public int UpdEducation(Education education)
+        public bool UpdEducation(Education education)
         {
-            string sql = string.Format("update education set education_name = '{1}',datachg_usr = '{2}',datachg_date = '{3}' where education_no = '{0}')"
-                , education.education_no, education.education_name, education.datachg_date, education.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Education>().Update(a => new Education()
+            {
+                education_name = education.education_name,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.education_no == education.education_no);
         }
 
         #endregion
@@ -386,28 +288,7 @@ namespace SYS.Application
         public List<Dept> SelectDeptAll()
         {
             List<Dept> depts = new List<Dept>();
-            string sql = "select * from Dept";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Dept dept = new Dept()
-                {
-                    dept_no = dr["dept_no"].ToString(),
-                    dept_name = dr["dept_name"].ToString(),
-                    dept_desc = dr["dept_desc"].ToString(),
-                    dept_leader = dr["dept_leader"].ToString(),
-                    dept_date = Convert.ToDateTime(dr["dept_date"]),
-                    dept_parent = dr["dept_parent"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-                depts.Add(dept);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            depts = base.Change<Dept>().GetList();
             return depts;
         }
 
@@ -418,27 +299,7 @@ namespace SYS.Application
         public Dept SelectDept(Dept dept)
         {
             Dept dept1 = new Dept();
-            string sql = string.Format("select * from dept where dept_no = '{0}'", dept.dept_no);
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                dept1 = new Dept()
-                {
-                    dept_no = dr["dept_no"].ToString(),
-                    dept_name = dr["dept_name"].ToString(),
-                    dept_desc = dr["dept_desc"].ToString(),
-                    dept_leader = dr["dept_leader"].ToString(),
-                    dept_date = Convert.ToDateTime(dr["dept_date"]),
-                    dept_parent = dr["dept_parent"].ToString(),
-                    delete_mk = (int)dr["delete_mk"],
-                    datains_usr = dr["datains_usr"].ToString(),
-                    datains_date = Convert.ToDateTime(dr["datains_date"]),
-                    datachg_usr = dr["datachg_usr"].ToString(),
-                    datachg_date = Convert.ToDateTime(dr["datachg_date"]),
-                };
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            dept1 = base.Change<Dept>().GetSingle(a => a.dept_no.Equals(dept.dept_no));
             return dept1;
         }
 
@@ -447,12 +308,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int AddDept(Dept dept)
+        public bool AddDept(Dept dept)
         {
-            string sql = string.Format("insert into dept(dept_no,dept_name,dept_desc,dept_date,dept_leader,dept_parent,datains_usr,datains_date)" +
-                " values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')"
-                , dept.dept_no, dept.dept_name, dept.dept_desc, dept.dept_date, dept.dept_leader, dept.dept_parent, dept.datains_usr, dept.datains_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Dept>().Insert(dept);
         }
 
         /// <summary>
@@ -460,11 +318,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int DelDept(Dept dept)
+        public bool DelDept(Dept dept)
         {
-            string sql = string.Format("update dept set delete_mk = 1,datachg_usr = '{1}',datachg_date = '{2}' where dept_no = '{0}')"
-                , dept.dept_no, dept.datachg_usr, dept.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Dept>().Update(a => new Dept() 
+            {
+                delete_mk = dept.delete_mk,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.dept_no == dept.dept_no);
         }
 
         /// <summary>
@@ -472,11 +333,18 @@ namespace SYS.Application
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        public int UpdDept(Dept dept)
+        public bool UpdDept(Dept dept)
         {
-            string sql = string.Format("update dept set dept_name = '{1}',dept_desc = '{2}',dept_date = '{3}',dept_leader = '{4}',dept_parent = '{5}',datachg_usr = {6},datachg_date = {7} where dept_no = '{0}')"
-                , dept.dept_no, dept.dept_name, dept.dept_desc, dept.dept_date, dept.dept_leader, dept.dept_parent, dept.datachg_usr, dept.datachg_date);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Change<Dept>().Update(a => new Dept() 
+            {
+                dept_name = dept.dept_name,
+                dept_desc = dept.dept_desc,
+                dept_leader = dept.dept_leader,
+                dept_parent = dept.dept_parent,
+                dept_date = dept.dept_date,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.dept_no == dept.dept_no);
         }
 
         #endregion

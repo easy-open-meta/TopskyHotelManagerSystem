@@ -1,6 +1,6 @@
 ﻿namespace SYS.FormUI
 {
-    partial class FrmUpLoad
+    partial class FrmUpLoadNotice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpLoad));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpLoadNotice));
             this.UpLoadNotice = new System.Windows.Forms.Button();
             this.pnlUpLoad = new System.Windows.Forms.Panel();
             this.txtNoticePerson = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboSelectClub = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUpLoad = new System.Windows.Forms.Button();
             this.rtbNoticeContent = new System.Windows.Forms.RichTextBox();
             this.dtpUpLoadDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,13 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUpLoadNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgvNoticeList = new System.Windows.Forms.DataGridView();
-            this.clNoticeNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNoticetheme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNoticeContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpLoad = new System.Windows.Forms.Button();
             this.pnlUpLoad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNoticeList)).BeginInit();
             this.SuspendLayout();
             // 
             // UpLoadNotice
@@ -58,7 +51,7 @@
             this.UpLoadNotice.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.UpLoadNotice.FlatAppearance.BorderSize = 0;
             this.UpLoadNotice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpLoadNotice.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UpLoadNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.UpLoadNotice.Location = new System.Drawing.Point(12, 8);
             this.UpLoadNotice.Name = "UpLoadNotice";
             this.UpLoadNotice.Size = new System.Drawing.Size(103, 23);
@@ -81,70 +74,55 @@
             this.pnlUpLoad.Controls.Add(this.label2);
             this.pnlUpLoad.Controls.Add(this.txtUpLoadNo);
             this.pnlUpLoad.Controls.Add(this.label1);
-            this.pnlUpLoad.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pnlUpLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.pnlUpLoad.Location = new System.Drawing.Point(3, 37);
             this.pnlUpLoad.Name = "pnlUpLoad";
-            this.pnlUpLoad.Size = new System.Drawing.Size(614, 456);
+            this.pnlUpLoad.Size = new System.Drawing.Size(974, 456);
             this.pnlUpLoad.TabIndex = 1;
             this.pnlUpLoad.Visible = false;
             // 
             // txtNoticePerson
             // 
-            this.txtNoticePerson.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNoticePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtNoticePerson.Location = new System.Drawing.Point(403, 423);
             this.txtNoticePerson.Name = "txtNoticePerson";
-            this.txtNoticePerson.Size = new System.Drawing.Size(88, 24);
+            this.txtNoticePerson.Size = new System.Drawing.Size(88, 21);
             this.txtNoticePerson.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(357, 427);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
+            this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "发布人：";
             // 
             // cboSelectClub
             // 
-            this.cboSelectClub.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboSelectClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cboSelectClub.FormattingEnabled = true;
             this.cboSelectClub.Items.AddRange(new object[] {
             "人力资源管理部"});
             this.cboSelectClub.Location = new System.Drawing.Point(229, 424);
             this.cboSelectClub.Name = "cboSelectClub";
-            this.cboSelectClub.Size = new System.Drawing.Size(114, 25);
+            this.cboSelectClub.Size = new System.Drawing.Size(114, 23);
             this.cboSelectClub.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(158, 427);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "发布部门：";
             // 
-            // btnUpLoad
-            // 
-            this.btnUpLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpLoad.BackgroundImage")));
-            this.btnUpLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpLoad.FlatAppearance.BorderSize = 0;
-            this.btnUpLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpLoad.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpLoad.Location = new System.Drawing.Point(497, 422);
-            this.btnUpLoad.Name = "btnUpLoad";
-            this.btnUpLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnUpLoad.TabIndex = 7;
-            this.btnUpLoad.Text = "发布";
-            this.btnUpLoad.UseVisualStyleBackColor = true;
-            this.btnUpLoad.Click += new System.EventHandler(this.btnUpLoad_Click);
-            // 
             // rtbNoticeContent
             // 
-            this.rtbNoticeContent.Font = new System.Drawing.Font("苹方-简", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtbNoticeContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rtbNoticeContent.Location = new System.Drawing.Point(0, 47);
             this.rtbNoticeContent.Name = "rtbNoticeContent";
             this.rtbNoticeContent.Size = new System.Drawing.Size(611, 365);
@@ -155,7 +133,7 @@
             // 
             this.dtpUpLoadDate.Location = new System.Drawing.Point(505, 14);
             this.dtpUpLoadDate.Name = "dtpUpLoadDate";
-            this.dtpUpLoadDate.Size = new System.Drawing.Size(106, 24);
+            this.dtpUpLoadDate.Size = new System.Drawing.Size(106, 21);
             this.dtpUpLoadDate.TabIndex = 5;
             // 
             // label3
@@ -172,7 +150,7 @@
             // 
             this.txtNoticeTheme.Location = new System.Drawing.Point(273, 14);
             this.txtNoticeTheme.Name = "txtNoticeTheme";
-            this.txtNoticeTheme.Size = new System.Drawing.Size(145, 24);
+            this.txtNoticeTheme.Size = new System.Drawing.Size(145, 21);
             this.txtNoticeTheme.TabIndex = 3;
             // 
             // label2
@@ -189,7 +167,7 @@
             // 
             this.txtUpLoadNo.Location = new System.Drawing.Point(84, 14);
             this.txtUpLoadNo.Name = "txtUpLoadNo";
-            this.txtUpLoadNo.Size = new System.Drawing.Size(100, 24);
+            this.txtUpLoadNo.Size = new System.Drawing.Size(100, 21);
             this.txtUpLoadNo.TabIndex = 1;
             // 
             // label1
@@ -202,78 +180,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "公告编号：";
             // 
-            // label5
+            // btnUpLoad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("苹方-简", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(756, -3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 41);
-            this.label5.TabIndex = 108;
-            this.label5.Text = "历史公告";
+            this.btnUpLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpLoad.BackgroundImage")));
+            this.btnUpLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpLoad.FlatAppearance.BorderSize = 0;
+            this.btnUpLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUpLoad.Location = new System.Drawing.Point(497, 422);
+            this.btnUpLoad.Name = "btnUpLoad";
+            this.btnUpLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnUpLoad.TabIndex = 7;
+            this.btnUpLoad.Text = "发布";
+            this.btnUpLoad.UseVisualStyleBackColor = true;
+            this.btnUpLoad.Click += new System.EventHandler(this.btnUpLoad_Click);
             // 
-            // dgvNoticeList
-            // 
-            this.dgvNoticeList.AllowUserToAddRows = false;
-            this.dgvNoticeList.AllowUserToDeleteRows = false;
-            this.dgvNoticeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNoticeList.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.dgvNoticeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNoticeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clNoticeNo,
-            this.clNoticetheme,
-            this.clNoticeContent});
-            this.dgvNoticeList.Location = new System.Drawing.Point(619, 37);
-            this.dgvNoticeList.Name = "dgvNoticeList";
-            this.dgvNoticeList.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvNoticeList.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNoticeList.RowTemplate.Height = 23;
-            this.dgvNoticeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNoticeList.Size = new System.Drawing.Size(368, 456);
-            this.dgvNoticeList.TabIndex = 109;
-            this.dgvNoticeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoticeList_CellClick);
-            // 
-            // clNoticeNo
-            // 
-            this.clNoticeNo.DataPropertyName = "NoticeNo";
-            this.clNoticeNo.HeaderText = "公告编号";
-            this.clNoticeNo.Name = "clNoticeNo";
-            this.clNoticeNo.ReadOnly = true;
-            // 
-            // clNoticetheme
-            // 
-            this.clNoticetheme.DataPropertyName = "Noticetheme";
-            this.clNoticetheme.HeaderText = "公告主题";
-            this.clNoticetheme.Name = "clNoticetheme";
-            this.clNoticetheme.ReadOnly = true;
-            // 
-            // clNoticeContent
-            // 
-            this.clNoticeContent.DataPropertyName = "NoticeContent";
-            this.clNoticeContent.HeaderText = "公告正文";
-            this.clNoticeContent.Name = "clNoticeContent";
-            this.clNoticeContent.ReadOnly = true;
-            // 
-            // FrmUpLoad
+            // FrmUpLoadNotice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(989, 497);
-            this.Controls.Add(this.dgvNoticeList);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlUpLoad);
             this.Controls.Add(this.UpLoadNotice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmUpLoad";
+            this.Name = "FrmUpLoadNotice";
             this.Text = "FrmCashList";
             this.Load += new System.EventHandler(this.FrmUpLoad_Load);
             this.pnlUpLoad.ResumeLayout(false);
             this.pnlUpLoad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNoticeList)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -291,12 +227,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboSelectClub;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvNoticeList;
         private System.Windows.Forms.TextBox txtNoticePerson;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNoticeNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNoticetheme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNoticeContent;
     }
 }

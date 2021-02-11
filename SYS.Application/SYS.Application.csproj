@@ -45,6 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Web.dll</HintPath>
     </Reference>
+    <Reference Include="SqlSugar">
+      <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,13 +59,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\FontsService.cs" />
+    <Compile Include="Business\ICashService.cs" />
+    <Compile Include="Business\IFontsService.cs" />
+    <Compile Include="Business\IReserService.cs" />
+    <Compile Include="Business\ISellService.cs" />
+    <Compile Include="Business\ISpendService.cs" />
+    <Compile Include="Business\IWtiService.cs" />
+    <Compile Include="Customer\ICheckInfoService.cs" />
+    <Compile Include="Customer\ICustoService.cs" />
+    <Compile Include="Room\IRoomService.cs" />
+    <Compile Include="Room\IRoomTypeService.cs" />
+    <Compile Include="Worker\IWorkerCheckService.cs" />
+    <Compile Include="Worker\IWorkerGoodBadService.cs" />
+    <Compile Include="Worker\IWorkerHistoryService.cs" />
+    <Compile Include="Worker\IWorkerService.cs" />
     <Compile Include="Zero\AdminService.cs" />
     <Compile Include="Business\CashService.cs" />
     <Compile Include="Customer\CheckInfoService.cs" />
     <Compile Include="Customer\CustoService.cs" />
     <Compile Include="Customer\CustoTypeService.cs" />
     <Compile Include="Zero\BaseService.cs" />
+    <Compile Include="Zero\IAdminService.cs" />
     <Compile Include="Zero\IBaseService.cs" />
+    <Compile Include="Zero\INoticeService.cs" />
+    <Compile Include="Zero\IOperationlogService.cs" />
     <Compile Include="Zero\NoticeService.cs" />
     <Compile Include="Zero\OperationlogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +98,10 @@
     <Compile Include="Business\WtiService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
+      <Project>{65501af6-c629-448a-847e-1bcd60665865}</Project>
+      <Name>SYS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
@@ -85,5 +109,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

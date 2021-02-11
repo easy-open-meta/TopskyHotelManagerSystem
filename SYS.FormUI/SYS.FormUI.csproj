@@ -90,6 +90,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="SqlSugar">
+      <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="SunnyUI, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.2.2.9\lib\net40\SunnyUI.dll</HintPath>
     </Reference>
@@ -109,6 +112,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Until">
+      <HintPath>C:\Users\Administrator\Downloads\Compressed\WindowsFormsApplication2\WindowsFormsApplication2\Until\bin\Debug\Until.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFunction\FrmDepartment.cs">
@@ -129,6 +135,12 @@
     <Compile Include="AppFunction\FrmNation.Designer.cs">
       <DependentUpon>FrmNation.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppFunction\FrmNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmNotice.Designer.cs">
+      <DependentUpon>FrmNotice.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,21 +153,31 @@
     <Compile Include="AppFunction\FrmSexType.Designer.cs">
       <DependentUpon>FrmSexType.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppUserControls\CtrlOrgChar.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\CtrlOrgChar.Designer.cs">
+      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\CtrlOrgPanel.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\CtrlOrgPanel.Designer.cs">
+      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\ExtensionMethods.cs" />
+    <Compile Include="AppUserControls\OrgCharGenerator.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="AppUserControls\ucBaseInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CircleProgramBar.cs">
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppFunction\FrmAdminMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmAdminMain.Designer.cs">
-      <DependentUpon>FrmAdminMain.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmBackgroundSystem.cs">
       <SubType>Form</SubType>
@@ -193,29 +215,17 @@
     <Compile Include="AppInterface\FrmAdminEnter.Designer.cs">
       <DependentUpon>FrmAdminEnter.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmBackAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmBackAdmin.Designer.cs">
-      <DependentUpon>FrmBackAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppFunction\FrmBackUpDatabase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmBackUpDatabase.Designer.cs">
-      <DependentUpon>FrmBackUpDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppFunction\FrmCash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppFunction\FrmCash.Designer.cs">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmCashList.cs">
+    <Compile Include="AppFunction\FrmCheckList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppFunction\FrmCashList.Designer.cs">
-      <DependentUpon>FrmCashList.cs</DependentUpon>
+    <Compile Include="AppFunction\FrmCheckList.Designer.cs">
+      <DependentUpon>FrmCheckList.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmChangePosition.cs">
       <SubType>Form</SubType>
@@ -319,23 +329,17 @@
     <Compile Include="AppFunction\FrmSellThingManager.Designer.cs">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppInterface\FrmStart.cs">
+    <Compile Include="AppFunction\FrmWorkerManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppInterface\FrmStart.Designer.cs">
-      <DependentUpon>FrmStart.cs</DependentUpon>
+    <Compile Include="AppFunction\FrmWorkerManager.Designer.cs">
+      <DependentUpon>FrmWorkerManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmTopChange.cs">
+    <Compile Include="AppFunction\FrmUpLoadNotice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppFunction\FrmTopChange.Designer.cs">
-      <DependentUpon>FrmTopChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppFunction\FrmUpLoad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmUpLoad.Designer.cs">
-      <DependentUpon>FrmUpLoad.cs</DependentUpon>
+    <Compile Include="AppFunction\FrmUpLoadNotice.Designer.cs">
+      <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmCustomerManager.cs">
       <SubType>Form</SubType>
@@ -399,9 +403,6 @@
     <Compile Include="AppFunction\WtiInfo.Designer.cs">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AppFunction\FrmAdminMain.resx">
-      <DependentUpon>FrmAdminMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +428,9 @@
     <EmbeddedResource Include="AppFunction\FrmNation.resx">
       <DependentUpon>FrmNation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmNotice.resx">
+      <DependentUpon>FrmNotice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmPosition.resx">
       <DependentUpon>FrmPosition.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,17 +440,11 @@
     <EmbeddedResource Include="AppInterface\FrmAdminEnter.resx">
       <DependentUpon>FrmAdminEnter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmBackAdmin.resx">
-      <DependentUpon>FrmBackAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmBackUpDatabase.resx">
-      <DependentUpon>FrmBackUpDatabase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmCash.resx">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmCashList.resx">
-      <DependentUpon>FrmCashList.cs</DependentUpon>
+    <EmbeddedResource Include="AppFunction\FrmCheckList.resx">
+      <DependentUpon>FrmCheckList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChangePosition.resx">
       <DependentUpon>FrmChangePosition.cs</DependentUpon>
@@ -499,14 +497,11 @@
     <EmbeddedResource Include="AppFunction\FrmSellThingManager.resx">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppInterface\FrmStart.resx">
-      <DependentUpon>FrmStart.cs</DependentUpon>
+    <EmbeddedResource Include="AppFunction\FrmWorkerManager.resx">
+      <DependentUpon>FrmWorkerManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmTopChange.resx">
-      <DependentUpon>FrmTopChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmUpLoad.resx">
-      <DependentUpon>FrmUpLoad.cs</DependentUpon>
+    <EmbeddedResource Include="AppFunction\FrmUpLoadNotice.resx">
+      <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmCustomerManager.resx">
       <DependentUpon>FrmCustomerManager.cs</DependentUpon>
@@ -529,6 +524,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmWorkerCheckInfo.resx">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\CtrlOrgChar.resx">
+      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\CtrlOrgPanel.resx">
+      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
@@ -727,6 +730,11 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\組織圖塊.bmp" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\settings2.png" />
+    <None Include="Resources\添加  增加   加.png" />
+    <None Include="Resources\增加 添加 加减 %281%29.png" />
     <None Include="Resources\月亮.png" />
     <None Include="Resources\咖啡.png" />
     <None Include="Resources\早上.png" />
@@ -779,6 +787,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SYS.Application\SYS.Application.csproj">
+      <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
+      <Name>SYS.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
+      <Project>{65501AF6-C629-448A-847E-1BCD60665865}</Project>
+      <Name>SYS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>

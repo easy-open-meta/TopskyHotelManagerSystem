@@ -19,8 +19,8 @@ namespace SYS.FormUI
         {
             string rno = cboRoomList.Text;
             cboRoomList.DataSource = RoomManager.SelectCanUseRoomAll();
-            cboRoomList.ValueMember = "RoomNo";
-            cboRoomList.DisplayMember = "RoomName";
+            cboRoomList.ValueMember = "typeName";
+            cboRoomList.DisplayMember = "RoomNo";
 
 
         }
@@ -40,10 +40,6 @@ namespace SYS.FormUI
                     RoomStateId = 1,
                     CheckTime = DateTime.Now
                 };
-
-                int result1 = RoomManager.UpdateRoomInfo(checkInRoom);
-                int result2 = RoomManager.UpdateRoomByRoomNo(rno);
-
 
                 if (rno.Contains("BD"))
                 {
@@ -73,7 +69,7 @@ namespace SYS.FormUI
                 Spend s = new Spend()
                 {
                     RoomNo = cboRoomList.Text,
-                    SpendName = "居住" + rno + Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) + "天",
+                    SpendName = "居住" + rno + "共" + Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) + "天",
                     SpendAmount = Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()),
                     CustoNo = ucRoomList.CustoNo,
                     SpendPrice = Convert.ToDecimal(sum),
@@ -81,18 +77,24 @@ namespace SYS.FormUI
                     SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                     MoneyState = "未结算",
                 };
+
+                int result1 = RoomManager.UpdateRoomInfo(checkInRoom);
+                int result2 = RoomManager.UpdateRoomByRoomNo(rno);
+                int result3 = SpendManager.UpdateSpendInfoByRoomNo(rno, nrno, ucRoomList.CustoNo);
+
                 if (result1 > 0 && result2 > 0)
                 {
                     MessageBox.Show("转房成功");
                     int m = SpendManager.InsertSpendInfo(s);
                     FrmRoomManager.Reload();
                     #region 获取添加操作日志所需的信息
-                    Operation o = new Operation();
+                    OperationLog o = new OperationLog();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                     o.Operationlog = ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房，请记得到后台修改消费价格！";
                     o.OperationAccount = lbu;
                     #endregion
                     OperationlogManager.InsertOperationLog(o);
+                    scope.Complete();
                     this.Close();
                 }
                 else

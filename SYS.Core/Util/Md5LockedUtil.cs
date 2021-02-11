@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -29,6 +30,25 @@ namespace SYS.Core
                 pwd = pwd + s[i].ToString("X");
             }
             return pwd;
+
+        }
+
+        /// <summary>
+        /// 对字符串进行32位MD5解密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string MD5DeEncrypt32(string str)
+        {
+                String encryptKey = "Oyea";
+                DESCryptoServiceProvider descsp = new DESCryptoServiceProvider();
+                byte[] key = Encoding.Unicode.GetBytes(encryptKey);
+                byte[] data = Convert.FromBase64String(str);
+                System.IO.MemoryStream MStream = new System.IO.MemoryStream();
+                CryptoStream CStream = new CryptoStream(MStream, descsp.CreateDecryptor(key, key), CryptoStreamMode.Write);
+                CStream.Write(data, 0, data.Length);
+                CStream.FlushFinalBlock();
+                return Encoding.Unicode.GetString(MStream.ToArray());
 
         }
     }

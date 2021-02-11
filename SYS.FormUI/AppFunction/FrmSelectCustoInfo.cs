@@ -4,6 +4,7 @@ using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using System.Collections.Generic;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -53,7 +54,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseManager().SelectSexTypeAll();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";

@@ -56,5 +56,19 @@ namespace SYS.Manager
         }
         #endregion
 
+        #region 将转房前的未结算记录一同转移到新房间
+        /// <summary>
+        /// 将转房前的未结算记录一同转移到新房间
+        /// </summary>
+        /// <param name="oldRoon"></param>
+        /// <param name="newRoom"></param>
+        /// <param name="custoNo"></param>
+        /// <returns></returns>
+        public static int UpdateSpendInfoByRoomNo(string oldRoon, string newRoom, string custoNo)
+        {
+            return SpendService.UpdateSpendInfoByRoomNo(oldRoon,newRoom,custoNo);
+        }
+        #endregion
+
     }
 }

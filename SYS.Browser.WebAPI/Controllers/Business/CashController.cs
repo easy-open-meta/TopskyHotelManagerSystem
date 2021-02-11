@@ -21,7 +21,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Cash> SelectCashInfoAll()
         {
-            return CashService.SelectCashInfoAll();
+            return new CashService().SelectCashInfoAll();
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpPost]
         public object AddCashInfo([FromBody]Cash cash)
         {
-            return CashService.AddCashInfo(cash);
+            return new CashService().AddCashInfo(cash);
         }
     }
 }

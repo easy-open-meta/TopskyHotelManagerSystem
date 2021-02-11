@@ -26,9 +26,10 @@ namespace SYS.FormUI
             Admin a = AdminManager.SelectMangerByPass(account,pass);
             if (a != null)//判断超管是否存在
             {
-                AdminInfo.adminType = a.AdminType;
-                AdminInfo.adminName = txtPassword.Text;
-                FrmBackAdmin fm = new FrmBackAdmin();
+                AdminInfo.Type = a.AdminType;
+                AdminInfo.Name = a.AdminName;
+                AdminInfo.Account = a.AdminAccount;
+                FrmBackgroundSystem fm = new FrmBackgroundSystem();
                 fm.Show();//打开主窗体
                 this.Hide();//隐藏登录窗体
             }

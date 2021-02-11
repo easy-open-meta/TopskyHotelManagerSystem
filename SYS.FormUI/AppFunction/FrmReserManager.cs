@@ -46,7 +46,7 @@ namespace SYS.FormUI
             {
                 MessageBox.Show("预约成功！请在指定时间内进行登记入住");
                 #region 获取添加操作日志所需的信息
-                Operation o = new Operation();
+                OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoTel.Text + "进行了预订房间操作！";
                 o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;

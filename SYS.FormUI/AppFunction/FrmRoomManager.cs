@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -38,49 +39,39 @@ namespace SYS.FormUI
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
 
-            foreach (Control item in this.pnlRoomInfo.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    item.Font = UI_FontUtil.SetChildControlsFont();
-                }
-            }
+            //foreach (Control item in this.pnlRoomInfo.Controls)
+            //{
+            //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
+            //    {
+            //        item.Font = UI_FontUtil.SetChildControlsFont();
+            //    }
+            //}
 
-            romsty = RoomManager.SelectRoomAll();
+            romsty = new RoomService().SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
             {
-                romt = new ucRoomList(this);
-                romt.Tag = romsty[i].RoomNo;
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = romsty[i].RoomNo;
+                romt.lblCustoNo.Text = romsty[i].CustoNo;
+                romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
             }
-        }
-        #endregion
 
-        #region 神秘的遍历方法
-        public void CmpInfo(Room rom, Custo user)
-        {
-            foreach (Control rmb in flpRoom.Controls)
+            if (lblCheckTime.Text == "0001/1/1")
             {
-                if (rmb.Tag.ToString() != rom.RoomNo)
-                {
-
-                }
-
+                lblCheckTime.Text = "";
             }
         }
         #endregion
 
-
-
-
         private void tmrGetData_Tick(object sender, EventArgs e)
         {
-            lblCanUse.Text = RoomManager.SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = RoomManager.SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = RoomManager.SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = RoomManager.SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = RoomManager.SelectReseredRoomAllByRoomState().ToString();
+            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
+            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
+            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
+            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
+            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
             lblRoomNo.Text = ucRoomList.co_RoomNo;
             lblCustoNo.Text = ucRoomList.co_CustoNo;
             lblRoomPosition.Text = ucRoomList.co_RoomPosition;
@@ -99,13 +90,16 @@ namespace SYS.FormUI
         private void btnAll_Click(object sender, EventArgs e)
         {
             flpRoom.Controls.Clear();
-            romsty = RoomManager.SelectRoomAll();
+            romsty = new RoomService().SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
             {
-                romt = new ucRoomList(this);
-                romt.Tag = romsty[i].RoomNo;
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = romsty[i].RoomNo;
+                romt.lblCustoNo.Text = romsty[i].CustoNo;
+                romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
+
             }
         }
 
@@ -117,19 +111,22 @@ namespace SYS.FormUI
         private void LoadData(string typeName)
         {
             flpRoom.Controls.Clear();
-            romsty = RoomManager.SelectRoomByTypeName(typeName);
+            romsty = new RoomService().SelectRoomByTypeName(typeName);
             for (int i = 0; i < romsty.Count; i++)
             {
-                romt = new ucRoomList(this);
-                romt.Tag = romsty[i].RoomNo;
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = romsty[i].RoomNo;
+                romt.lblCustoNo.Text = romsty[i].CustoNo;
+                romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
+
             }
-            lblCanUse.Text = RoomManager.SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = RoomManager.SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = RoomManager.SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = RoomManager.SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = RoomManager.SelectReseredRoomAllByRoomState().ToString();
+            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
+            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
+            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
+            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
+            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
         }
 
         private void btnBS_Click(object sender, EventArgs e)
@@ -167,13 +164,16 @@ namespace SYS.FormUI
         private void LoadRoomByState(int stateid)
         {
             flpRoom.Controls.Clear();
-            romsty = RoomManager.SelectRoomByRoomState(stateid);
+            romsty = new RoomService().SelectRoomByRoomState(stateid);
             for (int i = 0; i < romsty.Count; i++)
             {
-                romt = new ucRoomList(this);
-                romt.Tag = romsty[i].RoomNo;
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = romsty[i].RoomNo;
+                romt.lblCustoNo.Text = romsty[i].CustoNo;
+                romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
+
             }
             lblRoomNo.Text = "";
             lblRoomPosition.Text = "";
@@ -185,13 +185,16 @@ namespace SYS.FormUI
         private void LoadRoom()
         {
             flpRoom.Controls.Clear();
-            romsty = RoomManager.SelectRoomAll();
+            romsty = new RoomService().SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
             {
-                romt = new ucRoomList(this);
-                romt.Tag = romsty[i].RoomNo;
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = romsty[i].RoomNo;
+                romt.lblCustoNo.Text = romsty[i].CustoNo;
+                romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
+
             }
             lblRoomNo.Text = "";
             lblRoomPosition.Text = "";
