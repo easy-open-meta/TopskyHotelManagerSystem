@@ -90,14 +90,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\netchartdir.dll</HintPath>
-=======
+    </Reference>
     <Reference Include="SqlSugar">
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </Reference>
     <Reference Include="SunnyUI, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.2.2.9\lib\net40\SunnyUI.dll</HintPath>
@@ -121,7 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="CircleProgramBar.cs">
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -131,7 +128,7 @@
     </Compile>
     <Compile Include="FrmAdminMain.Designer.cs">
       <DependentUpon>FrmAdminMain.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="AppFunction\FrmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,7 +190,6 @@
     </Compile>
     <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </Compile>
     <Compile Include="FrmChart.cs">
       <SubType>Form</SubType>
@@ -231,7 +227,6 @@
     <Compile Include="FrmAdminEnter.Designer.cs">
       <DependentUpon>FrmAdminEnter.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FrmBackAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,27 +240,25 @@
       <DependentUpon>FrmBackUpDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCash.cs">
-=======
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppFunction\FrmCash.cs">
->>>>>>> InitProject_v1.4.8_happy_new_year
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCash.Designer.cs">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FrmCashList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCashList.Designer.cs">
       <DependentUpon>FrmCashList.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="AppFunction\FrmCheckList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppFunction\FrmCheckList.Designer.cs">
       <DependentUpon>FrmCheckList.cs</DependentUpon>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </Compile>
     <Compile Include="FrmChangePosition.cs">
       <SubType>Form</SubType>
@@ -369,7 +362,6 @@
     <Compile Include="FrmSellThingManager.Designer.cs">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FrmStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,7 +385,7 @@
     </Compile>
     <Compile Include="FrmUpLoad.Designer.cs">
       <DependentUpon>FrmUpLoad.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="AppFunction\FrmWorkerManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,7 +397,6 @@
     </Compile>
     <Compile Include="AppFunction\FrmUpLoadNotice.Designer.cs">
       <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </Compile>
     <Compile Include="FrmCustomerManager.cs">
       <SubType>Form</SubType>
@@ -475,17 +466,15 @@
     <Compile Include="WtiInfo.Designer.cs">
       <DependentUpon>WtiInfo.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="FrmAdminMain.resx">
       <DependentUpon>FrmAdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChart.resx">
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChart.resx">
->>>>>>> InitProject_v1.4.8_happy_new_year
       <DependentUpon>FrmChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtendOption.resx">
@@ -501,7 +490,6 @@
     <EmbeddedResource Include="FrmAddWorker.resx">
       <DependentUpon>FrmAddWorker.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FrmAdminEnter.resx">
       <DependentUpon>FrmAdminEnter.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,7 +504,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCashList.resx">
       <DependentUpon>FrmCashList.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmDepartment.resx">
       <DependentUpon>FrmDepartment.cs</DependentUpon>
     </EmbeddedResource>
@@ -543,7 +531,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmCheckList.resx">
       <DependentUpon>FrmCheckList.cs</DependentUpon>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChangePosition.resx">
       <DependentUpon>FrmChangePosition.cs</DependentUpon>
@@ -596,7 +583,6 @@
     <EmbeddedResource Include="FrmSellThingManager.resx">
       <DependentUpon>FrmSellThingManager.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FrmStart.resx">
       <DependentUpon>FrmStart.cs</DependentUpon>
     </EmbeddedResource>
@@ -608,13 +594,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpLoad.resx">
       <DependentUpon>FrmUpLoad.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmWorkerManager.resx">
       <DependentUpon>FrmWorkerManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmUpLoadNotice.resx">
       <DependentUpon>FrmUpLoadNotice.cs</DependentUpon>
->>>>>>> InitProject_v1.4.8_happy_new_year
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomerManager.resx">
       <DependentUpon>FrmCustomerManager.cs</DependentUpon>
@@ -638,8 +623,6 @@
     <EmbeddedResource Include="FrmWorkerCheckInfo.resx">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="AppUserControls\CtrlOrgChar.resx">
       <DependentUpon>CtrlOrgChar.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -651,7 +634,6 @@
     <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> InitProject_v1.4.8_happy_new_year
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -999,8 +981,6 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <None Include="Resources\組織圖塊.bmp" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\settings2.png" />
@@ -1026,7 +1006,6 @@
     <None Include="bin\Debug\已住icon.png" />
     <None Include="bin\Debug\预约房icon.png" />
     <None Include="bin\Debug\脏房icon.png" />
->>>>>>> InitProject_v1.4.8_happy_new_year
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\arrow-down-b.png" />
     <None Include="Resources\minus %281%29.png" />
@@ -1074,13 +1053,10 @@
       <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
       <Name>SYS.Application</Name>
     </ProjectReference>
-<<<<<<< HEAD
-=======
     <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
       <Project>{65501AF6-C629-448A-847E-1BCD60665865}</Project>
       <Name>SYS.Common</Name>
     </ProjectReference>
->>>>>>> InitProject_v1.4.8_happy_new_year
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>

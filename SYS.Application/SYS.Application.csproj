@@ -57,8 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
+
+
     <Compile Include="Business\FontsService.cs" />
     <Compile Include="Business\ICashService.cs" />
     <Compile Include="Business\IFontsService.cs" />
@@ -74,20 +74,20 @@
     <Compile Include="Worker\IWorkerGoodBadService.cs" />
     <Compile Include="Worker\IWorkerHistoryService.cs" />
     <Compile Include="Worker\IWorkerService.cs" />
->>>>>>> InitProject_v1.4.8_happy_new_year
+
     <Compile Include="Zero\AdminService.cs" />
     <Compile Include="Business\CashService.cs" />
     <Compile Include="Customer\CheckInfoService.cs" />
     <Compile Include="Customer\CustoService.cs" />
     <Compile Include="Customer\CustoTypeService.cs" />
-<<<<<<< HEAD
-=======
+
+
     <Compile Include="Zero\BaseService.cs" />
     <Compile Include="Zero\IAdminService.cs" />
     <Compile Include="Zero\IBaseService.cs" />
     <Compile Include="Zero\INoticeService.cs" />
     <Compile Include="Zero\IOperationlogService.cs" />
->>>>>>> InitProject_v1.4.8_happy_new_year
+
     <Compile Include="Zero\NoticeService.cs" />
     <Compile Include="Zero\Operationlog.cs" />
     <Compile Include="Zero\OperationService.cs" />

@@ -73,13 +73,13 @@
     <Compile Include="Customer\Custo.cs" />
     <Compile Include="Customer\CustoSpend.cs" />
     <Compile Include="Customer\CustoType.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Util\Fonts.cs" />
-=======
+
     <Compile Include="Business\Fonts.cs" />
     <Compile Include="Zero\Dept.cs" />
     <Compile Include="Zero\Education.cs" />
->>>>>>> InitProject_v1.4.8_happy_new_year
+
     <Compile Include="Zero\LoginInfo.cs" />
     <Compile Include="Zero\Notice.cs" />
     <Compile Include="Zero\OperationLog.cs" />
