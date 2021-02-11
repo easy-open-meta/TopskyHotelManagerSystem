@@ -60,8 +60,9 @@
     <Compile Include="Worker\WorkerHistoryManager.cs" />
     <Compile Include="Worker\WorkerManager.cs" />
     <Compile Include="Zero\AdminManager.cs" />
+    <Compile Include="Zero\BaseManager.cs" />
     <Compile Include="Zero\NoticeManager.cs" />
-    <Compile Include="Zero\OperationManager.cs" />
+    <Compile Include="Zero\OperationlogManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYS.Application\SYS.Application.csproj">
@@ -72,6 +73,9 @@
       <Project>{CD039D0F-BD50-4FBF-B9CD-CDFAB25C7DFA}</Project>
       <Name>SYS.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

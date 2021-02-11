@@ -1,31 +1,24 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class RoomTypeService
+    /// <summary>
+    /// 房间类型接口实现类
+    /// </summary>
+    public class RoomTypeService:Repository<RoomType>, IRoomTypeService
     {
         #region 获取所有房间类型
         /// <summary>
         /// 获取所有房间类型
         /// </summary>
         /// <returns></returns>
-        public static List<RoomType> SelectRoomTypesAll()
+        public List<RoomType> SelectRoomTypesAll()
         {
             List<RoomType> types = new List<RoomType>();
-            string sql = "select * from ROOMTYPE";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                RoomType type = new RoomType();
-                type.Roomtype = (int)dr["Roomtype"];
-                type.RoomName = dr["RoomName"].ToString();
-                types.Add(type);
-            }
-            dr.Close();
-            DBHelper.Closecon();
-
+            types = base.GetList(a => a.delete_mk != 1);
             return types;
         }
         #endregion
@@ -36,18 +29,12 @@ namespace SYS.Application
         /// </summary>
         /// <param name="no"></param>
         /// <returns></returns>
-        public static RoomType SelectRoomTypeByRoomNo(string no)
+        public RoomType SelectRoomTypeByRoomNo(string no)
         {
-            RoomType roomtype = null;
-            string sql = "select t.RoomName from ROOMTYPE t,ROOM r where t.RoomType=r.RoomType and r.RoomNo='" + no + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                roomtype = new RoomType();
-                roomtype.RoomName = dr["RoomName"].ToString();
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            RoomType roomtype = new RoomType();
+            Room room = new Room();
+            room = base.Change<Room>().GetSingle(a => a.RoomNo == no && a.delete_mk != 1);
+            roomtype.RoomName = base.GetSingle(a => a.Roomtype == room.RoomStateId).RoomName;
             return roomtype;
         }
         #endregion

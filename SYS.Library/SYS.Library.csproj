@@ -54,6 +54,7 @@
     <Content Include="MySql.Web.dll" />
     <Content Include="SYS.Application.dll" />
     <Content Include="SYS.Core.dll" />
+    <Content Include="SYS.Core.xml" />
     <Content Include="SYS.Manager.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +66,9 @@
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,9 +11,9 @@ namespace SYS.Manager
         /// </summary>
         /// <param name="workerId"></param>
         /// <returns></returns>
-        public static Admin SelectMangerByPass(string adminpass)
+        public static Admin SelectMangerByPass(string adminaccount, string adminpass)
         {
-            return AdminService.SelectMangerByPass(adminpass);
+            return AdminService.SelectMangerByPass(adminaccount,adminpass);
         }
         #endregion
 
@@ -27,6 +27,18 @@ namespace SYS.Manager
         public static Admin SelectAdminInfoByadminpwd(string pwd)
         {
             return AdminService.SelectAdminInfoByadminpwd(pwd);
+        }
+        #endregion
+
+        #region 根据超管账号查询对应的密码
+        /// <summary>
+        /// 根据超管账号查询对应的密码
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public static Admin SelectAdminPwdByAccount(string account)
+        {
+            return AdminService.SelectAdminPwdByAccount(account);
         }
         #endregion
     }
