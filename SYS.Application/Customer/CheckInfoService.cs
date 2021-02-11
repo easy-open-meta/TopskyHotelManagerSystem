@@ -2,48 +2,24 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class CheckInfoService
+    /// <summary>
+    /// 监管统计接口实现类
+    /// </summary>
+    public class CheckInfoService:Repository<CheckInfo>, ICheckInfoService
     {
-
-        public static string CheckBaseVersion()
+        /// <summary>
+        /// 查询所有监管统计信息
+        /// </summary>
+        /// <returns></returns>
+        public List<CheckInfo> SelectCheckInfoAll()
         {
-            string version = null;
-            string sql = "select* from baseversion";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                version = dr["base_version"].ToString();
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return version;
-        }
-
-        public static List<CheckInfo> SelectCheckInfoAll()
-        {
-
             List<CheckInfo> cif = new List<CheckInfo>();
-            string sql = "select * from CHECKINFO";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-
-                CheckInfo ci = new CheckInfo();
-                ci.CheckNo = (string)dr["CheckNo"];
-                ci.CheckClub = dr["CheckClub"].ToString();
-                ci.CheckProgres = (string)dr["CheckProgres"];
-                ci.CheckCash = Convert.ToString(dr["CheckCash"]);
-                ci.CheckScore = (int)dr["CheckScore"];
-                ci.CheckPerson = dr["CheckPerson"].ToString();
-                ci.CheckAdvice = dr["CheckAdvice"].ToString();
-                cif.Add(ci);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            cif = base.GetList(a => a.delete_mk != 1);
             return cif;
         }
     }

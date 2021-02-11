@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class ReserService
+    /// <summary>
+    /// 预约信息接口实现类
+    /// </summary>
+    public class ReserService:Repository<Reser>,IReserService
     {
-
-        public static List<Reser> SelectReserAll()
+        /// <summary>
+        /// 获取所有预约信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Reser> SelectReserAll()
         {
             List<Reser> rss = new List<Reser>();
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "select * from RESER";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
@@ -37,12 +45,21 @@ namespace SYS.Application
             }
             dr.Close();
             DBHelper.Closecon();
+=======
+            rss = base.GetList(a => a.delete_mk == 0);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
             return rss;
         }
 
-        public static Reser SelectReserInfoByRoomNo(string no)
+        /// <summary>
+        /// 根据房间编号获取预约信息
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public Reser SelectReserInfoByRoomNo(string no)
         {
             Reser res = null;
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "select * from RESER r,ROOM rm where r.ReserRoom = rm.RoomNo and r.ReserRoom = '" + no + "'";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             if (dr.Read())
@@ -64,25 +81,45 @@ namespace SYS.Application
             }
             dr.Close();
             DBHelper.Closecon();
+=======
+            res = base.GetSingle(a => a.ReserRoom == no && a.delete_mk != 1);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
             return res;
         }
 
-        public static int DeleteReserInfo(string rid)
+        /// <summary>
+        /// 删除预约信息
+        /// </summary>
+        /// <param name="rid"></param>
+        /// <returns></returns>
+        public bool DeleteReserInfo(string rid)
         {
-            string sql = "delete from RESER where ReserId = '" + rid + "'";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Reser()
+            {
+                delete_mk = 1,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.ReserId == rid);
 
         }
 
-
-        public static int InserReserInfo(Reser r)
+        /// <summary>
+        /// 添加预约信息
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public bool InserReserInfo(Reser r)
         {
+<<<<<<< HEAD:SYS.Application/Room/ReserService.cs
             string sql = "insert WTINFO (CustoName,CustoTel,ReserWay,";
             sql += "ReserRoomNo,ReserDate,ReserEndDay,Remark) values ";
             sql += "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
             sql = string.Format(sql, r.CustoName, r.CustoTel, r.ReserWay,
                 r.ReserRoom, r.ReserDate, r.ReserEndDay, r.ReserRemark);
             return DBHelper.ExecuteNonQuery(sql);
+=======
+            return base.Insert(r);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.Application/Business/ReserService.cs
         }
 
 

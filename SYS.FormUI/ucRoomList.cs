@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -23,12 +24,7 @@ namespace SYS.FormUI
             //traninfo = LoadRoomInfo(co_RoomNo, co_CustoNo, co_RoomPosition, co_CheckTime, co_RoomState);
             //string Roomno, string Custono, string Roompo, string Checktime, string Roomstate
         }
-        public ucRoomList(FrmRoomManager frm)
-        {
-            InitializeComponent();
-            this.frm = frm;
-            
-        }
+
         #region 房态图圆角代码
         public GraphicsPath GetRoundRectPath(RectangleF rect, float radius)
         {
@@ -158,7 +154,7 @@ namespace SYS.FormUI
         #region 鼠标点击房态图传值到类
         private void ucRoomList_Click(object sender, EventArgs e)
         {
-            frm.CmpInfo(romCustoInfo, romRoomInfo);
+            //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
             co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
@@ -171,19 +167,19 @@ namespace SYS.FormUI
         #region 房态图加载事件方法
         private void ucRoomList_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    label.Font = UI_FontUtil.SetRoomControlsFont();
-                }
-            }
+            //foreach (Control label in this.Controls)
+            //{
+            //    if (label.GetType().ToString() == "System.Windows.Forms.Label")
+            //    {
+            //        label.Font = UI_FontUtil.SetRoomControlsFont();
+            //    }
+            //}
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
-            lblCustoNo.Text = romCustoInfo.CustoNo;
-            lblRoomNo.Text = romCustoInfo.RoomNo;
-            lblRoomType.Text = romCustoInfo.typeName;
-            co_CheckTime = romCustoInfo.CheckTime.ToString();
+            //lblCustoNo.Text = romCustoInfo.CustoNo;
+            //lblRoomNo.Text = romCustoInfo.RoomNo;
+            //lblRoomType.Text = romCustoInfo.typeName;
+            //co_CheckTime = romCustoInfo.CheckTime.ToString();
 
             us_CustoNo = romRoomInfo.CustoNo;
             us_CustoName = romRoomInfo.CustoName;
@@ -225,7 +221,7 @@ namespace SYS.FormUI
         #region 当右键菜单打开时事件方法
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
-            r = RoomManager.SelectRoomByRoomNo(lblRoomNo.Text);
+            r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
             if (lblCustoNo.Text != "")
             {
                 tsmiCheckIn.Enabled = false;
@@ -357,9 +353,8 @@ namespace SYS.FormUI
         #region 修改房间状态
         private void tsmiChangeState_Click(object sender, EventArgs e)
         {
-            //RoomManager.UpdateRoomStateByRoomNo(lblRoomNo.Text);
-            RoomStatic.RoomStateId = Convert.ToInt32(RoomManager.SelectRoomStateIdByRoomNo(lblRoomNo.Text));
-            RoomStatic.RoomNo = lblRoomNo.Text;
+            rm_RoomStateId = Convert.ToInt32(RoomManager.SelectRoomStateIdByRoomNo(lblRoomNo.Text));
+            rm_RoomNo = lblRoomNo.Text;
             FrmRoomStateManager frsm = new FrmRoomStateManager();
             frsm.ShowDialog();
         }
@@ -391,10 +386,10 @@ namespace SYS.FormUI
 
         private void lblRoomType_Click(object sender, EventArgs e)
         {
-            frm.CmpInfo(romCustoInfo, romRoomInfo);
+            //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
+            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
             co_PersonNum = romCustoInfo.PersonNum;
@@ -402,10 +397,10 @@ namespace SYS.FormUI
 
         private void lblRoomNo_Click(object sender, EventArgs e)
         {
-            frm.CmpInfo(romCustoInfo, romRoomInfo);
+            //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
+            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
             co_PersonNum = romCustoInfo.PersonNum;
@@ -413,10 +408,10 @@ namespace SYS.FormUI
 
         private void lblCustoNo_Click(object sender, EventArgs e)
         {
-            frm.CmpInfo(romCustoInfo, romRoomInfo);
+            //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
+            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
             co_PersonNum = romCustoInfo.PersonNum;

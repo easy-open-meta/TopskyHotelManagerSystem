@@ -43,10 +43,10 @@ namespace SYS.FormUI
         {
             CmpSetDgv();
             dgvCashList.AutoGenerateColumns = false;
-            dgvCashList.DataSource = CashManager.SelectCashInfoAll();
+            dgvCashList.DataSource = new CashManager().SelectCashInfoAll();
             Random random = new Random();
             txtCashNo.Text = "CN" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
-            if (AdminInfo.adminType != "财务经理" && AdminInfo.adminType != "总经理")
+            if (AdminInfo.Type != "财务经理" || AdminInfo.Type != "总经理")
             {
                 btnOK.Enabled = false;
                 btnOK.Text = "权限不足";
@@ -74,12 +74,12 @@ namespace SYS.FormUI
                     {
                         MessageBox.Show("录入成功！");
                         dgvCashList.AutoGenerateColumns = false;
-                        dgvCashList.DataSource = CashManager.SelectCashInfoAll();
+                        dgvCashList.DataSource = new CashManager().SelectCashInfoAll();
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = AdminInfo.adminType + AdminInfo.admingroup + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim();
-                        o.OperationAccount = AdminInfo.adminType + AdminInfo.admingroup;
+                        o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim();
+                        o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                         #endregion
                         OperationManager.InsertOperationLog(o);
                         foreach (Control Ctrol in gbInfoWrite.Controls)

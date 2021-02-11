@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using SYS.Core;
+using SYS.Manager;
 
 namespace SYS.FormUI
 {
@@ -46,6 +47,7 @@ namespace SYS.FormUI
 
         private void btnUnLock_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.cs
             if (txtUnLockPwd.Text != AdminInfo.adminpwd)
             {
                 MessageBox.Show("密码错误! 请输入当前超管密码解锁!");
@@ -54,11 +56,29 @@ namespace SYS.FormUI
             }
             else
             {
+=======
+            var account = AdminManager.SelectAdminPwdByAccount(AdminInfo.Account);
+            if (account != null)
+            {
+                if (account.AdminPassword != txtUnLockPwd.Text.Trim())
+                {
+                    MessageBox.Show("密码错误! 请输入当前超管密码解锁!");
+                    txtUnLockPwd.Text = "";
+                    txtUnLockPwd.Focus();
+                    return;
+                }
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.cs
                 this.Close();
                 string regPath = System.Windows.Forms.Application.StartupPath + @"\启用任务管理器.reg";
                 ExecuteReg(regPath);
                 FrmMain.Start();
+<<<<<<< HEAD:SYS.FormUI/FrmUnLockSystem.cs
             }
+=======
+
+            }
+
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmUnLockSystem.cs
         }
 
 
@@ -76,7 +96,7 @@ namespace SYS.FormUI
         {
             string regPath = System.Windows.Forms.Application.StartupPath + @"\禁用任务管理器.reg";
             ExecuteReg(regPath);
-            FrmMain.Stop();
+            //FrmMain.Stop();
             //HookStart();
             Process[] ps = Process.GetProcessesByName("TS酒店管理系统");
             if (ps.Length < 0)

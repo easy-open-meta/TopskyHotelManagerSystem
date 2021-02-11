@@ -3,21 +3,28 @@
     public class AdminInfo
     {
         /// <summary>
-        /// 存储当前超管姓名
+        /// 存储当前超管账号
         /// </summary>
-        public static string Password = "";
+        public static string Account = "";
 
         /// <summary>
         /// 存储当前超管类型
         /// </summary>
-        public static string adminType = "";
+        public static string Type = "";
 
         /// <summary>
         /// 存储当前超管用户组
         /// </summary>
-        public static string admingroup = "";
+        public static string Group = "";
 
+<<<<<<< HEAD
         public static string adminpwd = "";
+=======
+        /// <summary>
+        /// 存储当前超管名称
+        /// </summary>
+        public static string Name = "";
+>>>>>>> InitProject_v1.4.8_happy_new_year
 
 
 

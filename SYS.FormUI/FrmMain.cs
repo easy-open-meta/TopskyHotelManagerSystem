@@ -9,6 +9,11 @@ using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using Sunny.UI;
+<<<<<<< HEAD:SYS.FormUI/FrmMain.cs
+=======
+using System.Management;
+using SYS.Application;
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppMain/FrmMain.cs
 
 namespace SYS.FormUI
 {
@@ -186,6 +191,7 @@ namespace SYS.FormUI
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD:SYS.FormUI/FrmMain.cs
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
             foreach (Control label in this.Controls)
             {
@@ -194,6 +200,24 @@ namespace SYS.FormUI
                     label.Font = UI_FontUtil.SetMainFont();
                 }
             }
+=======
+            //foreach (Control item in this.Controls)
+            //{
+            //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
+            //    {
+            //        item.Font = UI_FontUtil.SetMainFont();
+            //    }
+            //}
+
+            var type = GetCurrentChassisType();
+            if (type == ChassisTypes.Laptop || type == ChassisTypes.Notebook)
+            {
+                iBattery.Visible = true;
+            }
+
+            SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
+            
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppMain/FrmMain.cs
             DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
@@ -211,7 +235,7 @@ namespace SYS.FormUI
                 label3.Text = "下午好,";
                 label5.Text = LoginInfo.WorkerName;
             }
-            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+            int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
@@ -341,7 +365,7 @@ namespace SYS.FormUI
                 FrmAdminEnter frm = new FrmAdminEnter();
                 frm.Show();
                 #region 获取添加操作日志所需的信息
-                Operation o = new Operation();
+                OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerNo + LoginInfo.WorkerName + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
                 o.OperationAccount = LoginInfo.WorkerNo;
@@ -448,14 +472,14 @@ namespace SYS.FormUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int n = Convert.ToInt32(WorkerCheckManager.SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+            int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
                 linkLabel1.ForeColor = Color.Green;
                 linkLabel1.LinkColor = Color.Green;
                 pnlCheckInfo.Visible = true;
-                lblCheckDay.Text = Convert.ToString(WorkerCheckManager.SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
+                lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
             }
             else
             {
@@ -472,10 +496,10 @@ namespace SYS.FormUI
                         CheckTime = DateTime.Parse(GetNetDateTime())
 
                     };
-                    int j = WorkerCheckManager.AddCheckInfo(workerCheck);
-                    if (j > 0)
+                    bool j = new WorkerCheckService().AddCheckInfo(workerCheck);
+                    if (j == true)
                     {
-                        lblCheckDay.Text = Convert.ToString(WorkerCheckManager.SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
+                        lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
                         MessageBox.Show("打卡成功！你已累计打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         linkLabel1.Text = "已打卡";
                         linkLabel1.ForeColor = Color.Green;

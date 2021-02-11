@@ -4,6 +4,12 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
+<<<<<<< HEAD:SYS.FormUI/FrmCheckOutForm.cs
+=======
+using System.Collections.Generic;
+using Sunny.UI;
+using SYS.Application;
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckOutForm.cs
 
 namespace SYS.FormUI
 {
@@ -85,6 +91,41 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmCheckOutForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD:SYS.FormUI/FrmCheckOutForm.cs
+=======
+            foreach (Control label in this.Controls)
+            {
+                if (label.GetType().ToString() == "Sunny.UI.UITabControlMenu")
+                {
+                    label.Font = UI_FontUtil.SetChildControlsFont();
+                }
+            }
+            #region 加载客户类型信息
+            List<CustoType> lstSourceGrid = CustoTypeManager.SelectCustoTypesAll();
+            this.cboCustoType.DataSource = lstSourceGrid;
+            this.cboCustoType.DisplayMember = "TypeName";
+            this.cboCustoType.ValueMember = "UserType";
+            this.cboCustoType.SelectedIndex = 0;
+            this.cboCustoType.ReadOnly = true;
+            #endregion
+
+            #region 加载证件类型信息
+            List<PassPortType> passPorts = CustoTypeManager.SelectPassPortTypeAll();
+            this.cboPassportType.DataSource = passPorts;
+            this.cboPassportType.DisplayMember = "PassportName";
+            this.cboPassportType.ValueMember = "PassportId";
+            this.cboPassportType.SelectedIndex = 0;
+            #endregion
+
+            #region 加载性别信息
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+            this.cboCustoSex.DataSource = listSexType;
+            this.cboCustoSex.DisplayMember = "sexName";
+            this.cboCustoSex.ValueMember = "sexId";
+            this.cboCustoSex.SelectedIndex = 0;
+            #endregion
+
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmCheckOutForm.cs
             double sum = 0;
             txtCustoNo.Text = ucRoomList.rm_CustoNo;
             CustoNo.Text = ucRoomList.rm_CustoNo;
@@ -103,27 +144,27 @@ namespace SYS.FormUI
             }
             if (rs == "BD")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 300));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 300));
             }
             if (rs == "BS")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 425));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 425));
             }
             if (rs == "HD")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 625));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 625));
             }
             if (rs == "HS")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 660));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 660));
             }
             if (rs == "QL")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 845));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 845));
             }
             if (rs == "ZT")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 1080));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 1080));
             }
             lblDay.Text = Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()));
             w = new Wti()
@@ -277,9 +318,9 @@ namespace SYS.FormUI
                     }
                     MessageBox.Show("结算成功！", "系统提示");
                     FrmRoomManager.Reload();
-                    
+
                     #region 获取添加操作日志所需的信息
-                    Operation o = new Operation();
+                    OperationLog o = new OperationLog();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                     o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
                     o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
@@ -303,7 +344,7 @@ namespace SYS.FormUI
                         MessageBox.Show("结算成功！", "系统提示");
                         FrmRoomManager.Reload();
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
                         o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;

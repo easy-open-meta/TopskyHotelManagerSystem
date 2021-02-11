@@ -59,10 +59,10 @@ namespace SYS.FormUI
                 MessageBox.Show("添加房间成功！");
                 dgvRoomList.DataSource = RoomService.SelectCanUseRoomAll();
                 #region 获取添加操作日志所需的信息
-                Operation o = new Operation();
+                OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.adminType + AdminInfo.admingroup + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text;
-                o.OperationAccount = AdminInfo.adminType + AdminInfo.admingroup;
+                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text;
+                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                 #endregion
                 OperationManager.InsertOperationLog(o);
             }

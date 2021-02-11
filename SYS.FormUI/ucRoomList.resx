@@ -123,4 +123,19 @@
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+<<<<<<< HEAD:SYS.FormUI/ucRoomList.resx
+=======
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEuSURBVFhH7Za/rgFBGMX3DfZPfeMRuDWNViKCRH9rnYhSaLRKrV68g+fwNJwzjrVksjtCLsV3
+        kl8m8813Zo81u0RfoSRJ2mABToEsZHVK07QWx/HG0+eFvfTI7gJsUVxhZJAQ9uBPdvoZ/qC1ENi7lN1t
+        wGRtTStFMzfRlHN3cU0rxd6i3wJYAAtgAd4SAG/SkaaV4rWK/nxDLZSCd3gX4xFjXXb6G4AfYsCeABh4
+        JvtFKPa5EEKWZU3ZcqHOEN5+D0PZTDfhtgR/BeBXtlyoDR96yujJdhEKrx7CKTih1rn2lcCDygM7ld1t
+        8K+PIXuL/rcEeNLPO2EBLIAFsAB3AdZgroUQ9g+v4h5wIUKAd3f3fwC/7z9YmABuUgk2aMmaC7Wxr9cH
+        Lr6S7dOKojP3Cg3cOGshLAAAAABJRU5ErkJggg==
+</value>
+  </data>
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppUserControls/ucBaseInformation.resx
 </root>

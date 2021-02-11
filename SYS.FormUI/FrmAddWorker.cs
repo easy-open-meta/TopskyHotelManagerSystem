@@ -130,12 +130,12 @@ namespace SYS.FormUI
                 Worker worker = new Worker
                 {
                     WorkerId = WorkerNo.Text.Trim(),
-                    WorkerSex = cboSex.Text,
+                    WorkerSex = cboSex.Text == "女" ? 0 : 1,
                     WorkerTel = WorkerTel.Text,
                     WorkerAddress = txtAddress.Text,
                     WorkerPwd = Pwd.Text,
                     WorkerFace = cboWorkerFace.Text,
-                    WorkerEduction = cboEducation.Text
+                    WorkerEducation = cboEducation.Text
                 };
                 int i = WorkerManager.UpdateWorker(worker);
                 if (i > 0)
@@ -168,8 +168,8 @@ namespace SYS.FormUI
                     {
                         WorkerId = WorkerNo.Text.Trim(),
                         WorkerName = WorkerName.Text.Trim(),
-                        WorkerBirth = dtpBirthday.Value,
-                        WorkerSex = cboSex.Text,
+                        WorkerBirthday = dtpBirthday.Value,
+                        WorkerSex = cboSex.SelectedIndex,
                         WorkerTel = NewTel,
                         WorkerClub = cboClub.Text,
                         WorkerAddress = txtAddress.Text,
@@ -178,7 +178,7 @@ namespace SYS.FormUI
                         WorkerPwd = Pwd.Text,
                         WorkerTime = dtpTime.Value,
                         WorkerFace = cboWorkerFace.Text,
-                        WorkerEduction = cboEducation.Text
+                        WorkerEducation = cboEducation.Text
                     };
                     int n = WorkerManager.AddWorker(worker);
                     #endregion
@@ -199,13 +199,19 @@ namespace SYS.FormUI
                         if (n > 0 && j > 0)
                         {
                             MessageBox.Show("员工信息/履历添加成功！该员工登录密码为：" + Pwd.Text + "，请提醒员工妥善保管！");
-                            FrmTopChange.Reload();
+                            FrmWorkerManager.Reload();
                             #region 获取添加操作日志所需的信息
-                            Operation o = new Operation();
+                            OperationLog o = new OperationLog();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
+<<<<<<< HEAD:SYS.FormUI/FrmAddWorker.cs
                             o.Operationlog = AdminInfo.admingroup + AdminInfo.adminType + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！";
                             o.OperationAccount = AdminInfo.admingroup + AdminInfo.adminType;
                             OperationManager.InsertOperationLog(o);
+=======
+                            o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！";
+                            o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
+                            OperationlogManager.InsertOperationLog(o);
+>>>>>>> InitProject_v1.4.8_happy_new_year:SYS.FormUI/AppFunction/FrmAddWorker.cs
                             #endregion
                         }
                         #endregion

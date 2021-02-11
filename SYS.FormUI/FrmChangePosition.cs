@@ -3,10 +3,11 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmChangePosition : Form
+    public partial class FrmChangePosition : UIForm
     {
         public static string wk_WorkerNo;
         public static string wk_WorkerPosition;
@@ -45,10 +46,10 @@ namespace SYS.FormUI
             {
                 MessageBox.Show("任命已生效!");
                 #region 获取添加操作日志所需的信息
-                Operation o = new Operation();
+                OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.admingroup + AdminInfo.adminType + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升为" + cboNewClub.Text + cboNewPosition.Text;
-                o.OperationAccount = AdminInfo.admingroup + AdminInfo.adminType;
+                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升为" + cboNewClub.Text + cboNewPosition.Text;
+                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                 #endregion
                 OperationManager.InsertOperationLog(o);
             }
