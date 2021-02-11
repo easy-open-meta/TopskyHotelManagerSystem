@@ -5,37 +5,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SYS.Core;
+using SYS.Common;
 
 namespace SYS.Application
 {
-    public class WorkerGoodBadService
+    /// <summary>
+    /// 员工奖惩记录接口实现类
+    /// </summary>
+    public class WorkerGoodBadService:Repository<WorkerGoodBad>, IWorkerGoodBadService
     {
-        public static int AddGoodBad(WorkerGoodBad goodBad)
+        /// <summary>
+        /// 添加员工奖惩记录
+        /// </summary>
+        /// <param name="goodBad"></param>
+        /// <returns></returns>
+        public bool AddGoodBad(WorkerGoodBad goodBad)
         {
-            string sql = "insert into WorkerGoodBad values('" + goodBad.WorkNo + "','" + goodBad.GBInfo + "','" + goodBad.GBType + "','" + goodBad.GBOperation + "','" + goodBad.GBTime + "')";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(goodBad);
         }
 
-
-        public static List<WorkerGoodBad> SelectAllGoodBadByWorkNo(string wn) 
+        /// <summary>
+        /// 根据工号查找所有的奖惩记录信息
+        /// </summary>
+        /// <param name="wn"></param>
+        /// <returns></returns>
+        public List<WorkerGoodBad> SelectAllGoodBadByWorkNo(string wn) 
         {
+            List<GBType> gBTypes = new List<GBType>();
+            gBTypes = base.Change<GBType>().GetList(a => a.delete_mk != 1);
             List<WorkerGoodBad> gb = new List<WorkerGoodBad>();
             string sql = "select * from WorkerGoodBad wgb,GBType gbt where wgb.GBType = gbt.GBType and wgb.WorkNo = '" + wn + "'";
-            MySqlConnection conn = DBHelper.GetConnection();
-            conn.Open();
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
+            gb = base.GetList(a => a.WorkNo == wn);
+            gb.ForEach(source =>
             {
-                WorkerGoodBad goodBad = new WorkerGoodBad();
-                goodBad.WorkNo = dr["WorkNo"].ToString();
-                goodBad.GBInfo = dr["GBInfo"].ToString();
-                goodBad.TypeName = dr["GBName"].ToString();
-                goodBad.GBOperation = dr["GBOperation"].ToString();
-                goodBad.GBTime = (DateTime)dr["GBTime"];
-                gb.Add(goodBad);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+                var gbType = gBTypes.FirstOrDefault(a => a.GBTypeId == source.GBType);
+                source.TypeName = string.IsNullOrEmpty(gbType.GBName) ? "" : gbType.GBName;
+            });
             return gb;
         }
     }

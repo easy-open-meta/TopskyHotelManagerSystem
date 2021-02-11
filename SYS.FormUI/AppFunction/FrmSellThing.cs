@@ -216,7 +216,7 @@ namespace SYS.FormUI
                         LoadSpendInfo(r.RoomNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！";
                         o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;

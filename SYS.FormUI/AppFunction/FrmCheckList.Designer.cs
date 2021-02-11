@@ -1,6 +1,6 @@
 ﻿namespace SYS.FormUI
 {
-    partial class FrmCashList
+    partial class FrmCheckList
     {
         /// <summary>
         /// Required designer variable.

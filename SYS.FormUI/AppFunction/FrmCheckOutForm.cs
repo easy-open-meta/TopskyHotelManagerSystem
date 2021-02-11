@@ -6,6 +6,7 @@ using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -84,7 +85,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseManager().SelectSexTypeAll();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
             this.cboCustoSex.DataSource = listSexType;
             this.cboCustoSex.DisplayMember = "sexName";
             this.cboCustoSex.ValueMember = "sexId";
@@ -108,27 +109,27 @@ namespace SYS.FormUI
             }
             if (rs == "BD")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 300));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 300));
             }
             if (rs == "BS")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 425));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 425));
             }
             if (rs == "HD")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 625));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 625));
             }
             if (rs == "HS")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 660));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 660));
             }
             if (rs == "QL")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 845));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 845));
             }
             if (rs == "ZT")
             {
-                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 1080));
+                sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 1080));
             }
             lblDay.Text = Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()));
             w = new Wti()
@@ -288,9 +289,9 @@ namespace SYS.FormUI
                     }
                     MessageBox.Show("结算成功！", "系统提示");
                     FrmRoomManager.Reload();
-                    
+
                     #region 获取添加操作日志所需的信息
-                    Operation o = new Operation();
+                    OperationLog o = new OperationLog();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                     o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
                     o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
@@ -314,7 +315,7 @@ namespace SYS.FormUI
                         MessageBox.Show("结算成功！", "系统提示");
                         FrmRoomManager.Reload();
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
                         o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;

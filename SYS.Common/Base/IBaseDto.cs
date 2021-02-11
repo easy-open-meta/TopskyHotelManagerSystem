@@ -14,11 +14,16 @@ namespace SYS.Common
         /// <summary>
         /// 状态码
         /// </summary>
-        int StatusCode { get; set; }
+        StatusCode StatusCode { get; set; }
 
         /// <summary>
         /// 回传信息
         /// </summary>
         string StatusMsg { get; set; }
+
+        /// <summary>
+        /// 操作账户
+        /// </summary>
+        string OperationAccount { get; set; }
     }
 }

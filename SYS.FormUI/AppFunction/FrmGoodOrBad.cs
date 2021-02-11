@@ -51,9 +51,9 @@ namespace SYS.FormUI
         private void FrmGoodOrBad_Load(object sender, EventArgs e)
         {
             CmpSetDgv();
-            lblWorkerNo.Text = FrmTopChange.wk_WorkerNo;
-            lblName.Text = FrmTopChange.wk_WorkerName;
-            lblDate.Text = FrmTopChange.wk_WorkerTime.Substring(0,9);
+            lblWorkerNo.Text = FrmWorkerManager.wk_WorkerNo;
+            lblName.Text = FrmWorkerManager.wk_WorkerName;
+            lblDate.Text = FrmWorkerManager.wk_WorkerTime.Substring(0,9);
             DgvGoodBadList.AutoGenerateColumns = false;
             DgvGoodBadList.DataSource = WorkerGoodBadManager.SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
             CboType.SelectedIndex = 0;
@@ -70,17 +70,17 @@ namespace SYS.FormUI
                     goodBad.WorkNo = lblWorkerNo.Text;
                     goodBad.GBType = CboType.SelectedIndex;
                     goodBad.GBInfo = RtbGBInfo.Text;
-                    goodBad.GBOperation = AdminInfo.admingroup;
+                    goodBad.GBOperation = AdminInfo.Account;
                     goodBad.GBTime = DtpDate.Value;
                     int n = WorkerGoodBadManager.AddGoodBad(goodBad);
                     if (n > 0)
                     {
                         MessageBox.Show("新增成功！");
                         #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
+                        OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = AdminInfo.admingroup + AdminInfo.adminType + "于" + DateTime.Now + "对员工：" + lblName.Text + "进行了奖罚情况录入！";
-                        o.OperationAccount = AdminInfo.admingroup + AdminInfo.adminType;
+                        o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "对员工：" + lblName.Text + "进行了奖罚情况录入！";
+                        o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                         #endregion
                         OperationlogManager.InsertOperationLog(o);
                         DgvGoodBadList.DataSource = WorkerGoodBadManager.SelectAllGoodBadByWorkNo(lblWorkerNo.Text);

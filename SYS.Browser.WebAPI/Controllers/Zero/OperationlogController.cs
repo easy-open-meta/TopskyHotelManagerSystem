@@ -16,7 +16,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="opr"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InsertOperationLog([FromBody]Operation opr)
+        public int InsertOperationLog([FromBody]OperationLog opr)
         {
             return OperationlogService.InsertOperationLog(opr);
         }

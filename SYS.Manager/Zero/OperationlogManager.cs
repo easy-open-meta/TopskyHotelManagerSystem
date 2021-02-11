@@ -6,7 +6,7 @@ namespace SYS.Manager
 {
     public class OperationlogManager
     {
-        public static int InsertOperationLog(Operation opr)
+        public static int InsertOperationLog(OperationLog opr)
         {
             return OperationlogService.InsertOperationLog(opr);
         }

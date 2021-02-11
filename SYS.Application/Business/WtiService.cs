@@ -1,37 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class WtiService
+    /// <summary>
+    /// 水电信息接口实现类
+    /// </summary>
+    public class WtiService:Repository<Wti>, IWtiService
     {
-       
         #region 根据房间编号查询水电费信息
         /// <summary>
         /// 根据房间编号查询水电费信息
         /// </summary>
         /// <param name="roomNo"></param>
         /// <returns></returns>
-        public static Wti SelectWtiInfoByRoomNo(string roomNo)
+        public Wti SelectWtiInfoByRoomNo(string roomNo)
         {
-            Wti w = null;
-            string sql = "select * from WTINFO where RoomNo like '%" + roomNo + "%'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                w = new Wti();
-                w.CustoNo = dr["CustoNo"].ToString();
-                w.EndDate = Convert.ToDateTime(dr["EndDate"]);
-                w.PowerUse = (decimal)dr["PowerUse"];
-                w.Record = dr["Record"].ToString();
-                w.RoomNo = dr["RoomNo"].ToString();
-                w.UseDate = Convert.ToDateTime(dr["UseDate"]);
-                w.WaterUse = (decimal)dr["WaterUse"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            Wti w = new Wti();
+            w = base.GetSingle(a => a.RoomNo.Contains(roomNo) && a.delete_mk != 1);
             return w;
         }
         #endregion
@@ -44,25 +33,12 @@ namespace SYS.Application
         /// <param name="usedate"></param>
         /// <param name="enddate"></param>
         /// <returns></returns>
-        public static Wti SelectWtiInfoByRoomNoAndTime(string roomno, string usedate, string enddate)
+        public Wti SelectWtiInfoByRoomNoAndTime(string roomno, string usedate, string enddate)
         {
             Wti w = null;
             string sql = "select * from WTINFO where RoomNo='" + roomno +
                 "' and UseDate='" + usedate + "' and EndDate='" + enddate + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                w = new Wti();
-                w.CustoNo = dr["CustoNo"].ToString();
-                w.EndDate = Convert.ToDateTime(dr["EndDate"]);
-                w.PowerUse = (decimal)dr["PowerUse"];
-                w.Record = dr["Record"].ToString();
-                w.RoomNo = dr["RoomNo"].ToString();
-                w.UseDate = Convert.ToDateTime(dr["UseDate"]);
-                w.WaterUse = (decimal)dr["WaterUse"];
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            w = base.GetSingle(a => a.RoomNo == roomno && a.UseDate >= Convert.ToDateTime(usedate) && a.EndDate >= Convert.ToDateTime(enddate));
             return w;
         }
         #endregion
@@ -72,25 +48,10 @@ namespace SYS.Application
         /// 获取所有水电费信息
         /// </summary>
         /// <returns></returns>
-        public static List<Wti> SelectWtiInfoAll()
+        public List<Wti> SelectWtiInfoAll()
         {
             List<Wti> wti = new List<Wti>();
-            string sql = "select * from WTINFO";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-                Wti w = new Wti();
-                w.CustoNo = dr["CustoNo"].ToString();
-                w.EndDate = Convert.ToDateTime(dr["EndDate"]);
-                w.PowerUse = (decimal)dr["PowerUse"];
-                w.Record = dr["Record"].ToString();
-                w.RoomNo = dr["RoomNo"].ToString();
-                w.UseDate = Convert.ToDateTime(dr["UseDate"]);
-                w.WaterUse = (decimal)dr["WaterUse"];
-                wti.Add(w);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            wti = base.GetList(a => a.delete_mk != 1);
             return wti;
         }
         #endregion
@@ -101,14 +62,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="w"></param>
         /// <returns></returns>
-        public static int InsertWtiInfo(Wti w)
+        public bool InsertWtiInfo(Wti w)
         {
-            string sql = "insert WTINFO (RoomNo,UseDate,EndDate,";
-            sql += "WaterUse,PowerUse,Record,CustoNo) values ";
-            sql += "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
-            sql = string.Format(sql, w.RoomNo, w.UseDate, w.EndDate,
-                w.WaterUse, w.PowerUse, w.Record, w.CustoNo);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(w);
         }
         #endregion
 
@@ -118,13 +74,18 @@ namespace SYS.Application
         /// </summary>
         /// <param name="w"></param>
         /// <returns></returns>
-        public static int UpdateWtiInfo(Wti w)
+        public bool UpdateWtiInfo(Wti w)
         {
-            string sql = " update WTINFO set UseDate='{1}',EndDate='{2}',";
-            sql += "WaterUse ='{3}',PowerUse='{4}',Record='{5}',CustoNo='{6}'where RoomNo = '{0}'";
-            sql = string.Format(sql, w.RoomNo, w.UseDate, w.EndDate,
-                w.WaterUse, w.PowerUse, w.Record, w.CustoNo);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Wti()
+            {
+                UseDate = w.UseDate,
+                EndDate = w.EndDate,
+                WaterUse = w.WaterUse,
+                PowerUse = w.PowerUse,
+                Record = w.Record,
+                CustoNo = w.CustoNo
+            },a => a.RoomNo == w.RoomNo);
+
         }
         #endregion
 
@@ -134,12 +95,15 @@ namespace SYS.Application
         /// </summary>
         /// <param name="w"></param>
         /// <returns></returns>
-        public static int UpdateWtiInfoByRoomNoAndDateTime(Wti w)
+        public bool UpdateWtiInfoByRoomNoAndDateTime(Wti w)
         {
-            string sql = "update WTINFO set WaterUse='{0}',PowerUse='{1}' where ";
-            sql += " RoomNo='{2}' and UseDate='{3}' and EndDate='{4}'";
-            sql = string.Format(sql, w.WaterUse, w.PowerUse, w.RoomNo, w.UseDate, w.EndDate);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Wti()
+            {
+                WaterUse = w.WaterUse,
+                PowerUse = w.PowerUse,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now,
+            },a => a.RoomNo == w.RoomNo && a.UseDate >= w.UseDate && a.EndDate >= w.EndDate);
         }
         #endregion
 
@@ -149,10 +113,14 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public static int DeleteWtiInfo(string roomno)
+        public bool DeleteWtiInfo(string roomno)
         {
-            string sql = "delete from WtiInfo where RoomNo='" + roomno + "'";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Wti()
+            {
+                delete_mk = 1,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            }, a => a.WtiNo == roomno);
         }
         #endregion
 
@@ -164,11 +132,16 @@ namespace SYS.Application
         /// <param name="usedate"></param>
         /// <param name="enddate"></param>
         /// <returns></returns>
-        public static int DeleteWtiInfoByRoomNoAndDateTime(string roomno, string usedate, string enddate)
+        public bool DeleteWtiInfoByRoomNoAndDateTime(string roomno, string usedate, string enddate)
         {
-            string sql = " delete from WTINFO where RoomNo='{0}' and UseDate='{1}' and EndDate='{2}'";
+            string sql = "delete from WTINFO where RoomNo='{0}' and UseDate='{1}' and EndDate='{2}'";
             sql = string.Format(sql, roomno, usedate, enddate);
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Update(a => new Wti()
+            {
+                delete_mk = 1,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.RoomNo == roomno && a.UseDate >= Convert.ToDateTime(usedate) && a.EndDate >= Convert.ToDateTime(enddate));
         }
         #endregion
     }

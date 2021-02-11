@@ -31,21 +31,21 @@ namespace SYS.Application
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        int AddSexType(SexType sexType);
+        bool AddSexType(SexType sexType);
 
         /// <summary>
         /// 删除性别类型
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        int DelSexType(SexType sexType);
+        bool DelSexType(SexType sexType);
 
         /// <summary>
         /// 更新性别类型
         /// </summary>
         /// <param name="sexType"></param>
         /// <returns></returns>
-        int UpdSexType(SexType sexType);
+        bool UpdSexType(SexType sexType);
 
         #endregion
 
@@ -68,21 +68,21 @@ namespace SYS.Application
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        int AddPosition(Position position);
+        bool AddPosition(Position position);
 
         /// <summary>
         /// 删除职位类型
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        int DelPosition(Position position);
+        bool DelPosition(Position position);
 
         /// <summary>
         /// 更新职位类型
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        int UpdPosition(Position position);
+        bool UpdPosition(Position position);
 
         #endregion
 
@@ -105,21 +105,21 @@ namespace SYS.Application
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        int AddNation(Nation nation);
+        bool AddNation(Nation nation);
 
         /// <summary>
         /// 删除民族类型
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        int DelNation(Nation nation);
+        bool DelNation(Nation nation);
 
         /// <summary>
         /// 更新民族类型
         /// </summary>
         /// <param name="nation"></param>
         /// <returns></returns>
-        int UpdNation(Nation nation);
+        bool UpdNation(Nation nation);
 
         #endregion
 
@@ -142,21 +142,21 @@ namespace SYS.Application
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        int AddEducation(Education education);
+        bool AddEducation(Education education);
 
         /// <summary>
         /// 删除学历类型
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        int DelEducation(Education education);
+        bool DelEducation(Education education);
 
         /// <summary>
         /// 更新学历类型
         /// </summary>
         /// <param name="education"></param>
         /// <returns></returns>
-        int UpdEducation(Education education);
+        bool UpdEducation(Education education);
 
         #endregion
 
@@ -179,21 +179,21 @@ namespace SYS.Application
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        int AddDept(Dept dept);
+        bool AddDept(Dept dept);
 
         /// <summary>
         /// 删除部门类型
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        int DelDept(Dept dept);
+        bool DelDept(Dept dept);
 
         /// <summary>
         /// 更新部门类型
         /// </summary>
         /// <param name="dept"></param>
         /// <returns></returns>
-        int UpdDept(Dept dept);
+        bool UpdDept(Dept dept);
 
         #endregion
     }

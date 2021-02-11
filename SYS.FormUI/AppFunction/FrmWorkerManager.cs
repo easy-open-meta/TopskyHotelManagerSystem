@@ -6,7 +6,7 @@ using SYS.Manager;
 
 namespace SYS.FormUI
 {
-    public partial class FrmTopChange : Form
+    public partial class FrmWorkerManager : Form
     {
         public static string wk_WorkerNo;
         public static string wk_WorkerName;
@@ -28,7 +28,7 @@ namespace SYS.FormUI
         //定义委托类型的变量
         public static ReLoadWorkerList Reload;
 
-        public FrmTopChange()
+        public FrmWorkerManager()
         {
             InitializeComponent();
             Reload = LoadWorker;
@@ -71,7 +71,7 @@ namespace SYS.FormUI
             CmpSetDgv();
             dgvWorkerList.AutoGenerateColumns = false;
             dgvWorkerList.DataSource = WorkerManager.SelectWorkerAll();
-            if (AdminInfo.adminType != "总经理")
+            if (AdminInfo.Type != "总经理")
             {
                 btnAddWorker.Enabled = false;
                 btnAddWorker.Text = "权限不足";

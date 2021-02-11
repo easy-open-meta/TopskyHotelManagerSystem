@@ -1,40 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.Application
 {
-    public class CashService
+    /// <summary>
+    /// 资产信息接口实现类
+    /// </summary>
+    public class CashService:Repository<Cash>, ICashService
     {
-
-        public static object AddCashInfo(Cash cash)
+        /// <summary>
+        /// 添加资产信息
+        /// </summary>
+        /// <param name="cash"></param>
+        /// <returns></returns>
+        public bool AddCashInfo(Cash cash)
         {
-            string sql = "insert into cashinfo values('" + cash.CashNo + "','" + cash.CashName + "','" + cash.CashPrice + "','" + cash.CashClub + "','" + cash.CashTime + "','" + cash.CashSource + "','" + cash.CashPerson + "')";
-            return DBHelper.ExecuteNonQuery(sql);
+            return base.Insert(cash);
         }
 
-        public static List<Cash> SelectCashInfoAll()
+        /// <summary>
+        /// 查询资产信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Cash> SelectCashInfoAll()
         {
-
             List<Cash> cs = new List<Cash>();
-            string sql = "select * from CASHINFO";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-            {
-
-                Cash c = new Cash();
-                c.CashNo = (string)dr["CashNo"];
-                c.CashName = dr["CashName"].ToString();
-                c.CashPrice = (string)dr["CashPrice"];
-                c.CashClub = Convert.ToString(dr["CashClub"]);
-                c.CashTime = DateTime.Parse(dr["CashTime"].ToString());
-                c.CashSource = dr["CashSource"].ToString();
-                c.CashPerson = dr["CashPerson"].ToString();
-                cs.Add(c);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+            cs = base.GetList();
             return cs;
         }
     }

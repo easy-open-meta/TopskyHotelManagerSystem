@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
+using SYS.Application;
+using System.Transactions;
 
 namespace SYS.FormUI
 {
@@ -19,15 +21,14 @@ namespace SYS.FormUI
         {
 
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
-            Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);
-            RoomType t = RoomTypeManager.SelectRoomTypeByRoomNo(txtRoomNo.Text);
+            Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
+            RoomType t = new RoomTypeService().SelectRoomTypeByRoomNo(txtRoomNo.Text);
             txtType.Text = t.RoomName;
             txtMoney.Text = r.RoomMoney.ToString();
             txtRoomPosition.Text = r.RoomPosition;
             txtState.Text = r.RoomState;
-            txtState.Text = RoomManager.SelectRoomStateNameByRoomNo(txtRoomNo.Text).ToString();
-            List<Custo> ctos = CustoManager.SelectCanUseCustoAll();
-            List<Room> roms = RoomManager.SelectCanUseRoomAll();
+            List<Custo> ctos = new CustoService().SelectCustoAll();
+            List<Room> roms = new RoomService().SelectCanUseRoomAll();
             for (int i = 0; i < roms.Count; i++)
             {
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
@@ -48,29 +49,7 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 房间编号输入框的值发生改变时的事件方法
-        private void txtRoomNo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);
-                RoomType t = RoomTypeManager.SelectRoomTypeByRoomNo(txtRoomNo.Text);
-                txtType.Text = t.RoomName;
-                txtMoney.Text = r.RoomMoney.ToString();
-                txtRoomPosition.Text = r.RoomPosition;
-                txtState.Text = r.RoomState;
-                txtState.Text = RoomManager.SelectRoomStateNameByRoomNo(txtRoomNo.Text).ToString();
-            }
-            catch
-            {
-                txtType.Text = "";
-                txtMoney.Text = "";
-                txtRoomPosition.Text = "";
-                txtState.Text = "";
-                txtState.Text = "";
-            }
-        }
-        #endregion
+        
 
         #region 关闭窗口
         private void btnClose_Click(object sender, EventArgs e)
@@ -101,32 +80,42 @@ namespace SYS.FormUI
         {
             if (CheckInupt())
             {
-                if (CustoManager.SelectCustoByCustoNo(txtCustoNo.Text) != null)
+                if (new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text) != null)
                 {
-                    Room r = new Room();
-                    r.CheckTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    r.CustoNo = txtCustoNo.Text;
-                    r.RoomStateId = 1;
-                    r.RoomNo = txtRoomNo.Text;
-
-                    int n = RoomManager.UpdateRoomInfo(r);
-                    if (n > 0)
+                    using (TransactionScope scope = new TransactionScope())
                     {
-                        MessageBox.Show("登记入住成功！", "登记提示");
-                        txtCustoNo.Text = "";
-                        FrmRoomManager.Reload();
-                        this.Close();
-                        #region 获取添加操作日志所需的信息
-                        Operation o = new Operation();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！";
-                        o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
-                        #endregion
-                        OperationlogManager.InsertOperationLog(o);
-                    }
-                    else
-                    {
-                        MessageBox.Show("登记入住失败！", "登记提示");
+                        Room r = new Room() 
+                        {
+                            CheckTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                            CustoNo = txtCustoNo.Text,
+                            RoomStateId = 1,
+                            RoomNo = txtRoomNo.Text,
+                            datachg_usr = LoginInfo.WorkerNo,
+                            datachg_date = DateTime.Now,
+                        };
+                        
+                        bool n = new RoomService().UpdateRoomInfo(r);
+                        if (n == true)
+                        {
+                            MessageBox.Show("登记入住成功！", "登记提示");
+                            txtCustoNo.Text = "";
+                            FrmRoomManager.Reload();
+                            #region 获取添加操作日志所需的信息
+                            OperationLog o = new OperationLog();
+                            o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
+                            o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！";
+                            o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
+                            o.datains_usr = LoginInfo.WorkerNo;
+                            o.datains_date = DateTime.Now;
+                            #endregion
+                            new OperationlogService().InsertOperationLog(o);
+                            scope.Complete();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("登记入住失败！", "登记提示");
+                        }
                     }
                 }
                 else
@@ -148,10 +137,10 @@ namespace SYS.FormUI
         {
             try
             {
-                Custo c = CustoManager.SelectCustoByCustoNo(txtCustoNo.Text);
+                Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
                 txtCustoName.Text = c.CustoName;
                 txtCustoTel.Text = c.CustoTel;
-                txtCustoType.Text = CustoTypeManager.SelectTypeNameByCustoTypeId(c.CustoType);
+                txtCustoType.Text = c.typeName;
             }
             catch
             {

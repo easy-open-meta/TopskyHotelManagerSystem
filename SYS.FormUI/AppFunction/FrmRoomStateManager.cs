@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -16,11 +17,10 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmRoomStateManager_Load(object sender, EventArgs e)
         {
-            txtRoomNo.Text = RoomStatic.RoomNo;
-            cboState.DataSource = RoomManager.SelectRoomStateAll();
+            txtRoomNo.Text = ucRoomList.rm_RoomNo;
+            cboState.DataSource = new RoomService().SelectRoomStateAll();
             cboState.DisplayMember = "RoomState";
             cboState.ValueMember = "RoomStateId";
-            cboState.SelectedIndex = RoomStatic.RoomStateId;
         }
         #endregion
 

@@ -6,15 +6,15 @@ namespace SYS.Manager
 {
     public class CashManager
     {
-        public static List<Cash> SelectCashInfoAll()
+        public List<Cash> SelectCashInfoAll()
         {
 
-            return CashService.SelectCashInfoAll();
+            return new CashService().SelectCashInfoAll();
         }
 
         public static object AddCashInfo(Cash cash)
         {
-            return CashService.AddCashInfo(cash);
+            return new CashService().AddCashInfo(cash);
         }
     }
 }

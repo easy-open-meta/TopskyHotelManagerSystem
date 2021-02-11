@@ -167,8 +167,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeState;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeRoom;
         private System.Windows.Forms.ToolStripMenuItem tsmiReserRoom;
-        private System.Windows.Forms.Label lblCustoNo;
-        private System.Windows.Forms.Label lblRoomType;
-        private System.Windows.Forms.Label lblRoomNo;
+        public System.Windows.Forms.Label lblCustoNo;
+        public System.Windows.Forms.Label lblRoomType;
+        public System.Windows.Forms.Label lblRoomNo;
     }
 }

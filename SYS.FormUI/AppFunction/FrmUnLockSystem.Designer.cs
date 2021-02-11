@@ -41,7 +41,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(54, 52);
+            this.label1.Location = new System.Drawing.Point(54, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 24);
             this.label1.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.btnUnLock.Style = Sunny.UI.UIStyle.Red;
             this.btnUnLock.TabIndex = 113;
             this.btnUnLock.Text = "解      锁";
-            this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click_1);
+            this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
             // 
             // FrmUnLockSystem
             // 
@@ -98,8 +98,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmUnLockSystem";
+            this.Padding = new System.Windows.Forms.Padding(0);
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.Style = Sunny.UI.UIStyle.Red;
+            this.ShowInTaskbar = false;
+            this.ShowTitle = false;
+            this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "系统已锁定！";
             this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.Deactivate += new System.EventHandler(this.FrmUnLockSystem_Deactivate);

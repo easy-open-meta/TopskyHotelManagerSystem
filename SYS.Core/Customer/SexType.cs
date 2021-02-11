@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SYS.Core
 {
+    /// <summary>
+    /// 性别
+    /// </summary>
     public class SexType
     {
         /// <summary>
@@ -22,5 +25,21 @@ namespace SYS.Core
         /// 删除标记
         /// </summary>
         public int delete_mk { get; set; }
+        /// <summary>
+        /// 资料创建人
+        /// </summary>
+        public string datains_usr { get; set; }
+        /// <summary>
+        /// 资料创建时间
+        /// </summary>
+        public DateTime datains_date { get; set; }
+        /// <summary>
+        /// 资料更新人
+        /// </summary>
+        public string datachg_usr { get; set; }
+        /// <summary>
+        /// 资料更新时间
+        /// </summary>
+        public DateTime datachg_date { get; set; }
     }
 }

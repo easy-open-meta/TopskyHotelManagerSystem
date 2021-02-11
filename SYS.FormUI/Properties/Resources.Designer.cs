@@ -83,6 +83,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _lock {
+            get {
+                object obj = ResourceManager.GetObject("lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_b {
             get {
                 object obj = ResourceManager.GetObject("arrow-down-b", resourceCulture);
@@ -283,6 +293,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap settings2 {
+            get {
+                object obj = ResourceManager.GetObject("settings2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 人事部界面 {
             get {
                 object obj = ResourceManager.GetObject("人事部界面", resourceCulture);
@@ -336,6 +356,16 @@ namespace SYS.FormUI.Properties {
         internal static System.Drawing.Bitmap 咖啡 {
             get {
                 object obj = ResourceManager.GetObject("咖啡", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 增加_添加_加减__1_ {
+            get {
+                object obj = ResourceManager.GetObject("增加 添加 加减 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +516,26 @@ namespace SYS.FormUI.Properties {
         internal static System.Drawing.Bitmap 添_加a {
             get {
                 object obj = ResourceManager.GetObject("添 加a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 添加__增加___加 {
+            get {
+                object obj = ResourceManager.GetObject("添加  增加   加", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 組織圖塊 {
+            get {
+                object obj = ResourceManager.GetObject("組織圖塊", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -7,6 +7,7 @@ using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -109,10 +110,10 @@ namespace SYS.FormUI
         #region 判断版本号
         private void CheckUpdate()
         {
-            string newversion = CheckInfoManager.CheckBaseVersion();
+            var newversion = new ApplicationVersionUtil().CheckBaseVersion();
 
             string version = System.Windows.Forms.Application.ProductVersion.ToString();
-            if (version != newversion)
+            if (newversion.base_version != version)
             {
                 UIMessageDialog.ShowErrorDialog(this, "系统提醒", "旧版已停止使用，请到github或gitee仓库更新最新发行版！");
                 System.Windows.Forms.Application.Exit();
@@ -169,10 +170,10 @@ namespace SYS.FormUI
                 {
                     string id = txtWorkerId.Text;//获取员工编号
                     string pwd = txtWorkerPwd.Text;//获取员工密码
-                    Worker w = WorkerManager.SelectWorkerInfoByWorkerId(id);
+                    Worker w = new WorkerService().SelectWorkerInfoByWorkerId(id);
                     if (w != null)//判断员工编号是否存在
                     {
-                        w = WorkerManager.SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
+                        w = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
                         if (w != null) //判断员工密码是否正确
                         {
                             LoginInfo.WorkerNo = w.WorkerId;
@@ -184,12 +185,14 @@ namespace SYS.FormUI
                             this.Hide();//隐藏登录窗体
                             frm.Show();//打开主窗体
                             #region 获取添加操作日志所需的信息
-                            Operation o = new Operation();
+                            OperationLog o = new OperationLog();
                             o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                             o.Operationlog = txtWorkerId.Text + "于" + DateTime.Now + "登入了系统！";
                             o.OperationAccount = txtWorkerId.Text;
+                            o.datains_usr = LoginInfo.WorkerNo;
+                            o.datains_date = DateTime.Now;
                             #endregion
-                            OperationlogManager.InsertOperationLog(o);
+                            new OperationlogService().InsertOperationLog(o);
                         }
                         else
                         {
@@ -204,8 +207,9 @@ namespace SYS.FormUI
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex);
                 MessageBox.Show("请连接好数据库！", "温馨提示");
             }
         }

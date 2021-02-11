@@ -13,7 +13,7 @@ namespace SYS.Core
     {
         /// <summary>
         /// 部门编号
-        /// </summary>
+        /// </summary>  
         public string dept_no { get; set; }
         /// <summary>
         /// 部门名称

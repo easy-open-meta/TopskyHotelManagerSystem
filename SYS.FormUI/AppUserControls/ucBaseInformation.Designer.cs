@@ -38,13 +38,19 @@ namespace SYS.FormUI
             // 
             this.btnOperation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOperation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOperation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(29)))), ((int)(((byte)(35)))));
+            this.btnOperation.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnOperation.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOperation.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOperation.Location = new System.Drawing.Point(34, 4);
             this.btnOperation.Margin = new System.Windows.Forms.Padding(0);
             this.btnOperation.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnOperation.Name = "btnOperation";
             this.btnOperation.Radius = 20;
+            this.btnOperation.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnOperation.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnOperation.Size = new System.Drawing.Size(44, 26);
+            this.btnOperation.Style = Sunny.UI.UIStyle.Custom;
             this.btnOperation.StyleCustomMode = true;
             this.btnOperation.TabIndex = 15;
             this.btnOperation.Text = "删除";
@@ -69,10 +75,12 @@ namespace SYS.FormUI
             this.lbName.Padding = new System.Windows.Forms.Padding(5);
             this.lbName.Radius = 20;
             this.lbName.ReadOnly = true;
+            this.lbName.RectDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.lbName.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.lbName.Size = new System.Drawing.Size(74, 29);
             this.lbName.Style = Sunny.UI.UIStyle.Custom;
             this.lbName.TabIndex = 17;
+            this.lbName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbName.MouseLeave += new System.EventHandler(this.lbName_MouseLeave);
             this.lbName.MouseHover += new System.EventHandler(this.lbName_MouseHover);
             this.lbName.Validated += new System.EventHandler(this.lbName_Validated);

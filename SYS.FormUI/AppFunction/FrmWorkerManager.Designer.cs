@@ -1,6 +1,6 @@
 ﻿namespace SYS.FormUI
 {
-    partial class FrmTopChange
+    partial class FrmWorkerManager
     {
         /// <summary>
         /// Required designer variable.
