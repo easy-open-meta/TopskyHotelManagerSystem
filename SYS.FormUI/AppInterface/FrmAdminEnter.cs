@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using System.Text.RegularExpressions;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -23,7 +23,7 @@ namespace SYS.FormUI
                 UIMessageDialog.ShowErrorDialog(this, "错误提示", "账号或密码包含除字母数字外的字符，请检查！", UIStyle.Red);
                 return;
             }
-            Admin a = AdminManager.SelectMangerByPass(account,pass);
+            Admin a = new AdminService().SelectMangerByPass(account,pass);
             if (a != null)//判断超管是否存在
             {
                 AdminInfo.Type = a.AdminType;

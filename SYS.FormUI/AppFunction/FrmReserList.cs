@@ -1,7 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using System.Transactions;
@@ -24,10 +23,10 @@ namespace SYS.FormUI
         {
             //cbCustoType.SelectedIndex = 0;
             dgvReserList.AutoGenerateColumns = false;
-            dgvReserList.DataSource = ReserManager.SelectReserAll();
+            dgvReserList.DataSource = new ReserService().SelectReserAll();
 
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = CustoTypeManager.SelectCustoTypesAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -36,7 +35,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = CustoTypeManager.SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -73,7 +72,7 @@ namespace SYS.FormUI
                     CustoBirth = dtpBirthday.Value,
                     CustoType = cbCustoType.SelectedIndex
                 };
-                CustoManager.InsertCustomerInfo(custo);
+                new CustoService().InsertCustomerInfo(custo);
 
                 Room r = new Room() 
                 {
@@ -83,19 +82,19 @@ namespace SYS.FormUI
                     RoomNo = dgvReserList.SelectedRows[0].Cells["clRoomNo"].Value.ToString()
                 };
                 
-                RoomManager.UpdateRoomInfo(r);
-                ReserManager.DeleteReserInfo(dgvReserList.SelectedRows[0].Cells["clReserNo"].Value.ToString());
+                new RoomService().UpdateRoomInfo(r);
+                new ReserService().DeleteReserInfo(dgvReserList.SelectedRows[0].Cells["clReserNo"].Value.ToString());
                 scope.Complete();
             }
             MessageBox.Show("操作成功");
             dgvReserList.AutoGenerateColumns = false;
-            dgvReserList.DataSource = ReserManager.SelectReserAll();
+            dgvReserList.DataSource = new ReserService().SelectReserAll();
 
         }
 
         private void dgvReserList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string custoNo = CustoManager.GetRandomCustoNo();
+            string custoNo = new CounterHelper().GetNewId("ReserId");
             txtCustoNo.Text = custoNo;
             txtCustoName.Text = dgvReserList.SelectedRows[0].Cells["clCustoNm"].Value.ToString();
             txtTel.Text = dgvReserList.SelectedRows[0].Cells["clTel"].Value.ToString();
@@ -133,7 +132,7 @@ namespace SYS.FormUI
             string sex = "";
             if (identityCard.Length == 18)
             {
-                var result = IDCardUtil.SelectCardCode(identityCard);
+                var result = new IDCardUtil().SelectCardCode(identityCard);
                 var address = result.Replace(",","").ToString();
                 birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
                 sex = identityCard.Substring(14, 3);

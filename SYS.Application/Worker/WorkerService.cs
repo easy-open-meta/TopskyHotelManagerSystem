@@ -80,7 +80,7 @@ namespace SYS.Application
                 source.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
                 //教育程度
                 var eduction = educations.FirstOrDefault(a => a.education_no == source.WorkerEducation);
-                source.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+                source.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
                 //民族类型
                 var nation = nations.FirstOrDefault(a => a.nation_no == source.WorkerNation);
                 source.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
@@ -111,7 +111,7 @@ namespace SYS.Application
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
             //教育程度
             var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
-            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            w.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
             //民族类型
             var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
             w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
@@ -143,7 +143,7 @@ namespace SYS.Application
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
             //教育程度
             var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
-            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            w.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
             //民族类型
             var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
             w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;

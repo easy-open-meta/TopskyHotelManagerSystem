@@ -25,6 +25,14 @@ namespace SYS.Application
         /// <returns></returns>
         List<Spend> SelectSpendByCustoNo(string No);
         #endregion
+        #region 根据房间编号查询消费信息
+        /// <summary>
+        /// 根据房间编号查询消费信息
+        /// </summary>
+        /// <param name="No"></param>
+        /// <returns></returns>
+        List<Spend> SelectSpendByRoomNo(string No);
+        #endregion
 
         #region 查询消费的所有信息
         /// <summary>
@@ -66,11 +74,11 @@ namespace SYS.Application
         /// <summary>
         /// 将转房前的未结算记录一同转移到新房间
         /// </summary>
-        /// <param name="oldRoom"></param>
+        /// <param name="spends"></param>
         /// <param name="newRoom"></param>
         /// <param name="custoNo"></param>
         /// <returns></returns>
-        bool UpdateSpendInfoByRoomNo(string oldRoom, string newRoom, string custoNo);
+        bool UpdateSpendInfoByRoomNo(List<Spend> spends, string newRoom, string custoNo);
         #endregion
 
     }

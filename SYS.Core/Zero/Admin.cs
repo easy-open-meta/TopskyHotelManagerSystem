@@ -4,21 +4,9 @@ namespace SYS.Core
     /// <summary>
     /// 管理员实体类
     /// </summary>
+    [SqlSugar.SugarTable("admininfo")]
     public class Admin
     {
-<<<<<<< HEAD
-        public string AdminPassword { get; set; }
-        public string AdminType { get; set; }
-        public string AdminGroup { get; set; }
-=======
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        public Admin()
-        {
-        }
-
-        private string _AdminAccount;
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -55,10 +43,6 @@ namespace SYS.Core
         /// 是否为超级管理员
         /// </summary>
         public System.Int32 IsAdmin { get { return this._IsAdmin; } set { this._IsAdmin = value; } }
-<<<<<<< HEAD
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
 
         private System.Int32 _DeleteMk;
         /// <summary>

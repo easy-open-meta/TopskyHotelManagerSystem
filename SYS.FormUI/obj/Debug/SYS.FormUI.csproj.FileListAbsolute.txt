@@ -201,37 +201,24 @@ D:\Gitee\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.
 D:\Gitee\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.application
 D:\Gitee\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 D:\Gitee\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
-<<<<<<< HEAD
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\CircleProgramBar.cs
-=======
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resources\Mono.ttf
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resources\Mono-l.ttf
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resource.resx
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resource.Designer.cs
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Util\IDCardUtil.cs
-<<<<<<< HEAD
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.manifest
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.application
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.xml
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.pdb
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.xml
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.dll.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\EntityFramework.xml
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csprojAssemblyReference.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.ResolveComReference.cache
-<<<<<<< HEAD
-<<<<<<< HEAD
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmAdminMain.resources
-=======
-=======
->>>>>>> master
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmBackgroundSystem.resources
->>>>>>> InitProject_v1.4.8_happy_new_year
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmChart.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmExtendOption.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmAboutUs.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmAddRoom.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmAddWorker.resources
@@ -249,21 +236,10 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.Fo
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmInputs.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmOperation.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmReserList.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmRestoreDatabase.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmRoomStateManager.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmSelectCustoInfo.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmSellThing.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmSellThingManager.resources
-<<<<<<< HEAD
-<<<<<<< HEAD
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmStart.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmTest.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmTopChange.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmUpLoad.resources
-=======
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmCustomerManager.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmLogin.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmMain.resources
@@ -274,22 +250,14 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.Fo
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.Properties.Resources.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucHistory.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucRoomList.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.WebSite.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.WtiInfo.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.GenerateResource.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CoreCompileInputs.cache
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.Fody.CopyLocal.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.manifest
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.application
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CopyComplete
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
-<<<<<<< HEAD
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.Fody.CopyLocal.cache
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resource.resx
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resource.Designer.cs
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.xml
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\Resources\GFont.otf
-=======
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmDepartment.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmEducation.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmPosition.resources
@@ -313,7 +281,5 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUse
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\OrgCharGenerator.cs
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Common.dll.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.dll.config
-<<<<<<< HEAD
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.AppFunction.FrmRoomMap.resources
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmWtiInfo.resources

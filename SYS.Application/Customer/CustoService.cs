@@ -34,7 +34,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<CustoSpend> SelectAllMoney()
         {
-            List<CustoSpend> custos = new List<CustoSpend>();
+            List<CustoSpend> custoSpends = new List<CustoSpend>();
             string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
@@ -42,11 +42,11 @@ namespace SYS.Application
                 CustoSpend cso = new CustoSpend();
                 cso.Years = dr["年份"].ToString();
                 cso.Money = (decimal)dr["总额"];
-                custos.Add(cso);
+                custoSpends.Add(cso);
             }
             dr.Close();
             DBHelper.Closecon();
-            return custos;
+            return custoSpends;
         }
 
         /// <summary>
@@ -66,19 +66,8 @@ namespace SYS.Application
             custoTypes = base.Change<CustoType>().GetList();
             //查询出所有客户信息
             List<Custo> custos = new List<Custo>();
-<<<<<<< HEAD
-<<<<<<< HEAD
-            string sql = "select * from USERINFO u,USERTYPE t,PASSPORTTYPE p,sextype s where u.CustoType=t.UserType and u.PassportType=p.PassportId and s.sexId = u.CustoSex";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            while (dr.Read())
-=======
             custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
             custos.ForEach(source =>
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
-            custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
-            custos.ForEach(source =>
->>>>>>> master
             {
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
@@ -93,13 +82,6 @@ namespace SYS.Application
             return custos;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        #region 根据客户编号查询客户信息
-=======
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
         /// <summary>
         /// 根据客户编号查询客户信息
         /// </summary>
@@ -108,7 +90,7 @@ namespace SYS.Application
         public Custo SelectCardInfoByCustoNo(string CustoNo)
         {
             Custo c = new Custo();
-            c = base.GetSingle(a => a.CustoNo.Equals(CustoNo) && a.delete_mk != 1);
+            c = base.GetSingle(a => a.CustoNo == CustoNo && a.delete_mk != 1);
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == c.CustoSex);
             c.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;

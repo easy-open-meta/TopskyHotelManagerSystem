@@ -2,16 +2,23 @@
 
 namespace SYS.Core
 {
+    /// <summary>
+    /// 房间实体类
+    /// </summary>
     public class Room
     {
+        /// <summary>
+        /// 房间编号
+        /// </summary>
         public string RoomNo { get; set; }
+        /// <summary>
+        /// 房间类型
+        /// </summary>
         public int RoomType { get; set; }
+        /// <summary>
+        /// 客户编号
+        /// </summary>
         public string CustoNo { get; set; }
-<<<<<<< HEAD
-        public DateTime CheckTime { get; set; }
-        public DateTime CheckOutTime { get; set; }
-        public int RoomStateId { get; set; }
-=======
         /// <summary>
         /// 最后一次入住时间
         /// </summary>
@@ -28,24 +35,19 @@ namespace SYS.Core
         /// 房间状态
         /// </summary>
         [SqlSugar.SugarColumn(IsIgnore = true)]
-<<<<<<< HEAD
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
         public string RoomState { get; set; }
+        /// <summary>
+        /// 房间单价
+        /// </summary>
         public decimal RoomMoney { get; set; }
-        public string PersonNum { get; set; }
+        /// <summary>
+        /// 房间位置
+        /// </summary>
         public string RoomPosition { get; set; }
-<<<<<<< HEAD
-=======
         /// <summary>
         /// 客户类型名称
         /// </summary>
         [SqlSugar.SugarColumn(IsIgnore = true)]
-<<<<<<< HEAD
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
->>>>>>> master
         public string typeName { get; set; }
         /// <summary>
         /// 房间名称

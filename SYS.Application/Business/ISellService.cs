@@ -45,6 +45,13 @@ namespace SYS.Application
         bool DeleteSellThing(string roomNo, string time);
 
         /// <summary>
+        /// 根据商品编号删除商品信息
+        /// </summary>
+        /// <param name="sellNo"></param>
+        /// <returns></returns>
+        bool DeleteSellThingBySellNo(string sellNo);
+
+        /// <summary>
         /// 根据商品名称和价格查询商品编号
         /// </summary>
         /// <param name="name"></param>

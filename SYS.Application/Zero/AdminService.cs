@@ -17,37 +17,11 @@ namespace SYS.Application
         /// <param name="adminaccount"></param>
         /// <param name="adminpass"></param>
         /// <returns></returns>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        public static Admin SelectMangerByPass(string adminpass)
-        {
-            Admin a = null;
-            string sql = "select * from ADMININFO where AdminPassword='" + adminpass + "'";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            if (dr.Read())
-            {
-                a = new Admin();
-                a.AdminPassword = (string)dr["AdminPassword"];
-                a.AdminType = dr["AdminType"].ToString();
-                a.AdminGroup = dr["AdminName"].ToString();
-            }
-            dr.Close();
-            DBHelper.Closecon();
-            return a;
-=======
         public Admin SelectMangerByPass(string adminaccount,string adminpass)
         {
             Admin admin = new Admin();
             admin = base.GetSingle(a => a.AdminAccount == adminaccount && a.AdminPassword == adminpass);
             return admin;
->>>>>>> InitProject_v1.4.8_happy_new_year
-=======
-        public Admin SelectMangerByPass(string adminaccount,string adminpass)
-        {
-            Admin admin = new Admin();
-            admin = base.GetSingle(a => a.AdminAccount == adminaccount && a.AdminPassword == adminpass);
-            return admin;
->>>>>>> master
         }
         #endregion
 

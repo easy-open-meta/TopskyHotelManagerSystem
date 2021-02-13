@@ -29,205 +29,189 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpLoadNotice));
-            this.UpLoadNotice = new System.Windows.Forms.Button();
-            this.pnlUpLoad = new System.Windows.Forms.Panel();
-            this.txtNoticePerson = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboSelectClub = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rtbNoticeContent = new System.Windows.Forms.RichTextBox();
-            this.dtpUpLoadDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNoticeTheme = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUpLoadNo = new System.Windows.Forms.TextBox();
+            this.rtbNoticeContent = new KSharpEditor.KEditor();
+            this.txtNoticeTheme = new Sunny.UI.UITextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpUpLoadDate = new Sunny.UI.UIDatePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpLoad = new System.Windows.Forms.Button();
-            this.pnlUpLoad.SuspendLayout();
+            this.cboSelectClub = new Sunny.UI.UIComboBox();
+            this.btnUpLoad = new Sunny.UI.UIButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbNoticeType = new Sunny.UI.UIComboBox();
             this.SuspendLayout();
-            // 
-            // UpLoadNotice
-            // 
-            this.UpLoadNotice.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.UpLoadNotice.FlatAppearance.BorderSize = 0;
-            this.UpLoadNotice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpLoadNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UpLoadNotice.Location = new System.Drawing.Point(12, 8);
-            this.UpLoadNotice.Name = "UpLoadNotice";
-            this.UpLoadNotice.Size = new System.Drawing.Size(103, 23);
-            this.UpLoadNotice.TabIndex = 0;
-            this.UpLoadNotice.Text = "上传任命公告";
-            this.UpLoadNotice.UseVisualStyleBackColor = false;
-            this.UpLoadNotice.Click += new System.EventHandler(this.UpLoadNotice_Click);
-            // 
-            // pnlUpLoad
-            // 
-            this.pnlUpLoad.Controls.Add(this.txtNoticePerson);
-            this.pnlUpLoad.Controls.Add(this.label6);
-            this.pnlUpLoad.Controls.Add(this.cboSelectClub);
-            this.pnlUpLoad.Controls.Add(this.label4);
-            this.pnlUpLoad.Controls.Add(this.btnUpLoad);
-            this.pnlUpLoad.Controls.Add(this.rtbNoticeContent);
-            this.pnlUpLoad.Controls.Add(this.dtpUpLoadDate);
-            this.pnlUpLoad.Controls.Add(this.label3);
-            this.pnlUpLoad.Controls.Add(this.txtNoticeTheme);
-            this.pnlUpLoad.Controls.Add(this.label2);
-            this.pnlUpLoad.Controls.Add(this.txtUpLoadNo);
-            this.pnlUpLoad.Controls.Add(this.label1);
-            this.pnlUpLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pnlUpLoad.Location = new System.Drawing.Point(3, 37);
-            this.pnlUpLoad.Name = "pnlUpLoad";
-            this.pnlUpLoad.Size = new System.Drawing.Size(974, 456);
-            this.pnlUpLoad.TabIndex = 1;
-            this.pnlUpLoad.Visible = false;
-            // 
-            // txtNoticePerson
-            // 
-            this.txtNoticePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtNoticePerson.Location = new System.Drawing.Point(403, 423);
-            this.txtNoticePerson.Name = "txtNoticePerson";
-            this.txtNoticePerson.Size = new System.Drawing.Size(88, 21);
-            this.txtNoticePerson.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(357, 427);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "发布人：";
-            // 
-            // cboSelectClub
-            // 
-            this.cboSelectClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboSelectClub.FormattingEnabled = true;
-            this.cboSelectClub.Items.AddRange(new object[] {
-            "人力资源管理部"});
-            this.cboSelectClub.Location = new System.Drawing.Point(229, 424);
-            this.cboSelectClub.Name = "cboSelectClub";
-            this.cboSelectClub.Size = new System.Drawing.Size(114, 23);
-            this.cboSelectClub.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(158, 427);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "发布部门：";
             // 
             // rtbNoticeContent
             // 
-            this.rtbNoticeContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rtbNoticeContent.Location = new System.Drawing.Point(0, 47);
+            this.rtbNoticeContent.Html = "<p>&nbsp;</p>";
+            this.rtbNoticeContent.KEditorEventListener = null;
+            this.rtbNoticeContent.Location = new System.Drawing.Point(6, 99);
             this.rtbNoticeContent.Name = "rtbNoticeContent";
-            this.rtbNoticeContent.Size = new System.Drawing.Size(611, 365);
-            this.rtbNoticeContent.TabIndex = 6;
-            this.rtbNoticeContent.Text = "";
-            // 
-            // dtpUpLoadDate
-            // 
-            this.dtpUpLoadDate.Location = new System.Drawing.Point(505, 14);
-            this.dtpUpLoadDate.Name = "dtpUpLoadDate";
-            this.dtpUpLoadDate.Size = new System.Drawing.Size(106, 21);
-            this.dtpUpLoadDate.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("华文中宋", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(424, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "发布日期：";
+            this.rtbNoticeContent.Size = new System.Drawing.Size(992, 474);
+            this.rtbNoticeContent.TabIndex = 24;
             // 
             // txtNoticeTheme
             // 
-            this.txtNoticeTheme.Location = new System.Drawing.Point(273, 14);
+            this.txtNoticeTheme.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNoticeTheme.FillColor = System.Drawing.Color.White;
+            this.txtNoticeTheme.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNoticeTheme.Location = new System.Drawing.Point(113, 50);
+            this.txtNoticeTheme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNoticeTheme.Maximum = 2147483647D;
+            this.txtNoticeTheme.Minimum = -2147483648D;
+            this.txtNoticeTheme.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNoticeTheme.Name = "txtNoticeTheme";
-            this.txtNoticeTheme.Size = new System.Drawing.Size(145, 21);
-            this.txtNoticeTheme.TabIndex = 3;
+            this.txtNoticeTheme.Padding = new System.Windows.Forms.Padding(5);
+            this.txtNoticeTheme.Radius = 20;
+            this.txtNoticeTheme.Size = new System.Drawing.Size(297, 35);
+            this.txtNoticeTheme.Style = Sunny.UI.UIStyle.Custom;
+            this.txtNoticeTheme.StyleCustomMode = true;
+            this.txtNoticeTheme.TabIndex = 112;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("华文中宋", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(190, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "公告主题：";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(12, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 25);
+            this.label5.TabIndex = 111;
+            this.label5.Text = "公告主题";
             // 
-            // txtUpLoadNo
+            // label8
             // 
-            this.txtUpLoadNo.Location = new System.Drawing.Point(84, 14);
-            this.txtUpLoadNo.Name = "txtUpLoadNo";
-            this.txtUpLoadNo.Size = new System.Drawing.Size(100, 21);
-            this.txtUpLoadNo.TabIndex = 1;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(702, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 25);
+            this.label8.TabIndex = 113;
+            this.label8.Text = "发布日期";
+            // 
+            // dtpUpLoadDate
+            // 
+            this.dtpUpLoadDate.FillColor = System.Drawing.Color.White;
+            this.dtpUpLoadDate.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.dtpUpLoadDate.Location = new System.Drawing.Point(803, 50);
+            this.dtpUpLoadDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpUpLoadDate.MaxLength = 10;
+            this.dtpUpLoadDate.MinimumSize = new System.Drawing.Size(63, 0);
+            this.dtpUpLoadDate.Name = "dtpUpLoadDate";
+            this.dtpUpLoadDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpUpLoadDate.Radius = 20;
+            this.dtpUpLoadDate.Size = new System.Drawing.Size(188, 35);
+            this.dtpUpLoadDate.SymbolDropDown = 61555;
+            this.dtpUpLoadDate.SymbolNormal = 61555;
+            this.dtpUpLoadDate.TabIndex = 115;
+            this.dtpUpLoadDate.Text = "2021-02-13";
+            this.dtpUpLoadDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dtpUpLoadDate.Value = new System.DateTime(2021, 2, 13, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("华文中宋", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(5, 13);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(423, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "公告编号：";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "发布部门";
+            // 
+            // cboSelectClub
+            // 
+            this.cboSelectClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboSelectClub.FillColor = System.Drawing.Color.White;
+            this.cboSelectClub.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.cboSelectClub.Location = new System.Drawing.Point(524, 50);
+            this.cboSelectClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboSelectClub.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboSelectClub.Name = "cboSelectClub";
+            this.cboSelectClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboSelectClub.Radius = 20;
+            this.cboSelectClub.Size = new System.Drawing.Size(165, 35);
+            this.cboSelectClub.TabIndex = 118;
+            this.cboSelectClub.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnUpLoad
             // 
-            this.btnUpLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpLoad.BackgroundImage")));
-            this.btnUpLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpLoad.FlatAppearance.BorderSize = 0;
-            this.btnUpLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpLoad.Location = new System.Drawing.Point(497, 422);
+            this.btnUpLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpLoad.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnUpLoad.Location = new System.Drawing.Point(888, 583);
+            this.btnUpLoad.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUpLoad.Name = "btnUpLoad";
-            this.btnUpLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnUpLoad.TabIndex = 7;
-            this.btnUpLoad.Text = "发布";
-            this.btnUpLoad.UseVisualStyleBackColor = true;
+            this.btnUpLoad.Radius = 20;
+            this.btnUpLoad.Size = new System.Drawing.Size(108, 31);
+            this.btnUpLoad.TabIndex = 119;
+            this.btnUpLoad.Text = "发布任命公告";
             this.btnUpLoad.Click += new System.EventHandler(this.btnUpLoad_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(625, 586);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 120;
+            this.label2.Text = "公告类型";
+            // 
+            // cbNoticeType
+            // 
+            this.cbNoticeType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbNoticeType.FillColor = System.Drawing.Color.White;
+            this.cbNoticeType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.cbNoticeType.Items.AddRange(new object[] {
+            "人事变动",
+            "普通公告"});
+            this.cbNoticeType.Location = new System.Drawing.Point(716, 582);
+            this.cbNoticeType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbNoticeType.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbNoticeType.Name = "cbNoticeType";
+            this.cbNoticeType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbNoticeType.Radius = 20;
+            this.cbNoticeType.Size = new System.Drawing.Size(165, 35);
+            this.cbNoticeType.TabIndex = 121;
+            this.cbNoticeType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmUpLoadNotice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(989, 497);
-            this.Controls.Add(this.pnlUpLoad);
-            this.Controls.Add(this.UpLoadNotice);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1005, 623);
+            this.ControlBox = false;
+            this.Controls.Add(this.cbNoticeType);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnUpLoad);
+            this.Controls.Add(this.cboSelectClub);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpUpLoadDate);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtNoticeTheme);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.rtbNoticeContent);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmUpLoadNotice";
-            this.Text = "FrmCashList";
+            this.ShowIcon = true;
+            this.Text = "上传任命公告";
             this.Load += new System.EventHandler(this.FrmUpLoad_Load);
-            this.pnlUpLoad.ResumeLayout(false);
-            this.pnlUpLoad.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button UpLoadNotice;
-        private System.Windows.Forms.Panel pnlUpLoad;
-        private System.Windows.Forms.Button btnUpLoad;
-        private System.Windows.Forms.RichTextBox rtbNoticeContent;
-        private System.Windows.Forms.DateTimePicker dtpUpLoadDate;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNoticeTheme;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUpLoadNo;
+        private KSharpEditor.KEditor rtbNoticeContent;
+        private Sunny.UI.UITextBox txtNoticeTheme;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private Sunny.UI.UIDatePicker dtpUpLoadDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboSelectClub;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNoticePerson;
-        private System.Windows.Forms.Label label6;
+        private Sunny.UI.UIComboBox cboSelectClub;
+        private Sunny.UI.UIButton btnUpLoad;
+        private System.Windows.Forms.Label label2;
+        private Sunny.UI.UIComboBox cbNoticeType;
     }
 }

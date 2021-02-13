@@ -30,7 +30,7 @@ namespace SYS.Application
         public SellThing SelectSellThingByNo(string No)
         {
             SellThing s = new SellThing();
-            s = base.GetSingle(a => a.SellNo == No && a.delete_mk != 0);
+            s = base.GetSingle(a => a.SellNo == No && a.delete_mk != 1);
             return s;
         }
 
@@ -77,6 +77,21 @@ namespace SYS.Application
                 datachg_date = DateTime.Now
             },a => a.RoomNo == roomNo && a.SpendTime >= Convert.ToDateTime(time));
 
+        }
+
+        /// <summary>
+        /// 根据商品编号删除商品信息
+        /// </summary>
+        /// <param name="sellNo"></param>
+        /// <returns></returns>
+        public bool DeleteSellThingBySellNo(string sellNo)
+        {
+            return base.Update(a => new SellThing()
+            {
+                delete_mk = 1,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.SellNo == sellNo);
         }
 
         /// <summary>

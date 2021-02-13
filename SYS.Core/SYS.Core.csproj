@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="SqlSugar, Version=5.0.1.8, Culture=neutral, processorArchitecture=MSIL">
@@ -63,6 +67,9 @@
     <Compile Include="Util\ApplicationVersionUtil.cs" />
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="Util\IDCardUtil.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Util\Md5LockedUtil.cs" />
     <Compile Include="Util\UI-FontUtil.cs" />
     <Compile Include="Worker\GBType.cs" />
@@ -73,17 +80,11 @@
     <Compile Include="Customer\Custo.cs" />
     <Compile Include="Customer\CustoSpend.cs" />
     <Compile Include="Customer\CustoType.cs" />
-<<<<<<< HEAD
-
-    <Compile Include="Util\Fonts.cs" />
-
-=======
->>>>>>> master
     <Compile Include="Business\Fonts.cs" />
     <Compile Include="Zero\Dept.cs" />
     <Compile Include="Zero\Education.cs" />
-
     <Compile Include="Zero\LoginInfo.cs" />
+    <Compile Include="Zero\Nation.cs" />
     <Compile Include="Zero\Notice.cs" />
     <Compile Include="Zero\OperationLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Worker\WorkerGoodBad.cs" />
     <Compile Include="Worker\WorkerHistory.cs" />
     <Compile Include="Business\Wti.cs" />
+    <Compile Include="Zero\Position.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\MySql.Data.dll" />
@@ -112,18 +114,18 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\GFont.otf">
+    <EmbeddedResource Include="Resources\Mono.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
-      <Project>{65501af6-c629-448a-847e-1bcd60665865}</Project>
-      <Name>SYS.Common</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Resources\Mono-l.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">

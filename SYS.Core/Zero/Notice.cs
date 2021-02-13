@@ -3,8 +3,9 @@
 namespace SYS.Core
 {
     /// <summary>
-    /// 人名公告
+    /// 任命公告
     /// </summary>
+    [SqlSugar.SugarTable("uploadinfo")]
     public class Notice
     {
         /// <summary>
@@ -15,6 +16,15 @@ namespace SYS.Core
         /// 公告主题
         /// </summary>
         public string Noticetheme { get; set; }
+        /// <summary>
+        /// 公告类型
+        /// </summary>
+        public string NoticeType { get; set; }
+        /// <summary>
+        /// 公告类型(描述)
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string NoticeTypeName { get; set; }
         /// <summary>
         /// 公告时间
         /// </summary>
@@ -27,10 +37,6 @@ namespace SYS.Core
         /// 发文部门
         /// </summary>
         public string NoticeClub { get; set; }
-        /// <summary>
-        /// 公布人
-        /// </summary>
-        public string NoticePerson { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>

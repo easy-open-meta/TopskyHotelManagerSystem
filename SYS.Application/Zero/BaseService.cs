@@ -348,5 +348,137 @@ namespace SYS.Application
         }
 
         #endregion
+
+        #region 客户类型模块
+        /// <summary>
+        /// 查询所有客户类型
+        /// </summary>
+        /// <returns></returns>
+        public List<CustoType> SelectCustoTypeAll() 
+        {
+            List<CustoType> custoTypes = new List<CustoType>();
+            custoTypes = base.Change<CustoType>().GetList(a => a.delete_mk != 1);
+            return custoTypes;
+        }
+
+        /// <summary>
+        /// 根据客户类型ID查询类型名称
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        public CustoType SelectCustoTypeByTypeId(CustoType custoType)
+        {
+            CustoType custoTypes = new CustoType();
+            custoType = base.Change<CustoType>().GetSingle(a => a.UserType == custoType.UserType && a.delete_mk != 1);
+            return custoTypes;
+        }
+
+        /// <summary>
+        /// 添加客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        public bool InsertCustoType(CustoType custoType)
+        {
+            return base.Change<CustoType>().Insert(custoType);
+        }
+
+        /// <summary>
+        /// 删除客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        public bool DeleteCustoType(CustoType custoType)
+        {
+            return base.Change<CustoType>().Update(a => new CustoType()
+            {
+                delete_mk = 1,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            },a => a.UserType == custoType.UserType);
+        }
+
+        /// <summary>
+        /// 更新客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        public bool UpdateCustoType(CustoType custoType)
+        {
+            return base.Change<CustoType>().Update(a => new CustoType()
+            {
+                TypeName = custoType.TypeName,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            },a => a.UserType == custoType.UserType);
+        }
+
+        #endregion
+
+        #region 证件类型模块
+        /// <summary>
+        /// 查询所有证件类型
+        /// </summary>
+        /// <returns></returns>
+        public List<PassPortType> SelectPassPortTypeAll()
+        {
+            List<PassPortType> passPortTypes = new List<PassPortType>();
+            passPortTypes = base.Change<PassPortType>().GetList(a => a.delete_mk != 1);
+            return passPortTypes;
+        }
+
+        /// <summary>
+        /// 根据证件类型ID查询类型名称
+        /// </summary>
+        /// <param name="passPortType"></param>
+        /// <returns></returns>
+        public PassPortType SelectPassPortTypeByTypeId(PassPortType passPortType)
+        {
+            PassPortType passPortType1 = new PassPortType();
+            passPortType1 = base.Change<PassPortType>().GetSingle(a => a.PassportId == passPortType.PassportId && a.delete_mk != 1);
+            return passPortType1;
+        }
+
+        /// <summary>
+        /// 添加证件类型
+        /// </summary>
+        /// <param name="passPortType"></param>
+        /// <returns></returns>
+        public bool InsertPassPortType(PassPortType passPortType)
+        {
+            return base.Change<PassPortType>().Insert(passPortType);
+        }
+
+        /// <summary>
+        /// 删除证件类型
+        /// </summary>
+        /// <param name="portType"></param>
+        /// <returns></returns>
+        public bool DeletePassPortType(PassPortType  portType)
+        {
+            return base.Change<PassPortType>().Update(a => new PassPortType()
+            {
+                delete_mk = 1,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.PassportId == portType.PassportId);
+        }
+
+        /// <summary>
+        /// 更新证件类型
+        /// </summary>
+        /// <param name="portType"></param>
+        /// <returns></returns>
+        public bool UpdatePassPortType(PassPortType portType)
+        {
+            return base.Change<PassPortType>().Update(a => new PassPortType()
+            {
+                PassportName = portType.PassportName,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.PassportId == portType.PassportId);
+        }
+
+        #endregion
     }
 }

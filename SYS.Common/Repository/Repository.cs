@@ -18,12 +18,8 @@ namespace SYS.Common
                     DbType = SqlSugar.DbType.MySql,
                     InitKeyType = InitKeyType.Attribute,
                     IsAutoCloseConnection = true,
-<<<<<<< HEAD
-                    ConnectionString = 
-=======
-                    ConnectionString = ""
->>>>>>> master
-                });
+                    ConnectionString = "Server=134.175.239.108;Database=tshoteldb;Uid=root;Pwd=yjj990720"
+                }) ;
 
                 base.Context.Aop.OnLogExecuting = (s, p) =>
                 {
