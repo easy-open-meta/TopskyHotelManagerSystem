@@ -733,6 +733,18 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\常规部门卡片.png" />
+    <None Include="Resources\总经办卡片.png" />
+    <None Include="Resources\维修部卡片.png" />
+    <None Include="Resources\商品部卡片.png" />
+    <None Include="Resources\人力资源部卡片.png" />
+    <None Include="Resources\内控部卡片.png" />
+    <None Include="Resources\酒店部卡片.png" />
+    <None Include="Resources\经理部卡片.png" />
+    <None Include="Resources\监管小组卡片.png" />
+    <None Include="Resources\后勤部卡片.png" />
+    <None Include="Resources\餐饮部卡片.png" />
+    <None Include="Resources\财务部卡片.png" />
     <None Include="Resources\組織圖塊.bmp" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\settings2.png" />
@@ -774,6 +786,7 @@
     <Content Include="icon\time.ico" />
     <Content Include="icon\传输_上传.ico" />
     <Content Include="icon\历史公告.ico" />
+    <Content Include="icon\员工任命.ico" />
     <Content Include="icon\员工管理.ico" />
     <Content Include="icon\商品管理.ico" />
     <Content Include="icon\学历.ico" />
@@ -787,6 +800,7 @@
     <Content Include="icon\民族.ico" />
     <Content Include="icon\水电.ico" />
     <Content Include="icon\消费账单.ico" />
+    <Content Include="icon\添加员工.ico" />
     <Content Include="icon\监管统计.ico" />
     <Content Include="icon\盾牌.ico" />
     <Content Include="icon\职位.ico" />

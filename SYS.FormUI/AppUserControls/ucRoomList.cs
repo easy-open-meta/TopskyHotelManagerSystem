@@ -156,6 +156,7 @@ namespace SYS.FormUI
             //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
+            romTypeName = romCustoInfo.RoomName;
             co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
@@ -176,7 +177,7 @@ namespace SYS.FormUI
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
             //lblCustoNo.Text = romCustoInfo.CustoNo;
             //lblRoomNo.Text = romCustoInfo.RoomNo;
-            //lblRoomType.Text = romCustoInfo.typeName;
+            //lblRoomType.Text = romCustoInfo.RoomName;
             //co_CheckTime = romCustoInfo.CheckTime.ToString();
 
             us_CustoNo = romRoomInfo.CustoNo;
@@ -188,19 +189,17 @@ namespace SYS.FormUI
             us_CustoPassportType = romRoomInfo.PassportType;
             us_CustoType = romRoomInfo.CustoType;
             us_CustoAddress = romRoomInfo.CustoAdress;
-            if (lblCustoNo.Text != "")
+            if (romCustoInfo.RoomStateId == 1)
             {
                 BackgroundImage = Resources.已住icon;
-                //lblState.Text = "▲";
-                //lblState.ForeColor = Color.Blue;
-            }
-            if (romCustoInfo.RoomStateId == 3)
-            {
-                BackgroundImage = Resources.脏房icon;
             }
             if (romCustoInfo.RoomStateId == 2)
             {
                 BackgroundImage = Resources.维修房icon;
+            }
+            if (romCustoInfo.RoomStateId == 3)
+            {
+                BackgroundImage = Resources.脏房icon;
             }
             if (romCustoInfo.RoomStateId == 4)
             {

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddWorker));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cboSex = new Sunny.UI.UIComboBox();
             this.WorkerNo = new Sunny.UI.UITextBox();
-            this.Pwd = new Sunny.UI.UITextBox();
             this.dtpBirthday = new Sunny.UI.UIDatePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.cboWorkerFace = new Sunny.UI.UIComboBox();
             this.flpHistory = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new Sunny.UI.UIButton();
+            this.cbWorkerNation = new Sunny.UI.UIComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.cboSex.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboSex.FillColor = System.Drawing.Color.White;
             this.cboSex.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.cboSex.Location = new System.Drawing.Point(120, 154);
+            this.cboSex.Location = new System.Drawing.Point(120, 151);
             this.cboSex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboSex.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboSex.Name = "cboSex";
@@ -105,7 +106,7 @@
             this.WorkerNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.WorkerNo.FillColor = System.Drawing.Color.White;
             this.WorkerNo.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WorkerNo.Location = new System.Drawing.Point(120, 46);
+            this.WorkerNo.Location = new System.Drawing.Point(120, 45);
             this.WorkerNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.WorkerNo.Maximum = 2147483647D;
             this.WorkerNo.Minimum = -2147483648D;
@@ -117,29 +118,6 @@
             this.WorkerNo.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerNo.StyleCustomMode = true;
             this.WorkerNo.TabIndex = 111;
-            // 
-            // Pwd
-            // 
-            this.Pwd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Pwd.DoubleValue = 123456D;
-            this.Pwd.FillColor = System.Drawing.Color.White;
-            this.Pwd.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Pwd.IntValue = 123456;
-            this.Pwd.Location = new System.Drawing.Point(120, 100);
-            this.Pwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Pwd.Maximum = 2147483647D;
-            this.Pwd.Minimum = -2147483648D;
-            this.Pwd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Pwd.Name = "Pwd";
-            this.Pwd.Padding = new System.Windows.Forms.Padding(5);
-            this.Pwd.PasswordChar = '*';
-            this.Pwd.Radius = 20;
-            this.Pwd.ReadOnly = true;
-            this.Pwd.Size = new System.Drawing.Size(166, 35);
-            this.Pwd.Style = Sunny.UI.UIStyle.Custom;
-            this.Pwd.StyleCustomMode = true;
-            this.Pwd.TabIndex = 112;
-            this.Pwd.Text = "123456";
             // 
             // dtpBirthday
             // 
@@ -153,7 +131,6 @@
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.dtpBirthday.Radius = 20;
-            this.dtpBirthday.ReadOnly = true;
             this.dtpBirthday.Size = new System.Drawing.Size(166, 31);
             this.dtpBirthday.SymbolDropDown = 61555;
             this.dtpBirthday.SymbolNormal = 61555;
@@ -166,7 +143,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(13, 211);
+            this.label13.Location = new System.Drawing.Point(13, 210);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 25);
             this.label13.TabIndex = 109;
@@ -176,27 +153,27 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(13, 158);
+            this.label16.Location = new System.Drawing.Point(13, 157);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 25);
+            this.label16.Size = new System.Drawing.Size(80, 25);
             this.label16.TabIndex = 108;
-            this.label16.Text = "性    别";
+            this.label16.Text = "性     别";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(13, 105);
+            this.label17.Location = new System.Drawing.Point(13, 104);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 25);
+            this.label17.Size = new System.Drawing.Size(80, 25);
             this.label17.TabIndex = 107;
-            this.label17.Text = "员工密码";
+            this.label17.Text = "民     族";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(13, 52);
+            this.label18.Location = new System.Drawing.Point(13, 51);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(88, 25);
             this.label18.TabIndex = 106;
@@ -240,7 +217,7 @@
             this.dtpTime.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.dtpTime.FillColor = System.Drawing.Color.White;
             this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.dtpTime.Location = new System.Drawing.Point(120, 258);
+            this.dtpTime.Location = new System.Drawing.Point(120, 257);
             this.dtpTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpTime.MaxLength = 10;
             this.dtpTime.MinimumSize = new System.Drawing.Size(63, 0);
@@ -260,7 +237,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(13, 264);
+            this.label19.Location = new System.Drawing.Point(13, 263);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 25);
             this.label19.TabIndex = 117;
@@ -391,6 +368,7 @@
             this.WorkerID.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerID.StyleCustomMode = true;
             this.WorkerID.TabIndex = 129;
+            this.WorkerID.Validated += new System.EventHandler(this.WorkerID_Validated);
             // 
             // label26
             // 
@@ -435,6 +413,10 @@
             this.cboWorkerFace.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerFace.FillColor = System.Drawing.Color.White;
             this.cboWorkerFace.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.cboWorkerFace.Items.AddRange(new object[] {
+            "群众",
+            "团员",
+            "党员"});
             this.cboWorkerFace.Location = new System.Drawing.Point(433, 98);
             this.cboWorkerFace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerFace.MinimumSize = new System.Drawing.Size(63, 0);
@@ -464,6 +446,22 @@
             this.btnAdd.Size = new System.Drawing.Size(137, 46);
             this.btnAdd.TabIndex = 134;
             this.btnAdd.Text = "添     加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cbWorkerNation
+            // 
+            this.cbWorkerNation.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbWorkerNation.FillColor = System.Drawing.Color.White;
+            this.cbWorkerNation.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.cbWorkerNation.Location = new System.Drawing.Point(120, 98);
+            this.cbWorkerNation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbWorkerNation.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbWorkerNation.Name = "cbWorkerNation";
+            this.cbWorkerNation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbWorkerNation.Radius = 20;
+            this.cbWorkerNation.Size = new System.Drawing.Size(166, 35);
+            this.cbWorkerNation.TabIndex = 135;
+            this.cbWorkerNation.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmAddWorker
             // 
@@ -471,6 +469,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(785, 768);
+            this.Controls.Add(this.cbWorkerNation);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flpHistory);
@@ -495,15 +494,16 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.cboSex);
             this.Controls.Add(this.WorkerNo);
-            this.Controls.Add(this.Pwd);
             this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddWorker";
+            this.ShowIcon = true;
             this.Text = "添加员工";
             this.Load += new System.EventHandler(this.FrmAddWorker_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -517,7 +517,6 @@
         private System.Windows.Forms.Label label15;
         private Sunny.UI.UIComboBox cboSex;
         private Sunny.UI.UITextBox WorkerNo;
-        private Sunny.UI.UITextBox Pwd;
         private Sunny.UI.UIDatePicker dtpBirthday;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
@@ -543,5 +542,6 @@
         private Sunny.UI.UIComboBox cboWorkerFace;
         private System.Windows.Forms.FlowLayoutPanel flpHistory;
         private Sunny.UI.UIButton btnAdd;
+        private Sunny.UI.UIComboBox cbWorkerNation;
     }
 }

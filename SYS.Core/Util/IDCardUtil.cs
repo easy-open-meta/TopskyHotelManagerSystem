@@ -24,7 +24,7 @@ namespace SYS.Core.Util
             cardcodes cardcodes = new cardcodes();
             var pcd = string.Empty;
             cardcodes = base.GetSingle(a => a.bm == cardid);
-            pcd = string.Join(",", cardcodes.Province + cardcodes.City + cardcodes.District);
+            pcd = cardcodes == null ? "" : string.Join(",", cardcodes.Province + cardcodes.City + cardcodes.District);
             return pcd;
         }
 

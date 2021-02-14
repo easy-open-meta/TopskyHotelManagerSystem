@@ -106,6 +106,7 @@
             this.dgvCashList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCashList.RowTemplate.Height = 29;
             this.dgvCashList.SelectedIndex = -1;
+            this.dgvCashList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCashList.ShowGridLine = true;
             this.dgvCashList.Size = new System.Drawing.Size(800, 566);
             this.dgvCashList.TabIndex = 2;

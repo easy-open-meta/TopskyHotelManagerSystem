@@ -22,12 +22,12 @@ namespace SYS.Application
         {
             return base.Update(a => new Worker()
             {
+                WorkerName = worker.WorkerName,
                 WorkerTel = worker.WorkerTel,
                 WorkerAddress = worker.WorkerAddress,
-                WorkerPwd = worker.WorkerPwd,
                 WorkerFace = worker.WorkerFace,
                 WorkerEducation = worker.WorkerEducation,
-                WorkerSex = worker.WorkerSex,
+                WorkerNation = worker.WorkerNation,
                 datachg_usr = AdminInfo.Account,
                 datachg_date = DateTime.Now
             },a => a.WorkerId == worker.WorkerId);
@@ -35,6 +35,22 @@ namespace SYS.Application
         }
         #endregion
 
+        /// <summary>
+        /// 更新员工职位和部门
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+
+        public bool UpdateWorkerPositionAndClub(Worker worker)
+        {
+            return base.Update(a => new Worker()
+            {
+                WorkerClub = worker.WorkerClub,
+                WorkerPosition = worker.WorkerPosition,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.WorkerId == worker.WorkerId);
+        }
 
         #region 添加员工信息
         /// <summary>

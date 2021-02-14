@@ -27,8 +27,8 @@ namespace SYS.FormUI.AppFunction
 
         public void LoadRoom()
         {
-            List<Room> rooms = new RoomService().SelectCanUseRoomAll();
             flpRoom.Controls.Clear();
+            List<Room> rooms = new RoomService().SelectRoomAll();
             for (int i = 0; i < rooms.Count; i++)
             {
                 romt = new ucRoomList();

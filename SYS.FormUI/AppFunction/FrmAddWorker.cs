@@ -17,26 +17,48 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
-        //EventHandlerList myEventHandlerList = new EventHandlerList(); //事件（委托）列表，记录事件      
-
-        int RandKey = 0;
         ucHistory ucHistory = null;
         private void FrmAddWorker_Load(object sender, EventArgs e)
         {
-            Random ran = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                RandKey = ran.Next(100000000, 999999999);
-            }
+            //加载部门信息
+            cboClub.DataSource = new BaseService().SelectDeptAll();
+            cboClub.DisplayMember = "dept_name";
+            cboClub.ValueMember = "dept_no";
+            //加载民族信息
+            cbWorkerNation.DataSource = new BaseService().SelectNationAll();
+            cbWorkerNation.DisplayMember = "nation_name";
+            cbWorkerNation.ValueMember = "nation_no";
+            //加载职位信息
+            cboWorkerPosition.DataSource = new BaseService().SelectPositionAll();
+            cboWorkerPosition.DisplayMember = "position_name";
+            cboWorkerPosition.ValueMember = "position_no";
+            //加载性别信息
+            cboSex.DataSource = new BaseService().SelectSexTypeAll();
+            cboSex.DisplayMember = "sexName";
+            cboSex.ValueMember = "sexId";
+            //加载学历信息
+            cboEducation.DataSource = new BaseService().SelectEducationAll();
+            cboEducation.DisplayMember = "education_name";
+            cboEducation.ValueMember = "education_no";
+
             pictureBox1.LoadAsync("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587209835893&di=02964b1de4a1ef4f938f7d3ae12b5b17&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F11%2F25%2F0ef5a188956c2717db96d72d58524dec.jpg");
             if (this.Text == "员工信息查看页")
             {
                 foreach (Control control in this.Controls)
                 {
-                    if (control is TextBox)
+                    switch (control.GetType().ToString())
                     {
-                        (control as TextBox).ReadOnly = true;
+                        case "Sunny.UI.UITextBox":
+                            (control as Sunny.UI.UITextBox).ReadOnly = true;
+                            break;
+                        case "Sunny.UI.UIComboBox":
+                            (control as Sunny.UI.UIComboBox).ReadOnly = true;
+                            break;
+                        case "Sunny.UI.UIDatePicker":
+                            (control as Sunny.UI.UIDatePicker).ReadOnly = true;
+                            break;
                     }
+                    
                 }
                 btnAdd.Visible = false;
                 WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
@@ -44,7 +66,7 @@ namespace SYS.FormUI
                 cboSex.Text = FrmChangeWorker.wk_WorkerSex;
                 cboWorkerPosition.Text = FrmChangeWorker.wk_WorkerPosition;
                 cboWorkerFace.Text = FrmChangeWorker.wk_WorkerFace;
-                Pwd.Text = "***************";
+                cbWorkerNation.Text = FrmChangeWorker.wk_WorkerNation;
                 dtpBirthday.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerBirthday);
                 dtpTime.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerTime);
                 WorkerID.Text = FrmChangeWorker.wk_WorkerID;
@@ -59,16 +81,18 @@ namespace SYS.FormUI
                     ucHistory = new ucHistory();
                     ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
                     ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
-                    ucHistory.txtPosition.Text = workerHistories[i].Postion;
+                    ucHistory.txtPosition.Text = workerHistories[i].Position;
                     ucHistory.txtCompany.Text = workerHistories[i].Company;
+                    ucHistory.dtpStartDate.ReadOnly = true;
+                    ucHistory.dtpEndDate.ReadOnly = true;
+                    ucHistory.txtPosition.ReadOnly = true;
+                    ucHistory.txtCompany.ReadOnly = true;
                     flpHistory.Controls.Add(ucHistory);
                 }
             }
-            else if (this.Text == "员工信息添加页")
+            else if (this.Text == "添加员工")
             {
-                Random random = new Random();
-                Pwd.Text = RandKey.ToString();
-                WorkerNo.Text = "WK" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
+                WorkerNo.Text = new CounterHelper().GetNewId("WorkerId");
                 ucHistory = new ucHistory();
                 //ucHistory.txtCompany.ReadOnly = false;
                 //ucHistory.txtPosition.ReadOnly = false;
@@ -85,15 +109,30 @@ namespace SYS.FormUI
             }
             else
             {
-                DialogResult dr = MessageBox.Show("修改操作仅能修改性别、电话号码、联系地址、登录密码、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                if (dr == DialogResult.OK && Pwd.Text != null)
+                bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                if (dr == true)
                 {
+                    foreach (Control item in this.Controls)
+                    {
+                        switch (item.Name)
+                        {
+                            case "Sunny.UI.UITextBox":
+                                (item as Sunny.UI.UITextBox).ReadOnly = true;
+                                break;
+                            case "Sunny.UI.UIComboBox":
+                                (item as Sunny.UI.UIComboBox).ReadOnly = true;
+                                break;
+                            case "Sunny.UI.UIDatePicker":
+                                (item as Sunny.UI.UIDatePicker).ReadOnly = true;
+                                break;
+                        }
+                    }
                     WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
                     WorkerName.Text = FrmChangeWorker.wk_WorkerName;
                     cboSex.Text = FrmChangeWorker.wk_WorkerSex;
                     cboWorkerPosition.Text = FrmChangeWorker.wk_WorkerPosition;
                     cboWorkerFace.Text = FrmChangeWorker.wk_WorkerFace;
-                    //Pwd.Text = "***************";
+                    cbWorkerNation.Text = FrmChangeWorker.wk_WorkerNation;
                     dtpBirthday.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerBirthday);
                     dtpTime.Value = Convert.ToDateTime(FrmChangeWorker.wk_WorkerTime);
                     WorkerID.Text = FrmChangeWorker.wk_WorkerID;
@@ -107,14 +146,13 @@ namespace SYS.FormUI
                     this.btnAdd.Click += new EventHandler(btnUpd_Click);
                     WorkerTel.ReadOnly = false;
                     txtAddress.ReadOnly = false;
-                    Pwd.ReadOnly = false;
                     List<WorkerHistory> workerHistories = new WorkerHistoryService().SelectHistoryByWorkerId(WorkerNo.Text);
                     for (int i = 0; i < workerHistories.Count; i++)
                     {
                         ucHistory = new ucHistory();
                         ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
                         ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
-                        ucHistory.txtPosition.Text = workerHistories[i].Postion;
+                        ucHistory.txtPosition.Text = workerHistories[i].Position;
                         ucHistory.txtCompany.Text = workerHistories[i].Company;
                         flpHistory.Controls.Add(ucHistory);
                     }
@@ -124,36 +162,40 @@ namespace SYS.FormUI
 
         private void btnUpd_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("是否确认修改员工信息？", "修改提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            bool dr = UIMessageBox.Show("是否确认修改员工信息？", "修改提醒", UIStyle.Green,UIMessageBoxButtons.OKCancel);
+            if (dr == true)
             {
+                string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
                 #region 员工信息代码块
                 Worker worker = new Worker
                 {
                     WorkerId = WorkerNo.Text.Trim(),
-                    WorkerSex = cboSex.Text == "女" ? 0 : 1,
-                    WorkerTel = WorkerTel.Text,
+                    WorkerName = WorkerName.Text.Trim(),
+                    WorkerNation = cbWorkerNation.SelectedValue == null ? "N-00001" : cbWorkerNation.SelectedValue.ToString(),
+                    WorkerTel = NewTel,
                     WorkerAddress = txtAddress.Text,
-                    WorkerPwd = Pwd.Text,
                     WorkerFace = cboWorkerFace.Text,
-                    WorkerEducation = cboEducation.Text,
+                    WorkerEducation = cboEducation.SelectedValue.ToString() == null ? "E-00001" : cboEducation.SelectedValue.ToString(),
                     datachg_usr = AdminInfo.Account,
                     datachg_date = DateTime.Now
                 };
                 bool i = new WorkerService().UpdateWorker(worker);
                 if (i == true)
                 {
-                    MessageBox.Show("信息修改成功！");
+                    UIMessageBox.ShowSuccess("信息修改成功！");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("服务器繁忙！");
+                    UIMessageBox.ShowError("服务器繁忙！");
+                    return;
                 }
                 #endregion
             }
             else
             {
-                MessageBox.Show("修改操作已取消！");
+                UIMessageBox.ShowWarning("修改操作已取消！");
+                return;
             }
         }
 
@@ -161,7 +203,7 @@ namespace SYS.FormUI
         {
             try
             {
-                if (WorkerName.Text != null /*&& ucHistory.txtCompany.Text != null*/ && cboSex.Text != null)
+                if (WorkerName.Text != null && cboSex.Text != null)
                 {
                     string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
                     string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
@@ -172,27 +214,30 @@ namespace SYS.FormUI
                         WorkerId = WorkerNo.Text.Trim(),
                         WorkerName = WorkerName.Text.Trim(),
                         WorkerBirthday = dtpBirthday.Value,
-                        WorkerSex = cboSex.SelectedIndex,
+                        WorkerSex = (int)cboSex.SelectedValue,
+                        WorkerNation = cbWorkerNation.SelectedValue.ToString(),
                         WorkerTel = NewTel,
-                        WorkerClub = cboClub.Text,
+                        WorkerClub = cboClub.SelectedValue.ToString(),
                         WorkerAddress = txtAddress.Text,
-                        WorkerPosition = cboWorkerPosition.Text,
+                        WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
                         CardId = NewID,
-                        WorkerPwd = Pwd.Text,
                         WorkerTime = dtpTime.Value,
                         WorkerFace = cboWorkerFace.Text,
-                        WorkerEducation = cboEducation.Text
+                        WorkerEducation = cboEducation.SelectedValue.ToString(),
+                        datains_usr = AdminInfo.Account,
+                        datains_date = DateTime.Now
                     };
                     bool n = new WorkerService().AddWorker(worker);
                     #endregion
-                    #region 履历添加代码块
+                    
                     if (ucHistory.txtCompany != null && ucHistory.txtPosition != null && ucHistory.dtpStartDate.Value != null && ucHistory.dtpEndDate.Value != null)
                     {
+                        #region 履历添加代码块
                         WorkerHistory workerHistory = new WorkerHistory
                         {
                             StartDate = ucHistory.dtpStartDate.Value,
                             EndDate = ucHistory.dtpEndDate.Value,
-                            Postion = ucHistory.txtPosition.Text,
+                            Position = ucHistory.txtPosition.Text,
                             Company = ucHistory.txtCompany.Text,
                             WorkerId = WorkerNo.Text.Trim()
                         };
@@ -202,7 +247,7 @@ namespace SYS.FormUI
                         #region 判断履历和信息代码块
                         if (n == true && j == true)
                         {
-                            MessageBox.Show("员工信息/履历添加成功！该员工登录密码为：" + Pwd.Text + "，请提醒员工妥善保管！");
+                            UIMessageBox.Show("员工信息/履历添加成功！该员工登录密码为：123456，请提醒员工妥善保管并首次登录系统时修改密码！");
                             FrmWorkerManager.Reload();
                             #region 获取添加操作日志所需的信息
                             OperationLog o = new OperationLog();
@@ -214,21 +259,22 @@ namespace SYS.FormUI
                             new OperationlogService().InsertOperationLog(o);
                             #endregion
                         }
-                        #endregion
                         else
                         {
-                            MessageBox.Show("员工信息/履历添加失败，请检查数据格式或稍后再试！");
+                            UIMessageBox.Show("员工信息/履历添加失败，请检查数据格式或稍后再试！");
                         }
+                        #endregion
                     }
                 }
                 else
                 {
-                    MessageBox.Show("信息不能为空！");
+                    UIMessageBox.Show("信息不能为空！");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("服务器繁忙或数据格式为空！");
+                //MessageBox.Show(ex.ToString());
+                UIMessageBox.Show("服务器繁忙或数据格式为空！");
             }
             finally
             {
@@ -292,6 +338,7 @@ namespace SYS.FormUI
             catch
             {
                 MessageBox.Show("请正确输入证件号码！");
+                return;
             }
 
             dtpBirthday.Value = Convert.ToDateTime(birthday);

@@ -21,6 +21,7 @@ namespace SYS.FormUI
         public static string wk_WorkerPwd;
         public static string wk_WorkerTime;
         public static string wk_WorkerFace;
+        public static string wk_WorkerNation;
         public static string wk_WorkerEducation;
 
         public delegate void ReLoadWorkerList();
@@ -68,8 +69,8 @@ namespace SYS.FormUI
                 wk_WorkerTime = dgvWorkerList.SelectedRows[0].Cells["clWorkerTime"].Value.ToString();
                 wk_WorkerFace = dgvWorkerList.SelectedRows[0].Cells["clWorkerFace"].Value.ToString();
                 wk_WorkerEducation = dgvWorkerList.SelectedRows[0].Cells["clWorkerEducation"].Value.ToString();
+                wk_WorkerNation = dgvWorkerList.SelectedRows[0].Cells["clWorkerNation"].Value.ToString();
                 FrmChangeWorker aff = new FrmChangeWorker();
-                this.Close();
                 aff.Show();
 
             }

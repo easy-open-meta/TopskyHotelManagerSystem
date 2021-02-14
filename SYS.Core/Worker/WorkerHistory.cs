@@ -22,7 +22,7 @@ namespace SYS.Core
         /// <summary>
         /// 职位
         /// </summary>
-        public string Postion { get; set; }
+        public string Position { get; set; }
         /// <summary>
         /// 公司
         /// </summary>

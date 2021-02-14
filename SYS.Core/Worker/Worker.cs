@@ -80,6 +80,7 @@ namespace SYS.Core
         /// <summary>
         /// 员工密码
         /// </summary>
+        [SqlSugar.SugarColumn(DefaultValue = "123456")]
         public string WorkerPwd { get; set; }
         /// <summary>
         /// 员工入职时间
@@ -106,7 +107,7 @@ namespace SYS.Core
         /// <summary>
         /// 删除标记
         /// </summary>
-        public int? delete_mk { get; set; }
+        public int delete_mk { get; set; }
         /// <summary>
         /// 资料创建人
         /// </summary>

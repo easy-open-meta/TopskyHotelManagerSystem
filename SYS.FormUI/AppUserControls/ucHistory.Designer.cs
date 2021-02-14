@@ -28,130 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCompany = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new Sunny.UI.UIDatePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpEndDate = new Sunny.UI.UIDatePicker();
+            this.txtPosition = new Sunny.UI.UITextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtCompany = new Sunny.UI.UITextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "工作时间：";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "所任职位：";
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Enabled = false;
-            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPosition.Location = new System.Drawing.Point(97, 59);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(138, 23);
-            this.txtPosition.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(262, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "企业名称：";
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.Enabled = false;
-            this.txtCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCompany.Location = new System.Drawing.Point(343, 58);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.ReadOnly = true;
-            this.txtCompany.Size = new System.Drawing.Size(187, 23);
-            this.txtCompany.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(278, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "到";
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpStartDate.CustomFormat = "yyyy年MM月dd日";
-            this.dtpStartDate.Enabled = false;
-            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(97, 19);
+            this.dtpStartDate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.dtpStartDate.FillColor = System.Drawing.Color.White;
+            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.dtpStartDate.Location = new System.Drawing.Point(95, 7);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpStartDate.MaxLength = 10;
+            this.dtpStartDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.ShowUpDown = true;
-            this.dtpStartDate.Size = new System.Drawing.Size(138, 23);
-            this.dtpStartDate.TabIndex = 8;
+            this.dtpStartDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpStartDate.Radius = 20;
+            this.dtpStartDate.Size = new System.Drawing.Size(166, 31);
+            this.dtpStartDate.SymbolDropDown = 61555;
+            this.dtpStartDate.SymbolNormal = 61555;
+            this.dtpStartDate.TabIndex = 120;
+            this.dtpStartDate.Text = "2020-11-24";
+            this.dtpStartDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dtpStartDate.Value = new System.DateTime(2020, 11, 24, 22, 50, 36, 791);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(3, 10);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 25);
+            this.label19.TabIndex = 119;
+            this.label19.Text = "工作时间";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(299, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 25);
+            this.label5.TabIndex = 121;
+            this.label5.Text = "到";
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpEndDate.Enabled = false;
-            this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpEndDate.Location = new System.Drawing.Point(343, 19);
+            this.dtpEndDate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.dtpEndDate.FillColor = System.Drawing.Color.White;
+            this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.dtpEndDate.Location = new System.Drawing.Point(371, 7);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpEndDate.MaxLength = 10;
+            this.dtpEndDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.ShowUpDown = true;
-            this.dtpEndDate.Size = new System.Drawing.Size(187, 23);
-            this.dtpEndDate.TabIndex = 9;
+            this.dtpEndDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpEndDate.Radius = 20;
+            this.dtpEndDate.Size = new System.Drawing.Size(203, 31);
+            this.dtpEndDate.SymbolDropDown = 61555;
+            this.dtpEndDate.SymbolNormal = 61555;
+            this.dtpEndDate.TabIndex = 122;
+            this.dtpEndDate.Text = "2020-11-24";
+            this.dtpEndDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dtpEndDate.Value = new System.DateTime(2020, 11, 24, 22, 50, 36, 791);
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPosition.FillColor = System.Drawing.Color.White;
+            this.txtPosition.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPosition.Location = new System.Drawing.Point(98, 55);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPosition.Maximum = 2147483647D;
+            this.txtPosition.Minimum = -2147483648D;
+            this.txtPosition.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Padding = new System.Windows.Forms.Padding(5);
+            this.txtPosition.Radius = 20;
+            this.txtPosition.Size = new System.Drawing.Size(166, 35);
+            this.txtPosition.Style = Sunny.UI.UIStyle.Custom;
+            this.txtPosition.StyleCustomMode = true;
+            this.txtPosition.TabIndex = 124;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Location = new System.Drawing.Point(3, 59);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(88, 25);
+            this.label22.TabIndex = 123;
+            this.label22.Text = "所任职位";
+            // 
+            // txtCompany
+            // 
+            this.txtCompany.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCompany.FillColor = System.Drawing.Color.White;
+            this.txtCompany.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCompany.Location = new System.Drawing.Point(365, 55);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCompany.Maximum = 2147483647D;
+            this.txtCompany.Minimum = -2147483648D;
+            this.txtCompany.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Padding = new System.Windows.Forms.Padding(5);
+            this.txtCompany.Radius = 20;
+            this.txtCompany.Size = new System.Drawing.Size(209, 35);
+            this.txtCompany.Style = Sunny.UI.UIStyle.Custom;
+            this.txtCompany.StyleCustomMode = true;
+            this.txtCompany.TabIndex = 126;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(270, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 25);
+            this.label6.TabIndex = 125;
+            this.label6.Text = "企业名称";
             // 
             // ucHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.dtpStartDate);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.txtCompany);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.dtpEndDate);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dtpStartDate);
+            this.Controls.Add(this.label19);
             this.Name = "ucHistory";
-            this.Size = new System.Drawing.Size(549, 107);
+            this.Size = new System.Drawing.Size(581, 100);
             this.Load += new System.EventHandler(this.ucHistory_Load);
+            this.SizeChanged += new System.EventHandler(this.ucHistory_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox txtPosition;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtCompany;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.DateTimePicker dtpStartDate;
-        public System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label6;
+        public Sunny.UI.UIDatePicker dtpStartDate;
+        public Sunny.UI.UIDatePicker dtpEndDate;
+        public Sunny.UI.UITextBox txtPosition;
+        public Sunny.UI.UITextBox txtCompany;
     }
 }

@@ -48,7 +48,8 @@ namespace SYS.FormUI
 
         private void FrmAdminEnter_Load(object sender, EventArgs e)
         {
-
+            txtAccount.Text = "admin";
+            txtPassword.Text = "admin";
         }
 
         /// <summary>

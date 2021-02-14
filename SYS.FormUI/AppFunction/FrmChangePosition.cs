@@ -22,8 +22,8 @@ namespace SYS.FormUI
         {
             txtworkerId.Text = FrmChangeWorker.wk_WorkerNo;
             txtworkerName.Text = FrmChangeWorker.wk_WorkerName;
-            cboClub.Text = FrmChangeWorker.wk_WorkerClub;
-            cboPosition.Text = FrmChangeWorker.wk_WorkerPosition;
+            txtClub.Text = FrmChangeWorker.wk_WorkerClub;
+            txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
             //获取所有职位信息
             cboNewPosition.DataSource =  new BaseService().SelectPositionAll();
             cboNewPosition.DisplayMember = "position_name";
@@ -53,15 +53,15 @@ namespace SYS.FormUI
                 WorkerPosition = cboNewPosition.ValueMember,
                 WorkerId = txtworkerId.Text
             };
-             bool n = new WorkerService().UpdateWorker(worker);
+             bool n = new WorkerService().UpdateWorkerPositionAndClub(worker);
             if (n == true)
             {
                 MessageBox.Show("任命已生效!");
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升为" + cboNewClub.Text + cboNewPosition.Text;
-                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
+                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升/降级为" + cboNewClub.Text + cboNewPosition.Text;
+                o.OperationAccount = AdminInfo.Account;
                 o.datains_usr = AdminInfo.Account;
                 o.datains_date = DateTime.Now;
                 #endregion
@@ -70,5 +70,6 @@ namespace SYS.FormUI
 
 
         }
+
     }
 }
