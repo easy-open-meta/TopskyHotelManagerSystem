@@ -120,4 +120,18 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAGAAGAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAAFz
+        UkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABm0lEQVRYR+2WPUsD
+        QRiE06uNjZWCYGlhFwgK/gR/g4W2lnamVrC3sk8TK0EQ7ATBUrCSYGEt2NkkPrNOLtHsYXK3d4g4MOy+
+        835NvjwbeRgMBttVsd/vL3hNHBScUVgl7r0qDgwcu7AyeFX98P5faEBvO7ypguxre02+AeuVQCa8ZioD
+        0Z9OQbbhbAYcJgHj6jVA+wYc/7zTGEDe+cyOhn8HSw7gq4p0l6Z6x8UN0NyEb05r2K5TAcQt2HVa+Wen
+        yhugcRU+OtXxqYFbHPPwkHt41QL3fbcGIBU3QNMcvJbG+WTtyvELvNRd4H4Bl0PjGEiVMjD+QFqxtgjv
+        rGnwO8deaIiAXCkDwwfSpqUA9DX4ALtw3XIU9Jb/Es4CFp3DHmwpZlztBvR3Xwg/V50KChmg6QjqFS1Z
+        +hGpDXwZNg1qM0DuBDYdZqjFALGechras5ShVgOCpQz/Bv6eAQ+cMDDMWcrwvUcnLGYgBRgXM6DHesfh
+        CCoUHCYB4yYM5EKFVWEqAxTduj45mH3qNfmgTv9i6RuenF4RQaPxAf/HhC/sVoa3AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

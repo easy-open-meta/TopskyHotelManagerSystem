@@ -38,6 +38,20 @@ namespace SYS.Application
         }
         #endregion
 
+        #region 根据房间编号查询消费信息
+        /// <summary>
+        /// 根据房间编号查询消费信息
+        /// </summary>
+        /// <param name="No"></param>
+        /// <returns></returns>
+        public List<Spend> SelectSpendByRoomNo(string No)
+        {
+            List<Spend> ls = new List<Spend>();
+            ls = base.GetList(a => a.RoomNo == No && a.MoneyState == "未结算" && a.delete_mk != 1);
+            return ls;
+        }
+        #endregion
+
         #region 查询消费的所有信息
         /// <summary>
         /// 查询消费的所有信息
@@ -99,21 +113,25 @@ namespace SYS.Application
         /// <summary>
         /// 将转房前的未结算记录一同转移到新房间
         /// </summary>
-        /// <param name="oldRoom"></param>
+        /// <param name="spends"></param>
         /// <param name="newRoom"></param>
         /// <param name="custoNo"></param>
         /// <returns></returns>
-        public bool UpdateSpendInfoByRoomNo(string oldRoom,string newRoom,string custoNo)
+        public bool UpdateSpendInfoByRoomNo(List<Spend> spends, string newRoom, string custoNo)
         {
+            var listSpendId = spends.Select(a => a.SpendName).Distinct().ToList();
+            
             return base.Update(a => new Spend()
             {
                 RoomNo = newRoom,
                 datachg_usr = LoginInfo.WorkerNo,
-                datachg_date  = DateTime.Now
-            },a => a.RoomNo == oldRoom && a.CustoNo == custoNo && a.MoneyState == "未结算" && a.SpendTime >= DateTime.Now
-            && a.SpendTime <= DateTime.Now);
+                datachg_date = DateTime.Now
+            }, a => listSpendId.Contains(a.RoomNo) && a.CustoNo == custoNo && a.MoneyState == "未结算" && a.SpendTime >= DateTime.Now
+             && a.SpendTime <= DateTime.Now);
+
 
         }
         #endregion
+
     }
 }

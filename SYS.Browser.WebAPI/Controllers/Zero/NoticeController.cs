@@ -18,7 +18,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Notice> SelectNoticeAll()
         {
-            return NoticeService.SelectNoticeAll();
+            return new NoticeService().SelectNoticeAll();
         }
         #endregion
     }

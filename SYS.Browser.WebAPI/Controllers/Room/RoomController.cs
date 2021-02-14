@@ -19,7 +19,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Room> SelectRoomByRoomState([FromUri]int stateid)
         {
-            return RoomService.SelectRoomByRoomState(stateid);
+            return new RoomService().SelectRoomByRoomState(stateid);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Room> SelectRoomAll()
         {
-            return RoomService.SelectRoomAll();
+            return new RoomService().SelectRoomAll();
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public Room SelectRoomByRoomNo([FromUri]string no)
         {
-            return RoomService.SelectRoomByRoomNo(no);
+            return new RoomService().SelectRoomByRoomNo(no);
         }
 
 
@@ -52,7 +52,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Room> SelectRoomByTypeName([FromUri]string TypeName)
         {
-            return RoomService.SelectRoomByTypeName(TypeName);
+            return new RoomService().SelectRoomByTypeName(TypeName);
         }
         #endregion
 
@@ -65,7 +65,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Room> SelectCanUseRoomAll()
         {
-            return RoomService.SelectCanUseRoomAll();
+            return new RoomService().SelectCanUseRoomAll();
         }
         #endregion
 
@@ -76,9 +76,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="room"></param>
         /// <returns></returns>
         [HttpGet]
-        public int UpdateRoomByRoomNo([FromUri]string room)
+        public bool UpdateRoomByRoomNo([FromUri]string room)
         {
-            return RoomService.UpdateRoomByRoomNo(room);
+            return new RoomService().UpdateRoomByRoomNo(room);
         }
         #endregion
 
@@ -91,7 +91,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object DayByRoomNo([FromUri]string roomno)
         {
-            return RoomService.DayByRoomNo(roomno);
+            return new RoomService().DayByRoomNo(roomno);
         }
         #endregion
 
@@ -102,9 +102,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="r"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateRoomInfo([FromBody]Room r)
+        public bool UpdateRoomInfo([FromBody]Room r)
         {
-            return RoomService.UpdateRoomInfo(r);
+            return new RoomService().UpdateRoomInfo(r);
         }
         #endregion
 
@@ -115,9 +115,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="r"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateRoomInfoWithReser([FromBody]Room r)
+        public bool UpdateRoomInfoWithReser([FromBody]Room r)
         {
-            return RoomService.UpdateRoomInfoWithReser(r);
+            return new RoomService().UpdateRoomInfoWithReser(r);
         }
         #endregion
 
@@ -129,7 +129,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectCanUseRoomAllByRoomState()
         {
-            return RoomService.SelectCanUseRoomAllByRoomState();
+            return new RoomService().SelectCanUseRoomAllByRoomState();
         }
         #endregion
 
@@ -141,7 +141,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectNotUseRoomAllByRoomState()
         {
-            return RoomService.SelectNotUseRoomAllByRoomState();
+            return new RoomService().SelectNotUseRoomAllByRoomState();
         }
         #endregion
 
@@ -153,7 +153,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectNotClearRoomAllByRoomState()
         {
-            return RoomService.SelectNotClearRoomAllByRoomState();
+            return new RoomService().SelectNotClearRoomAllByRoomState();
         }
         #endregion
 
@@ -165,7 +165,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectFixingRoomAllByRoomState()
         {
-            return RoomService.SelectFixingRoomAllByRoomState();
+            return new RoomService().SelectFixingRoomAllByRoomState();
         }
         #endregion
 
@@ -177,7 +177,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectRoomByRoomPrice([FromUri]string r)
         {
-            return RoomService.SelectRoomByRoomPrice(r);
+            return new RoomService().SelectRoomByRoomPrice(r);
         }
         #endregion
 
@@ -189,20 +189,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectReseredRoomAllByRoomState()
         {
-            return RoomService.SelectReseredRoomAllByRoomState();
-        }
-        #endregion
-
-        #region 根据房间编号查询房间状态名称
-        /// <summary>
-        /// 根据房间编号查询房间状态名称
-        /// </summary>
-        /// <param name="roomno"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public object SelectRoomStateNameByRoomNo([FromUri]string roomno)
-        {
-            return RoomService.SelectRoomStateNameByRoomNo(roomno);
+            return new RoomService().SelectReseredRoomAllByRoomState();
         }
         #endregion
 
@@ -214,9 +201,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="stateid"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateRoomStateByRoomNo([FromBody]string roomno, int stateid)
+        public bool UpdateRoomStateByRoomNo([FromBody]string roomno, int stateid)
         {
-            return RoomService.UpdateRoomStateByRoomNo(roomno, stateid);
+            return new RoomService().UpdateRoomStateByRoomNo(roomno, stateid);
         }
         #endregion
 
@@ -229,7 +216,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpPost]
         public object InsertRoom([FromBody]Room roomno)
         {
-            return RoomService.InsertRoom(roomno);
+            return new RoomService().InsertRoom(roomno);
         }
         #endregion
 
@@ -241,7 +228,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Room> SelectRoomByStateAll()
         {
-            return RoomService.SelectRoomByStateAll();
+            return new RoomService().SelectRoomByStateAll();
         }
         #endregion
 
@@ -251,9 +238,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Room> SelectRoomStateAll()
+        public List<RoomState> SelectRoomStateAll()
         {
-            return RoomService.SelectRoomStateAll();
+            return new RoomService().SelectRoomStateAll();
         }
         #endregion
 
@@ -266,7 +253,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectRoomStateIdByRoomNo([FromUri]string roomno)
         {
-            return RoomService.SelectRoomStateIdByRoomNo(roomno);
+            return new RoomService().SelectRoomStateIdByRoomNo(roomno);
         }
         #endregion
 

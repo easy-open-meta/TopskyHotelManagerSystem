@@ -1,4 +1,6 @@
-﻿using SYS.Manager;
+﻿using Sunny.UI;
+using SYS.Application;
+using SYS.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
-    public partial class FrmNotice : Form
+    public partial class FrmNotice : UIForm
     {
         public FrmNotice()
         {
@@ -20,8 +22,22 @@ namespace SYS.FormUI
 
         private void FrmNotice_Load(object sender, EventArgs e)
         {
-            dgvNoticeList.AutoGenerateColumns = false;
-            dgvNoticeList.DataSource = NoticeManager.SelectNoticeAll();
+            List<Notice> notices = new NoticeService().SelectNoticeAll();
+            notices.ForEach(source =>
+            {
+                dgvNoticeList.Items.Add(source.NoticeNo + ":" + source.Noticetheme);
+            });
+        }
+
+        private void dgvNoticeList_ItemClick(object sender, EventArgs e)
+        {
+            //根据:来分割字符串并返回第一项数据即为公告编号
+            var str = dgvNoticeList.SelectedItem.ToString().Split(":").First();
+            Notice notice = new NoticeService().SelectNoticeByNoticeNo(str);
+            if (notice != null)
+            {
+                rtbNoticeContent.Html = notice.NoticeContent;
+            }
         }
     }
 }

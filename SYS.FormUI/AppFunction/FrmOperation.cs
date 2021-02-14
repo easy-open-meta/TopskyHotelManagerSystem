@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Sunny.UI;
+using SYS.Application;
+using System;
 using System.Windows.Forms;
-using SYS.Manager;
 
 namespace SYS.FormUI
 {
-    public partial class FrmOperation : Form
+    public partial class FrmOperation : UIForm
     {
         public FrmOperation()
         {
@@ -15,7 +16,7 @@ namespace SYS.FormUI
 
         private void FrmOperation_Load(object sender, EventArgs e)
         {
-            dgvOperationlog.DataSource = OperationlogManager.SelectOperationlogAll();
+            dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustoManager));
             this.dgvCustomerList = new Sunny.UI.UIDataGridView();
             this.CustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,21 +63,21 @@
             this.dgvCustomerList.AllowUserToDeleteRows = false;
             this.dgvCustomerList.AllowUserToResizeColumns = false;
             this.dgvCustomerList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvCustomerList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvCustomerList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomerList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerList.BackgroundColor = System.Drawing.Color.White;
             this.dgvCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomerList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvCustomerList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCustomerList.ColumnHeadersHeight = 32;
             this.dgvCustomerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -91,21 +93,28 @@
             this.Column2,
             this.Column3,
             this.Column4});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerList.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCustomerList.EnableHeadersVisualStyles = false;
             this.dgvCustomerList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvCustomerList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgvCustomerList.Location = new System.Drawing.Point(12, 9);
+            this.dgvCustomerList.Location = new System.Drawing.Point(12, 38);
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.ReadOnly = true;
             this.dgvCustomerList.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCustomerList.RowTemplate.Height = 29;
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.ShowRect = false;
-            this.dgvCustomerList.Size = new System.Drawing.Size(1048, 403);
-            this.dgvCustomerList.Style = Sunny.UI.UIStyle.Custom;
+            this.dgvCustomerList.Size = new System.Drawing.Size(981, 506);
             this.dgvCustomerList.TabIndex = 111;
             // 
             // CustoNo
@@ -201,7 +210,7 @@
             this.gbCustoInfo.Controls.Add(this.txtCardID);
             this.gbCustoInfo.Controls.Add(this.label3);
             this.gbCustoInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gbCustoInfo.Location = new System.Drawing.Point(45, 418);
+            this.gbCustoInfo.Location = new System.Drawing.Point(10, 550);
             this.gbCustoInfo.Name = "gbCustoInfo";
             this.gbCustoInfo.Size = new System.Drawing.Size(538, 57);
             this.gbCustoInfo.TabIndex = 112;
@@ -238,7 +247,7 @@
             // 
             this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerach.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnSerach.Location = new System.Drawing.Point(594, 426);
+            this.btnSerach.Location = new System.Drawing.Point(559, 558);
             this.btnSerach.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnSerach.Name = "btnSerach";
             this.btnSerach.Radius = 30;
@@ -251,7 +260,7 @@
             // 
             this.btnAddCusto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCusto.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAddCusto.Location = new System.Drawing.Point(703, 426);
+            this.btnAddCusto.Location = new System.Drawing.Point(668, 558);
             this.btnAddCusto.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAddCusto.Name = "btnAddCusto";
             this.btnAddCusto.Radius = 30;
@@ -264,7 +273,7 @@
             // 
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnExport.Location = new System.Drawing.Point(815, 426);
+            this.btnExport.Location = new System.Drawing.Point(780, 558);
             this.btnExport.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnExport.Name = "btnExport";
             this.btnExport.Radius = 30;
@@ -277,7 +286,7 @@
             // 
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnUpdate.Location = new System.Drawing.Point(924, 426);
+            this.btnUpdate.Location = new System.Drawing.Point(889, 558);
             this.btnUpdate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Radius = 30;
@@ -288,19 +297,23 @@
             // 
             // FrmCustoManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1072, 490);
+            this.ClientSize = new System.Drawing.Size(1005, 623);
+            this.ControlBox = false;
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnAddCusto);
             this.Controls.Add(this.btnSerach);
             this.Controls.Add(this.gbCustoInfo);
             this.Controls.Add(this.dgvCustomerList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCustoManager";
-            this.Text = "FrmCustoManager";
+            this.ShowIcon = true;
+            this.Text = "客户信息管理";
             this.Load += new System.EventHandler(this.FrmCustoManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).EndInit();
             this.gbCustoInfo.ResumeLayout(false);

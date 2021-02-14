@@ -18,7 +18,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<RoomType> SelectRoomTypesAll()
         {
-            return RoomTypeService.SelectRoomTypesAll();
+            return new RoomTypeService().SelectRoomTypesAll();
         }
         #endregion
 
@@ -31,7 +31,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpPost]
         public RoomType SelectRoomTypeByRoomNo([FromBody]string no)
         {
-            return RoomTypeService.SelectRoomTypeByRoomNo(no);
+            return new RoomTypeService().SelectRoomTypeByRoomNo(no);
         }
         #endregion
     }

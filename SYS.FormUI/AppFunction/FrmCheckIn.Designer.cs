@@ -39,6 +39,8 @@
             this.txtCustoName = new Sunny.UI.UITextBox();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.txtRoomPosition = new Sunny.UI.UITextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtType = new Sunny.UI.UIComboBox();
             this.txtRoomNo = new Sunny.UI.UITextBox();
             this.txtState = new Sunny.UI.UITextBox();
@@ -47,8 +49,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtRoomPosition = new Sunny.UI.UITextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnCheckIn = new Sunny.UI.UIButton();
             this.btnClose = new Sunny.UI.UIButton();
             this.uiGroupBox1.SuspendLayout();
@@ -226,6 +226,35 @@
             this.uiGroupBox2.TabIndex = 138;
             this.uiGroupBox2.Text = "房间信息RoomInformation";
             // 
+            // txtRoomPosition
+            // 
+            this.txtRoomPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRoomPosition.FillColor = System.Drawing.Color.White;
+            this.txtRoomPosition.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRoomPosition.Location = new System.Drawing.Point(146, 150);
+            this.txtRoomPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomPosition.Maximum = 2147483647D;
+            this.txtRoomPosition.Minimum = -2147483648D;
+            this.txtRoomPosition.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtRoomPosition.Name = "txtRoomPosition";
+            this.txtRoomPosition.Padding = new System.Windows.Forms.Padding(5);
+            this.txtRoomPosition.Radius = 20;
+            this.txtRoomPosition.ReadOnly = true;
+            this.txtRoomPosition.Size = new System.Drawing.Size(628, 35);
+            this.txtRoomPosition.Style = Sunny.UI.UIStyle.Custom;
+            this.txtRoomPosition.StyleCustomMode = true;
+            this.txtRoomPosition.TabIndex = 138;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(39, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 25);
+            this.label3.TabIndex = 137;
+            this.label3.Text = "房间位置";
+            // 
             // txtType
             // 
             this.txtType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
@@ -340,35 +369,6 @@
             this.label20.TabIndex = 129;
             this.label20.Text = "房间编号";
             // 
-            // txtRoomPosition
-            // 
-            this.txtRoomPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRoomPosition.FillColor = System.Drawing.Color.White;
-            this.txtRoomPosition.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRoomPosition.Location = new System.Drawing.Point(146, 150);
-            this.txtRoomPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRoomPosition.Maximum = 2147483647D;
-            this.txtRoomPosition.Minimum = -2147483648D;
-            this.txtRoomPosition.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtRoomPosition.Name = "txtRoomPosition";
-            this.txtRoomPosition.Padding = new System.Windows.Forms.Padding(5);
-            this.txtRoomPosition.Radius = 20;
-            this.txtRoomPosition.ReadOnly = true;
-            this.txtRoomPosition.Size = new System.Drawing.Size(628, 35);
-            this.txtRoomPosition.Style = Sunny.UI.UIStyle.Custom;
-            this.txtRoomPosition.StyleCustomMode = true;
-            this.txtRoomPosition.TabIndex = 138;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(39, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 25);
-            this.label3.TabIndex = 137;
-            this.label3.Text = "房间位置";
-            // 
             // btnCheckIn
             // 
             this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -403,6 +403,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(861, 528);
+            this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.uiGroupBox1);

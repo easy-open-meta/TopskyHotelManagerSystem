@@ -2,50 +2,25 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
+using SYS.Application;
+using System.Collections.Generic;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmAddRoom : Form
+    public partial class FrmAddRoom : UIForm
     {
         public FrmAddRoom()
         {
             InitializeComponent();
         }
 
-        public static Room rn;
-
-        public void CmpSetDgv()
-        {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvRoomList.AllowUserToAddRows = false;
-            this.dgvRoomList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            this.dgvRoomList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRoomList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRoomList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvRoomList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("苹方-简", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvRoomList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomList.EnableHeadersVisualStyles = false;
-            this.dgvRoomList.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgvRoomList.ReadOnly = true;
-            this.dgvRoomList.RowHeadersVisible = false;
-            this.dgvRoomList.RowTemplate.Height = 23;
-            this.dgvRoomList.RowTemplate.ReadOnly = true;
-        }
+        Room rn;
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            if (txtRoomNo.TextLength > 6)
+            if (!string.IsNullOrWhiteSpace(txtRoomNo.Text))
             {
                 rn = new Room()
                 {
@@ -53,17 +28,22 @@ namespace SYS.FormUI
                     RoomType = cboRoomType.SelectedIndex,
                     RoomMoney = Convert.ToDecimal(txtMoney.Text),
                     RoomPosition = txtRoomPosition.Text,
+                    RoomStateId = 0,
+                    datains_usr = AdminInfo.Account,
+                    datains_date = DateTime.Now
                 };
-                RoomManager.InsertRoom(rn);
+                new RoomService().InsertRoom(rn);
                 MessageBox.Show("添加房间成功！");
-                dgvRoomList.DataSource = RoomManager.SelectCanUseRoomAll();
+                LoadRoom();
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text;
                 o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
+                o.datains_usr = AdminInfo.Account;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
             }
             else
             {
@@ -73,63 +53,62 @@ namespace SYS.FormUI
         }
 
 
-
+        ucRoomList romt = null;
         private void FrmAddRoom_Load(object sender, EventArgs e)
         {
-            CmpSetDgv();
-            dgvRoomList.AutoGenerateColumns = false;
-            dgvRoomList.DataSource = RoomManager.SelectCanUseRoomAll();
-            cboRoomType.DataSource = RoomTypeManager.SelectRoomTypesAll();
+            LoadRoom();
+            cboRoomType.DataSource = new RoomTypeService().SelectRoomTypesAll();
             cboRoomType.DisplayMember = "RoomName";
             cboRoomType.ValueMember = "RoomType";
             cboRoomType.SelectedIndex = 0;
-            cboState.SelectedIndex = 0;
+        }
+
+        public void LoadRoom()
+        {
+            List<Room> rooms = new RoomService().SelectCanUseRoomAll();
+            flpRoom.Controls.Clear();
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                romt = new ucRoomList();
+                romt.lblRoomNo.Text = rooms[i].RoomNo;
+                romt.lblCustoNo.Text = rooms[i].CustoNo;
+                romt.lblRoomType.Text = rooms[i].RoomName;
+                romt.romCustoInfo = rooms[i];
+                flpRoom.Controls.Add(romt);
+            }
         }
 
         private void cboRoomType_TextChanged(object sender, EventArgs e)
         {
-            Random random = new Random();
             if (cboRoomType.Text == "标准单人间")
             {
-                txtRoomNo.Text = "BD" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 txtMoney.Text = "300";
                 txtRoomPosition.Text = "A层";
-                txtPersonNum.Text = "1";
             }
             else if (cboRoomType.Text == "标准双人间")
             {
-                txtRoomNo.Text = "BS" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 txtMoney.Text = "425";
                 txtRoomPosition.Text = "A层";
-                txtPersonNum.Text = "2";
             }
             else if (cboRoomType.Text == "豪华单人间")
             {
-                txtRoomNo.Text = "HD" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 txtMoney.Text = "625";
                 txtRoomPosition.Text = "B层";
-                txtPersonNum.Text = "1";
             }
             else if (cboRoomType.Text == "豪华双人间")
             {
-                txtRoomNo.Text = "HS" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 txtMoney.Text = "660";
                 txtRoomPosition.Text = "B层";
-                txtPersonNum.Text = "2";
             }
             else if (cboRoomType.Text == "情侣套房")
             {
-                txtRoomNo.Text = "QL" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
                 txtMoney.Text = "845";
                 txtRoomPosition.Text = "C层";
-                txtPersonNum.Text = "2";
             }
             else if (cboRoomType.Text == "总统套房")
             {
-                txtRoomNo.Text = "ZT" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
-                txtMoney.Text = "2080";
+                txtMoney.Text = "1080";
                 txtRoomPosition.Text = "D层";
-                txtPersonNum.Text = "4";
             }
         }
 
@@ -145,15 +124,9 @@ namespace SYS.FormUI
         private bool CheckRoomExists(string RoomNo)
         {
             bool ret = false;
-            string sql = "select count(*) from ROOM where RoomNo=@RoomNo";
-            int n = (int)DBHelper.ExecuteScalar(sql,
-                    CommandType.Text,
-                    new MySqlParameter[]
-                    {
-                        new MySqlParameter("@RoomNo",txtRoomNo.Text)
-                    }
-                    );
-            if (n > 0)
+            Room room = new Room();
+            room = new RoomService().SelectRoomByRoomNo(RoomNo);
+            if (room != null)
             {
                 ret = true;
             }

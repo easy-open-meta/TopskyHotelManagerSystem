@@ -20,9 +20,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="goodBad"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddGoodBad([FromBody]WorkerGoodBad goodBad)
+        public bool AddGoodBad([FromBody]WorkerGoodBad goodBad)
         {
-            return WorkerGoodBadService.AddGoodBad(goodBad);
+            return new WorkerGoodBadService().AddGoodBad(goodBad);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<WorkerGoodBad> SelectAllGoodBadByWorkNo([FromUri]string wn)
         {
-            return WorkerGoodBadService.SelectAllGoodBadByWorkNo(wn); 
+            return new WorkerGoodBadService().SelectAllGoodBadByWorkNo(wn); 
         }
     }
 }

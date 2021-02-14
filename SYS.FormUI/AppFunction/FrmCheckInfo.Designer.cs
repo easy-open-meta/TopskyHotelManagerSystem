@@ -43,7 +43,7 @@
             // dgvCheckInfo
             // 
             this.dgvCheckInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCheckInfo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCheckInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvCheckInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clCheckNo,
@@ -55,7 +55,7 @@
             this.clCheckAdvice});
             this.dgvCheckInfo.Location = new System.Drawing.Point(12, 12);
             this.dgvCheckInfo.Name = "dgvCheckInfo";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvCheckInfo.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckInfo.RowTemplate.Height = 23;
             this.dgvCheckInfo.Size = new System.Drawing.Size(970, 429);
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(994, 453);
             this.Controls.Add(this.dgvCheckInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

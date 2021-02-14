@@ -50,15 +50,6 @@
             this.tpCheckOut = new System.Windows.Forms.TabPage();
             this.btnBalance = new Sunny.UI.UIButton();
             this.dgvSpendList = new Sunny.UI.UIDataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDay = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.dtpCheckTime = new Sunny.UI.UITextBox();
@@ -90,6 +81,20 @@
             this.label32 = new System.Windows.Forms.Label();
             this.tpWti = new System.Windows.Forms.TabPage();
             this.dgvWti = new Sunny.UI.UIDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +102,11 @@
             this.clWater = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clElectric = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMarkUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpCheckOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpendList)).BeginInit();
@@ -312,6 +322,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.clSpendNo,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
             this.Column8});
             this.dgvSpendList.EnableHeadersVisualStyles = false;
             this.dgvSpendList.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -330,77 +344,6 @@
             this.dgvSpendList.Size = new System.Drawing.Size(648, 202);
             this.dgvSpendList.Style = Sunny.UI.UIStyle.Custom;
             this.dgvSpendList.TabIndex = 115;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "RoomNo";
-            this.dataGridViewTextBoxColumn1.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "房号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CustoNo";
-            this.dataGridViewTextBoxColumn2.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "客户编号";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SpendName";
-            this.dataGridViewTextBoxColumn3.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "商品";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SpendAmount";
-            this.dataGridViewTextBoxColumn4.FillWeight = 60F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "数量";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SpendPrice";
-            this.dataGridViewTextBoxColumn5.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "单价(元)";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SpendMoney";
-            this.dataGridViewTextBoxColumn6.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "总额";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SpendTime";
-            this.dataGridViewTextBoxColumn7.FillWeight = 102.6831F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "消费时间";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // clSpendNo
-            // 
-            this.clSpendNo.HeaderText = "Column1";
-            this.clSpendNo.Name = "clSpendNo";
-            this.clSpendNo.ReadOnly = true;
-            this.clSpendNo.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MoneyState";
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
             // 
             // lblDay
             // 
@@ -856,13 +799,19 @@
             this.dgvWti.ColumnHeadersHeight = 32;
             this.dgvWti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column11,
             this.clRoomNo,
             this.clCustoNo,
             this.clStartTime,
             this.clDealTime,
             this.clWater,
             this.clElectric,
-            this.clMarkUser});
+            this.clMarkUser,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column9,
+            this.Column10});
             this.dgvWti.EnableHeadersVisualStyles = false;
             this.dgvWti.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvWti.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -878,6 +827,117 @@
             this.dgvWti.Size = new System.Drawing.Size(656, 291);
             this.dgvWti.Style = Sunny.UI.UIStyle.Custom;
             this.dgvWti.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "RoomNo";
+            this.dataGridViewTextBoxColumn1.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "房号";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CustoNo";
+            this.dataGridViewTextBoxColumn2.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "客户编号";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SpendName";
+            this.dataGridViewTextBoxColumn3.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "商品";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SpendAmount";
+            this.dataGridViewTextBoxColumn4.FillWeight = 60F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "数量";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SpendPrice";
+            this.dataGridViewTextBoxColumn5.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "单价(元)";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SpendMoney";
+            this.dataGridViewTextBoxColumn6.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "总额";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "SpendTime";
+            this.dataGridViewTextBoxColumn7.FillWeight = 102.6831F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "消费时间";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // clSpendNo
+            // 
+            this.clSpendNo.DataPropertyName = "delete_mk";
+            this.clSpendNo.HeaderText = "Column1";
+            this.clSpendNo.Name = "clSpendNo";
+            this.clSpendNo.ReadOnly = true;
+            this.clSpendNo.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "datains_usr";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "datains_date";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "datachg_usr";
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "datachg_date";
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MoneyState";
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "WtiNo";
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
             // 
             // clRoomNo
             // 
@@ -920,6 +980,41 @@
             this.clMarkUser.DataPropertyName = "Record";
             this.clMarkUser.HeaderText = "记录员";
             this.clMarkUser.Name = "clMarkUser";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "delete_mk";
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "datains_usr";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datains_date";
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "datachg_usr";
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "datachg_date";
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
             // 
             // FrmCheckOutForm
             // 
@@ -976,15 +1071,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label24;
         private Sunny.UI.UIDataGridView dgvSpendList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSpendNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Sunny.UI.UIButton btnBalance;
         private Sunny.UI.UIComboBox cboCustoType;
         private Sunny.UI.UIComboBox cboPassportType;
@@ -1005,6 +1091,20 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private Sunny.UI.UIDataGridView dgvWti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSpendNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn clRoomNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCustoNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clStartTime;
@@ -1012,5 +1112,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clWater;
         private System.Windows.Forms.DataGridViewTextBoxColumn clElectric;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMarkUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

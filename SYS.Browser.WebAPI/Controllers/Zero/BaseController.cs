@@ -42,7 +42,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="sexType"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddSexType([FromBody]SexType sexType)
+        public bool AddSexType([FromBody]SexType sexType)
         {
             return new BaseService().AddSexType(sexType);
         }
@@ -53,7 +53,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="sexType"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DelSexType([FromBody]SexType sexType)
+        public bool DelSexType([FromBody]SexType sexType)
         {
             return new BaseService().DelSexType(sexType);
         }
@@ -64,7 +64,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="sexType"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdSexType([FromBody]SexType sexType)
+        public bool UpdSexType([FromBody]SexType sexType)
         {
             return new BaseService().UpdSexType(sexType);
         }
@@ -99,7 +99,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="position"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddPosition([FromBody]Position position)
+        public bool AddPosition([FromBody]Position position)
         {
             return new BaseService().AddPosition(position);
         }
@@ -110,7 +110,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="position"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DelPosition([FromBody]Position position)
+        public bool DelPosition([FromBody]Position position)
         {
             return new BaseService().DelPosition(position);
         }
@@ -121,7 +121,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="position"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdPosition([FromBody]Position position)
+        public bool UpdPosition([FromBody]Position position)
         {
             return new BaseService().UpdPosition(position);
         }
@@ -156,7 +156,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="nation"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddNation([FromBody]Nation nation)
+        public bool AddNation([FromBody]Nation nation)
         {
             return new BaseService().AddNation(nation);
         }
@@ -167,7 +167,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="nation"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DelNation([FromBody]Nation nation)
+        public bool DelNation([FromBody]Nation nation)
         {
             return new BaseService().DelNation(nation);
         }
@@ -178,7 +178,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="nation"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdNation([FromBody]Nation nation)
+        public bool UpdNation([FromBody]Nation nation)
         {
             return new BaseService().UpdNation(nation);
         }
@@ -213,7 +213,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="education"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddEducation([FromBody]Education education)
+        public bool AddEducation([FromBody]Education education)
         {
             return new BaseService().AddEducation(education);
         }
@@ -224,7 +224,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="education"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DelEducation([FromBody]Education education)
+        public bool DelEducation([FromBody]Education education)
         {
             return new BaseService().DelEducation(education);
         }
@@ -235,7 +235,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="education"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdEducation([FromBody]Education education)
+        public bool UpdEducation([FromBody]Education education)
         {
             return new BaseService().UpdEducation(education);
         }
@@ -270,7 +270,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="dept"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddDept([FromBody]Dept dept)
+        public bool AddDept([FromBody]Dept dept)
         {
             return new BaseService().AddDept(dept);
         }
@@ -281,7 +281,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="dept"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DelDept([FromBody]Dept dept)
+        public bool DelDept([FromBody]Dept dept)
         {
             return new BaseService().DelDept(dept);
         }
@@ -292,7 +292,7 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="dept"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdDept([FromBody]Dept dept)
+        public bool UpdDept([FromBody]Dept dept)
         {
             return new BaseService().UpdDept(dept);
         }

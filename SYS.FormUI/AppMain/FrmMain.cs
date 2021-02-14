@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using Sunny.UI;
@@ -187,8 +186,7 @@ namespace SYS.FormUI
         #endregion
 
         #region 从数据库读取文字滚动的内容
-        static FontsManager fontsManager = new FontsManager();
-        List<Fonts> fonts = fontsManager.SelectFontAll();
+        List<Fonts> fonts = new FontsService().SelectFontAll();
         int fontn = 0;
         #endregion
 
@@ -381,8 +379,10 @@ namespace SYS.FormUI
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerNo + LoginInfo.WorkerName + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
                 o.OperationAccount = LoginInfo.WorkerNo;
+                o.datains_usr = LoginInfo.WorkerNo;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
             }
 
         }

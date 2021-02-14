@@ -196,5 +196,79 @@ namespace SYS.Application
         bool UpdDept(Dept dept);
 
         #endregion
+
+        #region 客户类型模块
+        /// <summary>
+        /// 查询所有客户类型
+        /// </summary>
+        /// <returns></returns>
+        List<CustoType> SelectCustoTypeAll();
+
+        /// <summary>
+        /// 根据客户类型ID查询类型名称
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        CustoType SelectCustoTypeByTypeId(CustoType custoType);
+
+        /// <summary>
+        /// 添加客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        bool InsertCustoType(CustoType custoType);
+
+        /// <summary>
+        /// 删除客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+         bool DeleteCustoType(CustoType custoType);
+
+        /// <summary>
+        /// 更新客户类型
+        /// </summary>
+        /// <param name="custoType"></param>
+        /// <returns></returns>
+        bool UpdateCustoType(CustoType custoType);
+
+        #endregion
+
+        #region 证件类型模块
+        /// <summary>
+        /// 查询所有证件类型
+        /// </summary>
+        /// <returns></returns>
+        List<PassPortType> SelectPassPortTypeAll();
+
+        /// <summary>
+        /// 根据证件类型ID查询类型名称
+        /// </summary>
+        /// <param name="passPortType"></param>
+        /// <returns></returns>
+        PassPortType SelectPassPortTypeByTypeId(PassPortType passPortType);
+
+        /// <summary>
+        /// 添加证件类型
+        /// </summary>
+        /// <param name="passPortType"></param>
+        /// <returns></returns>
+        bool InsertPassPortType(PassPortType passPortType);
+
+        /// <summary>
+        /// 删除证件类型
+        /// </summary>
+        /// <param name="portType"></param>
+        /// <returns></returns>
+        bool DeletePassPortType(PassPortType portType);
+
+        /// <summary>
+        /// 更新证件类型
+        /// </summary>
+        /// <param name="portType"></param>
+        /// <returns></returns>
+        bool UpdatePassPortType(PassPortType portType);
+
+        #endregion
     }
 }

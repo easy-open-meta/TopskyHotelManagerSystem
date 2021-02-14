@@ -22,12 +22,12 @@ namespace SYS.Application
         {
             return base.Update(a => new Worker()
             {
+                WorkerName = worker.WorkerName,
                 WorkerTel = worker.WorkerTel,
                 WorkerAddress = worker.WorkerAddress,
-                WorkerPwd = worker.WorkerPwd,
                 WorkerFace = worker.WorkerFace,
                 WorkerEducation = worker.WorkerEducation,
-                WorkerSex = worker.WorkerSex,
+                WorkerNation = worker.WorkerNation,
                 datachg_usr = AdminInfo.Account,
                 datachg_date = DateTime.Now
             },a => a.WorkerId == worker.WorkerId);
@@ -35,6 +35,22 @@ namespace SYS.Application
         }
         #endregion
 
+        /// <summary>
+        /// 更新员工职位和部门
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+
+        public bool UpdateWorkerPositionAndClub(Worker worker)
+        {
+            return base.Update(a => new Worker()
+            {
+                WorkerClub = worker.WorkerClub,
+                WorkerPosition = worker.WorkerPosition,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.WorkerId == worker.WorkerId);
+        }
 
         #region 添加员工信息
         /// <summary>
@@ -80,7 +96,7 @@ namespace SYS.Application
                 source.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
                 //教育程度
                 var eduction = educations.FirstOrDefault(a => a.education_no == source.WorkerEducation);
-                source.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+                source.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
                 //民族类型
                 var nation = nations.FirstOrDefault(a => a.nation_no == source.WorkerNation);
                 source.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
@@ -111,7 +127,7 @@ namespace SYS.Application
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
             //教育程度
             var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
-            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            w.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
             //民族类型
             var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
             w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;
@@ -143,7 +159,7 @@ namespace SYS.Application
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
             //教育程度
             var eduction = base.Change<Education>().GetSingle(a => a.education_no == w.WorkerEducation);
-            w.WorkerEducation = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
+            w.EducationName = string.IsNullOrEmpty(eduction.education_name) ? "" : eduction.education_name;
             //民族类型
             var nation = base.Change<Nation>().GetSingle(a => a.nation_no == w.WorkerNation);
             w.NationName = string.IsNullOrEmpty(nation.nation_name) ? "" : nation.nation_name;

@@ -1,14 +1,15 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;
+using SYS.Application;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
-    public partial class FrmCustoManager : Form
+    public partial class FrmCustoManager : UIForm
     {
         public FrmCustoManager()
         {
@@ -38,7 +39,8 @@ namespace SYS.FormUI
         private void LoadCustomer()
         {
             
-            List<Custo> lstSource = CustoManager.SelectCustoAll();
+            List<Custo> lstSource = new CustoService().SelectCustoAll();
+            dgvCustomerList.AutoGenerateColumns = false;
             this.dgvCustomerList.DataSource = lstSource;
         }
         #endregion
@@ -117,9 +119,11 @@ namespace SYS.FormUI
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!";
-                o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition;
+                o.OperationAccount = LoginInfo.WorkerNo;
+                o.datains_usr = LoginInfo.WorkerNo;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
                 System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
                 if (saveFileName != "")
                 {
@@ -142,7 +146,6 @@ namespace SYS.FormUI
 
         private void picGetCustoNo_Click_1(object sender, EventArgs e)
         {
-            string cardId = CustoManager.GetRandomCustoNo();
             //txtCustoNo.Text = cardId;
             //picGetCustoNo.BackgroundImage = Resources.获取用户编号_ia;
         }

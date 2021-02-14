@@ -4,6 +4,7 @@ namespace SYS.Core
     /// <summary>
     /// 资产管理
     /// </summary>
+    [SqlSugar.SugarTable("cashinfo")]
     public class Cash
     {
         /// <summary>

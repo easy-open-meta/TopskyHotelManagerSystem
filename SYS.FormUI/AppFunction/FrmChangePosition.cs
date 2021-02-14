@@ -1,9 +1,9 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -22,8 +22,16 @@ namespace SYS.FormUI
         {
             txtworkerId.Text = FrmChangeWorker.wk_WorkerNo;
             txtworkerName.Text = FrmChangeWorker.wk_WorkerName;
-            cboClub.Text = FrmChangeWorker.wk_WorkerClub;
-            cboPosition.Text = FrmChangeWorker.wk_WorkerPosition;
+            txtClub.Text = FrmChangeWorker.wk_WorkerClub;
+            txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
+            //获取所有职位信息
+            cboNewPosition.DataSource =  new BaseService().SelectPositionAll();
+            cboNewPosition.DisplayMember = "position_name";
+            cboNewPosition.ValueMember = "position_no";
+            //获取所有部门信息
+            cboNewClub.DataSource = new BaseService().SelectDeptAll();
+            cboNewClub.DisplayMember = "dept_name";
+            cboNewClub.ValueMember = "dept_no";
         }
 
         private void cboNewClub_TextChanged(object sender, EventArgs e)
@@ -39,22 +47,29 @@ namespace SYS.FormUI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string sql = "update WORKERINFO set WorkerClub='" + cboNewClub.Text + "',WorkerPosition='" + cboNewPosition.Text + "' where WorkerId='" + txtworkerId.Text + "'";
-            MySqlConnection con = DBHelper.GetConnection();
-            int n = DBHelper.ExecuteNonQuery(sql);
-            if (n > 0)
+            Worker worker = new Worker()
+            {
+                WorkerClub = cboNewClub.ValueMember,
+                WorkerPosition = cboNewPosition.ValueMember,
+                WorkerId = txtworkerId.Text
+            };
+             bool n = new WorkerService().UpdateWorkerPositionAndClub(worker);
+            if (n == true)
             {
                 MessageBox.Show("任命已生效!");
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升为" + cboNewClub.Text + cboNewPosition.Text;
-                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
+                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升/降级为" + cboNewClub.Text + cboNewPosition.Text;
+                o.OperationAccount = AdminInfo.Account;
+                o.datains_usr = AdminInfo.Account;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
             }
 
 
         }
+
     }
 }

@@ -15,5 +15,16 @@ namespace SYS.Application
         /// <returns></returns>
         List<Notice> SelectNoticeAll();
         #endregion
+
+
+        #region 上传公告信息
+        /// <summary>
+        /// 上传公告信息
+        /// </summary>
+        /// <param name="notice"></param>
+        /// <returns></returns>
+        bool InsertNotice(Notice notice);
+
+        #endregion
     }
 }

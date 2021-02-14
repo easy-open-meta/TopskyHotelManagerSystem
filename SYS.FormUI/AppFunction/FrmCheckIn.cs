@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;

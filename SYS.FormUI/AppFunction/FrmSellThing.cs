@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -26,7 +26,7 @@ namespace SYS.FormUI
                 label.Font = UI_FontUtil.SetChildControlsFont();
             }
 
-            List<Room> roms = RoomManager.SelectRoomByStateAll();
+            List<Room> roms = new RoomService().SelectRoomByStateAll();
             for (int i = 0; i < roms.Count; i++)
             {
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
@@ -45,83 +45,28 @@ namespace SYS.FormUI
 
 
         #region 查询文本框更改事件
-        private void txtFind_TextChanged(object sender, EventArgs e)
-        {
-            //LoadThingByName();
-        }
-
+        
         private void LoadThingByName()
         {
-            //List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellNo", HeadText = "商品编号", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellName", HeadText = "商品名称", Width = 30, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellPrice", HeadText = "商品价格", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "format", HeadText = "规格", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Stock", HeadText = "库存", Width = 15, WidthType = SizeType.Percent });
+            
+            List<SellThing> lstSource = new SellService().SelectSellThingByName(txtFind.Text);
+            this.dgvSellthing.DataSource = lstSource;
+            this.dgvSellthing.AutoGenerateColumns = false;
+        }
+        #endregion
 
-            //this.dgvRoomSell.Columns = lstCulumns;
-            //this.dgvRoomSell.IsShowCheckBox = false;
-            List<SellThing> lstSource = SellThingManager.SelectThingByName(txtFind.Text);
+
+        #region 根据客户编号加载消费信息的方法
+        private void LoadSpendInfoByRoomNo(string room)
+        {
+            List<Spend> lstSource = new SpendService().SelectSpendByRoomNo(room);
             this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
         }
-        #endregion
 
-        #region 房间编号文本框更改事件
-        private void txtRoomNo_TextChanged(object sender, EventArgs e)
+        private void LoadSpendInfoByCustoNo(string custoNo)
         {
-            string room = txtRoomNo.Text;
-            Room r = RoomManager.SelectRoomByRoomNo(room);
-            if (txtRoomNo.Text == "")
-            {
-                lblState.Text = "";
-            }
-            else if (r == null)
-            {
-                lblState.Text = "该房间不存在";
-                lblState.ForeColor = Color.Red;
-                rs = 0;
-                //LoadSpendInfo();
-                //清空
-            }
-            else if (r != null)
-            {
-                if (r.RoomStateId == 1)
-                {
-                    lblState.Text = "该房间可消费";
-                    lblState.ForeColor = Color.Black;
-                    LoadSpendInfo(room);
-                    rs = 1;
-                }
-                else
-                {
-                    lblState.Text = "该房间不可消费";
-                    lblState.ForeColor = Color.Red;
-                    rs = 0;
-                    this.dgvSellthing.DataSource = null;
-                    //LoadSpendInfo();
-                    //清空
-                }
-            }
-        }
-        #endregion
-
-        #region 根据客户编号加载消费信息的方法
-        private void LoadSpendInfo(string room)
-        {
-            //List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "RoomNo", HeadText = "房间编号", Width = 15, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "CustoNo", HeadText = "客户编号", Width = 15, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SpendName", HeadText = "商品名称", Width = 25, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SpendAmount", HeadText = "数量", Width = 10, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SpendPrice", HeadText = "商品单价", Width = 15, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SpendMoney", HeadText = "消费金额", Width = 15, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SpendTime", HeadText = "消费时间", Width = 50, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "MoneyState", HeadText = "结算状态", Width = 15, WidthType = SizeType.Percent });
-
-            //this.dgvSellthing.Columns = lstCulumns;
-            //this.dgvSellthing.IsShowCheckBox = false;
-            List<Spend> lstSource = SpendManager.SelectSpendByCustoNo(room);
+            List<Spend> lstSource = new SpendService().SelectSpendByCustoNo(custoNo);
             this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
         }
@@ -130,16 +75,8 @@ namespace SYS.FormUI
         #region 商品加载事件方法
         public void LoadSellThingInfo()
         {
-            //List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellNo", HeadText = "商品编号", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellName", HeadText = "商品名称", Width = 30, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "SellPrice", HeadText = "商品价格", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "format", HeadText = "规格", Width = 20, WidthType = SizeType.Percent });
-            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Stock", HeadText = "库存", Width = 15, WidthType = SizeType.Percent});
             
-            //this.dgvRoomSell.Columns = lstCulumns;
-            //this.dgvRoomSell.IsShowCheckBox = false;
-            List<SellThing> lstSource = SellThingManager.SelectSellThingAll();
+            List<SellThing> lstSource = new SellService().SelectSellThingAll();
             this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
         }
@@ -182,10 +119,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 加载消费信息方法
-        
-        #endregion
-
         #region 添加事件
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -193,9 +126,9 @@ namespace SYS.FormUI
             {
                 if (CheckInput())
                 {
-                    SellThing st = SellThingManager.SelectSellThingByNo(txtSellNo.Text);
+                    SellThing st = new SellService().SelectSellThingByNo(txtSellNo.Text);
 
-                    Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);
+                    Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
                     Spend s = new Spend()
                     {
                         RoomNo = txtRoomNo.Text,
@@ -207,21 +140,23 @@ namespace SYS.FormUI
                         SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                         MoneyState = "未结算",
                     };
-                    int m = SpendManager.InsertSpendInfo(s);
-                    if (m > 0)
+                    bool m = new SpendService().InsertSpendInfo(s);
+                    if (m == true)
                     {
                         string Stock = (st.Stock - nudNum.Value).ToString();
-                        int n = SellThingManager.UpdateSellThing(Stock, st.SellNo);
+                        bool n = new SellService().UpdateSellThing(Stock, st.SellNo);
                         MessageBox.Show("添加成功");
-                        LoadSpendInfo(r.RoomNo);
+                        LoadSpendInfoByCustoNo(r.CustoNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！";
-                        o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
+                        o.OperationAccount = LoginInfo.WorkerNo;
+                        o.datains_usr = LoginInfo.WorkerNo;
+                        o.datains_date = DateTime.Now;
                         #endregion
-                        OperationlogManager.InsertOperationLog(o);
+                        new OperationlogService().InsertOperationLog(o);
                     }
                     else
                     {
@@ -243,15 +178,15 @@ namespace SYS.FormUI
                     string time = dgvRoomSell.SelectedRows[0].Cells["clSpendTime"].Value.ToString();
                     string name = dgvRoomSell.SelectedRows[0].Cells["clSpendName"].Value.ToString();
                     string price = dgvRoomSell.SelectedRows[0].Cells["clSpendPrice"].Value.ToString();
-                    SellThing s = SellThingManager.SelectSellThingByNameAndPrice(name, price);
+                    SellThing s = new SellService().SelectSellThingByNameAndPrice(name, price);
                     decimal num = Convert.ToDecimal(dgvRoomSell.SelectedRows[0].Cells["clSpendAmount"].Value.ToString());
                     string Stock = (s.Stock + num).ToString();
-                    if (SellThingManager.DeleteSellThing(txtRoomNo.Text, time) > 0)
+                    if (new SellService().DeleteSellThing(txtRoomNo.Text, time) == true)
                     {
 
-                        int n = SellThingManager.UpdateSellThing(Stock, s.SellNo);
+                        bool n = new SellService().UpdateSellThing(Stock, s.SellNo);
                         UIMessageTip.ShowOk("撤销成功！",1000);
-                        LoadSpendInfo(txtRoomNo.Text);
+                        LoadSpendInfoByRoomNo(txtRoomNo.Text);
                         LoadSellThingInfo();
                     }
                 }
@@ -267,10 +202,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void txtRoomNo_Validated(object sender, EventArgs e)
-        {
-            
-        }
 
         private void dgvSellthing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -279,16 +210,59 @@ namespace SYS.FormUI
             txtPrice.Text = dgvSellthing.SelectedRows[0].Cells["clSellPrice"].Value.ToString();
         }
 
-        private void txtRoomNo_Validated_1(object sender, EventArgs e)
-        {
-            
-        }
 
         private void nudNum_ValueChanged(object sender, double value)
         {
             if (nudNum.Value < 0)
             {
                 nudNum.Value = 0;
+            }
+        }
+
+        private void txtRoomNo_Validated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtRoomNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            string room = txtRoomNo.Text;
+            Room r = new RoomService().SelectRoomByRoomNo(room);
+            if (txtRoomNo.Text == "")
+            {
+                lblState.Text = "";
+            }
+            else if (r == null)
+            {
+                lblState.Text = "该房间不存在";
+                lblState.ForeColor = Color.Red;
+                rs = 0;
+                //LoadSpendInfo();
+                //清空
+            }
+            else if (r != null)
+            {
+                if (r.RoomStateId == 1)
+                {
+                    lblState.Text = "该房间可消费";
+                    lblState.ForeColor = Color.Black;
+                    LoadSpendInfoByRoomNo(room);
+                    rs = 1;
+                }
+                else
+                {
+                    lblState.Text = "该房间不可消费";
+                    lblState.ForeColor = Color.Red;
+                    rs = 0;
+                    this.dgvSellthing.DataSource = null;
+                    //LoadSpendInfo();
+                    //清空
+                }
             }
         }
     }

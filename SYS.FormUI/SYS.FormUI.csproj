@@ -78,6 +78,9 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="kse">
+      <HintPath>..\SYS.Library\kse.dll</HintPath>
+    </Reference>
     <Reference Include="MyControls, Version=1.0.6915.14131, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MyControls.dll</HintPath>
@@ -147,6 +150,12 @@
     <Compile Include="AppFunction\FrmPosition.Designer.cs">
       <DependentUpon>FrmPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppFunction\FrmRoomMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmRoomMap.Designer.cs">
+      <DependentUpon>FrmRoomMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmSexType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,10 +188,10 @@
     <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmBackgroundSystem.cs">
+    <Compile Include="AppMain\FrmBackgroundSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppFunction\FrmBackgroundSystem.Designer.cs">
+    <Compile Include="AppMain\FrmBackgroundSystem.Designer.cs">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmChart.cs">
@@ -299,12 +308,6 @@
     <Compile Include="AppFunction\FrmReserList.Designer.cs">
       <DependentUpon>FrmReserList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmRestoreDatabase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmRestoreDatabase.Designer.cs">
-      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppFunction\FrmRoomStateManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,13 +400,13 @@
     <Compile Include="AppUserControls\ucRoomList.Designer.cs">
       <DependentUpon>ucRoomList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\WtiInfo.cs">
+    <Compile Include="AppFunction\FrmWtiInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppFunction\WtiInfo.Designer.cs">
-      <DependentUpon>WtiInfo.cs</DependentUpon>
+    <Compile Include="AppFunction\FrmWtiInfo.Designer.cs">
+      <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AppFunction\FrmBackgroundSystem.resx">
+    <EmbeddedResource Include="AppMain\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChart.resx">
@@ -433,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmPosition.resx">
       <DependentUpon>FrmPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmRoomMap.resx">
+      <DependentUpon>FrmRoomMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmSexType.resx">
       <DependentUpon>FrmSexType.cs</DependentUpon>
@@ -481,9 +487,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmReserList.resx">
       <DependentUpon>FrmReserList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmRestoreDatabase.resx">
-      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmRoomStateManager.resx">
       <DependentUpon>FrmRoomStateManager.cs</DependentUpon>
@@ -552,8 +555,8 @@
     <EmbeddedResource Include="AppUserControls\ucRoomList.resx">
       <DependentUpon>ucRoomList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\WtiInfo.resx">
-      <DependentUpon>WtiInfo.cs</DependentUpon>
+    <EmbeddedResource Include="AppFunction\FrmWtiInfo.resx">
+      <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\启用任务管理器.reg" />
     <None Include="bin\Debug\禁用任务管理器.reg" />
@@ -730,6 +733,18 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\常规部门卡片.png" />
+    <None Include="Resources\总经办卡片.png" />
+    <None Include="Resources\维修部卡片.png" />
+    <None Include="Resources\商品部卡片.png" />
+    <None Include="Resources\人力资源部卡片.png" />
+    <None Include="Resources\内控部卡片.png" />
+    <None Include="Resources\酒店部卡片.png" />
+    <None Include="Resources\经理部卡片.png" />
+    <None Include="Resources\监管小组卡片.png" />
+    <None Include="Resources\后勤部卡片.png" />
+    <None Include="Resources\餐饮部卡片.png" />
+    <None Include="Resources\财务部卡片.png" />
     <None Include="Resources\組織圖塊.bmp" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\settings2.png" />
@@ -762,6 +777,37 @@
     <None Include="Resources\close.png" />
     <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
     <None Include="bin\Debug\打卡.png" />
+    <Content Include="icon\add to card.ico" />
+    <Content Include="icon\add_person.ico" />
+    <Content Include="icon\atom.ico" />
+    <Content Include="icon\check-out2.ico" />
+    <Content Include="icon\checkin.ico" />
+    <Content Include="icon\customers.ico" />
+    <Content Include="icon\time.ico" />
+    <Content Include="icon\传输_上传.ico" />
+    <Content Include="icon\历史公告.ico" />
+    <Content Include="icon\员工任命.ico" />
+    <Content Include="icon\员工管理.ico" />
+    <Content Include="icon\商品管理.ico" />
+    <Content Include="icon\学历.ico" />
+    <Content Include="icon\客户信息.ico" />
+    <Content Include="icon\客户管理.ico" />
+    <Content Include="icon\性 别.ico" />
+    <Content Include="icon\房态图.ico" />
+    <Content Include="icon\报表.ico" />
+    <Content Include="icon\操作记录.ico" />
+    <Content Include="icon\新增.ico" />
+    <Content Include="icon\民族.ico" />
+    <Content Include="icon\水电.ico" />
+    <Content Include="icon\消费账单.ico" />
+    <Content Include="icon\添加员工.ico" />
+    <Content Include="icon\监管统计.ico" />
+    <Content Include="icon\盾牌.ico" />
+    <Content Include="icon\职位.ico" />
+    <Content Include="icon\财务账单.ico" />
+    <Content Include="icon\转换.ico" />
+    <Content Include="icon\部门.ico" />
+    <Content Include="icon\预约.ico" />
     <Content Include="Logo\bitbug_favicon %281%29.ico" />
     <None Include="Resources\77377282_p0_master1200.jpg" />
     <None Include="Resources\main_bg.png" />
@@ -799,11 +845,8 @@
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SYS.Manager\SYS.Manager.csproj">
-      <Project>{c60df246-c4fc-4045-91e5-093b0aa4d4ef}</Project>
-      <Name>SYS.Manager</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

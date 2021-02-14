@@ -5,12 +5,9 @@ namespace SYS.Core
     /// <summary>
     /// 消费信息
     /// </summary>
+    [SqlSugar.SugarTable("custospend")]
     public class Spend
     {
-        
-
-
-
         /// <summary>
         /// 房间编号
         /// </summary>

@@ -16,9 +16,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="opr"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InsertOperationLog([FromBody]OperationLog opr)
+        public bool InsertOperationLog([FromBody]OperationLog opr)
         {
-            return OperationlogService.InsertOperationLog(opr);
+            return new OperationlogService().InsertOperationLog(opr);
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<OperationLog> SelectOperationlogAll()
         {
-            return OperationlogService.SelectOperationlogAll();
+            return new OperationlogService().SelectOperationlogAll();
         }
     }
 }

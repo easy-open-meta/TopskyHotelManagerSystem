@@ -18,7 +18,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<SellThing> SelectSellThingAll()
         {
-            return SellService.SelectSellThingAll();
+            return new SellService().SelectSellThingAll();
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public SellThing SelectSellThingByNo([FromUri]string No)
         {
-            return SellService.SelectSellThingByNo(No);
+            return new SellService().SelectSellThingByNo(No);
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="sellNo"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateSellThing([FromBody]string stock, string sellNo)
+        public bool UpdateSellThing([FromBody]string stock, string sellNo)
         {
-            return SellService.UpdateSellThing(stock, sellNo);
+            return new SellService().UpdateSellThing(stock, sellNo);
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="time"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DeleteSellThing([FromBody]string roomNo, string time)
+        public bool DeleteSellThing([FromBody]string roomNo, string time)
         {
-            return SellService.DeleteSellThing(roomNo, time);
+            return new SellService().DeleteSellThing(roomNo, time);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<SellThing> SelectThingByName([FromUri]string Name)
         {
-            return SellService.SelectSellThingByName(Name);
+            return new SellService().SelectSellThingByName(Name);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace SYS.Browser.WebAPI.Controllers
 
         public SellThing SelectSellThingByNameAndPrice([FromUri]string name,string price)
         {
-            return SellService.SelectSellThingByNameAndPrice(name, price);
+            return new SellService().SelectSellThingByNameAndPrice(name, price);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public SellThing SelectSellInfoBySellNo([FromUri]string SellNo)
         {
-            return SellService.SelectSellInfoBySellNo(SellNo);
+            return new SellService().SelectSellInfoBySellNo(SellNo);
         }
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="st"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InsertSellThing([FromBody]SellThing st)
+        public bool InsertSellThing([FromBody]SellThing st)
         {
-            return SellService.InsertSellThing(st);
+            return new SellService().InsertSellThing(st);
         }
     }
 }

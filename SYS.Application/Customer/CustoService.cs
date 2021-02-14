@@ -34,7 +34,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<CustoSpend> SelectAllMoney()
         {
-            List<CustoSpend> custos = new List<CustoSpend>();
+            List<CustoSpend> custoSpends = new List<CustoSpend>();
             string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
             while (dr.Read())
@@ -42,11 +42,11 @@ namespace SYS.Application
                 CustoSpend cso = new CustoSpend();
                 cso.Years = dr["年份"].ToString();
                 cso.Money = (decimal)dr["总额"];
-                custos.Add(cso);
+                custoSpends.Add(cso);
             }
             dr.Close();
             DBHelper.Closecon();
-            return custos;
+            return custoSpends;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SYS.Application
         public Custo SelectCardInfoByCustoNo(string CustoNo)
         {
             Custo c = new Custo();
-            c = base.GetSingle(a => a.CustoNo.Equals(CustoNo) && a.delete_mk != 1);
+            c = base.GetSingle(a => a.CustoNo == CustoNo && a.delete_mk != 1);
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == c.CustoSex);
             c.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;

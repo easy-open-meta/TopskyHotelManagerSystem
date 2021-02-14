@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Sunny.UI;
+using SYS.Application;
 using SYS.Core;
-using SYS.Manager;
 
 namespace SYS.FormUI
 {
-    public partial class FrmChart : Form
+    public partial class FrmChart : UIForm
     {
         public FrmChart()
         {
@@ -20,25 +21,14 @@ namespace SYS.FormUI
             series.BorderWidth = 2;
             series.ShadowOffset = 2;
             series.IsValueShownAsLabel = true;
-            List<CustoSpend> custo = CustoManager.SelectAllMoney();
+            var custo = new CustoService().SelectAllMoney();
             for (int i = 0; i < custo.Count; i++)
             {
                 series.Points.AddXY(Convert.ToDouble(custo[0].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[0].Money.ToString())));
                 series.Points.AddXY(Convert.ToDouble(custo[1].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[1].Money.ToString())));
                 series.Points.AddXY(Convert.ToDouble(custo[2].Years.ToString()), Convert.ToDouble(Convert.ToDouble(custo[2].Money.ToString())));
 
-                //series.Points.AddY(Convert.ToDouble(custo[2].Years.ToString()));
-                //遍历时不需要类型转换
-                // Populate new series with data
-                //series.Points.AddY(Convert.ToDouble(custo[0].Money.ToString()));
-                //series.Points.AddY(Convert.ToDouble(custo[1].Money));
-                //series.Points.AddY(Convert.ToDouble(custo[2].Money));
             }
-
-
-
-
-            // Add series into the chart's series collection
             chart1.Series.Add(series);
 
         }

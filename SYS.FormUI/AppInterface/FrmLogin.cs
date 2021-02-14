@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;

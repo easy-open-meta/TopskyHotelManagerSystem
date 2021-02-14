@@ -236,7 +236,6 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.Fo
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmInputs.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmOperation.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmReserList.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmRestoreDatabase.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmRoomStateManager.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmSelectCustoInfo.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmSellThing.resources
@@ -251,7 +250,6 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.Fo
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.Properties.Resources.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucHistory.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucRoomList.resources
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.WtiInfo.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.GenerateResource.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CoreCompileInputs.cache
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.Fody.CopyLocal.cache
@@ -283,3 +281,5 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUse
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\OrgCharGenerator.cs
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Common.dll.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.dll.config
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.AppFunction.FrmRoomMap.resources
+D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmWtiInfo.resources

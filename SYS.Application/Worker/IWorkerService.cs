@@ -17,6 +17,13 @@ namespace SYS.Application
         bool UpdateWorker(Worker worker);
         #endregion
 
+        /// <summary>
+        /// 更新员工职位和部门
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+
+        bool UpdateWorkerPositionAndClub(Worker worker);
 
         #region 添加员工信息
         /// <summary>

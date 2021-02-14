@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SYS.Application;
 using SYS.Core;
-using SYS.Manager;
+using SYS.Core.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,10 +33,12 @@ namespace SYS.FormUI
                     label.Font = UI_FontUtil.SetControlFont();
                 }
             }
-            txtCustoNo.Text = CustoManager.GetRandomCustoNo();
+
+            string cardId = new CounterHelper().GetNewId("CustoId");
+            txtCustoNo.Text = cardId;
             
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = CustoTypeManager.SelectCustoTypesAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -45,7 +47,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = CustoTypeManager.SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -90,17 +92,19 @@ namespace SYS.FormUI
                         CustoAdress = txtCustoAdress.Text
 
                     };
-                    int count = CustoManager.InsertCustomerInfo(custo);
-                    if (count > 0)
+                    bool t = new CustoService().InsertCustomerInfo(custo);
+                    if (t == true)
                     {
                         MessageBox.Show("添加成功");
 
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = "编号："+ LoginInfo.WorkerNo + "【"+FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "插入了一条数据！";
+                        o.Operationlog = "编号："+ LoginInfo.WorkerNo + "【"+FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo;
                         o.OperationAccount = LoginInfo.WorkerNo;
-                        OperationlogManager.InsertOperationLog(o);
+                        o.datains_usr = LoginInfo.WorkerNo;
+                        o.datains_date = DateTime.Now;
+                        new OperationlogService().InsertOperationLog(o);
                         #endregion
                     }
 
@@ -129,7 +133,7 @@ namespace SYS.FormUI
 
         private void picGetCustoNo_Click(object sender, EventArgs e)
         {
-            string cardId = CustoManager.GetRandomCustoNo();
+            string cardId = new CounterHelper().GetNewId("CustoId");
             txtCustoNo.Text = cardId;
         }
 
@@ -164,26 +168,20 @@ namespace SYS.FormUI
             string sex = "";
             if (identityCard.Length == 18)
             {
-                MySqlConnection con = DBHelper.GetConnection();
-                con.Open();
-                MySqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
+                var result = new IDCardUtil().SelectCardCode(identityCard);
+                var address = result.Replace(",", "").ToString();
                 birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
                 sex = identityCard.Substring(14, 3);
-                while (dr.Read())
-                {
-                    txtCustoAdress.Text = dr["Province"].ToString() + dr["City"].ToString() + dr["District"].ToString();
-                }
+                txtCustoAdress.Text = address;
                 //性别代码为偶数是女性奇数为男性
                 if (int.Parse(sex) % 2 == 0)
                 {
-                    cbSex.SelectedIndex = 1;
+                    cbSex.Text = "女";
                 }
                 else
                 {
-                    cbSex.SelectedIndex = 0;
+                    cbSex.Text = "男";
                 }
-                dr.Close();
-                con.Close();
             }
             try
             {
@@ -197,11 +195,6 @@ namespace SYS.FormUI
             cbPassportType.SelectedIndex = 0;
 
             return;
-        }
-
-        private void uiSwitch1_ValueChanged(object sender, bool value)
-        {
-
         }
     }
 }

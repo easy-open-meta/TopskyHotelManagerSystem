@@ -28,57 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSellThingManager));
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFind = new System.Windows.Forms.TextBox();
             this.dgvSellthing = new System.Windows.Forms.DataGridView();
             this.SellNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SellName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.format = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAddSellThing = new System.Windows.Forms.Button();
-            this.btnDeleteSellThing = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlSellThingInfo = new System.Windows.Forms.Panel();
-            this.picGetCustoNo = new System.Windows.Forms.PictureBox();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtformat = new System.Windows.Forms.TextBox();
-            this.txtSellPrice = new System.Windows.Forms.TextBox();
-            this.txtSellName = new System.Windows.Forms.TextBox();
-            this.txtSellNo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.txtFind = new Sunny.UI.UITextBox();
+            this.btnFind = new Sunny.UI.UIButton();
+            this.btnAddSellThing = new Sunny.UI.UIButton();
+            this.uiButton2 = new Sunny.UI.UIButton();
+            this.btnDeleteSellThing = new Sunny.UI.UIButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtSellNo = new Sunny.UI.UITextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSellName = new Sunny.UI.UITextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtSellPrice = new Sunny.UI.UITextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtformat = new Sunny.UI.UITextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtStock = new Sunny.UI.UIDoubleUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellthing)).BeginInit();
             this.pnlSellThingInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(269, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "请您输入你要查找的东西：";
-            // 
-            // txtFind
-            // 
-            this.txtFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtFind.Location = new System.Drawing.Point(447, 46);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(184, 23);
-            this.txtFind.TabIndex = 5;
             // 
             // dgvSellthing
             // 
@@ -86,7 +63,7 @@
             this.dgvSellthing.AllowUserToDeleteRows = false;
             this.dgvSellthing.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSellthing.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvSellthing.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.dgvSellthing.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvSellthing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSellthing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SellNo,
@@ -94,24 +71,16 @@
             this.SellPrice,
             this.format,
             this.Stock});
-            this.dgvSellthing.Location = new System.Drawing.Point(12, 87);
+            this.dgvSellthing.Location = new System.Drawing.Point(3, 87);
             this.dgvSellthing.MultiSelect = false;
             this.dgvSellthing.Name = "dgvSellthing";
             this.dgvSellthing.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("楷体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSellthing.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvSellthing.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSellthing.RowTemplate.Height = 23;
             this.dgvSellthing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSellthing.ShowEditingIcon = false;
-            this.dgvSellthing.Size = new System.Drawing.Size(772, 396);
+            this.dgvSellthing.Size = new System.Drawing.Size(803, 533);
             this.dgvSellthing.TabIndex = 4;
             this.dgvSellthing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellthing_CellClick);
             // 
@@ -155,248 +124,290 @@
             this.Stock.Name = "Stock";
             this.Stock.ReadOnly = true;
             // 
+            // pnlSellThingInfo
+            // 
+            this.pnlSellThingInfo.Controls.Add(this.txtStock);
+            this.pnlSellThingInfo.Controls.Add(this.label4);
+            this.pnlSellThingInfo.Controls.Add(this.label3);
+            this.pnlSellThingInfo.Controls.Add(this.txtformat);
+            this.pnlSellThingInfo.Controls.Add(this.label2);
+            this.pnlSellThingInfo.Controls.Add(this.txtSellPrice);
+            this.pnlSellThingInfo.Controls.Add(this.label1);
+            this.pnlSellThingInfo.Controls.Add(this.txtSellName);
+            this.pnlSellThingInfo.Controls.Add(this.label20);
+            this.pnlSellThingInfo.Controls.Add(this.txtSellNo);
+            this.pnlSellThingInfo.Location = new System.Drawing.Point(812, 45);
+            this.pnlSellThingInfo.Name = "pnlSellThingInfo";
+            this.pnlSellThingInfo.Size = new System.Drawing.Size(187, 438);
+            this.pnlSellThingInfo.TabIndex = 111;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel1.Location = new System.Drawing.Point(173, 45);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(125, 29);
+            this.uiLabel1.TabIndex = 114;
+            this.uiLabel1.Text = "要查找的商品：";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtFind
+            // 
+            this.txtFind.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind.FillColor = System.Drawing.Color.White;
+            this.txtFind.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.txtFind.Location = new System.Drawing.Point(305, 45);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFind.Maximum = 2147483647D;
+            this.txtFind.Minimum = -2147483648D;
+            this.txtFind.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Padding = new System.Windows.Forms.Padding(5);
+            this.txtFind.Radius = 20;
+            this.txtFind.Size = new System.Drawing.Size(197, 29);
+            this.txtFind.TabIndex = 113;
+            // 
             // btnFind
             // 
-            this.btnFind.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFind.BackgroundImage")));
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnFind.Location = new System.Drawing.Point(644, 44);
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnFind.Location = new System.Drawing.Point(509, 45);
+            this.btnFind.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 29);
-            this.btnFind.TabIndex = 6;
-            this.btnFind.Text = "查找";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Radius = 20;
+            this.btnFind.Size = new System.Drawing.Size(101, 28);
+            this.btnFind.TabIndex = 112;
+            this.btnFind.Text = "查     找";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(398, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 33);
-            this.label4.TabIndex = 108;
-            this.label4.Text = "商品后台管理";
             // 
             // btnAddSellThing
             // 
-            this.btnAddSellThing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddSellThing.BackgroundImage")));
-            this.btnAddSellThing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddSellThing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSellThing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAddSellThing.Location = new System.Drawing.Point(790, 127);
+            this.btnAddSellThing.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSellThing.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAddSellThing.Location = new System.Drawing.Point(818, 489);
+            this.btnAddSellThing.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAddSellThing.Name = "btnAddSellThing";
-            this.btnAddSellThing.Size = new System.Drawing.Size(187, 36);
-            this.btnAddSellThing.TabIndex = 109;
-            this.btnAddSellThing.Text = "新增商品";
-            this.btnAddSellThing.UseVisualStyleBackColor = true;
+            this.btnAddSellThing.Radius = 20;
+            this.btnAddSellThing.Size = new System.Drawing.Size(176, 37);
+            this.btnAddSellThing.TabIndex = 115;
+            this.btnAddSellThing.Text = "新增商品信息";
             this.btnAddSellThing.Click += new System.EventHandler(this.btnAddSellThing_Click);
+            // 
+            // uiButton2
+            // 
+            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiButton2.Location = new System.Drawing.Point(818, 532);
+            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton2.Name = "uiButton2";
+            this.uiButton2.Radius = 20;
+            this.uiButton2.Size = new System.Drawing.Size(176, 37);
+            this.uiButton2.TabIndex = 116;
+            this.uiButton2.Text = "修改商品信息";
             // 
             // btnDeleteSellThing
             // 
-            this.btnDeleteSellThing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteSellThing.BackgroundImage")));
-            this.btnDeleteSellThing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteSellThing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteSellThing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDeleteSellThing.Location = new System.Drawing.Point(790, 169);
+            this.btnDeleteSellThing.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSellThing.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnDeleteSellThing.Location = new System.Drawing.Point(818, 575);
+            this.btnDeleteSellThing.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDeleteSellThing.Name = "btnDeleteSellThing";
-            this.btnDeleteSellThing.Size = new System.Drawing.Size(187, 36);
-            this.btnDeleteSellThing.TabIndex = 109;
-            this.btnDeleteSellThing.Text = "删除商品";
-            this.btnDeleteSellThing.UseVisualStyleBackColor = true;
-            this.btnDeleteSellThing.Click += new System.EventHandler(this.btnDeleteSellThing_Click);
+            this.btnDeleteSellThing.Radius = 20;
+            this.btnDeleteSellThing.Size = new System.Drawing.Size(176, 37);
+            this.btnDeleteSellThing.TabIndex = 117;
+            this.btnDeleteSellThing.Text = "删除商品信息";
             // 
-            // button2
+            // label20
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(790, 211);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 36);
-            this.button2.TabIndex = 109;
-            this.button2.Text = "修改商品信息";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pnlSellThingInfo
-            // 
-            this.pnlSellThingInfo.Controls.Add(this.picGetCustoNo);
-            this.pnlSellThingInfo.Controls.Add(this.txtStock);
-            this.pnlSellThingInfo.Controls.Add(this.txtformat);
-            this.pnlSellThingInfo.Controls.Add(this.txtSellPrice);
-            this.pnlSellThingInfo.Controls.Add(this.txtSellName);
-            this.pnlSellThingInfo.Controls.Add(this.txtSellNo);
-            this.pnlSellThingInfo.Controls.Add(this.label7);
-            this.pnlSellThingInfo.Controls.Add(this.label6);
-            this.pnlSellThingInfo.Controls.Add(this.label5);
-            this.pnlSellThingInfo.Controls.Add(this.label3);
-            this.pnlSellThingInfo.Controls.Add(this.label2);
-            this.pnlSellThingInfo.Location = new System.Drawing.Point(790, 255);
-            this.pnlSellThingInfo.Name = "pnlSellThingInfo";
-            this.pnlSellThingInfo.Size = new System.Drawing.Size(187, 228);
-            this.pnlSellThingInfo.TabIndex = 111;
-            // 
-            // picGetCustoNo
-            // 
-            this.picGetCustoNo.BackColor = System.Drawing.Color.Transparent;
-            this.picGetCustoNo.BackgroundImage = global::SYS.FormUI.Properties.Resources.获取用户编号;
-            this.picGetCustoNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picGetCustoNo.Location = new System.Drawing.Point(162, 19);
-            this.picGetCustoNo.Name = "picGetCustoNo";
-            this.picGetCustoNo.Size = new System.Drawing.Size(20, 20);
-            this.picGetCustoNo.TabIndex = 94;
-            this.picGetCustoNo.TabStop = false;
-            this.picGetCustoNo.Click += new System.EventHandler(this.picGetCustoNo_Click);
-            // 
-            // txtStock
-            // 
-            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtStock.Location = new System.Drawing.Point(59, 190);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 21);
-            this.txtStock.TabIndex = 9;
-            // 
-            // txtformat
-            // 
-            this.txtformat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtformat.Location = new System.Drawing.Point(59, 147);
-            this.txtformat.Name = "txtformat";
-            this.txtformat.Size = new System.Drawing.Size(100, 21);
-            this.txtformat.TabIndex = 8;
-            // 
-            // txtSellPrice
-            // 
-            this.txtSellPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSellPrice.Location = new System.Drawing.Point(59, 104);
-            this.txtSellPrice.Name = "txtSellPrice";
-            this.txtSellPrice.Size = new System.Drawing.Size(100, 21);
-            this.txtSellPrice.TabIndex = 7;
-            // 
-            // txtSellName
-            // 
-            this.txtSellName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSellName.Location = new System.Drawing.Point(59, 61);
-            this.txtSellName.Name = "txtSellName";
-            this.txtSellName.Size = new System.Drawing.Size(100, 21);
-            this.txtSellName.TabIndex = 6;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(49, 29);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(88, 25);
+            this.label20.TabIndex = 139;
+            this.label20.Text = "商品编号";
             // 
             // txtSellNo
             // 
-            this.txtSellNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSellNo.Location = new System.Drawing.Point(59, 18);
+            this.txtSellNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSellNo.FillColor = System.Drawing.Color.White;
+            this.txtSellNo.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSellNo.Location = new System.Drawing.Point(11, 63);
+            this.txtSellNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSellNo.Maximum = 2147483647D;
+            this.txtSellNo.Minimum = -2147483648D;
+            this.txtSellNo.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSellNo.Name = "txtSellNo";
+            this.txtSellNo.Padding = new System.Windows.Forms.Padding(5);
+            this.txtSellNo.Radius = 20;
             this.txtSellNo.ReadOnly = true;
-            this.txtSellNo.Size = new System.Drawing.Size(100, 21);
-            this.txtSellNo.TabIndex = 5;
-            this.txtSellNo.TextChanged += new System.EventHandler(this.txtSellNo_TextChanged);
+            this.txtSellNo.Size = new System.Drawing.Size(165, 35);
+            this.txtSellNo.Style = Sunny.UI.UIStyle.Custom;
+            this.txtSellNo.StyleCustomMode = true;
+            this.txtSellNo.TabIndex = 138;
             // 
-            // label7
+            // label1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(3, 194);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "库    存";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(49, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 141;
+            this.label1.Text = "商品名称";
             // 
-            // label6
+            // txtSellName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(3, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "规    格";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(3, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "商品价格";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "商品名称";
+            this.txtSellName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSellName.FillColor = System.Drawing.Color.White;
+            this.txtSellName.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSellName.Location = new System.Drawing.Point(11, 141);
+            this.txtSellName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSellName.Maximum = 2147483647D;
+            this.txtSellName.Minimum = -2147483648D;
+            this.txtSellName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtSellName.Name = "txtSellName";
+            this.txtSellName.Padding = new System.Windows.Forms.Padding(5);
+            this.txtSellName.Radius = 20;
+            this.txtSellName.ReadOnly = true;
+            this.txtSellName.Size = new System.Drawing.Size(165, 35);
+            this.txtSellName.Style = Sunny.UI.UIStyle.Custom;
+            this.txtSellName.StyleCustomMode = true;
+            this.txtSellName.TabIndex = 140;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(3, 22);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(49, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "商品编号";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 143;
+            this.label2.Text = "商品价格";
+            // 
+            // txtSellPrice
+            // 
+            this.txtSellPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSellPrice.FillColor = System.Drawing.Color.White;
+            this.txtSellPrice.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSellPrice.Location = new System.Drawing.Point(11, 219);
+            this.txtSellPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSellPrice.Maximum = 2147483647D;
+            this.txtSellPrice.Minimum = -2147483648D;
+            this.txtSellPrice.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtSellPrice.Name = "txtSellPrice";
+            this.txtSellPrice.Padding = new System.Windows.Forms.Padding(5);
+            this.txtSellPrice.Radius = 20;
+            this.txtSellPrice.ReadOnly = true;
+            this.txtSellPrice.Size = new System.Drawing.Size(165, 35);
+            this.txtSellPrice.Style = Sunny.UI.UIStyle.Custom;
+            this.txtSellPrice.StyleCustomMode = true;
+            this.txtSellPrice.TabIndex = 142;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(49, 263);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 25);
+            this.label3.TabIndex = 145;
+            this.label3.Text = "商品规格";
+            // 
+            // txtformat
+            // 
+            this.txtformat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtformat.FillColor = System.Drawing.Color.White;
+            this.txtformat.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtformat.Location = new System.Drawing.Point(11, 297);
+            this.txtformat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtformat.Maximum = 2147483647D;
+            this.txtformat.Minimum = -2147483648D;
+            this.txtformat.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtformat.Name = "txtformat";
+            this.txtformat.Padding = new System.Windows.Forms.Padding(5);
+            this.txtformat.Radius = 20;
+            this.txtformat.ReadOnly = true;
+            this.txtformat.Size = new System.Drawing.Size(165, 35);
+            this.txtformat.Style = Sunny.UI.UIStyle.Custom;
+            this.txtformat.StyleCustomMode = true;
+            this.txtformat.TabIndex = 144;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(49, 341);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 25);
+            this.label4.TabIndex = 147;
+            this.label4.Text = "商品库存";
+            // 
+            // txtStock
+            // 
+            this.txtStock.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.txtStock.Location = new System.Drawing.Point(11, 375);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtStock.MinimumSize = new System.Drawing.Size(100, 0);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Radius = 20;
+            this.txtStock.Size = new System.Drawing.Size(165, 35);
+            this.txtStock.TabIndex = 148;
+            this.txtStock.Text = "uiDoubleUpDown1";
+            this.txtStock.Value = 0D;
             // 
             // FrmSellThingManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1033, 456);
-            this.Controls.Add(this.pnlSellThingInfo);
-            this.Controls.Add(this.button2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1005, 623);
+            this.ControlBox = false;
             this.Controls.Add(this.btnDeleteSellThing);
+            this.Controls.Add(this.uiButton2);
             this.Controls.Add(this.btnAddSellThing);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.uiLabel1);
             this.Controls.Add(this.txtFind);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.pnlSellThingInfo);
             this.Controls.Add(this.dgvSellthing);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSellThingManager";
-            this.Text = "FrmSellThingManager";
+            this.ShowIcon = true;
+            this.Text = "商品管理";
             this.Load += new System.EventHandler(this.FrmSellThingManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellthing)).EndInit();
             this.pnlSellThingInfo.ResumeLayout(false);
             this.pnlSellThingInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.DataGridView dgvSellthing;
         private System.Windows.Forms.DataGridViewTextBoxColumn SellNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn SellName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SellPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn format;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAddSellThing;
-        private System.Windows.Forms.Button btnDeleteSellThing;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pnlSellThingInfo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.TextBox txtformat;
-        private System.Windows.Forms.TextBox txtSellPrice;
-        private System.Windows.Forms.TextBox txtSellName;
-        private System.Windows.Forms.TextBox txtSellNo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UITextBox txtFind;
+        private Sunny.UI.UIButton btnFind;
+        private Sunny.UI.UIButton btnAddSellThing;
+        private Sunny.UI.UIButton uiButton2;
+        private Sunny.UI.UIButton btnDeleteSellThing;
+        private Sunny.UI.UIDoubleUpDown txtStock;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox picGetCustoNo;
+        private Sunny.UI.UITextBox txtformat;
+        private System.Windows.Forms.Label label2;
+        private Sunny.UI.UITextBox txtSellPrice;
+        private System.Windows.Forms.Label label1;
+        private Sunny.UI.UITextBox txtSellName;
+        private System.Windows.Forms.Label label20;
+        private Sunny.UI.UITextBox txtSellNo;
     }
 }

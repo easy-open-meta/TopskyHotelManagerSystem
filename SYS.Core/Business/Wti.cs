@@ -5,6 +5,7 @@ namespace SYS.Core
     /// <summary>
     /// 水电信息
     /// </summary>
+    [SqlSugar.SugarTable("wtinfo")]
     public class Wti
     {
         /// <summary>

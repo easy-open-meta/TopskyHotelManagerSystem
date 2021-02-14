@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
@@ -19,7 +18,7 @@ namespace SYS.FormUI
         {
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
             cboState.DataSource = new RoomService().SelectRoomStateAll();
-            cboState.DisplayMember = "RoomState";
+            cboState.DisplayMember = "RoomStateName";
             cboState.ValueMember = "RoomStateId";
         }
         #endregion
@@ -29,7 +28,7 @@ namespace SYS.FormUI
         {
             if (cboState.SelectedIndex != 1)
             {
-                if (RoomManager.UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) > 0)
+                if (new RoomService().UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) == true)
                 {
                     MessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示");
                     FrmRoomManager.Reload();

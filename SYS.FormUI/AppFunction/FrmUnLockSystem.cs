@@ -5,8 +5,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Sunny.UI;
+using SYS.Application;
 using SYS.Core;
-using SYS.Manager;
 
 namespace SYS.FormUI
 {
@@ -48,7 +48,7 @@ namespace SYS.FormUI
 
         private void btnUnLock_Click(object sender, EventArgs e)
         {
-            var account = AdminManager.SelectAdminPwdByAccount(AdminInfo.Account);
+            var account = new AdminService().SelectAdminPwdByAccount(AdminInfo.Account);
             if (account != null)
             {
                 if (account.AdminPassword != txtUnLockPwd.Text.Trim())

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using System.Collections.Generic;
@@ -37,7 +36,7 @@ namespace SYS.FormUI
         {
 
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = CustoTypeManager.SelectCustoTypesAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -46,7 +45,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = CustoTypeManager.SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -62,7 +61,7 @@ namespace SYS.FormUI
             #endregion
             
             txtCustoNo.Text = ucRoomList.rm_CustoNo;
-            Custo c = CustoManager.SelectCustoByCustoNo(txtCustoNo.Text);
+            Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
             txtCustoAdress.Text = c.CustoAdress;
             txtCustoName.Text = c.CustoName;
             txtCardID.Text = c.CustoID;

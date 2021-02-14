@@ -149,6 +149,7 @@
             this.Name = "ucRoomList";
             this.Size = new System.Drawing.Size(95, 79);
             this.Load += new System.EventHandler(this.ucRoomList_Load);
+            this.SizeChanged += new System.EventHandler(this.ucRoomList_SizeChanged);
             this.Click += new System.EventHandler(this.ucRoomList_Click);
             this.DoubleClick += new System.EventHandler(this.ucRoomList_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.ucRoomList_MouseEnter);

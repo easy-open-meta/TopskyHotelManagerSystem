@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using SYS.Application;
@@ -157,6 +156,7 @@ namespace SYS.FormUI
             //frm.CmpInfo(romCustoInfo, romRoomInfo);
             co_RoomNo = romCustoInfo.RoomNo;
             co_CustoNo = romCustoInfo.CustoNo;
+            romTypeName = romCustoInfo.RoomName;
             co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
@@ -177,7 +177,7 @@ namespace SYS.FormUI
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
             //lblCustoNo.Text = romCustoInfo.CustoNo;
             //lblRoomNo.Text = romCustoInfo.RoomNo;
-            //lblRoomType.Text = romCustoInfo.typeName;
+            //lblRoomType.Text = romCustoInfo.RoomName;
             //co_CheckTime = romCustoInfo.CheckTime.ToString();
 
             us_CustoNo = romRoomInfo.CustoNo;
@@ -189,19 +189,17 @@ namespace SYS.FormUI
             us_CustoPassportType = romRoomInfo.PassportType;
             us_CustoType = romRoomInfo.CustoType;
             us_CustoAddress = romRoomInfo.CustoAdress;
-            if (lblCustoNo.Text != "")
+            if (romCustoInfo.RoomStateId == 1)
             {
                 BackgroundImage = Resources.已住icon;
-                //lblState.Text = "▲";
-                //lblState.ForeColor = Color.Blue;
-            }
-            if (romCustoInfo.RoomStateId == 3)
-            {
-                BackgroundImage = Resources.脏房icon;
             }
             if (romCustoInfo.RoomStateId == 2)
             {
                 BackgroundImage = Resources.维修房icon;
+            }
+            if (romCustoInfo.RoomStateId == 3)
+            {
+                BackgroundImage = Resources.脏房icon;
             }
             if (romCustoInfo.RoomStateId == 4)
             {
@@ -318,7 +316,7 @@ namespace SYS.FormUI
 
             if (lblCustoNo.Text == "")
             {
-                Room r = RoomManager.SelectRoomByRoomNo(lblRoomNo.Text);
+                Room r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
                 if (r.RoomStateId == 0)
                 {
                     rm_RoomNo = lblRoomNo.Text;
@@ -352,7 +350,7 @@ namespace SYS.FormUI
         #region 修改房间状态
         private void tsmiChangeState_Click(object sender, EventArgs e)
         {
-            rm_RoomStateId = Convert.ToInt32(RoomManager.SelectRoomStateIdByRoomNo(lblRoomNo.Text));
+            rm_RoomStateId = Convert.ToInt32(new RoomService().SelectRoomStateIdByRoomNo(lblRoomNo.Text));
             rm_RoomNo = lblRoomNo.Text;
             FrmRoomStateManager frsm = new FrmRoomStateManager();
             frsm.ShowDialog();
@@ -411,6 +409,18 @@ namespace SYS.FormUI
             co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
+        }
+
+        private void ucRoomList_SizeChanged(object sender, EventArgs e)
+        {
+            //lblRoomType.Width = 61;
+            //lblRoomType.Height = 17;
+            //lblCustoNo.Width = 61;
+            //lblCustoNo.Height = 17;
+            //lblRoomNo.Width = 61;
+            //lblRoomNo.Height = 17;
+            this.Width = 125;
+            this.Height = 85;
         }
     }
 }

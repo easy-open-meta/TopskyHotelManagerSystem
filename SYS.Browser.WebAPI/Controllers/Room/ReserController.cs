@@ -18,7 +18,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public Reser SelectReserInfoByRoomNo([FromUri]string no)
         {
-            Reser r = ReserService.SelectReserInfoByRoomNo(no);
+            Reser r = new ReserService().SelectReserInfoByRoomNo(no);
             return r;
         }
 
@@ -28,9 +28,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="rid"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DeleteReserInfo([FromBody]string rid)
+        public bool DeleteReserInfo([FromBody]string rid)
         {
-            return ReserService.DeleteReserInfo(rid);
+            return new ReserService().DeleteReserInfo(rid);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Reser> SelectReserAll()
         {
-            return ReserService.SelectReserAll();
+            return new ReserService().SelectReserAll();
         }
 
         /// <summary>
@@ -49,9 +49,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="r"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InserReserInfo([FromBody]Reser r)
+        public bool InserReserInfo([FromBody]Reser r)
         {
-            return ReserService.InserReserInfo(r);
+            return new ReserService().InserReserInfo(r);
         }
     }
 }

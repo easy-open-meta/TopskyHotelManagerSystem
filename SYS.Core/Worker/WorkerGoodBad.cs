@@ -34,6 +34,7 @@ namespace SYS.Core
         /// <summary>
         /// 类型名称
         /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
         public string TypeName { get; set; }
         /// <summary>
         /// 删除标记

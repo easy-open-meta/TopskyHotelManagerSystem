@@ -4,6 +4,7 @@ namespace SYS.Core
     /// <summary>
     /// 管理员实体类
     /// </summary>
+    [SqlSugar.SugarTable("admininfo")]
     public class Admin
     {
         /// <summary>

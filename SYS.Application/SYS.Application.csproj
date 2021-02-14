@@ -77,7 +77,6 @@
     <Compile Include="Business\CashService.cs" />
     <Compile Include="Customer\CheckInfoService.cs" />
     <Compile Include="Customer\CustoService.cs" />
-    <Compile Include="Customer\CustoTypeService.cs" />
     <Compile Include="Zero\BaseService.cs" />
     <Compile Include="Zero\IAdminService.cs" />
     <Compile Include="Zero\IBaseService.cs" />

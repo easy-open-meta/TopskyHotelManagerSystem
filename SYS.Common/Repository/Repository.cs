@@ -19,7 +19,7 @@ namespace SYS.Common
                     InitKeyType = InitKeyType.Attribute,
                     IsAutoCloseConnection = true,
                     ConnectionString = ""
-                });
+                }) ;
 
                 base.Context.Aop.OnLogExecuting = (s, p) =>
                 {

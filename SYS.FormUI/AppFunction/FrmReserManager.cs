@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -23,7 +23,7 @@ namespace SYS.FormUI
         {
             Random random = new Random();
             string reserid = "";
-            reserid = "R" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
+            reserid = new CounterHelper().GetNewId("ReserId");
             Reser reser = new Reser()
             {
                 ReserId = reserid,
@@ -39,19 +39,21 @@ namespace SYS.FormUI
                 RoomNo = cboReserRoomNo.Text,
                 RoomStateId = 4
             };
-            int result1 = ReserManager.InserReserInfo(reser);
-            int result2 = RoomManager.UpdateRoomInfoWithReser(room);
+            bool result1 = new ReserService().InserReserInfo(reser);
+            bool result2 = new RoomService().UpdateRoomInfoWithReser(room);
 
-            if (result1 > 0 && result2 > 0)
+            if (result1 == true && result2 == true)
             {
                 MessageBox.Show("预约成功！请在指定时间内进行登记入住");
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoTel.Text + "进行了预订房间操作！";
-                o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
+                o.OperationAccount = LoginInfo.WorkerNo;
+                o.datains_usr = LoginInfo.WorkerNo;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
                 this.Close();
             }
 
@@ -61,9 +63,9 @@ namespace SYS.FormUI
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
             cboReserWay.SelectedIndex = 0;
-            cboReserRoomNo.DataSource = RoomManager.SelectCanUseRoomAll();
+            cboReserRoomNo.DataSource = new RoomService().SelectCanUseRoomAll();
             cboReserRoomNo.DisplayMember = "RoomNo";
-            cboReserRoomNo.ValueMember = "typeName";
+            cboReserRoomNo.ValueMember = "RoomNo";
             cboReserRoomNo.Text = ucRoomList.co_RoomNo;
         }
 

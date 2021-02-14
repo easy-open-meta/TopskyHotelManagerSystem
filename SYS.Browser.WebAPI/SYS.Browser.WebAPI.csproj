@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="SqlSugar">
+      <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
     </Reference>
@@ -107,7 +110,6 @@
     <Compile Include="Controllers\Business\SpendController.cs" />
     <Compile Include="Controllers\Business\WtiController.cs" />
     <Compile Include="Controllers\Customer\CustoController.cs" />
-    <Compile Include="Controllers\Customer\CustoTypeController.cs" />
     <Compile Include="Controllers\Room\ReserController.cs" />
     <Compile Include="Controllers\Room\RoomController.cs" />
     <Compile Include="Controllers\Room\RoomTypeController.cs" />
@@ -143,6 +145,10 @@
     <ProjectReference Include="..\SYS.Application\SYS.Application.csproj">
       <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
       <Name>SYS.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
+      <Project>{65501AF6-C629-448A-847E-1BCD60665865}</Project>
+      <Name>SYS.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>

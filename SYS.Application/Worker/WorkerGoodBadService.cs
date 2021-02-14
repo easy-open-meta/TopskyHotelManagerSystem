@@ -34,7 +34,6 @@ namespace SYS.Application
             List<GBType> gBTypes = new List<GBType>();
             gBTypes = base.Change<GBType>().GetList(a => a.delete_mk != 1);
             List<WorkerGoodBad> gb = new List<WorkerGoodBad>();
-            string sql = "select * from WorkerGoodBad wgb,GBType gbt where wgb.GBType = gbt.GBType and wgb.WorkNo = '" + wn + "'";
             gb = base.GetList(a => a.WorkNo == wn);
             gb.ForEach(source =>
             {

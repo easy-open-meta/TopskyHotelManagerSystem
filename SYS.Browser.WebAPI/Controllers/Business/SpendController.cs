@@ -16,9 +16,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="s"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InsertSpendInfo([FromBody]Spend s)
+        public bool InsertSpendInfo([FromBody]Spend s)
         {
-            return SpendService.InsertSpendInfo(s);
+            return new SpendService().InsertSpendInfo(s);
         }
         /// <summary>
         /// 根据客户编号查询消费信息
@@ -28,7 +28,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Spend> SelectSpendByCustoNo([FromUri]string No)
         {
-            return SpendService.SelectSpendByCustoNo(No);
+            return new SpendService().SelectSpendByCustoNo(No);
         }
         /// <summary>
         /// 查询所有消费信息
@@ -37,7 +37,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Spend> SelectSpendInfoAll()
         {
-            return SpendService.SelectSpendInfoAll();
+            return new SpendService().SelectSpendInfoAll();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Spend> SelectSpendInfoRoomNo([FromUri]string RoomNo)
         {
-            return SpendService.SelectSpendInfoRoomNo(RoomNo);
+            return new SpendService().SelectSpendInfoRoomNo(RoomNo);
         }
 
         #region 根据房间编号、入住时间到当前时间查询消费总金额
@@ -60,7 +60,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public object SelectMoneyByRoomNoAndTime([FromUri]string roomno,string custono)
         {
-            return SpendService.SelectMoneyByRoomNoAndTime(roomno, custono);
+            return new SpendService().SelectMoneyByRoomNoAndTime(roomno, custono);
         }
         #endregion
 
@@ -72,9 +72,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="checktime"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateMoneyState([FromBody]string roomno, string checktime)
+        public bool UpdateMoneyState([FromBody]string roomno, string checktime)
         {
-            return SpendService.UpdateMoneyState(roomno, checktime);
+            return new SpendService().UpdateMoneyState(roomno, checktime);
         }
         #endregion
 

@@ -54,8 +54,17 @@
             this.clSpendTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSellthing = new Sunny.UI.UIDataGridView();
             this.clSellNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSellName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +77,7 @@
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.txtRoomNo = new Sunny.UI.UITextBox();
             this.lblState = new Sunny.UI.UILabel();
+            this.btnCheck = new Sunny.UI.UIButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellthing)).BeginInit();
@@ -238,7 +248,11 @@
             this.clSpendMoney,
             this.clSpendTime,
             this.clSpendNo,
-            this.Column8});
+            this.Column8,
+            this.Column6,
+            this.Column7,
+            this.Column9,
+            this.Column10});
             this.dgvRoomSell.EnableHeadersVisualStyles = false;
             this.dgvRoomSell.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvRoomSell.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -315,6 +329,7 @@
             // 
             // clSpendNo
             // 
+            this.clSpendNo.DataPropertyName = "delete_mk";
             this.clSpendNo.HeaderText = "Column1";
             this.clSpendNo.Name = "clSpendNo";
             this.clSpendNo.ReadOnly = true;
@@ -327,6 +342,38 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "datains_usr";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datains_date";
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "datachg_usr";
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "datachg_date";
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
             // 
             // dgvSellthing
             // 
@@ -351,6 +398,11 @@
             this.dgvSellthing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSellthing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clSellNo,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
             this.clSellName,
             this.clSellPrice,
             this.clFormat,
@@ -379,6 +431,46 @@
             this.clSellNo.HeaderText = "商品编号";
             this.clSellNo.Name = "clSellNo";
             this.clSellNo.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "delete_mk";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "datains_usr";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "datains_date";
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "datachg_usr";
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "datachg_date";
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
             // 
             // clSellName
             // 
@@ -449,6 +541,7 @@
             this.btnFind.Style = Sunny.UI.UIStyle.Custom;
             this.btnFind.TabIndex = 19;
             this.btnFind.Text = "查     找";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtFind
             // 
@@ -481,7 +574,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.Location = new System.Drawing.Point(563, 48);
+            this.uiLabel2.Location = new System.Drawing.Point(544, 48);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(92, 29);
             this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
@@ -495,7 +588,7 @@
             this.txtRoomNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRoomNo.FillColor = System.Drawing.Color.White;
             this.txtRoomNo.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtRoomNo.Location = new System.Drawing.Point(660, 48);
+            this.txtRoomNo.Location = new System.Drawing.Point(634, 48);
             this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRoomNo.Maximum = 2147483647D;
             this.txtRoomNo.Minimum = -2147483648D;
@@ -503,11 +596,11 @@
             this.txtRoomNo.Name = "txtRoomNo";
             this.txtRoomNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtRoomNo.Radius = 20;
-            this.txtRoomNo.Size = new System.Drawing.Size(197, 29);
+            this.txtRoomNo.Size = new System.Drawing.Size(134, 29);
             this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomNo.TabIndex = 23;
             this.txtRoomNo.TextChanged += new System.EventHandler(this.txtRoomNo_TextChanged);
-            this.txtRoomNo.Validated += new System.EventHandler(this.txtRoomNo_Validated_1);
+            this.txtRoomNo.Validated += new System.EventHandler(this.txtRoomNo_Validated);
             // 
             // lblState
             // 
@@ -519,12 +612,27 @@
             this.lblState.TabIndex = 24;
             this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheck.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnCheck.Location = new System.Drawing.Point(775, 49);
+            this.btnCheck.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Radius = 20;
+            this.btnCheck.Size = new System.Drawing.Size(83, 28);
+            this.btnCheck.Style = Sunny.UI.UIStyle.Custom;
+            this.btnCheck.TabIndex = 25;
+            this.btnCheck.Text = "可否消费";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // FrmSellThing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1072, 490);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.txtRoomNo);
             this.Controls.Add(this.uiLabel2);
@@ -572,11 +680,6 @@
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITextBox txtRoomNo;
         private Sunny.UI.UILabel lblState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clFormat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn clRoomNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCustoNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSpendName;
@@ -586,5 +689,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSpendTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSpendNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clFormat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clStock;
+        private Sunny.UI.UIButton btnCheck;
     }
 }

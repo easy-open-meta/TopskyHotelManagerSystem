@@ -13,5 +13,9 @@ namespace SYS.FormUI
         {
 
         }
+
+        private void ucHistory_SizeChanged(object sender, System.EventArgs e)
+        {
+        }
     }
 }

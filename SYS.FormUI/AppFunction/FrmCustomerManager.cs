@@ -2,11 +2,11 @@
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using System.Linq;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -25,22 +25,7 @@ namespace SYS.FormUI
                 label.Font = UI_FontUtil.SetChildControlsFont();
             }
             LoadCustomer();
-            LoadCustoType();
-            //txtCustoNo.ReadOnly = true;
-
-            //cboSex.SelectedIndex = 0;
-            //cboCustoType.SelectedIndex = 0;
-
-
-        }
-        #endregion
-
-        #region 加载客户类型事件方法
-        public void LoadCustoType()
-        {
-            //cboCustoType.DataSource = CustoTypeManager.SelectCustoTypesAll();
-            //cboCustoType.DisplayMember = "TypeName";//显示的列名
-            //cboCustoType.ValueMember = "UserType";//绑定的值
+            
         }
         #endregion
 
@@ -48,86 +33,9 @@ namespace SYS.FormUI
         private void LoadCustomer()
         {
 
-            List<Custo> lstSource = CustoManager.SelectCustoAll();
+            List<Custo> lstSource = new CustoService().SelectCustoAll();
             this.dgvCustomerList.DataSource = lstSource;
             this.dgvCustomerList.AutoGenerateColumns = false;
-        }
-        #endregion
-
-        #region 添加会员信息事件方法
-        private void picAddCusto_Click(object sender, EventArgs e)
-        {
-            
-            //try
-            //{
-            //    if (txtCustoName.Text == "")
-            //    {
-            //        MessageBox.Show("添加失败，必填信息不可为空");
-            //    }
-            //    else
-            //    {
-            //        string NewID = Md5LockedUtil.MD5Encrypt32(txtCardID.Text.ToString());
-            //        string NewTel = Md5LockedUtil.MD5Encrypt32(txtTel.Text.ToString());
-
-            //        string sql = "insert USERINFO(CustoNo,CustoName,CustoSex,CustoTel,PassportType,CustoID,CustoAdress,CustoBirth,CustoType)";
-            //        sql += " values('" + txtCustoNo.Text + "','" + txtCustoName.Text + "','" + cboSex.Text + "','" + NewTel + "','" + cboPassport.SelectedIndex + "','" + NewID + "','" + txtCustoAdress.Text + "','" + dtpBirthday.Value + "','" + cboCustoType.SelectedIndex + "') ";
-            //        MySqlConnection con = DBHelper.GetConnection();
-            //        con.Open();
-            //        int i = DBHelper.ExecuteNonQuery(sql);
-            //        MessageBox.Show("添加成功");
-
-            //        LoadCustomer();
-            //        foreach (Control Ctrol in gbCustoInfo.Controls)
-            //        {
-            //            if (Ctrol is TextBox)
-            //            {
-            //                Ctrol.Text = "";
-            //            }
-            //        }
-            //        con.Close();
-
-            //    }
-            //}
-            //catch
-            //{
-
-
-            //}
-
-            //picAddCusto.BackgroundImage = Resources.添_加a;
-
-
-
-        }
-        #endregion
-
-        #region 修改会员信息事件方法
-        private void picUpdateCusto_Click(object sender, EventArgs e)
-        {
-            //string sql = "update USERINFO set CustoName='" + txtCustoName.Text + "',CustoSex='" + cboSex.Text + "',CustoTel='" + txtTel.Text + "',PassportType='" + cboPassport.SelectedIndex + "',CustoID='" + txtCardID.Text + "',CustoAdress='" + txtCustoAdress.Text + "',CustoBirth='" + dtpBirthday.Value.ToShortTimeString() + "',CustoType='" + cboCustoType.SelectedIndex + "' where CustoNo='" + txtCustoNo.Text + "'";
-            //MySqlConnection con = DBHelper.GetConnection();
-            //con.Open();
-            //int i = DBHelper.ExecuteNonQuery(sql);
-            //MessageBox.Show("修改成功");
-            //LoadCustomer();
-            //foreach (Control Ctrol in gbCustoInfo.Controls)
-            //{
-            //    if (Ctrol is TextBox)
-            //    {
-            //        Ctrol.Text = "";
-            //    }
-            //}
-            //picAddCusto.BackgroundImage = Resources.添_加a;
-
-        }
-        #endregion
-
-        #region 搜索会员信息事件方法
-        private void picSearch_Click(object sender, EventArgs e)
-        {
-            //picAddCusto.BackgroundImage = Resources.添_加a;
-            //picSearch.BackgroundImage = Resources.搜索__1a;
-            
         }
         #endregion
 
@@ -216,9 +124,11 @@ namespace SYS.FormUI
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                 o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "用户信息!";
-                o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition;
+                o.OperationAccount = LoginInfo.WorkerNo;
+                o.datains_usr = LoginInfo.WorkerNo;
+                o.datains_date = DateTime.Now;
                 #endregion
-                OperationlogManager.InsertOperationLog(o);
+                new OperationlogService().InsertOperationLog(o);
                 System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
                 if (saveFileName != "")
                 {
@@ -239,130 +149,15 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void picGetCustoNo_Click(object sender, EventArgs e)
-        {
-            string cardId = CustoManager.GetRandomCustoNo();
-            //txtCustoNo.Text = cardId;
-            //picGetCustoNo.BackgroundImage = Resources.获取用户编号_ia;
-        }
-
-        private void picGetCustoNo_MouseLeave(object sender, EventArgs e)
-        {
-            //picGetCustoNo.BackgroundImage = Resources.获取用户编号;
-        }
-
-        private void txtCardID_TextChanged(object sender, EventArgs e)
-        {
-            //if (txtCardID.ReadOnly == false && txtTel.ReadOnly == false)
-            //{
-            //    if (txtCardID.Text != "")
-            //    {
-            //        int num = txtCardID.TextLength;
-            //        if (num <= 17)
-            //        {
-            //            Regex reg = new Regex("^[0-9]+$");
-            //            Match ma = reg.Match(txtCardID.Text);
-            //            if (ma.Success)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("不可输入非数字");
-            //            }
-            //        }
-            //        if (num > 17)
-            //        {
-            //            Regex reg = new Regex("^[0-9Xx]+$");
-            //            Match ma = reg.Match(txtCardID.Text);
-            //            if (ma.Success)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("最后一位只能数字和X");
-            //            }
-            //        }
-            //    }
-            //}
-            
-        }
-
-
-
-        private void txtCardID_Validated(object sender, EventArgs e)
-        {
-            ////获取得到输入的身份证号码
-            //string identityCard = txtCardID.Text.Trim();
-            //if (string.IsNullOrEmpty(identityCard))
-            //{
-            //    //身份证号码不能为空，如果为空返回
-            //    MessageBox.Show("身份证号码不能为空！");
-            //    if (txtCardID.CanFocus)
-            //    {
-            //        txtCardID.Focus();//设置当前输入焦点为txtCardID_identityCard
-            //    }
-            //    return;
-            //}
-            //else
-            //{
-            //    //身份证号码只能为15位或18位其它不合法
-            //    if (identityCard.Length != 15 && identityCard.Length != 18)
-            //    {
-            //        MessageBox.Show("身份证号码为15位或18位，请检查！");
-            //        if (txtCardID.CanFocus)
-            //        {
-            //            txtCardID.Focus();
-            //        }
-            //        return;
-            //    }
-            //}
-            //string birthday = "";
-            //string sex = "";
-            //if (identityCard.Length == 18)
-            //{
-            //    MySqlConnection con = DBHelper.GetConnection();
-            //    con.Open();
-            //    MySqlDataReader dr = DBHelper.ExecuteReader("select Province,City,District from CARDCODES where bm='" + identityCard.Substring(0, 6).ToString() + "'");
-            //    birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
-            //    sex = identityCard.Substring(14, 3);
-            //    while (dr.Read())
-            //    {
-            //        txtCustoAdress.Text = dr["Province"].ToString() + dr["City"].ToString() + dr["District"].ToString();
-            //    }
-            //    //性别代码为偶数是女性奇数为男性
-            //    if (int.Parse(sex) % 2 == 0)
-            //    {
-            //        cboSex.Text = "女";
-            //    }
-            //    else
-            //    {
-            //        cboSex.Text = "男";
-            //    }
-            //    dr.Close();
-            //    con.Close();
-            //}
-            //try
-            //{
-            //    dtpBirthday.Value = Convert.ToDateTime(birthday);
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("请正确输入证件号码！");
-            //}
-
-            //cboPassport.SelectedIndex = 0;
-
-            //return;
-
-        }
 
         private void btnSerach_BtnClick(object sender, EventArgs e)
         {
             if (txtCustoNo.Text != "")
             {
-                dgvCustomerList.DataSource = CustoManager.SelectCustoInfoByCardId(txtCustoNo.Text);
+                //dgvCustomerList.ClearRows();
+                var source = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
+                dgvCustomerList.DataSource = source;
+                dgvCustomerList.AutoGenerateColumns = false;
             }
             else
             {

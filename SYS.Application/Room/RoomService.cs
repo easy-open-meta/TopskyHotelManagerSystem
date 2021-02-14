@@ -286,7 +286,14 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InsertRoom(Room rn)
         {
-            return base.Insert(rn);
+            try
+            {
+                return base.Insert(rn);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         #endregion
 

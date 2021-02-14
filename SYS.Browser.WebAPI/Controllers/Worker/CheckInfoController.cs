@@ -18,7 +18,7 @@ namespace SYS.Browser.WebAPI.Controllers
         public List<CheckInfo> SelectCheckInfoAll()
         {
 
-            return CheckInfoService.SelectCheckInfoAll();
+            return new CheckInfoService().SelectCheckInfoAll();
         }
     }
 }

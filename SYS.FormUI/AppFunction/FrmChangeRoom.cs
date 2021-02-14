@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using Sunny.UI;
 using System.Transactions;
 using System.Collections.Generic;
+using SYS.Application;
 
 namespace SYS.FormUI
 {
@@ -18,8 +18,8 @@ namespace SYS.FormUI
         private void FrmChangeRoom_Load(object sender, EventArgs e)
         {
             string rno = cboRoomList.Text;
-            cboRoomList.DataSource = RoomManager.SelectCanUseRoomAll();
-            cboRoomList.ValueMember = "typeName";
+            cboRoomList.DataSource = new RoomService().SelectCanUseRoomAll();
+            cboRoomList.ValueMember = "RoomNo";
             cboRoomList.DisplayMember = "RoomNo";
 
 
@@ -38,39 +38,41 @@ namespace SYS.FormUI
                     RoomNo = nrno,
                     CustoNo = ucRoomList.CustoNo,
                     RoomStateId = 1,
-                    CheckTime = DateTime.Now
+                    CheckTime = DateTime.Now,
+                    datains_usr = LoginInfo.WorkerNo,
+                    datains_date = DateTime.Now
                 };
 
                 if (rno.Contains("BD"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 300);
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 300);
                 }
                 if (rno.Contains("BS"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 425);
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 425);
                 }
                 if (rno.Contains("HD"))
                 {
-                    sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 625));
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 625);
                 }
                 if (rno.Contains("HS"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 660);
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 660);
                 }
                 if (rno.Contains("QL"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 845);
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 845);
                 }
                 if (rno.Contains("ZT"))
                 {
-                    sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 1080));
+                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 1080);
                     //sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 1080);
                 }
                 Spend s = new Spend()
                 {
                     RoomNo = cboRoomList.Text,
-                    SpendName = "居住" + rno + "共" + Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) + "天",
-                    SpendAmount = Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()),
+                    SpendName = "居住" + rno + "共" + Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) + "天",
+                    SpendAmount = Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()),
                     CustoNo = ucRoomList.CustoNo,
                     SpendPrice = Convert.ToDecimal(sum),
                     SpendMoney = Convert.ToDecimal(sum),
@@ -78,22 +80,27 @@ namespace SYS.FormUI
                     MoneyState = "未结算",
                 };
 
-                int result1 = RoomManager.UpdateRoomInfo(checkInRoom);
-                int result2 = RoomManager.UpdateRoomByRoomNo(rno);
-                int result3 = SpendManager.UpdateSpendInfoByRoomNo(rno, nrno, ucRoomList.CustoNo);
-
-                if (result1 > 0 && result2 > 0)
+                bool result1 = new RoomService().UpdateRoomInfo(checkInRoom);
+                bool result2 = new RoomService().UpdateRoomByRoomNo(rno);
+                var result3 = new SpendService().SelectSpendByCustoNo(rno);
+                if (result3.Count != 0)
+                {
+                    bool result4 = new SpendService().UpdateSpendInfoByRoomNo(result3, nrno, ucRoomList.CustoNo);
+                }
+                if (result1 == true && result2 == true)
                 {
                     MessageBox.Show("转房成功");
-                    int m = SpendManager.InsertSpendInfo(s);
+                    bool m = new SpendService().InsertSpendInfo(s);
                     FrmRoomManager.Reload();
                     #region 获取添加操作日志所需的信息
                     OperationLog o = new OperationLog();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                     o.Operationlog = ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房，请记得到后台修改消费价格！";
-                    o.OperationAccount = lbu;
+                    o.OperationAccount = LoginInfo.WorkerNo;
+                    o.datains_usr = LoginInfo.WorkerNo;
+                    o.datains_date = DateTime.Now;
                     #endregion
-                    OperationlogManager.InsertOperationLog(o);
+                    new OperationlogService().InsertOperationLog(o);
                     scope.Complete();
                     this.Close();
                 }

@@ -17,7 +17,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Fonts> SelectFontAll()
         {
-            return FontsService.SelectFontAll();
+            return new FontsService().SelectFontAll();
         }
 
     }

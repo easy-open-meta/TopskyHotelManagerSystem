@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using SYS.Manager;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System.Collections.Generic;
@@ -68,7 +67,7 @@ namespace SYS.FormUI
                 }
             }
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = CustoTypeManager.SelectCustoTypesAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
             this.cboCustoType.DataSource = lstSourceGrid;
             this.cboCustoType.DisplayMember = "TypeName";
             this.cboCustoType.ValueMember = "UserType";
@@ -77,7 +76,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = CustoTypeManager.SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
             this.cboPassportType.DataSource = passPorts;
             this.cboPassportType.DisplayMember = "PassportName";
             this.cboPassportType.ValueMember = "PassportId";
@@ -131,20 +130,20 @@ namespace SYS.FormUI
             {
                 sum = Convert.ToDouble(Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 1080));
             }
-            lblDay.Text = Convert.ToString(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()));
+            lblDay.Text = Convert.ToString(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()));
             w = new Wti()
             {
                 CustoNo = txtCustoNo.Text,
                 EndDate = Convert.ToDateTime(DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))),
-                PowerUse = Convert.ToDecimal(Convert.ToInt32(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 3 * 1),
-                WaterUse = Convert.ToDecimal(Convert.ToDouble(RoomManager.DayByRoomNo(txtRoomNo.Text).ToString()) * 80 * 0.002),
+                PowerUse = Convert.ToDecimal(Convert.ToInt32(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 3 * 1),
+                WaterUse = Convert.ToDecimal(Convert.ToDouble(new RoomService().DayByRoomNo(txtRoomNo.Text).ToString()) * 80 * 0.002),
                 RoomNo = txtRoomNo.Text,
                 Record = "admin",
                 UseDate = Convert.ToDateTime(DateTime.Parse(dtpCheckTime.Text)),
             };
 
             #region 加载客户信息
-            Custo cto = CustoManager.SelectCustoByCustoNo(CustoNo.Text.ToString());
+            Custo cto = new CustoService().SelectCardInfoByCustoNo(CustoNo.Text.ToString());
             try
             {
                 CustoName.Text = cto.CustoName;
@@ -167,7 +166,7 @@ namespace SYS.FormUI
 
             #region 加载消费信息
             string RoomNo = txtRoomNo.Text;
-            dgvSpendList.DataSource = SpendManager.SelectSpendInfoRoomNo(RoomNo);
+            dgvSpendList.DataSource = new SpendService().SelectSpendInfoRoomNo(RoomNo);
             dgvSpendList.AutoGenerateColumns = false;
             double result = 0;
             if (dgvSpendList.Rows.Count == 0)
@@ -176,13 +175,13 @@ namespace SYS.FormUI
             }
             else
             {
-                result = Convert.ToDouble(SpendManager.SelectMoneyByRoomNoAndTime(RoomNo, CustoNo.Text.ToString()));
+                result = Convert.ToDouble(new SpendService().SelectMoneyByRoomNoAndTime(RoomNo, CustoNo.Text.ToString()));
             }
 
             #endregion
 
             #region 加载水电费信息
-            var listWti = WtiManager.SelectWtiInfoAll();
+            var listWti = new WtiService().SelectWtiInfoAll();
             dgvWti.DataSource = listWti;
             dgvWti.AutoGenerateColumns = false;
             #endregion
@@ -273,14 +272,14 @@ namespace SYS.FormUI
         {
             if (txtReceipts.Text != "")//判断实收金额是否为空
             {
-                Room r = RoomManager.SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
+                Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
                 string checktime = r.CheckTime.ToString();//获取入住时间
                 if (dgvSpendList.Rows.Count == 0)
                 {
-                    int n = RoomManager.UpdateRoomByRoomNo(txtRoomNo.Text);
-                    if (n > 0)
+                    bool n = new RoomService().UpdateRoomByRoomNo(txtRoomNo.Text);
+                    if (n == true)
                     {
-                        WtiManager.InsertWtiInfo(w);//添加水电费信息
+                        new WtiService().InsertWtiInfo(w);//添加水电费信息
                         this.Close();
                     }
                     else
@@ -294,18 +293,20 @@ namespace SYS.FormUI
                     OperationLog o = new OperationLog();
                     o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                     o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
-                    o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
+                    o.OperationAccount = LoginInfo.WorkerNo;
+                    o.datains_usr = LoginInfo.WorkerNo;
+                    o.datains_date = DateTime.Now;
                     #endregion
-                    OperationlogManager.InsertOperationLog(o);
+                    new OperationlogService().InsertOperationLog(o);
                 }
                 else
                 {
-                    if (SpendManager.UpdateMoneyState(txtRoomNo.Text, checktime) > 0)
+                    if (new SpendService().UpdateMoneyState(txtRoomNo.Text, checktime) == true)
                     {
-                        int n = RoomManager.UpdateRoomByRoomNo(txtRoomNo.Text);
-                        if (n > 0)
+                        bool n = new RoomService().UpdateRoomByRoomNo(txtRoomNo.Text);
+                        if (n == true)
                         {
-                            WtiManager.InsertWtiInfo(w);//添加水电费信息
+                            new WtiService().InsertWtiInfo(w);//添加水电费信息
                             this.Close();
                         }
                         else
@@ -318,9 +319,11 @@ namespace SYS.FormUI
                         OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
                         o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
-                        o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
+                        o.OperationAccount = LoginInfo.WorkerNo;
+                        o.datains_usr = LoginInfo.WorkerNo;
+                        o.datains_date = DateTime.Now;
                         #endregion
-                        OperationlogManager.InsertOperationLog(o);
+                        new OperationlogService().InsertOperationLog(o);
                     }
                     else
                     {

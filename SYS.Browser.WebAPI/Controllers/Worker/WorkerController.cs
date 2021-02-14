@@ -17,9 +17,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="worker"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateWorker([FromBody]Worker worker)
+        public bool UpdateWorker([FromBody]Worker worker)
         {
-            return WorkerService.UpdateWorker(worker);
+            return new WorkerService().UpdateWorker(worker);
         }
         #endregion
 
@@ -30,9 +30,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="worker"></param>
         /// <returns></returns>
         [HttpPost]
-        public int AddWorker([FromBody]Worker worker)
+        public bool AddWorker([FromBody]Worker worker)
         {
-            return WorkerService.AddWorker(worker);
+            return new WorkerService().AddWorker(worker);
         }
         #endregion
 
@@ -44,7 +44,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Worker> SelectWorkerAll()
         {
-            return WorkerService.SelectWorkerAll();
+            return new WorkerService().SelectWorkerAll();
         }
         #endregion
 
@@ -57,7 +57,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public Worker SelectWorkerInfoByWorkerId([FromUri]string workerId)
         {
-            return WorkerService.SelectWorkerInfoByWorkerId(workerId);
+            return new WorkerService().SelectWorkerInfoByWorkerId(workerId);
         }
         #endregion
 
@@ -73,7 +73,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpPost]
         public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd([FromBody]string id, string pwd)
         {
-            return WorkerService.SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
+            return new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
         }
         #endregion
     }

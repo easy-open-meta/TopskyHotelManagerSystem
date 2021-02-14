@@ -19,7 +19,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public Wti SelectWtiInfoByRoomNo([FromUri]string roomNo)
         {
-            return WtiService.SelectWtiInfoByRoomNo(roomNo);
+            return new WtiService().SelectWtiInfoByRoomNo(roomNo);
         }
         #endregion
 
@@ -34,7 +34,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public Wti SelectWtiInfoByRoomNoAndTime([FromUri]string roomno, string usedate, string enddate)
         {
-            return WtiService.SelectWtiInfoByRoomNoAndTime(roomno, usedate, enddate);
+            return new WtiService().SelectWtiInfoByRoomNoAndTime(roomno, usedate, enddate);
         }
         #endregion
 
@@ -46,7 +46,7 @@ namespace SYS.Browser.WebAPI.Controllers
         [HttpGet]
         public List<Wti> SelectWtiInfoAll()
         {
-            return WtiService.SelectWtiInfoAll();
+            return new WtiService().SelectWtiInfoAll();
         }
         #endregion
 
@@ -57,9 +57,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="w"></param>
         /// <returns></returns>
         [HttpPost]
-        public int InsertWtiInfo([FromBody]Wti w)
+        public bool InsertWtiInfo([FromBody]Wti w)
         {
-            return WtiService.InsertWtiInfo(w);
+            return new WtiService().InsertWtiInfo(w);
         }
         #endregion
 
@@ -70,9 +70,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="w"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateWtiInfo([FromBody]Wti w)
+        public bool UpdateWtiInfo([FromBody]Wti w)
         {
-            return WtiService.UpdateWtiInfo(w);
+            return new WtiService().UpdateWtiInfo(w);
         }
         #endregion
 
@@ -83,9 +83,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="w"></param>
         /// <returns></returns>
         [HttpPost]
-        public int UpdateWtiInfoByRoomNoAndDateTime([FromBody]Wti w)
+        public bool UpdateWtiInfoByRoomNoAndDateTime([FromBody]Wti w)
         {
-            return WtiService.UpdateWtiInfoByRoomNoAndDateTime(w);
+            return new WtiService().UpdateWtiInfoByRoomNoAndDateTime(w);
         }
         #endregion
 
@@ -96,9 +96,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="roomno"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DeleteWtiInfo([FromBody]string roomno)
+        public bool DeleteWtiInfo([FromBody]string roomno)
         {
-            return WtiService.DeleteWtiInfo(roomno);
+            return new WtiService().DeleteWtiInfo(roomno);
         }
         #endregion
 
@@ -111,9 +111,9 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="enddate"></param>
         /// <returns></returns>
         [HttpDelete]
-        public int DeleteWtiInfoByRoomNoAndDateTime([FromBody]string roomno, string usedate, string enddate)
+        public bool DeleteWtiInfoByRoomNoAndDateTime([FromBody]string roomno, string usedate, string enddate)
         {
-            return WtiService.DeleteWtiInfoByRoomNoAndDateTime(roomno, usedate, enddate);
+            return new WtiService().DeleteWtiInfoByRoomNoAndDateTime(roomno, usedate, enddate);
         }
         #endregion
     }
