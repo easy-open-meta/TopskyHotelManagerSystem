@@ -1,6 +1,6 @@
 <h1 align="center">TopskyHotelManagerSystem</h1>
 <p align="center">
-	<a href='https://gitee.com/yjj0720/TopskyHotelManagerSystem/stargazers'><img src='https://gitee.com/yjj0720/TopskyHotelManagerSystem/badge/star.svg?theme=dark' alt='star'></img></a>
+	<a href='https://gitee.com/java-and-net/TopskyHotelManagerSystem/stargazers'><img src='https://gitee.com/java-and-net/TopskyHotelManagerSystem/badge/star.svg?theme=dark' alt='star'></img></a>
         <a href='https://img.shields.io/travis/antvis/g2.svg'><img src="https://img.shields.io/travis/antvis/g2.svg" alt=""></img>
         <a href='https://img.shields.io/badge/license-MIT-000000.svg'><img src="https://img.shields.io/badge/license-MIT-000000.svg" alt=""></img></a>
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
@@ -51,7 +51,7 @@
 **开发技术：.NET WinForm**
 
 # 系统结构：
-![TopskyHotelManagerSystem系统结构图](https://images.gitee.com/uploads/images/2021/0106/205125_05b66e97_5122554.png "TopskyHotelManagerSystem.png")
+![TopSkyHotelManagerSystem](https://images.gitee.com/uploads/images/2021/0214/195755_0c128762_5122554.png "TopskyHotelManagerSystem.png")
 
 # 系统功能模块汇总：
 
@@ -94,12 +94,4 @@
 **2、随后打开Data.sql文件进行数据导入。**
 
 
-<<<<<<< HEAD
-[![jackson0720/TopskyHotelManagerSystem](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
-=======
-<<<<<<< HEAD
-[![jackson0720/TopskyHotelManagerSystem](https://gitee.com/yjj0720/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yjj0720/TopskyHotelManagerSystem)
-=======
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
->>>>>>> 94e47e3ce81710807bb8877c6d006669907de13a
->>>>>>> master
