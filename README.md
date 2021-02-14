@@ -51,7 +51,7 @@
 **开发技术：.NET WinForm**
 
 # 系统结构：
-![TopskyHotelManagerSystem系统结构图](https://images.gitee.com/uploads/images/2021/0106/205125_05b66e97_5122554.png "TopskyHotelManagerSystem.png")
+![TopSkyHotelManagerSystem](https://images.gitee.com/uploads/images/2021/0214/195755_0c128762_5122554.png "TopskyHotelManagerSystem.png")
 
 # 系统功能模块汇总：
 
@@ -94,6 +94,4 @@
 **2、随后打开Data.sql文件进行数据导入。**
 
 
-[![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
-[![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
