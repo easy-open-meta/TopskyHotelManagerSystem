@@ -11,7 +11,10 @@ namespace SYS.FormUI
 
         private void ucHistory_Load(object sender, System.EventArgs e)
         {
-
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.controlFont;
+            }
         }
 
         private void ucHistory_SizeChanged(object sender, System.EventArgs e)

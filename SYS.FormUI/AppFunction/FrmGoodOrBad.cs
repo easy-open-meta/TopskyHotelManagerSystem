@@ -26,29 +26,62 @@ namespace SYS.FormUI
         {
             lblWorkerNo.Text = FrmWorkerManager.wk_WorkerNo;
             lblName.Text = FrmWorkerManager.wk_WorkerName;
-            lblDate.Text = FrmWorkerManager.wk_WorkerTime.Substring(0,9);
+            lblDate.Text = Convert.ToDateTime(FrmWorkerManager.wk_WorkerTime).ToString("yyyy年MM月dd日").Substring(0,9);
             DgvGoodBadList.AutoGenerateColumns = false;
             DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
-            CboType.SelectedIndex = 0;
+            CboType.DataSource = new BaseService().SelectGBTypeAll();
+            CboType.DisplayMember = "GBName";
+            CboType.ValueMember = "GBTypeId";
+        }
+
+        public bool CheckInput(WorkerGoodBad workerGoodBad)
+        {
+            if (string.IsNullOrWhiteSpace(workerGoodBad.WorkNo))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(workerGoodBad.GBType + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(workerGoodBad.GBInfo))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(workerGoodBad.GBTime + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(workerGoodBad.GBOperation))
+            {
+                return false;
+            }
+            return true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (RtbGBInfo.Text != null)
+            WorkerGoodBad goodBad = new WorkerGoodBad()
+            {
+                WorkNo = lblWorkerNo.Text,
+                GBType = (int)CboType.SelectedValue,
+                GBInfo = RtbGBInfo.Text,
+                GBOperation = AdminInfo.Account,
+                GBTime = DtpDate.Value,
+                datains_usr = AdminInfo.Account,
+                datains_date = DateTime.Now
+            };
+            if (CheckInput(goodBad))
             {
                 DialogResult dr = MessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
-                    WorkerGoodBad goodBad = new WorkerGoodBad();
-                    goodBad.WorkNo = lblWorkerNo.Text;
-                    goodBad.GBType = CboType.SelectedIndex;
-                    goodBad.GBInfo = RtbGBInfo.Text;
-                    goodBad.GBOperation = AdminInfo.Account;
-                    goodBad.GBTime = DtpDate.Value;
+                    
+                    
                     bool n = new WorkerGoodBadService().AddGoodBad(goodBad);
                     if (n == true)
                     {
-                        MessageBox.Show("新增成功！");
+                        UIMessageBox.Show("新增成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog();
                         o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -62,18 +95,20 @@ namespace SYS.FormUI
                     }
                     else
                     {
-                        MessageBox.Show("或是服务器错误所致！");
+                        UIMessageBox.Show("或是服务器错误所致！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                        return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("取消录入操作！");
+                    UIMessageBox.Show("取消录入操作！", "系统提示", UIStyle.Orange, UIMessageBoxButtons.OK);
+                    return;
                 }
 
             }
             else
             {
-                MessageBox.Show("信息不能为空！");
+                UIMessageBox.Show("信息不能为空！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
             }
             
         }

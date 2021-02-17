@@ -62,5 +62,14 @@ namespace SYS.Application
         /// <returns></returns>
         Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd);
         #endregion
+
+
+        /// <summary>
+        /// 根据员工编号和密码修改密码
+        /// </summary>
+        /// <param name="workId"></param>
+        /// <param name="workPwd"></param>
+        /// <returns></returns>
+        bool UpdWorkerPwdByWorkNo(string workId, string workPwd);
     }
 }

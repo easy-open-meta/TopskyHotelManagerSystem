@@ -21,18 +21,18 @@ namespace SYS.FormUI
         private void FrmSellThing_Load(object sender, EventArgs e)
         {
 
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.SetChildControlsFont();
-            }
-
             List<Room> roms = new RoomService().SelectRoomByStateAll();
             for (int i = 0; i < roms.Count; i++)
             {
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
             }
             LoadSellThingInfo();
-            
+
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.childControlFont;
+            }
+
         }
         #endregion
 
@@ -75,10 +75,10 @@ namespace SYS.FormUI
         #region 商品加载事件方法
         public void LoadSellThingInfo()
         {
-            
             List<SellThing> lstSource = new SellService().SelectSellThingAll();
             this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
+
         }
         #endregion
 
@@ -145,7 +145,7 @@ namespace SYS.FormUI
                     {
                         string Stock = (st.Stock - nudNum.Value).ToString();
                         bool n = new SellService().UpdateSellThing(Stock, st.SellNo);
-                        MessageBox.Show("添加成功");
+                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK,true);
                         LoadSpendInfoByCustoNo(r.CustoNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
@@ -264,6 +264,16 @@ namespace SYS.FormUI
                     //清空
                 }
             }
+        }
+
+        private void lblState_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmSellThing_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }

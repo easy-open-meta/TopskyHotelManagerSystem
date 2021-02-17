@@ -16,6 +16,11 @@ namespace SYS.FormUI
 
         private void FrmOperation_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.childControlFont;
+            }
+
             dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
         }
     }

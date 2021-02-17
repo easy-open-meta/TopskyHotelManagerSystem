@@ -14,6 +14,10 @@ namespace SYS.FormUI
 
         private void FrmCustoSpend_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.childControlFont;
+            }
             dgvSpendList.AutoGenerateColumns = false;
             dgvSpendList.DataSource = new SpendService().SelectSpendInfoAll();
         }

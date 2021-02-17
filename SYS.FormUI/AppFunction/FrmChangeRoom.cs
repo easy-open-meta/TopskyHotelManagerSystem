@@ -17,6 +17,10 @@ namespace SYS.FormUI
 
         private void FrmChangeRoom_Load(object sender, EventArgs e)
         {
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.scorllingFont;
+            }
             string rno = cboRoomList.Text;
             cboRoomList.DataSource = new RoomService().SelectCanUseRoomAll();
             cboRoomList.ValueMember = "RoomNo";

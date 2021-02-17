@@ -127,6 +127,7 @@
             this.txtworkerName.Name = "txtworkerName";
             this.txtworkerName.Padding = new System.Windows.Forms.Padding(5);
             this.txtworkerName.Radius = 20;
+            this.txtworkerName.ReadOnly = true;
             this.txtworkerName.Size = new System.Drawing.Size(125, 29);
             this.txtworkerName.Style = Sunny.UI.UIStyle.Custom;
             this.txtworkerName.StyleCustomMode = true;
@@ -195,6 +196,7 @@
             this.cboNewClub.Size = new System.Drawing.Size(125, 29);
             this.cboNewClub.TabIndex = 111;
             this.cboNewClub.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboNewClub.TextChanged += new System.EventHandler(this.cboNewClub_TextChanged);
             // 
             // cboNewPosition
             // 
@@ -210,6 +212,7 @@
             this.cboNewPosition.Size = new System.Drawing.Size(125, 29);
             this.cboNewPosition.TabIndex = 112;
             this.cboNewPosition.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboNewPosition.TextChanged += new System.EventHandler(this.cboNewPosition_TextChanged);
             // 
             // btnOK
             // 

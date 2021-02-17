@@ -21,23 +21,23 @@ namespace SYS.FormUI
         private void FrmAddWorker_Load(object sender, EventArgs e)
         {
             //加载部门信息
-            cboClub.DataSource = new BaseService().SelectDeptAll();
+            cboClub.DataSource = new BaseService().SelectDeptAllCanUse();
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
             //加载民族信息
-            cbWorkerNation.DataSource = new BaseService().SelectNationAll();
+            cbWorkerNation.DataSource = new BaseService().SelectNationAllCanUse();
             cbWorkerNation.DisplayMember = "nation_name";
             cbWorkerNation.ValueMember = "nation_no";
             //加载职位信息
-            cboWorkerPosition.DataSource = new BaseService().SelectPositionAll();
+            cboWorkerPosition.DataSource = new BaseService().SelectPositionAllCanUse();
             cboWorkerPosition.DisplayMember = "position_name";
             cboWorkerPosition.ValueMember = "position_no";
             //加载性别信息
-            cboSex.DataSource = new BaseService().SelectSexTypeAll();
+            cboSex.DataSource = new BaseService().SelectSexTypeAllCanUse();
             cboSex.DisplayMember = "sexName";
             cboSex.ValueMember = "sexId";
             //加载学历信息
-            cboEducation.DataSource = new BaseService().SelectEducationAll();
+            cboEducation.DataSource = new BaseService().SelectEducationAllCanUse();
             cboEducation.DisplayMember = "education_name";
             cboEducation.ValueMember = "education_no";
 
@@ -199,34 +199,87 @@ namespace SYS.FormUI
             }
         }
 
+        public bool CheckInput(Worker worker)
+        {
+            if (string.IsNullOrWhiteSpace(worker.WorkerId))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerName))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerSex + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerBirthday + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerClub))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerNation))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerPosition))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerTel))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerAddress))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.CardId))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerEducation))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(worker.WorkerFace))
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
+            string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
+
+            Worker worker = new Worker
+            {
+                WorkerId = WorkerNo.Text.Trim(),
+                WorkerName = WorkerName.Text.Trim(),
+                WorkerBirthday = dtpBirthday.Value,
+                WorkerSex = (int)cboSex.SelectedValue,
+                WorkerNation = cbWorkerNation.SelectedValue.ToString(),
+                WorkerTel = NewTel,
+                WorkerClub = cboClub.SelectedValue.ToString(),
+                WorkerAddress = txtAddress.Text,
+                WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
+                CardId = NewID,
+                WorkerTime = dtpTime.Value,
+                WorkerFace = cboWorkerFace.Text,
+                WorkerEducation = cboEducation.SelectedValue.ToString(),
+                datains_usr = AdminInfo.Account,
+                datains_date = DateTime.Now
+            };
             try
             {
-                if (WorkerName.Text != null && cboSex.Text != null)
+                if (CheckInput(worker))
                 {
-                    string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
-                    string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
-
                     #region 员工信息添加代码块
-                    Worker worker = new Worker
-                    {
-                        WorkerId = WorkerNo.Text.Trim(),
-                        WorkerName = WorkerName.Text.Trim(),
-                        WorkerBirthday = dtpBirthday.Value,
-                        WorkerSex = (int)cboSex.SelectedValue,
-                        WorkerNation = cbWorkerNation.SelectedValue.ToString(),
-                        WorkerTel = NewTel,
-                        WorkerClub = cboClub.SelectedValue.ToString(),
-                        WorkerAddress = txtAddress.Text,
-                        WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
-                        CardId = NewID,
-                        WorkerTime = dtpTime.Value,
-                        WorkerFace = cboWorkerFace.Text,
-                        WorkerEducation = cboEducation.SelectedValue.ToString(),
-                        datains_usr = AdminInfo.Account,
-                        datains_date = DateTime.Now
-                    };
                     bool n = new WorkerService().AddWorker(worker);
                     #endregion
                     
@@ -273,7 +326,6 @@ namespace SYS.FormUI
             }
             catch(Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
                 UIMessageBox.Show("服务器繁忙或数据格式为空！");
             }
             finally

@@ -15,14 +15,35 @@ namespace SYS.FormUI
 {
     public partial class FrmBackgroundSystem : UIForm
     {
+        public delegate void UpdPwd();
+
+        public static UpdPwd closeform;
+
         public FrmBackgroundSystem()
         {
             InitializeComponent();
-            
+            closeform = Closeform;
         }
+
+
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
+            foreach (Control item in this.Controls)
+            {
+                switch (item.GetType().ToString())
+                {
+                    case "Sunny.UI.UILabel":
+                        item.Font = UI_FontUtil.mainFont;
+                        break;
+                    case "Sunny.UI.UIScrollingText":
+                        item.Font = UI_FontUtil.scorllingFont;
+                        break;
+                    case "Sunny.UI.UINavMenu":
+                        item.Font = UI_FontUtil.scorllingFont;
+                        break;
+                }
+            }
             DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
@@ -39,9 +60,12 @@ namespace SYS.FormUI
             }
         }
 
-        private void uiNavMenu1_MenuItemClick(TreeNode node, NavMenuItem item, int pageIndex)
+        /// <summary>
+        /// 关闭当前窗体
+        /// </summary>
+        public void Closeform() 
         {
-
+            this.Close();
         }
 
         private void Aside_MenuItemClick(TreeNode node, NavMenuItem item, int pageIndex)
@@ -65,13 +89,6 @@ namespace SYS.FormUI
                         frmNation.TopLevel = false;
                         pnlForm.Controls.Add(frmNation);
                         frmNation.Show();
-                        break;
-                    case "性别类型维护":
-                        pnlForm.Controls.Clear();
-                        FrmSexType frmSexType = new FrmSexType();
-                        frmSexType.TopLevel = false;
-                        pnlForm.Controls.Add(frmSexType);
-                        frmSexType.Show();
                         break;
                     case "学历类型维护":
                         pnlForm.Controls.Clear();
@@ -242,6 +259,30 @@ namespace SYS.FormUI
         private void FrmBackgroundSystem_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            this.btnSetting.ContextMenuStrip = cmsMenu;
+        }
+
+        private void cmsMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void btnSetting_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmsMenu.Show(MousePosition);
+            }
+
+        }
+
+        private void tsmiUpdatePwd_Click(object sender, EventArgs e)
+        {
+            FrmChangeAdminPwd frmChangeAdminPwd = new FrmChangeAdminPwd();
+            frmChangeAdminPwd.ShowDialog();
         }
     }
 }

@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,15 +48,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityFramework.dll" />
-    <Content Include="EntityFramework.SqlServer.dll" />
-    <Content Include="EntityFramework.SqlServer.xml" />
-    <Content Include="EntityFramework.xml" />
+    <Content Include="bitbug_favicon %281%29.ico" />
     <Content Include="kse.dll" />
     <Content Include="MySql.Data.dll" />
     <Content Include="MySql.Data.EntityFramework.dll" />
     <Content Include="MySql.Web.dll" />
     <Content Include="SYS.Application.dll" />
+    <Content Include="SYS.Application.xml" />
+    <Content Include="SYS.Common.dll" />
     <Content Include="SYS.Core.dll" />
     <Content Include="SYS.Core.xml" />
   </ItemGroup>
@@ -62,9 +64,21 @@
       <Project>{600f4cc8-4323-4237-a55c-bfef4b67d57c}</Project>
       <Name>SYS.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SYS.Browser.WebAPI\SYS.Browser.WebAPI.csproj">
+      <Project>{008aa4b4-cf4c-4cee-9940-4785191b22b6}</Project>
+      <Name>SYS.Browser.WebAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
+      <Project>{65501af6-c629-448a-847e-1bcd60665865}</Project>
+      <Name>SYS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SYS.Core\SYS.Core.csproj">
       <Project>{cd039d0f-bd50-4fbf-b9cd-cdfab25c7dfa}</Project>
       <Name>SYS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SYS.FormUI\SYS.FormUI.csproj">
+      <Project>{8854dcb7-f2d7-4276-8d10-c7a124436145}</Project>
+      <Name>SYS.FormUI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

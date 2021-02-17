@@ -90,6 +90,7 @@
             this.dgvOperationlog.MultiSelect = false;
             this.dgvOperationlog.Name = "dgvOperationlog";
             this.dgvOperationlog.ReadOnly = true;
+            this.dgvOperationlog.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOperationlog.RowTemplate.Height = 29;

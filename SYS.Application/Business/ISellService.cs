@@ -37,6 +37,13 @@ namespace SYS.Application
         bool UpdateSellThing(string stock, string sellNo);
 
         /// <summary>
+        /// 修改商品信息
+        /// </summary>
+        /// <param name="sellThing"></param>
+        /// <returns></returns>
+        bool UpdateSellthingInfo(SellThing sellThing);
+
+        /// <summary>
         /// 撤回客户消费信息
         /// </summary>
         /// <param name="roomNo"></param>

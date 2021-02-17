@@ -102,7 +102,7 @@
             this.lblCustoNo.AutoSize = true;
             this.lblCustoNo.BackColor = System.Drawing.Color.Transparent;
             this.lblCustoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCustoNo.Location = new System.Drawing.Point(29, 59);
+            this.lblCustoNo.Location = new System.Drawing.Point(22, 59);
             this.lblCustoNo.Name = "lblCustoNo";
             this.lblCustoNo.Size = new System.Drawing.Size(62, 17);
             this.lblCustoNo.TabIndex = 10;
@@ -114,7 +114,7 @@
             this.lblRoomType.AutoSize = true;
             this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomType.Location = new System.Drawing.Point(30, 3);
+            this.lblRoomType.Location = new System.Drawing.Point(23, 3);
             this.lblRoomType.Name = "lblRoomType";
             this.lblRoomType.Size = new System.Drawing.Size(61, 17);
             this.lblRoomType.TabIndex = 9;
@@ -127,7 +127,7 @@
             this.lblRoomNo.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomNo.ForeColor = System.Drawing.Color.Red;
-            this.lblRoomNo.Location = new System.Drawing.Point(30, 31);
+            this.lblRoomNo.Location = new System.Drawing.Point(23, 31);
             this.lblRoomNo.Name = "lblRoomNo";
             this.lblRoomNo.Size = new System.Drawing.Size(63, 17);
             this.lblRoomNo.TabIndex = 8;
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BackgroundImage = global::SYS.FormUI.Properties.Resources.可住icon;
+            this.BackgroundImage = global::SYS.FormUI.Properties.Resources.可住状态;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ContextMenuStrip = this.cmsMain;
             this.Controls.Add(this.lblCustoNo);

@@ -63,6 +63,22 @@ namespace SYS.Application
         }
 
         /// <summary>
+        /// 修改商品信息
+        /// </summary>
+        /// <param name="sellThing"></param>
+        /// <returns></returns>
+        public bool UpdateSellthingInfo(SellThing sellThing)
+        {
+            return base.Update(a => new SellThing()
+            {
+                SellName = sellThing.SellName,
+                SellPrice = sellThing.SellPrice,
+                Stock = sellThing.Stock,
+                format = sellThing.format,
+            },a => a.SellNo == sellThing.SellNo);
+        }
+
+        /// <summary>
         /// 撤回客户消费信息
         /// </summary>
         /// <param name="roomNo"></param>

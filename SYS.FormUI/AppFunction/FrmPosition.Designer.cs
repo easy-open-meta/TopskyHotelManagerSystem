@@ -30,7 +30,18 @@ namespace SYS.FormUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPosition));
+            this.flpInformation = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // flpInformation
+            // 
+            this.flpInformation.AutoScroll = true;
+            this.flpInformation.BackColor = System.Drawing.Color.Transparent;
+            this.flpInformation.Location = new System.Drawing.Point(441, 37);
+            this.flpInformation.Margin = new System.Windows.Forms.Padding(2);
+            this.flpInformation.Name = "flpInformation";
+            this.flpInformation.Size = new System.Drawing.Size(562, 582);
+            this.flpInformation.TabIndex = 73;
             // 
             // FrmPosition
             // 
@@ -38,6 +49,7 @@ namespace SYS.FormUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
+            this.Controls.Add(this.flpInformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -50,5 +62,7 @@ namespace SYS.FormUI
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flpInformation;
     }
 }

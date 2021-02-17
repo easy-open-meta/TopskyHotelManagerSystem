@@ -97,6 +97,7 @@ namespace SYS.FormUI
             this.DoubleBuffered = true;
             this.Name = "ucBaseInformation";
             this.Size = new System.Drawing.Size(86, 66);
+            this.Tag = "";
             this.Load += new System.EventHandler(this.ucBaseInformation_Load);
             this.SizeChanged += new System.EventHandler(this.ucBaseInformation_SizeChanged);
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.ucBaseInformation_Layout);

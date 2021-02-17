@@ -27,16 +27,15 @@ namespace SYS.FormUI
         public static string co_CustoID;
         #endregion
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FrmSelectCustoInfo_Load(object sender, EventArgs e)
         {
 
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.controlFont;
+            }
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -45,7 +44,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -53,7 +52,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAllCanUse();
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";

@@ -17,8 +17,18 @@ namespace SYS.FormUI
 
         public static SellThing st;
 
+        public void LoadData()
+        {
+            dgvSellthing.AutoGenerateColumns = false;
+            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
+        }
+
         private void FrmSellThingManager_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.childControlFont;
+            }
             string SellId = new CounterHelper().GetNewId("SellId");
             txtSellNo.Text = SellId;
             dgvSellthing.DataSource = new SellService().SelectSellThingAll();
@@ -33,12 +43,9 @@ namespace SYS.FormUI
         private void btnDeleteSellThing_Click(object sender, EventArgs e)
         {
             bool n = new SellService().DeleteSellThingBySellNo(txtSellNo.Text.Trim());
-            MessageBox.Show("删除商品成功!");
-            foreach (Control c in pnlSellThingInfo.Controls)
-            {
-                if (c is TextBox)
-                    c.Text = "";
-            }
+            UIMessageBox.ShowSuccess("删除商品成功!");
+            LoadData();
+            return;
         }
 
         public bool CheckInput(SellThing sellThing) 
@@ -67,18 +74,25 @@ namespace SYS.FormUI
             st = new SellThing()
             {
                 SellNo = txtSellNo.Text,
-                SellName = txtSellName.Text,
-                SellPrice = Convert.ToDecimal(txtSellPrice.Text),
-                format = Convert.ToString(txtformat.Text),
-                Stock = Convert.ToInt32(txtStock.Text),
+                SellName = string.IsNullOrWhiteSpace(txtSellName.Text) ? "" : txtSellName.Text,
+                SellPrice = string.IsNullOrWhiteSpace(txtSellPrice.Text) ? 0 : Convert.ToDecimal(txtSellPrice.Text),
+                format = string.IsNullOrWhiteSpace(txtformat.Text) ? "" : Convert.ToString(txtformat.Text),
+                Stock = txtStock.Value == 0 ? 0 : Convert.ToInt32(txtStock.Value),
                 datains_usr = AdminInfo.Account,
                 datains_date = DateTime.Now
             };
             if (CheckInput(st))
             {
+                var SellThing = new SellService().SelectSellInfoBySellNo(st.SellNo);
+                if (SellThing != null && SellThing.SellName.Equals(st.SellName) && SellThing.format.Equals(st.format))
+                {
+                    UIMessageBox.ShowError("信息已存在，请检查！");
+                    return;
+                }
+
                 new SellService().InsertSellThing(st);
-                MessageBox.Show("添加商品成功");
-                dgvSellthing.DataSource = new SellService().SelectSellThingAll();
+                UIMessageBox.Show("添加商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                LoadData();
                 string SellId = new CounterHelper().GetNewId("SellId");
                 txtSellNo.Text = SellId;
             }
@@ -86,29 +100,53 @@ namespace SYS.FormUI
             {
                 UIMessageBox.ShowError("信息不完整，请检查！");
                 return;
+                string SellId = new CounterHelper().GetNewId("SellId");
+                txtSellNo.Text = SellId;
             }
             
         }
 
         private void dgvSellthing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtSellNo.Text = dgvSellthing.SelectedRows[0].Cells["SellNo"].Value.ToString();
-            txtSellName.Text = dgvSellthing.SelectedRows[0].Cells["SellName"].Value.ToString();
-            txtSellPrice.Text = dgvSellthing.SelectedRows[0].Cells["SellPrice"].Value.ToString();
-            txtformat.Text = dgvSellthing.SelectedRows[0].Cells["format"].Value.ToString();
-            txtStock.Text = dgvSellthing.SelectedRows[0].Cells["Stock"].Value.ToString();
+            txtSellNo.Text = dgvSellthing.SelectedRows[0].Cells["clSellNo"].Value.ToString();
+            txtSellName.Text = dgvSellthing.SelectedRows[0].Cells["clSellName"].Value.ToString();
+            txtSellPrice.Text = dgvSellthing.SelectedRows[0].Cells["clSellPrice"].Value.ToString();
+            txtformat.Text = dgvSellthing.SelectedRows[0].Cells["clFormat"].Value.ToString();
+            txtStock.Value = Convert.ToDouble(dgvSellthing.SelectedRows[0].Cells["clStock"].Value);
         }
 
-        private void picGetCustoNo_Click(object sender, EventArgs e)
+        private void txtStock_ValueChanged(object sender, double value)
         {
-            //picGetCustoNo.BackgroundImage = Resources.获取用户编号_ia;
-            
-
+            //对数量步进器做限制，当小于0时使其一直保持0
+            if (txtStock.Value <= 0)
+            {
+                txtStock.Value = 0;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnUpdateSellthing_Click(object sender, EventArgs e)
         {
-            
+            st = new SellThing()
+            {
+                SellNo = txtSellNo.Text,
+                SellName = string.IsNullOrWhiteSpace(txtSellName.Text) ? "" : txtSellName.Text,
+                SellPrice = string.IsNullOrWhiteSpace(txtSellPrice.Text) ? 0 : Convert.ToDecimal(txtSellPrice.Text),
+                format = string.IsNullOrWhiteSpace(txtformat.Text) ? "" : Convert.ToString(txtformat.Text),
+                Stock = txtStock.Value == 0 ? 0 : Convert.ToInt32(txtStock.Value),
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            };
+            if (CheckInput(st))
+            {
+                new SellService().UpdateSellthingInfo(st);
+                UIMessageBox.Show("修改商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                LoadData();
+            }
+            else
+            {
+                UIMessageBox.Show("信息不完整，请检查！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

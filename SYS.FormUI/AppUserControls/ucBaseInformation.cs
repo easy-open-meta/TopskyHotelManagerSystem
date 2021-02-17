@@ -24,10 +24,7 @@ namespace SYS.FormUI
         {
             foreach (Control label in this.Controls)
             {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    label.Font = UI_FontUtil.SetRoomControlsFont();
-                }
+                label.Font = UI_FontUtil.roomControlFont;
             }
         }
 
@@ -58,7 +55,7 @@ namespace SYS.FormUI
 
         private void ucBaseInformation_Layout(object sender, LayoutEventArgs e)
         {
-           
+
         }
 
         private void btnOperation_Click(object sender, EventArgs e)
@@ -71,15 +68,38 @@ namespace SYS.FormUI
                 FrmNation.Accessed();
                 return;
             }
+            if (btnOperation.Text == "恢复" && this.Tag.ToString() == "学历")
+            {
+                FrmEducation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
+                FrmEducation.Accessed();
+                return;
+            }
             if (btnOperation.Text == "新增")
             {
                 lbName.Enabled = true;
                 lbName.ReadOnly = false;
                 return;
             }
+            if (btnOperation.Text == "新增" && this.Tag.ToString() == "学历")
+            {
+                lbName.Enabled = true;
+                lbName.ReadOnly = false;
+                return;
+            }
+            if (this.Tag.ToString() == " 学历")
+            {
+                FrmEducation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
+                FrmEducation.operation();
+                return;
+            }
 
-            FrmNation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
-            FrmNation.operation();
+            if (this.Tag.ToString() != " 学历")
+            {
+
+                FrmNation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
+                FrmNation.operation();
+                return;
+            }
             //MessageBox.Show(lbName.Text.Replace("名称:", string.Empty).ToString());
         }
 
@@ -100,6 +120,12 @@ namespace SYS.FormUI
 
         private void lbName_Validated(object sender, EventArgs e)
         {
+            if (this.Tag.ToString() == "学历")
+            {
+                FrmEducation.info = lbName.Text.ToString();
+                FrmEducation.insert();
+                return;
+            }
             FrmNation.info = lbName.Text.ToString();
             FrmNation.insert();
         }

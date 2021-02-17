@@ -44,7 +44,6 @@ namespace SYS.FormUI
         private void FrmNation_Load(object sender, EventArgs e)
         {
             ReloadNationList();
-            new SYS.Core.CounterHelper().GetNewId("WorkerId");
 
         }
 
@@ -90,7 +89,7 @@ namespace SYS.FormUI
                 {
                     nation_no = nation.nation_no,
                     delete_mk = 1,
-                    datachg_usr = LoginInfo.WorkerNo,
+                    datachg_usr = AdminInfo.Account,
                     datachg_date = DateTime.Now
                 };
                 if (_nation != null)
@@ -114,7 +113,7 @@ namespace SYS.FormUI
                 {
                     nation_no = nation.nation_no,
                     delete_mk = 0,
-                    datachg_usr = LoginInfo.WorkerNo,
+                    datachg_usr = AdminInfo.Account,
                     datachg_date = DateTime.Now
                 };
                 if (_nation != null)
@@ -137,7 +136,7 @@ namespace SYS.FormUI
                 nation_no = new SYS.Core.CounterHelper().GetNewId("NationId").ToString(),
                 nation_name = info,
                 delete_mk = 0,
-                datains_usr = LoginInfo.WorkerNo,
+                datains_usr = AdminInfo.Account,
                 datains_date = DateTime.Now
             };
             if (_nation != null)

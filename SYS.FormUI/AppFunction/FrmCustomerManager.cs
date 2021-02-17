@@ -22,7 +22,7 @@ namespace SYS.FormUI
         {
             foreach (Control label in this.Controls)
             {
-                label.Font = UI_FontUtil.SetChildControlsFont();
+                label.Font = UI_FontUtil.childControlFont;
             }
             LoadCustomer();
             

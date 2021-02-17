@@ -25,9 +25,9 @@ namespace SYS.Application
                 WorkerName = worker.WorkerName,
                 WorkerTel = worker.WorkerTel,
                 WorkerAddress = worker.WorkerAddress,
-                WorkerFace = worker.WorkerFace,
-                WorkerEducation = worker.WorkerEducation,
-                WorkerNation = worker.WorkerNation,
+                WorkerFace = string.IsNullOrEmpty(worker.WorkerFace) ? "" : worker.WorkerFace,
+                WorkerEducation = string.IsNullOrEmpty(worker.WorkerEducation) ? "" : worker.WorkerEducation,
+                WorkerNation = string.IsNullOrEmpty(worker.WorkerNation) ? "" : worker.WorkerNation,
                 datachg_usr = AdminInfo.Account,
                 datachg_date = DateTime.Now
             },a => a.WorkerId == worker.WorkerId);
@@ -154,6 +154,11 @@ namespace SYS.Application
         {
             Worker w = new Worker();
             w = base.GetSingle(a => a.WorkerId == id && a.WorkerPwd == pwd);
+            if (w == null)
+            {
+                w = null;
+                return w;
+            }
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -172,5 +177,22 @@ namespace SYS.Application
             return w;
         }
         #endregion
+
+        /// <summary>
+        /// 根据员工编号和密码修改密码
+        /// </summary>
+        /// <param name="workId"></param>
+        /// <param name="workPwd"></param>
+        /// <returns></returns>
+        public bool UpdWorkerPwdByWorkNo(string workId,string workPwd)
+        {
+            return base.Update(a => new Worker()
+            {
+                WorkerPwd = workPwd,
+                datachg_usr = LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+            },a => a.WorkerId == workId);
+        }
+
     }
 }

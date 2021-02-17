@@ -32,9 +32,19 @@ namespace SYS.Core
         /// </summary>
         public string dept_leader { get; set; }
         /// <summary>
+        /// 部门主管
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string leader_name { get; set; }
+        /// <summary>
         /// 上级部门
         /// </summary>
         public string dept_parent { get; set; }
+        /// <summary>
+        /// 上级部门
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string parent_name { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>

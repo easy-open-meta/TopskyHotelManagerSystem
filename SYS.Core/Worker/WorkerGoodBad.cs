@@ -28,6 +28,11 @@ namespace SYS.Core
         /// </summary>
         public string GBOperation { get; set; }
         /// <summary>
+        /// 奖惩操作人
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string OperationName { get; set; }
+        /// <summary>
         /// 奖惩时间
         /// </summary>
         public DateTime GBTime { get; set; }

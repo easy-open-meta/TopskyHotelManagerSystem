@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Sunny.UI;
 using SYS.Application;
 using SYS.Core;
 using SYS.Core.Util;
@@ -28,17 +29,14 @@ namespace SYS.FormUI
         {
             foreach (Control label in this.Controls)
             {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    label.Font = UI_FontUtil.SetControlFont();
-                }
+                label.Font = UI_FontUtil.controlFont;
             }
 
             string cardId = new CounterHelper().GetNewId("CustoId");
             txtCustoNo.Text = cardId;
             
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -47,7 +45,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -55,12 +53,30 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAllCanUse();
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";
             this.cbSex.SelectedIndex = 0;
             #endregion
+
+            if (this.Text == "修改客户")
+            {
+                txtCustoNo.Text = FrmCustoManager.cm_CustoNo;
+                txtCustoName.Text = FrmCustoManager.cm_CustoName;
+                txtCustoAdress.Text = FrmCustoManager.cm_CustoAddress;
+                cbCustoType.SelectedIndex = FrmCustoManager.cm_CustoType;
+                cbSex.SelectedIndex = FrmCustoManager.cm_CustoSex;
+                cbPassportType.SelectedIndex = FrmCustoManager.cm_PassportType;
+                dtpBirthday.Value = FrmCustoManager.cm_CustoBirth;
+                txtCardID.Text = FrmCustoManager.cm_CustoID;
+                txtCustoAdress.Text = FrmCustoManager.cm_CustoAddress;
+                txtTel.Text = FrmCustoManager.cm_CustoTel;
+                btnOK.Text = "修改";
+                this.btnOK.Click -= new EventHandler(btnOK_BtnClick);
+                this.btnOK.Click += new EventHandler(btnOK_UpdClick);
+            }
+
         }
 
 
@@ -68,44 +84,87 @@ namespace SYS.FormUI
         {
             this.Close();
         }
-
+        public bool CheckInput(Custo custo)
+        {
+            if (string.IsNullOrWhiteSpace(custo.CustoNo))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoName))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoSex + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoType + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoBirth + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.PassportType + ""))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoID))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoAdress))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(custo.CustoTel))
+            {
+                return false;
+            }
+            return true;
+        }
         private void btnOK_BtnClick(object sender, EventArgs e)
         {
+            Custo custo = new Custo()
+            {
+                CustoNo = txtCustoNo.Text,
+                CustoName = txtCustoName.Text,
+                CustoSex = cbSex.SelectedIndex,
+                CustoBirth = dtpBirthday.Value,
+                CustoType = cbCustoType.SelectedIndex,
+                PassportType = cbPassportType.SelectedIndex,
+                CustoID = txtCardID.Text,
+                CustoTel = txtTel.Text,
+                CustoAdress = txtCustoAdress.Text,
+                datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
+                datains_date = DateTime.Now
+
+            };
             try
             {
-                if (txtCustoName.Text == "")
+                if (CheckInput(custo))
                 {
-                    MessageBox.Show("添加失败，必填信息不可为空");
-                }
-                else
-                {
-                    Custo custo = new Custo() 
-                    {
-                        CustoNo = txtCustoNo.Text,
-                        CustoName  = txtCustoName.Text,
-                        CustoSex = cbSex.SelectedIndex,
-                        CustoBirth = dtpBirthday.Value,
-                        CustoType = cbCustoType.SelectedIndex,
-                        PassportType = cbPassportType.SelectedIndex,
-                        CustoID = txtCardID.Text,
-                        CustoTel = txtTel.Text,
-                        CustoAdress = txtCustoAdress.Text
-
-                    };
                     bool t = new CustoService().InsertCustomerInfo(custo);
                     if (t == true)
                     {
-                        MessageBox.Show("添加成功");
-
+                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = "编号："+ LoginInfo.WorkerNo + "【"+FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo;
-                        o.OperationAccount = LoginInfo.WorkerNo;
-                        o.datains_usr = LoginInfo.WorkerNo;
-                        o.datains_date = DateTime.Now;
+                        OperationLog o = new OperationLog()
+                        {
+                            OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss")),
+                            Operationlog = "编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo,
+                            OperationAccount = LoginInfo.WorkerNo,
+                            datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
+                            datains_date = DateTime.Now
+                        };
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
+                        FrmCustoManager.Reload();
+                    }
+                    else 
+                    {
+                        UIMessageBox.Show("添加失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                     }
 
                     foreach (Control Ctrol in this.Controls)
@@ -121,8 +180,9 @@ namespace SYS.FormUI
                             this.cbPassportType.SelectedIndex = 0;
                         }
                     }
-
                 }
+                    
+                    
             }
             catch
             {
@@ -131,10 +191,76 @@ namespace SYS.FormUI
             }
         }
 
-        private void picGetCustoNo_Click(object sender, EventArgs e)
+        private void btnOK_UpdClick(object sender, EventArgs e) 
         {
-            string cardId = new CounterHelper().GetNewId("CustoId");
-            txtCustoNo.Text = cardId;
+            Custo custo = new Custo()
+            {
+                CustoNo = txtCustoNo.Text,
+                CustoName = txtCustoName.Text,
+                CustoSex = cbSex.SelectedIndex,
+                CustoBirth = dtpBirthday.Value,
+                CustoType = cbCustoType.SelectedIndex,
+                PassportType = cbPassportType.SelectedIndex,
+                CustoID = txtCardID.Text,
+                CustoTel = txtTel.Text,
+                CustoAdress = txtCustoAdress.Text,
+                datachg_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
+                datachg_date = DateTime.Now
+
+            };
+            try
+            {
+                if (CheckInput(custo))
+                {
+                    //启用MD5对涉密信息进行加密
+                    var NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
+                    var NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
+                    var NewAddress = Md5LockedUtil.MD5Encrypt32(custo.CustoAdress);
+                    custo.CustoID = NewID;
+                    custo.CustoTel = NewTel;
+                    custo.CustoAdress = NewAddress;
+                    bool t = new CustoService().UpdCustomerInfoByCustoNo(custo);
+                    if (t == true)
+                    {
+                        UIMessageBox.Show("修改成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
+                        #region 获取添加操作日志所需的信息
+                        OperationLog o = new OperationLog()
+                        {
+                            OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss")),
+                            Operationlog = "编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "修改了一名客户信息，客户编号为：" + custo.CustoNo,
+                            OperationAccount = LoginInfo.WorkerNo,
+                            datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
+                            datains_date = DateTime.Now
+                        };
+                        new OperationlogService().InsertOperationLog(o);
+                        #endregion
+                        FrmCustoManager.Reload();
+                    }
+                    else
+                    {
+                        UIMessageBox.Show("修改失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                    }
+
+                    foreach (Control Ctrol in this.Controls)
+                    {
+                        if (Ctrol is Sunny.UI.UITextBox)
+                        {
+                            Ctrol.Text = "";
+                        }
+                        if (Ctrol is Sunny.UI.UIComboBox)
+                        {
+                            this.cbSex.SelectedIndex = 0;
+                            this.cbCustoType.SelectedIndex = 0;
+                            this.cbPassportType.SelectedIndex = 0;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+
+            }
         }
 
         private void txtCardID_Validated(object sender, EventArgs e)

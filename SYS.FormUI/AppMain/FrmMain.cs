@@ -27,42 +27,12 @@ namespace SYS.FormUI
             #endregion
 
             Control.CheckForIllegalCrossThreadCalls = false;//关闭线程检查
-            Main = this;//储存主窗口实例对象
+            //Main = this;//储存主窗口实例对象
             // 接受Form1对象
             this.returnForm1 = F1;
             Stop = StopUseExit;
             Start = StartUseExit;
-        }
-
-        /// <summary>
-        /// 设备类型
-        /// </summary>
-        public enum ChassisTypes
-        {
-            Other = 1,
-            Unknown,
-            Desktop,                //台式机
-            LowProfileDesktop,      //低调型台式机
-            PizzaBox,               //Pizza盒
-            MiniTower,              //迷你型机箱
-            Tower,                  //机箱
-            Portable,               //手提式打字机、便携式、可移植
-            Laptop,                 //膝上型轻便电脑、笔记本电脑
-            Notebook,               //笔记本
-            Handheld,               //掌上型、手持型
-            DockingStation,         //扩展插口
-            AllInOne,               //一体化
-            SubNotebook,            //小型笔记本电脑
-            SpaceSaving,            //节省空间
-            LunchBox,               //饭盒
-            MainSystemChassis,      //主系统机架
-            ExpansionChassis,       //智能插槽扩展器
-            SubChassis,             //副底盘
-            BusExpansionChassis,    //总线扩展架
-            PeripheralChassis,      //外围底盘
-            StorageChassis,         //存储底盘
-            RackMountChassis,       //架装安装底盘
-            SealedCasePC            //封闭式 PC
+            CloseMy = CloseMine;
         }
 
         public delegate void StopUseList();
@@ -72,6 +42,9 @@ namespace SYS.FormUI
         public delegate void StarUseList();
         //定义委托类型的变量
         public static StarUseList Start;
+
+        public static StarUseList CloseMy;
+
 
         public void StopUseExit()
         {
@@ -84,23 +57,8 @@ namespace SYS.FormUI
             notifyIcon1.Visible = true;
             tsmiExitSystem.Enabled = true;
         }
-        public static ChassisTypes GetCurrentChassisType()
-        {
-            ManagementClass systemEnclosures = new ManagementClass("Win32_SystemEnclosure");
-            foreach (ManagementObject obj in systemEnclosures.GetInstances())
-            {
-                foreach (int i in (UInt16[])(obj["ChassisTypes"]))
-                {
-                    if (i > 0 && i < 25)
-                    {
-                        return (ChassisTypes)i;
-                    }
-                }
-            }
-            return ChassisTypes.Unknown;
-        }
         
-        public static FrmMain Main;//全局保存主窗口实例对象
+        //public static FrmMain Main;//全局保存主窗口实例对象
         //private MyRoom Myroom;//房态图对象
 
         public static string wk_WorkerName;
@@ -232,19 +190,14 @@ namespace SYS.FormUI
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //foreach (Control item in this.Controls)
-            //{
-            //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
-            //    {
-            //        item.Font = UI_FontUtil.SetMainFont();
-            //    }
-            //}
-
-            var type = GetCurrentChassisType();
-            if (type == ChassisTypes.Laptop || type == ChassisTypes.Notebook)
+            foreach (Control item in this.Controls)
             {
-                iBattery.Visible = true;
+                if (item.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    item.Font = UI_FontUtil.mainFont;
+                }
             }
+
 
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
             
@@ -493,30 +446,33 @@ namespace SYS.FormUI
                 linkLabel1.Text = "未打卡";
                 linkLabel1.ForeColor = Color.Red;
                 linkLabel1.LinkColor = Color.Red;
-                DialogResult dr = MessageBox.Show("你今天还未打卡哦，请先打卡吧！", "打卡提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dr == DialogResult.OK)
+                bool dr = UIMessageBox.Show("你今天还未打卡哦，请先打卡吧！", "打卡提醒",UIStyle.Blue, UIMessageBoxButtons.OK);
+                if (dr == true)
                 {
                     WorkerCheck workerCheck = new WorkerCheck
                     {
                         WorkerNo = LoginInfo.WorkerNo,
                         CheckWay = "系统界面",
-                        CheckTime = DateTime.Parse(GetNetDateTime())
-
+                        CheckTime = DateTime.Parse(GetNetDateTime()),
+                        datains_usr = LoginInfo.WorkerNo,
+                        datains_date = DateTime.Now
                     };
                     bool j = new WorkerCheckService().AddCheckInfo(workerCheck);
                     if (j == true)
                     {
                         lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
-                        MessageBox.Show("打卡成功！你已累计打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UIMessageBox.Show("打卡成功！你已累计打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒",UIStyle.Green, UIMessageBoxButtons.OK);
                         linkLabel1.Text = "已打卡";
                         linkLabel1.ForeColor = Color.Green;
                         linkLabel1.LinkColor = Color.Green;
                         pnlCheckInfo.Visible = true;
+                        return;
 
                     }
                     else
                     {
-                        MessageBox.Show("服务器错误，请稍后再试！");
+                        UIMessageBox.Show("服务器错误，请稍后再试！", "系统提示", UIStyle.Red,UIMessageBoxButtons.OK);
+                        return;
                     }
                 }
             }
@@ -529,29 +485,9 @@ namespace SYS.FormUI
             pnlCheckInfo.Visible = false;
         }
 
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
-        }
-
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-        }
-
-        private void uiTitlePanel1_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Information_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void PepCenter_Click(object sender, EventArgs e)
-        {
-            //this.Information.Visible = true;
         }
 
         private void picFormSize_MouseHover(object sender, EventArgs e)
@@ -594,9 +530,16 @@ namespace SYS.FormUI
             this.picClose.Radius = 20;
         }
 
-        private void Information_MouseLeave(object sender, EventArgs e)
+        private void tsmiMySpace_Click(object sender, EventArgs e)
         {
-           // this.Information.Visible = false;
+            FrmMySpace frmMySpace = new FrmMySpace();
+            frmMySpace.Text = LoginInfo.WorkerName + "的个人中心";
+            frmMySpace.ShowDialog();
+        }
+
+        public void CloseMine() 
+        {
+            this.Close();
         }
     }
 }

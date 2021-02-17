@@ -15,6 +15,12 @@ namespace SYS.Application
         #region 性别模块
 
         /// <summary>
+        /// 查询所有性别类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<SexType> SelectSexTypeAllCanUse();
+
+        /// <summary>
         /// 查询所有性别类型
         /// </summary>
         /// <returns></returns>
@@ -50,6 +56,12 @@ namespace SYS.Application
         #endregion
 
         #region 职位模块
+
+        /// <summary>
+        /// 查询所有职位类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<Position> SelectPositionAllCanUse();
 
         /// <summary>
         /// 查询所有职位类型
@@ -89,6 +101,12 @@ namespace SYS.Application
         #region 民族模块
 
         /// <summary>
+        /// 查询所有民族类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<Nation> SelectNationAllCanUse();
+
+        /// <summary>
         /// 查询所有民族类型
         /// </summary>
         /// <returns></returns>
@@ -124,6 +142,12 @@ namespace SYS.Application
         #endregion
 
         #region 学历模块
+
+        /// <summary>
+        /// 查询所有学历类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<Education> SelectEducationAllCanUse();
 
         /// <summary>
         /// 查询所有学历类型
@@ -163,6 +187,12 @@ namespace SYS.Application
         #region 部门模块
 
         /// <summary>
+        /// 查询所有部门类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<Dept> SelectDeptAllCanUse();
+
+        /// <summary>
         /// 查询所有部门类型
         /// </summary>
         /// <returns></returns>
@@ -198,6 +228,13 @@ namespace SYS.Application
         #endregion
 
         #region 客户类型模块
+
+        /// <summary>
+        /// 查询所有客户类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<CustoType> SelectCustoTypeAllCanUse();
+
         /// <summary>
         /// 查询所有客户类型
         /// </summary>
@@ -235,6 +272,13 @@ namespace SYS.Application
         #endregion
 
         #region 证件类型模块
+
+        /// <summary>
+        /// 查询所有证件类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<PassPortType> SelectPassPortTypeAllCanUse();
+
         /// <summary>
         /// 查询所有证件类型
         /// </summary>
@@ -268,6 +312,50 @@ namespace SYS.Application
         /// <param name="portType"></param>
         /// <returns></returns>
         bool UpdatePassPortType(PassPortType portType);
+
+        #endregion
+
+        #region 奖惩类型模块
+
+        /// <summary>
+        /// 查询所有证件类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        List<GBType> SelectGBTypeAllCanUse();
+
+        /// <summary>
+        /// 查询所有奖惩类型
+        /// </summary>
+        /// <returns></returns>
+        List<GBType> SelectGBTypeAll();
+
+        /// <summary>
+        /// 根据奖惩类型ID查询类型名称
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        GBType SelectGBTypeByTypeId(GBType gBType);
+
+        /// <summary>
+        /// 添加奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        bool InsertGBType(GBType gBType);
+
+        /// <summary>
+        /// 删除奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        bool DeleteGBType(GBType gBType);
+
+        /// <summary>
+        /// 更新奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        bool UpdateGBType(GBType gBType);
 
         #endregion
     }

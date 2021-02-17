@@ -18,7 +18,10 @@ namespace SYS.FormUI
         #region 窗体加载事件方法
         private void FrmCheckIn_Load(object sender, EventArgs e)
         {
-
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.controlFont;
+            }
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
             Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
             RoomType t = new RoomTypeService().SelectRoomTypeByRoomNo(txtRoomNo.Text);

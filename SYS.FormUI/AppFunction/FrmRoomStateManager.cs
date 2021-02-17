@@ -16,6 +16,10 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmRoomStateManager_Load(object sender, EventArgs e)
         {
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.controlFont;
+            }
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
             cboState.DataSource = new RoomService().SelectRoomStateAll();
             cboState.DisplayMember = "RoomStateName";
@@ -30,13 +34,13 @@ namespace SYS.FormUI
             {
                 if (new RoomService().UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) == true)
                 {
-                    MessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示");
+                    UIMessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示");
                     FrmRoomManager.Reload();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("修改失败", "来自小T的提示");
+                    UIMessageBox.Show("修改失败", "来自小T的提示");
                 }
             }
             else
