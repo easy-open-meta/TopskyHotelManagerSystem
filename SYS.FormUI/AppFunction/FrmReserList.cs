@@ -30,11 +30,7 @@ namespace SYS.FormUI
             dgvReserList.DataSource = new ReserService().SelectReserAll();
 
             #region 加载客户类型信息
-<<<<<<< HEAD
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
-=======
             List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -43,11 +39,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-<<<<<<< HEAD
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
-=======
             List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";

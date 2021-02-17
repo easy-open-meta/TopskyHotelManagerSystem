@@ -29,8 +29,6 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD:SYS.FormUI/AppMain/FrmBackgroundSystem.cs
-=======
             foreach (Control item in this.Controls)
             {
                 switch (item.GetType().ToString())
@@ -46,7 +44,6 @@ namespace SYS.FormUI
                         break;
                 }
             }
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7:SYS.FormUI/AppFunction/FrmBackgroundSystem.cs
             DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
@@ -263,8 +260,6 @@ namespace SYS.FormUI
         {
             System.Environment.Exit(0);
         }
-<<<<<<< HEAD:SYS.FormUI/AppMain/FrmBackgroundSystem.cs
-=======
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
@@ -289,6 +284,5 @@ namespace SYS.FormUI
             FrmChangeAdminPwd frmChangeAdminPwd = new FrmChangeAdminPwd();
             frmChangeAdminPwd.ShowDialog();
         }
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7:SYS.FormUI/AppFunction/FrmBackgroundSystem.cs
     }
 }

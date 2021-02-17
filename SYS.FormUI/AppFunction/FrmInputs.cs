@@ -36,11 +36,7 @@ namespace SYS.FormUI
             txtCustoNo.Text = cardId;
             
             #region 加载客户类型信息
-<<<<<<< HEAD
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
-=======
             List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -49,11 +45,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-<<<<<<< HEAD
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
-=======
             List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -153,39 +145,11 @@ namespace SYS.FormUI
             {
                 if (CheckInput(custo))
                 {
-<<<<<<< HEAD
-                    MessageBox.Show("添加失败，必填信息不可为空");
-                }
-                else
-                {
-                    Custo custo = new Custo() 
-                    {
-                        CustoNo = txtCustoNo.Text,
-                        CustoName  = txtCustoName.Text,
-                        CustoSex = cbSex.SelectedIndex,
-                        CustoBirth = dtpBirthday.Value,
-                        CustoType = cbCustoType.SelectedIndex,
-                        PassportType = cbPassportType.SelectedIndex,
-                        CustoID = txtCardID.Text,
-                        CustoTel = txtTel.Text,
-                        CustoAdress = txtCustoAdress.Text
-
-                    };
-=======
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                     bool t = new CustoService().InsertCustomerInfo(custo);
                     if (t == true)
                     {
                         UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
-<<<<<<< HEAD
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = "编号："+ LoginInfo.WorkerNo + "【"+FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo;
-                        o.OperationAccount = LoginInfo.WorkerNo;
-                        o.datains_usr = LoginInfo.WorkerNo;
-                        o.datains_date = DateTime.Now;
-=======
                         OperationLog o = new OperationLog()
                         {
                             OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss")),
@@ -194,7 +158,6 @@ namespace SYS.FormUI
                             datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
                             datains_date = DateTime.Now
                         };
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
                         FrmCustoManager.Reload();
@@ -230,10 +193,6 @@ namespace SYS.FormUI
 
         private void btnOK_UpdClick(object sender, EventArgs e) 
         {
-<<<<<<< HEAD
-            string cardId = new CounterHelper().GetNewId("CustoId");
-            txtCustoNo.Text = cardId;
-=======
             Custo custo = new Custo()
             {
                 CustoNo = txtCustoNo.Text,
@@ -302,7 +261,6 @@ namespace SYS.FormUI
 
 
             }
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         }
 
         private void txtCardID_Validated(object sender, EventArgs e)

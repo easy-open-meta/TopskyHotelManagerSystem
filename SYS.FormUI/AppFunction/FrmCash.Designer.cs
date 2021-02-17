@@ -41,12 +41,8 @@
             this.clStorageTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clAssetsSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clAssetsManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
-            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-=======
             this.cboCashPerson = new Sunny.UI.UIComboBox();
             this.label1 = new System.Windows.Forms.Label();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.btnOK = new Sunny.UI.UIButton();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFrom = new Sunny.UI.UITextBox();
@@ -103,11 +99,7 @@
             this.dgvCashList.EnableHeadersVisualStyles = false;
             this.dgvCashList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvCashList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-<<<<<<< HEAD
-            this.dgvCashList.Location = new System.Drawing.Point(12, 45);
-=======
             this.dgvCashList.Location = new System.Drawing.Point(3, 38);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dgvCashList.Name = "dgvCashList";
             this.dgvCashList.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -116,11 +108,7 @@
             this.dgvCashList.SelectedIndex = -1;
             this.dgvCashList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCashList.ShowGridLine = true;
-<<<<<<< HEAD
-            this.dgvCashList.Size = new System.Drawing.Size(800, 566);
-=======
             this.dgvCashList.Size = new System.Drawing.Size(809, 582);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dgvCashList.TabIndex = 2;
             // 
             // clAssetsNo
@@ -165,32 +153,6 @@
             this.clAssetsManager.HeaderText = "资产经办人";
             this.clAssetsManager.Name = "clAssetsManager";
             // 
-<<<<<<< HEAD
-            // uiGroupBox1
-            // 
-            this.uiGroupBox1.Controls.Add(this.btnOK);
-            this.uiGroupBox1.Controls.Add(this.label11);
-            this.uiGroupBox1.Controls.Add(this.txtFrom);
-            this.uiGroupBox1.Controls.Add(this.label10);
-            this.uiGroupBox1.Controls.Add(this.label9);
-            this.uiGroupBox1.Controls.Add(this.cboClub);
-            this.uiGroupBox1.Controls.Add(this.label8);
-            this.uiGroupBox1.Controls.Add(this.txtCashMoney);
-            this.uiGroupBox1.Controls.Add(this.label7);
-            this.uiGroupBox1.Controls.Add(this.txtCashName);
-            this.uiGroupBox1.Controls.Add(this.label20);
-            this.uiGroupBox1.Controls.Add(this.txtCashNo);
-            this.uiGroupBox1.Controls.Add(this.dtpDate);
-            this.uiGroupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiGroupBox1.Location = new System.Drawing.Point(819, 45);
-            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox1.Name = "uiGroupBox1";
-            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
-            this.uiGroupBox1.Size = new System.Drawing.Size(173, 566);
-            this.uiGroupBox1.TabIndex = 3;
-            this.uiGroupBox1.Text = "信息录入栏";
-=======
             // cboCashPerson
             // 
             this.cboCashPerson.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
@@ -216,59 +178,36 @@
             this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 166;
             this.label1.Text = "资产经办人";
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             // 
             // btnOK
             // 
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.Font = new System.Drawing.Font("微软雅黑", 12F);
-<<<<<<< HEAD
-            this.btnOK.Location = new System.Drawing.Point(30, 506);
-            this.btnOK.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Radius = 20;
-            this.btnOK.Size = new System.Drawing.Size(112, 43);
-            this.btnOK.TabIndex = 149;
-=======
             this.btnOK.Location = new System.Drawing.Point(852, 565);
             this.btnOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnOK.Name = "btnOK";
             this.btnOK.Radius = 20;
             this.btnOK.Size = new System.Drawing.Size(112, 33);
             this.btnOK.TabIndex = 165;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.btnOK.Text = "录入";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-<<<<<<< HEAD
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(42, 420);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 25);
-            this.label11.TabIndex = 148;
-=======
             this.label11.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(864, 419);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 14);
             this.label11.TabIndex = 164;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label11.Text = "资产来源";
             // 
             // txtFrom
             // 
             this.txtFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFrom.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.txtFrom.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtFrom.Location = new System.Drawing.Point(4, 454);
-=======
             this.txtFrom.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtFrom.Location = new System.Drawing.Point(826, 451);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.txtFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFrom.Maximum = 2147483647D;
             this.txtFrom.Minimum = -2147483648D;
@@ -276,91 +215,52 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Padding = new System.Windows.Forms.Padding(5);
             this.txtFrom.Radius = 20;
-<<<<<<< HEAD
-            this.txtFrom.ReadOnly = true;
-            this.txtFrom.Size = new System.Drawing.Size(165, 35);
-            this.txtFrom.Style = Sunny.UI.UIStyle.Custom;
-            this.txtFrom.StyleCustomMode = true;
-            this.txtFrom.TabIndex = 147;
-=======
             this.txtFrom.Size = new System.Drawing.Size(165, 23);
             this.txtFrom.Style = Sunny.UI.UIStyle.Custom;
             this.txtFrom.StyleCustomMode = true;
             this.txtFrom.TabIndex = 163;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-<<<<<<< HEAD
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(23, 342);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 25);
-            this.label10.TabIndex = 145;
-=======
             this.label10.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.Location = new System.Drawing.Point(845, 346);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 14);
             this.label10.TabIndex = 161;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label10.Text = "资产入库时间";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-<<<<<<< HEAD
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(42, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 25);
-            this.label9.TabIndex = 143;
-=======
             this.label9.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(864, 273);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 14);
             this.label9.TabIndex = 160;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label9.Text = "所属部门";
             // 
             // cboClub
             // 
             this.cboClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboClub.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.cboClub.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.cboClub.Location = new System.Drawing.Point(4, 298);
-=======
             this.cboClub.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cboClub.Location = new System.Drawing.Point(826, 305);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cboClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboClub.Name = "cboClub";
             this.cboClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.cboClub.Radius = 20;
-<<<<<<< HEAD
-            this.cboClub.Size = new System.Drawing.Size(165, 35);
-            this.cboClub.TabIndex = 142;
-=======
             this.cboClub.Size = new System.Drawing.Size(165, 23);
             this.cboClub.TabIndex = 159;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cboClub.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cboClub.Watermark = "";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-<<<<<<< HEAD
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(42, 186);
-=======
             this.label8.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(864, 200);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 14);
             this.label8.TabIndex = 158;
@@ -370,13 +270,8 @@
             // 
             this.txtCashMoney.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCashMoney.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.txtCashMoney.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCashMoney.Location = new System.Drawing.Point(4, 220);
-=======
             this.txtCashMoney.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCashMoney.Location = new System.Drawing.Point(826, 232);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.txtCashMoney.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCashMoney.Maximum = 2147483647D;
             this.txtCashMoney.Minimum = -2147483648D;
@@ -392,32 +287,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-<<<<<<< HEAD
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(42, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 25);
-            this.label7.TabIndex = 139;
-=======
             this.label7.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(864, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 14);
             this.label7.TabIndex = 156;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label7.Text = "资产名称";
             // 
             // txtCashName
             // 
             this.txtCashName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCashName.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.txtCashName.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCashName.Location = new System.Drawing.Point(4, 142);
-=======
             this.txtCashName.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCashName.Location = new System.Drawing.Point(826, 159);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.txtCashName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCashName.Maximum = 2147483647D;
             this.txtCashName.Minimum = -2147483648D;
@@ -425,48 +307,27 @@
             this.txtCashName.Name = "txtCashName";
             this.txtCashName.Padding = new System.Windows.Forms.Padding(5);
             this.txtCashName.Radius = 20;
-<<<<<<< HEAD
-            this.txtCashName.ReadOnly = true;
-            this.txtCashName.Size = new System.Drawing.Size(165, 35);
-            this.txtCashName.Style = Sunny.UI.UIStyle.Custom;
-            this.txtCashName.StyleCustomMode = true;
-            this.txtCashName.TabIndex = 138;
-=======
             this.txtCashName.Size = new System.Drawing.Size(165, 23);
             this.txtCashName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCashName.StyleCustomMode = true;
             this.txtCashName.TabIndex = 155;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-<<<<<<< HEAD
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(42, 30);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(88, 25);
-            this.label20.TabIndex = 137;
-=======
             this.label20.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(864, 59);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 14);
             this.label20.TabIndex = 154;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label20.Text = "资产编号";
             // 
             // txtCashNo
             // 
             this.txtCashNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCashNo.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.txtCashNo.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCashNo.Location = new System.Drawing.Point(4, 64);
-=======
             this.txtCashNo.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCashNo.Location = new System.Drawing.Point(826, 86);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.txtCashNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCashNo.Maximum = 2147483647D;
             this.txtCashNo.Minimum = -2147483648D;
@@ -475,29 +336,17 @@
             this.txtCashNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCashNo.Radius = 20;
             this.txtCashNo.ReadOnly = true;
-<<<<<<< HEAD
-            this.txtCashNo.Size = new System.Drawing.Size(165, 35);
-            this.txtCashNo.Style = Sunny.UI.UIStyle.Custom;
-            this.txtCashNo.StyleCustomMode = true;
-            this.txtCashNo.TabIndex = 136;
-=======
             this.txtCashNo.Size = new System.Drawing.Size(165, 23);
             this.txtCashNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCashNo.StyleCustomMode = true;
             this.txtCashNo.TabIndex = 153;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             // 
             // dtpDate
             // 
             this.dtpDate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.dtpDate.FillColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.dtpDate.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.dtpDate.Location = new System.Drawing.Point(4, 376);
-=======
             this.dtpDate.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dtpDate.Location = new System.Drawing.Point(826, 378);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDate.MaxLength = 10;
             this.dtpDate.MinimumSize = new System.Drawing.Size(63, 0);
@@ -507,11 +356,7 @@
             this.dtpDate.Size = new System.Drawing.Size(165, 23);
             this.dtpDate.SymbolDropDown = 61555;
             this.dtpDate.SymbolNormal = 61555;
-<<<<<<< HEAD
-            this.dtpDate.TabIndex = 146;
-=======
             this.dtpDate.TabIndex = 162;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dtpDate.Text = "2021-01-31";
             this.dtpDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.dtpDate.Value = new System.DateTime(2021, 1, 31, 14, 30, 7, 297);
@@ -523,9 +368,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
-<<<<<<< HEAD
-            this.Controls.Add(this.uiGroupBox1);
-=======
             this.Controls.Add(this.cboCashPerson);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
@@ -541,7 +383,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtCashNo);
             this.Controls.Add(this.dtpDate);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.Controls.Add(this.dgvCashList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsForbidAltF4 = true;

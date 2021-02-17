@@ -405,9 +405,6 @@ namespace SYS.FormUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
-<<<<<<< HEAD
-            this.Controls.Add(this.flpInformation);
-=======
             this.Controls.Add(this.btnDeleteDept);
             this.Controls.Add(this.btnUpdateDept);
             this.Controls.Add(this.cboDeptParent);
@@ -422,7 +419,6 @@ namespace SYS.FormUI
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtDeptNo);
             this.Controls.Add(this.dgvDeptList);
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

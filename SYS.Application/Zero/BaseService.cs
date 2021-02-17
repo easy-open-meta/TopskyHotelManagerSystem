@@ -423,8 +423,6 @@ namespace SYS.Application
         #endregion
 
         #region 客户类型模块
-<<<<<<< HEAD
-=======
 
         /// <summary>
         /// 查询所有客户类型(可用)
@@ -437,7 +435,6 @@ namespace SYS.Application
             return custoTypes;
         }
 
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有客户类型
         /// </summary>
@@ -445,11 +442,7 @@ namespace SYS.Application
         public List<CustoType> SelectCustoTypeAll() 
         {
             List<CustoType> custoTypes = new List<CustoType>();
-<<<<<<< HEAD
-            custoTypes = base.Change<CustoType>().GetList(a => a.delete_mk != 1);
-=======
             custoTypes = base.Change<CustoType>().GetList();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             return custoTypes;
         }
 
@@ -508,8 +501,6 @@ namespace SYS.Application
         #endregion
 
         #region 证件类型模块
-<<<<<<< HEAD
-=======
 
         /// <summary>
         /// 查询所有证件类型(可用)
@@ -522,7 +513,6 @@ namespace SYS.Application
             return passPortTypes;
         }
 
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有证件类型
         /// </summary>
@@ -530,11 +520,7 @@ namespace SYS.Application
         public List<PassPortType> SelectPassPortTypeAll()
         {
             List<PassPortType> passPortTypes = new List<PassPortType>();
-<<<<<<< HEAD
-            passPortTypes = base.Change<PassPortType>().GetList(a => a.delete_mk != 1);
-=======
             passPortTypes = base.Change<PassPortType>().GetList();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             return passPortTypes;
         }
 
@@ -591,8 +577,6 @@ namespace SYS.Application
         }
 
         #endregion
-<<<<<<< HEAD
-=======
 
         #region 奖惩类型模块
 
@@ -671,6 +655,5 @@ namespace SYS.Application
         }
 
         #endregion
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     }
 }

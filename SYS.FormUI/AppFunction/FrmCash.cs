@@ -32,14 +32,8 @@ namespace SYS.FormUI
 
             dgvCashList.AutoGenerateColumns = false;
             dgvCashList.DataSource = new CashService().SelectCashInfoAll();
-<<<<<<< HEAD
-            Random random = new Random();
-            txtCashNo.Text = "CN" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
-            if (AdminInfo.Type != "财务经理" || AdminInfo.Type != "总经理")
-=======
             txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
             if (AdminInfo.Type != "总经理" && AdminInfo.Type != "财务经理")
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             {
                 btnOK.Enabled = false;
                 btnOK.Text = "权限不足";
@@ -95,18 +89,7 @@ namespace SYS.FormUI
                 bool dr = UIMessageBox.Show("请确认信息没有错误，一旦录入则无法修改！", "警告提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr == true)
                 {
-<<<<<<< HEAD
-                    Cash cash = new Cash();
-                    cash.CashNo = txtCashNo.Text.Trim();
-                    cash.CashName = txtCashName.Text.Trim();
-                    cash.CashPrice = txtCashMoney.Text.Trim();
-                    cash.CashClub = cboClub.Text;
-                    cash.CashTime = dtpDate.Value;
-                    cash.CashSource = txtFrom.Text.Trim();
-                    cash.CashPerson = FrmMain.wk_WorkerName;
-=======
                     
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                     bool n = new CashService().AddCashInfo(cash);
                     if (n == true)
                     {
@@ -120,17 +103,7 @@ namespace SYS.FormUI
                         o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
                         #endregion
                         new OperationlogService().InsertOperationLog(o);
-<<<<<<< HEAD
-                        foreach (Control Ctrol in uiGroupBox1.Controls)
-                        {
-                            if (Ctrol is TextBox)
-                            {
-                                Ctrol.Text = "";
-                            }
-                        }
-=======
                         txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
 
                     }
                     else

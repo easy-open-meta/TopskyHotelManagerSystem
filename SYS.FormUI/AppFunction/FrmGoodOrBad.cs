@@ -29,9 +29,6 @@ namespace SYS.FormUI
             lblDate.Text = Convert.ToDateTime(FrmWorkerManager.wk_WorkerTime).ToString("yyyy年MM月dd日").Substring(0,9);
             DgvGoodBadList.AutoGenerateColumns = false;
             DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
-<<<<<<< HEAD
-            CboType.SelectedIndex = 0;
-=======
             CboType.DataSource = new BaseService().SelectGBTypeAll();
             CboType.DisplayMember = "GBName";
             CboType.ValueMember = "GBTypeId";
@@ -60,7 +57,6 @@ namespace SYS.FormUI
                 return false;
             }
             return true;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -80,17 +76,8 @@ namespace SYS.FormUI
                 DialogResult dr = MessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
-<<<<<<< HEAD
-                    WorkerGoodBad goodBad = new WorkerGoodBad();
-                    goodBad.WorkNo = lblWorkerNo.Text;
-                    goodBad.GBType = CboType.SelectedIndex;
-                    goodBad.GBInfo = RtbGBInfo.Text;
-                    goodBad.GBOperation = AdminInfo.Account;
-                    goodBad.GBTime = DtpDate.Value;
-=======
                     
                     
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                     bool n = new WorkerGoodBadService().AddGoodBad(goodBad);
                     if (n == true)
                     {

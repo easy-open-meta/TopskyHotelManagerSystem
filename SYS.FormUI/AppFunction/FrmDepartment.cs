@@ -1,10 +1,7 @@
 ﻿using Sunny.UI;
-<<<<<<< HEAD
-=======
 using SYS.Application;
 using SYS.Core;
 using SYS.FormUI.Properties;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

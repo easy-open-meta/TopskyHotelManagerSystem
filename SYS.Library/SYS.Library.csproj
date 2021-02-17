@@ -48,14 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="EntityFramework.dll" />
-    <Content Include="EntityFramework.SqlServer.dll" />
-    <Content Include="EntityFramework.SqlServer.xml" />
-    <Content Include="EntityFramework.xml" />
-=======
     <Content Include="bitbug_favicon %281%29.ico" />
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     <Content Include="kse.dll" />
     <Content Include="MySql.Data.dll" />
     <Content Include="MySql.Data.EntityFramework.dll" />

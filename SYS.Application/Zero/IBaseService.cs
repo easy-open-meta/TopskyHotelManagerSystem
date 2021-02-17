@@ -228,8 +228,6 @@ namespace SYS.Application
         #endregion
 
         #region 客户类型模块
-<<<<<<< HEAD
-=======
 
         /// <summary>
         /// 查询所有客户类型(可用)
@@ -237,7 +235,6 @@ namespace SYS.Application
         /// <returns></returns>
         List<CustoType> SelectCustoTypeAllCanUse();
 
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有客户类型
         /// </summary>
@@ -275,8 +272,6 @@ namespace SYS.Application
         #endregion
 
         #region 证件类型模块
-<<<<<<< HEAD
-=======
 
         /// <summary>
         /// 查询所有证件类型(可用)
@@ -284,7 +279,6 @@ namespace SYS.Application
         /// <returns></returns>
         List<PassPortType> SelectPassPortTypeAllCanUse();
 
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有证件类型
         /// </summary>
@@ -320,8 +314,6 @@ namespace SYS.Application
         bool UpdatePassPortType(PassPortType portType);
 
         #endregion
-<<<<<<< HEAD
-=======
 
         #region 奖惩类型模块
 
@@ -366,6 +358,5 @@ namespace SYS.Application
         bool UpdateGBType(GBType gBType);
 
         #endregion
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     }
 }

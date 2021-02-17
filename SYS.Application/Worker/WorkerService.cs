@@ -25,15 +25,9 @@ namespace SYS.Application
                 WorkerName = worker.WorkerName,
                 WorkerTel = worker.WorkerTel,
                 WorkerAddress = worker.WorkerAddress,
-<<<<<<< HEAD
-                WorkerFace = worker.WorkerFace,
-                WorkerEducation = worker.WorkerEducation,
-                WorkerNation = worker.WorkerNation,
-=======
                 WorkerFace = string.IsNullOrEmpty(worker.WorkerFace) ? "" : worker.WorkerFace,
                 WorkerEducation = string.IsNullOrEmpty(worker.WorkerEducation) ? "" : worker.WorkerEducation,
                 WorkerNation = string.IsNullOrEmpty(worker.WorkerNation) ? "" : worker.WorkerNation,
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                 datachg_usr = AdminInfo.Account,
                 datachg_date = DateTime.Now
             },a => a.WorkerId == worker.WorkerId);

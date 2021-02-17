@@ -21,25 +21,6 @@ namespace SYS.FormUI
         private void FrmAddWorker_Load(object sender, EventArgs e)
         {
             //加载部门信息
-<<<<<<< HEAD
-            cboClub.DataSource = new BaseService().SelectDeptAll();
-            cboClub.DisplayMember = "dept_name";
-            cboClub.ValueMember = "dept_no";
-            //加载民族信息
-            cbWorkerNation.DataSource = new BaseService().SelectNationAll();
-            cbWorkerNation.DisplayMember = "nation_name";
-            cbWorkerNation.ValueMember = "nation_no";
-            //加载职位信息
-            cboWorkerPosition.DataSource = new BaseService().SelectPositionAll();
-            cboWorkerPosition.DisplayMember = "position_name";
-            cboWorkerPosition.ValueMember = "position_no";
-            //加载性别信息
-            cboSex.DataSource = new BaseService().SelectSexTypeAll();
-            cboSex.DisplayMember = "sexName";
-            cboSex.ValueMember = "sexId";
-            //加载学历信息
-            cboEducation.DataSource = new BaseService().SelectEducationAll();
-=======
             cboClub.DataSource = new BaseService().SelectDeptAllCanUse();
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
@@ -57,7 +38,6 @@ namespace SYS.FormUI
             cboSex.ValueMember = "sexId";
             //加载学历信息
             cboEducation.DataSource = new BaseService().SelectEducationAllCanUse();
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             cboEducation.DisplayMember = "education_name";
             cboEducation.ValueMember = "education_no";
 
@@ -216,8 +196,6 @@ namespace SYS.FormUI
             {
                 UIMessageBox.ShowWarning("修改操作已取消！");
                 return;
-<<<<<<< HEAD
-=======
             }
         }
 
@@ -262,7 +240,6 @@ namespace SYS.FormUI
             if (string.IsNullOrWhiteSpace(worker.CardId))
             {
                 return false;
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             }
             if (string.IsNullOrWhiteSpace(worker.WorkerEducation))
             {
@@ -300,34 +277,9 @@ namespace SYS.FormUI
             };
             try
             {
-<<<<<<< HEAD
-                if (WorkerName.Text != null && cboSex.Text != null)
-=======
                 if (CheckInput(worker))
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                 {
                     #region 员工信息添加代码块
-<<<<<<< HEAD
-                    Worker worker = new Worker
-                    {
-                        WorkerId = WorkerNo.Text.Trim(),
-                        WorkerName = WorkerName.Text.Trim(),
-                        WorkerBirthday = dtpBirthday.Value,
-                        WorkerSex = (int)cboSex.SelectedValue,
-                        WorkerNation = cbWorkerNation.SelectedValue.ToString(),
-                        WorkerTel = NewTel,
-                        WorkerClub = cboClub.SelectedValue.ToString(),
-                        WorkerAddress = txtAddress.Text,
-                        WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
-                        CardId = NewID,
-                        WorkerTime = dtpTime.Value,
-                        WorkerFace = cboWorkerFace.Text,
-                        WorkerEducation = cboEducation.SelectedValue.ToString(),
-                        datains_usr = AdminInfo.Account,
-                        datains_date = DateTime.Now
-                    };
-=======
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                     bool n = new WorkerService().AddWorker(worker);
                     #endregion
                     
@@ -374,10 +326,6 @@ namespace SYS.FormUI
             }
             catch(Exception ex)
             {
-<<<<<<< HEAD
-                //MessageBox.Show(ex.ToString());
-=======
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                 UIMessageBox.Show("服务器繁忙或数据格式为空！");
             }
             finally

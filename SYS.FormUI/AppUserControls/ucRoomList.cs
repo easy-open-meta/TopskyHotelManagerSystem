@@ -189,23 +189,7 @@ namespace SYS.FormUI
             us_CustoPassportType = romRoomInfo.PassportType;
             us_CustoType = romRoomInfo.CustoType;
             us_CustoAddress = romRoomInfo.CustoAdress;
-<<<<<<< HEAD
-            if (romCustoInfo.RoomStateId == 1)
-            {
-                BackgroundImage = Resources.已住icon;
-            }
-            if (romCustoInfo.RoomStateId == 2)
-            {
-                BackgroundImage = Resources.维修房icon;
-            }
-            if (romCustoInfo.RoomStateId == 3)
-            {
-                BackgroundImage = Resources.脏房icon;
-            }
-            if (romCustoInfo.RoomStateId == 4)
-=======
             switch (romCustoInfo.RoomStateId)
->>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             {
                 case 0:
                     BackgroundImage = Resources.可住状态;
