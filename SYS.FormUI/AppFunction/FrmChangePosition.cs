@@ -20,16 +20,28 @@ namespace SYS.FormUI
 
         private void FrmChangePosition_Load(object sender, EventArgs e)
         {
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.scorllingFont;
+            }
             txtworkerId.Text = FrmChangeWorker.wk_WorkerNo;
             txtworkerName.Text = FrmChangeWorker.wk_WorkerName;
             txtClub.Text = FrmChangeWorker.wk_WorkerClub;
             txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
             //获取所有职位信息
+<<<<<<< HEAD
             cboNewPosition.DataSource =  new BaseService().SelectPositionAll();
             cboNewPosition.DisplayMember = "position_name";
             cboNewPosition.ValueMember = "position_no";
             //获取所有部门信息
             cboNewClub.DataSource = new BaseService().SelectDeptAll();
+=======
+            cboNewPosition.DataSource =  new BaseService().SelectPositionAllCanUse();
+            cboNewPosition.DisplayMember = "position_name";
+            cboNewPosition.ValueMember = "position_no";
+            //获取所有部门信息
+            cboNewClub.DataSource = new BaseService().SelectDeptAllCanUse();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             cboNewClub.DisplayMember = "dept_name";
             cboNewClub.ValueMember = "dept_no";
         }
@@ -49,8 +61,13 @@ namespace SYS.FormUI
         {
             Worker worker = new Worker()
             {
+<<<<<<< HEAD
                 WorkerClub = cboNewClub.ValueMember,
                 WorkerPosition = cboNewPosition.ValueMember,
+=======
+                WorkerClub = cboNewClub.SelectedValue.ToString(),
+                WorkerPosition = cboNewPosition.SelectedValue.ToString(),
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                 WorkerId = txtworkerId.Text
             };
              bool n = new WorkerService().UpdateWorkerPositionAndClub(worker);
@@ -66,6 +83,10 @@ namespace SYS.FormUI
                 o.datains_date = DateTime.Now;
                 #endregion
                 new OperationlogService().InsertOperationLog(o);
+<<<<<<< HEAD
+=======
+                FrmWorkerManager.Reload();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             }
 
 

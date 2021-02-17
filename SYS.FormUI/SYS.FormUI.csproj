@@ -120,6 +120,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppFunction\FrmChangeAdminPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmChangeAdminPwd.Designer.cs">
+      <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     </Compile>
     <Compile Include="AppFunction\FrmEducation.Designer.cs">
       <DependentUpon>FrmEducation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmMySpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmMySpace.Designer.cs">
+      <DependentUpon>FrmMySpace.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmNation.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,18 @@
     <Compile Include="AppUserControls\ExtensionMethods.cs" />
     <Compile Include="AppUserControls\OrgCharGenerator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AppUserControls\ucPositionInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucPositionInformation.Designer.cs">
+      <DependentUpon>ucPositionInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppUserControls\ucEducationInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucEducationInformation.Designer.cs">
+      <DependentUpon>ucEducationInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="AppUserControls\ucBaseInformation.cs">
       <SubType>UserControl</SubType>
@@ -386,6 +410,7 @@
     <Compile Include="AppFunction\FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Font\UI-FontUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppUserControls\ucHistory.cs">
@@ -406,6 +431,15 @@
     <Compile Include="AppFunction\FrmWtiInfo.Designer.cs">
       <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="AppFunction\FrmChangeAdminPwd.resx">
+      <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmMySpace.resx">
+      <DependentUpon>FrmMySpace.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     <EmbeddedResource Include="AppMain\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,19 +570,20 @@
       <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\ucPositionInformation.resx">
+      <DependentUpon>ucPositionInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\ucEducationInformation.resx">
+      <DependentUpon>ucEducationInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="AppUserControls\ucHistory.resx">
       <DependentUpon>ucHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,6 +592,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmWtiInfo.resx">
       <DependentUpon>FrmWtiInfo.cs</DependentUpon>
+<<<<<<< HEAD
+=======
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     </EmbeddedResource>
     <None Include="bin\Debug\启用任务管理器.reg" />
     <None Include="bin\Debug\禁用任务管理器.reg" />
@@ -565,59 +607,25 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\Alibaba-PuHuiTi-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="TSHotelManagerSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\客房管理-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\客房管理-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\扩展功能-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\扩展功能-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\用户管理-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\用户管理-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\更多扩展-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\更多扩展-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\内部飞鸽-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\内部飞鸽-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\网页预约-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\网页预约-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\预约管理-ia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\预约管理-ib.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete2a.png" />
@@ -644,34 +652,10 @@
     <None Include="Resources\修改.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\财务部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\餐饮部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\后勤部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\经理部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\酒店部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\人事部界面.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\显示.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\隐藏.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\商品消费-ib.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\商品消费-ia.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\导出 %284%291.png" />
@@ -700,30 +684,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\空房.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\清理中.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\维修中.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\已入住.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\脏房.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\空房22.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\获取用户编号.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\获取用户编号-ia.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\预约管理.png" />
   </ItemGroup>
   <ItemGroup>
@@ -733,6 +700,30 @@
     <None Include="Resources\维修中22.png" />
   </ItemGroup>
   <ItemGroup>
+=======
+    <None Include="Resources\关于我们.png" />
+    <None Include="Resources\检查更新 %281%29.png" />
+    <None Include="Resources\个人中心.png" />
+    <None Include="Resources\锁屏.png" />
+    <None Include="Resources\切换账号.png" />
+    <None Include="Resources\注销.png" />
+    <None Include="Resources\主页 %281%29.png" />
+    <None Include="Resources\脏房icon1.png" />
+    <None Include="Resources\脏房状态.png" />
+    <None Include="Resources\预约状态.png" />
+    <None Include="Resources\已住状态.png" />
+    <None Include="Resources\维修状态.png" />
+    <None Include="Resources\可住状态.png" />
+    <None Include="Resources\脏房%28hover%29icon.png" />
+    <None Include="Resources\预约房icon.png" />
+    <None Include="Resources\预约房%28hover%29icon.png" />
+    <None Include="Resources\已住房icon.png" />
+    <None Include="Resources\已住房%28hover%29icon.png" />
+    <None Include="Resources\维修房icon.png" />
+    <None Include="Resources\维修房%28hover%29icon.png" />
+    <None Include="Resources\可住房icon.png" />
+    <None Include="Resources\可住房%28hover%29icon.png" />
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     <None Include="Resources\常规部门卡片.png" />
     <None Include="Resources\总经办卡片.png" />
     <None Include="Resources\维修部卡片.png" />
@@ -753,23 +744,6 @@
     <None Include="Resources\月亮.png" />
     <None Include="Resources\咖啡.png" />
     <None Include="Resources\早上.png" />
-    <None Include="bin\Debug\RoomState1.png" />
-    <None Include="bin\Debug\RoomState2.png" />
-    <None Include="bin\Debug\RoomState3.png" />
-    <None Include="bin\Debug\RoomState3_fixed.png" />
-    <None Include="bin\Debug\RoomState4.png" />
-    <None Include="bin\Debug\RoomState5.png" />
-    <None Include="bin\Debug\RoomState1-h.png" />
-    <None Include="bin\Debug\RoomState2-h.png" />
-    <None Include="bin\Debug\RoomState3_fixed-h.png" />
-    <None Include="bin\Debug\RoomState4-h.png" />
-    <None Include="bin\Debug\RoomState5-h.png" />
-    <None Include="bin\Debug\客房icon.png" />
-    <None Include="bin\Debug\可住icon.png" />
-    <None Include="bin\Debug\维修房icon.png" />
-    <None Include="bin\Debug\已住icon.png" />
-    <None Include="bin\Debug\预约房icon.png" />
-    <None Include="bin\Debug\脏房icon.png" />
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\arrow-down-b.png" />
     <None Include="Resources\minus %281%29.png" />
@@ -810,15 +784,6 @@
     <Content Include="icon\预约.ico" />
     <Content Include="Logo\bitbug_favicon %281%29.ico" />
     <None Include="Resources\77377282_p0_master1200.jpg" />
-    <None Include="Resources\main_bg.png" />
-    <None Include="Resources\button.bmp" />
-    <None Include="Resources\Background.jpg" />
-    <None Include="Resources\已预约.png" />
-    <None Include="Resources\预订管理ab.png" />
-    <None Include="Resources\预订管理-aa.png" />
-    <None Include="Resources\预订管理-a.png" />
-    <None Include="Resources\预订管理.png" />
-    <None Include="Resources\维修中221.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

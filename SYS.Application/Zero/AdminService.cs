@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
+using System;
 
 namespace SYS.Application
 {
@@ -38,5 +39,22 @@ namespace SYS.Application
             return admin;
         }
         #endregion
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="Account"></param>
+        /// <param name="NewPwd"></param>
+        /// <returns></returns>
+        public bool UpdateNewPwdByOldPwd(string Account, string NewPwd)
+        {
+            return base.Update(a => new Admin()
+            {
+                AdminPassword = NewPwd,
+                datachg_usr = AdminInfo.Account,
+                datachg_time = DateTime.Now
+            },a => a.AdminAccount == Account);
+        }
+
     }
 }

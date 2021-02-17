@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -47,7 +48,9 @@ namespace SYS.Application
         public object SelectToDayCheckInfoByWorkerNo(string wkn)
         {
             //string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+ "' and DATEDIFF(CURRENT_DATE(),workercheck.CheckTime)";
-            return base.GetList(a => a.WorkerNo == wkn && a.delete_mk != 1 && a.CheckTime >= DateTime.Now).Count;
+            var listCheckInfo = base.GetList(a => a.WorkerNo == wkn && a.delete_mk != 1);
+            var count = listCheckInfo.Where(a => a.CheckTime.ToShortDateString() == DateTime.Now.ToShortDateString()).Count() > 0 ? 1:0;
+            return count;
         }
 
         /// <summary>

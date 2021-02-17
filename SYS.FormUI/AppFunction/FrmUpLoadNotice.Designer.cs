@@ -47,7 +47,11 @@
             this.rtbNoticeContent.KEditorEventListener = null;
             this.rtbNoticeContent.Location = new System.Drawing.Point(6, 99);
             this.rtbNoticeContent.Name = "rtbNoticeContent";
+<<<<<<< HEAD
             this.rtbNoticeContent.Size = new System.Drawing.Size(992, 474);
+=======
+            this.rtbNoticeContent.Size = new System.Drawing.Size(992, 475);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.rtbNoticeContent.TabIndex = 24;
             // 
             // txtNoticeTheme
@@ -136,11 +140,19 @@
             // 
             this.btnUpLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpLoad.Font = new System.Drawing.Font("微软雅黑", 12F);
+<<<<<<< HEAD
             this.btnUpLoad.Location = new System.Drawing.Point(888, 583);
             this.btnUpLoad.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUpLoad.Name = "btnUpLoad";
             this.btnUpLoad.Radius = 20;
             this.btnUpLoad.Size = new System.Drawing.Size(108, 31);
+=======
+            this.btnUpLoad.Location = new System.Drawing.Point(857, 582);
+            this.btnUpLoad.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnUpLoad.Name = "btnUpLoad";
+            this.btnUpLoad.Radius = 20;
+            this.btnUpLoad.Size = new System.Drawing.Size(139, 35);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.btnUpLoad.TabIndex = 119;
             this.btnUpLoad.Text = "发布任命公告";
             this.btnUpLoad.Click += new System.EventHandler(this.btnUpLoad_Click);
@@ -149,7 +161,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(625, 586);
+=======
+            this.label2.Location = new System.Drawing.Point(594, 586);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 120;
@@ -163,7 +179,11 @@
             this.cbNoticeType.Items.AddRange(new object[] {
             "人事变动",
             "普通公告"});
+<<<<<<< HEAD
             this.cbNoticeType.Location = new System.Drawing.Point(716, 582);
+=======
+            this.cbNoticeType.Location = new System.Drawing.Point(685, 582);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cbNoticeType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbNoticeType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbNoticeType.Name = "cbNoticeType";

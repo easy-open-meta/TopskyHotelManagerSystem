@@ -16,6 +16,18 @@ namespace SYS.Application
     {
 
         #region 性别模块
+
+        /// <summary>
+        /// 查询所有性别类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<SexType> SelectSexTypeAllCanUse()
+        {
+            List<SexType> sexTypes = new List<SexType>();
+            sexTypes = base.GetList(a => a.delete_mk != 1);
+            return sexTypes;
+        }
+
         /// <summary>
         /// 查询所有性别类型
         /// </summary>
@@ -83,6 +95,17 @@ namespace SYS.Application
         #region 职位模块
 
         /// <summary>
+        /// 查询所有职位类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<Position> SelectPositionAllCanUse()
+        {
+            List<Position> positions = new List<Position>();
+            positions = base.Change<Position>().GetList(a => a.delete_mk != 1);
+            return positions;
+        }
+
+        /// <summary>
         /// 查询所有职位类型
         /// </summary>
         /// <returns></returns>
@@ -147,6 +170,17 @@ namespace SYS.Application
         #endregion
 
         #region 民族模块
+
+        /// <summary>
+        /// 查询所有民族类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<Nation> SelectNationAllCanUse()
+        {
+            List<Nation> nations = new List<Nation>();
+            nations = base.Change<Nation>().GetList(a => a.delete_mk != 1);
+            return nations;
+        }
 
         /// <summary>
         /// 查询所有民族类型
@@ -216,6 +250,17 @@ namespace SYS.Application
         #region 学历模块
 
         /// <summary>
+        /// 查询所有学历类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<Education> SelectEducationAllCanUse()
+        {
+            List<Education> educations = new List<Education>();
+            educations = base.Change<Education>().GetList(a => a.delete_mk != 1);
+            return educations;
+        }
+
+        /// <summary>
         /// 查询所有学历类型
         /// </summary>
         /// <returns></returns>
@@ -282,13 +327,42 @@ namespace SYS.Application
         #region 部门模块
 
         /// <summary>
+        /// 查询所有部门类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<Dept> SelectDeptAllCanUse()
+        {
+            List<Worker> workers = new List<Worker>();
+            workers = base.Change<Worker>().GetList(a => a.delete_mk != 1);
+            List<Dept> depts = new List<Dept>();
+            depts = base.Change<Dept>().GetList(a => a.delete_mk != 1);
+            depts.ForEach(source =>
+            {
+                var dept = depts.FirstOrDefault(a => a.dept_no == source.dept_parent);
+                source.parent_name = dept == null ? "" : dept.dept_name;
+                var leader = workers.FirstOrDefault(a => source.dept_leader != null && a.WorkerId == source.dept_leader);
+                source.leader_name = leader == null ? "" : leader.WorkerName;
+            });
+            return depts;
+        }
+
+        /// <summary>
         /// 查询所有部门类型
         /// </summary>
         /// <returns></returns>
         public List<Dept> SelectDeptAll()
         {
+            List<Worker> workers = new List<Worker>();
+            workers = base.Change<Worker>().GetList(a => a.delete_mk != 1);
             List<Dept> depts = new List<Dept>();
-            depts = base.Change<Dept>().GetList();
+            depts = base.Change<Dept>().GetList(a => a.delete_mk != 1);
+            depts.ForEach(source =>
+            {
+                var dept = depts.FirstOrDefault(a => a.dept_no == source.dept_parent);
+                source.parent_name = dept == null ? "" : dept.dept_name;
+                var leader = workers.FirstOrDefault(a => source.dept_leader != null && a.WorkerId == source.dept_leader);
+                source.leader_name = leader == null ? "" : leader.WorkerName;
+            });
             return depts;
         }
 
@@ -341,7 +415,6 @@ namespace SYS.Application
                 dept_desc = dept.dept_desc,
                 dept_leader = dept.dept_leader,
                 dept_parent = dept.dept_parent,
-                dept_date = dept.dept_date,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
             },a => a.dept_no == dept.dept_no);
@@ -350,6 +423,21 @@ namespace SYS.Application
         #endregion
 
         #region 客户类型模块
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// 查询所有客户类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<CustoType> SelectCustoTypeAllCanUse()
+        {
+            List<CustoType> custoTypes = new List<CustoType>();
+            custoTypes = base.Change<CustoType>().GetList(a => a.delete_mk != 1);
+            return custoTypes;
+        }
+
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有客户类型
         /// </summary>
@@ -357,7 +445,11 @@ namespace SYS.Application
         public List<CustoType> SelectCustoTypeAll() 
         {
             List<CustoType> custoTypes = new List<CustoType>();
+<<<<<<< HEAD
             custoTypes = base.Change<CustoType>().GetList(a => a.delete_mk != 1);
+=======
+            custoTypes = base.Change<CustoType>().GetList();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             return custoTypes;
         }
 
@@ -416,6 +508,21 @@ namespace SYS.Application
         #endregion
 
         #region 证件类型模块
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// 查询所有证件类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<PassPortType> SelectPassPortTypeAllCanUse()
+        {
+            List<PassPortType> passPortTypes = new List<PassPortType>();
+            passPortTypes = base.Change<PassPortType>().GetList(a => a.delete_mk != 1);
+            return passPortTypes;
+        }
+
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
         /// <summary>
         /// 查询所有证件类型
         /// </summary>
@@ -423,7 +530,11 @@ namespace SYS.Application
         public List<PassPortType> SelectPassPortTypeAll()
         {
             List<PassPortType> passPortTypes = new List<PassPortType>();
+<<<<<<< HEAD
             passPortTypes = base.Change<PassPortType>().GetList(a => a.delete_mk != 1);
+=======
+            passPortTypes = base.Change<PassPortType>().GetList();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             return passPortTypes;
         }
 
@@ -480,5 +591,86 @@ namespace SYS.Application
         }
 
         #endregion
+<<<<<<< HEAD
+=======
+
+        #region 奖惩类型模块
+
+        /// <summary>
+        /// 查询所有奖惩类型(可用)
+        /// </summary>
+        /// <returns></returns>
+        public List<GBType> SelectGBTypeAllCanUse()
+        {
+            List<GBType> gBTypes = new List<GBType>();
+            gBTypes = base.Change<GBType>().GetList(a => a.delete_mk != 1);
+            return gBTypes;
+        }
+
+        /// <summary>
+        /// 查询所有奖惩类型
+        /// </summary>
+        /// <returns></returns>
+        public List<GBType> SelectGBTypeAll()
+        {
+            List<GBType> gBTypes = new List<GBType>();
+            gBTypes = base.Change<GBType>().GetList();
+            return gBTypes;
+        }
+
+        /// <summary>
+        /// 根据奖惩类型ID查询类型名称
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        public GBType SelectGBTypeByTypeId(GBType gBType)
+        {
+            GBType gBType1 = new GBType();
+            gBType1 = base.Change<GBType>().GetSingle(a => a.GBTypeId == gBType.GBTypeId && a.delete_mk != 1);
+            return gBType1;
+        }
+
+        /// <summary>
+        /// 添加奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        public bool InsertGBType(GBType  gBType)
+        {
+            return base.Change<GBType>().Insert(gBType);
+        }
+
+        /// <summary>
+        /// 删除奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        public bool DeleteGBType(GBType gBType)
+        {
+            return base.Change<GBType>().Update(a => new GBType()
+            {
+                delete_mk = 1,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.GBTypeId == gBType.GBTypeId);
+        }
+
+        /// <summary>
+        /// 更新奖惩类型
+        /// </summary>
+        /// <param name="gBType"></param>
+        /// <returns></returns>
+        public bool UpdateGBType(GBType gBType)
+        {
+            return base.Change<GBType>().Update(a => new GBType()
+            {
+                GBName = gBType.GBName,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            }, a => a.GBTypeId == gBType.GBTypeId);
+        }
+
+        #endregion
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     }
 }

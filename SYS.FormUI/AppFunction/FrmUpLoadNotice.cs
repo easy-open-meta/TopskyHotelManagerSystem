@@ -87,6 +87,13 @@ namespace SYS.FormUI
 
         private void FrmUpLoad_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.controlFont;
+            }
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             cboSelectClub.DataSource = new BaseService().SelectDeptAll();
             cboSelectClub.DisplayMember = "dept_name";
             cboSelectClub.ValueMember = "dept_no";

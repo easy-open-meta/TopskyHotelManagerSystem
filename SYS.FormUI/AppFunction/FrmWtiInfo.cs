@@ -16,6 +16,13 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void WtiInfo_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.childControlFont;
+            }
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             LoadWtiInfo();//加载水电费信息
         }
         #endregion

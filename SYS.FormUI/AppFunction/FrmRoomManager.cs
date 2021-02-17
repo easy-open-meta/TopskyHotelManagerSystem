@@ -38,13 +38,13 @@ namespace SYS.FormUI
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
 
-            //foreach (Control item in this.pnlRoomInfo.Controls)
-            //{
-            //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
-            //    {
-            //        item.Font = UI_FontUtil.SetChildControlsFont();
-            //    }
-            //}
+            foreach (Control item in this.pnlRoomInfo.Controls)
+            {
+                if (item.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    item.Font = UI_FontUtil.childControlFont;
+                }
+            }
 
             romsty = new RoomService().SelectRoomAll();
             for (int i = 0; i < romsty.Count; i++)
@@ -57,10 +57,6 @@ namespace SYS.FormUI
                 flpRoom.Controls.Add(romt);
             }
 
-            if (lblCheckTime.Text == "0001/1/1")
-            {
-                lblCheckTime.Text = "";
-            }
         }
         #endregion
 
@@ -209,52 +205,52 @@ namespace SYS.FormUI
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = Resources.RoomState1_h;
+            pictureBox1.BackgroundImage = Resources.可住房_hover_icon;
         }
 
         private void pictureBox2_MouseHover(object sender, EventArgs e)
         {
-            pictureBox2.BackgroundImage = Resources.RoomState2_h;
+            pictureBox2.BackgroundImage = Resources.已住房_hover_icon;
         }
 
         private void pictureBox3_MouseHover(object sender, EventArgs e)
         {
-            pictureBox3.BackgroundImage = Resources.RoomState3_fixed_h;
+            pictureBox3.BackgroundImage = Resources.脏房_hover_icon;
         }
 
         private void pictureBox4_MouseHover(object sender, EventArgs e)
         {
-            pictureBox4.BackgroundImage = Resources.RoomState4_h;
+            pictureBox4.BackgroundImage = Resources.维修房_hover_icon;
         }
 
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox4.BackgroundImage = Resources.RoomState4;
+            pictureBox4.BackgroundImage = Resources.维修房icon;
         }
 
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox3.BackgroundImage = Resources.RoomState3_fixed;
+            pictureBox3.BackgroundImage = Resources.脏房icon1;
         }
 
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox2.BackgroundImage = Resources.RoomState2;
+            pictureBox2.BackgroundImage = Resources.已住房icon;
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = Resources.RoomState1;
+            pictureBox1.BackgroundImage = Resources.可住房icon;
         }
 
         private void pictureBox5_MouseHover(object sender, EventArgs e)
         {
-            pictureBox5.BackgroundImage = Resources.RoomState5_h;
+            pictureBox5.BackgroundImage = Resources.预约房_hover_icon;
         }
 
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox5.BackgroundImage = Resources.RoomState5;
+            pictureBox5.BackgroundImage = Resources.预约房icon;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

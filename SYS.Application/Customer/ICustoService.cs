@@ -18,6 +18,13 @@ namespace SYS.Application
         #endregion
 
         /// <summary>
+        /// 更新客户信息
+        /// </summary>
+        /// <param name="custo"></param>
+        /// <returns></returns>
+        bool UpdCustomerInfoByCustoNo(Custo custo);
+
+        /// <summary>
         /// 查询酒店盈利情况
         /// </summary>
         /// <returns></returns>

@@ -38,6 +38,9 @@
     <Win32Resource>
     </Win32Resource>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="SqlSugar, Version=5.0.1.8, Culture=neutral, processorArchitecture=MSIL">
@@ -58,12 +61,6 @@
   <ItemGroup>
     <Compile Include="Customer\PassPortType.cs" />
     <Compile Include="Customer\SexType.cs" />
-    <Compile Include="Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Util\ApplicationVersionUtil.cs" />
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\DBHelper.cs" />
@@ -71,7 +68,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Util\Md5LockedUtil.cs" />
-    <Compile Include="Util\UI-FontUtil.cs" />
     <Compile Include="Worker\GBType.cs" />
     <Compile Include="Zero\Admin.cs" />
     <Compile Include="Zero\AdminInfo.cs" />
@@ -105,27 +101,11 @@
     <Content Include="bin\Debug\MySql.Data.dll" />
     <Content Include="bin\Debug\SYS.Core.dll" />
     <Content Include="bin\Debug\SYS.Core.pdb" />
+    <Content Include="bitbug_favicon %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Mono.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Mono-l.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">

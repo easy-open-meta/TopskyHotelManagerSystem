@@ -11,14 +11,34 @@ namespace SYS.FormUI
 {
     public partial class FrmCustoManager : UIForm
     {
+        public static string cm_CustoNo;
+        public static string cm_CustoName;
+        public static int cm_CustoSex;
+        public static string cm_CustoTel;
+        public static int cm_PassportType;
+        public static string cm_CustoID;
+        public static string cm_CustoAddress;
+        public static DateTime cm_CustoBirth;
+        public static int cm_CustoType;
+
+        public delegate void ReloadCustomerList();
+
+
+        //定义委托类型的变量
+        public static ReloadCustomerList Reload;
+
         public FrmCustoManager()
         {
             InitializeComponent();
+            Reload = LoadCustomer;
         }
-
 
         private void FrmCustoManager_Load(object sender, EventArgs e)
         {
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.childControlFont;
+            }
             //dgvCustomerList.AutoGenerateColumns = false;
             LoadCustomer();
             LoadCustoType();
@@ -58,18 +78,31 @@ namespace SYS.FormUI
         #region 修改会员信息事件方法
         private void picUpdateCusto_Click_1(object sender, EventArgs e)
         {
+            if (dgvCustomerList.SelectedRows.Count < 0)
+            {
+                UIMessageBox.Show("未选中客户，无法继续操作！", "系统提示", UIStyle.Orange, UIMessageBoxButtons.OK);
+                return;
+            }
+            cm_CustoNo = dgvCustomerList.SelectedRows[0].Cells["CustoNo"].Value.ToString();
+            cm_CustoName = dgvCustomerList.SelectedRows[0].Cells["CustoName"].Value.ToString();
+            cm_CustoSex = (int)dgvCustomerList.SelectedRows[0].Cells["Column4"].Value;
+            cm_CustoTel = dgvCustomerList.SelectedRows[0].Cells["CustoTel"].Value.ToString();
+            cm_PassportType = (int)dgvCustomerList.SelectedRows[0].Cells["Column1"].Value;
+            cm_CustoID = dgvCustomerList.SelectedRows[0].Cells["Column3"].Value.ToString();
+            cm_CustoAddress = dgvCustomerList.SelectedRows[0].Cells["CustoAdress"].Value.ToString();
+            cm_CustoBirth = Convert.ToDateTime(dgvCustomerList.SelectedRows[0].Cells["CustoBirth"].Value);
+            cm_CustoType = (int)dgvCustomerList.SelectedRows[0].Cells["Column2"].Value;
             FrmInputs frmInputs = new FrmInputs();
-            frmInputs.ShowDialog();
             frmInputs.Text = "修改客户";
+            frmInputs.ShowDialog();
         }
         #endregion
 
         #region 搜索会员信息事件方法
         private void picSearch_Click_1(object sender, EventArgs e)
         {
-            //picAddCusto.BackgroundImage = Resources.添_加a;
-            //picSearch.BackgroundImage = Resources.搜索__1a;
-            //dgvCustomerList.DataSource = CustoService.SelectCustoInfoByCardId(txtSerach.Text);
+            dgvCustomerList.AutoGenerateColumns = false;
+            dgvCustomerList.DataSource = new CustoService().SelectCardInfoByCustoNo(txtCardID.Text);
         }
         #endregion
 
@@ -95,7 +128,7 @@ namespace SYS.FormUI
                 Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
                 if (xlApp == null)
                 {
-                    MessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒");
+                    UIMessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒");
                     return;
                 }
                 Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
@@ -103,13 +136,13 @@ namespace SYS.FormUI
                 Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
                 for (int i = 0; i < this.dgvCustomerList.Columns.Count; i++)
                 {
-                    //xlApp.Cells[1, i + 1] = dgvCustomerList.Columns[i].HeaderText;
+                    xlApp.Cells[1, i + 1] = dgvCustomerList.Columns[i].HeaderText;
                 }
                 for (int i = 0; i < dgvCustomerList.Rows.Count; i++)//添加每一项
                 {
                     for (int j = 0; j < dgvCustomerList.Columns.Count; j++)
                     {
-                        //xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
+                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
                     }
                 }
                 System.Windows.Forms.Application.DoEvents();
@@ -144,6 +177,7 @@ namespace SYS.FormUI
         }
         #endregion
 
+<<<<<<< HEAD
         private void picGetCustoNo_Click_1(object sender, EventArgs e)
         {
             //txtCustoNo.Text = cardId;
@@ -223,6 +257,8 @@ namespace SYS.FormUI
         {
 
         }
+=======
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
 
     }
 }

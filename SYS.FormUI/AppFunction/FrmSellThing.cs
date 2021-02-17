@@ -21,18 +21,26 @@ namespace SYS.FormUI
         private void FrmSellThing_Load(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             foreach (Control label in this.Controls)
             {
                 label.Font = UI_FontUtil.SetChildControlsFont();
             }
 
+=======
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             List<Room> roms = new RoomService().SelectRoomByStateAll();
             for (int i = 0; i < roms.Count; i++)
             {
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
             }
             LoadSellThingInfo();
-            
+
+            foreach (Control label in this.Controls)
+            {
+                label.Font = UI_FontUtil.childControlFont;
+            }
+
         }
         #endregion
 
@@ -75,10 +83,14 @@ namespace SYS.FormUI
         #region 商品加载事件方法
         public void LoadSellThingInfo()
         {
+<<<<<<< HEAD
             
+=======
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             List<SellThing> lstSource = new SellService().SelectSellThingAll();
             this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
+
         }
         #endregion
 
@@ -145,7 +157,11 @@ namespace SYS.FormUI
                     {
                         string Stock = (st.Stock - nudNum.Value).ToString();
                         bool n = new SellService().UpdateSellThing(Stock, st.SellNo);
+<<<<<<< HEAD
                         MessageBox.Show("添加成功");
+=======
+                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK,true);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
                         LoadSpendInfoByCustoNo(r.CustoNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
@@ -265,5 +281,18 @@ namespace SYS.FormUI
                 }
             }
         }
+<<<<<<< HEAD
+=======
+
+        private void lblState_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmSellThing_Activated(object sender, EventArgs e)
+        {
+            
+        }
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
     }
 }

@@ -61,7 +61,7 @@ namespace SYS.FormUI
                 this.Close();
                 string regPath = System.Windows.Forms.Application.StartupPath + @"\启用任务管理器.reg";
                 ExecuteReg(regPath);
-                FrmMain.Start();
+                
 
             }
 

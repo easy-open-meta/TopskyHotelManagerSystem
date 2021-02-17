@@ -28,111 +28,179 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWorkerCheckInfo));
-            this.DgvCheckInfoList = new System.Windows.Forms.DataGridView();
             this.lblWorkerInfo = new System.Windows.Forms.Label();
+            this.DgvCheckInfoList = new Sunny.UI.UIDataGridView();
             this.clWorkerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCheckState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCheckInfoList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DgvCheckInfoList
-            // 
-            this.DgvCheckInfoList.AllowUserToAddRows = false;
-            this.DgvCheckInfoList.AllowUserToDeleteRows = false;
-            this.DgvCheckInfoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvCheckInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCheckInfoList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clWorkerNo,
-            this.clCheckTime,
-            this.clCheckWay,
-            this.clCheckState});
-            this.DgvCheckInfoList.Location = new System.Drawing.Point(3, 58);
-            this.DgvCheckInfoList.Name = "DgvCheckInfoList";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DgvCheckInfoList.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvCheckInfoList.RowTemplate.Height = 23;
-            this.DgvCheckInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCheckInfoList.Size = new System.Drawing.Size(458, 150);
-            this.DgvCheckInfoList.TabIndex = 0;
             // 
             // lblWorkerInfo
             // 
             this.lblWorkerInfo.AutoSize = true;
-            this.lblWorkerInfo.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblWorkerInfo.Location = new System.Drawing.Point(-1, 34);
+            this.lblWorkerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkerInfo.Location = new System.Drawing.Point(12, 50);
             this.lblWorkerInfo.Name = "lblWorkerInfo";
-            this.lblWorkerInfo.Size = new System.Drawing.Size(45, 20);
+            this.lblWorkerInfo.Size = new System.Drawing.Size(60, 24);
             this.lblWorkerInfo.TabIndex = 1;
             this.lblWorkerInfo.Text = "label1";
+            // 
+            // DgvCheckInfoList
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.DgvCheckInfoList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvCheckInfoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvCheckInfoList.BackgroundColor = System.Drawing.Color.White;
+            this.DgvCheckInfoList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCheckInfoList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvCheckInfoList.ColumnHeadersHeight = 32;
+            this.DgvCheckInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DgvCheckInfoList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clWorkerNo,
+            this.clCheckTime,
+            this.clCheckWay,
+            this.clCheckState,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCheckInfoList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvCheckInfoList.EnableHeadersVisualStyles = false;
+            this.DgvCheckInfoList.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.DgvCheckInfoList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.DgvCheckInfoList.Location = new System.Drawing.Point(3, 88);
+            this.DgvCheckInfoList.Name = "DgvCheckInfoList";
+            this.DgvCheckInfoList.ReadOnly = true;
+            this.DgvCheckInfoList.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DgvCheckInfoList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvCheckInfoList.RowTemplate.Height = 29;
+            this.DgvCheckInfoList.SelectedIndex = -1;
+            this.DgvCheckInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvCheckInfoList.ShowGridLine = true;
+            this.DgvCheckInfoList.Size = new System.Drawing.Size(550, 154);
+            this.DgvCheckInfoList.TabIndex = 2;
             // 
             // clWorkerNo
             // 
             this.clWorkerNo.DataPropertyName = "WorkerNo";
             this.clWorkerNo.HeaderText = "员工编号";
             this.clWorkerNo.Name = "clWorkerNo";
+            this.clWorkerNo.ReadOnly = true;
             // 
             // clCheckTime
             // 
             this.clCheckTime.DataPropertyName = "CheckTime";
             this.clCheckTime.HeaderText = "打卡时间";
             this.clCheckTime.Name = "clCheckTime";
+            this.clCheckTime.ReadOnly = true;
             // 
             // clCheckWay
             // 
             this.clCheckWay.DataPropertyName = "CheckWay";
             this.clCheckWay.HeaderText = "打卡方式";
             this.clCheckWay.Name = "clCheckWay";
+            this.clCheckWay.ReadOnly = true;
             // 
             // clCheckState
             // 
-            this.clCheckState.DataPropertyName = "CheckState";
+            this.clCheckState.DataPropertyName = "CheckStateNm";
             this.clCheckState.HeaderText = "打卡状态";
             this.clCheckState.Name = "clCheckState";
+            this.clCheckState.ReadOnly = true;
             // 
-            // btnClose
+            // Column1
             // 
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(392, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 25);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "关    闭";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.Column1.DataPropertyName = "delete_mk";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
-            // label1
+            // Column2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("苹方-简", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(-1, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "员工打卡考勤记录查看页";
+            this.Column2.DataPropertyName = "datains_date";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "datains_usr";
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "datachg_usr";
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "datachg_date";
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "CheckState";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // FrmWorkerCheckInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(466, 215);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lblWorkerInfo);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(556, 247);
             this.Controls.Add(this.DgvCheckInfoList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.lblWorkerInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsForbidAltF4 = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmWorkerCheckInfo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmWorkerCheckInfo";
+            this.ShowIcon = true;
+            this.Text = "员工打卡考勤记录查看页";
             this.Load += new System.EventHandler(this.FrmWorkerCheckInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCheckInfoList)).EndInit();
             this.ResumeLayout(false);
@@ -141,14 +209,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DgvCheckInfoList;
         private System.Windows.Forms.Label lblWorkerInfo;
+        private Sunny.UI.UIDataGridView DgvCheckInfoList;
         private System.Windows.Forms.DataGridViewTextBoxColumn clWorkerNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCheckTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCheckWay;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCheckState;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

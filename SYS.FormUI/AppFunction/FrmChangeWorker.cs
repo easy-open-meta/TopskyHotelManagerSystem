@@ -30,7 +30,11 @@ namespace SYS.FormUI
         }
         private void FrmChangeWorker_Load(object sender, EventArgs e)
         {
-            if(AdminInfo.Type != "总经理")
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.roomControlFont;
+            }
+            if (AdminInfo.Type != "总经理")
             {
                 btnUpWorker.Enabled = false;
                 btnUpWorker.Text = "权限不足";

@@ -43,6 +43,13 @@ namespace SYS.FormUI
 
         private void FrmTopChange_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            foreach (Control item in this.Controls)
+            {
+                item.Font = UI_FontUtil.childControlFont;
+            }
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             dgvWorkerList.AutoGenerateColumns = false;
             dgvWorkerList.DataSource = new WorkerService().SelectWorkerAll();
             if (AdminInfo.Type != "总经理" && AdminInfo.Type != "人力资源部经理")
@@ -71,7 +78,11 @@ namespace SYS.FormUI
                 wk_WorkerEducation = dgvWorkerList.SelectedRows[0].Cells["clWorkerEducation"].Value.ToString();
                 wk_WorkerNation = dgvWorkerList.SelectedRows[0].Cells["clWorkerNation"].Value.ToString();
                 FrmChangeWorker aff = new FrmChangeWorker();
+<<<<<<< HEAD
                 aff.Show();
+=======
+                aff.ShowDialog();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
 
             }
         }

@@ -39,7 +39,6 @@ namespace SYS.FormUI
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.picGetCustoNo = new System.Windows.Forms.PictureBox();
             this.btnClose = new Sunny.UI.UIButton();
             this.btnOK = new Sunny.UI.UIButton();
             this.txtCustoAdress = new Sunny.UI.UITextBox();
@@ -51,7 +50,6 @@ namespace SYS.FormUI
             this.cbSex = new Sunny.UI.UIComboBox();
             this.cbPassportType = new Sunny.UI.UIComboBox();
             this.cbCustoType = new Sunny.UI.UIComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -143,18 +141,6 @@ namespace SYS.FormUI
             this.label10.Size = new System.Drawing.Size(88, 25);
             this.label10.TabIndex = 32;
             this.label10.Text = "居住地址";
-            // 
-            // picGetCustoNo
-            // 
-            this.picGetCustoNo.BackColor = System.Drawing.Color.Transparent;
-            this.picGetCustoNo.BackgroundImage = global::SYS.FormUI.Properties.Resources.获取用户编号;
-            this.picGetCustoNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picGetCustoNo.Location = new System.Drawing.Point(380, 70);
-            this.picGetCustoNo.Name = "picGetCustoNo";
-            this.picGetCustoNo.Size = new System.Drawing.Size(21, 20);
-            this.picGetCustoNo.TabIndex = 94;
-            this.picGetCustoNo.TabStop = false;
-            this.picGetCustoNo.Click += new System.EventHandler(this.picGetCustoNo_Click);
             // 
             // btnClose
             // 
@@ -340,6 +326,7 @@ namespace SYS.FormUI
             this.cbCustoType.Name = "cbCustoType";
             this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.cbCustoType.Radius = 20;
+            this.cbCustoType.ReadOnly = true;
             this.cbCustoType.Size = new System.Drawing.Size(250, 35);
             this.cbCustoType.Style = Sunny.UI.UIStyle.Custom;
             this.cbCustoType.TabIndex = 106;
@@ -363,7 +350,6 @@ namespace SYS.FormUI
             this.Controls.Add(this.txtCustoAdress);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.picGetCustoNo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -383,7 +369,6 @@ namespace SYS.FormUI
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "添加会员信息";
             this.Load += new System.EventHandler(this.FrmInputs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,7 +384,6 @@ namespace SYS.FormUI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox picGetCustoNo;
         private Sunny.UI.UIButton btnClose;
         private Sunny.UI.UIButton btnOK;
         private Sunny.UI.UITextBox txtCustoAdress;

@@ -29,6 +29,28 @@ namespace SYS.Application
         #endregion
 
         /// <summary>
+        /// 更新客户信息
+        /// </summary>
+        /// <param name="custo"></param>
+        /// <returns></returns>
+        public bool UpdCustomerInfoByCustoNo(Custo custo)
+        {
+            return base.Update(a => new Custo()
+            {
+                CustoName  = custo.CustoName,
+                CustoSex = custo.CustoSex,
+                CustoType = custo.CustoType,
+                CustoBirth = custo.CustoBirth,
+                CustoAdress = custo.CustoAdress,
+                CustoID = custo.CustoID,
+                CustoTel = custo.CustoTel,
+                PassportType = custo.PassportType,
+                datachg_usr = custo.datachg_usr,
+                datachg_date = DateTime.Now
+            },a => a.CustoNo == custo.CustoNo);
+        }
+
+        /// <summary>
         /// 查询酒店盈利情况
         /// </summary>
         /// <returns></returns>
@@ -103,57 +125,5 @@ namespace SYS.Application
             return c;
         }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="input"></param>
-        ///// <returns></returns>
-        //public static Custo SelectCustoInfoByCardId(string input)
-        //{
-        //    Custo cto = new Custo();
-        //    string sql = "select * from USERINFO u,PASSPORTTYPE p,USERTYPE ut where u.PassportType=p.PassportId and u.CustoType=ut.UserType and u.CustoNo = '" + input + "'";
-        //    MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-        //    if (dr.Read())
-        //    {
-        //        cto = new Custo() 
-        //        {
-        //            CustoNo = (string)dr["CustoNo"],
-        //            CustoName = (string)dr["CustoName"],
-        //            CustoSex = Convert.ToInt32(dr["CustoSex"]),
-        //            CustoTel = (string)dr["CustoTel"],
-        //            PassportType = Convert.ToInt32(dr["PassportType"]),
-        //            PassportName = (string)dr["PassportName"],
-        //            CustoID = (string)dr["CustoID"],
-        //            CustoAdress = (string)dr["CustoAdress"],
-        //            CustoBirth = DateTime.Parse(dr["CustoBirth"].ToString()),
-        //            CustoType = Convert.ToInt32(dr["CustoType"]),
-        //            typeName = (string)dr["TypeName"],
-        //        };
-                
-        //    }
-        //    dr.Close();
-        //    DBHelper.Closecon();
-        //    return cto;
-        //}
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <returns></returns>
-        //public static List<Custo> SelectCanUseCustoAll()
-        //{
-        //    List<Custo> custos = new List<Custo>();
-        //    string sql = "select * from USERINFO";
-        //    MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-        //    while (dr.Read())
-        //    {
-        //        Custo custo = new Custo();
-        //        custo.CustoNo = (string)dr["CustoNo"];
-        //        custos.Add(custo);
-        //    }
-        //    dr.Close();
-        //    DBHelper.Closecon();
-        //    return custos;
-        //}
     }
 }

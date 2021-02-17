@@ -166,13 +166,13 @@ namespace SYS.FormUI
         #region 房态图加载事件方法
         private void ucRoomList_Load(object sender, EventArgs e)
         {
-            //foreach (Control label in this.Controls)
-            //{
-            //    if (label.GetType().ToString() == "System.Windows.Forms.Label")
-            //    {
-            //        label.Font = UI_FontUtil.SetRoomControlsFont();
-            //    }
-            //}
+            foreach (Control label in this.Controls)
+            {
+                if (label.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    label.Font = UI_FontUtil.roomControlFont;
+                }
+            }
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
             //lblCustoNo.Text = romCustoInfo.CustoNo;
@@ -189,6 +189,7 @@ namespace SYS.FormUI
             us_CustoPassportType = romRoomInfo.PassportType;
             us_CustoType = romRoomInfo.CustoType;
             us_CustoAddress = romRoomInfo.CustoAdress;
+<<<<<<< HEAD
             if (romCustoInfo.RoomStateId == 1)
             {
                 BackgroundImage = Resources.已住icon;
@@ -202,9 +203,27 @@ namespace SYS.FormUI
                 BackgroundImage = Resources.脏房icon;
             }
             if (romCustoInfo.RoomStateId == 4)
+=======
+            switch (romCustoInfo.RoomStateId)
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             {
-                BackgroundImage = Resources.预约房icon;
+                case 0:
+                    BackgroundImage = Resources.可住状态;
+                    break;
+                case 1:
+                    BackgroundImage = Resources.已住状态;
+                    break;
+                case 2:
+                    BackgroundImage = Resources.维修状态;
+                    break;
+                case 3:
+                    BackgroundImage = Resources.脏房状态;
+                    break;
+                case 4:
+                    BackgroundImage = Resources.预约状态;
+                    break;
             }
+            
         }
         #endregion
 
@@ -218,6 +237,10 @@ namespace SYS.FormUI
         #region 当右键菜单打开时事件方法
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
+            foreach (Control label in cmsMain.Controls)
+            {
+               label.Font = UI_FontUtil.roomControlFont;
+            }
             r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
             if (lblCustoNo.Text != "")
             {

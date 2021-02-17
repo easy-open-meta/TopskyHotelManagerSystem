@@ -27,5 +27,14 @@ namespace SYS.Application
         /// <returns></returns>
         Admin SelectAdminPwdByAccount(string account);
         #endregion
+
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="Account"></param>
+        /// <param name="NewPwd"></param>
+        /// <returns></returns>
+        bool UpdateNewPwdByOldPwd(string Account, string NewPwd);
     }
 }

@@ -59,15 +59,16 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmCheckOutForm_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
+            foreach (Control item in this.Controls)
             {
-                if (label.GetType().ToString() == "Sunny.UI.UITabControlMenu")
-                {
-                    label.Font = UI_FontUtil.SetChildControlsFont();
-                }
+                item.Font = UI_FontUtil.scorllingFont;
             }
             #region 加载客户类型信息
+<<<<<<< HEAD
             List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAll();
+=======
+            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cboCustoType.DataSource = lstSourceGrid;
             this.cboCustoType.DisplayMember = "TypeName";
             this.cboCustoType.ValueMember = "UserType";
@@ -76,7 +77,11 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
+<<<<<<< HEAD
             List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAll();
+=======
+            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.cboPassportType.DataSource = passPorts;
             this.cboPassportType.DisplayMember = "PassportName";
             this.cboPassportType.ValueMember = "PassportId";
@@ -84,7 +89,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAll();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAllCanUse();
             this.cboCustoSex.DataSource = listSexType;
             this.cboCustoSex.DisplayMember = "sexName";
             this.cboCustoSex.ValueMember = "sexId";

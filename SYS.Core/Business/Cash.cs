@@ -18,11 +18,16 @@ namespace SYS.Core
         /// <summary>
         /// 资产总值
         /// </summary>
-        public string CashPrice { get; set; }
+        public decimal CashPrice { get; set; }
         /// <summary>
         /// 所属部门
         /// </summary>
         public string CashClub { get; set; }
+        /// <summary>
+        /// 所属部门描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string DeptName { get; set; }
         /// <summary>
         /// 入库时间
         /// </summary>
@@ -35,5 +40,31 @@ namespace SYS.Core
         /// 资产经办人
         /// </summary>
         public string CashPerson { get; set; }
+        /// <summary>
+        /// 资产经办人
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string PersonName { get; set; }
+        /// <summary>
+        /// 删除标记
+        /// </summary>
+        public int delete_mk { get; set; }
+        /// <summary>
+        /// 资料创建人
+        /// </summary>
+        public string datains_usr { get; set; }
+        /// <summary>
+        /// 资料创建时间
+        /// </summary>
+        public DateTime? datains_date { get; set; }
+        /// <summary>
+        /// 资料更新人
+        /// </summary>
+        public string datachg_usr { get; set; }
+        /// <summary>
+        /// 资料更新时间
+        /// </summary>
+        public DateTime? datachg_date { get; set; }
+
     }
 }

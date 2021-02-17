@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustoManager));
             this.dgvCustomerList = new Sunny.UI.UIDataGridView();
             this.CustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +100,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
+<<<<<<< HEAD
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -110,11 +118,34 @@
             this.dgvCustomerList.RowHeadersVisible = false;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle8;
+=======
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCustomerList.EnableHeadersVisualStyles = false;
+            this.dgvCustomerList.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.dgvCustomerList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.dgvCustomerList.Location = new System.Drawing.Point(3, 38);
+            this.dgvCustomerList.Name = "dgvCustomerList";
+            this.dgvCustomerList.ReadOnly = true;
+            this.dgvCustomerList.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dgvCustomerList.RowTemplate.Height = 29;
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.ShowRect = false;
+<<<<<<< HEAD
             this.dgvCustomerList.Size = new System.Drawing.Size(981, 506);
+=======
+            this.dgvCustomerList.Size = new System.Drawing.Size(999, 506);
+>>>>>>> fb009c4fe69c0285ef7856f5960db104eecbccf7
             this.dgvCustomerList.TabIndex = 111;
             // 
             // CustoNo
@@ -241,7 +272,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 87;
-            this.label3.Text = "证件号码";
+            this.label3.Text = "客户编号";
             // 
             // btnSerach
             // 
