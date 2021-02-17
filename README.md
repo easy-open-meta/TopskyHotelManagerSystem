@@ -5,26 +5,23 @@
         <a href='https://img.shields.io/badge/license-MIT-000000.svg'><img src="https://img.shields.io/badge/license-MIT-000000.svg" alt=""></img></a>
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
-
-# 特别鸣谢：
-
-### [遗失情缘](https://blog.lost520.cn/)提供的圆形进度条加载效果！
-
 # 引用的开源项目：
 
 1. ##### Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)      
 
-2. ##### SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。
+2. ##### SQLSugar，国内最受欢迎ORM框架[SQLSugar。 [Apache-2.0开源协议](https://gitee.com/sunkaixuan/SqlSugar) 
+
+3. ##### SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。
 
    [SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
 
 # 本项目说明：
 
-##### 1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议，需要用到时请务必在项目介绍加上对应描述。
+##### 1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应描述。
 
 ##### 2、有bug欢迎提出issue！或进行评论
 
-##### 3、本系统部分页面基于SunnyUI.Net控件库进行创建，在此特别声明！
+##### 3、本系统90%页面基于SunnyUI.Net控件库进行创建，在此特别声明！
 
 ##### 4、**关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!**
 
@@ -61,13 +58,14 @@
 | (前台)用户管理 | 用户信息展示 | 搜索用户信息 | 添加客户   |      |        |        |   |
 | (前台)商品消费 | 商品列表   | 搜索商品信息 | 商品消费   | 消费信息 |        |        |   |
 | (前台)扩展功能 | 无      |        |        |      |        |        |   |
+| (后台)基础信息 | 职位类型维护 | 民族类型维护 | 学历类型维护 | 部门信息维护 | | | |
 | (后台)财务信息 | 员工工资账单 | 内部财务账单 | 酒店盈利情况 |      |        |        |   |
-| (后台)水电信息 | 水电查看   |        |        |      |        |        |   |
+| (后台)水电管理 | 水电信息 |        |        |      |        |        |   |
 | (后台)监管统计 | 监管部门情况 |        |        |      |        |        |   |
-| (后台)客房管理 | 新增客房   |        |        |      |        |        |   |
+| (后台)客房管理 | 房态图一览 | 新增客房 |        |      |        |        |   |
 | (后台)客户管理 | 客户信息管理 | 顾客消费账单 |        |      |        |        |   |
 | 功能汇总(续)  |      |        |   |   |   |   |   |
-| (后台)人事管理 | 员工管理 | 上传任命公告 |   |   |   |   |   |
+| (后台)人事管理 | 员工管理 | 公告日志 | 上传公告日志 |   |   |   |   |
 | (后台)物资管理 | 商品管理 | 仓库物资   |   |   |   |   |   |
 | 员工操作日志   |      |        |   |   |   |   |   |
 
