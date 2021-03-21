@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using SYS.Application;
+using Sunny.UI;
 
 namespace SYS.FormUI
 {
@@ -277,18 +278,10 @@ namespace SYS.FormUI
                 rm_RoomType = lblRoomType.Text;
                 rm_RoomMoney = Convert.ToDecimal(romCustoInfo.RoomMoney).ToString();
                 rm_RoomStateId = 4;
-                DialogResult dr = MessageBox.Show("欢迎入住，请先注册客户信息！", "友情提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dr == DialogResult.Yes)
-                {
-                    FrmReserList frm = new FrmReserList();
-                    frm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("无法完成入住操作！");
-                }
-                //FrmCheckIn frm = new FrmCheckIn();
-                //frm.Show();
+                UIMessageBox.ShowInfo("欢迎入住，请先注册客户信息！");
+                FrmReserList frm = new FrmReserList();
+                frm.ShowDialog();
+                return;
             }
             else
             {

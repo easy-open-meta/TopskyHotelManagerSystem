@@ -51,7 +51,6 @@
             this.txtTel = new Sunny.UI.UITextBox();
             this.dtpBirthday = new Sunny.UI.UIDatePicker();
             this.txtCustoAdress = new Sunny.UI.UITextBox();
-            this.picGetCustoNo = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSelect = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReserList
@@ -326,17 +324,6 @@
             this.txtCustoAdress.StyleCustomMode = true;
             this.txtCustoAdress.TabIndex = 126;
             // 
-            // picGetCustoNo
-            // 
-            this.picGetCustoNo.BackColor = System.Drawing.Color.Transparent;
-            this.picGetCustoNo.BackgroundImage = global::SYS.FormUI.Properties.Resources.获取用户编号;
-            this.picGetCustoNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picGetCustoNo.Location = new System.Drawing.Point(376, 298);
-            this.picGetCustoNo.Name = "picGetCustoNo";
-            this.picGetCustoNo.Size = new System.Drawing.Size(21, 20);
-            this.picGetCustoNo.TabIndex = 123;
-            this.picGetCustoNo.TabStop = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -456,7 +443,6 @@
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.txtCustoAdress);
-            this.Controls.Add(this.picGetCustoNo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -473,7 +459,6 @@
             this.Text = "预约列表";
             this.Load += new System.EventHandler(this.FrmReserList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGetCustoNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,7 +483,6 @@
         private Sunny.UI.UITextBox txtTel;
         private Sunny.UI.UIDatePicker dtpBirthday;
         private Sunny.UI.UITextBox txtCustoAdress;
-        private System.Windows.Forms.PictureBox picGetCustoNo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

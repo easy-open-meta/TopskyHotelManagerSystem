@@ -44,7 +44,7 @@ namespace SYS.FormUI
 
             if (result1 == true && result2 == true)
             {
-                MessageBox.Show("预约成功！请在指定时间内进行登记入住");
+                UIMessageBox.ShowSuccess("预约成功！请在指定时间内进行登记入住");
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
