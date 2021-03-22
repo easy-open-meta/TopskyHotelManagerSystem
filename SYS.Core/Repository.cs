@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace SYS.Common
 {
     public class Repository:IRepository
     {
-		private static string conStr = "Server=134.175.239.108;Database=tshoteldb;Uid=root;Pwd=yjj0720.;";
+		private static string conStr = "";
 
 		private static MySqlConnection con = null;
 
