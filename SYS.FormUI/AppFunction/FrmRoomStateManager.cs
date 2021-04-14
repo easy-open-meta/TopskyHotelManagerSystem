@@ -57,18 +57,18 @@ namespace SYS.FormUI
             {
                 if (new RoomService().UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) == true)
                 {
-                    UIMessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示");
+                    UIMessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示",UIStyle.Green);
                     FrmRoomManager.Reload();
                     this.Close();
                 }
                 else
                 {
-                    UIMessageBox.Show("修改失败", "来自小T的提示");
+                    UIMessageBox.Show("修改失败", "来自小T的提示",UIStyle.Red);
                 }
             }
             else
             {
-                MessageBox.Show("不能设置已住状态", "来自小T的提示");
+                UIMessageBox.Show("不能设置已住状态", "来自小T的提示",UIStyle.Orange);
             }
         }
         #endregion

@@ -56,7 +56,7 @@ namespace SYS.FormUI
                     datains_date = DateTime.Now
                 };
                 new RoomService().InsertRoom(rn);
-                MessageBox.Show("添加房间成功！");
+                UIMessageBox.Show("添加房间成功！");
                 LoadRoom();
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
@@ -70,7 +70,7 @@ namespace SYS.FormUI
             }
             else
             {
-                MessageBox.Show("房间信息不完整，请重试！");
+                UIMessageBox.Show("房间信息不完整，请重试！");
             }
 
         }
@@ -139,7 +139,7 @@ namespace SYS.FormUI
         {
             if (CheckRoomExists(txtRoomNo.Text))
             {
-                MessageBox.Show("该房间已存在，无法进行添加操作");
+                UIMessageBox.Show("该房间已存在，无法进行添加操作");
                 return;
             }
         }

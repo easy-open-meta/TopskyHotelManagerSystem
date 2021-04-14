@@ -103,7 +103,7 @@ namespace SYS.FormUI
         {
             if (dgvCustomerList.SelectedRows.Count < 0)
             {
-                UIMessageBox.Show("未选中客户，无法继续操作！", "系统提示", UIStyle.Orange, UIMessageBoxButtons.OK);
+                UIMessageBox.Show("未选中客户，无法继续操作！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                 return;
             }
             cm_CustoNo = dgvCustomerList.SelectedRows[0].Cells["CustoNo"].Value.ToString();
@@ -133,8 +133,8 @@ namespace SYS.FormUI
         private void picLoadOut_Click_1(object sender, EventArgs e)
         {
             #region 导出信息保存为Excel表
-            DialogResult ret = MessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒", MessageBoxButtons.YesNo);
-            if (ret == DialogResult.Yes)
+            bool tf = UIMessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒",UIStyle.Orange,UIMessageBoxButtons.OKCancel);
+            if (!tf)
             {
 
                 //Response.ContentEncoding = System.Text.Encoding.UTF8;
@@ -151,7 +151,7 @@ namespace SYS.FormUI
                 Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
                 if (xlApp == null)
                 {
-                    UIMessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒");
+                    UIMessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒",UIStyle.Red);
                     return;
                 }
                 Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
@@ -170,7 +170,7 @@ namespace SYS.FormUI
                 }
                 System.Windows.Forms.Application.DoEvents();
                 worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
-                MessageBox.Show(fileName + "信息导出成功", "来自T仔提示", MessageBoxButtons.OK);
+                UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -190,7 +190,8 @@ namespace SYS.FormUI
                     }
                     catch (Exception ex)
                     {//fileSaved = false;                      
-                        MessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
+                        UIMessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
+                        return;
                     }
                 }
                 xlApp.Quit();

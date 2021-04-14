@@ -268,10 +268,9 @@ namespace SYS.FormUI
 
         private void btnLocked_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("确定要锁定屏幕吗？锁定后不能做任何操作!", "锁屏", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
+            bool tf = UIMessageBox.Show("确定要锁定屏幕吗？锁定后不能做任何操作!", "锁屏", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+            if(!tf)
                 new FrmUnLockSystem().ShowDialog();
-            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

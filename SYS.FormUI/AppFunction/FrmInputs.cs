@@ -293,7 +293,7 @@ namespace SYS.FormUI
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回
-                MessageBox.Show("身份证号码不能为空！");
+                UIMessageBox.ShowError("身份证号码不能为空！");
                 if (txtCardID.CanFocus)
                 {
                     txtCardID.Focus();//设置当前输入焦点为txtCardID_identityCard
@@ -305,7 +305,7 @@ namespace SYS.FormUI
                 //身份证号码只能为15位或18位其它不合法
                 if (identityCard.Length != 15 && identityCard.Length != 18)
                 {
-                    MessageBox.Show("身份证号码为15位或18位，请检查！");
+                    UIMessageBox.ShowWarning("身份证号码为15位或18位，请检查！");
                     if (txtCardID.CanFocus)
                     {
                         txtCardID.Focus();
@@ -338,7 +338,7 @@ namespace SYS.FormUI
             }
             catch
             {
-                MessageBox.Show("请正确输入证件号码！");
+                UIMessageBox.ShowError("请正确输入证件号码！");
             }
 
             cbPassportType.SelectedIndex = 0;

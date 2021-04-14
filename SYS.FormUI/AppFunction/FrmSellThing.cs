@@ -110,31 +110,31 @@ namespace SYS.FormUI
         {
             if (txtRoomNo.Text == "")
             {
-                MessageBox.Show("消费房间不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("消费房间不能为空", "提示信息",UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtRoomNo.Focus();
                 return false;
             }
             if (txtSellNo.Text == "")
             {
-                MessageBox.Show("商品编号不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品编号不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtSellNo.Focus();
                 return false;
             }
             if (txtSellName.Text == "")
             {
-                MessageBox.Show("商品名称不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品名称不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtSellName.Focus();
                 return false;
             }
             if (txtPrice.Text == "")
             {
-                MessageBox.Show("商品单价不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品单价不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtPrice.Focus();
                 return false;
             }
             if (nudNum.Value <= 0)
             {
-                MessageBox.Show("数量不能小于0", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("数量不能小于0", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtPrice.Focus();
                 return false;
             }
@@ -183,7 +183,7 @@ namespace SYS.FormUI
                     }
                     else
                     {
-                        MessageBox.Show("添加失败");
+                        UIMessageBox.ShowError("添加失败");
                     }
                 }
             }
@@ -220,7 +220,7 @@ namespace SYS.FormUI
             }
             else
             {
-                MessageBox.Show("请选择要删除的消费记录！", "提示信息");
+                UIMessageBox.Show("请选择要删除的消费记录！", "提示信息",UIStyle.Red);
             }
         }
         #endregion

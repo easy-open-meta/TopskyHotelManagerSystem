@@ -93,6 +93,8 @@ namespace SYS.FormUI
             UIMessageBox.ShowSuccess("操作成功");
             dgvReserList.AutoGenerateColumns = false;
             dgvReserList.DataSource = new ReserService().SelectReserAll();
+            FrmRoomManager.Reload();
+            this.Close();
 
         }
 

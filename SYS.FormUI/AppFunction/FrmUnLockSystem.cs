@@ -76,7 +76,7 @@ namespace SYS.FormUI
             {
                 if (account.AdminPassword != txtUnLockPwd.Text.Trim())
                 {
-                    MessageBox.Show("密码错误! 请输入当前超管密码解锁!");
+                    UIMessageBox.ShowError("密码错误! 请输入当前超管密码解锁!");
                     txtUnLockPwd.Text = "";
                     txtUnLockPwd.Focus();
                     return;
@@ -160,7 +160,7 @@ namespace SYS.FormUI
         {
             if (e.KeyCode == Keys.F4 && e.Modifiers == Keys.Alt) 
             {
-                MessageBox.Show("请输入解锁密码！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                UIMessageBox.Show("请输入解锁密码！", "错误",UIStyle.Red, UIMessageBoxButtons.OK);
                 e.Handled = true;
             }
         }

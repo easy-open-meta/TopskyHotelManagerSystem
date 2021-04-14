@@ -116,7 +116,7 @@ namespace SYS.FormUI
                 }
                 if (result1 == true && result2 == true)
                 {
-                    MessageBox.Show("转房成功");
+                    UIMessageBox.ShowSuccess("转房成功");
                     bool m = new SpendService().InsertSpendInfo(s);
                     FrmRoomManager.Reload();
                     #region 获取添加操作日志所需的信息
@@ -133,7 +133,7 @@ namespace SYS.FormUI
                 }
                 else
                 {
-                    MessageBox.Show("转房失败");
+                    UIMessageBox.ShowError("转房失败");
                 }
             }
             

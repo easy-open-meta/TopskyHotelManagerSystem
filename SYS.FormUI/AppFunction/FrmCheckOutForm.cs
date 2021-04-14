@@ -273,10 +273,10 @@ namespace SYS.FormUI
                 }
                 catch
                 {
-                    MessageBox.Show("非法输入，请重新输入！", "系统提示",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UIMessageBox.Show("非法输入，请重新输入！", "系统提示",UIStyle.Orange);
                     txtReceipts.Clear();
                     txtReceipts.Focus();
+                    return;
                 }
             }
             else
@@ -306,7 +306,7 @@ namespace SYS.FormUI
                     {
                         return;
                     }
-                    MessageBox.Show("结算成功！", "系统提示");
+                    UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                     FrmRoomManager.Reload();
 
                     #region 获取添加操作日志所需的信息
@@ -333,7 +333,7 @@ namespace SYS.FormUI
                         {
                             return;
                         }
-                        MessageBox.Show("结算成功！", "系统提示");
+                        UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                         FrmRoomManager.Reload();
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog();
@@ -344,16 +344,19 @@ namespace SYS.FormUI
                         o.datains_date = DateTime.Now;
                         #endregion
                         new OperationlogService().InsertOperationLog(o);
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("结算失败！", "系统提示");
+                        UIMessageBox.Show("结算失败！", "系统提示", UIStyle.Red);
+                        return;
                     }
                 }
             }
             else
             {
-                MessageBox.Show("实收金额不能为空！", "系统提示");
+                UIMessageBox.Show("实收金额不能为空！", "系统提示", UIStyle.Orange);
+                return;
             }
         }
         #endregion

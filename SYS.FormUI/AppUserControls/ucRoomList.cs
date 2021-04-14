@@ -362,7 +362,8 @@ namespace SYS.FormUI
         public static string RoomState;
         private void tsmiChangeRoom_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("确定要进行转房吗？", "来自小T的提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            bool tf = UIMessageBox.Show("确定要进行转房吗？", "来自小T的提醒", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+            if (!tf)
             {
                 RoomNo = lblRoomNo.Text;
                 CustoNo = lblCustoNo.Text;
