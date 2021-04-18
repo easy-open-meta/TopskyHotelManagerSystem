@@ -94,6 +94,7 @@ namespace SYS.FormUI
                 #endregion
                 new OperationlogService().InsertOperationLog(o);
                 FrmWorkerManager.Reload();
+                this.Close();
             }
 
 

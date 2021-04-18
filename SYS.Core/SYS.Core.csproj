@@ -67,7 +67,6 @@
     <Compile Include="Util\IDCardUtil.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Util\Md5LockedUtil.cs" />
     <Compile Include="Worker\GBType.cs" />
     <Compile Include="Zero\Admin.cs" />
     <Compile Include="Zero\AdminInfo.cs" />
@@ -77,6 +76,7 @@
     <Compile Include="Customer\CustoSpend.cs" />
     <Compile Include="Customer\CustoType.cs" />
     <Compile Include="Business\Fonts.cs" />
+    <Compile Include="Zero\Base.cs" />
     <Compile Include="Zero\Dept.cs" />
     <Compile Include="Zero\Education.cs" />
     <Compile Include="Zero\LoginInfo.cs" />

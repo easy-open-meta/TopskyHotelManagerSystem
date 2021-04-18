@@ -111,7 +111,8 @@ namespace SYS.FormUI
         private void picClose_Click(object sender, EventArgs e)
         {
             //f.Close();
-            System.Windows.Forms.Application.Exit();
+            //System.Windows.Forms.Application.Exit();
+            this.Close();
         }
         #endregion
 
@@ -241,6 +242,13 @@ namespace SYS.FormUI
         private void picLogin_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLoginBackSystem_Click(object sender, EventArgs e)
+        {
+            FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
+            frmAdminEnter.ShowDialog();
+            this.Hide();
         }
     }
 }

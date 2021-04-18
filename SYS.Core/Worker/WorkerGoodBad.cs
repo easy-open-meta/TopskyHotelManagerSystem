@@ -36,6 +36,11 @@ namespace SYS.Core
     public class WorkerGoodBad
     {
         /// <summary>
+        /// 编号
+        /// </summary>
+        [SqlSugar.SugarColumn(IsOnlyIgnoreInsert = true, IsOnlyIgnoreUpdate = true)]
+        public int Id { get; set; }
+        /// <summary>
         /// 工号
         /// </summary>
         public string WorkNo { get; set; }

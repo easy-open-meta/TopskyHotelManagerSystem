@@ -43,7 +43,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\TS酒店管理系统.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -741,6 +742,7 @@
     <Content Include="icon\customers.ico" />
     <Content Include="icon\time.ico" />
     <Content Include="icon\传输_上传.ico" />
+    <Content Include="icon\关于我们.ico" />
     <Content Include="icon\历史公告.ico" />
     <Content Include="icon\员工任命.ico" />
     <Content Include="icon\员工管理.ico" />

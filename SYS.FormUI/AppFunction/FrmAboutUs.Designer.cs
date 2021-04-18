@@ -29,51 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAboutUs));
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.uiRichTextBox1 = new Sunny.UI.UIRichTextBox();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // uiRichTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("苹方-简", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox1.Location = new System.Drawing.Point(7, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(495, 165);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "     我们团队一直都致力于打造一款人机交互方便，操作简单的管理软件，我们的愿景是“让每个人都能免费享受到科技带来的改变”，一路心怀愿景去制作软件，我们的团队充" +
-    "满活力、激情！\n     关于本软件的详细信息，您可以浏览:https://github.com/NF-TopSky-Team/TopskyHotelManag" +
-    "erSystem 了解更多！另外仍会提供后续的版本升级支持！";
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("苹方-简", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(427, 183);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 26);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.uiRichTextBox1.AutoWordSelection = true;
+            this.uiRichTextBox1.FillColor = System.Drawing.Color.White;
+            this.uiRichTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiRichTextBox1.Location = new System.Drawing.Point(4, 40);
+            this.uiRichTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiRichTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRichTextBox1.Name = "uiRichTextBox1";
+            this.uiRichTextBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.uiRichTextBox1.Radius = 10;
+            this.uiRichTextBox1.ReadOnly = true;
+            this.uiRichTextBox1.Size = new System.Drawing.Size(539, 180);
+            this.uiRichTextBox1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiRichTextBox1.TabIndex = 0;
+            this.uiRichTextBox1.Text = resources.GetString("uiRichTextBox1.Text");
             // 
             // FrmAboutUs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(508, 214);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.richTextBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(547, 225);
+            this.Controls.Add(this.uiRichTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAboutUs";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowIcon = true;
+            this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "关于我们";
             this.Load += new System.EventHandler(this.FrmAboutUs_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmAboutUs_MouseDown);
@@ -83,7 +71,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button btnClose;
+
+        private Sunny.UI.UIRichTextBox uiRichTextBox1;
     }
 }

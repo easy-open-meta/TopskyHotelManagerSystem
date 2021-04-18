@@ -381,5 +381,13 @@ namespace SYS.Application
         bool UpdateGBType(GBType gBType);
 
         #endregion
+
+        #region URL模块
+        /// <summary>
+        /// 基础URL
+        /// </summary>
+        /// <returns></returns>
+        Base GetBase();
+        #endregion
     }
 }

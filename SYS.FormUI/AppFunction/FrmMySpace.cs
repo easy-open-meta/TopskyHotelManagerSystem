@@ -54,6 +54,14 @@ namespace SYS.FormUI
             cboSex.DataSource = new BaseService().SelectSexTypeAllCanUse();
             cboSex.DisplayMember = "sexName";
             cboSex.ValueMember = "sexId";
+            //加载部门信息
+            cboWorkerClub.DataSource = new BaseService().SelectDeptAllCanUse();
+            cboWorkerClub.DisplayMember = "dept_name";
+            cboWorkerClub.ValueMember = "dept_no";
+            //加载职位信息
+            cboWorkerPosition.DataSource = new BaseService().SelectPositionAllCanUse();
+            cboWorkerPosition.DisplayMember = "position_name";
+            cboWorkerPosition.ValueMember = "position_no";
             LoadData();
         }
 
@@ -198,12 +206,6 @@ namespace SYS.FormUI
 
             if (CheckInput(worker))
             {
-                //加密涉密信息
-                var newTel = Md5LockedUtil.MD5Encrypt32(worker.WorkerTel);
-                var newAddress = Md5LockedUtil.MD5Encrypt32(worker.WorkerAddress);
-                worker.WorkerTel = newTel;
-                worker.WorkerAddress = newAddress;
-
                 bool tf = new WorkerService().UpdateWorker(worker);
                 if (tf == false)
                 {

@@ -264,7 +264,6 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUse
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.manifest
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.application
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.xml
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.pdb
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.xml

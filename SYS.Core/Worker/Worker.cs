@@ -104,7 +104,7 @@ namespace SYS.Core
         /// <summary>
         /// 员工密码
         /// </summary>
-        [SqlSugar.SugarColumn(DefaultValue = "123456")]
+        [SqlSugar.SugarColumn(IsOnlyIgnoreInsert = true)]
         public string WorkerPwd { get; set; }
         /// <summary>
         /// 员工入职时间

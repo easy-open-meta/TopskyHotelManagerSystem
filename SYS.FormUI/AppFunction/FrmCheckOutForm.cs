@@ -290,7 +290,7 @@ namespace SYS.FormUI
         #region 结算按钮点击事件
         private void btnBalance_Click(object sender, EventArgs e)
         {
-            if (txtReceipts.Text != "")//判断实收金额是否为空
+            if (txtReceipts.Text != "" && Convert.ToDecimal(txtReceipts.Text) > Convert.ToDecimal(lblVIPPrice.Text))//判断实收金额是否为空以及是否小于应收金额
             {
                 Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
                 string checktime = r.CheckTime.ToString();//获取入住时间
@@ -355,7 +355,7 @@ namespace SYS.FormUI
             }
             else
             {
-                UIMessageBox.Show("实收金额不能为空！", "系统提示", UIStyle.Orange);
+                UIMessageBox.Show("实收金额不能为空或实收金额不能小于折后金额！", "系统提示", UIStyle.Orange);
                 return;
             }
         }

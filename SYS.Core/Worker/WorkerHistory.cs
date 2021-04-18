@@ -32,6 +32,11 @@ namespace SYS.Core
     public class WorkerHistory
     {
         /// <summary>
+        /// 编号
+        /// </summary>
+        [SqlSugar.SugarColumn(IsOnlyIgnoreInsert = true,IsOnlyIgnoreUpdate = true)]
+        public int Id { get; set; }
+        /// <summary>
         /// 工号
         /// </summary>
         public string WorkerId { get; set; }

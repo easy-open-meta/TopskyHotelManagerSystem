@@ -171,7 +171,8 @@ namespace SYS.FormUI
                     bool t = new CustoService().InsertCustomerInfo(custo);
                     if (t == true)
                     {
-                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
+                        //FrmCustoManager.ReloadCusto();
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog()
                         {
@@ -183,11 +184,13 @@ namespace SYS.FormUI
                         };
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
-                        FrmCustoManager.Reload();
+                        this.Close();
+                        return;
                     }
-                    else 
+                    else
                     {
                         UIMessageBox.Show("添加失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                        return;
                     }
 
                     foreach (Control Ctrol in this.Controls)
@@ -204,12 +207,16 @@ namespace SYS.FormUI
                         }
                     }
                 }
-                    
+                else
+                {
+                    UIMessageBox.Show("信息为空！");
+                    return;
+                }
                     
             }
-            catch
+            catch(Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
 
             }
         }
@@ -235,13 +242,6 @@ namespace SYS.FormUI
             {
                 if (CheckInput(custo))
                 {
-                    //启用MD5对涉密信息进行加密
-                    var NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
-                    var NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
-                    var NewAddress = Md5LockedUtil.MD5Encrypt32(custo.CustoAdress);
-                    custo.CustoID = NewID;
-                    custo.CustoTel = NewTel;
-                    custo.CustoAdress = NewAddress;
                     bool t = new CustoService().UpdCustomerInfoByCustoNo(custo);
                     if (t == true)
                     {
@@ -257,11 +257,13 @@ namespace SYS.FormUI
                         };
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
-                        FrmCustoManager.Reload();
+                        this.Close();
+                        //FrmCustoManager.ReloadCusto();
                     }
                     else
                     {
                         UIMessageBox.Show("修改失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                        return;
                     }
 
                     foreach (Control Ctrol in this.Controls)
@@ -278,10 +280,15 @@ namespace SYS.FormUI
                         }
                     }
                 }
+                else
+                {
+                    UIMessageBox.Show("信息为空！");
+                    return;
+                }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
 
             }
         }

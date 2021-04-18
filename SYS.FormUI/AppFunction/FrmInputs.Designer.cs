@@ -278,6 +278,7 @@ namespace SYS.FormUI
             this.txtCustoNo.Name = "txtCustoNo";
             this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoNo.Radius = 20;
+            this.txtCustoNo.ReadOnly = true;
             this.txtCustoNo.Size = new System.Drawing.Size(250, 35);
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;

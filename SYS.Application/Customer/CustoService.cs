@@ -24,6 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using LockedUtil;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -43,8 +44,9 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InsertCustomerInfo(Custo custo)
         {
-            string NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
-            string NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
+            Encrypt encrypt = new Encrypt();
+            string NewID = encrypt.EncryptStr(custo.CustoID);
+            string NewTel = encrypt.EncryptStr(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Insert(custo);
@@ -58,6 +60,11 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
+            Encrypt encrypt = new Encrypt();
+            string NewID = encrypt.EncryptStr(custo.CustoID);
+            string NewTel = encrypt.EncryptStr(custo.CustoTel);
+            custo.CustoID = NewID;
+            custo.CustoTel = NewTel;
             return base.Update(a => new Custo()
             {
                 CustoName  = custo.CustoName,
@@ -100,6 +107,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<Custo> SelectCustoAll()
         {
+            Encrypt encrypt = new Encrypt();
             //查询出所有性别类型
             List<SexType> sexTypes = new List<SexType>();
             sexTypes = base.Change<SexType>().GetList();
@@ -114,6 +122,12 @@ namespace SYS.Application
             custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
             custos.ForEach(source =>
             {
+                //解密身份证号码
+                var sourceStr = source.CustoID.Contains(":") ? encrypt.DeEncryptStr(source.CustoID) : source.CustoID;
+                source.CustoID = sourceStr;
+                //解密联系方式
+                var sourceTelStr = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
+                source.CustoTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
                 source.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;

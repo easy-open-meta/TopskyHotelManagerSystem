@@ -105,16 +105,18 @@ namespace SYS.Application
         /// 撤回客户消费信息
         /// </summary>
         /// <param name="roomNo"></param>
-        /// <param name="time"></param>
+        /// <param name="custoNo"></param>
+        /// <param name="spendTime"></param>
         /// <returns></returns>
-        public bool DeleteSellThing(string roomNo, string time)
+        public bool DeleteSellThing(string roomNo, string custoNo, DateTime spendTime)
         {
             return base.Change<Spend>().Update(a => new Spend()
             {
                 delete_mk = 1,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
-            },a => a.RoomNo == roomNo && a.SpendTime >= Convert.ToDateTime(time));
+            },a => a.MoneyState == "未结算" && a.RoomNo == roomNo && a.CustoNo == custoNo
+            && a.SpendTime == spendTime);
 
         }
 

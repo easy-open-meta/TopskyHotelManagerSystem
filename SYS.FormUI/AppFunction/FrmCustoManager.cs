@@ -48,12 +48,12 @@ namespace SYS.FormUI
 
 
         //定义委托类型的变量
-        public static ReloadCustomerList Reload;
+        public static ReloadCustomerList ReloadCusto;
 
         public FrmCustoManager()
         {
             InitializeComponent();
-            Reload = LoadCustomer;
+            ReloadCusto = LoadCustomer;
         }
 
         private void FrmCustoManager_Load(object sender, EventArgs e)
@@ -81,7 +81,6 @@ namespace SYS.FormUI
         #region 加载用户信息列表
         private void LoadCustomer()
         {
-            
             List<Custo> lstSource = new CustoService().SelectCustoAll();
             dgvCustomerList.AutoGenerateColumns = false;
             this.dgvCustomerList.DataSource = lstSource;

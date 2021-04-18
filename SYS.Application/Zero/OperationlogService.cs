@@ -57,7 +57,7 @@ namespace SYS.Application
         public List<OperationLog> SelectOperationlogAll()
         {
             List<OperationLog> operationLogs = new List<OperationLog>();
-            operationLogs = base.GetList(a => a.delete_mk != 1).OrderBy(a => a.OperationTime).ToList();
+            operationLogs = base.GetList(a => a.delete_mk != 1).OrderByDescending(a => a.OperationTime).ToList();
             return operationLogs;
         }
 

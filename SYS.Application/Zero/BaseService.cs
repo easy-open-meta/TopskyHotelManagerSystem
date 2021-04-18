@@ -678,5 +678,20 @@ namespace SYS.Application
         }
 
         #endregion
+
+        #region URL模块
+        /// <summary>
+        /// 基础URL
+        /// </summary>
+        /// <returns></returns>
+        public Base GetBase()
+        {
+            var baseTemp = new Base();
+
+            baseTemp = base.Change<Base>().GetSingle(a => a.url_no == 1);
+
+            return baseTemp;
+        }
+        #endregion
     }
 }

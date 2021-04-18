@@ -50,6 +50,7 @@
   <ItemGroup>
     <Content Include="bitbug_favicon %281%29.ico" />
     <Content Include="kse.dll" />
+    <Content Include="LockedUtil.dll" />
     <Content Include="MySql.Data.dll" />
     <Content Include="MySql.Data.EntityFramework.dll" />
     <Content Include="MySql.Web.dll" />
