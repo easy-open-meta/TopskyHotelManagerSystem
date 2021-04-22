@@ -154,3 +154,5 @@ F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelMan
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CopyComplete
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
+D:\JVN.TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache
+D:\JVN.TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache

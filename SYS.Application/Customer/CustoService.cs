@@ -24,6 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EncryptTools;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -35,6 +36,8 @@ namespace SYS.Application
     /// </summary>
     public class CustoService:Repository<Custo>, ICustoService
     {
+        Encrypt encrypt = new Encrypt();
+
         #region 添加客户信息
         /// <summary>
         /// 添加客户信息
@@ -43,8 +46,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InsertCustomerInfo(Custo custo)
         {
-            string NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
-            string NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
+            string NewID = encrypt.EncryptStr(custo.CustoID);
+            string NewTel = encrypt.EncryptStr(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Insert(custo);
@@ -58,15 +61,18 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
+            var encryStrId = encrypt.EncryptStr(custo.CustoID);
+            var encryStrTel = encrypt.EncryptStr(custo.CustoTel);
+            var encryStrAddress = encrypt.EncryptStr(custo.CustoAdress);
             return base.Update(a => new Custo()
             {
                 CustoName  = custo.CustoName,
                 CustoSex = custo.CustoSex,
                 CustoType = custo.CustoType,
                 CustoBirth = custo.CustoBirth,
-                CustoAdress = custo.CustoAdress,
-                CustoID = custo.CustoID,
-                CustoTel = custo.CustoTel,
+                CustoAdress = encryStrAddress,
+                CustoID = encryStrId,
+                CustoTel = encryStrTel,
                 PassportType = custo.PassportType,
                 datachg_usr = custo.datachg_usr,
                 datachg_date = DateTime.Now
@@ -123,6 +129,10 @@ namespace SYS.Application
                 //客户类型
                 var custoType = custoTypes.FirstOrDefault(a => a.UserType == source.CustoType);
                 source.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
+
+                source.CustoID = source.CustoID.Contains(":") ? encrypt.DeEncryptStr(source.CustoID) : source.CustoID;
+                source.CustoTel = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
+                source.CustoAdress = !string.IsNullOrEmpty(source.CustoAdress) && source.CustoAdress.Contains(":") ? encrypt.DeEncryptStr(source.CustoAdress) : source.CustoAdress;
             });
             return custos;
         }
@@ -145,6 +155,12 @@ namespace SYS.Application
             //客户类型
             var custoType = base.Change<CustoType>().GetSingle(a => a.UserType == c.CustoType);
             c.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
+
+
+            c.CustoID = c.CustoID.Contains(":") ? encrypt.DeEncryptStr(c.CustoID) : c.CustoID;
+            c.CustoTel = c.CustoTel.Contains(":") ? encrypt.DeEncryptStr(c.CustoTel) : c.CustoTel;
+            c.CustoAdress = c.CustoAdress.Contains(":") ? encrypt.DeEncryptStr(c.CustoAdress) : c.CustoAdress;
+
             return c;
         }
 

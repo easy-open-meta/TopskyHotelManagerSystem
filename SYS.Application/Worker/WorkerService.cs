@@ -24,6 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EncryptTools;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -35,6 +36,8 @@ namespace SYS.Application
     /// </summary>
     public class WorkerService:Repository<Worker>,IWorkerService
     {
+        Encrypt encrypt = new Encrypt();
+
         #region 修改员工信息
         /// <summary>
         /// 修改员工信息
@@ -83,6 +86,12 @@ namespace SYS.Application
         /// <returns></returns>
         public bool AddWorker(Worker worker)
         {
+            var newId = encrypt.EncryptStr(worker.CardId);
+            var newTel = encrypt.EncryptStr(worker.WorkerTel);
+            var newAddr = encrypt.EncryptStr(worker.WorkerAddress);
+            worker.CardId = newId;
+            worker.WorkerTel = newTel;
+            worker.WorkerAddress = newAddr;
             return base.Insert(worker);
         }
         #endregion
