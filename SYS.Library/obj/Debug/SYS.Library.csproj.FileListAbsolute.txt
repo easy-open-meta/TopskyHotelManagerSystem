@@ -93,3 +93,5 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\zh-Ha
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resources\Alibaba-PuHuiTi-Regular.ttf
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\Resources\Resource.resx
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Library\bin\Debug\LockedUtil.dll
+D:\JVN.TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache
+D:\JVN.TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
