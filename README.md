@@ -91,5 +91,9 @@
 
 **2、随后打开Data.sql文件进行数据导入。**
 
+# Star趋势图
+[![Giteye chart](https://chart.giteye.net/gitee/java-and-net/TopskyHotelManagerSystem/Z9DD26VK.png)](https://giteye.net/chart/Z9DD26VK)
+感谢Giteye提供的趋势图报表功能！
+
 
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
