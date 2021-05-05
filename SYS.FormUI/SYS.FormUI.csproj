@@ -411,7 +411,9 @@
     <Compile Include="AppFunction\FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Font\UI-FontUtil.cs" />
+    <Compile Include="Font\UI-FontUtil.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppUserControls\ucHistory.cs">
@@ -685,6 +687,9 @@
     <None Include="Resources\获取用户编号-ia.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png" />
+    <None Include="Resources\系统管理员.png" />
+    <None Include="Resources\返回 %281%29.png" />
     <None Include="Resources\关于我们.png" />
     <None Include="Resources\检查更新 %281%29.png" />
     <None Include="Resources\个人中心.png" />

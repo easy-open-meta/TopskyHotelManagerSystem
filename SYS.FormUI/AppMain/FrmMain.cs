@@ -426,6 +426,7 @@ namespace SYS.FormUI
             }
             else
             {
+                tsmiMain.Text = "最小化";
                 this.WindowState = FormWindowState.Minimized;
             }
         }
@@ -549,7 +550,17 @@ namespace SYS.FormUI
 
         private void picLogo_Click(object sender, EventArgs e)
         {
+            FrmAboutUs frmAboutUs = new FrmAboutUs();
+            frmAboutUs.ShowDialog();
+        }
 
+        private void tsmiLoginBackSystem_Click(object sender, EventArgs e)
+        {
+            FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
+
+            frmAdminEnter.ShowDialog();
+
+            this.Hide();
         }
     }
 }

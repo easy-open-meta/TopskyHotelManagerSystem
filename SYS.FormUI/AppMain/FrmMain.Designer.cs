@@ -36,20 +36,15 @@
             this.pnlMID = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiMain = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiChangeUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLockScreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAboutUs = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblScroll = new Sunny.UI.UIScrollingText();
             this.tmrFont = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnHello = new Sunny.UI.UIButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.picFormSize = new Sunny.UI.UIButton();
             this.picClose = new Sunny.UI.UIButton();
@@ -63,7 +58,14 @@
             this.picCustomer = new Sunny.UI.UIImageButton();
             this.picCommodity = new Sunny.UI.UIImageButton();
             this.picExtend = new Sunny.UI.UIImageButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiChangeUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLockScreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoginBackSystem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAboutUs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsMain.SuspendLayout();
             this.pnlCheckInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -132,86 +134,30 @@
             this.tsmiMySpace,
             this.toolStripSeparator3,
             this.tsmiLockScreen,
+            this.toolStripSeparator4,
+            this.tsmiLoginBackSystem,
             this.toolStripSeparator2,
             this.tsmiCheckUpdate,
             this.tsmiAboutUs,
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(144, 190);
+            this.cmsMain.Size = new System.Drawing.Size(209, 258);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
-            // 
-            // tsmiMain
-            // 
-            this.tsmiMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiMain.Image = global::SYS.FormUI.Properties.Resources.主页__1_;
-            this.tsmiMain.Name = "tsmiMain";
-            this.tsmiMain.Size = new System.Drawing.Size(143, 24);
-            this.tsmiMain.Text = "主界面";
-            this.tsmiMain.Click += new System.EventHandler(this.tsmiMain_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(205, 6);
             // 
-            // tsmiChangeUser
+            // toolStripSeparator3
             // 
-            this.tsmiChangeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiChangeUser.Image = global::SYS.FormUI.Properties.Resources.切换账号;
-            this.tsmiChangeUser.Name = "tsmiChangeUser";
-            this.tsmiChangeUser.Size = new System.Drawing.Size(143, 24);
-            this.tsmiChangeUser.Text = "切换用户";
-            this.tsmiChangeUser.Click += new System.EventHandler(this.tsmiChangeUser_Click);
-            // 
-            // tsmiLockScreen
-            // 
-            this.tsmiLockScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiLockScreen.Image = global::SYS.FormUI.Properties.Resources.锁屏;
-            this.tsmiLockScreen.Name = "tsmiLockScreen";
-            this.tsmiLockScreen.Size = new System.Drawing.Size(143, 24);
-            this.tsmiLockScreen.Text = "快速锁屏";
-            this.tsmiLockScreen.Click += new System.EventHandler(this.tsmiLockScreen_Click);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(205, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(140, 6);
-            // 
-            // tsmiMySpace
-            // 
-            this.tsmiMySpace.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
-            this.tsmiMySpace.Name = "tsmiMySpace";
-            this.tsmiMySpace.Size = new System.Drawing.Size(143, 24);
-            this.tsmiMySpace.Text = "个人中心";
-            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
-            // 
-            // tsmiCheckUpdate
-            // 
-            this.tsmiCheckUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiCheckUpdate.Image = global::SYS.FormUI.Properties.Resources.检查更新__1_;
-            this.tsmiCheckUpdate.Name = "tsmiCheckUpdate";
-            this.tsmiCheckUpdate.Size = new System.Drawing.Size(143, 24);
-            this.tsmiCheckUpdate.Text = "检查更新";
-            this.tsmiCheckUpdate.Click += new System.EventHandler(this.tsmiCheckUpdate_Click);
-            // 
-            // tsmiAboutUs
-            // 
-            this.tsmiAboutUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiAboutUs.Image = global::SYS.FormUI.Properties.Resources.关于我们;
-            this.tsmiAboutUs.Name = "tsmiAboutUs";
-            this.tsmiAboutUs.Size = new System.Drawing.Size(143, 24);
-            this.tsmiAboutUs.Text = "关于我们";
-            this.tsmiAboutUs.Click += new System.EventHandler(this.tsmiAboutUs_Click);
-            // 
-            // tsmiExitSystem
-            // 
-            this.tsmiExitSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiExitSystem.Image = global::SYS.FormUI.Properties.Resources.注销;
-            this.tsmiExitSystem.Name = "tsmiExitSystem";
-            this.tsmiExitSystem.Size = new System.Drawing.Size(143, 24);
-            this.tsmiExitSystem.Text = "退出系统";
-            this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(205, 6);
             // 
             // linkLabel1
             // 
@@ -278,6 +224,11 @@
             this.btnHello.Style = Sunny.UI.UIStyle.Custom;
             this.btnHello.StyleCustomMode = true;
             this.btnHello.TabIndex = 33;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(205, 6);
             // 
             // uiButton1
             // 
@@ -480,10 +431,77 @@
             this.picExtend.WaitOnLoad = true;
             this.picExtend.Click += new System.EventHandler(this.picExtend_Click);
             // 
-            // toolStripSeparator3
+            // tsmiMain
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(140, 6);
+            this.tsmiMain.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiMain.Image = global::SYS.FormUI.Properties.Resources.主页__1_;
+            this.tsmiMain.Name = "tsmiMain";
+            this.tsmiMain.Size = new System.Drawing.Size(208, 26);
+            this.tsmiMain.Text = "主界面";
+            this.tsmiMain.Click += new System.EventHandler(this.tsmiMain_Click);
+            // 
+            // tsmiChangeUser
+            // 
+            this.tsmiChangeUser.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiChangeUser.Image = global::SYS.FormUI.Properties.Resources.切换账号;
+            this.tsmiChangeUser.Name = "tsmiChangeUser";
+            this.tsmiChangeUser.Size = new System.Drawing.Size(208, 26);
+            this.tsmiChangeUser.Text = "切换用户";
+            this.tsmiChangeUser.Click += new System.EventHandler(this.tsmiChangeUser_Click);
+            // 
+            // tsmiMySpace
+            // 
+            this.tsmiMySpace.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
+            this.tsmiMySpace.Name = "tsmiMySpace";
+            this.tsmiMySpace.Size = new System.Drawing.Size(208, 26);
+            this.tsmiMySpace.Text = "个人中心";
+            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
+            // 
+            // tsmiLockScreen
+            // 
+            this.tsmiLockScreen.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiLockScreen.Image = global::SYS.FormUI.Properties.Resources.锁屏;
+            this.tsmiLockScreen.Name = "tsmiLockScreen";
+            this.tsmiLockScreen.Size = new System.Drawing.Size(208, 26);
+            this.tsmiLockScreen.Text = "快速锁屏";
+            this.tsmiLockScreen.Click += new System.EventHandler(this.tsmiLockScreen_Click);
+            // 
+            // tsmiLoginBackSystem
+            // 
+            this.tsmiLoginBackSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiLoginBackSystem.Image = global::SYS.FormUI.Properties.Resources.系统管理员;
+            this.tsmiLoginBackSystem.Name = "tsmiLoginBackSystem";
+            this.tsmiLoginBackSystem.Size = new System.Drawing.Size(208, 26);
+            this.tsmiLoginBackSystem.Text = "进入后台管理系统";
+            this.tsmiLoginBackSystem.Click += new System.EventHandler(this.tsmiLoginBackSystem_Click);
+            // 
+            // tsmiCheckUpdate
+            // 
+            this.tsmiCheckUpdate.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiCheckUpdate.Image = global::SYS.FormUI.Properties.Resources.检查更新__1_;
+            this.tsmiCheckUpdate.Name = "tsmiCheckUpdate";
+            this.tsmiCheckUpdate.Size = new System.Drawing.Size(208, 26);
+            this.tsmiCheckUpdate.Text = "检查更新";
+            this.tsmiCheckUpdate.Click += new System.EventHandler(this.tsmiCheckUpdate_Click);
+            // 
+            // tsmiAboutUs
+            // 
+            this.tsmiAboutUs.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiAboutUs.Image = global::SYS.FormUI.Properties.Resources.关于我们;
+            this.tsmiAboutUs.Name = "tsmiAboutUs";
+            this.tsmiAboutUs.Size = new System.Drawing.Size(208, 26);
+            this.tsmiAboutUs.Text = "关于我们";
+            this.tsmiAboutUs.Click += new System.EventHandler(this.tsmiAboutUs_Click);
+            // 
+            // tsmiExitSystem
+            // 
+            this.tsmiExitSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiExitSystem.Image = global::SYS.FormUI.Properties.Resources.注销;
+            this.tsmiExitSystem.Name = "tsmiExitSystem";
+            this.tsmiExitSystem.Size = new System.Drawing.Size(208, 26);
+            this.tsmiExitSystem.Text = "退出系统";
+            this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
             // 
             // FrmMain
             // 
@@ -567,5 +585,7 @@
         private Sunny.UI.UIImageButton picExtend;
         private System.Windows.Forms.ToolStripMenuItem tsmiMySpace;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLoginBackSystem;
     }
 }

@@ -24,7 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using LockedUtil;
+using EncryptTools;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;

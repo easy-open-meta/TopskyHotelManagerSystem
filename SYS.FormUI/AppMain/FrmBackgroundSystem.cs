@@ -269,7 +269,7 @@ namespace SYS.FormUI
         private void btnLocked_Click(object sender, EventArgs e)
         {
             bool tf = UIMessageBox.Show("确定要锁定屏幕吗？锁定后不能做任何操作!", "锁屏", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
-            if(!tf)
+            if(tf)
                 new FrmUnLockSystem().ShowDialog();
         }
 
@@ -280,7 +280,7 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(0);
+            this.Close();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

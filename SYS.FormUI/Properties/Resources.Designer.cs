@@ -143,6 +143,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018_jpg_w1024_new_small {
+            get {
+                object obj = ResourceManager.GetObject("jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap minus {
             get {
                 object obj = ResourceManager.GetObject("minus", resourceCulture);
@@ -503,6 +513,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 系统管理员 {
+            get {
+                object obj = ResourceManager.GetObject("系统管理员", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 組織圖塊 {
             get {
                 object obj = ResourceManager.GetObject("組織圖塊", resourceCulture);
@@ -616,6 +636,26 @@ namespace SYS.FormUI.Properties {
         public static System.Drawing.Bitmap 财务部卡片 {
             get {
                 object obj = ResourceManager.GetObject("财务部卡片", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 转换 {
+            get {
+                object obj = ResourceManager.GetObject("转换", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 返回__1_ {
+            get {
+                object obj = ResourceManager.GetObject("返回 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

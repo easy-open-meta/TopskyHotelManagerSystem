@@ -79,7 +79,6 @@ D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Application.dll.co
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Application.xml
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Application.dll
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Application.pdb
-D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\LockedUtil.dll
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\MySql.Data.dll
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\MySql.Data.EntityFramework.dll
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\MySql.Web.dll
@@ -105,3 +104,4 @@ D:\JVN.TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csproj
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csproj.CopyComplete
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.dll
 D:\JVN.TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.pdb
+D:\JVN.TopSkyHotelManagerSystem\SYS.Application\bin\Debug\EncryptTools.dll
