@@ -341,25 +341,6 @@ namespace SYS.FormUI
         #region 后台系统入口事件方法
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            i++;
-            if (i < 3)
-            {
-
-            }
-            else if (i % 3 == 0)
-            {
-                FrmAdminEnter frm = new FrmAdminEnter();
-                frm.Show();
-                #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = LoginInfo.WorkerNo + LoginInfo.WorkerName + "于" + DateTime.Now + "尝试或成功登入了后台系统！";
-                o.OperationAccount = LoginInfo.WorkerNo;
-                o.datains_usr = LoginInfo.WorkerNo;
-                o.datains_date = DateTime.Now;
-                #endregion
-                new OperationlogService().InsertOperationLog(o);
-            }
 
         }
         #endregion
@@ -374,8 +355,9 @@ namespace SYS.FormUI
         #region 检查软件更新版本事件方法
         private void tsmiCheckUpdate_Click(object sender, EventArgs e)
         {
+            var tempUrl = new BaseService().GetBase();
             //调用系统默认的浏览器
-            System.Diagnostics.Process.Start("https://gitee.com/yjj0720/TopskyHotelManagerSystem/releases");
+            System.Diagnostics.Process.Start(tempUrl.url_addr);
         }
         #endregion
 
@@ -444,6 +426,7 @@ namespace SYS.FormUI
             }
             else
             {
+                tsmiMain.Text = "最小化";
                 this.WindowState = FormWindowState.Minimized;
             }
         }
@@ -563,6 +546,21 @@ namespace SYS.FormUI
         public void CloseMine() 
         {
             this.Close();
+        }
+
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+            FrmAboutUs frmAboutUs = new FrmAboutUs();
+            frmAboutUs.ShowDialog();
+        }
+
+        private void tsmiLoginBackSystem_Click(object sender, EventArgs e)
+        {
+            FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
+
+            frmAdminEnter.ShowDialog();
+
+            this.Hide();
         }
     }
 }

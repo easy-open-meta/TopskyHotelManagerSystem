@@ -114,6 +114,7 @@
             this.WorkerNo.Name = "WorkerNo";
             this.WorkerNo.Padding = new System.Windows.Forms.Padding(5);
             this.WorkerNo.Radius = 20;
+            this.WorkerNo.ReadOnly = true;
             this.WorkerNo.Size = new System.Drawing.Size(166, 35);
             this.WorkerNo.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerNo.StyleCustomMode = true;

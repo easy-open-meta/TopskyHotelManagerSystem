@@ -171,7 +171,8 @@ namespace SYS.FormUI
                     bool t = new CustoService().InsertCustomerInfo(custo);
                     if (t == true)
                     {
-                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
+                        //FrmCustoManager.ReloadCusto();
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog()
                         {
@@ -183,11 +184,13 @@ namespace SYS.FormUI
                         };
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
-                        FrmCustoManager.Reload();
+                        this.Close();
+                        return;
                     }
-                    else 
+                    else
                     {
                         UIMessageBox.Show("添加失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                        return;
                     }
 
                     foreach (Control Ctrol in this.Controls)
@@ -204,12 +207,16 @@ namespace SYS.FormUI
                         }
                     }
                 }
-                    
+                else
+                {
+                    UIMessageBox.Show("信息为空！");
+                    return;
+                }
                     
             }
-            catch
+            catch(Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
 
             }
         }
@@ -235,13 +242,6 @@ namespace SYS.FormUI
             {
                 if (CheckInput(custo))
                 {
-                    //启用MD5对涉密信息进行加密
-                    var NewID = Md5LockedUtil.MD5Encrypt32(custo.CustoID);
-                    var NewTel = Md5LockedUtil.MD5Encrypt32(custo.CustoTel);
-                    var NewAddress = Md5LockedUtil.MD5Encrypt32(custo.CustoAdress);
-                    custo.CustoID = NewID;
-                    custo.CustoTel = NewTel;
-                    custo.CustoAdress = NewAddress;
                     bool t = new CustoService().UpdCustomerInfoByCustoNo(custo);
                     if (t == true)
                     {
@@ -257,11 +257,13 @@ namespace SYS.FormUI
                         };
                         new OperationlogService().InsertOperationLog(o);
                         #endregion
-                        FrmCustoManager.Reload();
+                        this.Close();
+                        //FrmCustoManager.ReloadCusto();
                     }
                     else
                     {
                         UIMessageBox.Show("修改失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                        return;
                     }
 
                     foreach (Control Ctrol in this.Controls)
@@ -278,10 +280,15 @@ namespace SYS.FormUI
                         }
                     }
                 }
+                else
+                {
+                    UIMessageBox.Show("信息为空！");
+                    return;
+                }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
 
             }
         }
@@ -293,7 +300,7 @@ namespace SYS.FormUI
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回
-                MessageBox.Show("身份证号码不能为空！");
+                UIMessageBox.ShowError("身份证号码不能为空！");
                 if (txtCardID.CanFocus)
                 {
                     txtCardID.Focus();//设置当前输入焦点为txtCardID_identityCard
@@ -305,7 +312,7 @@ namespace SYS.FormUI
                 //身份证号码只能为15位或18位其它不合法
                 if (identityCard.Length != 15 && identityCard.Length != 18)
                 {
-                    MessageBox.Show("身份证号码为15位或18位，请检查！");
+                    UIMessageBox.ShowWarning("身份证号码为15位或18位，请检查！");
                     if (txtCardID.CanFocus)
                     {
                         txtCardID.Focus();
@@ -338,7 +345,7 @@ namespace SYS.FormUI
             }
             catch
             {
-                MessageBox.Show("请正确输入证件号码！");
+                UIMessageBox.ShowError("请正确输入证件号码！");
             }
 
             cbPassportType.SelectedIndex = 0;

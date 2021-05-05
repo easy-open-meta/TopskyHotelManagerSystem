@@ -37,7 +37,6 @@ namespace SYS.Application
     public class WorkerService:Repository<Worker>,IWorkerService
     {
         Encrypt encrypt = new Encrypt();
-
         #region 修改员工信息
         /// <summary>
         /// 修改员工信息
@@ -46,6 +45,9 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdateWorker(Worker worker)
         {
+            //加密联系方式
+            var sourceTelStr = encrypt.EncryptStr(worker.WorkerTel);
+            worker.WorkerTel = sourceTelStr;
             return base.Update(a => new Worker()
             {
                 WorkerName = worker.WorkerName,
@@ -123,6 +125,12 @@ namespace SYS.Application
             workers = base.Change<Worker>().GetList(a => a.delete_mk != 1);
             workers.ForEach(source =>
             {
+                //解密身份证号码
+                var sourceStr = source.CardId.Contains(":") ? encrypt.DeEncryptStr(source.CardId) : source.CardId;
+                source.CardId = sourceStr;
+                //解密联系方式
+                var sourceTelStr = source.WorkerTel.Contains(":") ? encrypt.DeEncryptStr(source.WorkerTel) : source.WorkerTel;
+                source.WorkerTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.WorkerSex);
                 source.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -154,6 +162,12 @@ namespace SYS.Application
         {
             Worker w = new Worker();
             w = base.Change<Worker>().GetSingle(a => a.WorkerId == workerId);
+            //解密身份证号码
+            var sourceStr = w.CardId.Contains(":") ? encrypt.DeEncryptStr(w.CardId) : w.CardId;
+            w.CardId = sourceStr;
+            //解密联系方式
+            var sourceTelStr = w.WorkerTel.Contains(":") ? encrypt.DeEncryptStr(w.WorkerTel) : w.WorkerTel;
+            w.WorkerTel = sourceTelStr;
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -185,12 +199,20 @@ namespace SYS.Application
         public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd)
         {
             Worker w = new Worker();
-            w = base.GetSingle(a => a.WorkerId == id && a.WorkerPwd == pwd);
+            w = base.GetSingle(a => a.WorkerId == id);
             if (w == null)
             {
                 w = null;
                 return w;
             }
+
+            var sourceStr = w.WorkerPwd.Contains(":") ? encrypt.DeEncryptStr(w.WorkerPwd) : w.WorkerPwd;
+            if (sourceStr != pwd)
+            {
+                w = null;
+                return w;
+            }
+
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
             w.WorkerSexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -218,9 +240,10 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdWorkerPwdByWorkNo(string workId,string workPwd)
         {
+            string NewPwd = encrypt.EncryptStr(workPwd);
             return base.Update(a => new Worker()
             {
-                WorkerPwd = workPwd,
+                WorkerPwd = NewPwd,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
             },a => a.WorkerId == workId);

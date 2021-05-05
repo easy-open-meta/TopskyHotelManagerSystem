@@ -50,11 +50,11 @@ namespace SYS.Browser.WebAPI.Controllers
         /// <param name="roomNo"></param>
         /// <param name="time"></param>
         /// <returns></returns>
-        [HttpDelete]
-        public bool DeleteSellThing([FromBody]string roomNo, string time)
-        {
-            return new SellService().DeleteSellThing(roomNo, time);
-        }
+        //[HttpDelete]
+        //public bool DeleteSellThing([FromBody]string roomNo, string time)
+        //{
+        //    return new SellService().DeleteSellThing(roomNo, time);
+        //}
 
         /// <summary>
         /// 根据商品名称查询商品信息

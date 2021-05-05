@@ -22,6 +22,7 @@
  *
  */
 using SYS.Core;
+using System;
 using System.Collections.Generic;
 
 namespace SYS.Application
@@ -70,9 +71,10 @@ namespace SYS.Application
         /// 撤回客户消费信息
         /// </summary>
         /// <param name="roomNo"></param>
-        /// <param name="time"></param>
+        /// <param name="custoNo"></param>
+        /// <param name="spendTime"></param>
         /// <returns></returns>
-        bool DeleteSellThing(string roomNo, string time);
+        bool DeleteSellThing(string roomNo, string custoNo, DateTime spendTime);
 
         /// <summary>
         /// 根据商品编号删除商品信息

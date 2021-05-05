@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : TencentCloudDB
- Source Server Type    : MySQL
- Source Server Version : 80023
- Source Host           : 134.175.239.108:3306
- Source Schema         : tshoteldb
-
- Target Server Type    : MySQL
- Target Server Version : 80023
- File Encoding         : 65001
-
- Date: 14/02/2021 10:32:39
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -82,26 +66,26 @@ CREATE TABLE `backinfo`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
+-- Table structure for base
+-- ----------------------------
+DROP TABLE IF EXISTS `base`;
+CREATE TABLE `base`  (
+  `url_no` int NOT NULL COMMENT 'ID',
+  `url_addr` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '地址',
+  PRIMARY KEY (`url_no`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for cardcodes
 -- ----------------------------
 DROP TABLE IF EXISTS `cardcodes`;
 CREATE TABLE `cardcodes`  (
   `id` bigint NOT NULL COMMENT '编号',
-  `Province` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '省份',
+  `Province` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '省份',
   `City` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '城市',
   `District` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地区',
-  `bm` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地区识别码'
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Table structure for cardinfo
--- ----------------------------
-DROP TABLE IF EXISTS `cardinfo`;
-CREATE TABLE `cardinfo`  (
-  `CardID` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `CardName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `CustoNo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`CardID`) USING BTREE
+  `bm` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地区识别码',
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -111,7 +95,7 @@ DROP TABLE IF EXISTS `cashinfo`;
 CREATE TABLE `cashinfo`  (
   `CashNo` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '资产编号',
   `CashName` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '资产名称',
-  `CashPrice` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '资产总值',
+  `CashPrice` decimal(10, 2) NOT NULL COMMENT '资产总值',
   `CashClub` varchar(800) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '所属部门',
   `CashTime` datetime(0) NOT NULL COMMENT '入库时间',
   `CashSource` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '资产来源',
@@ -140,7 +124,8 @@ CREATE TABLE `checkinfo`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`CheckNo`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -161,7 +146,7 @@ CREATE TABLE `counterrule`  (
   `datachg_usrid` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_time` datetime(0) NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`rule_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for custospend
@@ -183,7 +168,7 @@ CREATE TABLE `custospend`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`SpendId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for dept
@@ -239,13 +224,14 @@ CREATE TABLE `fonts`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `gbtype`;
 CREATE TABLE `gbtype`  (
-  `GBTypeId` int NULL DEFAULT NULL,
+  `GBTypeId` int NOT NULL,
   `GBName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`GBTypeId`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -280,7 +266,8 @@ CREATE TABLE `moneyinfo`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`MoneyNo`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -303,6 +290,7 @@ CREATE TABLE `nation`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `operationlog`;
 CREATE TABLE `operationlog`  (
+  `OperationId` bigint NOT NULL AUTO_INCREMENT,
   `OperationTime` datetime(0) NOT NULL,
   `OperationLog` varchar(8000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `OperationAccount` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -310,7 +298,8 @@ CREATE TABLE `operationlog`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`OperationId`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -348,18 +337,19 @@ CREATE TABLE `position`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `reser`;
 CREATE TABLE `reser`  (
-  `ReserId` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `ReserId` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `CustoName` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `CustoTel` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `ReserWay` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `ReserRoom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `ReserDate` date NULL DEFAULT NULL,
-  `ReserEndDate` date NULL DEFAULT NULL,
+  `ReserEndDay` date NULL DEFAULT NULL,
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`ReserId`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -394,7 +384,8 @@ CREATE TABLE `roomstate`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`RoomStateId`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -408,7 +399,8 @@ CREATE TABLE `roomtype`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`RoomType`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -416,16 +408,17 @@ CREATE TABLE `roomtype`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sellthing`;
 CREATE TABLE `sellthing`  (
-  `SellNo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `SellName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `SellPrice` decimal(10, 2) NOT NULL,
-  `format` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `Stock` int NOT NULL,
+  `SellNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '商品编号',
+  `SellName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '商品名称',
+  `SellPrice` decimal(10, 2) NOT NULL COMMENT '商品价格',
+  `format` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '规格型号',
+  `Stock` int NOT NULL COMMENT '库存数量',
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`SellNo`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -444,25 +437,6 @@ CREATE TABLE `sextype`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for spend
--- ----------------------------
-DROP TABLE IF EXISTS `spend`;
-CREATE TABLE `spend`  (
-  `CustoNo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `SpendDate` datetime(0) NOT NULL,
-  `SpendMoney` decimal(6, 2) NOT NULL,
-  `SpendType` int NOT NULL,
-  `SpendMess` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Lender` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `Reamrks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
-  `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
-  `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
-  `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
 -- Table structure for spendtype
 -- ----------------------------
 DROP TABLE IF EXISTS `spendtype`;
@@ -473,7 +447,8 @@ CREATE TABLE `spendtype`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`SpendType`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -491,7 +466,8 @@ CREATE TABLE `uploadinfo`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`NoticeNo`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -499,20 +475,21 @@ CREATE TABLE `uploadinfo`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE `userinfo`  (
-  `CustoNo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `CustoName` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `CustoSex` int NOT NULL,
-  `CustoTel` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `PassportType` int NOT NULL,
-  `CustoID` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `CustoAdress` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `CustoBirth` date NOT NULL,
-  `CustoType` int NOT NULL,
+  `CustoNo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户编号',
+  `CustoName` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名称',
+  `CustoSex` int NOT NULL COMMENT '用户性别',
+  `CustoTel` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户电话',
+  `PassportType` int NOT NULL COMMENT '证照类型',
+  `CustoID` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '证件号码',
+  `CustoAdress` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '居住地址',
+  `CustoBirth` date NOT NULL COMMENT '出生日期',
+  `CustoType` int NOT NULL COMMENT '客户类型',
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`CustoNo`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -526,20 +503,9 @@ CREATE TABLE `usertype`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`UserType`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Table structure for warning
--- ----------------------------
-DROP TABLE IF EXISTS `warning`;
-CREATE TABLE `warning`  (
-  `id` int NOT NULL,
-  `warning` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `website` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `token` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for worker
@@ -550,21 +516,22 @@ CREATE TABLE `worker`  (
   `WorkerName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '名字',
   `WorkerBirthday` datetime(0) NOT NULL COMMENT '出生日期',
   `WorkerSex` int NOT NULL COMMENT '性别',
-  `WorkerTel` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '电话',
+  `WorkerTel` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '电话',
   `WorkerClub` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '部门',
-  `WorkerNation` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '民族',
-  `WorkerAddress` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '居住地址',
-  `WorkerPosition` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '职位',
-  `CardID` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '证件号码',
-  `WorkerPwd` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '123456' COMMENT '系统密码',
+  `WorkerNation` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '民族',
+  `WorkerAddress` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '居住地址',
+  `WorkerPosition` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '职位',
+  `CardID` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '证件号码',
+  `WorkerPwd` varchar(600) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT '123456' COMMENT '系统密码',
   `WorkerTime` datetime(0) NOT NULL COMMENT '入职时间',
   `WorkerFace` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '面貌',
   `WorkerEducation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '学历',
-  `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
+  `delete_mk` int UNSIGNED NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`WorkerId`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -572,6 +539,7 @@ CREATE TABLE `worker`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `workercheck`;
 CREATE TABLE `workercheck`  (
+  `Id` int NOT NULL AUTO_INCREMENT,
   `WorkerNo` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `CheckTime` datetime(0) NULL DEFAULT NULL,
   `CheckWay` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
@@ -580,7 +548,8 @@ CREATE TABLE `workercheck`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -588,6 +557,7 @@ CREATE TABLE `workercheck`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `workergoodbad`;
 CREATE TABLE `workergoodbad`  (
+  `Id` int NOT NULL AUTO_INCREMENT,
   `WorkNo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `GBInfo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `GBType` int NULL DEFAULT NULL,
@@ -597,7 +567,8 @@ CREATE TABLE `workergoodbad`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -605,6 +576,7 @@ CREATE TABLE `workergoodbad`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `workerhistory`;
 CREATE TABLE `workerhistory`  (
+  `Id` int NOT NULL AUTO_INCREMENT,
   `WorkerId` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `StartDate` datetime(0) NOT NULL,
   `EndDate` datetime(0) NOT NULL,
@@ -614,7 +586,8 @@ CREATE TABLE `workerhistory`  (
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
-  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间'
+  `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
+  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -636,6 +609,6 @@ CREATE TABLE `wtinfo`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`WtiNo`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;

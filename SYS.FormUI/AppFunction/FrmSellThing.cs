@@ -35,6 +35,8 @@ namespace SYS.FormUI
     {
         private int rs = 0;//用于判断房间是否可消费
 
+        static string roomNo;
+
         public FrmSellThing()
         {
             InitializeComponent();
@@ -50,7 +52,6 @@ namespace SYS.FormUI
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
             }
             LoadSellThingInfo();
-
             foreach (Control label in this.Controls)
             {
                 label.Font = UI_FontUtil.childControlFont;
@@ -110,31 +111,31 @@ namespace SYS.FormUI
         {
             if (txtRoomNo.Text == "")
             {
-                MessageBox.Show("消费房间不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("消费房间不能为空", "提示信息",UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtRoomNo.Focus();
                 return false;
             }
             if (txtSellNo.Text == "")
             {
-                MessageBox.Show("商品编号不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品编号不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtSellNo.Focus();
                 return false;
             }
             if (txtSellName.Text == "")
             {
-                MessageBox.Show("商品名称不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品名称不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtSellName.Focus();
                 return false;
             }
             if (txtPrice.Text == "")
             {
-                MessageBox.Show("商品单价不能为空", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("商品单价不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtPrice.Focus();
                 return false;
             }
             if (nudNum.Value <= 0)
             {
-                MessageBox.Show("数量不能小于0", "提示信息", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                UIMessageBox.Show("数量不能小于0", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtPrice.Focus();
                 return false;
             }
@@ -142,16 +143,29 @@ namespace SYS.FormUI
         }
         #endregion
 
+        Room r = null;
+
         #region 添加事件
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (rs == 1)//判断房间编号是否可消费
+            
+            if (lblState.Visible == false)
+            {
+                UIMessageBox.Show("请先输入消费的房间！", "提示信息", UIStyle.Red);
+                return;
+            }
+            if (nudNum.Value <= 0)
+            {
+                UIMessageBox.Show("请输入消费数量！", "提示信息", UIStyle.Red);
+                return;
+            }
+            if (lblState.Text == "该房间可消费")//判断房间编号是否可消费
             {
                 if (CheckInput())
                 {
                     SellThing st = new SellService().SelectSellThingByNo(txtSellNo.Text);
+                    r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
 
-                    Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
                     Spend s = new Spend()
                     {
                         RoomNo = txtRoomNo.Text,
@@ -180,10 +194,13 @@ namespace SYS.FormUI
                         o.datains_date = DateTime.Now;
                         #endregion
                         new OperationlogService().InsertOperationLog(o);
+                        nudNum.Value = 0;
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("添加失败");
+                        UIMessageBox.ShowError("添加失败");
+                        return;
                     }
                 }
             }
@@ -193,24 +210,38 @@ namespace SYS.FormUI
         #region 撤回消费事件
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            if (lblState.Visible == false)
+            {
+                UIMessageBox.Show("请先输入消费的房间！", "提示信息", UIStyle.Red);
+                return;
+            }
             if (dgvRoomSell.SelectedRows.Count > 0)
             {
+                if (dgvRoomSell.SelectedRows[0].Cells["clSpendName"].Value.ToString().Contains("居住"))
+                {
+                    UIMessageBox.Show("此条消费记录为住房记录，无法删除！", "提示信息", UIStyle.Red);
+                    return;
+                }
                 if(UIMessageDialog.ShowMessageDialog("你确定要删除该消费记录吗？", UILocalize.WarningTitle, true,Style))
                 {
-                    string time = dgvRoomSell.SelectedRows[0].Cells["clSpendTime"].Value.ToString();
+                    var spendTime = Convert.ToDateTime(dgvRoomSell.SelectedRows[0].Cells["clSpendTime"].Value.ToString());
+                    string custoNo = dgvRoomSell.SelectedRows[0].Cells["clCustoNo"].Value.ToString();
                     string name = dgvRoomSell.SelectedRows[0].Cells["clSpendName"].Value.ToString();
                     string price = dgvRoomSell.SelectedRows[0].Cells["clSpendPrice"].Value.ToString();
                     SellThing s = new SellService().SelectSellThingByNameAndPrice(name, price);
                     decimal num = Convert.ToDecimal(dgvRoomSell.SelectedRows[0].Cells["clSpendAmount"].Value.ToString());
                     string Stock = (s.Stock + num).ToString();
-                    if (new SellService().DeleteSellThing(txtRoomNo.Text, time) == true)
+                    if (new SellService().DeleteSellThing(txtRoomNo.Text, custoNo, spendTime) == true)
                     {
-
                         bool n = new SellService().UpdateSellThing(Stock, s.SellNo);
-                        UIMessageTip.ShowOk("撤销成功！",1000);
+                        UIMessageTip.ShowOk("撤销成功！", 1000);
                         LoadSpendInfoByRoomNo(txtRoomNo.Text);
                         LoadSellThingInfo();
+                        nudNum.Value = 0;
+                    }
+                    else
+                    {
+                        UIMessageTip.ShowOk("撤销失败！", 1000);
                     }
                 }
                 else
@@ -220,7 +251,7 @@ namespace SYS.FormUI
             }
             else
             {
-                MessageBox.Show("请选择要删除的消费记录！", "提示信息");
+                UIMessageBox.Show("请选择要删除的消费记录！", "提示信息",UIStyle.Red);
             }
         }
         #endregion
@@ -228,6 +259,11 @@ namespace SYS.FormUI
 
         private void dgvSellthing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (lblState.Visible == false)
+            {
+                UIMessageBox.Show("请先输入消费的房间！", "提示信息", UIStyle.Red);
+                return;
+            }
             txtSellNo.Text = dgvSellthing.SelectedRows[0].Cells["clSellNo"].Value.ToString();
             txtSellName.Text = dgvSellthing.SelectedRows[0].Cells["clSellName"].Value.ToString();
             txtPrice.Text = dgvSellthing.SelectedRows[0].Cells["clSellPrice"].Value.ToString();
@@ -249,12 +285,17 @@ namespace SYS.FormUI
 
         private void txtRoomNo_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
             string room = txtRoomNo.Text;
+            if (string.IsNullOrWhiteSpace(room) == true)
+            {
+                UIMessageTip.ShowWarning("请输入消费房间号！",1000);
+                return;
+            }
             Room r = new RoomService().SelectRoomByRoomNo(room);
             if (txtRoomNo.Text == "")
             {
@@ -262,6 +303,7 @@ namespace SYS.FormUI
             }
             else if (r == null)
             {
+                lblState.Visible = true;
                 lblState.Text = "该房间不存在";
                 lblState.ForeColor = Color.Red;
                 rs = 0;
@@ -272,6 +314,7 @@ namespace SYS.FormUI
             {
                 if (r.RoomStateId == 1)
                 {
+                    lblState.Visible = true;
                     lblState.Text = "该房间可消费";
                     lblState.ForeColor = Color.Black;
                     LoadSpendInfoByRoomNo(room);
@@ -279,10 +322,10 @@ namespace SYS.FormUI
                 }
                 else
                 {
+                    lblState.Visible = true;
                     lblState.Text = "该房间不可消费";
                     lblState.ForeColor = Color.Red;
                     rs = 0;
-                    this.dgvSellthing.DataSource = null;
                     //LoadSpendInfo();
                     //清空
                 }

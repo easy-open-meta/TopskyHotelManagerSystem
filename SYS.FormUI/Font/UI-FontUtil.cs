@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.Serialization;
@@ -27,9 +28,13 @@ namespace SYS.FormUI
         public static Font scorllingFont = null;
         public static Font controlFont = null;
         public static Font roomControlFont = null;
+        
         static UI_FontUtil()
         {
+            var wreq = HttpWebRequest.Create("http://134.175.239.108:8085/ftp/puhuiti.ttf") as HttpWebRequest;
+            HttpWebResponse response = wreq.GetResponse() as HttpWebResponse;
             Stream stream = assembly.GetManifestResourceStream("SYS.FormUI.Resources.Alibaba-PuHuiTi-Regular.ttf");
+            //Stream stream = response.GetResponseStream(); 
             byte[] fontdata = new byte[stream.Length];
             stream.Read(fontdata, 0, (int)stream.Length);
             stream.Close();

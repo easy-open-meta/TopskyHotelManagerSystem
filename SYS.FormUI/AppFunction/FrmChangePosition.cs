@@ -83,7 +83,7 @@ namespace SYS.FormUI
              bool n = new WorkerService().UpdateWorkerPositionAndClub(worker);
             if (n == true)
             {
-                MessageBox.Show("任命已生效!");
+                UIMessageBox.ShowSuccess("任命已生效!");
                 #region 获取添加操作日志所需的信息
                 OperationLog o = new OperationLog();
                 o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
@@ -94,6 +94,7 @@ namespace SYS.FormUI
                 #endregion
                 new OperationlogService().InsertOperationLog(o);
                 FrmWorkerManager.Reload();
+                this.Close();
             }
 
 

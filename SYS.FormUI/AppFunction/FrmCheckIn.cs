@@ -91,7 +91,7 @@ namespace SYS.FormUI
         {
             if (txtCustoNo.Text == "")
             {
-                MessageBox.Show("请输入客户编号！", "来自小T的提示");
+                UIMessageBox.Show("请输入客户编号！", "来自小T的提示",UIStyle.Orange);
                 txtCustoNo.Focus();
                 return false;
             }
@@ -122,7 +122,7 @@ namespace SYS.FormUI
                         bool n = new RoomService().UpdateRoomInfo(r);
                         if (n == true)
                         {
-                            MessageBox.Show("登记入住成功！", "登记提示");
+                            UIMessageBox.Show("登记入住成功！", "登记提示",UIStyle.Green);
                             txtCustoNo.Text = "";
                             FrmRoomManager.Reload();
                             #region 获取添加操作日志所需的信息
@@ -136,16 +136,18 @@ namespace SYS.FormUI
                             new OperationlogService().InsertOperationLog(o);
                             scope.Complete();
                             this.Close();
+                            return;
                         }
                         else
                         {
-                            MessageBox.Show("登记入住失败！", "登记提示");
+                            UIMessageBox.Show("登记入住失败！", "登记提示",UIStyle.Red);
+                            return;
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("客户编号不存在！", "来自小T的提示");
+                    UIMessageBox.Show("客户编号不存在！", "来自小T的提示",UIStyle.Red);
                 }
             }
         }

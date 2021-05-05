@@ -51,6 +51,7 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+<<<<<<< HEAD
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\bin\Debug\Util\IDCardUtil.cs
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.xml
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.dll
@@ -74,6 +75,8 @@ F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelMan
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+=======
+>>>>>>> dev-Jackson
 D:\JVN.TopSkyHotelManagerSystem\SYS.Core\bin\Debug\Util\IDCardUtil.cs
 D:\JVN.TopSkyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.xml
 D:\JVN.TopSkyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Core.dll

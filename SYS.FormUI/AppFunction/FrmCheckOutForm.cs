@@ -273,10 +273,10 @@ namespace SYS.FormUI
                 }
                 catch
                 {
-                    MessageBox.Show("非法输入，请重新输入！", "系统提示",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UIMessageBox.Show("非法输入，请重新输入！", "系统提示",UIStyle.Orange);
                     txtReceipts.Clear();
                     txtReceipts.Focus();
+                    return;
                 }
             }
             else
@@ -290,7 +290,7 @@ namespace SYS.FormUI
         #region 结算按钮点击事件
         private void btnBalance_Click(object sender, EventArgs e)
         {
-            if (txtReceipts.Text != "")//判断实收金额是否为空
+            if (txtReceipts.Text != "" && Convert.ToDecimal(txtReceipts.Text) > Convert.ToDecimal(lblVIPPrice.Text))//判断实收金额是否为空以及是否小于应收金额
             {
                 Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
                 string checktime = r.CheckTime.ToString();//获取入住时间
@@ -306,7 +306,7 @@ namespace SYS.FormUI
                     {
                         return;
                     }
-                    MessageBox.Show("结算成功！", "系统提示");
+                    UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                     FrmRoomManager.Reload();
 
                     #region 获取添加操作日志所需的信息
@@ -333,7 +333,7 @@ namespace SYS.FormUI
                         {
                             return;
                         }
-                        MessageBox.Show("结算成功！", "系统提示");
+                        UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                         FrmRoomManager.Reload();
                         #region 获取添加操作日志所需的信息
                         OperationLog o = new OperationLog();
@@ -344,16 +344,19 @@ namespace SYS.FormUI
                         o.datains_date = DateTime.Now;
                         #endregion
                         new OperationlogService().InsertOperationLog(o);
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("结算失败！", "系统提示");
+                        UIMessageBox.Show("结算失败！", "系统提示", UIStyle.Red);
+                        return;
                     }
                 }
             }
             else
             {
-                MessageBox.Show("实收金额不能为空！", "系统提示");
+                UIMessageBox.Show("实收金额不能为空或实收金额不能小于折后金额！", "系统提示", UIStyle.Orange);
+                return;
             }
         }
         #endregion

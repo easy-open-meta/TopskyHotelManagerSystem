@@ -264,7 +264,6 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUse
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.config
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.manifest
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.application
-D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.xml
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.pdb
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.xml
@@ -284,6 +283,7 @@ D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.Fo
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmChangeAdminPwd.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucEducationInformation.resources
 D:\TopSkyHotelManagerSystem\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucPositionInformation.resources
+<<<<<<< HEAD
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.xml
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csprojAssemblyReference.cache
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.config
@@ -362,6 +362,8 @@ F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelMan
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.manifest
 F:\DownloadFile\java-and-net-TopskyHotelManagerSystem-dev-Jackson\TopskyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.application
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.xml
+=======
+>>>>>>> dev-Jackson
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csprojAssemblyReference.cache
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.config
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.ResolveComReference.cache
@@ -421,6 +423,7 @@ D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.GenerateR
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CoreCompileInputs.cache
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
+<<<<<<< HEAD
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Exe\Util\IDCardUtil.cs
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Exe\Resources\Alibaba-PuHuiTi-Regular.ttf
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Exe\AppUserControls\CtrlOrgChar.resx
@@ -438,3 +441,29 @@ D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Exe\TS酒店管理系统.ex
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Exe\TS酒店管理系统.pdb
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.manifest
 D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.application
+=======
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Util\IDCardUtil.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Resources\Alibaba-PuHuiTi-Regular.ttf
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgChar.resx
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgPanel.resx
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Resources\Resource.resx
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgChar.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgChar.Designer.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgPanel.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\CtrlOrgPanel.Designer.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\AppUserControls\OrgCharGenerator.cs
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.config
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe.manifest
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.application
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.exe
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\TS酒店管理系统.pdb
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.xml
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.dll.config
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Common.dll.config
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.xml
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.Fody.CopyLocal.cache
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.manifest
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.application
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CopyComplete
+D:\JVN.TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Font\UI-FontUtil.cs
+>>>>>>> dev-Jackson

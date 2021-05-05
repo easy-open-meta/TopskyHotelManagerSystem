@@ -61,9 +61,10 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
-            var encryStrId = encrypt.EncryptStr(custo.CustoID);
-            var encryStrTel = encrypt.EncryptStr(custo.CustoTel);
-            var encryStrAddress = encrypt.EncryptStr(custo.CustoAdress);
+            string NewID = encrypt.EncryptStr(custo.CustoID);
+            string NewTel = encrypt.EncryptStr(custo.CustoTel);
+            custo.CustoID = NewID;
+            custo.CustoTel = NewTel;
             return base.Update(a => new Custo()
             {
                 CustoName  = custo.CustoName,
@@ -106,6 +107,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<Custo> SelectCustoAll()
         {
+            Encrypt encrypt = new Encrypt();
             //查询出所有性别类型
             List<SexType> sexTypes = new List<SexType>();
             sexTypes = base.Change<SexType>().GetList();
@@ -120,6 +122,12 @@ namespace SYS.Application
             custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
             custos.ForEach(source =>
             {
+                //解密身份证号码
+                var sourceStr = source.CustoID.Contains(":") ? encrypt.DeEncryptStr(source.CustoID) : source.CustoID;
+                source.CustoID = sourceStr;
+                //解密联系方式
+                var sourceTelStr = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
+                source.CustoTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
                 source.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;

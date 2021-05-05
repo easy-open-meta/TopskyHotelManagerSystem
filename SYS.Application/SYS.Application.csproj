@@ -36,8 +36,8 @@
     <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptTools, Version=1.0.0.1, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EncryptTools.1.0.0.2\lib\.net461\EncryptTools.dll</HintPath>
+    <Reference Include="EncryptTools, Version=1.0.0.3, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EncryptTools.1.0.0.3\lib\.net461\EncryptTools.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

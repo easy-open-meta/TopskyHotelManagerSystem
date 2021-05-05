@@ -188,16 +188,15 @@ namespace SYS.FormUI
             bool dr = UIMessageBox.Show("是否确认修改员工信息？", "修改提醒", UIStyle.Green,UIMessageBoxButtons.OKCancel);
             if (dr == true)
             {
-                string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
                 #region 员工信息代码块
                 Worker worker = new Worker
                 {
                     WorkerId = WorkerNo.Text.Trim(),
                     WorkerName = WorkerName.Text.Trim(),
                     WorkerNation = cbWorkerNation.SelectedValue == null ? "N-00001" : cbWorkerNation.SelectedValue.ToString(),
-                    WorkerTel = NewTel,
-                    WorkerAddress = txtAddress.Text,
-                    WorkerFace = cboWorkerFace.Text,
+                    WorkerTel = WorkerTel.Text.Trim(),
+                    WorkerAddress = txtAddress.Text.Trim(),
+                    WorkerFace = cboWorkerFace.Text.Trim(),
                     WorkerEducation = cboEducation.SelectedValue.ToString() == null ? "E-00001" : cboEducation.SelectedValue.ToString(),
                     datachg_usr = AdminInfo.Account,
                     datachg_date = DateTime.Now
@@ -277,9 +276,6 @@ namespace SYS.FormUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string NewID = Md5LockedUtil.MD5Encrypt32(WorkerID.Text.ToString());
-            string NewTel = Md5LockedUtil.MD5Encrypt32(WorkerTel.Text.ToString());
-
             Worker worker = new Worker
             {
                 WorkerId = WorkerNo.Text.Trim(),
@@ -287,11 +283,11 @@ namespace SYS.FormUI
                 WorkerBirthday = dtpBirthday.Value,
                 WorkerSex = (int)cboSex.SelectedValue,
                 WorkerNation = cbWorkerNation.SelectedValue.ToString(),
-                WorkerTel = NewTel,
+                WorkerTel = WorkerTel.Text,
                 WorkerClub = cboClub.SelectedValue.ToString(),
                 WorkerAddress = txtAddress.Text,
                 WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
-                CardId = NewID,
+                CardId = WorkerID.Text,
                 WorkerTime = dtpTime.Value,
                 WorkerFace = cboWorkerFace.Text,
                 WorkerEducation = cboEducation.SelectedValue.ToString(),
@@ -365,7 +361,7 @@ namespace SYS.FormUI
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回
-                MessageBox.Show("身份证号码不能为空！");
+                UIMessageBox.ShowWarning("身份证号码不能为空！");
                 if (WorkerID.CanFocus)
                 {
                     WorkerID.Focus();//设置当前输入焦点为txtCardID_identityCard
@@ -378,7 +374,7 @@ namespace SYS.FormUI
                 //身份证号码只能为15位或18位其它不合法
                 if (identityCard.Length != 15 && identityCard.Length != 18)
                 {
-                    MessageBox.Show("身份证号码为15位或18位，请检查！");
+                    UIMessageBox.ShowWarning("身份证号码为15位或18位，请检查！");
                     if (WorkerID.CanFocus)
                     {
                         WorkerID.Focus();
@@ -412,7 +408,7 @@ namespace SYS.FormUI
             }
             catch
             {
-                MessageBox.Show("请正确输入证件号码！");
+                UIMessageBox.ShowError("请正确输入证件号码！");
                 return;
             }
 

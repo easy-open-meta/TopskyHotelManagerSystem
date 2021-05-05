@@ -21,13 +21,14 @@
  *SOFTWARE.
  *
  */
+using Sunny.UI;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
-    public partial class FrmAboutUs : Form
+    public partial class FrmAboutUs : UIForm
     {
         public FrmAboutUs()
         {

@@ -47,6 +47,19 @@
             this.txtSellNo = new Sunny.UI.UITextBox();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.dgvRoomSell = new Sunny.UI.UIDataGridView();
+            this.clRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSellthing = new Sunny.UI.UIDataGridView();
             this.clSellNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,19 +80,6 @@
             this.txtRoomNo = new Sunny.UI.UITextBox();
             this.lblState = new Sunny.UI.UILabel();
             this.btnCheck = new Sunny.UI.UIButton();
-            this.clRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellthing)).BeginInit();
@@ -282,6 +282,110 @@
             this.dgvRoomSell.Size = new System.Drawing.Size(573, 269);
             this.dgvRoomSell.Style = Sunny.UI.UIStyle.Custom;
             this.dgvRoomSell.TabIndex = 15;
+            // 
+            // clRoomNo
+            // 
+            this.clRoomNo.DataPropertyName = "RoomNo";
+            this.clRoomNo.FillWeight = 102.6831F;
+            this.clRoomNo.HeaderText = "房号";
+            this.clRoomNo.Name = "clRoomNo";
+            this.clRoomNo.ReadOnly = true;
+            // 
+            // clCustoNo
+            // 
+            this.clCustoNo.DataPropertyName = "CustoNo";
+            this.clCustoNo.FillWeight = 102.6831F;
+            this.clCustoNo.HeaderText = "客户编号";
+            this.clCustoNo.Name = "clCustoNo";
+            this.clCustoNo.ReadOnly = true;
+            // 
+            // clSpendName
+            // 
+            this.clSpendName.DataPropertyName = "SpendName";
+            this.clSpendName.FillWeight = 102.6831F;
+            this.clSpendName.HeaderText = "商品";
+            this.clSpendName.Name = "clSpendName";
+            this.clSpendName.ReadOnly = true;
+            // 
+            // clSpendAmount
+            // 
+            this.clSpendAmount.DataPropertyName = "SpendAmount";
+            this.clSpendAmount.FillWeight = 60F;
+            this.clSpendAmount.HeaderText = "数量";
+            this.clSpendAmount.Name = "clSpendAmount";
+            this.clSpendAmount.ReadOnly = true;
+            // 
+            // clSpendPrice
+            // 
+            this.clSpendPrice.DataPropertyName = "SpendPrice";
+            this.clSpendPrice.FillWeight = 102.6831F;
+            this.clSpendPrice.HeaderText = "单价";
+            this.clSpendPrice.Name = "clSpendPrice";
+            this.clSpendPrice.ReadOnly = true;
+            // 
+            // clSpendMoney
+            // 
+            this.clSpendMoney.DataPropertyName = "SpendMoney";
+            this.clSpendMoney.FillWeight = 102.6831F;
+            this.clSpendMoney.HeaderText = "总额";
+            this.clSpendMoney.Name = "clSpendMoney";
+            this.clSpendMoney.ReadOnly = true;
+            // 
+            // clSpendTime
+            // 
+            this.clSpendTime.DataPropertyName = "SpendTime";
+            this.clSpendTime.FillWeight = 102.6831F;
+            this.clSpendTime.HeaderText = "消费时间";
+            this.clSpendTime.Name = "clSpendTime";
+            this.clSpendTime.ReadOnly = true;
+            // 
+            // clSpendNo
+            // 
+            this.clSpendNo.DataPropertyName = "delete_mk";
+            this.clSpendNo.HeaderText = "Column1";
+            this.clSpendNo.Name = "clSpendNo";
+            this.clSpendNo.ReadOnly = true;
+            this.clSpendNo.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MoneyState";
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "datains_usr";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datains_date";
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "datachg_usr";
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "datachg_date";
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
             // 
             // dgvSellthing
             // 
@@ -527,6 +631,7 @@
             this.lblState.Style = Sunny.UI.UIStyle.Custom;
             this.lblState.TabIndex = 24;
             this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblState.Visible = false;
             this.lblState.Click += new System.EventHandler(this.lblState_Click);
             // 
             // btnCheck
@@ -542,110 +647,6 @@
             this.btnCheck.TabIndex = 25;
             this.btnCheck.Text = "可否消费";
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // clRoomNo
-            // 
-            this.clRoomNo.DataPropertyName = "RoomNo";
-            this.clRoomNo.FillWeight = 102.6831F;
-            this.clRoomNo.HeaderText = "房号";
-            this.clRoomNo.Name = "clRoomNo";
-            this.clRoomNo.ReadOnly = true;
-            // 
-            // clCustoNo
-            // 
-            this.clCustoNo.DataPropertyName = "CustoNo";
-            this.clCustoNo.FillWeight = 102.6831F;
-            this.clCustoNo.HeaderText = "客户编号";
-            this.clCustoNo.Name = "clCustoNo";
-            this.clCustoNo.ReadOnly = true;
-            // 
-            // clSpendName
-            // 
-            this.clSpendName.DataPropertyName = "SpendName";
-            this.clSpendName.FillWeight = 102.6831F;
-            this.clSpendName.HeaderText = "商品";
-            this.clSpendName.Name = "clSpendName";
-            this.clSpendName.ReadOnly = true;
-            // 
-            // clSpendAmount
-            // 
-            this.clSpendAmount.DataPropertyName = "SpendAmount";
-            this.clSpendAmount.FillWeight = 60F;
-            this.clSpendAmount.HeaderText = "数量";
-            this.clSpendAmount.Name = "clSpendAmount";
-            this.clSpendAmount.ReadOnly = true;
-            // 
-            // clSpendPrice
-            // 
-            this.clSpendPrice.DataPropertyName = "SpendPrice";
-            this.clSpendPrice.FillWeight = 102.6831F;
-            this.clSpendPrice.HeaderText = "单价";
-            this.clSpendPrice.Name = "clSpendPrice";
-            this.clSpendPrice.ReadOnly = true;
-            // 
-            // clSpendMoney
-            // 
-            this.clSpendMoney.DataPropertyName = "SpendMoney";
-            this.clSpendMoney.FillWeight = 102.6831F;
-            this.clSpendMoney.HeaderText = "总额";
-            this.clSpendMoney.Name = "clSpendMoney";
-            this.clSpendMoney.ReadOnly = true;
-            // 
-            // clSpendTime
-            // 
-            this.clSpendTime.DataPropertyName = "SpendTime";
-            this.clSpendTime.FillWeight = 102.6831F;
-            this.clSpendTime.HeaderText = "消费时间";
-            this.clSpendTime.Name = "clSpendTime";
-            this.clSpendTime.ReadOnly = true;
-            // 
-            // clSpendNo
-            // 
-            this.clSpendNo.DataPropertyName = "delete_mk";
-            this.clSpendNo.HeaderText = "Column1";
-            this.clSpendNo.Name = "clSpendNo";
-            this.clSpendNo.ReadOnly = true;
-            this.clSpendNo.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MoneyState";
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "datains_usr";
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "datains_date";
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "datachg_usr";
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "datachg_date";
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
             // 
             // FrmSellThing
             // 

@@ -35,6 +35,7 @@
             this.picLogin = new Sunny.UI.UIButton();
             this.txtWorkerId = new Sunny.UI.UITextBox();
             this.txtWorkerPwd = new Sunny.UI.UITextBox();
+            this.btnLoginBackSystem = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +83,7 @@
             this.picLogin.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.picLogin.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.picLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.picLogin.Location = new System.Drawing.Point(581, 313);
+            this.picLogin.Location = new System.Drawing.Point(581, 357);
             this.picLogin.MinimumSize = new System.Drawing.Size(1, 1);
             this.picLogin.Name = "picLogin";
             this.picLogin.Radius = 30;
@@ -135,6 +136,25 @@
             this.txtWorkerPwd.TabIndex = 17;
             this.txtWorkerPwd.Text = "admin";
             // 
+            // btnLoginBackSystem
+            // 
+            this.btnLoginBackSystem.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoginBackSystem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoginBackSystem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.btnLoginBackSystem.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnLoginBackSystem.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnLoginBackSystem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnLoginBackSystem.Location = new System.Drawing.Point(581, 280);
+            this.btnLoginBackSystem.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnLoginBackSystem.Name = "btnLoginBackSystem";
+            this.btnLoginBackSystem.Radius = 30;
+            this.btnLoginBackSystem.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnLoginBackSystem.Size = new System.Drawing.Size(184, 60);
+            this.btnLoginBackSystem.Style = Sunny.UI.UIStyle.LightBlue;
+            this.btnLoginBackSystem.TabIndex = 18;
+            this.btnLoginBackSystem.Text = "进入后台管理系统";
+            this.btnLoginBackSystem.Click += new System.EventHandler(this.btnLoginBackSystem_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -142,6 +162,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 429);
+            this.Controls.Add(this.btnLoginBackSystem);
             this.Controls.Add(this.txtWorkerPwd);
             this.Controls.Add(this.txtWorkerId);
             this.Controls.Add(this.picLogin);
@@ -171,6 +192,7 @@
         private Sunny.UI.UIButton picLogin;
         private Sunny.UI.UITextBox txtWorkerId;
         private Sunny.UI.UITextBox txtWorkerPwd;
+        private Sunny.UI.UIButton btnLoginBackSystem;
     }
 }
 

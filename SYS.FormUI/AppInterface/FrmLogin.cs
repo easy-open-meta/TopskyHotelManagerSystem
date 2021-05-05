@@ -111,7 +111,8 @@ namespace SYS.FormUI
         private void picClose_Click(object sender, EventArgs e)
         {
             //f.Close();
-            System.Windows.Forms.Application.Exit();
+            //System.Windows.Forms.Application.Exit();
+            this.Close();
         }
         #endregion
 
@@ -166,13 +167,13 @@ namespace SYS.FormUI
         {
             if (txtWorkerId.Text == "")
             {
-                MessageBox.Show("请输入员工编号！", "输入提示");
+                UIMessageBox.Show("请输入员工编号！", "输入提示",UIStyle.Red);
                 txtWorkerId.Focus();
                 return false;
             }
             if (txtWorkerPwd.Text == "")
             {
-                MessageBox.Show("请输入员工密码！", "输入提示");
+                UIMessageBox.Show("请输入员工密码！", "输入提示", UIStyle.Red);
                 txtWorkerPwd.Focus();
                 return false;
             }
@@ -218,13 +219,13 @@ namespace SYS.FormUI
                         }
                         else
                         {
-                            MessageBox.Show("密码错误！", "来自小T提示");
+                            UIMessageBox.Show("密码错误！", "来自小T提示", UIStyle.Red);
                             txtWorkerPwd.Focus();//聚焦
                         }
                     }
                     else
                     {
-                        MessageBox.Show("该员工编号不存在！", "来自小T提示");
+                        UIMessageBox.Show("该员工编号不存在！", "来自小T提示", UIStyle.Red);
                         txtWorkerId.Focus();//聚焦
                     }
                 }
@@ -232,7 +233,7 @@ namespace SYS.FormUI
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show("请连接好数据库！", "温馨提示");
+                UIMessageBox.Show("请连接好数据库！", "温馨提示", UIStyle.Red);
             }
         }
         #endregion
@@ -241,6 +242,13 @@ namespace SYS.FormUI
         private void picLogin_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLoginBackSystem_Click(object sender, EventArgs e)
+        {
+            FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
+            frmAdminEnter.ShowDialog();
+            this.Hide();
         }
     }
 }

@@ -242,6 +242,8 @@
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;
             this.txtCustoNo.TabIndex = 143;
+            this.txtCustoNo.TextChanged += new System.EventHandler(this.txtCustoNo_TextChanged);
+            this.txtCustoNo.Validated += new System.EventHandler(this.txtCustoNo_Validated);
             // 
             // txtCustoName
             // 

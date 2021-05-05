@@ -39,21 +39,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("阿里巴巴普惠体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(54, 37);
+            this.label1.Location = new System.Drawing.Point(33, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(410, 24);
+            this.label1.Size = new System.Drawing.Size(432, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "当前系统已锁定，请输入超管密码进行解锁！";
             // 
             // txtUnLockPwd
             // 
-            this.txtUnLockPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtUnLockPwd.Location = new System.Drawing.Point(121, 86);
+            this.txtUnLockPwd.Font = new System.Drawing.Font("阿里巴巴普惠体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnLockPwd.Location = new System.Drawing.Point(120, 65);
             this.txtUnLockPwd.Name = "txtUnLockPwd";
             this.txtUnLockPwd.PasswordChar = '*';
-            this.txtUnLockPwd.Size = new System.Drawing.Size(259, 29);
+            this.txtUnLockPwd.Size = new System.Drawing.Size(259, 35);
             this.txtUnLockPwd.TabIndex = 1;
             this.txtUnLockPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnLockPwd_KeyDown);
             // 
@@ -65,21 +65,18 @@
             // 
             this.btnUnLock.BackColor = System.Drawing.Color.Transparent;
             this.btnUnLock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUnLock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnUnLock.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(127)))), ((int)(((byte)(128)))));
-            this.btnUnLock.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.btnUnLock.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.btnUnLock.FillColor = System.Drawing.Color.Red;
             this.btnUnLock.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnUnLock.Location = new System.Drawing.Point(199, 127);
+            this.btnUnLock.Location = new System.Drawing.Point(205, 116);
             this.btnUnLock.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUnLock.Name = "btnUnLock";
             this.btnUnLock.Radius = 20;
-            this.btnUnLock.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnUnLock.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(127)))), ((int)(((byte)(128)))));
-            this.btnUnLock.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.btnUnLock.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.btnUnLock.RectColor = System.Drawing.Color.Transparent;
+            this.btnUnLock.RectPressColor = System.Drawing.Color.Transparent;
+            this.btnUnLock.RectSelectedColor = System.Drawing.Color.Transparent;
+            this.btnUnLock.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnUnLock.Size = new System.Drawing.Size(101, 40);
-            this.btnUnLock.Style = Sunny.UI.UIStyle.Red;
+            this.btnUnLock.Style = Sunny.UI.UIStyle.Custom;
             this.btnUnLock.TabIndex = 113;
             this.btnUnLock.Text = "解      锁";
             this.btnUnLock.Click += new System.EventHandler(this.btnUnLock_Click);
@@ -88,23 +85,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SYS.FormUI.Properties.Resources._770e7b52ecafc807247aad51bb6c6b43;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::SYS.FormUI.Properties.Resources.jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018_jpg_w1024_new_small;
             this.ClientSize = new System.Drawing.Size(498, 179);
             this.Controls.Add(this.btnUnLock);
             this.Controls.Add(this.txtUnLockPwd);
             this.Controls.Add(this.label1);
+            this.EscClose = false;
             this.IsForbidAltF4 = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmUnLockSystem";
             this.Padding = new System.Windows.Forms.Padding(0);
-            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.RectColor = System.Drawing.Color.Transparent;
             this.ShowInTaskbar = false;
             this.ShowTitle = false;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "系统已锁定！";
             this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.FrmUnLockSystem_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUnLockSystem_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUnLockSystem_FormClosed);

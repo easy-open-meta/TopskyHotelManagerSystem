@@ -96,11 +96,9 @@ namespace SYS.FormUI
             };
             if (CheckInput(goodBad))
             {
-                DialogResult dr = MessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dr == DialogResult.Yes)
+                bool dr = UIMessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                if (!dr)
                 {
-                    
-                    
                     bool n = new WorkerGoodBadService().AddGoodBad(goodBad);
                     if (n == true)
                     {
