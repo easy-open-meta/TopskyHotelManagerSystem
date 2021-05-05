@@ -17,35 +17,35 @@
 
 # 本项目说明：
 
-##### 1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应描述。
+1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应描述。
 
-##### 2、有bug欢迎提出issue！或进行评论
+2、有bug欢迎提出issue！或进行评论
 
-##### 3、本系统90%页面基于SunnyUI.Net控件库进行创建，在此特别声明！
+3、本系统90%页面基于SunnyUI.Net控件库进行创建，在此特别声明！
 
-##### 4、**关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!**
+4、关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!
 
 # 开发目的：
 
-##### 在现如今发展迅速的酒店行业，随着酒店的日常工作增加，已经很难用人工去进行处理，一些繁琐的数据也可能会因为人工的失误而造成酒店的一些损失，因此很需要一款可以协助酒店进行内部管理的管理软件。
+在现如今发展迅速的酒店行业，随着酒店的日常工作增加，已经很难用人工去进行处理，一些繁琐的数据也可能会因为人工的失误而造成酒店的一些损失，因此很需要一款可以协助酒店进行内部管理的管理软件。
 
 # 系统开发环境：
 
-**操作系统：Windows 10(x64)**
+操作系统：Windows 10(x64)
 
-**开发工具：Microsoft Visual Studio 2015(初版)/Microsoft Visual Studio 2019(最新版)**
+开发工具：Microsoft Visual Studio 2015(初版)/Microsoft Visual Studio 2019(最新版)
 
-**数据库：Microsoft SQL Server 2008 R2/MySQL v8.0.22**
+数据库：Microsoft SQL Server 2008 R2/MySQL v8.0.22
 
-**数据库管理工具：Microsoft SQL Server 2008 R2 Mangerment Studio/Navicat 15**
+数据库管理工具：Microsoft SQL Server 2008 R2 Mangerment Studio/Navicat 15
 
-**开发语言：C#语言、T-SQL语言**
+开发语言：C#语言、T-SQL语言
 
-**开发平台：.Net**
+开发平台：.Net
 
-**开发框架：.Net Framework 4.5.2/.Net Framework 4.6.1**
+开发框架：.Net Framework 4.5.2/.Net Framework 4.6.1
 
-**开发技术：.NET WinForm**
+开发技术：.NET WinForm
 
 # 系统结构：
 ![TopSkyHotelManagerSystem](https://images.gitee.com/uploads/images/2021/0214/195755_0c128762_5122554.png "TopskyHotelManagerSystem.png")
@@ -91,5 +91,7 @@
 
 **2、随后打开Data.sql文件进行数据导入。**
 
+# Star趋势图(感谢Giteye提供的趋势图报表功能！)：
+[![Giteye chart](https://chart.giteye.net/gitee/java-and-net/TopskyHotelManagerSystem/Z9DD26VK.png)](https://giteye.net/chart/Z9DD26VK)
 
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
