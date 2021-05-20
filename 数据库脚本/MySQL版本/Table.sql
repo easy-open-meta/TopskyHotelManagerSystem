@@ -1,3 +1,4 @@
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -6,24 +7,26 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `admininfo`;
 CREATE TABLE `admininfo`  (
+  `Id` int NOT NULL AUTO_INCREMENT,
   `AdminAccount` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员账号',
-  `AdminPassword` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员密码',
-  `AdminType` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员类型',
+  `AdminPassword` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员密码',
+  `AdminType` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员类型',
   `AdminName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员名称',
-  `IsAdmin` int NOT NULL COMMENT '是否为超级管理员',
-  `DeleteMk` int NOT NULL COMMENT '删除标记',
+  `IsAdmin` int NULL DEFAULT NULL COMMENT '是否为超级管理员',
+  `DeleteMk` int NULL DEFAULT NULL COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料新增人',
   `datains_time` date NULL DEFAULT NULL COMMENT '资料新增时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_time` date NULL DEFAULT NULL COMMENT '资料更新时间',
-  PRIMARY KEY (`AdminAccount`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+  PRIMARY KEY (`Id`, `AdminAccount`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for admintype
 -- ----------------------------
 DROP TABLE IF EXISTS `admintype`;
 CREATE TABLE `admintype`  (
+  `Id` int NOT NULL AUTO_INCREMENT COMMENT '编号',
   `type_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员类型',
   `type_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员类型名称',
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
@@ -31,8 +34,8 @@ CREATE TABLE `admintype`  (
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
-  PRIMARY KEY (`type_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for applicationversion
@@ -86,7 +89,7 @@ CREATE TABLE `cardcodes`  (
   `District` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地区',
   `bm` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地区识别码',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for cashinfo
@@ -168,7 +171,7 @@ CREATE TABLE `custospend`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`SpendId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 84 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for dept
@@ -239,16 +242,28 @@ CREATE TABLE `gbtype`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `module`;
 CREATE TABLE `module`  (
-  `module_id` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '模块流水号',
-  `module_name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '模块名称',
-  `module_desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '模块描述',
-  `module_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '模块地址',
-  `datains_usr` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '新增数据USR',
-  `datains_date` datetime(0) NULL DEFAULT NULL COMMENT '新增数据时间',
-  `datachg_usr` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '更新数据USR',
-  `datachg_date` datetime(0) NULL DEFAULT NULL COMMENT '更新数据时间',
+  `module_id` int NOT NULL AUTO_INCREMENT COMMENT '模块ID',
+  `module_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '模块名称',
+  `module_desc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '模块描述',
+  `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
+  `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料新增人',
+  `datains_time` date NULL DEFAULT NULL COMMENT '资料新增时间',
+  `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
+  `datachg_time` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`module_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for module_zero
+-- ----------------------------
+DROP TABLE IF EXISTS `module_zero`;
+CREATE TABLE `module_zero`  (
+  `module_id` int NOT NULL AUTO_INCREMENT COMMENT '模块ID',
+  `admin_account` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员账号',
+  `module_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '模块名称',
+  `module_enable` int NULL DEFAULT NULL COMMENT '是否开启',
+  PRIMARY KEY (`module_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 61 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for moneyinfo
@@ -290,17 +305,18 @@ CREATE TABLE `nation`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `operationlog`;
 CREATE TABLE `operationlog`  (
-  `OperationId` bigint NOT NULL AUTO_INCREMENT,
-  `OperationTime` datetime(0) NOT NULL,
-  `OperationLog` varchar(8000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `OperationAccount` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `OperationId` bigint NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `OperationTime` datetime(0) NOT NULL COMMENT '记录时间',
+  `OperationLog` varchar(8000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '日志内容',
+  `OperationAccount` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '被记录账户',
+  `OperationLevel` int NULL DEFAULT NULL COMMENT '日志等级',
   `delete_mk` int NOT NULL DEFAULT 0 COMMENT '删除标记',
   `datains_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料创建人',
   `datains_date` date NULL DEFAULT NULL COMMENT '资料创建时间',
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`OperationId`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2432 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for passporttype
@@ -550,7 +566,7 @@ CREATE TABLE `workercheck`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 98 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for workergoodbad
@@ -569,7 +585,7 @@ CREATE TABLE `workergoodbad`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for workerhistory
@@ -588,7 +604,7 @@ CREATE TABLE `workerhistory`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for wtinfo
@@ -609,6 +625,6 @@ CREATE TABLE `wtinfo`  (
   `datachg_usr` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '资料更新人',
   `datachg_date` date NULL DEFAULT NULL COMMENT '资料更新时间',
   PRIMARY KEY (`WtiNo`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
