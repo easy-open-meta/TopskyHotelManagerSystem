@@ -171,14 +171,9 @@ namespace SYS.FormUI
                 worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
                 UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!";
-                o.OperationAccount = LoginInfo.WorkerNo;
-                o.datains_usr = LoginInfo.WorkerNo;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!", 3);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
+                
                 System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
                 if (saveFileName != "")
                 {

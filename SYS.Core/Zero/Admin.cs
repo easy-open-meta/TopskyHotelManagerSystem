@@ -37,10 +37,16 @@ namespace SYS.Core
         {
         }
 
+        /// <summary>
+        /// 编号
+        /// </summary>
+        public int Id { get; set; }
+
         private string _AdminAccount;
         /// <summary>
         /// 管理员账号
         /// </summary>
+        [SqlSugar.SugarColumn(IsPrimaryKey = true)]
         public string AdminAccount { get { return this._AdminAccount; } set { this._AdminAccount = value; } }
 
         private string _AdminPassword;
@@ -96,5 +102,24 @@ namespace SYS.Core
         /// 资料更新时间
         /// </summary>
         public System.DateTime? datachg_time { get { return this._datachg_time; } set { this._datachg_time = value; } }
+    
+        /// <summary>
+        /// 管理员类型描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string IsAdminNm { get; set; }
+
+        /// <summary>
+        /// 管理员类型
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string TypeName { get; set; }
+
+        /// <summary>
+        /// 删除标记描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string DeleteNm { get; set; }
+    
     }
 }

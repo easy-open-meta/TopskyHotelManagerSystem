@@ -59,14 +59,8 @@ namespace SYS.FormUI
                 UIMessageBox.Show("添加房间成功！");
                 LoadRoom();
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text;
-                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
-                o.datains_usr = AdminInfo.Account;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "新增了房间，房间号为：" + txtRoomNo.Text + "，房间类型为：" + cboRoomType.Text, 2);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
             }
             else
             {

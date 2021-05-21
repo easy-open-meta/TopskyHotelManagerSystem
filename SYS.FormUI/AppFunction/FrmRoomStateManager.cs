@@ -66,7 +66,7 @@ namespace SYS.FormUI
                     if (new RoomService().UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) == true)
                     {
                         UIMessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示", UIStyle.Green);
-                        FrmRoomManager.Reload();
+                        FrmRoomManager.Reload("");
                         this.Close();
                     }
                     else

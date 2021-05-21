@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SYS.FormUI</RootNamespace>
     <AssemblyName>TS酒店管理系统</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -32,6 +32,10 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -94,6 +98,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar">
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
     </Reference>
@@ -121,6 +128,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppFunction\FrmAddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAddAdmin.Designer.cs">
+      <DependentUpon>FrmAddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmAdminManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAdminManager.Designer.cs">
+      <DependentUpon>FrmAdminManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAuthority.Designer.cs">
+      <DependentUpon>FrmAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmChangeAdminPwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,26 +199,6 @@
     </Compile>
     <Compile Include="AppFunction\FrmSexType.Designer.cs">
       <DependentUpon>FrmSexType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgChar.cs">
-      <SubType>UserControl</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgChar.Designer.cs">
-      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgPanel.cs">
-      <SubType>UserControl</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgPanel.Designer.cs">
-      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\ExtensionMethods.cs" />
-    <Compile Include="AppUserControls\OrgCharGenerator.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="AppUserControls\ucPositionInformation.cs">
       <SubType>UserControl</SubType>
@@ -434,6 +439,16 @@
     <Compile Include="AppFunction\FrmWtiInfo.Designer.cs">
       <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="RequestHelper\RequestHelper.cs" />
+    <EmbeddedResource Include="AppFunction\FrmAddAdmin.resx">
+      <DependentUpon>FrmAddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmAdminManager.resx">
+      <DependentUpon>FrmAdminManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmAuthority.resx">
+      <DependentUpon>FrmAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChangeAdminPwd.resx">
       <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,14 +577,6 @@
     <EmbeddedResource Include="AppFunction\FrmWorkerCheckInfo.resx">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\CtrlOrgChar.resx">
-      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\CtrlOrgPanel.resx">
-      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucPositionInformation.resx">
       <DependentUpon>ucPositionInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -687,6 +694,7 @@
     <None Include="Resources\获取用户编号-ia.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\添加管理员.png" />
     <None Include="Resources\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png" />
     <None Include="Resources\系统管理员.png" />
     <None Include="Resources\返回 %281%29.png" />
@@ -732,13 +740,13 @@
     <None Include="Resources\月亮.png" />
     <None Include="Resources\咖啡.png" />
     <None Include="Resources\早上.png" />
+    <Content Include="bin\Debug\打卡.png" />
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\arrow-down-b.png" />
     <None Include="Resources\minus %281%29.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
-    <None Include="bin\Debug\打卡.png" />
     <Content Include="icon\add to card.ico" />
     <Content Include="icon\add_person.ico" />
     <Content Include="icon\atom.ico" />
@@ -760,12 +768,15 @@
     <Content Include="icon\报表.ico" />
     <Content Include="icon\操作记录.ico" />
     <Content Include="icon\新增.ico" />
+    <Content Include="icon\权限.ico" />
     <Content Include="icon\民族.ico" />
     <Content Include="icon\水电.ico" />
     <Content Include="icon\消费账单.ico" />
     <Content Include="icon\添加员工.ico" />
+    <Content Include="icon\添加管理员.ico" />
     <Content Include="icon\监管统计.ico" />
     <Content Include="icon\盾牌.ico" />
+    <Content Include="icon\禁用.ico" />
     <Content Include="icon\职位.ico" />
     <Content Include="icon\财务账单.ico" />
     <Content Include="icon\转换.ico" />

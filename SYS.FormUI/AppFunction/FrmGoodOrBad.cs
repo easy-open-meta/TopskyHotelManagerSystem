@@ -104,13 +104,7 @@ namespace SYS.FormUI
                     {
                         UIMessageBox.Show("新增成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "对员工：" + lblName.Text + "进行了奖罚情况录入！";
-                        o.OperationAccount = LoginInfo.WorkerNo;
-                        o.datains_usr = LoginInfo.WorkerNo;
-                        o.datains_date = DateTime.Now;
-                        new OperationlogService().InsertOperationLog(o);
+                        RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "对员工：" + lblName.Text + "进行了奖罚情况录入！", 3);
                         #endregion
                         DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
                     }

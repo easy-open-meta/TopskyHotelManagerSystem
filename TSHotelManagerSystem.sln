@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30709.132
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.FormUI", "SYS.FormUI\SYS.FormUI.csproj", "{8854DCB7-F2D7-4276-8D10-C7A124436145}"
 EndProject
@@ -51,5 +51,29 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B93ABE6D-89AD-45B3-94FB-65BD98597CC6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://134.175.239.108:8080/tfs/%E5%92%96%E5%95%A1%E4%B8%8E%E7%BD%91%E7%BB%9C(jvnteam)
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SYS.Application\\SYS.Application.csproj
+		SccProjectName1 = SYS.Application
+		SccLocalPath1 = SYS.Application
+		SccProjectUniqueName2 = SYS.Browser.WebAPI\\SYS.Browser.WebAPI.csproj
+		SccProjectName2 = SYS.Browser.WebAPI
+		SccLocalPath2 = SYS.Browser.WebAPI
+		SccProjectUniqueName3 = SYS.Common\\SYS.Common.csproj
+		SccProjectName3 = SYS.Common
+		SccLocalPath3 = SYS.Common
+		SccProjectUniqueName4 = SYS.Core\\SYS.Core.csproj
+		SccProjectName4 = SYS.Core
+		SccLocalPath4 = SYS.Core
+		SccProjectUniqueName5 = SYS.FormUI\\SYS.FormUI.csproj
+		SccProjectName5 = SYS.FormUI
+		SccLocalPath5 = SYS.FormUI
+		SccProjectUniqueName6 = SYS.Library\\SYS.Library.csproj
+		SccProjectName6 = SYS.Library
+		SccLocalPath6 = SYS.Library
 	EndGlobalSection
 EndGlobal

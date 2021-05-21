@@ -105,6 +105,11 @@ namespace SYS.Application
                 source.RoomState = string.IsNullOrEmpty(roomState.RoomStateName) ? "" : roomState.RoomStateName;
                 var roomType = roomTypes.FirstOrDefault(a => a.Roomtype == source.RoomType);
                 source.RoomName = string.IsNullOrEmpty(roomType.RoomName) ? "" : roomType.RoomName;
+
+                //把入住时间格式化
+                source.CheckTimeFormat = string.IsNullOrEmpty(source.CheckTime + "") ? "" 
+                : Convert.ToDateTime(source.CheckTime).ToString("yyyy-MM-dd HH:mm");
+
             });
             return rooms;
         }

@@ -9,9 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SYS.Application</RootNamespace>
     <AssemblyName>SYS.Application</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,17 +78,20 @@
     <Compile Include="Business\IWtiService.cs" />
     <Compile Include="Customer\ICheckInfoService.cs" />
     <Compile Include="Customer\ICustoService.cs" />
+    <Compile Include="RecordHelper\RecordHelper.cs" />
     <Compile Include="Room\IRoomService.cs" />
     <Compile Include="Room\IRoomTypeService.cs" />
     <Compile Include="Worker\IWorkerCheckService.cs" />
     <Compile Include="Worker\IWorkerGoodBadService.cs" />
     <Compile Include="Worker\IWorkerHistoryService.cs" />
     <Compile Include="Worker\IWorkerService.cs" />
+    <Compile Include="Zero\AdminModuleZeroService.cs" />
     <Compile Include="Zero\AdminService.cs" />
     <Compile Include="Business\CashService.cs" />
-    <Compile Include="Customer\CheckInfoService.cs" />
+    <Compile Include="Zero\CheckInfoService.cs" />
     <Compile Include="Customer\CustoService.cs" />
     <Compile Include="Zero\BaseService.cs" />
+    <Compile Include="Zero\IAdminModuleZeroService.cs" />
     <Compile Include="Zero\IAdminService.cs" />
     <Compile Include="Zero\IBaseService.cs" />
     <Compile Include="Zero\INoticeService.cs" />

@@ -186,14 +186,8 @@ namespace SYS.FormUI
                         LoadSpendInfoByCustoNo(r.CustoNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！";
-                        o.OperationAccount = LoginInfo.WorkerNo;
-                        o.datains_usr = LoginInfo.WorkerNo;
-                        o.datains_date = DateTime.Now;
+                        RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
                         #endregion
-                        new OperationlogService().InsertOperationLog(o);
                         nudNum.Value = 0;
                         return;
                     }

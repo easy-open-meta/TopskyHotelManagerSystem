@@ -120,14 +120,9 @@ namespace SYS.FormUI
                         dgvCashList.AutoGenerateColumns = false;
                         dgvCashList.DataSource = new CashService().SelectCashInfoAll();
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim();
-                        o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
-                        #endregion
-                        new OperationlogService().InsertOperationLog(o);
+                        RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim(), 3);
                         txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
-
+                        #endregion
                     }
                     else
                     {
