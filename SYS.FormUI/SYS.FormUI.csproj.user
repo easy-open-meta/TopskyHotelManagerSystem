@@ -1,21 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>C:\Users\Admin\Desktop\|C:\Users\Jacks\|C:\Users\ChunkitYeung\Desktop\</PublishUrlHistory>
-    <InstallUrlHistory />
-    <SupportUrlHistory />
-    <UpdateUrlHistory />
-    <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
-    <FallbackCulture>zh-CN</FallbackCulture>
-    <VerifyUploadedFiles>false</VerifyUploadedFiles>
-  </PropertyGroup>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
-    <EnableSQLServerDebugging>true</EnableSQLServerDebugging>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

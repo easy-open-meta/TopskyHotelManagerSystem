@@ -36,9 +36,17 @@ namespace SYS.FormUI
 {
     public partial class FrmCustomerManager : Form
     {
+
+        public delegate void ReloadCustomerList();
+
+
+        //定义委托类型的变量
+        public static ReloadCustomerList ReloadCustomer;
+
         public FrmCustomerManager()
         {
             InitializeComponent();
+            ReloadCustomer = LoadCustomer;
         }
 
         #region 用户管理界面加载事件方法
@@ -70,35 +78,7 @@ namespace SYS.FormUI
         #region 隐藏显示信息
         private void picShow_Click(object sender, EventArgs e)
         {
-            //if (n == 0)
-            //{
-            //    this.picShow.BackgroundImage = Resources.隐藏;
-            //    n = 1;
-            //    txtCardID.PasswordChar = Convert.ToChar("*");
-
-            //}
-            //else if (n == 1)
-            //{
-            //    DialogResult ret = MessageBox.Show("证件号码为敏感信息，确定要进行查看吗？(此步操作将写入操作日志)", "信息提醒", MessageBoxButtons.YesNo);
-            //    if (ret == DialogResult.Yes)
-            //    {
-            //        this.picShow.BackgroundImage = Resources.显示;
-            //        n = 0;
-            //        txtCardID.PasswordChar = new char();
-            //        #region 获取添加操作日志所需的信息
-            //        Operation o = new Operation();
-            //        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-            //        o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "查看了" + txtCustoNo.Text + "的证件号码!";
-            //        o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
-            //        #endregion
-            //        OperationManager.InsertOperationLog(o);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("操作不成功！");
-            //    }
-
-            //}
+            
         }
         #endregion
 
@@ -144,14 +124,8 @@ namespace SYS.FormUI
                 worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
                 UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OKCancel);
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "用户信息!";
-                o.OperationAccount = LoginInfo.WorkerNo;
-                o.datains_usr = LoginInfo.WorkerNo;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "用户信息!", 3);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
                 System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
                 if (saveFileName != "")
                 {
@@ -178,9 +152,9 @@ namespace SYS.FormUI
             if (txtCustoNo.Text != "")
             {
                 //dgvCustomerList.ClearRows();
-                var source = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
+                Custo source = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text.Trim());
                 dgvCustomerList.DataSource = source;
-                dgvCustomerList.AutoGenerateColumns = false;
+                //dgvCustomerList.AutoGenerateColumns = false;
             }
             else
             {
@@ -192,6 +166,36 @@ namespace SYS.FormUI
         {
             FrmInputs frmInputs = new FrmInputs();
             frmInputs.ShowDialog();
+        }
+
+        private void dgvCustomerList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCustomerList.SelectedRows.Count == 1)
+            {
+                btnUpdCustomer.Enabled = true;
+                return;
+            }
+            btnUpdCustomer.Enabled = true;
+            return;
+        }
+
+        private void btnUpdCustomer_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomerList.SelectedRows.Count == 1)
+            {
+                FrmCustoManager.cm_CustoNo = dgvCustomerList.SelectedRows[0].Cells["CustoNo"].Value.ToString();
+                FrmCustoManager.cm_CustoName = dgvCustomerList.SelectedRows[0].Cells["CustoName"].Value.ToString();
+                FrmCustoManager.cm_CustoAddress = dgvCustomerList.SelectedRows[0].Cells["CustoAdress"].Value == null ? "" : dgvCustomerList.SelectedRows[0].Cells["CustoAdress"].Value.ToString();
+                FrmCustoManager.cm_CustoType = Convert.ToInt32(dgvCustomerList.SelectedRows[0].Cells["Column2"].Value);
+                FrmCustoManager.cm_CustoSex = Convert.ToInt32(dgvCustomerList.SelectedRows[0].Cells["Column4"].Value);
+                FrmCustoManager.cm_PassportType = Convert.ToInt32(dgvCustomerList.SelectedRows[0].Cells["Column1"].Value);
+                FrmCustoManager.cm_CustoBirth = Convert.ToDateTime(dgvCustomerList.SelectedRows[0].Cells["CustoBirth"].Value.ToString());
+                FrmCustoManager.cm_CustoID = dgvCustomerList.SelectedRows[0].Cells["Column3"].Value.ToString();
+                FrmCustoManager.cm_CustoTel = dgvCustomerList.SelectedRows[0].Cells["CustoTel"].Value.ToString();
+                FrmInputs frmInputs = new FrmInputs();
+                frmInputs.Text = "修改客户";
+                frmInputs.ShowDialog();
+            }
         }
     }
 

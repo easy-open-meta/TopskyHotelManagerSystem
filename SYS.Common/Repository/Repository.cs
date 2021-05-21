@@ -23,7 +23,7 @@ namespace SYS.Common
 
                 base.Context.Aop.OnLogExecuting = (s, p) =>
                 {
-                    Console.WriteLine(s);
+                    //Console.WriteLine(s);
                 };
             }
         }

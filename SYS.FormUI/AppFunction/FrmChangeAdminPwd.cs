@@ -51,7 +51,8 @@ namespace SYS.FormUI
 
         private void btnUpdPwd_Click(object sender, EventArgs e)
         {
-            bool tf = new AdminService().UpdateNewPwdByOldPwd(AdminInfo.Account, txtNewPwd.Text.Trim());
+            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtNewPwd.Text.Trim() };
+            bool tf = new AdminService().UpdateNewPwdByOldPwd(admin);
             if (tf == false)
             {
                 UIMessageBox.Show("服务器繁忙，修改失败！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
@@ -75,7 +76,8 @@ namespace SYS.FormUI
         private void txtOldPwd_Validated(object sender, EventArgs e)
         {
             //校验旧密码是否正确
-            var result = new AdminService().SelectMangerByPass(AdminInfo.Account, txtOldPwd.Text.Trim());
+            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtOldPwd.Text.Trim() };
+            var result = new AdminService().SelectMangerByPass(admin);
             if (result != null)
             {
                 lgCheckOldPwd.Visible = true;

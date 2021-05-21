@@ -78,12 +78,9 @@ namespace SYS.Application
         /// <summary>
         /// 根据登录名称、密码查询员工信息
         /// </summary>
-        /// <param name="id"></param>
-        /// 登录名称
-        /// <param name="pwd"></param>
-        /// 登录密码
+        /// <param name="worker"></param>
         /// <returns></returns>
-        Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd);
+        Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(Worker worker);
         #endregion
 
 

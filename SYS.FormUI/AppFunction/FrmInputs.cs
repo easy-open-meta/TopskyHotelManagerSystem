@@ -172,17 +172,9 @@ namespace SYS.FormUI
                     if (t == true)
                     {
                         UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
-                        //FrmCustoManager.ReloadCusto();
+                        FrmCustomerManager.ReloadCustomer();
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog()
-                        {
-                            OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss")),
-                            Operationlog = "编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo,
-                            OperationAccount = LoginInfo.WorkerNo,
-                            datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
-                            datains_date = DateTime.Now
-                        };
-                        new OperationlogService().InsertOperationLog(o);
+                        RecordHelper.Record("编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "添加了一名客户，客户编号为：" + custo.CustoNo, 3);
                         #endregion
                         this.Close();
                         return;
@@ -247,18 +239,10 @@ namespace SYS.FormUI
                     {
                         UIMessageBox.Show("修改成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog()
-                        {
-                            OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss")),
-                            Operationlog = "编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "修改了一名客户信息，客户编号为：" + custo.CustoNo,
-                            OperationAccount = LoginInfo.WorkerNo,
-                            datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
-                            datains_date = DateTime.Now
-                        };
-                        new OperationlogService().InsertOperationLog(o);
+                        RecordHelper.Record("编号：" + LoginInfo.WorkerNo + "【" + FrmMain.wk_WorkerName + "】" + "于" + DateTime.Now + "修改了一名客户信息，客户编号为：" + custo.CustoNo, 3);
                         #endregion
                         this.Close();
-                        //FrmCustoManager.ReloadCusto();
+                        FrmCustomerManager.ReloadCustomer();
                     }
                     else
                     {

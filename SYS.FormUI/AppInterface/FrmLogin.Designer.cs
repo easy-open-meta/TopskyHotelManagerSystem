@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.label2 = new System.Windows.Forms.Label();
-            this.picMin = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.picLogin = new Sunny.UI.UIButton();
             this.txtWorkerId = new Sunny.UI.UITextBox();
             this.txtWorkerPwd = new Sunny.UI.UITextBox();
             this.btnLoginBackSystem = new Sunny.UI.UIButton();
-            ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            this.picFormSize = new Sunny.UI.UIButton();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.SuspendLayout();
             // 
             // label2
@@ -50,30 +48,6 @@
             this.label2.Size = new System.Drawing.Size(29, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "  ";
-            // 
-            // picMin
-            // 
-            this.picMin.BackColor = System.Drawing.Color.Transparent;
-            this.picMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picMin.BackgroundImage")));
-            this.picMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picMin.Location = new System.Drawing.Point(746, -1);
-            this.picMin.Name = "picMin";
-            this.picMin.Size = new System.Drawing.Size(35, 35);
-            this.picMin.TabIndex = 6;
-            this.picMin.TabStop = false;
-            this.picMin.Click += new System.EventHandler(this.picMin_Click);
-            // 
-            // picClose
-            // 
-            this.picClose.BackColor = System.Drawing.Color.Transparent;
-            this.picClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picClose.BackgroundImage")));
-            this.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picClose.Location = new System.Drawing.Point(787, -1);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(35, 35);
-            this.picClose.TabIndex = 7;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // picLogin
             // 
@@ -155,6 +129,57 @@
             this.btnLoginBackSystem.Text = "进入后台管理系统";
             this.btnLoginBackSystem.Click += new System.EventHandler(this.btnLoginBackSystem_Click);
             // 
+            // picFormSize
+            // 
+            this.picFormSize.BackColor = System.Drawing.Color.Transparent;
+            this.picFormSize.BackgroundImage = global::SYS.FormUI.Properties.Resources.arrow_down_b;
+            this.picFormSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFormSize.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picFormSize.FillColor = System.Drawing.Color.Transparent;
+            this.picFormSize.FillHoverColor = System.Drawing.Color.RoyalBlue;
+            this.picFormSize.FillSelectedColor = System.Drawing.Color.RoyalBlue;
+            this.picFormSize.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picFormSize.Location = new System.Drawing.Point(744, 2);
+            this.picFormSize.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picFormSize.Name = "picFormSize";
+            this.picFormSize.Radius = 0;
+            this.picFormSize.RectHoverColor = System.Drawing.Color.RoyalBlue;
+            this.picFormSize.RectPressColor = System.Drawing.Color.RoyalBlue;
+            this.picFormSize.RectSelectedColor = System.Drawing.Color.RoyalBlue;
+            this.picFormSize.Size = new System.Drawing.Size(35, 35);
+            this.picFormSize.Style = Sunny.UI.UIStyle.Custom;
+            this.picFormSize.StyleCustomMode = true;
+            this.picFormSize.TabIndex = 31;
+            this.picFormSize.Click += new System.EventHandler(this.picMin_Click);
+            this.picFormSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picFormSize_MouseDown);
+            this.picFormSize.MouseLeave += new System.EventHandler(this.picFormSize_MouseLeave);
+            this.picFormSize.MouseHover += new System.EventHandler(this.picFormSize_MouseHover);
+            // 
+            // uiButton1
+            // 
+            this.uiButton1.BackColor = System.Drawing.Color.Transparent;
+            this.uiButton1.BackgroundImage = global::SYS.FormUI.Properties.Resources.close;
+            this.uiButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.Transparent;
+            this.uiButton1.FillHoverColor = System.Drawing.Color.RoyalBlue;
+            this.uiButton1.FillSelectedColor = System.Drawing.Color.RoyalBlue;
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiButton1.Location = new System.Drawing.Point(785, 2);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Radius = 0;
+            this.uiButton1.RectHoverColor = System.Drawing.Color.RoyalBlue;
+            this.uiButton1.RectPressColor = System.Drawing.Color.RoyalBlue;
+            this.uiButton1.RectSelectedColor = System.Drawing.Color.RoyalBlue;
+            this.uiButton1.Size = new System.Drawing.Size(35, 35);
+            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton1.TabIndex = 30;
+            this.uiButton1.Click += new System.EventHandler(this.picClose_Click);
+            this.uiButton1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.uiButton1_MouseDown);
+            this.uiButton1.MouseLeave += new System.EventHandler(this.uiButton1_MouseLeave);
+            this.uiButton1.MouseHover += new System.EventHandler(this.uiButton1_MouseHover);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -162,12 +187,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 429);
+            this.Controls.Add(this.picFormSize);
+            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.btnLoginBackSystem);
             this.Controls.Add(this.txtWorkerPwd);
             this.Controls.Add(this.txtWorkerId);
             this.Controls.Add(this.picLogin);
-            this.Controls.Add(this.picClose);
-            this.Controls.Add(this.picMin);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -178,8 +203,6 @@
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,12 +210,12 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox picMin;
-        private System.Windows.Forms.PictureBox picClose;
         private Sunny.UI.UIButton picLogin;
         private Sunny.UI.UITextBox txtWorkerId;
         private Sunny.UI.UITextBox txtWorkerPwd;
         private Sunny.UI.UIButton btnLoginBackSystem;
+        private Sunny.UI.UIButton picFormSize;
+        private Sunny.UI.UIButton uiButton1;
     }
 }
 

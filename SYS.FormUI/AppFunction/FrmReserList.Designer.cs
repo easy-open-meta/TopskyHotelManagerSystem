@@ -107,6 +107,7 @@
             this.dgvReserList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.dgvReserList.Location = new System.Drawing.Point(18, 104);
             this.dgvReserList.Name = "dgvReserList";
+            this.dgvReserList.ReadOnly = true;
             this.dgvReserList.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvReserList.RowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -123,48 +124,56 @@
             this.clReserNo.DataPropertyName = "ReserId";
             this.clReserNo.HeaderText = "预约编号";
             this.clReserNo.Name = "clReserNo";
+            this.clReserNo.ReadOnly = true;
             // 
             // clCustoNm
             // 
             this.clCustoNm.DataPropertyName = "CustoName";
             this.clCustoNm.HeaderText = "客户姓名";
             this.clCustoNm.Name = "clCustoNm";
+            this.clCustoNm.ReadOnly = true;
             // 
             // clTel
             // 
             this.clTel.DataPropertyName = "CustoTel";
             this.clTel.HeaderText = "预约电话";
             this.clTel.Name = "clTel";
+            this.clTel.ReadOnly = true;
             // 
             // clway
             // 
             this.clway.DataPropertyName = "ReserWay";
             this.clway.HeaderText = "预约方式";
             this.clway.Name = "clway";
+            this.clway.ReadOnly = true;
             // 
             // clRoomNo
             // 
             this.clRoomNo.DataPropertyName = "ReserRoom";
             this.clRoomNo.HeaderText = "预约房号";
             this.clRoomNo.Name = "clRoomNo";
+            this.clRoomNo.ReadOnly = true;
             // 
             // clStartTime
             // 
             this.clStartTime.DataPropertyName = "ReserDate";
             this.clStartTime.HeaderText = "开始时间";
             this.clStartTime.Name = "clStartTime";
+            this.clStartTime.ReadOnly = true;
             // 
             // clDealTime
             // 
             this.clDealTime.DataPropertyName = "ReserEndDay";
             this.clDealTime.HeaderText = "截止时间";
             this.clDealTime.Name = "clDealTime";
+            this.clDealTime.ReadOnly = true;
             // 
             // clReserMemo
             // 
             this.clReserMemo.DataPropertyName = "ReserRemark";
             this.clReserMemo.HeaderText = "预约备注";
             this.clReserMemo.Name = "clReserMemo";
+            this.clReserMemo.ReadOnly = true;
             // 
             // cbCustoType
             // 
@@ -177,6 +186,7 @@
             this.cbCustoType.Name = "cbCustoType";
             this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.cbCustoType.Radius = 20;
+            this.cbCustoType.ReadOnly = true;
             this.cbCustoType.Size = new System.Drawing.Size(250, 35);
             this.cbCustoType.TabIndex = 134;
             this.cbCustoType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -225,6 +235,7 @@
             this.txtCustoNo.Name = "txtCustoNo";
             this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoNo.Radius = 20;
+            this.txtCustoNo.ReadOnly = true;
             this.txtCustoNo.Size = new System.Drawing.Size(250, 35);
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;

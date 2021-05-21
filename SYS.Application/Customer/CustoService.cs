@@ -36,6 +36,7 @@ namespace SYS.Application
     /// </summary>
     public class CustoService:Repository<Custo>, ICustoService
     {
+        Encrypt encrypt = new Encrypt();
         #region 添加客户信息
         /// <summary>
         /// 添加客户信息
@@ -107,7 +108,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<Custo> SelectCustoAll()
         {
-            Encrypt encrypt = new Encrypt();
+            
             //查询出所有性别类型
             List<SexType> sexTypes = new List<SexType>();
             sexTypes = base.Change<SexType>().GetList();
@@ -149,7 +150,11 @@ namespace SYS.Application
         public Custo SelectCardInfoByCustoNo(string CustoNo)
         {
             Custo c = new Custo();
-            c = base.GetSingle(a => a.CustoNo == CustoNo && a.delete_mk != 1);
+            c = base.GetSingle(a => a.CustoNo.Equals(CustoNo));
+            if (c == null)
+            {
+                return c;
+            }
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == c.CustoSex);
             c.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -159,6 +164,12 @@ namespace SYS.Application
             //客户类型
             var custoType = base.Change<CustoType>().GetSingle(a => a.UserType == c.CustoType);
             c.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
+            //解密身份证号码
+            var sourceStr = c.CustoID.Contains(":") ? encrypt.DeEncryptStr(c.CustoID) : c.CustoID;
+            c.CustoID = sourceStr;
+            //解密联系方式
+            var sourceTelStr = c.CustoTel.Contains(":") ? encrypt.DeEncryptStr(c.CustoTel) : c.CustoTel;
+            c.CustoTel = sourceTelStr;
             return c;
         }
 

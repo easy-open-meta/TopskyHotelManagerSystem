@@ -307,17 +307,11 @@ namespace SYS.FormUI
                         return;
                     }
                     UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
-                    FrmRoomManager.Reload();
+                    FrmRoomManager.Reload("");
 
                     #region 获取添加操作日志所需的信息
-                    OperationLog o = new OperationLog();
-                    o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                    o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
-                    o.OperationAccount = LoginInfo.WorkerNo;
-                    o.datains_usr = LoginInfo.WorkerNo;
-                    o.datains_date = DateTime.Now;
+                    RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                     #endregion
-                    new OperationlogService().InsertOperationLog(o);
                 }
                 else
                 {
@@ -334,16 +328,10 @@ namespace SYS.FormUI
                             return;
                         }
                         UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
-                        FrmRoomManager.Reload();
+                        FrmRoomManager.Reload("");
                         #region 获取添加操作日志所需的信息
-                        OperationLog o = new OperationLog();
-                        o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                        o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！";
-                        o.OperationAccount = LoginInfo.WorkerNo;
-                        o.datains_usr = LoginInfo.WorkerNo;
-                        o.datains_date = DateTime.Now;
+                        RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                         #endregion
-                        new OperationlogService().InsertOperationLog(o);
                         return;
                     }
                     else

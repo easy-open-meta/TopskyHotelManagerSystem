@@ -46,9 +46,16 @@ namespace SYS.FormUI
                 UIMessageDialog.ShowErrorDialog(this, "错误提示", "账号或密码包含除字母数字外的字符，请检查！", UIStyle.Red);
                 return;
             }
-            Admin a = new AdminService().SelectMangerByPass(account,pass);
+            Admin admin = new Admin() { AdminAccount = account, AdminPassword = pass };
+            Admin a = new AdminService().SelectMangerByPass(admin);
             if (a != null)//判断超管是否存在
             {
+                //判断当前管理员是否被禁用
+                if (a.DeleteMk == 1)
+                {
+                    UIMessageBox.ShowError("当前管理员已被禁用，请联系超级管理员进行解除！");
+                    return;
+                }
                 AdminInfo.Type = a.AdminType;
                 AdminInfo.Name = a.AdminName;
                 AdminInfo.Account = a.AdminAccount;
@@ -56,6 +63,7 @@ namespace SYS.FormUI
                 FrmBackgroundSystem fm = new FrmBackgroundSystem();
                 fm.Show();//打开主窗体
                 this.Hide();//隐藏登录窗体
+                RecordHelper.Record(AdminInfo.Account + "于" + DateTime.Now + "成功登入后台管理系统！", 3);
             }
             else
             {

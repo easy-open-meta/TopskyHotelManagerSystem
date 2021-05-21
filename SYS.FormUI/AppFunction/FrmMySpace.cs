@@ -101,7 +101,8 @@ namespace SYS.FormUI
         private void txtOldPwd_Validated(object sender, EventArgs e)
         {
             //校验旧密码是否正确
-            var result = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(LoginInfo.WorkerNo, txtOldPwd.Text.Trim());
+            Worker worker = new Worker() { WorkerId = LoginInfo.WorkerNo,WorkerPwd = txtOldPwd.Text.Trim() };
+            var result = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(worker);
             if (result != null)
             {
                 lgCheckOldPwd.Visible = true;

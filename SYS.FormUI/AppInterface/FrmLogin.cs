@@ -191,49 +191,34 @@ namespace SYS.FormUI
             {
                 if (CheckInput())//检验输入完整性
                 {
-                    string id = txtWorkerId.Text;//获取员工编号
-                    string pwd = txtWorkerPwd.Text;//获取员工密码
-                    Worker w = new WorkerService().SelectWorkerInfoByWorkerId(id);
+                    Worker worker = new Worker() { WorkerId = txtWorkerId.Text.Trim(), WorkerPwd = txtWorkerPwd.Text.Trim() };
+                    Worker w = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(worker);
                     if (w != null)//判断员工编号是否存在
                     {
-                        w = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(id, pwd);
-                        if (w != null) //判断员工密码是否正确
-                        {
-                            LoginInfo.WorkerNo = w.WorkerId;
-                            LoginInfo.WorkerName = w.WorkerName;
-                            LoginInfo.WorkerClub = w.WorkerClub;
-                            LoginInfo.WorkerPosition = w.WorkerPosition;
+                        LoginInfo.WorkerNo = w.WorkerId;
+                        LoginInfo.WorkerName = w.WorkerName;
+                        LoginInfo.WorkerClub = w.WorkerClub;
+                        LoginInfo.WorkerPosition = w.WorkerPosition;
 
-                            FrmMain frm = new FrmMain(this);
-                            this.Hide();//隐藏登录窗体
-                            frm.Show();//打开主窗体
-                            #region 获取添加操作日志所需的信息
-                            OperationLog o = new OperationLog();
-                            o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                            o.Operationlog = txtWorkerId.Text + "于" + DateTime.Now + "登入了系统！";
-                            o.OperationAccount = txtWorkerId.Text;
-                            o.datains_usr = LoginInfo.WorkerNo;
-                            o.datains_date = DateTime.Now;
-                            #endregion
-                            new OperationlogService().InsertOperationLog(o);
-                        }
-                        else
-                        {
-                            UIMessageBox.Show("密码错误！", "来自小T提示", UIStyle.Red);
-                            txtWorkerPwd.Focus();//聚焦
-                        }
+                        FrmMain frm = new FrmMain(this);
+                        this.Hide();//隐藏登录窗体
+                        frm.Show();//打开主窗体
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(txtWorkerId.Text + "于" + DateTime.Now + "登入了系统！", 1);
+                        #endregion
+
                     }
                     else
                     {
-                        UIMessageBox.Show("该员工编号不存在！", "来自小T提示", UIStyle.Red);
-                        txtWorkerId.Focus();//聚焦
+                        UIMessageBox.Show("密码错误！", "来自小T提示", UIStyle.Red);
+                        txtWorkerPwd.Focus();//聚焦
                     }
                 }
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
-                UIMessageBox.Show("请连接好数据库！", "温馨提示", UIStyle.Red);
+                UIMessageBox.Show("服务器维护中，请稍后再试！", "温馨提示", UIStyle.Red);
             }
         }
         #endregion
@@ -249,6 +234,40 @@ namespace SYS.FormUI
             FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
             frmAdminEnter.ShowDialog();
             this.Hide();
+        }
+
+        private void picFormSize_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.RoyalBlue;
+        }
+
+        private void picFormSize_MouseHover(object sender, EventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.RoyalBlue;
+        }
+
+        private void picFormSize_MouseLeave(object sender, EventArgs e)
+        {
+            this.picFormSize.BackColor = System.Drawing.Color.Transparent;
+            this.picFormSize.BackgroundImage = Resources.arrow_down_b;
+            this.picFormSize.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
+        }
+
+        private void uiButton1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.uiButton1.BackColor = System.Drawing.Color.RoyalBlue;
+        }
+
+        private void uiButton1_MouseHover(object sender, EventArgs e)
+        {
+            this.uiButton1.BackColor = System.Drawing.Color.RoyalBlue;
+        }
+
+        private void uiButton1_MouseLeave(object sender, EventArgs e)
+        {
+            this.uiButton1.BackColor = System.Drawing.Color.Transparent;
+            this.uiButton1.BackgroundImage = Resources.close;
+            this.uiButton1.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
         }
     }
 }

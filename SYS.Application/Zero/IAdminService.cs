@@ -22,6 +22,7 @@
  *
  */
 using SYS.Core;
+using System.Collections.Generic;
 
 namespace SYS.Application
 {
@@ -35,10 +36,9 @@ namespace SYS.Application
         /// <summary>
         /// 根据超管密码查询员工类型和权限
         /// </summary>
-        /// <param name="adminaccount"></param>
-        /// <param name="adminpass"></param>
+        /// <param name="admin"></param>
         /// <returns></returns>
-        Admin SelectMangerByPass(string adminaccount, string adminpass);
+        Admin SelectMangerByPass(Admin admin);
         #endregion
 
 
@@ -51,13 +51,50 @@ namespace SYS.Application
         Admin SelectAdminPwdByAccount(string account);
         #endregion
 
+        /// <summary>
+        /// 获取所有管理员列表
+        /// </summary>
+        /// <returns></returns>
+        List<Admin> GetAllAdminList();
 
         /// <summary>
         /// 修改密码
         /// </summary>
-        /// <param name="Account"></param>
-        /// <param name="NewPwd"></param>
+        /// <param name="admin"></param>
         /// <returns></returns>
-        bool UpdateNewPwdByOldPwd(string Account, string NewPwd);
+        bool UpdateNewPwdByOldPwd(Admin admin);
+
+        /// <summary>
+        /// 获取管理员列表
+        /// </summary>
+        /// <returns></returns>
+        List<Admin> GetAllAdmin();
+
+        /// <summary>
+        /// 添加管理员
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <returns></returns>
+        bool AddAdmin(Admin admin);
+
+        /// <summary>
+        /// 获取管理员信息
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <returns></returns>
+        Admin GetAdminInfoByAdminAccount(Admin admin);
+
+        /// <summary>
+        /// 获取所有管理员类型
+        /// </summary>
+        /// <returns></returns>
+        List<AdminType> GetAllAdminTypes();
+
+        /// <summary>
+        /// 批量更新管理员账户
+        /// </summary>
+        /// <param name="admins"></param>
+        /// <returns></returns>
+        bool UpdAccount(Admin admins);
     }
 }

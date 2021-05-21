@@ -22,6 +22,7 @@
  *
  */
 using Sunny.UI;
+using SYS.Application;
 using SYS.Core;
 using SYS.FormUI.AppFunction;
 using System;
@@ -67,6 +68,8 @@ namespace SYS.FormUI
                         break;
                 }
             }
+            LoadModule();
+
             DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
@@ -144,7 +147,6 @@ namespace SYS.FormUI
                         frmChart.Show();
                         break;
                     case "水电管理":
-                        
                         break;
                     case "水电信息":
                         pnlForm.Controls.Clear();
@@ -235,6 +237,30 @@ namespace SYS.FormUI
                         pnlForm.Controls.Add(frmOperation);
                         frmOperation.Show();
                         break;
+                    case "系统管理":
+                        break;
+                    case "添加管理员":
+                        pnlForm.Controls.Clear();
+                        FrmAddAdmin frmAddAdmin = new FrmAddAdmin();
+                        frmAddAdmin.TopLevel = false;
+                        pnlForm.Controls.Add(frmAddAdmin);
+                        frmAddAdmin.Show();
+                        break;
+                    case "权限分配":
+                        pnlForm.Controls.Clear();
+                        FrmAuthority frmAuthority = new FrmAuthority();
+                        frmAuthority.TopLevel = false;
+                        pnlForm.Controls.Add(frmAuthority);
+                        frmAuthority.Show();
+                        break;
+                    case "启/禁用管理员":
+                        pnlForm.Controls.Clear();
+                        FrmAdminManager frmAdminManager = new FrmAdminManager();
+                        frmAdminManager.TopLevel = false;
+                        pnlForm.Controls.Add(frmAdminManager);
+                        frmAdminManager.Show();
+                        break;
+
                 }
             }
         }
@@ -244,6 +270,29 @@ namespace SYS.FormUI
             this.btnSetting.RectHoverColor = Color.Black;
             this.btnSetting.Radius = 20;
             this.btnSetting.RadiusSides = UICornerRadiusSides.All;
+            
+        }
+
+        /// <summary>
+        /// 初始化当前管理员账户所拥有权限模块
+        /// </summary>
+        public void LoadModule()
+        {
+            Admin admin = new Admin() { AdminAccount = AdminInfo.Account };
+            List <ModuleZero> moduleZeros  = new AdminModuleZeroService().GetAllModuleByAdmin(admin);
+            for (int i = 0; i <= Aside.Nodes.Count; i++)
+            {
+                var moduleZero = moduleZeros.FirstOrDefault(a => a.module_name.Equals(Aside.Nodes[i].Name.ToString()));
+                if (moduleZero == null)
+                {
+                    Aside.Nodes[i].Remove();
+                    --i;
+                }
+                if (moduleZeros.Count == Aside.Nodes.Count)
+                {
+                    break;
+                }
+            }
             
         }
 
@@ -280,7 +329,7 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -305,6 +354,17 @@ namespace SYS.FormUI
         {
             FrmChangeAdminPwd frmChangeAdminPwd = new FrmChangeAdminPwd();
             frmChangeAdminPwd.ShowDialog();
+        }
+
+        private void Aside_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiMySpace_Click(object sender, EventArgs e)
+        {
+            //FrmMySpace frmMySpace = new FrmMySpace();
+            //frmMySpace.ShowDialog();
         }
     }
 }

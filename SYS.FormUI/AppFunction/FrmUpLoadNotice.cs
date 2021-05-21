@@ -79,14 +79,8 @@ namespace SYS.FormUI
                 bool n = new NoticeService().InsertNotice(notice);
                 UIMessageBox.ShowSuccess("上传成功！");
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了上传公告操作！编号为：" + notice.NoticeNo;
-                o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
-                o.datains_usr = AdminInfo.Account;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了上传公告操作！编号为：" + notice.NoticeNo, 2);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
             }
             else
             {

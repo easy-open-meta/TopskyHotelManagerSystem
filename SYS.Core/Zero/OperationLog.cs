@@ -27,10 +27,30 @@ using System;
 namespace SYS.Core
 {
     /// <summary>
+    /// 日志等级
+    /// </summary>
+    public enum RecordLevel
+    {
+        /// <summary>
+        /// 普通警告
+        /// </summary>
+        Normal = 100,
+        /// <summary>
+        /// 严重警告
+        /// </summary>
+        Warning = 200,
+        /// <summary>
+        /// 危险警告
+        /// </summary>
+        Danger = 300,
+    }
+
+    /// <summary>
     /// 操作日志
     /// </summary>
     public class OperationLog
     {
+        
         /// <summary>
         /// 操作时间
         /// </summary>
@@ -43,6 +63,10 @@ namespace SYS.Core
         /// 操作账号
         /// </summary>
         public string OperationAccount { get; set; }
+        /// <summary>
+        /// 日志等级
+        /// </summary>
+        public RecordLevel OperationLevel { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>

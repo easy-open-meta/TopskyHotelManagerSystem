@@ -322,13 +322,7 @@ namespace SYS.FormUI
                             UIMessageBox.Show("员工信息/履历添加成功！该员工登录密码为：123456，请提醒员工妥善保管并首次登录系统时修改密码！");
                             FrmWorkerManager.Reload();
                             #region 获取添加操作日志所需的信息
-                            OperationLog o = new OperationLog();
-                            o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                            o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！";
-                            o.OperationAccount = AdminInfo.Account + AdminInfo.Name;
-                            o.datains_usr = AdminInfo.Account;
-                            o.datachg_date = DateTime.Now;
-                            new OperationlogService().InsertOperationLog(o);
+                            RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！", 2);
                             #endregion
                         }
                         else
