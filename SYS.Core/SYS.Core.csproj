@@ -72,6 +72,7 @@
     <Compile Include="Util\ApplicationVersionUtil.cs" />
     <Compile Include="Util\CheckInputHelper.cs" />
     <Compile Include="Util\CounterHelper.cs" />
+    <Compile Include="Util\CounterRuleConsts.cs" />
     <Compile Include="Util\DBHelper.cs" />
     <Compile Include="Util\IDCardUtil.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
