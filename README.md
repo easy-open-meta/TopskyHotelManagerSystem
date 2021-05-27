@@ -48,7 +48,74 @@
 开发技术：.NET WinForm
 
 # 系统结构：
-![TopSkyHotelManagerSystem](https://images.gitee.com/uploads/images/2021/0214/195755_0c128762_5122554.png "TopskyHotelManagerSystem.png")
+```tree
+TopSkyHotelManagerSystem
+├─SYS.Application
+├─ Business
+├─ Customer
+├─ RecordHelper
+├─ Room
+├─ SYS.Application.csproj
+├─ SYS.Application.csproj.user
+├─ SYS.Application.csproj.vspscc
+├─ Worker
+├─ Zero
+├─ app.config
+├─ bitbug_favicon (1).ico
+└─ packages.config
+├─SYS.Common
+├─ App.config
+├─ Base
+├─ Repository
+├─ SYS.Common.csproj
+├─ SYS.Common.csproj.vspscc
+├─ StatusCode
+│    └─ StatusCode.cs
+├─ bitbug_favicon (1).ico
+└─ packages.config
+├─SYS.Core
+├─ App.config
+├─ Business
+├─ Customer
+├─ Repository
+├─ Room
+├─ SYS.Core.csproj
+├─ SYS.Core.csproj.user
+├─ SYS.Core.csproj.vspscc
+├─ Util
+├─ Worker
+├─ Zero
+├─ bitbug_favicon (1).ico
+├─SYS.FormUI
+├─ App.config
+├─ AppFunction
+├─ AppInterface
+├─ AppMain
+├─ AppUserControls
+├─ Font
+├─ Logo
+├─ Program.cs
+├─ RequestHelper
+├─ Resources
+├─ RoomOption.Designer.cs
+├─ RoomOption.cs
+├─ RoomOption.resx
+├─ SETTINGS.CS
+├─ SYS.FormUI.csproj
+├─ SYS.FormUI.csproj.user
+├─ SYS.FormUI.csproj.vspscc
+├─ TSHotelManagerSystem_TemporaryKey.pfx
+├─ WebSite.Designer.cs
+├─ WebSite.cs
+├─ WebSite.resx
+├─ WtiInfo.Designer.cs
+├─ WtiInfo.cs
+├─ WtiInfo.resx
+├─ bitbug_favicon (1).ico
+├─ bitbug_favicon.ico
+├─ icon
+├─ logo.ico
+```
 
 # 系统功能模块汇总：
 
