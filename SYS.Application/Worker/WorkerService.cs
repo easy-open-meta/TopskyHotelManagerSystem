@@ -88,12 +88,10 @@ namespace SYS.Application
         /// <returns></returns>
         public bool AddWorker(Worker worker)
         {
-            var newId = encrypt.EncryptStr(worker.CardId);
-            var newTel = encrypt.EncryptStr(worker.WorkerTel);
-            var newAddr = encrypt.EncryptStr(worker.WorkerAddress);
-            worker.CardId = newId;
-            worker.WorkerTel = newTel;
-            worker.WorkerAddress = newAddr;
+            string NewID = encrypt.EncryptStr(worker.CardId);
+            string NewTel = encrypt.EncryptStr(worker.WorkerTel);
+            worker.CardId = NewID;
+            worker.WorkerTel = NewTel;
             return base.Insert(worker);
         }
         #endregion
@@ -191,15 +189,12 @@ namespace SYS.Application
         /// <summary>
         /// 根据登录名称、密码查询员工信息
         /// </summary>
-        /// <param name="id"></param>
-        /// 登录名称
-        /// <param name="pwd"></param>
-        /// 登录密码
+        /// <param name="worker"></param>
         /// <returns></returns>
-        public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(string id, string pwd)
+        public Worker SelectWorkerInfoByWorkerIdAndWorkerPwd(Worker worker)
         {
             Worker w = new Worker();
-            w = base.GetSingle(a => a.WorkerId == id);
+            w = base.GetSingle(a => a.WorkerId == worker.WorkerId);
             if (w == null)
             {
                 w = null;
@@ -207,7 +202,7 @@ namespace SYS.Application
             }
 
             var sourceStr = w.WorkerPwd.Contains(":") ? encrypt.DeEncryptStr(w.WorkerPwd) : w.WorkerPwd;
-            if (sourceStr != pwd)
+            if (sourceStr != worker.WorkerPwd)
             {
                 w = null;
                 return w;

@@ -45,6 +45,7 @@ namespace SYS.FormUI
             }
 
             dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
+            dgvOperationlog.AutoGenerateColumns = false;
         }
     }
 }

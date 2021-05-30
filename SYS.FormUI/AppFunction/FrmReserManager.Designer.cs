@@ -191,9 +191,9 @@
             this.dtpBouDate.SymbolDropDown = 61555;
             this.dtpBouDate.SymbolNormal = 61555;
             this.dtpBouDate.TabIndex = 114;
-            this.dtpBouDate.Text = "2020-11-24";
+            this.dtpBouDate.Text = "2021-05-13";
             this.dtpBouDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dtpBouDate.Value = new System.DateTime(2020, 11, 24, 22, 50, 36, 791);
+            this.dtpBouDate.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
             this.dtpBouDate.ValueChanged += new Sunny.UI.UIDatePicker.OnDateTimeChanged(this.dtpBouDate_ValueChanged);
             // 
             // label12
@@ -224,9 +224,9 @@
             this.dtpEndDate.SymbolDropDown = 61555;
             this.dtpEndDate.SymbolNormal = 61555;
             this.dtpEndDate.TabIndex = 116;
-            this.dtpEndDate.Text = "2020-11-24";
+            this.dtpEndDate.Text = "2021-05-13";
             this.dtpEndDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dtpEndDate.Value = new System.DateTime(2020, 11, 24, 22, 50, 36, 791);
+            this.dtpEndDate.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
             // 
             // label13
             // 

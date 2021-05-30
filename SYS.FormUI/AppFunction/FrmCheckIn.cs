@@ -124,16 +124,10 @@ namespace SYS.FormUI
                         {
                             UIMessageBox.Show("登记入住成功！", "登记提示",UIStyle.Green);
                             txtCustoNo.Text = "";
-                            FrmRoomManager.Reload();
+                            FrmRoomManager.Reload("");
                             #region 获取添加操作日志所需的信息
-                            OperationLog o = new OperationLog();
-                            o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                            o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！";
-                            o.OperationAccount = LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName;
-                            o.datains_usr = LoginInfo.WorkerNo;
-                            o.datains_date = DateTime.Now;
+                            RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！", 1);
                             #endregion
-                            new OperationlogService().InsertOperationLog(o);
                             scope.Complete();
                             this.Close();
                             return;

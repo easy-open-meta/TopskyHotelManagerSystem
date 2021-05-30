@@ -133,9 +133,8 @@ namespace SYS.FormUI
         {
             #region 导出信息保存为Excel表
             bool tf = UIMessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒",UIStyle.Orange,UIMessageBoxButtons.OKCancel);
-            if (!tf)
+            if (tf)
             {
-
                 //Response.ContentEncoding = System.Text.Encoding.UTF8;
                 string fileName = "";
                 string saveFileName = "";
@@ -164,21 +163,16 @@ namespace SYS.FormUI
                 {
                     for (int j = 0; j < dgvCustomerList.Columns.Count; j++)
                     {
-                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
+                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value == null ? string.Empty : dgvCustomerList.Rows[i].Cells[j].Value.ToString();
                     }
                 }
                 System.Windows.Forms.Application.DoEvents();
                 worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
                 UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!";
-                o.OperationAccount = LoginInfo.WorkerNo;
-                o.datains_usr = LoginInfo.WorkerNo;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!", 3);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
+                
                 System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
                 if (saveFileName != "")
                 {

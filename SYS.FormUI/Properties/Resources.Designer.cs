@@ -503,6 +503,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 添加管理员 {
+            get {
+                object obj = ResourceManager.GetObject("添加管理员", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 监管小组卡片 {
             get {
                 object obj = ResourceManager.GetObject("监管小组卡片", resourceCulture);

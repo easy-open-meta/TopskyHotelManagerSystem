@@ -23,6 +23,7 @@
  */
 using System;
 using System.Collections.Generic;
+using EncryptTools;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -34,6 +35,7 @@ namespace SYS.Application
     /// </summary>
     public class ReserService:Repository<Reser>,IReserService
     {
+        Encrypt encrypt = new Encrypt();
         /// <summary>
         /// 获取所有预约信息
         /// </summary>
@@ -42,6 +44,12 @@ namespace SYS.Application
         {
             List<Reser> rss = new List<Reser>();
             rss = base.GetList(a => a.delete_mk == 0);
+            rss.ForEach(source =>
+            {
+                //解密联系方式
+                var sourceTelStr = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
+                source.CustoTel = sourceTelStr;
+            });
             return rss;
         }
 
@@ -54,6 +62,9 @@ namespace SYS.Application
         {
             Reser res = null;
             res = base.GetSingle(a => a.ReserRoom == no && a.delete_mk != 1);
+            //解密联系方式
+            var sourceTelStr = res.CustoTel.Contains(":") ? encrypt.DeEncryptStr(res.CustoTel) : res.CustoTel;
+            res.CustoTel = sourceTelStr;
             return res;
         }
 
@@ -80,6 +91,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InserReserInfo(Reser r)
         {
+            var cryStr = encrypt.EncryptStr(r.CustoTel);
+            r.CustoTel = cryStr;
             return base.Insert(r);
         }
 

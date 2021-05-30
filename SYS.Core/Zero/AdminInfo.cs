@@ -24,6 +24,9 @@
  */
 namespace SYS.Core
 {
+    /// <summary>
+    /// 管理员信息静态类
+    /// </summary>
     public class AdminInfo
     {
         /// <summary>

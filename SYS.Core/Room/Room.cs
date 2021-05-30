@@ -79,6 +79,11 @@ namespace SYS.Core
         [SqlSugar.SugarColumn(IsIgnore = true)]
         public string RoomName { get; set; }
         /// <summary>
+        /// 最后一次入住时间
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string CheckTimeFormat { get; set; }
+        /// <summary>
         /// 删除标记
         /// </summary>
         public int delete_mk { get; set; }

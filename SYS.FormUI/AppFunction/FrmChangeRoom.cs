@@ -118,16 +118,10 @@ namespace SYS.FormUI
                 {
                     UIMessageBox.ShowSuccess("转房成功");
                     bool m = new SpendService().InsertSpendInfo(s);
-                    FrmRoomManager.Reload();
+                    FrmRoomManager.Reload("");
                     #region 获取添加操作日志所需的信息
-                    OperationLog o = new OperationLog();
-                    o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                    o.Operationlog = ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房，请记得到后台修改消费价格！";
-                    o.OperationAccount = LoginInfo.WorkerNo;
-                    o.datains_usr = LoginInfo.WorkerNo;
-                    o.datains_date = DateTime.Now;
+                    RecordHelper.Record(ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房！", 2);
                     #endregion
-                    new OperationlogService().InsertOperationLog(o);
                     scope.Complete();
                     this.Close();
                 }

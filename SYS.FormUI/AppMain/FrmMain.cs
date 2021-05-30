@@ -420,15 +420,7 @@ namespace SYS.FormUI
 
         private void tsmiMain_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                tsmiMain.Text = "最小化";
-                this.WindowState = FormWindowState.Minimized;
-            }
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -499,25 +491,21 @@ namespace SYS.FormUI
         private void picFormSize_MouseHover(object sender, EventArgs e)
         {
             this.picFormSize.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
-            this.picFormSize.Radius = 20;
         }
 
         private void picFormSize_MouseDown(object sender, MouseEventArgs e)
         {
             this.picFormSize.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
-            this.picFormSize.Radius = 20;
         }
 
         private void picClose_MouseHover(object sender, EventArgs e)
         {
             this.picClose.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
-            this.picClose.Radius = 20;
         }
 
         private void picClose_MouseDown(object sender, MouseEventArgs e)
         {
             this.picClose.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
-            this.picClose.Radius = 20;
         }
 
         private void picFormSize_MouseLeave_1(object sender, EventArgs e)
@@ -525,7 +513,6 @@ namespace SYS.FormUI
             this.picFormSize.BackColor = System.Drawing.Color.Transparent;
             this.picFormSize.BackgroundImage = Resources.arrow_down_b;
             this.picFormSize.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
-            this.picFormSize.Radius = 20;
         }
 
         private void picClose_MouseLeave_1(object sender, EventArgs e)
@@ -533,7 +520,6 @@ namespace SYS.FormUI
             this.picClose.BackColor = System.Drawing.Color.Transparent;
             this.picClose.BackgroundImage = Resources.close;
             this.picClose.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
-            this.picClose.Radius = 20;
         }
 
         private void tsmiMySpace_Click(object sender, EventArgs e)
@@ -561,6 +547,33 @@ namespace SYS.FormUI
             frmAdminEnter.ShowDialog();
 
             this.Hide();
+        }
+
+        private void picSetting_Click(object sender, EventArgs e)
+        {
+            cmsMain.Show(Cursor.Position);
+        }
+
+        private void picSetting_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.picSetting.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+        }
+
+        private void picSetting_MouseHover(object sender, EventArgs e)
+        {
+            this.picSetting.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+        }
+
+        private void picSetting_MouseLeave(object sender, EventArgs e)
+        {
+            this.picSetting.BackColor = System.Drawing.Color.Transparent;
+            this.picSetting.BackgroundImage = Resources.settings2;
+            this.picSetting.RectColor = System.Drawing.Color.FromArgb(80, 160, 255);
+        }
+
+        private void notifyIcon1_BalloonTipClosed(object sender, EventArgs e)
+        {
+            notifyIcon1.Dispose();
         }
     }
 }

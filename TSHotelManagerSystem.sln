@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30709.132
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.FormUI", "SYS.FormUI\SYS.FormUI.csproj", "{8854DCB7-F2D7-4276-8D10-C7A124436145}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Library", "SYS.Library\SYS.Library.csproj", "{BCEA3E3C-E6D2-4210-95DD-42B461D5F22A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Common", "SYS.Common\SYS.Common.csproj", "{65501AF6-C629-448A-847E-1BCD60665865}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Browser.WebAPI", "SYS.Browser.WebAPI\SYS.Browser.WebAPI.csproj", "{008AA4B4-CF4C-4CEE-9940-4785191B22B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{65501AF6-C629-448A-847E-1BCD60665865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65501AF6-C629-448A-847E-1BCD60665865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65501AF6-C629-448A-847E-1BCD60665865}.Release|Any CPU.Build.0 = Release|Any CPU
-		{008AA4B4-CF4C-4CEE-9940-4785191B22B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{008AA4B4-CF4C-4CEE-9940-4785191B22B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{008AA4B4-CF4C-4CEE-9940-4785191B22B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{008AA4B4-CF4C-4CEE-9940-4785191B22B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -154,13 +154,7 @@ namespace SYS.FormUI
         #region 鼠标点击房态图传值到类
         private void ucRoomList_Click(object sender, EventArgs e)
         {
-            //frm.CmpInfo(romCustoInfo, romRoomInfo);
-            co_RoomNo = romCustoInfo.RoomNo;
-            co_CustoNo = romCustoInfo.CustoNo;
-            romTypeName = romCustoInfo.RoomName;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString();
-            co_RoomPosition = romCustoInfo.RoomPosition;
-            co_RoomState = romCustoInfo.RoomState;
+            LoadRoomInfo();
         }
         #endregion
 
@@ -175,7 +169,7 @@ namespace SYS.FormUI
                 }
             }
             this.CanPenetrate();
-            this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 8f));
+            this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 6f));
             //lblCustoNo.Text = romCustoInfo.CustoNo;
             //lblRoomNo.Text = romCustoInfo.RoomNo;
             //lblRoomType.Text = romCustoInfo.RoomName;
@@ -384,32 +378,17 @@ namespace SYS.FormUI
 
         private void lblRoomType_Click(object sender, EventArgs e)
         {
-            //frm.CmpInfo(romCustoInfo, romRoomInfo);
-            co_RoomNo = romCustoInfo.RoomNo;
-            co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
-            co_RoomPosition = romCustoInfo.RoomPosition;
-            co_RoomState = romCustoInfo.RoomState;
+            LoadRoomInfo();
         }
 
         private void lblRoomNo_Click(object sender, EventArgs e)
         {
-            //frm.CmpInfo(romCustoInfo, romRoomInfo);
-            co_RoomNo = romCustoInfo.RoomNo;
-            co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
-            co_RoomPosition = romCustoInfo.RoomPosition;
-            co_RoomState = romCustoInfo.RoomState;
+            LoadRoomInfo();
         }
 
         private void lblCustoNo_Click(object sender, EventArgs e)
         {
-            //frm.CmpInfo(romCustoInfo, romRoomInfo);
-            co_RoomNo = romCustoInfo.RoomNo;
-            co_CustoNo = romCustoInfo.CustoNo;
-            co_CheckTime = Convert.ToDateTime(romCustoInfo.CheckTime).ToString("yyyy年MM月dd日");
-            co_RoomPosition = romCustoInfo.RoomPosition;
-            co_RoomState = romCustoInfo.RoomState;
+            LoadRoomInfo();
         }
 
         private void ucRoomList_SizeChanged(object sender, EventArgs e)
@@ -422,6 +401,36 @@ namespace SYS.FormUI
             //lblRoomNo.Height = 17;
             this.Width = 125;
             this.Height = 85;
+        }
+
+        private void ucRoomList_MouseHover(object sender, EventArgs e)
+        {
+            LoadRoomInfo();
+        }
+
+        public void LoadRoomInfo()
+        {
+            co_RoomNo = romCustoInfo.RoomNo;
+            co_CustoNo = romCustoInfo.CustoNo;
+            romTypeName = romCustoInfo.RoomName;
+            co_CheckTime = romCustoInfo.CheckTimeFormat;
+            co_RoomPosition = romCustoInfo.RoomPosition;
+            co_RoomState = romCustoInfo.RoomState;
+        }
+
+        private void lblRoomType_MouseHover(object sender, EventArgs e)
+        {
+            LoadRoomInfo();
+        }
+
+        private void lblRoomNo_MouseHover(object sender, EventArgs e)
+        {
+            LoadRoomInfo();
+        }
+
+        private void lblCustoNo_MouseHover(object sender, EventArgs e)
+        {
+            LoadRoomInfo();
         }
     }
 }

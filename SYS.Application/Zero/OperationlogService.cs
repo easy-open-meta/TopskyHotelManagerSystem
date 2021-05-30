@@ -58,6 +58,10 @@ namespace SYS.Application
         {
             List<OperationLog> operationLogs = new List<OperationLog>();
             operationLogs = base.GetList(a => a.delete_mk != 1).OrderByDescending(a => a.OperationTime).ToList();
+            operationLogs.ForEach(source =>
+            {
+                source.OperationLevelNm = source.OperationLevel == RecordLevel.Normal ? "常规操作" : source.OperationLevel == RecordLevel.Warning ? "敏感操作" : "严重操作";
+            });
             return operationLogs;
         }
 

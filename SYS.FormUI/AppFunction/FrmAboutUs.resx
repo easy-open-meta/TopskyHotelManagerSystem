@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="uiRichTextBox1.Text" xml:space="preserve">
-    <value>     我们团队一直都致力于打造一款人机交互方便，操作简单的管理软件，我们的愿景是“让每个人都能免费享受到科技带来的改变”，一路心怀愿景去制作软件，我们的团队充满活力、激情！                                                        关于本软件的详细信息，您可以浏览：https://gitee.com/java-and-net/TopskyHotelManagerSystem 了解更多！另外仍会提供后续的版本升级支持！</value>
+    <value>     我们团队一直都致力于打造一款人机交互方便，操作简单的管理软件，我们的愿景是“用技术创造开源”，一路心怀愿景去制作软件，我们的团队充满活力、激情！                                                                                                  关于本软件的详细信息，您可以浏览：https://gitee.com/java-and-net/TopskyHotelManagerSystem 了解更多！另外仍会提供后续的版本升级支持！</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

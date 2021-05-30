@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SYS.FormUI</RootNamespace>
     <AssemblyName>TS酒店管理系统</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -31,13 +32,17 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\Exe\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -75,9 +80,8 @@
     <StartupObject>SYS.FormUI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="kse">
       <HintPath>..\SYS.Library\kse.dll</HintPath>
@@ -93,6 +97,9 @@
     <Reference Include="MySql.Data.EntityFramework, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SYS.Library\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SqlSugar">
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
@@ -116,11 +123,26 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Until">
-      <HintPath>C:\Users\Administrator\Downloads\Compressed\WindowsFormsApplication2\WindowsFormsApplication2\Until\bin\Debug\Until.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppFunction\FrmAddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAddAdmin.Designer.cs">
+      <DependentUpon>FrmAddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmAdminManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAdminManager.Designer.cs">
+      <DependentUpon>FrmAdminManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmAuthority.Designer.cs">
+      <DependentUpon>FrmAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmChangeAdminPwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,26 +196,6 @@
     </Compile>
     <Compile Include="AppFunction\FrmSexType.Designer.cs">
       <DependentUpon>FrmSexType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgChar.cs">
-      <SubType>UserControl</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgChar.Designer.cs">
-      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgPanel.cs">
-      <SubType>UserControl</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\CtrlOrgPanel.Designer.cs">
-      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="AppUserControls\ExtensionMethods.cs" />
-    <Compile Include="AppUserControls\OrgCharGenerator.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="AppUserControls\ucPositionInformation.cs">
       <SubType>UserControl</SubType>
@@ -284,12 +286,6 @@
     </Compile>
     <Compile Include="AppFunction\FrmCheckIn.Designer.cs">
       <DependentUpon>FrmCheckIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppFunction\FrmCheckInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmCheckInfo.Designer.cs">
-      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmCheckOutForm.cs">
       <SubType>Form</SubType>
@@ -434,6 +430,16 @@
     <Compile Include="AppFunction\FrmWtiInfo.Designer.cs">
       <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="RequestHelper\RequestHelper.cs" />
+    <EmbeddedResource Include="AppFunction\FrmAddAdmin.resx">
+      <DependentUpon>FrmAddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmAdminManager.resx">
+      <DependentUpon>FrmAdminManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmAuthority.resx">
+      <DependentUpon>FrmAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChangeAdminPwd.resx">
       <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,9 +504,6 @@
     <EmbeddedResource Include="AppFunction\FrmCheckIn.resx">
       <DependentUpon>FrmCheckIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmCheckInfo.resx">
-      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmCheckOutForm.resx">
       <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,14 +565,6 @@
     <EmbeddedResource Include="AppFunction\FrmWorkerCheckInfo.resx">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\CtrlOrgChar.resx">
-      <DependentUpon>CtrlOrgChar.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\CtrlOrgPanel.resx">
-      <DependentUpon>CtrlOrgPanel.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucPositionInformation.resx">
       <DependentUpon>ucPositionInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -597,8 +592,12 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="bin\Debug\启用任务管理器.reg" />
-    <None Include="bin\Debug\禁用任务管理器.reg" />
+    <EmbeddedResource Include="bin\Debug\启用任务管理器.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\禁用任务管理器.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -670,15 +669,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\获取用户编号.png" />
@@ -687,6 +677,7 @@
     <None Include="Resources\获取用户编号-ia.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\添加管理员.png" />
     <None Include="Resources\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png" />
     <None Include="Resources\系统管理员.png" />
     <None Include="Resources\返回 %281%29.png" />
@@ -732,13 +723,13 @@
     <None Include="Resources\月亮.png" />
     <None Include="Resources\咖啡.png" />
     <None Include="Resources\早上.png" />
+    <Content Include="bin\Debug\打卡.png" />
+    <Content Include="FodyWeavers.xml" />
     <None Include="Resources\arrow-down-b.png" />
     <None Include="Resources\minus %281%29.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\770e7b52ecafc807247aad51bb6c6b43.jpg" />
-    <None Include="bin\Debug\打卡.png" />
-    <Content Include="FodyWeavers.xml" />
     <Content Include="icon\add to card.ico" />
     <Content Include="icon\add_person.ico" />
     <Content Include="icon\atom.ico" />
@@ -760,12 +751,15 @@
     <Content Include="icon\报表.ico" />
     <Content Include="icon\操作记录.ico" />
     <Content Include="icon\新增.ico" />
+    <Content Include="icon\权限.ico" />
     <Content Include="icon\民族.ico" />
     <Content Include="icon\水电.ico" />
     <Content Include="icon\消费账单.ico" />
     <Content Include="icon\添加员工.ico" />
+    <Content Include="icon\添加管理员.ico" />
     <Content Include="icon\监管统计.ico" />
     <Content Include="icon\盾牌.ico" />
+    <Content Include="icon\禁用.ico" />
     <Content Include="icon\职位.ico" />
     <Content Include="icon\财务账单.ico" />
     <Content Include="icon\转换.ico" />
@@ -802,15 +796,14 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
+  <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.4.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
   </Target>
-  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

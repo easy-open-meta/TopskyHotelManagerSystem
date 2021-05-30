@@ -85,14 +85,8 @@ namespace SYS.FormUI
             {
                 UIMessageBox.ShowSuccess("任命已生效!");
                 #region 获取添加操作日志所需的信息
-                OperationLog o = new OperationLog();
-                o.OperationTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd,HH:mm:ss"));
-                o.Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升/降级为" + cboNewClub.Text + cboNewPosition.Text;
-                o.OperationAccount = AdminInfo.Account;
-                o.datains_usr = AdminInfo.Account;
-                o.datains_date = DateTime.Now;
+                RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升/降级为" + cboNewClub.Text + cboNewPosition.Text, 2);
                 #endregion
-                new OperationlogService().InsertOperationLog(o);
                 FrmWorkerManager.Reload();
                 this.Close();
             }

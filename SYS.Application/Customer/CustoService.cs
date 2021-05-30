@@ -37,7 +37,6 @@ namespace SYS.Application
     public class CustoService:Repository<Custo>, ICustoService
     {
         Encrypt encrypt = new Encrypt();
-
         #region 添加客户信息
         /// <summary>
         /// 添加客户信息
@@ -46,6 +45,7 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InsertCustomerInfo(Custo custo)
         {
+            Encrypt encrypt = new Encrypt();
             string NewID = encrypt.EncryptStr(custo.CustoID);
             string NewTel = encrypt.EncryptStr(custo.CustoTel);
             custo.CustoID = NewID;
@@ -61,6 +61,7 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
+            Encrypt encrypt = new Encrypt();
             string NewID = encrypt.EncryptStr(custo.CustoID);
             string NewTel = encrypt.EncryptStr(custo.CustoTel);
             custo.CustoID = NewID;
@@ -71,9 +72,9 @@ namespace SYS.Application
                 CustoSex = custo.CustoSex,
                 CustoType = custo.CustoType,
                 CustoBirth = custo.CustoBirth,
-                CustoAdress = encryStrAddress,
-                CustoID = encryStrId,
-                CustoTel = encryStrTel,
+                CustoAdress = custo.CustoAdress,
+                CustoID = custo.CustoID,
+                CustoTel = custo.CustoTel,
                 PassportType = custo.PassportType,
                 datachg_usr = custo.datachg_usr,
                 datachg_date = DateTime.Now
@@ -98,6 +99,7 @@ namespace SYS.Application
             }
             dr.Close();
             DBHelper.Closecon();
+            custoSpends = custoSpends.OrderBy(a => a.Years).ToList();
             return custoSpends;
         }
 
@@ -107,7 +109,7 @@ namespace SYS.Application
         /// <returns></returns>
         public List<Custo> SelectCustoAll()
         {
-            Encrypt encrypt = new Encrypt();
+            
             //查询出所有性别类型
             List<SexType> sexTypes = new List<SexType>();
             sexTypes = base.Change<SexType>().GetList();
@@ -137,10 +139,6 @@ namespace SYS.Application
                 //客户类型
                 var custoType = custoTypes.FirstOrDefault(a => a.UserType == source.CustoType);
                 source.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
-
-                source.CustoID = source.CustoID.Contains(":") ? encrypt.DeEncryptStr(source.CustoID) : source.CustoID;
-                source.CustoTel = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
-                source.CustoAdress = !string.IsNullOrEmpty(source.CustoAdress) && source.CustoAdress.Contains(":") ? encrypt.DeEncryptStr(source.CustoAdress) : source.CustoAdress;
             });
             return custos;
         }
@@ -153,7 +151,11 @@ namespace SYS.Application
         public Custo SelectCardInfoByCustoNo(string CustoNo)
         {
             Custo c = new Custo();
-            c = base.GetSingle(a => a.CustoNo == CustoNo && a.delete_mk != 1);
+            c = base.GetSingle(a => a.CustoNo.Equals(CustoNo));
+            if (c == null)
+            {
+                return c;
+            }
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == c.CustoSex);
             c.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
@@ -163,12 +165,12 @@ namespace SYS.Application
             //客户类型
             var custoType = base.Change<CustoType>().GetSingle(a => a.UserType == c.CustoType);
             c.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
-
-
-            c.CustoID = c.CustoID.Contains(":") ? encrypt.DeEncryptStr(c.CustoID) : c.CustoID;
-            c.CustoTel = c.CustoTel.Contains(":") ? encrypt.DeEncryptStr(c.CustoTel) : c.CustoTel;
-            c.CustoAdress = c.CustoAdress.Contains(":") ? encrypt.DeEncryptStr(c.CustoAdress) : c.CustoAdress;
-
+            //解密身份证号码
+            var sourceStr = c.CustoID.Contains(":") ? encrypt.DeEncryptStr(c.CustoID) : c.CustoID;
+            c.CustoID = sourceStr;
+            //解密联系方式
+            var sourceTelStr = c.CustoTel.Contains(":") ? encrypt.DeEncryptStr(c.CustoTel) : c.CustoTel;
+            c.CustoTel = sourceTelStr;
             return c;
         }
 

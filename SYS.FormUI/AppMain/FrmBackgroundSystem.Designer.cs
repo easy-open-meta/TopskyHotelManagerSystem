@@ -75,18 +75,27 @@ namespace SYS.FormUI
             treeNode24,
             treeNode25});
             System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("员工操作日志");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("添加管理员");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("权限分配");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("启/禁用管理员");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("系统管理", new System.Windows.Forms.TreeNode[] {
+            treeNode28,
+            treeNode29,
+            treeNode30});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackgroundSystem));
             this.Aside = new Sunny.UI.UINavMenu();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlForm = new Sunny.UI.UIPanel();
-            this.btnSetting = new Sunny.UI.UIButton();
-            this.btnLocked = new Sunny.UI.UIButton();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.lblScroll = new Sunny.UI.UIScrollingText();
             this.lbTime = new Sunny.UI.UILabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cmsMenu = new Sunny.UI.UIContextMenuStrip();
+            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdatePwd = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSetting = new Sunny.UI.UIButton();
+            this.btnLocked = new Sunny.UI.UIButton();
             this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +117,7 @@ namespace SYS.FormUI
             treeNode3.Text = "学历类型维护";
             treeNode4.Name = "节点5";
             treeNode4.Text = "部门信息维护";
-            treeNode5.Name = "节点0";
+            treeNode5.Name = "BaseInfo";
             treeNode5.Text = "基础信息";
             treeNode6.Name = "节点0";
             treeNode6.Text = "员工工资账单";
@@ -116,27 +125,27 @@ namespace SYS.FormUI
             treeNode7.Text = "内部财务账单";
             treeNode8.Name = "节点2";
             treeNode8.Text = "酒店盈利情况";
-            treeNode9.Name = "btnCash";
+            treeNode9.Name = "CashInfo";
             treeNode9.Text = "财务信息";
             treeNode10.Name = "节点0";
             treeNode10.Text = "水电信息";
-            treeNode11.Name = "节点1";
+            treeNode11.Name = "WtiInfo";
             treeNode11.Text = "水电管理";
             treeNode12.Name = "节点3";
             treeNode12.Text = "监管部门情况";
-            treeNode13.Name = "节点2";
+            treeNode13.Name = "CheckInfo";
             treeNode13.Text = "监管统计";
             treeNode14.Name = "节点6";
             treeNode14.Text = "房态图一览";
             treeNode15.Name = "节点7";
             treeNode15.Text = "新增客房";
-            treeNode16.Name = "节点3";
+            treeNode16.Name = "RoomManager";
             treeNode16.Text = "客房管理";
             treeNode17.Name = "节点8";
             treeNode17.Text = "客户信息管理";
             treeNode18.Name = "节点9";
             treeNode18.Text = "顾客消费账单";
-            treeNode19.Name = "节点4";
+            treeNode19.Name = "CustomerManager";
             treeNode19.Text = "客户管理";
             treeNode20.Name = "节点6";
             treeNode20.Text = "员工管理";
@@ -144,16 +153,24 @@ namespace SYS.FormUI
             treeNode21.Text = "公告日志";
             treeNode22.Name = "节点16";
             treeNode22.Text = "上传公告日志";
-            treeNode23.Name = "节点5";
+            treeNode23.Name = "HumanResourcesManager";
             treeNode23.Text = "人事管理";
             treeNode24.Name = "节点11";
             treeNode24.Text = "商品管理";
             treeNode25.Name = "节点12";
             treeNode25.Text = "仓库物资";
-            treeNode26.Name = "节点10";
+            treeNode26.Name = "MaterialManager";
             treeNode26.Text = "物资管理";
-            treeNode27.Name = "节点13";
+            treeNode27.Name = "OperationLogManager";
             treeNode27.Text = "员工操作日志";
+            treeNode28.Name = "节点2";
+            treeNode28.Text = "添加管理员";
+            treeNode29.Name = "节点1";
+            treeNode29.Text = "权限分配";
+            treeNode30.Name = "节点3";
+            treeNode30.Text = "启/禁用管理员";
+            treeNode31.Name = "AdminManager";
+            treeNode31.Text = "系统管理";
             this.Aside.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode9,
@@ -163,12 +180,14 @@ namespace SYS.FormUI
             treeNode19,
             treeNode23,
             treeNode26,
-            treeNode27});
+            treeNode27,
+            treeNode31});
             this.Aside.ShowLines = false;
             this.Aside.Size = new System.Drawing.Size(234, 624);
             this.Aside.Style = Sunny.UI.UIStyle.Custom;
             this.Aside.TabIndex = 0;
             this.Aside.MenuItemClick += new Sunny.UI.UINavMenu.OnMenuItemClick(this.Aside_MenuItemClick);
+            this.Aside.Enter += new System.EventHandler(this.Aside_Enter);
             // 
             // imageList1
             // 
@@ -187,6 +206,81 @@ namespace SYS.FormUI
             this.pnlForm.Style = Sunny.UI.UIStyle.Custom;
             this.pnlForm.TabIndex = 1;
             this.pnlForm.Text = "点击左侧导航栏";
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel1.Location = new System.Drawing.Point(250, 44);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(217, 35);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel1.TabIndex = 32;
+            this.uiLabel1.Text = "早上好，Admin";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblScroll
+            // 
+            this.lblScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.lblScroll.Interval = 800;
+            this.lblScroll.Location = new System.Drawing.Point(473, 41);
+            this.lblScroll.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lblScroll.Name = "lblScroll";
+            this.lblScroll.Offset = 20;
+            this.lblScroll.Size = new System.Drawing.Size(693, 42);
+            this.lblScroll.Style = Sunny.UI.UIStyle.Custom;
+            this.lblScroll.TabIndex = 33;
+            this.lblScroll.Text = "欢迎使用TS酒店管理后台安全系统，为了您的账号安全，离开座位请点击右侧锁定键锁定系统确保安全！";
+            // 
+            // lbTime
+            // 
+            this.lbTime.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lbTime.Location = new System.Drawing.Point(11, 44);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(229, 35);
+            this.lbTime.Style = Sunny.UI.UIStyle.Custom;
+            this.lbTime.TabIndex = 34;
+            this.lbTime.Text = "早上好，Admin";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // cmsMenu
+            // 
+            this.cmsMenu.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMySpace,
+            this.tsmiUpdatePwd,
+            this.toolStripSeparator1});
+            this.cmsMenu.Name = "cmsMenu";
+            this.cmsMenu.Size = new System.Drawing.Size(145, 62);
+            this.cmsMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmsMenu_MouseDown);
+            // 
+            // tsmiMySpace
+            // 
+            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
+            this.tsmiMySpace.Name = "tsmiMySpace";
+            this.tsmiMySpace.Size = new System.Drawing.Size(144, 26);
+            this.tsmiMySpace.Text = "个人中心";
+            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
+            // 
+            // tsmiUpdatePwd
+            // 
+            this.tsmiUpdatePwd.Image = global::SYS.FormUI.Properties.Resources.修改;
+            this.tsmiUpdatePwd.Name = "tsmiUpdatePwd";
+            this.tsmiUpdatePwd.Size = new System.Drawing.Size(144, 26);
+            this.tsmiUpdatePwd.Text = "修改密码";
+            this.tsmiUpdatePwd.Click += new System.EventHandler(this.tsmiUpdatePwd_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(141, 6);
             // 
             // btnSetting
             // 
@@ -236,66 +330,6 @@ namespace SYS.FormUI
             this.btnLocked.MouseLeave += new System.EventHandler(this.btnLocked_MouseLeave);
             this.btnLocked.MouseHover += new System.EventHandler(this.btnLocked_MouseHover);
             // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel1.Location = new System.Drawing.Point(250, 44);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(217, 35);
-            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel1.TabIndex = 32;
-            this.uiLabel1.Text = "早上好，Admin";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblScroll
-            // 
-            this.lblScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.lblScroll.Interval = 800;
-            this.lblScroll.Location = new System.Drawing.Point(473, 41);
-            this.lblScroll.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lblScroll.Name = "lblScroll";
-            this.lblScroll.Offset = 20;
-            this.lblScroll.Size = new System.Drawing.Size(693, 42);
-            this.lblScroll.Style = Sunny.UI.UIStyle.Custom;
-            this.lblScroll.TabIndex = 33;
-            this.lblScroll.Text = "欢迎使用TS酒店管理后台安全系统，为了您的账号安全，离开座位请点击右侧锁定键锁定系统确保安全！";
-            // 
-            // lbTime
-            // 
-            this.lbTime.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lbTime.Location = new System.Drawing.Point(11, 44);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(229, 35);
-            this.lbTime.Style = Sunny.UI.UIStyle.Custom;
-            this.lbTime.TabIndex = 34;
-            this.lbTime.Text = "早上好，Admin";
-            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // cmsMenu
-            // 
-            this.cmsMenu.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiUpdatePwd});
-            this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(145, 30);
-            this.cmsMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmsMenu_MouseDown);
-            // 
-            // tsmiUpdatePwd
-            // 
-            this.tsmiUpdatePwd.Image = global::SYS.FormUI.Properties.Resources.修改;
-            this.tsmiUpdatePwd.Name = "tsmiUpdatePwd";
-            this.tsmiUpdatePwd.Size = new System.Drawing.Size(144, 26);
-            this.tsmiUpdatePwd.Text = "修改密码";
-            this.tsmiUpdatePwd.Click += new System.EventHandler(this.tsmiUpdatePwd_Click);
-            // 
             // FrmBackgroundSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -339,5 +373,7 @@ namespace SYS.FormUI
         private System.Windows.Forms.Timer timer1;
         private Sunny.UI.UIContextMenuStrip cmsMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdatePwd;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMySpace;
     }
 }

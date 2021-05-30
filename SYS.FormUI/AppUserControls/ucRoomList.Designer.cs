@@ -108,6 +108,7 @@
             this.lblCustoNo.TabIndex = 10;
             this.lblCustoNo.Text = "CustoNo";
             this.lblCustoNo.Click += new System.EventHandler(this.lblCustoNo_Click);
+            this.lblCustoNo.MouseHover += new System.EventHandler(this.lblCustoNo_MouseHover);
             // 
             // lblRoomType
             // 
@@ -120,19 +121,21 @@
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "RoomTy";
             this.lblRoomType.Click += new System.EventHandler(this.lblRoomType_Click);
+            this.lblRoomType.MouseHover += new System.EventHandler(this.lblRoomType_MouseHover);
             // 
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
             this.lblRoomNo.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomNo.ForeColor = System.Drawing.Color.Red;
+            this.lblRoomNo.ForeColor = System.Drawing.Color.Black;
             this.lblRoomNo.Location = new System.Drawing.Point(23, 31);
             this.lblRoomNo.Name = "lblRoomNo";
             this.lblRoomNo.Size = new System.Drawing.Size(63, 17);
             this.lblRoomNo.TabIndex = 8;
             this.lblRoomNo.Text = "RoomNo";
             this.lblRoomNo.Click += new System.EventHandler(this.lblRoomNo_Click);
+            this.lblRoomNo.MouseHover += new System.EventHandler(this.lblRoomNo_MouseHover);
             // 
             // ucRoomList
             // 
@@ -154,6 +157,7 @@
             this.DoubleClick += new System.EventHandler(this.ucRoomList_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.ucRoomList_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ucRoomList_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.ucRoomList_MouseHover);
             this.cmsMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

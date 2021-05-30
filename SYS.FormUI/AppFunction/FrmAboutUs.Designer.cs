@@ -35,9 +35,11 @@
             // uiRichTextBox1
             // 
             this.uiRichTextBox1.AutoWordSelection = true;
+            this.uiRichTextBox1.BulletIndent = 5;
             this.uiRichTextBox1.FillColor = System.Drawing.Color.White;
             this.uiRichTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiRichTextBox1.Location = new System.Drawing.Point(4, 40);
+            this.uiRichTextBox1.HideSelection = false;
+            this.uiRichTextBox1.Location = new System.Drawing.Point(6, 40);
             this.uiRichTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiRichTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRichTextBox1.Name = "uiRichTextBox1";
@@ -54,7 +56,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(547, 225);
+            this.ClientSize = new System.Drawing.Size(550, 228);
             this.Controls.Add(this.uiRichTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

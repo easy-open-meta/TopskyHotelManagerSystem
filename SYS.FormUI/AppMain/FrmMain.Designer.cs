@@ -36,15 +36,21 @@
             this.pnlMID = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiChangeUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiLockScreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiLoginBackSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAboutUs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblScroll = new Sunny.UI.UIScrollingText();
             this.tmrFont = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnHello = new Sunny.UI.UIButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.picFormSize = new Sunny.UI.UIButton();
             this.picClose = new Sunny.UI.UIButton();
@@ -58,14 +64,7 @@
             this.picCustomer = new Sunny.UI.UIImageButton();
             this.picCommodity = new Sunny.UI.UIImageButton();
             this.picExtend = new Sunny.UI.UIImageButton();
-            this.tsmiMain = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangeUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLockScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLoginBackSystem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAboutUs = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiExitSystem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picSetting = new Sunny.UI.UIButton();
             this.cmsMain.SuspendLayout();
             this.pnlCheckInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -118,18 +117,16 @@
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.ContextMenuStrip = this.cmsMain;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "TS酒店管理系统";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.BalloonTipClosed += new System.EventHandler(this.notifyIcon1_BalloonTipClosed);
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // cmsMain
             // 
             this.cmsMain.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiMain,
-            this.toolStripSeparator1,
             this.tsmiChangeUser,
             this.tsmiMySpace,
             this.toolStripSeparator3,
@@ -141,23 +138,87 @@
             this.tsmiAboutUs,
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(209, 258);
+            this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmsMain.Size = new System.Drawing.Size(209, 204);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
-            // toolStripSeparator1
+            // tsmiChangeUser
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(205, 6);
+            this.tsmiChangeUser.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiChangeUser.Image = global::SYS.FormUI.Properties.Resources.切换账号;
+            this.tsmiChangeUser.Name = "tsmiChangeUser";
+            this.tsmiChangeUser.Size = new System.Drawing.Size(208, 26);
+            this.tsmiChangeUser.Text = "切换用户";
+            this.tsmiChangeUser.Click += new System.EventHandler(this.tsmiChangeUser_Click);
+            // 
+            // tsmiMySpace
+            // 
+            this.tsmiMySpace.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
+            this.tsmiMySpace.Name = "tsmiMySpace";
+            this.tsmiMySpace.Size = new System.Drawing.Size(208, 26);
+            this.tsmiMySpace.Text = "个人中心";
+            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(205, 6);
             // 
+            // tsmiLockScreen
+            // 
+            this.tsmiLockScreen.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiLockScreen.Image = global::SYS.FormUI.Properties.Resources.锁屏;
+            this.tsmiLockScreen.Name = "tsmiLockScreen";
+            this.tsmiLockScreen.Size = new System.Drawing.Size(208, 26);
+            this.tsmiLockScreen.Text = "快速锁屏";
+            this.tsmiLockScreen.Click += new System.EventHandler(this.tsmiLockScreen_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(205, 6);
+            // 
+            // tsmiLoginBackSystem
+            // 
+            this.tsmiLoginBackSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiLoginBackSystem.Image = global::SYS.FormUI.Properties.Resources.系统管理员;
+            this.tsmiLoginBackSystem.Name = "tsmiLoginBackSystem";
+            this.tsmiLoginBackSystem.Size = new System.Drawing.Size(208, 26);
+            this.tsmiLoginBackSystem.Text = "进入后台管理系统";
+            this.tsmiLoginBackSystem.Click += new System.EventHandler(this.tsmiLoginBackSystem_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(205, 6);
+            // 
+            // tsmiCheckUpdate
+            // 
+            this.tsmiCheckUpdate.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiCheckUpdate.Image = global::SYS.FormUI.Properties.Resources.检查更新__1_;
+            this.tsmiCheckUpdate.Name = "tsmiCheckUpdate";
+            this.tsmiCheckUpdate.Size = new System.Drawing.Size(208, 26);
+            this.tsmiCheckUpdate.Text = "检查更新";
+            this.tsmiCheckUpdate.Click += new System.EventHandler(this.tsmiCheckUpdate_Click);
+            // 
+            // tsmiAboutUs
+            // 
+            this.tsmiAboutUs.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiAboutUs.Image = global::SYS.FormUI.Properties.Resources.关于我们;
+            this.tsmiAboutUs.Name = "tsmiAboutUs";
+            this.tsmiAboutUs.Size = new System.Drawing.Size(208, 26);
+            this.tsmiAboutUs.Text = "关于我们";
+            this.tsmiAboutUs.Click += new System.EventHandler(this.tsmiAboutUs_Click);
+            // 
+            // tsmiExitSystem
+            // 
+            this.tsmiExitSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsmiExitSystem.Image = global::SYS.FormUI.Properties.Resources.注销;
+            this.tsmiExitSystem.Name = "tsmiExitSystem";
+            this.tsmiExitSystem.Size = new System.Drawing.Size(208, 26);
+            this.tsmiExitSystem.Text = "退出系统";
+            this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
             // 
             // linkLabel1
             // 
@@ -165,7 +226,7 @@
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(178, 21);
+            this.linkLabel1.Location = new System.Drawing.Point(175, 20);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(50, 17);
             this.linkLabel1.TabIndex = 26;
@@ -180,10 +241,11 @@
             this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.lblScroll.Interval = 1000;
-            this.lblScroll.Location = new System.Drawing.Point(234, 7);
+            this.lblScroll.Location = new System.Drawing.Point(232, 5);
             this.lblScroll.MinimumSize = new System.Drawing.Size(1, 1);
             this.lblScroll.Name = "lblScroll";
-            this.lblScroll.Size = new System.Drawing.Size(760, 42);
+            this.lblScroll.Radius = 0;
+            this.lblScroll.Size = new System.Drawing.Size(720, 35);
             this.lblScroll.TabIndex = 0;
             // 
             // tmrFont
@@ -225,11 +287,6 @@
             this.btnHello.StyleCustomMode = true;
             this.btnHello.TabIndex = 33;
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(205, 6);
-            // 
             // uiButton1
             // 
             this.uiButton1.BackColor = System.Drawing.Color.Transparent;
@@ -258,10 +315,10 @@
             this.picFormSize.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.picFormSize.FillColor = System.Drawing.Color.Transparent;
             this.picFormSize.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.picFormSize.Location = new System.Drawing.Point(1000, 6);
+            this.picFormSize.Location = new System.Drawing.Point(999, 5);
             this.picFormSize.MinimumSize = new System.Drawing.Size(1, 1);
             this.picFormSize.Name = "picFormSize";
-            this.picFormSize.Radius = 20;
+            this.picFormSize.Radius = 0;
             this.picFormSize.Size = new System.Drawing.Size(35, 35);
             this.picFormSize.Style = Sunny.UI.UIStyle.Custom;
             this.picFormSize.StyleCustomMode = true;
@@ -279,10 +336,10 @@
             this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.FillColor = System.Drawing.Color.Transparent;
             this.picClose.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.picClose.Location = new System.Drawing.Point(1041, 6);
+            this.picClose.Location = new System.Drawing.Point(1040, 5);
             this.picClose.MinimumSize = new System.Drawing.Size(1, 1);
             this.picClose.Name = "picClose";
-            this.picClose.Radius = 20;
+            this.picClose.Radius = 0;
             this.picClose.Size = new System.Drawing.Size(35, 35);
             this.picClose.Style = Sunny.UI.UIStyle.Custom;
             this.picClose.TabIndex = 28;
@@ -300,7 +357,7 @@
             this.pnlCheckInfo.Controls.Add(this.label4);
             this.pnlCheckInfo.Controls.Add(this.lblCheckDay);
             this.pnlCheckInfo.Controls.Add(this.label2);
-            this.pnlCheckInfo.Location = new System.Drawing.Point(173, 53);
+            this.pnlCheckInfo.Location = new System.Drawing.Point(170, 43);
             this.pnlCheckInfo.Name = "pnlCheckInfo";
             this.pnlCheckInfo.Size = new System.Drawing.Size(88, 73);
             this.pnlCheckInfo.TabIndex = 27;
@@ -353,9 +410,9 @@
             this.picLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picLogo.BackgroundImage")));
             this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogo.Location = new System.Drawing.Point(12, 7);
+            this.picLogo.Location = new System.Drawing.Point(4, 5);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(155, 97);
+            this.picLogo.Size = new System.Drawing.Size(163, 99);
             this.picLogo.TabIndex = 15;
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
@@ -368,6 +425,7 @@
             this.picRoom.Image = ((System.Drawing.Image)(resources.GetObject("picRoom.Image")));
             this.picRoom.ImageHover = ((System.Drawing.Image)(resources.GetObject("picRoom.ImageHover")));
             this.picRoom.ImagePress = ((System.Drawing.Image)(resources.GetObject("picRoom.ImagePress")));
+            this.picRoom.ImageSelected = ((System.Drawing.Image)(resources.GetObject("picRoom.ImageSelected")));
             this.picRoom.Location = new System.Drawing.Point(257, 132);
             this.picRoom.Name = "picRoom";
             this.picRoom.Size = new System.Drawing.Size(124, 83);
@@ -375,6 +433,7 @@
             this.picRoom.TabStop = false;
             this.picRoom.Text = null;
             this.picRoom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.picRoom.WaitOnLoad = true;
             this.picRoom.Click += new System.EventHandler(this.picRoom_Click);
             // 
             // picCustomer
@@ -431,77 +490,26 @@
             this.picExtend.WaitOnLoad = true;
             this.picExtend.Click += new System.EventHandler(this.picExtend_Click);
             // 
-            // tsmiMain
+            // picSetting
             // 
-            this.tsmiMain.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiMain.Image = global::SYS.FormUI.Properties.Resources.主页__1_;
-            this.tsmiMain.Name = "tsmiMain";
-            this.tsmiMain.Size = new System.Drawing.Size(208, 26);
-            this.tsmiMain.Text = "主界面";
-            this.tsmiMain.Click += new System.EventHandler(this.tsmiMain_Click);
-            // 
-            // tsmiChangeUser
-            // 
-            this.tsmiChangeUser.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiChangeUser.Image = global::SYS.FormUI.Properties.Resources.切换账号;
-            this.tsmiChangeUser.Name = "tsmiChangeUser";
-            this.tsmiChangeUser.Size = new System.Drawing.Size(208, 26);
-            this.tsmiChangeUser.Text = "切换用户";
-            this.tsmiChangeUser.Click += new System.EventHandler(this.tsmiChangeUser_Click);
-            // 
-            // tsmiMySpace
-            // 
-            this.tsmiMySpace.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
-            this.tsmiMySpace.Name = "tsmiMySpace";
-            this.tsmiMySpace.Size = new System.Drawing.Size(208, 26);
-            this.tsmiMySpace.Text = "个人中心";
-            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
-            // 
-            // tsmiLockScreen
-            // 
-            this.tsmiLockScreen.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiLockScreen.Image = global::SYS.FormUI.Properties.Resources.锁屏;
-            this.tsmiLockScreen.Name = "tsmiLockScreen";
-            this.tsmiLockScreen.Size = new System.Drawing.Size(208, 26);
-            this.tsmiLockScreen.Text = "快速锁屏";
-            this.tsmiLockScreen.Click += new System.EventHandler(this.tsmiLockScreen_Click);
-            // 
-            // tsmiLoginBackSystem
-            // 
-            this.tsmiLoginBackSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiLoginBackSystem.Image = global::SYS.FormUI.Properties.Resources.系统管理员;
-            this.tsmiLoginBackSystem.Name = "tsmiLoginBackSystem";
-            this.tsmiLoginBackSystem.Size = new System.Drawing.Size(208, 26);
-            this.tsmiLoginBackSystem.Text = "进入后台管理系统";
-            this.tsmiLoginBackSystem.Click += new System.EventHandler(this.tsmiLoginBackSystem_Click);
-            // 
-            // tsmiCheckUpdate
-            // 
-            this.tsmiCheckUpdate.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiCheckUpdate.Image = global::SYS.FormUI.Properties.Resources.检查更新__1_;
-            this.tsmiCheckUpdate.Name = "tsmiCheckUpdate";
-            this.tsmiCheckUpdate.Size = new System.Drawing.Size(208, 26);
-            this.tsmiCheckUpdate.Text = "检查更新";
-            this.tsmiCheckUpdate.Click += new System.EventHandler(this.tsmiCheckUpdate_Click);
-            // 
-            // tsmiAboutUs
-            // 
-            this.tsmiAboutUs.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiAboutUs.Image = global::SYS.FormUI.Properties.Resources.关于我们;
-            this.tsmiAboutUs.Name = "tsmiAboutUs";
-            this.tsmiAboutUs.Size = new System.Drawing.Size(208, 26);
-            this.tsmiAboutUs.Text = "关于我们";
-            this.tsmiAboutUs.Click += new System.EventHandler(this.tsmiAboutUs_Click);
-            // 
-            // tsmiExitSystem
-            // 
-            this.tsmiExitSystem.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiExitSystem.Image = global::SYS.FormUI.Properties.Resources.注销;
-            this.tsmiExitSystem.Name = "tsmiExitSystem";
-            this.tsmiExitSystem.Size = new System.Drawing.Size(208, 26);
-            this.tsmiExitSystem.Text = "退出系统";
-            this.tsmiExitSystem.Click += new System.EventHandler(this.tsmiExitSystem_Click);
+            this.picSetting.BackColor = System.Drawing.Color.Transparent;
+            this.picSetting.BackgroundImage = global::SYS.FormUI.Properties.Resources.settings2;
+            this.picSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picSetting.FillColor = System.Drawing.Color.Transparent;
+            this.picSetting.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picSetting.Location = new System.Drawing.Point(958, 5);
+            this.picSetting.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Radius = 0;
+            this.picSetting.Size = new System.Drawing.Size(35, 35);
+            this.picSetting.Style = Sunny.UI.UIStyle.Custom;
+            this.picSetting.StyleCustomMode = true;
+            this.picSetting.TabIndex = 38;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            this.picSetting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picSetting_MouseDown);
+            this.picSetting.MouseLeave += new System.EventHandler(this.picSetting_MouseLeave);
+            this.picSetting.MouseHover += new System.EventHandler(this.picSetting_MouseHover);
             // 
             // FrmMain
             // 
@@ -510,6 +518,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.Controls.Add(this.picSetting);
             this.Controls.Add(this.btnHello);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.label3);
@@ -556,8 +565,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel pnlMID;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMain;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeUser;
         private System.Windows.Forms.ToolStripMenuItem tsmiLockScreen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -587,5 +594,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoginBackSystem;
+        private Sunny.UI.UIButton picSetting;
     }
 }

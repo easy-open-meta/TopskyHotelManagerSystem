@@ -34,6 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustoManager));
             this.dgvCustomerList = new Sunny.UI.UIDataGridView();
+            this.gbCustoInfo = new System.Windows.Forms.GroupBox();
+            this.txtCardID = new Sunny.UI.UITextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSerach = new Sunny.UI.UIButton();
+            this.btnAddCusto = new Sunny.UI.UIButton();
+            this.btnExport = new Sunny.UI.UIButton();
+            this.btnUpdate = new Sunny.UI.UIButton();
             this.CustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,13 +53,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbCustoInfo = new System.Windows.Forms.GroupBox();
-            this.txtCardID = new Sunny.UI.UITextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSerach = new Sunny.UI.UIButton();
-            this.btnAddCusto = new Sunny.UI.UIButton();
-            this.btnExport = new Sunny.UI.UIButton();
-            this.btnUpdate = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.gbCustoInfo.SuspendLayout();
             this.SuspendLayout();
@@ -116,94 +116,6 @@
             this.dgvCustomerList.ShowRect = false;
             this.dgvCustomerList.Size = new System.Drawing.Size(999, 506);
             this.dgvCustomerList.TabIndex = 111;
-            // 
-            // CustoNo
-            // 
-            this.CustoNo.DataPropertyName = "CustoNo";
-            this.CustoNo.HeaderText = "客户编号";
-            this.CustoNo.Name = "CustoNo";
-            this.CustoNo.ReadOnly = true;
-            // 
-            // CustoName
-            // 
-            this.CustoName.DataPropertyName = "CustoName";
-            this.CustoName.HeaderText = "客户姓名";
-            this.CustoName.Name = "CustoName";
-            this.CustoName.ReadOnly = true;
-            // 
-            // CustoSex
-            // 
-            this.CustoSex.DataPropertyName = "SexName";
-            this.CustoSex.HeaderText = "性别";
-            this.CustoSex.Name = "CustoSex";
-            this.CustoSex.ReadOnly = true;
-            // 
-            // CustoTel
-            // 
-            this.CustoTel.DataPropertyName = "CustoTel";
-            this.CustoTel.HeaderText = "联系方式";
-            this.CustoTel.Name = "CustoTel";
-            this.CustoTel.ReadOnly = true;
-            // 
-            // CustoBirth
-            // 
-            this.CustoBirth.DataPropertyName = "CustoBirth";
-            this.CustoBirth.HeaderText = "出生日期";
-            this.CustoBirth.Name = "CustoBirth";
-            this.CustoBirth.ReadOnly = true;
-            // 
-            // typeName
-            // 
-            this.typeName.DataPropertyName = "typeName";
-            this.typeName.HeaderText = "客户类型";
-            this.typeName.Name = "typeName";
-            this.typeName.ReadOnly = true;
-            // 
-            // PassportName
-            // 
-            this.PassportName.DataPropertyName = "PassportName";
-            this.PassportName.HeaderText = "证件类型";
-            this.PassportName.Name = "PassportName";
-            this.PassportName.ReadOnly = true;
-            // 
-            // CustoAdress
-            // 
-            this.CustoAdress.DataPropertyName = "CustoAdress";
-            this.CustoAdress.HeaderText = "客户地址";
-            this.CustoAdress.Name = "CustoAdress";
-            this.CustoAdress.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "PassportType";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CustoType";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "CustoID";
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CustoSex";
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
             // 
             // gbCustoInfo
             // 
@@ -295,6 +207,94 @@
             this.btnUpdate.Text = "修改客户";
             this.btnUpdate.Click += new System.EventHandler(this.picUpdateCusto_Click_1);
             // 
+            // CustoNo
+            // 
+            this.CustoNo.DataPropertyName = "CustoNo";
+            this.CustoNo.HeaderText = "客户编号";
+            this.CustoNo.Name = "CustoNo";
+            this.CustoNo.ReadOnly = true;
+            // 
+            // CustoName
+            // 
+            this.CustoName.DataPropertyName = "CustoName";
+            this.CustoName.HeaderText = "客户姓名";
+            this.CustoName.Name = "CustoName";
+            this.CustoName.ReadOnly = true;
+            // 
+            // CustoSex
+            // 
+            this.CustoSex.DataPropertyName = "SexName";
+            this.CustoSex.HeaderText = "性别";
+            this.CustoSex.Name = "CustoSex";
+            this.CustoSex.ReadOnly = true;
+            // 
+            // CustoTel
+            // 
+            this.CustoTel.DataPropertyName = "CustoTel";
+            this.CustoTel.HeaderText = "联系方式";
+            this.CustoTel.Name = "CustoTel";
+            this.CustoTel.ReadOnly = true;
+            // 
+            // CustoBirth
+            // 
+            this.CustoBirth.DataPropertyName = "CustoBirth";
+            this.CustoBirth.HeaderText = "出生日期";
+            this.CustoBirth.Name = "CustoBirth";
+            this.CustoBirth.ReadOnly = true;
+            // 
+            // typeName
+            // 
+            this.typeName.DataPropertyName = "typeName";
+            this.typeName.HeaderText = "客户类型";
+            this.typeName.Name = "typeName";
+            this.typeName.ReadOnly = true;
+            // 
+            // PassportName
+            // 
+            this.PassportName.DataPropertyName = "PassportName";
+            this.PassportName.HeaderText = "证件类型";
+            this.PassportName.Name = "PassportName";
+            this.PassportName.ReadOnly = true;
+            // 
+            // CustoAdress
+            // 
+            this.CustoAdress.DataPropertyName = "CustoAdress";
+            this.CustoAdress.HeaderText = "客户地址";
+            this.CustoAdress.Name = "CustoAdress";
+            this.CustoAdress.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "PassportType";
+            this.Column1.HeaderText = "证照类型";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CustoType";
+            this.Column2.HeaderText = "客户类型";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "CustoID";
+            this.Column3.HeaderText = "证件号码";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CustoSex";
+            this.Column4.HeaderText = "客户性别";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
             // FrmCustoManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -324,6 +324,13 @@
 
         #endregion
         private Sunny.UI.UIDataGridView dgvCustomerList;
+        private System.Windows.Forms.GroupBox gbCustoInfo;
+        private Sunny.UI.UITextBox txtCardID;
+        private System.Windows.Forms.Label label3;
+        private Sunny.UI.UIButton btnSerach;
+        private Sunny.UI.UIButton btnAddCusto;
+        private Sunny.UI.UIButton btnExport;
+        private Sunny.UI.UIButton btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoSex;
@@ -336,12 +343,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.GroupBox gbCustoInfo;
-        private Sunny.UI.UITextBox txtCardID;
-        private System.Windows.Forms.Label label3;
-        private Sunny.UI.UIButton btnSerach;
-        private Sunny.UI.UIButton btnAddCusto;
-        private Sunny.UI.UIButton btnExport;
-        private Sunny.UI.UIButton btnUpdate;
     }
 }
