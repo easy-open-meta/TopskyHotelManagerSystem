@@ -83,7 +83,7 @@ namespace SYS.Application
         public List<Spend> SelectSpendInfoAll()
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.delete_mk != 1);
+            ls = base.GetList(a => a.delete_mk != 1).OrderBy(a => a.MoneyState).ToList();
             return ls;
         }
         #endregion

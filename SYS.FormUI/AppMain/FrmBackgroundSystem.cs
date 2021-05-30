@@ -43,13 +43,19 @@ namespace SYS.FormUI
 
         public static UpdPwd closeform;
 
+        public static UpdPwd hideform;
+
         public FrmBackgroundSystem()
         {
             InitializeComponent();
             closeform = Closeform;
+            hideform = HideWinform;
         }
 
-
+        public void HideWinform()
+        {
+            this.Text = string.Empty;
+        }
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
@@ -158,11 +164,20 @@ namespace SYS.FormUI
                     case "监管统计":
                         break;
                     case "监管部门情况":
-                        pnlForm.Controls.Clear();
-                        FrmCheckList frmCheckList = new FrmCheckList();
-                        frmCheckList.TopLevel = false;
-                        pnlForm.Controls.Add(frmCheckList);
-                        frmCheckList.Show();
+                        if (AdminInfo.isAdmin == true || AdminInfo.Type.Equals("GeneralManager") || AdminInfo.Type.Equals("CheckGroup"))
+                        {
+                            pnlForm.Controls.Clear();
+                            FrmCheckList frmCheckList = new FrmCheckList();
+                            frmCheckList.TopLevel = false;
+                            pnlForm.Controls.Add(frmCheckList);
+                            frmCheckList.Show();
+                            return;
+                        }
+                        else
+                        {
+                            UIMessageTip.ShowWarning("此模块只开放给超级管理员或总经理以及监管小组查看！");
+                            return;
+                        }
                         break;
                     case "客房管理":
                         break;
@@ -282,7 +297,7 @@ namespace SYS.FormUI
             List <ModuleZero> moduleZeros  = new AdminModuleZeroService().GetAllModuleByAdmin(admin);
             for (int i = 0; i <= Aside.Nodes.Count; i++)
             {
-                var moduleZero = moduleZeros.FirstOrDefault(a => a.module_name.Equals(Aside.Nodes[i].Name.ToString()));
+                var moduleZero = moduleZeros.FirstOrDefault(a => a.module_name.Split('|','|').FirstOrDefault().Equals(Aside.Nodes[i].Name.ToString()));
                 if (moduleZero == null)
                 {
                     Aside.Nodes[i].Remove();
@@ -320,6 +335,7 @@ namespace SYS.FormUI
             bool tf = UIMessageBox.Show("确定要锁定屏幕吗？锁定后不能做任何操作!", "锁屏", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
             if(tf)
                 new FrmUnLockSystem().ShowDialog();
+            //this.Hide();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -346,6 +346,7 @@
             this.txtSellPrice.Location = new System.Drawing.Point(825, 266);
             this.txtSellPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSellPrice.Maximum = 2147483647D;
+            this.txtSellPrice.MaxLength = 10;
             this.txtSellPrice.Minimum = -2147483648D;
             this.txtSellPrice.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSellPrice.Name = "txtSellPrice";
@@ -355,6 +356,8 @@
             this.txtSellPrice.Style = Sunny.UI.UIStyle.Custom;
             this.txtSellPrice.StyleCustomMode = true;
             this.txtSellPrice.TabIndex = 153;
+            this.txtSellPrice.Text = "0.00";
+            this.txtSellPrice.Type = Sunny.UI.UITextBox.UIEditType.Double;
             // 
             // label1
             // 

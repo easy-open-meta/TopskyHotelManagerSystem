@@ -23,7 +23,7 @@ namespace SYS.Application
             {
                 OperationTime = DateTime.Now,
                 Operationlog = OperationLog,
-                OperationAccount = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,
+                OperationAccount = string.IsNullOrEmpty(AdminInfo.Account) ? LoginInfo.WorkerNo : AdminInfo.Account,
                 OperationLevel = level == 1 ? RecordLevel.Normal : level == 2 ? RecordLevel.Warning : RecordLevel.Danger,
                 delete_mk = 0,
                 datains_usr = LoginInfo.WorkerNo == null ? AdminInfo.Account : LoginInfo.WorkerNo,

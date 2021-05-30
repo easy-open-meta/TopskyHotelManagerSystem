@@ -105,5 +105,13 @@ namespace SYS.Application
         /// <returns></returns>
         bool DeleteWtiInfoByRoomNoAndDateTime(string roomno, string usedate, string enddate);
         #endregion
+
+        #region 根据房间编号获取该房间所有水电费信息
+        /// <summary>
+        /// 获取所有水电费信息
+        /// </summary>
+        /// <returns></returns>
+        List<Wti> ListWtiInfoByRoomNo(string roomno);
+        #endregion
     }
 }

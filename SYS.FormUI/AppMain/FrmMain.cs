@@ -420,15 +420,7 @@ namespace SYS.FormUI
 
         private void tsmiMain_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                tsmiMain.Text = "最小化";
-                this.WindowState = FormWindowState.Minimized;
-            }
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

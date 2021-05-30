@@ -92,6 +92,7 @@
     <Compile Include="Zero\Education.cs" />
     <Compile Include="Zero\LoginInfo.cs" />
     <Compile Include="Zero\Module.cs" />
+    <Compile Include="Zero\ModuleConsts.cs" />
     <Compile Include="Zero\ModuleZero.cs" />
     <Compile Include="Zero\Nation.cs" />
     <Compile Include="Zero\Notice.cs" />

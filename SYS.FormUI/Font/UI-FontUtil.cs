@@ -31,8 +31,6 @@ namespace SYS.FormUI
         
         static UI_FontUtil()
         {
-            var wreq = HttpWebRequest.Create("http://134.175.239.108:8085/ftp/puhuiti.ttf") as HttpWebRequest;
-            HttpWebResponse response = wreq.GetResponse() as HttpWebResponse;
             Stream stream = assembly.GetManifestResourceStream("SYS.FormUI.Resources.Alibaba-PuHuiTi-Regular.ttf");
             //Stream stream = response.GetResponseStream(); 
             byte[] fontdata = new byte[stream.Length];

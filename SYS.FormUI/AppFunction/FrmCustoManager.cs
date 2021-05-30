@@ -133,9 +133,8 @@ namespace SYS.FormUI
         {
             #region 导出信息保存为Excel表
             bool tf = UIMessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒",UIStyle.Orange,UIMessageBoxButtons.OKCancel);
-            if (!tf)
+            if (tf)
             {
-
                 //Response.ContentEncoding = System.Text.Encoding.UTF8;
                 string fileName = "";
                 string saveFileName = "";
@@ -164,7 +163,7 @@ namespace SYS.FormUI
                 {
                     for (int j = 0; j < dgvCustomerList.Columns.Count; j++)
                     {
-                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
+                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value == null ? string.Empty : dgvCustomerList.Rows[i].Cells[j].Value.ToString();
                     }
                 }
                 System.Windows.Forms.Application.DoEvents();

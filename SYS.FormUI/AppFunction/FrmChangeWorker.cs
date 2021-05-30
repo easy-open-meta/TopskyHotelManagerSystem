@@ -60,7 +60,7 @@ namespace SYS.FormUI
             {
                 item.Font = UI_FontUtil.roomControlFont;
             }
-            if (AdminInfo.Type != "总经理")
+            if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
             {
                 btnUpWorker.Enabled = false;
                 btnUpWorker.Text = "权限不足";

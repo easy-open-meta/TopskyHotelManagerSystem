@@ -35,19 +35,6 @@ namespace SYS.FormUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartment));
             this.dgvDeptList = new Sunny.UI.UIDataGridView();
-            this.cboDeptParent = new Sunny.UI.UIComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddDept = new Sunny.UI.UIButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboDeptLeader = new Sunny.UI.UIComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDeptDesc = new Sunny.UI.UITextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDeptName = new Sunny.UI.UITextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtDeptNo = new Sunny.UI.UITextBox();
-            this.btnUpdateDept = new Sunny.UI.UIButton();
-            this.btnDeleteDept = new Sunny.UI.UIButton();
             this.clDeptNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clDeptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clDeptDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +48,19 @@ namespace SYS.FormUI
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboDeptParent = new Sunny.UI.UIComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddDept = new Sunny.UI.UIButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboDeptLeader = new Sunny.UI.UIComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDeptDesc = new Sunny.UI.UITextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDeptName = new Sunny.UI.UITextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtDeptNo = new Sunny.UI.UITextBox();
+            this.btnUpdateDept = new Sunny.UI.UIButton();
+            this.btnDeleteDept = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeptList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,182 +124,6 @@ namespace SYS.FormUI
             this.dgvDeptList.Size = new System.Drawing.Size(788, 582);
             this.dgvDeptList.TabIndex = 0;
             this.dgvDeptList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptList_CellClick);
-            // 
-            // cboDeptParent
-            // 
-            this.cboDeptParent.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cboDeptParent.FillColor = System.Drawing.Color.White;
-            this.cboDeptParent.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboDeptParent.Location = new System.Drawing.Point(820, 400);
-            this.cboDeptParent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDeptParent.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cboDeptParent.Name = "cboDeptParent";
-            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.cboDeptParent.Radius = 20;
-            this.cboDeptParent.Size = new System.Drawing.Size(165, 29);
-            this.cboDeptParent.TabIndex = 182;
-            this.cboDeptParent.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cboDeptParent.Watermark = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(858, 369);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 181;
-            this.label1.Text = "上级部门";
-            // 
-            // btnAddDept
-            // 
-            this.btnAddDept.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddDept.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAddDept.Location = new System.Drawing.Point(820, 441);
-            this.btnAddDept.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAddDept.Name = "btnAddDept";
-            this.btnAddDept.Radius = 20;
-            this.btnAddDept.Size = new System.Drawing.Size(165, 33);
-            this.btnAddDept.TabIndex = 180;
-            this.btnAddDept.Text = "新增部门";
-            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(858, 297);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 19);
-            this.label9.TabIndex = 175;
-            this.label9.Text = "部门主管";
-            // 
-            // cboDeptLeader
-            // 
-            this.cboDeptLeader.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cboDeptLeader.FillColor = System.Drawing.Color.White;
-            this.cboDeptLeader.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboDeptLeader.Location = new System.Drawing.Point(820, 328);
-            this.cboDeptLeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDeptLeader.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cboDeptLeader.Name = "cboDeptLeader";
-            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.cboDeptLeader.Radius = 20;
-            this.cboDeptLeader.Size = new System.Drawing.Size(165, 29);
-            this.cboDeptLeader.TabIndex = 174;
-            this.cboDeptLeader.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cboDeptLeader.Watermark = "";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(858, 225);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 19);
-            this.label8.TabIndex = 173;
-            this.label8.Text = "部门描述";
-            // 
-            // txtDeptDesc
-            // 
-            this.txtDeptDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptDesc.FillColor = System.Drawing.Color.White;
-            this.txtDeptDesc.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtDeptDesc.Location = new System.Drawing.Point(820, 256);
-            this.txtDeptDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptDesc.Maximum = 2147483647D;
-            this.txtDeptDesc.Minimum = -2147483648D;
-            this.txtDeptDesc.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtDeptDesc.Name = "txtDeptDesc";
-            this.txtDeptDesc.Padding = new System.Windows.Forms.Padding(5);
-            this.txtDeptDesc.Radius = 20;
-            this.txtDeptDesc.Size = new System.Drawing.Size(165, 29);
-            this.txtDeptDesc.Style = Sunny.UI.UIStyle.Custom;
-            this.txtDeptDesc.StyleCustomMode = true;
-            this.txtDeptDesc.TabIndex = 172;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(858, 153);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 19);
-            this.label7.TabIndex = 171;
-            this.label7.Text = "部门名称";
-            // 
-            // txtDeptName
-            // 
-            this.txtDeptName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptName.FillColor = System.Drawing.Color.White;
-            this.txtDeptName.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtDeptName.Location = new System.Drawing.Point(820, 184);
-            this.txtDeptName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptName.Maximum = 2147483647D;
-            this.txtDeptName.Minimum = -2147483648D;
-            this.txtDeptName.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtDeptName.Name = "txtDeptName";
-            this.txtDeptName.Padding = new System.Windows.Forms.Padding(5);
-            this.txtDeptName.Radius = 20;
-            this.txtDeptName.Size = new System.Drawing.Size(165, 29);
-            this.txtDeptName.Style = Sunny.UI.UIStyle.Custom;
-            this.txtDeptName.StyleCustomMode = true;
-            this.txtDeptName.TabIndex = 170;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(858, 81);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 19);
-            this.label20.TabIndex = 169;
-            this.label20.Text = "部门编号";
-            // 
-            // txtDeptNo
-            // 
-            this.txtDeptNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptNo.FillColor = System.Drawing.Color.White;
-            this.txtDeptNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtDeptNo.Location = new System.Drawing.Point(820, 112);
-            this.txtDeptNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptNo.Maximum = 2147483647D;
-            this.txtDeptNo.Minimum = -2147483648D;
-            this.txtDeptNo.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtDeptNo.Name = "txtDeptNo";
-            this.txtDeptNo.Padding = new System.Windows.Forms.Padding(5);
-            this.txtDeptNo.Radius = 20;
-            this.txtDeptNo.ReadOnly = true;
-            this.txtDeptNo.Size = new System.Drawing.Size(165, 29);
-            this.txtDeptNo.Style = Sunny.UI.UIStyle.Custom;
-            this.txtDeptNo.StyleCustomMode = true;
-            this.txtDeptNo.TabIndex = 168;
-            // 
-            // btnUpdateDept
-            // 
-            this.btnUpdateDept.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdateDept.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnUpdateDept.Location = new System.Drawing.Point(820, 486);
-            this.btnUpdateDept.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnUpdateDept.Name = "btnUpdateDept";
-            this.btnUpdateDept.Radius = 20;
-            this.btnUpdateDept.Size = new System.Drawing.Size(165, 33);
-            this.btnUpdateDept.TabIndex = 183;
-            this.btnUpdateDept.Text = "更新部门";
-            this.btnUpdateDept.Click += new System.EventHandler(this.btnUpdateDept_Click);
-            // 
-            // btnDeleteDept
-            // 
-            this.btnDeleteDept.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteDept.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnDeleteDept.Location = new System.Drawing.Point(820, 531);
-            this.btnDeleteDept.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnDeleteDept.Name = "btnDeleteDept";
-            this.btnDeleteDept.Radius = 20;
-            this.btnDeleteDept.Size = new System.Drawing.Size(165, 33);
-            this.btnDeleteDept.TabIndex = 184;
-            this.btnDeleteDept.Text = "删除部门";
-            this.btnDeleteDept.Click += new System.EventHandler(this.btnDeleteDept_Click);
             // 
             // clDeptNo
             // 
@@ -398,6 +222,183 @@ namespace SYS.FormUI
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
+            // 
+            // cboDeptParent
+            // 
+            this.cboDeptParent.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboDeptParent.FillColor = System.Drawing.Color.White;
+            this.cboDeptParent.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboDeptParent.Location = new System.Drawing.Point(820, 443);
+            this.cboDeptParent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboDeptParent.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboDeptParent.Name = "cboDeptParent";
+            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboDeptParent.Radius = 20;
+            this.cboDeptParent.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptParent.TabIndex = 182;
+            this.cboDeptParent.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboDeptParent.Watermark = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(858, 412);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.TabIndex = 181;
+            this.label1.Text = "上级部门";
+            // 
+            // btnAddDept
+            // 
+            this.btnAddDept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddDept.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAddDept.Location = new System.Drawing.Point(820, 484);
+            this.btnAddDept.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAddDept.Name = "btnAddDept";
+            this.btnAddDept.Radius = 20;
+            this.btnAddDept.Size = new System.Drawing.Size(165, 33);
+            this.btnAddDept.TabIndex = 180;
+            this.btnAddDept.Text = "新增部门";
+            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(858, 340);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 175;
+            this.label9.Text = "部门主管";
+            // 
+            // cboDeptLeader
+            // 
+            this.cboDeptLeader.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboDeptLeader.FillColor = System.Drawing.Color.White;
+            this.cboDeptLeader.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboDeptLeader.Location = new System.Drawing.Point(820, 371);
+            this.cboDeptLeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboDeptLeader.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboDeptLeader.Name = "cboDeptLeader";
+            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboDeptLeader.Radius = 20;
+            this.cboDeptLeader.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptLeader.TabIndex = 174;
+            this.cboDeptLeader.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboDeptLeader.Watermark = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(858, 194);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 19);
+            this.label8.TabIndex = 173;
+            this.label8.Text = "部门描述";
+            // 
+            // txtDeptDesc
+            // 
+            this.txtDeptDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeptDesc.FillColor = System.Drawing.Color.White;
+            this.txtDeptDesc.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDeptDesc.Location = new System.Drawing.Point(820, 225);
+            this.txtDeptDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptDesc.Maximum = 2147483647D;
+            this.txtDeptDesc.Minimum = -2147483648D;
+            this.txtDeptDesc.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtDeptDesc.Multiline = true;
+            this.txtDeptDesc.Name = "txtDeptDesc";
+            this.txtDeptDesc.Padding = new System.Windows.Forms.Padding(5);
+            this.txtDeptDesc.Radius = 10;
+            this.txtDeptDesc.Size = new System.Drawing.Size(165, 103);
+            this.txtDeptDesc.Style = Sunny.UI.UIStyle.Custom;
+            this.txtDeptDesc.StyleCustomMode = true;
+            this.txtDeptDesc.TabIndex = 172;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(858, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 19);
+            this.label7.TabIndex = 171;
+            this.label7.Text = "部门名称";
+            // 
+            // txtDeptName
+            // 
+            this.txtDeptName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeptName.FillColor = System.Drawing.Color.White;
+            this.txtDeptName.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDeptName.Location = new System.Drawing.Point(820, 153);
+            this.txtDeptName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptName.Maximum = 2147483647D;
+            this.txtDeptName.Minimum = -2147483648D;
+            this.txtDeptName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtDeptName.Name = "txtDeptName";
+            this.txtDeptName.Padding = new System.Windows.Forms.Padding(5);
+            this.txtDeptName.Radius = 20;
+            this.txtDeptName.Size = new System.Drawing.Size(165, 29);
+            this.txtDeptName.Style = Sunny.UI.UIStyle.Custom;
+            this.txtDeptName.StyleCustomMode = true;
+            this.txtDeptName.TabIndex = 170;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(858, 50);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(85, 19);
+            this.label20.TabIndex = 169;
+            this.label20.Text = "部门编号";
+            // 
+            // txtDeptNo
+            // 
+            this.txtDeptNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeptNo.FillColor = System.Drawing.Color.White;
+            this.txtDeptNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDeptNo.Location = new System.Drawing.Point(820, 81);
+            this.txtDeptNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptNo.Maximum = 2147483647D;
+            this.txtDeptNo.Minimum = -2147483648D;
+            this.txtDeptNo.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtDeptNo.Name = "txtDeptNo";
+            this.txtDeptNo.Padding = new System.Windows.Forms.Padding(5);
+            this.txtDeptNo.Radius = 20;
+            this.txtDeptNo.ReadOnly = true;
+            this.txtDeptNo.Size = new System.Drawing.Size(165, 29);
+            this.txtDeptNo.Style = Sunny.UI.UIStyle.Custom;
+            this.txtDeptNo.StyleCustomMode = true;
+            this.txtDeptNo.TabIndex = 168;
+            // 
+            // btnUpdateDept
+            // 
+            this.btnUpdateDept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateDept.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnUpdateDept.Location = new System.Drawing.Point(820, 529);
+            this.btnUpdateDept.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnUpdateDept.Name = "btnUpdateDept";
+            this.btnUpdateDept.Radius = 20;
+            this.btnUpdateDept.Size = new System.Drawing.Size(165, 33);
+            this.btnUpdateDept.TabIndex = 183;
+            this.btnUpdateDept.Text = "更新部门";
+            this.btnUpdateDept.Click += new System.EventHandler(this.btnUpdateDept_Click);
+            // 
+            // btnDeleteDept
+            // 
+            this.btnDeleteDept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteDept.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnDeleteDept.Location = new System.Drawing.Point(820, 574);
+            this.btnDeleteDept.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnDeleteDept.Name = "btnDeleteDept";
+            this.btnDeleteDept.Radius = 20;
+            this.btnDeleteDept.Size = new System.Drawing.Size(165, 33);
+            this.btnDeleteDept.TabIndex = 184;
+            this.btnDeleteDept.Text = "删除部门";
+            this.btnDeleteDept.Click += new System.EventHandler(this.btnDeleteDept_Click);
             // 
             // FrmDepartment
             // 

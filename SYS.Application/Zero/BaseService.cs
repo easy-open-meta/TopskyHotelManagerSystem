@@ -419,7 +419,7 @@ namespace SYS.Application
         {
             return base.Change<Dept>().Update(a => new Dept() 
             {
-                delete_mk = dept.delete_mk,
+                delete_mk = 1,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
             },a => a.dept_no == dept.dept_no);
