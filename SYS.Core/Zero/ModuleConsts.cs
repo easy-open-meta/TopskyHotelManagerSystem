@@ -20,79 +20,60 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
- *模块说明：操作日志类
+ *模块说明：系统模块常量类
  */
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SYS.Core
 {
     /// <summary>
-    /// 日志等级
+    /// 系统模块常量类
     /// </summary>
-    public enum RecordLevel
+    public class ModuleConsts
     {
         /// <summary>
-        /// 普通警告
+        /// 基础信息
         /// </summary>
-        Normal = 100,
+        public const string BaseInfo = "BaseInfo";
         /// <summary>
-        /// 严重警告
+        /// 财务信息
         /// </summary>
-        Warning = 200,
+        public const string CashInfo = "CashInfo";
         /// <summary>
-        /// 危险警告
+        /// 水电管理
         /// </summary>
-        Danger = 300,
-    }
-
-    /// <summary>
-    /// 操作日志
-    /// </summary>
-    public class OperationLog
-    {
-        
+        public const string WtiInfo = "WtiInfo";
         /// <summary>
-        /// 操作时间
+        /// 监管统计
         /// </summary>
-        public DateTime OperationTime { get; set; }
+        public const string CheckInfo = "CheckInfo";
         /// <summary>
-        /// 操作信息
+        /// 客房管理
         /// </summary>
-        public string Operationlog { get; set; }
+        public const string RoomManager = "RoomManager";
         /// <summary>
-        /// 操作账号
+        /// 客户管理
         /// </summary>
-        public string OperationAccount { get; set; }
+        public const string CustomerManager = "CustomerManager";
         /// <summary>
-        /// 日志等级
+        /// 人事管理
         /// </summary>
-        public RecordLevel OperationLevel { get; set; }
+        public const string HumanResourcesManager = "HumanResourcesManager";
         /// <summary>
-        /// 删除标记
+        /// 物资管理
         /// </summary>
-        public int delete_mk { get; set; }
+        public const string MaterialManager = "MaterialManager";
         /// <summary>
-        /// 资料创建人
+        /// 员工操作日志
         /// </summary>
-        public string datains_usr { get; set; }
+        public const string OperationLogManager = "OperationLogManager";
         /// <summary>
-        /// 资料创建时间
+        /// 系统管理
         /// </summary>
-        public DateTime datains_date { get; set; }
-        /// <summary>
-        /// 资料更新人
-        /// </summary>
-        public string datachg_usr { get; set; }
-        /// <summary>
-        /// 资料更新时间
-        /// </summary>
-        public DateTime datachg_date { get; set; }
-
-        /// <summary>
-        /// 日志等级
-        /// </summary>
-        [SqlSugar.SugarColumn(IsIgnore = true)]
-        public string OperationLevelNm { get; set; }
-
+        public const string AdminManager = "AdminManager";
     }
 }

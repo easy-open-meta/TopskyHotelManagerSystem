@@ -42,6 +42,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOperationLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperationlog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,9 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.clOperationLevel,
+            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -161,6 +165,21 @@
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
             // 
+            // clOperationLevel
+            // 
+            this.clOperationLevel.DataPropertyName = "OperationLevelNm";
+            this.clOperationLevel.HeaderText = "日志级别";
+            this.clOperationLevel.Name = "clOperationLevel";
+            this.clOperationLevel.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "OperationLevel";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
             // FrmOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -192,5 +211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOperationLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

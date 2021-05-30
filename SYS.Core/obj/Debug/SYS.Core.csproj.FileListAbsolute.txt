@@ -39,8 +39,8 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\bin\Debug\System.Numerics.Vectors.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Common.pdb
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\bin\Debug\SYS.Common.dll.config
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csprojAssemblyReference.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CoreCompileInputs.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.CopyComplete
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.pdb
+E:\Gitee\TopSkyHotelManagerSystem\SYS.Core\obj\Debug\SYS.Core.csproj.AssemblyReference.cache

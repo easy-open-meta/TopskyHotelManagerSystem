@@ -20,6 +20,42 @@ namespace SYS.Application
         public List<Module> GetAllModule()
         {
             List<Module> modules = base.Change<Module>().GetList();
+            modules.ForEach(source =>
+            {
+                switch (source.module_name)
+                {
+                    case ModuleConsts.BaseInfo:
+                        source.module_name = ModuleConsts.BaseInfo + "||" + "基础信息";
+                        break;
+                    case ModuleConsts.CashInfo:
+                        source.module_name = ModuleConsts.CashInfo + "||" + "财务信息";
+                        break;
+                    case ModuleConsts.WtiInfo:
+                        source.module_name = ModuleConsts.WtiInfo + "||" + "水电管理";
+                        break;
+                    case ModuleConsts.CheckInfo:
+                        source.module_name = ModuleConsts.CheckInfo + "||" + "监管统计";
+                        break;
+                    case ModuleConsts.RoomManager:
+                        source.module_name = ModuleConsts.RoomManager + "||" + "客房管理";
+                        break;
+                    case ModuleConsts.CustomerManager:
+                        source.module_name = ModuleConsts.CustomerManager + "||" + "客户管理";
+                        break;
+                    case ModuleConsts.HumanResourcesManager:
+                        source.module_name = ModuleConsts.HumanResourcesManager + "||" + "人事管理";
+                        break;
+                    case ModuleConsts.MaterialManager:
+                        source.module_name = ModuleConsts.MaterialManager + "||" + "物资管理";
+                        break;
+                    case ModuleConsts.OperationLogManager:
+                        source.module_name = ModuleConsts.OperationLogManager + "||" + "员工操作日志";
+                        break;
+                    case ModuleConsts.AdminManager:
+                        source.module_name = ModuleConsts.AdminManager + "||" + "系统管理";
+                        break;
+                }
+            });
             return modules;
         }
 
@@ -32,6 +68,42 @@ namespace SYS.Application
         {
             List<ModuleZero> moduleZeros = base.GetList(a => a.admin_account.Equals(admin.AdminAccount)
             && a.module_enable == 1);
+            moduleZeros.ForEach(source =>
+            {
+                switch (source.module_name)
+                {
+                    case ModuleConsts.BaseInfo:
+                        source.module_name = ModuleConsts.BaseInfo + "||" + "基础信息";
+                        break;
+                    case ModuleConsts.CashInfo:
+                        source.module_name = ModuleConsts.CashInfo + "||" + "财务信息";
+                        break;
+                    case ModuleConsts.WtiInfo:
+                        source.module_name = ModuleConsts.WtiInfo + "||" + "水电管理";
+                        break;
+                    case ModuleConsts.CheckInfo:
+                        source.module_name = ModuleConsts.CheckInfo + "||" + "监管统计";
+                        break;
+                    case ModuleConsts.RoomManager:
+                        source.module_name = ModuleConsts.RoomManager + "||" + "客房管理";
+                        break;
+                    case ModuleConsts.CustomerManager:
+                        source.module_name = ModuleConsts.CustomerManager + "||" + "客户管理";
+                        break;
+                    case ModuleConsts.HumanResourcesManager:
+                        source.module_name = ModuleConsts.HumanResourcesManager + "||" + "人事管理";
+                        break;
+                    case ModuleConsts.MaterialManager:
+                        source.module_name = ModuleConsts.MaterialManager + "||" + "物资管理";
+                        break;
+                    case ModuleConsts.OperationLogManager:
+                        source.module_name = ModuleConsts.OperationLogManager + "||" + "员工操作日志";
+                        break;
+                    case ModuleConsts.AdminManager:
+                        source.module_name = ModuleConsts.AdminManager + "||" + "系统管理";
+                        break;
+                }
+            });
             return moduleZeros;
         }
 
@@ -42,6 +114,10 @@ namespace SYS.Application
         /// <returns></returns>
         public bool AddModuleZeroList(List<ModuleZero> moduleZeros)
         {
+            moduleZeros.ForEach(moduleZero =>
+            {
+                moduleZero.module_name = moduleZero.module_name.Split('|','|').FirstOrDefault().ToString();
+            });
             var result = base.InsertRange(moduleZeros);
             return result;
         }

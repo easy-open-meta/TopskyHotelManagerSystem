@@ -103,19 +103,18 @@ namespace SYS.FormUI
 
         private void FrmUnLockSystem_Load(object sender, EventArgs e)
         {
-            string regPath = System.Windows.Forms.Application.StartupPath + @"\禁用任务管理器.reg";
-            ExecuteReg(regPath);
-            //FrmMain.Stop();
-            //HookStart();
-            Process[] ps = Process.GetProcessesByName("TS酒店管理系统");
-            if (ps.Length < 0)
-            {
-                foreach (Process p in ps)
-                    p.Kill();
-                FrmMain.Start();
-            }
-            IntPtr hMenu = GetSystemMenu(this.Handle, 0);
-            EnableMenuItem(hMenu, SC_CLOSE, MF_DISABLED | MF_GRAYED);
+            //string regPath = System.Windows.Forms.Application.StartupPath + @"\禁用任务管理器.reg";
+            //ExecuteReg(regPath);
+            //Process[] ps = Process.GetProcessesByName("TS酒店管理系统");
+            //if (ps.Length < 0)
+            //{
+            //    foreach (Process p in ps)
+            //        p.Kill();
+            //    FrmMain.Start();
+            //}
+            //IntPtr hMenu = GetSystemMenu(this.Handle, 0);
+            //EnableMenuItem(hMenu, SC_CLOSE, MF_DISABLED | MF_GRAYED);
+            //FrmBackgroundSystem.hideform();
         }
 
         protected override CreateParams CreateParams

@@ -72,7 +72,7 @@ namespace SYS.FormUI
             }
             dgvWorkerList.AutoGenerateColumns = false;
             dgvWorkerList.DataSource = new WorkerService().SelectWorkerAll();
-            if (AdminInfo.Type != "总经理" && AdminInfo.Type != "人力资源部经理")
+            if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
             {
                 btnAddWorker.Enabled = false;
                 btnAddWorker.Text = "权限不足";

@@ -91,11 +91,11 @@ namespace SYS.FormUI
             this.lbTime = new Sunny.UI.UILabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cmsMenu = new Sunny.UI.UIContextMenuStrip();
+            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUpdatePwd = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSetting = new Sunny.UI.UIButton();
             this.btnLocked = new Sunny.UI.UIButton();
-            this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiUpdatePwd = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,6 +261,22 @@ namespace SYS.FormUI
             this.cmsMenu.Size = new System.Drawing.Size(145, 62);
             this.cmsMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmsMenu_MouseDown);
             // 
+            // tsmiMySpace
+            // 
+            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
+            this.tsmiMySpace.Name = "tsmiMySpace";
+            this.tsmiMySpace.Size = new System.Drawing.Size(144, 26);
+            this.tsmiMySpace.Text = "个人中心";
+            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
+            // 
+            // tsmiUpdatePwd
+            // 
+            this.tsmiUpdatePwd.Image = global::SYS.FormUI.Properties.Resources.修改;
+            this.tsmiUpdatePwd.Name = "tsmiUpdatePwd";
+            this.tsmiUpdatePwd.Size = new System.Drawing.Size(144, 26);
+            this.tsmiUpdatePwd.Text = "修改密码";
+            this.tsmiUpdatePwd.Click += new System.EventHandler(this.tsmiUpdatePwd_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -313,22 +329,6 @@ namespace SYS.FormUI
             this.btnLocked.Click += new System.EventHandler(this.btnLocked_Click);
             this.btnLocked.MouseLeave += new System.EventHandler(this.btnLocked_MouseLeave);
             this.btnLocked.MouseHover += new System.EventHandler(this.btnLocked_MouseHover);
-            // 
-            // tsmiMySpace
-            // 
-            this.tsmiMySpace.Image = global::SYS.FormUI.Properties.Resources.个人中心;
-            this.tsmiMySpace.Name = "tsmiMySpace";
-            this.tsmiMySpace.Size = new System.Drawing.Size(144, 26);
-            this.tsmiMySpace.Text = "个人中心";
-            this.tsmiMySpace.Click += new System.EventHandler(this.tsmiMySpace_Click);
-            // 
-            // tsmiUpdatePwd
-            // 
-            this.tsmiUpdatePwd.Image = global::SYS.FormUI.Properties.Resources.修改;
-            this.tsmiUpdatePwd.Name = "tsmiUpdatePwd";
-            this.tsmiUpdatePwd.Size = new System.Drawing.Size(144, 26);
-            this.tsmiUpdatePwd.Text = "修改密码";
-            this.tsmiUpdatePwd.Click += new System.EventHandler(this.tsmiUpdatePwd_Click);
             // 
             // FrmBackgroundSystem
             // 

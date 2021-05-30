@@ -28,36 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChart));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.SkyBlue;
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.Red;
-            chartArea1.BorderColor = System.Drawing.Color.White;
-            chartArea1.BorderWidth = 3;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "总销售额";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.SkyBlue;
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.Red;
+            chartArea2.BorderColor = System.Drawing.Color.White;
+            chartArea2.BorderWidth = 3;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "总销售额";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(12, 52);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(981, 531);
@@ -112,7 +104,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

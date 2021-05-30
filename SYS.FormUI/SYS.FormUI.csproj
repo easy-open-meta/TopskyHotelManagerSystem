@@ -123,9 +123,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Until">
-      <HintPath>C:\Users\Administrator\Downloads\Compressed\WindowsFormsApplication2\WindowsFormsApplication2\Until\bin\Debug\Until.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFunction\FrmAddAdmin.cs">
@@ -289,12 +286,6 @@
     </Compile>
     <Compile Include="AppFunction\FrmCheckIn.Designer.cs">
       <DependentUpon>FrmCheckIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppFunction\FrmCheckInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmCheckInfo.Designer.cs">
-      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmCheckOutForm.cs">
       <SubType>Form</SubType>
@@ -513,9 +504,6 @@
     <EmbeddedResource Include="AppFunction\FrmCheckIn.resx">
       <DependentUpon>FrmCheckIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmCheckInfo.resx">
-      <DependentUpon>FrmCheckInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmCheckOutForm.resx">
       <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -604,8 +592,12 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="bin\Debug\启用任务管理器.reg" />
-    <None Include="bin\Debug\禁用任务管理器.reg" />
+    <EmbeddedResource Include="bin\Debug\启用任务管理器.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\禁用任务管理器.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -672,15 +664,6 @@
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>8</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

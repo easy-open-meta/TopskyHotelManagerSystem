@@ -99,6 +99,7 @@ namespace SYS.Application
             }
             dr.Close();
             DBHelper.Closecon();
+            custoSpends = custoSpends.OrderBy(a => a.Years).ToList();
             return custoSpends;
         }
 

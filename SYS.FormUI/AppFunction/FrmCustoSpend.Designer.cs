@@ -42,7 +42,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMoneyState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +80,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.clSpendNo,
-            this.Column8,
+            this.clMoneyState,
             this.Column6,
             this.Column7,
             this.Column9,
@@ -175,13 +175,12 @@
             this.clSpendNo.ReadOnly = true;
             this.clSpendNo.Visible = false;
             // 
-            // Column8
+            // clMoneyState
             // 
-            this.Column8.DataPropertyName = "MoneyState";
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
+            this.clMoneyState.DataPropertyName = "MoneyState";
+            this.clMoneyState.HeaderText = "结算状态";
+            this.clMoneyState.Name = "clMoneyState";
+            this.clMoneyState.ReadOnly = true;
             // 
             // Column6
             // 
@@ -247,7 +246,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSpendNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMoneyState;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

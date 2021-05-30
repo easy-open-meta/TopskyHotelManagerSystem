@@ -118,6 +118,8 @@ namespace SYS.FormUI
                     datains_date = DateTime.Now
                 };
                 new OperationlogService().InsertOperationLog(operationLog);
+                txtDeptName.Text = "";
+                txtDeptDesc.Text = "";
                 ReloadDeptList();
                 return;
             }
@@ -169,6 +171,8 @@ namespace SYS.FormUI
                     datains_date = DateTime.Now
                 };
                 new OperationlogService().InsertOperationLog(operationLog);
+                txtDeptName.Text = "";
+                txtDeptDesc.Text = "";
                 ReloadDeptList();
                 return;
             }
@@ -181,16 +185,13 @@ namespace SYS.FormUI
 
         private void btnDeleteDept_Click(object sender, EventArgs e)
         {
-            if (dgvDeptList.SelectedRows.Count == 1)
+            if (dgvDeptList.SelectedRows.Count > 0)
             {
                 Dept dept = new Dept()
                 {
                     dept_no = txtDeptNo.Text.Trim(),
                     dept_name = txtDeptName.Text.Trim(),
-                    dept_desc = txtDeptDesc.Text.Trim(),
-                    dept_parent = cboDeptParent.SelectedValue.ToString(),
-                    dept_date = DateTime.Now,
-                    dept_leader = cboDeptLeader.SelectedValue.ToString()
+                    dept_desc = txtDeptDesc.Text.Trim()
                 };
                 bool tf = new BaseService().DelDept(dept);
                 if (tf == false)
@@ -208,6 +209,8 @@ namespace SYS.FormUI
                     datains_date = DateTime.Now
                 };
                 new OperationlogService().InsertOperationLog(operationLog);
+                txtDeptName.Text = "";
+                txtDeptDesc.Text = "";
                 ReloadDeptList();
                 return;
             }

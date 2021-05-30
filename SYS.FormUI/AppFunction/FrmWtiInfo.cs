@@ -44,6 +44,13 @@ namespace SYS.FormUI
                 item.Font = UI_FontUtil.childControlFont;
             }
             LoadWtiInfo();//加载水电费信息
+            if (AdminInfo.isAdmin == false)
+            {
+                uiToolTip1.Active = false;
+                dgvWti.ShowCellToolTips = false;
+                btnUpdWti.Text = "权限不足";
+                btnUpdWti.Enabled = false;
+            }
         }
         #endregion
 
@@ -55,8 +62,46 @@ namespace SYS.FormUI
         {
             //将水电费信息加载到Dgv
             dgvWti.DataSource = new WtiService().SelectWtiInfoAll();
+            dgvWti.AutoGenerateColumns = false;
         }
         #endregion
-       
+
+        private void btnUpdWti_Click(object sender, EventArgs e)
+        {
+            Wti wti = new Wti
+            {
+                WtiNo = txtRecordNo.Text.Trim(),
+                RoomNo = txtRoomNo.Text.Trim(),
+                CustoNo = txtCustoNo.Text.Trim(),
+                UseDate = dtpStartDate.Value,
+                EndDate = dtpEndDate.Value,
+                PowerUse = string.IsNullOrEmpty(txtTInfo.Text.Trim()) ? 0 : Convert.ToDecimal(txtTInfo.Text.Trim()),
+                WaterUse = string.IsNullOrEmpty(txtWInfo.Text.Trim()) ? 0 : Convert.ToDecimal(txtWInfo.Text.Trim()),
+                Record = AdminInfo.Account,
+                datachg_usr = AdminInfo.Account,
+                datachg_date = DateTime.Now
+            };
+            new WtiService().UpdateWtiInfo(wti);
+            UIMessageTip.ShowOk("修改成功！", 1500);
+            pnlWtiInfo.Visible = false;
+            LoadWtiInfo();
+            return;
+        }
+
+        private void dgvWti_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (AdminInfo.isAdmin == true)
+            {
+                txtRecordNo.Text = dgvWti.SelectedRows[0].Cells["clWtiNo"].Value.ToString();
+                txtRoomNo.Text = dgvWti.SelectedRows[0].Cells["clRoomNo"].Value.ToString();
+                txtCustoNo.Text = dgvWti.SelectedRows[0].Cells["clCustoNo"].Value.ToString();
+                dtpStartDate.Value = Convert.ToDateTime(dgvWti.SelectedRows[0].Cells["clUseDate"].Value.ToString());
+                dtpEndDate.Value = Convert.ToDateTime(dgvWti.SelectedRows[0].Cells["clEndDate"].Value.ToString());
+                txtWInfo.Text = dgvWti.SelectedRows[0].Cells["clWaterUse"].Value.ToString();
+                txtTInfo.Text = dgvWti.SelectedRows[0].Cells["clPowerUse"].Value.ToString();
+                pnlWtiInfo.Visible = true;
+                btnUpdWti.Enabled = true;
+            }
+        }
     }
 }

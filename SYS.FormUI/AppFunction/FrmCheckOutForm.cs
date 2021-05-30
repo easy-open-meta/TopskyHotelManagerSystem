@@ -201,7 +201,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载水电费信息
-            var listWti = new WtiService().SelectWtiInfoAll();
+            var listWti = new WtiService().ListWtiInfoByRoomNo(txtRoomNo.Text.Trim());
             dgvWti.DataSource = listWti;
             dgvWti.AutoGenerateColumns = false;
             #endregion
@@ -210,16 +210,16 @@ namespace SYS.FormUI
             {
                 double m = result + sum;
                 lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.60);
-                lblVIP.Text = "六折";
+                lblVIPPrice.Text = Convert.ToString(m * 0.80);
+                lblVIP.Text = "八折";
             }
             else if (cboCustoType.Text == "白金会员")
             {
 
                 double m = result + sum;
                 lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.80);
-                lblVIP.Text = "八折";
+                lblVIPPrice.Text = Convert.ToString(m * 0.85);
+                lblVIP.Text = "八五折";
             }
             else if (cboCustoType.Text == "黄金会员")
             {
@@ -237,7 +237,6 @@ namespace SYS.FormUI
             }
             else if (cboCustoType.Text == "普通用户")
             {
-                //39525
                 double m = result + sum;
                 lblGetReceipts.Text = m.ToString();
                 lblVIPPrice.Text = Convert.ToString(m);
@@ -309,9 +308,13 @@ namespace SYS.FormUI
                     UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                     FrmRoomManager.Reload("");
 
+                    //添加一条最后入住的房间以及入住天数
+
+
                     #region 获取添加操作日志所需的信息
                     RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                     #endregion
+
                 }
                 else
                 {

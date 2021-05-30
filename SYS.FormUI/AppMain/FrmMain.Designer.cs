@@ -36,8 +36,6 @@
             this.pnlMID = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiMain = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiChangeUser = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMySpace = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -129,8 +127,6 @@
             // 
             this.cmsMain.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiMain,
-            this.toolStripSeparator1,
             this.tsmiChangeUser,
             this.tsmiMySpace,
             this.toolStripSeparator3,
@@ -143,22 +139,8 @@
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
             this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.cmsMain.Size = new System.Drawing.Size(209, 236);
+            this.cmsMain.Size = new System.Drawing.Size(209, 204);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
-            // 
-            // tsmiMain
-            // 
-            this.tsmiMain.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tsmiMain.Image = global::SYS.FormUI.Properties.Resources.主页__1_;
-            this.tsmiMain.Name = "tsmiMain";
-            this.tsmiMain.Size = new System.Drawing.Size(208, 26);
-            this.tsmiMain.Text = "主界面";
-            this.tsmiMain.Click += new System.EventHandler(this.tsmiMain_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(205, 6);
             // 
             // tsmiChangeUser
             // 
@@ -583,8 +565,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel pnlMID;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMain;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeUser;
         private System.Windows.Forms.ToolStripMenuItem tsmiLockScreen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

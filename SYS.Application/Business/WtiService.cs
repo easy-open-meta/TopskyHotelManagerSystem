@@ -79,6 +79,20 @@ namespace SYS.Application
         }
         #endregion
 
+
+        #region 根据房间编号获取该房间所有水电费信息
+        /// <summary>
+        /// 获取所有水电费信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Wti> ListWtiInfoByRoomNo(string roomno)
+        {
+            List<Wti> wti = new List<Wti>();
+            wti = base.GetList(a => a.delete_mk != 1 && a.RoomNo.Equals(roomno));
+            return wti;
+        }
+        #endregion
+
         #region 添加水电费信息
         /// <summary>
         /// 添加水电费信息
@@ -106,8 +120,11 @@ namespace SYS.Application
                 WaterUse = w.WaterUse,
                 PowerUse = w.PowerUse,
                 Record = w.Record,
-                CustoNo = w.CustoNo
-            },a => a.RoomNo == w.RoomNo);
+                CustoNo = w.CustoNo,
+                datachg_usr = w.datachg_usr,
+                datachg_date = w.datachg_date,
+                RoomNo = w.RoomNo
+            },a => a.WtiNo == w.WtiNo);
 
         }
         #endregion

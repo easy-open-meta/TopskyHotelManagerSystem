@@ -56,7 +56,7 @@ namespace SYS.FormUI
             dgvCashList.AutoGenerateColumns = false;
             dgvCashList.DataSource = new CashService().SelectCashInfoAll();
             txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
-            if (AdminInfo.Type != "总经理" && AdminInfo.Type != "财务经理")
+            if (AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "FinanceManager" && AdminInfo.isAdmin == false)
             {
                 btnOK.Enabled = false;
                 btnOK.Text = "权限不足";
