@@ -8,14 +8,7 @@ D:\Java&NetOfficecal\TopSkyHotelManagerSystem\TSHotelManagerSystem\SYS.Library\o
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll.config
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.pdb
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csprojAssemblyReference.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
-E:\Project\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll.config
-E:\Project\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.dll
-E:\Project\TopskyHotelManagerSystem\SYS.Library\bin\Debug\SYS.Library.pdb
-E:\Project\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.AssemblyReference.cache
-E:\Project\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.CoreCompileInputs.cache
-E:\Project\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.dll
-E:\Project\TopskyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.pdb
+E:\Gitee\TopSkyHotelManagerSystem\SYS.Library\obj\Debug\SYS.Library.csproj.AssemblyReference.cache

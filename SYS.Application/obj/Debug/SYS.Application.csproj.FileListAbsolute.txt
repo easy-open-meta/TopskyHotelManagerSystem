@@ -55,8 +55,8 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Common.pdb
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Common.dll.config
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Core.pdb
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Core.xml
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csprojAssemblyReference.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csproj.CoreCompileInputs.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csproj.CopyComplete
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.pdb
+E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\obj\Debug\SYS.Application.csproj.AssemblyReference.cache

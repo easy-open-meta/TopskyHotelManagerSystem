@@ -90,7 +90,6 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Application.dll.confi
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Common.dll.config
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.xml
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Newtonsoft.Json.xml
-E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csprojAssemblyReference.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.config
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.ResolveComReference.cache
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmAddAdmin.resources
@@ -153,5 +152,3 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.appl
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.CopyComplete
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
-E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\bin\Debug\启用任务管理器.reg
-E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\bin\Debug\禁用任务管理器.reg
