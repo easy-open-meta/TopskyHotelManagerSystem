@@ -143,6 +143,12 @@
     <Compile Include="AppFunction\FrmAuthority.Designer.cs">
       <DependentUpon>FrmAuthority.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppFunction\FrmBaseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmBaseManager.Designer.cs">
+      <DependentUpon>FrmBaseManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmChangeAdminPwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmAuthority.resx">
       <DependentUpon>FrmAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmBaseManager.resx">
+      <DependentUpon>FrmBaseManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChangeAdminPwd.resx">
       <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>

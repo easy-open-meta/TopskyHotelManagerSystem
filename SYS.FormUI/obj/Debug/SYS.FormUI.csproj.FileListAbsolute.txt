@@ -155,3 +155,4 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.pdb
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\bin\Debug\启用任务管理器.reg
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\bin\Debug\禁用任务管理器.reg
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.csproj.AssemblyReference.cache
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmBaseManager.resources
