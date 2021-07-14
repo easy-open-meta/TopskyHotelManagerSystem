@@ -1,12 +1,13 @@
 <h1 align="center">TopskyHotelManagerSystem</h1>
 <p align="center">
 	<a href='https://gitee.com/java-and-net/TopskyHotelManagerSystem/stargazers'><img src='https://gitee.com/java-and-net/TopskyHotelManagerSystem/badge/star.svg?theme=dark' alt='star'></img></a>
+        <a href='https://gitee.com/java-and-net/TopskyHotelManagerSystem/fork'><img src='https://gitee.com/java-and-net/TopskyHotelManagerSystem/badge/fork.svg?theme=dark' alt='fork'></img></a>
         <a href='https://img.shields.io/travis/antvis/g2.svg'><img src="https://img.shields.io/travis/antvis/g2.svg" alt=""></img>
         <a href='https://img.shields.io/badge/license-MIT-000000.svg'><img src="https://img.shields.io/badge/license-MIT-000000.svg" alt=""></img></a>
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
 
-# 引用的开源项目：
+#  :pray: 引用的开源项目：
 
 1. ##### Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)      
 
@@ -16,7 +17,7 @@
 
    [SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
 
-# 本项目说明：
+#  :exclamation: 本项目说明：
 
 1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应描述。
 
@@ -26,11 +27,11 @@
 
 4、关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!
 
-# 开发目的：
+#  :thought_balloon: 开发目的：
 
 在现如今发展迅速的酒店行业，随着酒店的日常工作增加，已经很难用人工去进行处理，一些繁琐的数据也可能会因为人工的失误而造成酒店的一些损失，因此很需要一款可以协助酒店进行内部管理的管理软件。
 
-# 系统开发环境：
+#  :mag_right: 系统开发环境：
 
 操作系统：Windows 10(x64)
 
@@ -48,7 +49,7 @@
 
 开发技术：.NET WinForm
 
-# 系统结构：
+#  :open_file_folder: 系统结构：
 ```tree
 TopSkyHotelManagerSystem
 ├─SYS.Application
@@ -118,7 +119,10 @@ TopSkyHotelManagerSystem
 ├─ logo.ico
 ```
 
-# 系统功能模块汇总：
+#  :chart_with_upwards_trend: 系统数据库关系图(由PDMAN软件生成) :loudspeaker: 
+[数据库关系图](https://www.jvnorg.site/tshoteldb.html)
+
+#  :books: 系统功能模块汇总：
 
 | 功能汇总     |        |        |        |      |        |        |
 |----------|--------|--------|--------|------|--------|--------|
@@ -139,8 +143,7 @@ TopSkyHotelManagerSystem
 | 系统管理 | 添加管理员 | 权限分配 | 启/禁用管理员 | | | |
 
 
-
-# 项目作者：
+#  :family: 项目作者：
 
 **杨俊杰(即本账号，项目组长,核心代码编写和后期项目整合)**
 
@@ -150,11 +153,11 @@ TopSkyHotelManagerSystem
 
 **张黔广(开发，APP前后端开发)**
 
-# 项目运行部署：
+#  :computer: 项目运行部署：
 
 **下载并安装Microsoft Visual Studio Professional 2017及以上版本，并通过下载Zip包解压，打开.sln后缀格式文件运行。**
 
-# 数据库运行部署(本地)：
+#  :inbox_tray: 数据库运行部署(本地)：
 
 **作者及开发团队强烈建议使用MySQL数据库，安装MySQL数据库并开启服务，通过可视化管理工具对数据库进行建立，可通过打开执行数据库脚本文件夹内的.sql后缀格式文件进行快速建立数据表和导入数据，执行步骤(以MySQL数据库为例)：**
 
@@ -162,7 +165,7 @@ TopSkyHotelManagerSystem
 
 **2、随后打开Data.sql文件进行数据导入。**
 
-# Star趋势图(感谢Giteye提供的趋势图报表功能！)：
+#  :chart_with_upwards_trend: Star趋势图(感谢Giteye提供的趋势图报表功能！)：
 [![Giteye chart](https://chart.giteye.net/gitee/java-and-net/TopskyHotelManagerSystem/Z9DD26VK.png)](https://giteye.net/chart/Z9DD26VK)
 
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
