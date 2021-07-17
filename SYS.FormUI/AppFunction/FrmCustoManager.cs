@@ -131,67 +131,67 @@ namespace SYS.FormUI
         #region 导出事件方法
         private void picLoadOut_Click_1(object sender, EventArgs e)
         {
-            #region 导出信息保存为Excel表
-            bool tf = UIMessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒",UIStyle.Orange,UIMessageBoxButtons.OKCancel);
-            if (!tf)
-            {
+            //#region 导出信息保存为Excel表
+            //bool tf = UIMessageBox.Show("导出信息为敏感操作，确定要继续导出吗？(此步操作将写入操作日志)", "信息提醒",UIStyle.Orange,UIMessageBoxButtons.OKCancel);
+            //if (!tf)
+            //{
 
-                //Response.ContentEncoding = System.Text.Encoding.UTF8;
-                string fileName = "";
-                string saveFileName = "";
-                //fileName.Charset = "GB2312";
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                //saveDialog.DefaultExt = "xls";
-                saveDialog.FileName = fileName;
-                saveDialog.Filter = "2003~2007工作表*.xls|*.xls|2010及以上版本工作表*.xlsx|*.xlsx";
-                saveDialog.ShowDialog();
-                saveFileName = saveDialog.FileName;
-                if (saveFileName.IndexOf(":") < 0) return;
-                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-                if (xlApp == null)
-                {
-                    UIMessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒",UIStyle.Red);
-                    return;
-                }
-                Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
-                Microsoft.Office.Interop.Excel.Workbook workbook = workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
-                Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
-                for (int i = 0; i < this.dgvCustomerList.Columns.Count; i++)
-                {
-                    xlApp.Cells[1, i + 1] = dgvCustomerList.Columns[i].HeaderText;
-                }
-                for (int i = 0; i < dgvCustomerList.Rows.Count; i++)//添加每一项
-                {
-                    for (int j = 0; j < dgvCustomerList.Columns.Count; j++)
-                    {
-                        xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                System.Windows.Forms.Application.DoEvents();
-                worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
-                UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OK);
-                #region 获取添加操作日志所需的信息
-                RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!", 3);
-                #endregion
+            //    //Response.ContentEncoding = System.Text.Encoding.UTF8;
+            //    string fileName = "";
+            //    string saveFileName = "";
+            //    //fileName.Charset = "GB2312";
+            //    SaveFileDialog saveDialog = new SaveFileDialog();
+            //    //saveDialog.DefaultExt = "xls";
+            //    saveDialog.FileName = fileName;
+            //    saveDialog.Filter = "2003~2007工作表*.xls|*.xls|2010及以上版本工作表*.xlsx|*.xlsx";
+            //    saveDialog.ShowDialog();
+            //    saveFileName = saveDialog.FileName;
+            //    if (saveFileName.IndexOf(":") < 0) return;
+            //    Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            //    if (xlApp == null)
+            //    {
+            //        UIMessageBox.Show("无法创建Excel对象,您的电脑可能未安装Excel！", "来自T仔的提醒",UIStyle.Red);
+            //        return;
+            //    }
+            //    Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
+            //    Microsoft.Office.Interop.Excel.Workbook workbook = workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            //    Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
+            //    for (int i = 0; i < this.dgvCustomerList.Columns.Count; i++)
+            //    {
+            //        xlApp.Cells[1, i + 1] = dgvCustomerList.Columns[i].HeaderText;
+            //    }
+            //    for (int i = 0; i < dgvCustomerList.Rows.Count; i++)//添加每一项
+            //    {
+            //        for (int j = 0; j < dgvCustomerList.Columns.Count; j++)
+            //        {
+            //            xlApp.Cells[i + 2, j + 1] = dgvCustomerList.Rows[i].Cells[j].Value.ToString();
+            //        }
+            //    }
+            //    System.Windows.Forms.Application.DoEvents();
+            //    worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
+            //    UIMessageBox.Show(fileName + "信息导出成功", "来自T仔提示",UIStyle.Green, UIMessageBoxButtons.OK);
+            //    #region 获取添加操作日志所需的信息
+            //    RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerName + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "导出了" + "后台用户信息!", 3);
+            //    #endregion
                 
-                System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
-                if (saveFileName != "")
-                {
-                    try
-                    {
-                        workbook.Saved = true;
-                        workbook.SaveCopyAs(saveFileName);  //fileSaved = true;                 
-                    }
-                    catch (Exception ex)
-                    {//fileSaved = false;                      
-                        UIMessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
-                        return;
-                    }
-                }
-                xlApp.Quit();
-                GC.Collect();
-            }
-            #endregion
+            //    System.Diagnostics.Process.Start("Explorer.exe", saveFileName);
+            //    if (saveFileName != "")
+            //    {
+            //        try
+            //        {
+            //            workbook.Saved = true;
+            //            workbook.SaveCopyAs(saveFileName);  //fileSaved = true;                 
+            //        }
+            //        catch (Exception ex)
+            //        {//fileSaved = false;                      
+            //            UIMessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
+            //            return;
+            //        }
+            //    }
+            //    xlApp.Quit();
+            //    GC.Collect();
+            //}
+            //#endregion
         }
         #endregion
 

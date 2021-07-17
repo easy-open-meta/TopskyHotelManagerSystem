@@ -76,7 +76,7 @@
     <Compile Include="Business\ISellService.cs" />
     <Compile Include="Business\ISpendService.cs" />
     <Compile Include="Business\IWtiService.cs" />
-    <Compile Include="Customer\ICheckInfoService.cs" />
+    <Compile Include="Zero\ICheckInfoService.cs" />
     <Compile Include="Customer\ICustoService.cs" />
     <Compile Include="RecordHelper\RecordHelper.cs" />
     <Compile Include="Room\IRoomService.cs" />
@@ -109,6 +109,8 @@
     <Compile Include="Worker\WorkerHistoryService.cs" />
     <Compile Include="Worker\WorkerService.cs" />
     <Compile Include="Business\WtiService.cs" />
+    <Compile Include="Zero\VipRule\IVipRuleAppService.cs" />
+    <Compile Include="Zero\VipRule\VipRuleAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">

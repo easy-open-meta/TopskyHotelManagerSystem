@@ -23,7 +23,7 @@ namespace SYS.FormUI
         {
             Random random = new Random();
             string reserid = "";
-            reserid = new CounterHelper().GetNewId("ReserId");
+            reserid = new CounterHelper().GetNewId(CounterRuleConsts.ReserId);
             Reser reser = new Reser()
             {
                 ReserId = reserid,

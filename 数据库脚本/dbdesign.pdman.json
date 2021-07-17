@@ -1,0 +1,4531 @@
+{
+  "modules": [
+    {
+      "name": "DB_REVERSE_MYSQL",
+      "chnname": "逆向解析_MYSQL",
+      "entities": [
+        {
+          "title": "admininfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "Id",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "AdminAccount",
+              "type": "VARCHAR_15",
+              "chnname": "管理员账号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "AdminPassword",
+              "type": "VARCHAR_200",
+              "chnname": "管理员密码",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "AdminType",
+              "type": "VARCHAR_15",
+              "chnname": "管理员类型",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "AdminName",
+              "type": "VARCHAR_50",
+              "chnname": "管理员名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "IsAdmin",
+              "type": "INT_10",
+              "chnname": "是否为超级管理员",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "DeleteMk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料新增人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_time",
+              "type": "DATE",
+              "chnname": "资料新增时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_time",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "admintype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "Id",
+              "type": "INT_10",
+              "chnname": "编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "type_id",
+              "type": "VARCHAR_50",
+              "chnname": "管理员类型",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "type_name",
+              "type": "VARCHAR_50",
+              "chnname": "管理员类型名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "applicationversion",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "base_versionId",
+              "type": "INT_10",
+              "chnname": "流水号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "base_version",
+              "type": "VARCHAR_50",
+              "chnname": "版本号",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "backinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "BackNo",
+              "type": "VARCHAR_20",
+              "chnname": "物资编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackName",
+              "type": "VARCHAR_20",
+              "chnname": "物资名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackSource",
+              "type": "VARCHAR_18",
+              "chnname": "物资来源",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackCash",
+              "type": "DECIMAL_6_2",
+              "chnname": "物资金额",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackType",
+              "type": "INT_10",
+              "chnname": "物资类型",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackPerson",
+              "type": "VARCHAR_8",
+              "chnname": "经办人",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "ControlClub",
+              "type": "VARCHAR_12",
+              "chnname": "管理部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "BackClub",
+              "type": "VARCHAR_12",
+              "chnname": "所属部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "base",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "url_no",
+              "type": "INT_10",
+              "chnname": "ID",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "url_addr",
+              "type": "VARCHAR_255",
+              "chnname": "地址",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "cardcodes",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "id",
+              "type": "BIGINT_19",
+              "chnname": "编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Province",
+              "type": "VARCHAR_255",
+              "chnname": "省份",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "City",
+              "type": "VARCHAR_255",
+              "chnname": "城市",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "District",
+              "type": "VARCHAR_255",
+              "chnname": "地区",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "bm",
+              "type": "VARCHAR_255",
+              "chnname": "地区识别码",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "cashinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "CashNo",
+              "type": "VARCHAR_12",
+              "chnname": "资产编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashName",
+              "type": "VARCHAR_300",
+              "chnname": "资产名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashPrice",
+              "type": "DECIMAL_10_2",
+              "chnname": "资产总值",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashClub",
+              "type": "VARCHAR_800",
+              "chnname": "所属部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashTime",
+              "type": "DATETIME",
+              "chnname": "入库时间",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashSource",
+              "type": "VARCHAR_200",
+              "chnname": "资产来源",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CashPerson",
+              "type": "VARCHAR_800",
+              "chnname": "资产经办人",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "checkinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "CheckNo",
+              "type": "VARCHAR_10",
+              "chnname": "监管统计编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckClub",
+              "type": "VARCHAR_12",
+              "chnname": "受监管部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckProgres",
+              "type": "VARCHAR_250",
+              "chnname": "受监管部门总体概述",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckCash",
+              "type": "VARCHAR_250",
+              "chnname": "受监管部门交易情况",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckScore",
+              "type": "INT_10",
+              "chnname": "受监管部门得分情况",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckPerson",
+              "type": "VARCHAR_8",
+              "chnname": "本次监管负责人",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckAdvice",
+              "type": "VARCHAR_45",
+              "chnname": "监管建议",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "counterrule",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "rule_id",
+              "type": "INT_10",
+              "chnname": "规则编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "rule_name",
+              "type": "VARCHAR_50",
+              "chnname": "规格名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "rule_desc",
+              "type": "VARCHAR_100",
+              "chnname": "规则描述",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "now_id",
+              "type": "INT_10",
+              "chnname": "当前ID",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "prefix_name",
+              "type": "VARCHAR_20",
+              "chnname": "规则简写",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "custo_format",
+              "type": "VARCHAR_50",
+              "chnname": "规则格式",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "number_format",
+              "type": "VARCHAR_10",
+              "chnname": "编号前缀",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "separating_char",
+              "type": "VARCHAR_5",
+              "chnname": "规则分割符",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usrid",
+              "type": "VARCHAR_20",
+              "chnname": "资料新增人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_time",
+              "type": "DATETIME",
+              "chnname": "资料新增时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usrid",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_time",
+              "type": "DATETIME",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "custospend",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "SpendId",
+              "type": "INT_10",
+              "chnname": "记录编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomNo",
+              "type": "VARCHAR_8",
+              "chnname": "房间编号",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoNo",
+              "type": "VARCHAR_15",
+              "chnname": "客户编号",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SpendName",
+              "type": "VARCHAR_25",
+              "chnname": "商品名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SpendAmount",
+              "type": "INT_10",
+              "chnname": "商品数量",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SpendPrice",
+              "type": "DECIMAL_10_2",
+              "chnname": "商品价格",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SpendMoney",
+              "type": "DECIMAL_10_2",
+              "chnname": "消费总额",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SpendTime",
+              "type": "DATETIME",
+              "chnname": "消费时间",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyState",
+              "type": "VARCHAR_9",
+              "chnname": "结算状态",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "dept",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "dept_no",
+              "type": "VARCHAR_50",
+              "chnname": "部门编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "dept_name",
+              "type": "VARCHAR_100",
+              "chnname": "部门名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "dept_desc",
+              "type": "VARCHAR_255",
+              "chnname": "部门描述",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "dept_date",
+              "type": "DATE",
+              "chnname": "创建时间(部门)",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "dept_leader",
+              "type": "VARCHAR_20",
+              "chnname": "部门主管",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "dept_parent",
+              "type": "VARCHAR_50",
+              "chnname": "上级部门",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "education",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "education_no",
+              "type": "VARCHAR_20",
+              "chnname": "学历编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "education_name",
+              "type": "VARCHAR_100",
+              "chnname": "学历名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "fonts",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "FontsId",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "FontsMess",
+              "type": "VARCHAR_250",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "gbtype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "GBTypeId",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "GBName",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "module",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "module_id",
+              "type": "INT_10",
+              "chnname": "模块ID",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "module_name",
+              "type": "VARCHAR_200",
+              "chnname": "模块名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "module_desc",
+              "type": "VARCHAR_255",
+              "chnname": "模块描述",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料新增人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_time",
+              "type": "DATE",
+              "chnname": "资料新增时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_time",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "module_zero",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "module_id",
+              "type": "INT_10",
+              "chnname": "模块ID",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "admin_account",
+              "type": "VARCHAR_15",
+              "chnname": "管理员账号",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "module_name",
+              "type": "VARCHAR_200",
+              "chnname": "模块名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "module_enable",
+              "type": "INT_10",
+              "chnname": "是否开启",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "moneyinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "MoneyNo",
+              "type": "VARCHAR_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyType",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyIn",
+              "type": "DECIMAL_10_2",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyOut",
+              "type": "DECIMAL_10_2",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyCheck",
+              "type": "VARCHAR_8",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "MoneyPerson",
+              "type": "VARCHAR_8",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Remarks",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "nation",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "nation_no",
+              "type": "VARCHAR_20",
+              "chnname": "民族编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "nation_name",
+              "type": "VARCHAR_100",
+              "chnname": "民族名称",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "operationlog",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "OperationId",
+              "type": "BIGINT_19",
+              "chnname": "记录ID",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "OperationTime",
+              "type": "DATETIME",
+              "chnname": "记录时间",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "OperationLog",
+              "type": "VARCHAR_8000",
+              "chnname": "日志内容",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "OperationAccount",
+              "type": "VARCHAR_300",
+              "chnname": "被记录账户",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "OperationLevel",
+              "type": "INT_10",
+              "chnname": "日志等级",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "passporttype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "PassportId",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "PassportName",
+              "type": "VARCHAR_20",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "position",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "position_no",
+              "type": "VARCHAR_20",
+              "chnname": "职位编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "position_name",
+              "type": "VARCHAR_150",
+              "chnname": "职位名称",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "reser",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "ReserId",
+              "type": "VARCHAR_16",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoName",
+              "type": "VARCHAR_8",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoTel",
+              "type": "VARCHAR_11",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "ReserWay",
+              "type": "VARCHAR_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "ReserRoom",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "ReserDate",
+              "type": "DATE",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "ReserEndDay",
+              "type": "DATE",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "room",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "RoomNo",
+              "type": "VARCHAR_8",
+              "chnname": "房间编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomType",
+              "type": "INT_10",
+              "chnname": "房间类型",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoNo",
+              "type": "VARCHAR_15",
+              "chnname": "客户编号",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckTime",
+              "type": "DATETIME",
+              "chnname": "入住时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckOutTime",
+              "type": "DATETIME",
+              "chnname": "退房时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomStateId",
+              "type": "INT_10",
+              "chnname": "房间状态",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomMoney",
+              "type": "DECIMAL_10_2",
+              "chnname": "房间单价",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomPosition",
+              "type": "VARCHAR_6",
+              "chnname": "房间位置",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "roomstate",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "RoomStateId",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomState",
+              "type": "VARCHAR_8",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "roomtype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "RoomType",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomName",
+              "type": "VARCHAR_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "sellthing",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "SellNo",
+              "type": "VARCHAR_50",
+              "chnname": "商品编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SellName",
+              "type": "VARCHAR_20",
+              "chnname": "商品名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "SellPrice",
+              "type": "DECIMAL_10_2",
+              "chnname": "商品价格",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "format",
+              "type": "VARCHAR_20",
+              "chnname": "规格型号",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Stock",
+              "type": "INT_10",
+              "chnname": "库存数量",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "sextype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "sexId",
+              "type": "INT_10",
+              "chnname": "性别ID",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "sexName",
+              "type": "VARCHAR_15",
+              "chnname": "性别名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "spendtype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "SpendType",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "TypeName",
+              "type": "VARCHAR_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "uploadinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "NoticeNo",
+              "type": "VARCHAR_50",
+              "chnname": "公告编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Noticetheme",
+              "type": "VARCHAR_50",
+              "chnname": "公告主题",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "NoticeType",
+              "type": "VARCHAR_100",
+              "chnname": "公告类型",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "NoticeTime",
+              "type": "DATETIME",
+              "chnname": "发布日期",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "NoticeContent",
+              "type": "VARCHAR_8000",
+              "chnname": "公告正文",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "NoticeClub",
+              "type": "VARCHAR_25",
+              "chnname": "发文部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "userinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "CustoNo",
+              "type": "VARCHAR_15",
+              "chnname": "用户编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoName",
+              "type": "VARCHAR_15",
+              "chnname": "用户名称",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoSex",
+              "type": "INT_10",
+              "chnname": "用户性别",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoTel",
+              "type": "VARCHAR_600",
+              "chnname": "用户电话",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "PassportType",
+              "type": "INT_10",
+              "chnname": "证照类型",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoID",
+              "type": "VARCHAR_600",
+              "chnname": "证件号码",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoAdress",
+              "type": "VARCHAR_600",
+              "chnname": "居住地址",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoBirth",
+              "type": "DATE",
+              "chnname": "出生日期",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoType",
+              "type": "INT_10",
+              "chnname": "客户类型",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "usertype",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "UserType",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "TypeName",
+              "type": "VARCHAR_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "worker",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "WorkerId",
+              "type": "VARCHAR_12",
+              "chnname": "工号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerName",
+              "type": "VARCHAR_50",
+              "chnname": "名字",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerBirthday",
+              "type": "DATETIME",
+              "chnname": "出生日期",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerSex",
+              "type": "INT_10",
+              "chnname": "性别",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerTel",
+              "type": "VARCHAR_300",
+              "chnname": "电话",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerClub",
+              "type": "VARCHAR_8",
+              "chnname": "部门",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerNation",
+              "type": "VARCHAR_50",
+              "chnname": "民族",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerAddress",
+              "type": "VARCHAR_600",
+              "chnname": "居住地址",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerPosition",
+              "type": "VARCHAR_20",
+              "chnname": "职位",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CardID",
+              "type": "VARCHAR_600",
+              "chnname": "证件号码",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerPwd",
+              "type": "VARCHAR_600",
+              "chnname": "系统密码",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerTime",
+              "type": "DATETIME",
+              "chnname": "入职时间",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerFace",
+              "type": "VARCHAR_4",
+              "chnname": "面貌",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerEducation",
+              "type": "VARCHAR_255",
+              "chnname": "学历",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT UNSIGNED_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "workercheck",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "Id",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerNo",
+              "type": "VARCHAR_20",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckTime",
+              "type": "DATETIME",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckWay",
+              "type": "VARCHAR_80",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CheckState",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "workergoodbad",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "Id",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkNo",
+              "type": "VARCHAR_50",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "GBInfo",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "GBType",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "GBOperation",
+              "type": "VARCHAR_200",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "GBTime",
+              "type": "DATETIME",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "workerhistory",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "Id",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "WorkerId",
+              "type": "VARCHAR_12",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "StartDate",
+              "type": "DATETIME",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "EndDate",
+              "type": "DATETIME",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Position",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Company",
+              "type": "VARCHAR_255",
+              "chnname": "",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "wtinfo",
+          "chnname": "",
+          "fields": [
+            {
+              "name": "WtiNo",
+              "type": "INT_10",
+              "chnname": "记录编号",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "RoomNo",
+              "type": "VARCHAR_8",
+              "chnname": "房间编号",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "UseDate",
+              "type": "DATETIME",
+              "chnname": "开始时间",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "EndDate",
+              "type": "DATETIME",
+              "chnname": "结束时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "WaterUse",
+              "type": "DECIMAL_6_2",
+              "chnname": "用水情况",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "PowerUse",
+              "type": "DECIMAL_6_2",
+              "chnname": "用电情况",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "Record",
+              "type": "VARCHAR_8",
+              "chnname": "记录人",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "CustoNo",
+              "type": "VARCHAR_15",
+              "chnname": "客户编号",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "delete_mk",
+              "type": "INT_10",
+              "chnname": "删除标记",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料创建人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datains_date",
+              "type": "DATE",
+              "chnname": "资料创建时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_usr",
+              "type": "VARCHAR_20",
+              "chnname": "资料更新人",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "datachg_date",
+              "type": "DATE",
+              "chnname": "资料更新时间",
+              "remark": "",
+              "pk": false,
+              "notNull": false,
+              "autoIncrement": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "title": "vip_rule",
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "索引ID",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true
+            },
+            {
+              "name": "rule_id",
+              "type": "LongKey",
+              "remark": "",
+              "chnname": "会员规则流水号",
+              "notNull": true,
+              "pk": true
+            },
+            {
+              "name": "rule_name",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "会员规则名称",
+              "notNull": true
+            },
+            {
+              "name": "rule_value",
+              "type": "Money",
+              "remark": "",
+              "chnname": "预设数值",
+              "notNull": true
+            },
+            {
+              "name": "type_id",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "会员等级",
+              "notNull": true
+            },
+            {
+              "name": "chk_mk",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "删除标记",
+              "notNull": true,
+              "defaultValue": "0"
+            },
+            {
+              "name": "CREATED_BY",
+              "type": "IdOrKey",
+              "remark": "",
+              "chnname": "创建人"
+            },
+            {
+              "name": "CREATED_TIME",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "创建时间"
+            },
+            {
+              "name": "UPDATED_BY",
+              "type": "IdOrKey",
+              "remark": "",
+              "chnname": "更新人"
+            },
+            {
+              "name": "UPDATED_TIME",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "更新时间"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "会员等级规则表",
+          "remark": "会员等级规则表"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [],
+        "edges": []
+      },
+      "associations": []
+    }
+  ],
+  "dataTypeDomains": {
+    "datatype": [
+      {
+        "name": "默认字串",
+        "code": "DefaultString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(32)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "标识号",
+        "code": "IdOrKey",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "标识号-长",
+        "code": "LongKey",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(64)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(64)"
+          },
+          "JAVA": {
+            "type": "String"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(64)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(64)"
+          }
+        }
+      },
+      {
+        "name": "名称",
+        "code": "Name",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(128)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(128)"
+          }
+        }
+      },
+      {
+        "name": "备注说明",
+        "code": "Intro",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(512)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(512)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(512)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(512)"
+          }
+        }
+      },
+      {
+        "name": "字串-短",
+        "code": "ShortString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(128)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(128)"
+          }
+        }
+      },
+      {
+        "name": "字串-中",
+        "code": "MiddleString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1024)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(1024)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(1024)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(1024)"
+          }
+        }
+      },
+      {
+        "name": "字串-长",
+        "code": "LongString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(3072)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(3072)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(3072)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(3072)"
+          }
+        }
+      },
+      {
+        "name": "大文本",
+        "code": "LongText",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "TEXT"
+          },
+          "ORACLE": {
+            "type": "CLOB"
+          },
+          "SQLServer": {
+            "type": "NTEXT"
+          },
+          "PostgreSQL": {
+            "type": "TEXT"
+          }
+        }
+      },
+      {
+        "name": "小数",
+        "code": "Double",
+        "apply": {
+          "JAVA": {
+            "type": "Double"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(32,10)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(32,10)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(32,10)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(32,10)"
+          }
+        }
+      },
+      {
+        "name": "比例",
+        "code": "Ratio",
+        "apply": {
+          "MYSQL": {
+            "type": "DECIMAL(4,2)"
+          },
+          "JAVA": {
+            "type": "Double"
+          },
+          "ORACLE": {
+            "type": "NUMBER(4,2)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(4,2)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(4,2)"
+          }
+        }
+      },
+      {
+        "name": "整数",
+        "code": "Integer",
+        "apply": {
+          "JAVA": {
+            "type": "Integer"
+          },
+          "MYSQL": {
+            "type": "INT"
+          },
+          "ORACLE": {
+            "type": "INT"
+          },
+          "SQLServer": {
+            "type": "INT"
+          },
+          "PostgreSQL": {
+            "type": "INT"
+          }
+        }
+      },
+      {
+        "name": "大整数",
+        "code": "BigInt",
+        "apply": {
+          "MYSQL": {
+            "type": "BIGINT"
+          },
+          "JAVA": {
+            "type": "Long"
+          },
+          "ORACLE": {
+            "type": "NUMBER"
+          },
+          "SQLServer": {
+            "type": "BIGINT"
+          },
+          "PostgreSQL": {
+            "type": "BIGINT"
+          }
+        }
+      },
+      {
+        "name": "金额",
+        "code": "Money",
+        "apply": {
+          "JAVA": {
+            "type": "Double"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(32,8)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(32,8)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(32,8)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(32,8)"
+          }
+        }
+      },
+      {
+        "name": "是否",
+        "code": "YesNo",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(1)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(1)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(1)"
+          }
+        }
+      },
+      {
+        "name": "数据字典",
+        "code": "Dict",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "日期",
+        "code": "Date",
+        "apply": {
+          "JAVA": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATE"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "SQLServer": {
+            "type": "DATE"
+          },
+          "PostgreSQL": {
+            "type": "DATE"
+          }
+        }
+      },
+      {
+        "name": "日期时间",
+        "code": "DateTime",
+        "apply": {
+          "JAVA": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATETIME"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "SQLServer": {
+            "type": "DATE"
+          },
+          "PostgreSQL": {
+            "type": "DATE"
+          }
+        }
+      },
+      {
+        "name": "单字符",
+        "code": "Char",
+        "apply": {
+          "MYSQL": {
+            "type": "CHAR(1)"
+          },
+          "ORACLE": {
+            "type": "CHAR(1)"
+          },
+          "JAVA": {
+            "type": "String"
+          },
+          "SQLServer": {
+            "type": "CHAR(1)"
+          },
+          "PostgreSQL": {
+            "type": "CHAR(1)"
+          }
+        }
+      },
+      {
+        "name": "BIGINT_19",
+        "code": "BIGINT_19",
+        "apply": {
+          "MYSQL": {
+            "type": "BIGINT(19)"
+          }
+        }
+      },
+      {
+        "name": "DATE",
+        "code": "DATE",
+        "apply": {
+          "MYSQL": {
+            "type": "DATE"
+          }
+        }
+      },
+      {
+        "name": "DATETIME",
+        "code": "DATETIME",
+        "apply": {
+          "MYSQL": {
+            "type": "DATETIME"
+          }
+        }
+      },
+      {
+        "name": "DECIMAL_10_2",
+        "code": "DECIMAL_10_2",
+        "apply": {
+          "MYSQL": {
+            "type": "DECIMAL(10,2)"
+          }
+        }
+      },
+      {
+        "name": "DECIMAL_6_2",
+        "code": "DECIMAL_6_2",
+        "apply": {
+          "MYSQL": {
+            "type": "DECIMAL(6,2)"
+          }
+        }
+      },
+      {
+        "name": "INT UNSIGNED_10",
+        "code": "INT UNSIGNED_10",
+        "apply": {
+          "MYSQL": {
+            "type": "INT UNSIGNED(10)"
+          }
+        }
+      },
+      {
+        "name": "INT_10",
+        "code": "INT_10",
+        "apply": {
+          "MYSQL": {
+            "type": "INT(10)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_10",
+        "code": "VARCHAR_10",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(10)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_100",
+        "code": "VARCHAR_100",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(100)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_11",
+        "code": "VARCHAR_11",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(11)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_12",
+        "code": "VARCHAR_12",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(12)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_15",
+        "code": "VARCHAR_15",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(15)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_150",
+        "code": "VARCHAR_150",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(150)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_16",
+        "code": "VARCHAR_16",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(16)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_18",
+        "code": "VARCHAR_18",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(18)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_20",
+        "code": "VARCHAR_20",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(20)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_200",
+        "code": "VARCHAR_200",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(200)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_25",
+        "code": "VARCHAR_25",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(25)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_250",
+        "code": "VARCHAR_250",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(250)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_255",
+        "code": "VARCHAR_255",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(255)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_300",
+        "code": "VARCHAR_300",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(300)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_4",
+        "code": "VARCHAR_4",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(4)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_45",
+        "code": "VARCHAR_45",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(45)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_5",
+        "code": "VARCHAR_5",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(5)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_50",
+        "code": "VARCHAR_50",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(50)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_6",
+        "code": "VARCHAR_6",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(6)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_600",
+        "code": "VARCHAR_600",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(600)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_8",
+        "code": "VARCHAR_8",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(8)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_80",
+        "code": "VARCHAR_80",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(80)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_800",
+        "code": "VARCHAR_800",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(800)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_8000",
+        "code": "VARCHAR_8000",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(8000)"
+          }
+        }
+      },
+      {
+        "name": "VARCHAR_9",
+        "code": "VARCHAR_9",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(9)"
+          }
+        }
+      }
+    ],
+    "database": [
+      {
+        "code": "MYSQL",
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.pk ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}'",
+        "fileShow": true,
+        "defaultDatabase": true,
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} {{= field.autoIncrement ? 'AUTO_INCREMENT' : '' }} {{= field.defaultValue ? it.func.join('DEFAULT',field.defaultValue,' ') : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,' ')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.remark,' ') }}';{{=it.separator}}\n$blankline\n",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/",
+        "rebuildTableTemplate": "create table PDMAN_UP_{{=it.oldEntity.title}}\nas select * from {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}\n{{~it.newEntity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.newEntity.chnname,it.newEntity.remark,';') }}';{{=it.separator}}\n$blankline\n\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\ninsert into {{=it.newEntity.title}}(\n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\n) \nselect \n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\nfrom PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n{{~it.newEntity.indexs:index}}\nALTER TABLE {{=it.newEntity.title}} ADD {{? index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=index.name}}({{=it.func.join(...index.fields,',')}});{{=it.separator}}\n{{~}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.pk}}PRIMARY KEY{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}} {{? it.field.addAfter}}AFTER {{=it.field.addAfter}}{{?}};{{=it.separator}}",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}};{{=it.separator}}",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP {{=it.field.name}};{{=it.separator}}",
+        "deleteIndexTemplate": "ALTER TABLE {{=it.entity.title}} DROP INDEX {{=it.index.name}};{{=it.separator}}",
+        "createIndexTemplate": "ALTER TABLE {{=it.entity.title}} ADD {{? it.index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=it.index.name}}({{=it.func.join(...it.index.fields,',')}});{{=it.separator}}",
+        "updateTableComment": "ALTER TABLE {{=it.entity.title}} COMMENT '{{=it.entity.chnname}}';{{=it.separator}}"
+      },
+      {
+        "code": "ORACLE",
+        "template": "DROP TABLE {{=it.entity.title}};{{=it.separator}}\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}  {{= field.pk ? 'NOT NULL' : '' }} {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\nCOMMENT ON TABLE {{=it.entity.title}} IS '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}';{{=it.separator}}\n{{~it.entity.fields:field:index}}\nCOMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS '{{=it.func.join(field.chnname,field.remark,';')}}';{{=it.separator}}\n{{~}}",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\n{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~}}",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/\r\n$blankline",
+        "rebuildTableTemplate": "CREATE TABLE PDMAN_UP_{{=it.oldEntity.title}}\nAS SELECT * FROM {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\nDROP TABLE {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}{{~it.newEntity.fields:field:index}}{{? field.pk }}{{ pkList.push(field.name) }}{{?}}    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}{{? pkList.length >0 }}    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}}){{?}}\n);{{=it.separator}}\n$blankline\n{{? it.newEntity.chnname || it.newEntity.remark}}COMMENT ON TABLE {{=it.newEntity.title}} IS {{? it.newEntity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.newEntity.chnname}}'{{?}};{{?}}{{=it.separator}}\n{{~it.newEntity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.newEntity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{?}}{{=it.separator}}\n{{~}}\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\n$blankline\nINSERT INTO {{=it.newEntity.title}}(\n{{~sameCols:field:index}}   {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}) \nSELECT\n{{~sameCols:field:index}}   {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}FROM PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n\nDROP TABLE PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n{{~it.newEntity.indexs:index}}\nCREATE{{? index.isUnique}} UNIQUE{{?}} INDEX {{=index.name}} ON {{=it.newEntity.title}}({{=it.func.join(index.fields,',')}});{{=it.separator}}\n{{~}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD({{=it.field.name}} {{=it.field.type}}{{? it.field.defaultValue}} DEFAULT {{=it.field.defaultValue}}{{?}}{{? it.field.notNull}} NOT NULL{{?}});{{=it.separator}}\r\n{{? it.field.chnname || it.field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=it.field.name}} IS {{? it.field.remark}}'{{=it.field.remark}}'{{??}}'{{=it.field.chnname}}'{{?}};{{=it.separator}}{{?}}\r\n$blankline",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY({{=it.field.name}} {{=it.field.type}}{{? it.field.defaultValue}} DEFAULT {{=it.field.defaultValue}}{{?}}{{? it.field.notNull}} NOT NULL{{?}});{{=it.separator}}\r\n{{? it.field.chnname || it.field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=it.field.name}} IS {{? it.field.remark}}'{{=it.field.remark}}'{{??}}'{{=it.field.chnname}}'{{?}};{{=it.separator}}{{=it.separator}}{{?}}\r\n$blankline",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP({{=it.field.name}});{{=it.separator}}\r\n$blankline",
+        "deleteIndexTemplate": "DROP INDEX {{=it.entity.title}}.{{=it.index.name}};{{=it.separator}}\r\n$blankline",
+        "createIndexTemplate": "CREATE{{? it.index.isUnique}} UNIQUE{{?}} INDEX {{=it.index.name}} ON {{=it.entity.title}}({{=it.func.join(it.index.fields,',')}});{{=it.separator}}\r\n$blankline",
+        "updateTableComment": "{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\r\n$blankline"
+      },
+      {
+        "code": "SQLServer",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} {{= field.autoIncrement ? 'IDENTITY(1,1)' : '' }} {{= field.defaultValue ? it.func.join('DEFAULT',field.defaultValue,' ') : '' }}  {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    CONSTRAINT PK_{{=it.entity.title}} PRIMARY KEY CLUSTERED ({{~pkList:pkName:i}}{{= pkName }} ASC {{= i<pkList.length-1 ? ',' : '' }}{{~}}) ON [PRIMARY] \n{{?}}\n) ;{{=it.separator}}\n\n$blankline\nEXECUTE sp_addextendedproperty N'MS_Description', '{{= it.entity.chnname || it.entity.remark}}', N'user', N'dbo', N'table', N'{{=it.entity.title}}', NULL, NULL;{{=it.separator}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}EXECUTE sp_addextendedproperty N'MS_Description', {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}}, N'user', N'dbo', N'table', N'{{=it.entity.title}}', N'column', N'{{=field.name}}';{{=it.separator}}{{?}}\n{{~}}\n",
+        "deleteTableTemplate": "",
+        "rebuildTableTemplate": "",
+        "createFieldTemplate": "",
+        "updateFieldTemplate": "",
+        "deleteFieldTemplate": "",
+        "deleteIndexTemplate": "",
+        "createIndexTemplate": "",
+        "updateTableComment": ""
+      },
+      {
+        "code": "PostgreSQL",
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.pk ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}'",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\n{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~}}",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/",
+        "rebuildTableTemplate": "create table PDMAN_UP_{{=it.oldEntity.title}}\nas select * from {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}\n{{~it.newEntity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.newEntity.chnname,it.newEntity.remark,';') }}';{{=it.separator}}\n$blankline\n\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\ninsert into {{=it.newEntity.title}}(\n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\n) \nselect \n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\nfrom PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.pk}}PRIMARY KEY{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}} {{? it.field.addAfter}}AFTER {{=it.field.addAfter}}{{?}};{{=it.separator}}",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}};{{=it.separator}}",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP {{=it.field.name}};{{=it.separator}}",
+        "deleteIndexTemplate": "ALTER TABLE {{=it.entity.title}} DROP INDEX {{=it.index.name}};{{=it.separator}}",
+        "createIndexTemplate": "ALTER TABLE {{=it.entity.title}} ADD {{? it.index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=it.index.name}}({{=it.func.join(...it.index.fields,',')}});{{=it.separator}}",
+        "updateTableComment": "ALTER TABLE {{=it.entity.title}} COMMENT '{{=it.entity.chnname}}';{{=it.separator}}"
+      },
+      {
+        "code": "JAVA",
+        "template": "package group.rober.pdman.{{=it.module.name}}.entity;\n$blankline\nimport javax.persistence.*;\nimport java.io.Serializable;\nimport java.util.Date;\n$blankline\n$blankline\n\n/** {{=it.entity.chnname}} */\n@Table(name=\"{{=it.entity.title}}\")\npublic class {{=it.func.camel(it.entity.title,true) }} implements Serializable,Cloneable{\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    {{? field.pk }}\n    @Id\n    @GeneratedValue\n    {{?}}\n    private {{=field.type}} {{=it.func.camel(field.name,false)}} ;\n{{~}}\n$blankline\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public {{=field.type}} get{{=it.func.camel(field.name,true)}}(){\n        return this.{{=it.func.camel(field.name,false)}};\n    }\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public void set{{=it.func.camel(field.name,true)}}({{=field.type}} {{= it.func.camel(field.name,false) }}){\n        this.{{=it.func.camel(field.name,false)}} = {{= it.func.camel(field.name,false) }};\n    }\n{{~}}\n}",
+        "createTableTemplate": "package group.rober.pdman.{{=it.module.name}}.entity;\n$blankline\nimport javax.persistence.*;\nimport java.io.Serializable;\nimport java.util.Date;\n$blankline\n$blankline\n@Table(name=\"{{=it.entity.title}}\")\npublic class {{=it.func.camel(it.entity.title,true) }} implements Serializable,Cloneable{\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    {{? field.pk }}\n    @Id\n    @GeneratedValue\n    {{?}}\n    private {{=field.type}} {{=it.func.camel(field.name,false)}} ;\n{{~}}\n$blankline\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public {{=field.type}} get{{=it.func.camel(field.name,true)}}(){\n        return this.{{=it.func.camel(field.name,false)}};\n    }\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public void set{{=it.func.camel(field.name,true)}}({{=field.type}} {{= it.func.camel(field.name,false) }}){\n        this.{{=it.func.camel(field.name,false)}} = {{= it.func.camel(field.name,false) }};\n    }\n{{~}}\n}",
+        "deleteTableTemplate": "",
+        "rebuildTableTemplate": "",
+        "createFieldTemplate": "",
+        "updateFieldTemplate": "",
+        "deleteFieldTemplate": "",
+        "deleteIndexTemplate": "",
+        "createIndexTemplate": "",
+        "updateTableComment": ""
+      }
+    ]
+  },
+  "profile": {
+    "defaultFields": [
+      {
+        "name": "created_by",
+        "type": "IdOrKey",
+        "remark": "",
+        "chnname": "创建人"
+      },
+      {
+        "name": "created_time",
+        "type": "DateTime",
+        "remark": "",
+        "chnname": "创建时间"
+      },
+      {
+        "name": "updated_by",
+        "type": "IdOrKey",
+        "remark": "",
+        "chnname": "更新人"
+      },
+      {
+        "name": "updated_time",
+        "type": "DateTime",
+        "remark": "",
+        "chnname": "更新时间"
+      }
+    ],
+    "defaultFieldsType": "2",
+    "javaConfig": {
+      "JAVA_HOME": "D:\\jdk8",
+      "DB_DRIVE": []
+    },
+    "sqlConfig": ";",
+    "dbs": [
+      {
+        "name": "hoteldb",
+        "defaultDB": true,
+        "properties": {
+          "driver_class_name": "com.mysql.jdbc.Driver",
+          "url": "jdbc:mysql://134.175.239.108:3306/tshoteldb?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC",
+          "password": "yjj990720",
+          "username": "root"
+        }
+      }
+    ],
+    "wordTemplateConfig": ""
+  }
+}

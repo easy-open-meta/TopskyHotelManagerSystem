@@ -110,6 +110,7 @@
     <Compile Include="Worker\WorkerHistory.cs" />
     <Compile Include="Business\Wti.cs" />
     <Compile Include="Zero\Position.cs" />
+    <Compile Include="Zero\VipRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\MySql.Data.dll" />

@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

@@ -20,60 +20,73 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
+ *模块说明：会员等级规则类
  */
-using SYS.Core;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SYS.Application
+namespace SYS.Core
 {
     /// <summary>
-    /// 客户信息接口
+    /// 会员等级规则类
     /// </summary>
-    public interface ICustoService
+    [SqlSugar.SugarTable("vip_rule")]
+    public class VipRule
     {
-        #region 添加客户信息
         /// <summary>
-        /// 添加客户信息
+        /// 索引ID
         /// </summary>
-        /// <param name="custo"></param>
-        /// <returns></returns>
-        bool InsertCustomerInfo(Custo custo);
-        #endregion
+        public int id { get; set; }
 
         /// <summary>
-        /// 更新客户信息
+        /// 会员规则流水号
         /// </summary>
-        /// <param name="custo"></param>
-        /// <returns></returns>
-        bool UpdCustomerInfoByCustoNo(Custo custo);
+        public string rule_id { get; set; }
 
         /// <summary>
-        /// 更新客户类型(即会员等级)
+        /// 会员规则名称
         /// </summary>
-        /// <param name="custoNo"></param>
-        /// <param name="userType"></param>
-        /// <returns></returns>
-        bool UpdCustomerTypeByCustoNo(string custoNo, int userType);
+        public string rule_name { get; set; }
 
         /// <summary>
-        /// 查询酒店盈利情况
+        /// 预设数值(历史消费总额)
         /// </summary>
-        /// <returns></returns>
-        List<CustoSpend> SelectAllMoney();
+        public decimal rule_value { get; set; }
 
         /// <summary>
-        /// 查询所有客户信息
+        /// 会员等级
         /// </summary>
-        /// <returns></returns>
-        List<Custo> SelectCustoAll();
+        public int type_id { get; set; }
 
         /// <summary>
-        /// 根据客户编号查询客户信息
+        /// 删除标识
         /// </summary>
-        /// <param name="CustoNo"></param>
-        /// <returns></returns>
-        Custo SelectCardInfoByCustoNo(string CustoNo);
+        public int delete_mk { get; set; }
+        /// <summary>
+        /// 新增人
+        /// </summary>
+        public string datains_usr { get; set; }
 
+        /// <summary>
+        /// 新增时间
+        /// </summary>
+        public DateTime datains_date { get; set; }
+        /// <summary>
+        /// 修改人
+        /// </summary>
+        public string datachg_usr { get; set; }
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        public DateTime datachg_date { get; set; }
 
+        /// <summary>
+        /// 会员等级描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string type_name { get; set; }
     }
 }

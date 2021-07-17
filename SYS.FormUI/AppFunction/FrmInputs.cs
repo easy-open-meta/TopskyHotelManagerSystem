@@ -55,7 +55,7 @@ namespace SYS.FormUI
                 label.Font = UI_FontUtil.controlFont;
             }
 
-            string cardId = new CounterHelper().GetNewId("CustoId");
+            string cardId = new CounterHelper().GetNewId(CounterRuleConsts.CustoId);
             txtCustoNo.Text = cardId;
             
             #region 加载客户类型信息

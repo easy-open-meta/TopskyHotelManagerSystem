@@ -61,6 +61,20 @@ namespace SYS.Application
         }
         #endregion
 
+        #region 根据客户编号查询历史消费信息
+        /// <summary>
+        /// 根据客户编号查询历史消费信息
+        /// </summary>
+        /// <param name="custoNo"></param>
+        /// <returns></returns>
+        public List<Spend> SeletHistorySpendInfoAll(string custoNo)
+        {
+            List<Spend> ls = new List<Spend>();
+            ls = base.GetList(a => a.CustoNo == custoNo && a.MoneyState.Equals("已结算") && a.delete_mk != 1);
+            return ls;
+        }
+        #endregion
+
         #region 根据房间编号查询消费信息
         /// <summary>
         /// 根据房间编号查询消费信息

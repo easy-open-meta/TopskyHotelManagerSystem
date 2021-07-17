@@ -443,6 +443,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 普通会员 {
+            get {
+                object obj = ResourceManager.GetObject("普通会员", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 月亮 {
             get {
                 object obj = ResourceManager.GetObject("月亮", resourceCulture);
@@ -506,6 +516,16 @@ namespace SYS.FormUI.Properties {
         public static System.Drawing.Bitmap 添加管理员 {
             get {
                 object obj = ResourceManager.GetObject("添加管理员", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 白金会员 {
+            get {
+                object obj = ResourceManager.GetObject("白金会员", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -683,6 +703,16 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 钻石会员 {
+            get {
+                object obj = ResourceManager.GetObject("钻石会员", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 锁屏 {
             get {
                 object obj = ResourceManager.GetObject("锁屏", resourceCulture);
@@ -736,6 +766,16 @@ namespace SYS.FormUI.Properties {
         public static System.Drawing.Bitmap 餐饮部卡片 {
             get {
                 object obj = ResourceManager.GetObject("餐饮部卡片", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 黄金会员 {
+            get {
+                object obj = ResourceManager.GetObject("黄金会员", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

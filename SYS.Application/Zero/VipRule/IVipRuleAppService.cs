@@ -20,60 +20,54 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
+ *模块说明：会员等级规则功能模块接口
  */
 using SYS.Core;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SYS.Application
+namespace SYS.Application.Zero
 {
     /// <summary>
-    /// 客户信息接口
+    /// 会员等级规则功能模块接口
     /// </summary>
-    public interface ICustoService
+    public interface IVipRuleAppService
     {
-        #region 添加客户信息
         /// <summary>
-        /// 添加客户信息
-        /// </summary>
-        /// <param name="custo"></param>
-        /// <returns></returns>
-        bool InsertCustomerInfo(Custo custo);
-        #endregion
-
-        /// <summary>
-        /// 更新客户信息
-        /// </summary>
-        /// <param name="custo"></param>
-        /// <returns></returns>
-        bool UpdCustomerInfoByCustoNo(Custo custo);
-
-        /// <summary>
-        /// 更新客户类型(即会员等级)
-        /// </summary>
-        /// <param name="custoNo"></param>
-        /// <param name="userType"></param>
-        /// <returns></returns>
-        bool UpdCustomerTypeByCustoNo(string custoNo, int userType);
-
-        /// <summary>
-        /// 查询酒店盈利情况
+        /// 查询会员等级规则列表
         /// </summary>
         /// <returns></returns>
-        List<CustoSpend> SelectAllMoney();
+        List<VipRule> SelectVipRuleList();
 
         /// <summary>
-        /// 查询所有客户信息
+        /// 查询会员等级规则
         /// </summary>
+        /// <param name="vipRule"></param>
         /// <returns></returns>
-        List<Custo> SelectCustoAll();
+        VipRule SelectVipRule(VipRule vipRule);
 
         /// <summary>
-        /// 根据客户编号查询客户信息
+        /// 添加会员等级规则
         /// </summary>
-        /// <param name="CustoNo"></param>
+        /// <param name="vipRule"></param>
         /// <returns></returns>
-        Custo SelectCardInfoByCustoNo(string CustoNo);
+        bool AddVipRule(VipRule vipRule);
 
+        /// <summary>
+        /// 删除会员等级规则
+        /// </summary>
+        /// <param name="vipRule"></param>
+        /// <returns></returns>
+        bool DelVipRule(VipRule vipRule);
 
+        /// <summary>
+        /// 更新会员等级规则
+        /// </summary>
+        /// <param name="vipRule"></param>
+        /// <returns></returns>
+        bool UpdVipRule(VipRule vipRule);
     }
 }

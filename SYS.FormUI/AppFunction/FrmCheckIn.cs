@@ -28,6 +28,8 @@ using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
 using System.Transactions;
+using SYS.Application.Zero;
+using System.Linq;
 
 namespace SYS.FormUI
 {
@@ -156,6 +158,31 @@ namespace SYS.FormUI
 
         private void txtCustoNo_Validated(object sender, EventArgs e)
         {
+            //在每次完成输入验证之后，对该用户的会员等级进行初始化或升级以及降级操作
+            var listVipRule = new VipRuleAppService().SelectVipRuleList().OrderBy(a => a.rule_value).Distinct().ToList();
+            var new_type = 0;
+            //查询该用户以往的消费记录总额是否达到指定金额,不为空则为老客户
+            var listCustoSpend = new SpendService().SeletHistorySpendInfoAll(txtCustoNo.Text.Trim());
+            if (!listCustoSpend.IsNullOrEmpty())
+            {
+                var spendAmount = listCustoSpend.Sum(a => a.SpendMoney);
+                listVipRule.ForEach(vipRule =>
+                {
+                    if (spendAmount >= vipRule.rule_value)
+                    {
+                        new_type = vipRule.type_id;
+                    }
+                });
+
+                //不等于0即会员等级有变，需进行及时会员等级
+                if (new_type != 0)
+                {
+                    new CustoService().UpdCustomerTypeByCustoNo(txtCustoNo.Text.Trim(), new_type);
+                }
+
+            }
+
+
             try
             {
                 Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);

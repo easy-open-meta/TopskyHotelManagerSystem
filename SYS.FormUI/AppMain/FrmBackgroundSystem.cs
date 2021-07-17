@@ -197,6 +197,15 @@ namespace SYS.FormUI
                         break;
                     case "客户管理":
                         break;
+                    case "会员等级规则":
+                        pnlForm.Controls.Clear();
+                        FrmVipRule frmVipRule = new FrmVipRule();
+                        frmVipRule.TopLevel = false;
+                        pnlForm.Controls.Add(frmVipRule);
+                        frmVipRule.Show();
+                        break;
+                    case "会员信息管理":
+                        break;
                     case "客户信息管理":
                         pnlForm.Controls.Clear();
                         FrmCustoManager frmCustoManager = new FrmCustoManager();

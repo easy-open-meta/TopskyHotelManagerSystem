@@ -53,7 +53,7 @@ namespace SYS.FormUI
         {
             LoadDept();
             LoadLeader();
-            txtDeptNo.Text = new CounterHelper().GetNewId("DeptInfo");
+            txtDeptNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.DeptInfo);
             dgvDeptList.AutoGenerateColumns = false;
             dgvDeptList.DataSource = new BaseService().SelectDeptAllCanUse();
         }

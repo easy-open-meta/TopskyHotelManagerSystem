@@ -115,7 +115,7 @@ namespace SYS.FormUI
             }
             else if (this.Text == "添加员工")
             {
-                WorkerNo.Text = new CounterHelper().GetNewId("WorkerId");
+                WorkerNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.WorkerId);
                 ucHistory = new ucHistory();
                 //ucHistory.txtCompany.ReadOnly = false;
                 //ucHistory.txtPosition.ReadOnly = false;

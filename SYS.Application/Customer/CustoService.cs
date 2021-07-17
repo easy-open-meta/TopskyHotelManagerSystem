@@ -82,6 +82,20 @@ namespace SYS.Application
         }
 
         /// <summary>
+        /// 更新客户类型(即会员等级)
+        /// </summary>
+        /// <param name="custoNo"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public bool UpdCustomerTypeByCustoNo(string custoNo,int userType)
+        {
+            return base.Update(a => new Custo()
+            {
+                CustoType = userType
+            }, a => a.CustoNo.Equals(custoNo));
+        }
+
+        /// <summary>
         /// 查询酒店盈利情况
         /// </summary>
         /// <returns></returns>

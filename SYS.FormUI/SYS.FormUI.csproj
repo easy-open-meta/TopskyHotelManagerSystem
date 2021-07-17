@@ -185,6 +185,12 @@
     <Compile Include="AppFunction\FrmNotice.Designer.cs">
       <DependentUpon>FrmNotice.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppFunction\FrmPleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmPleaseWait.Designer.cs">
+      <DependentUpon>FrmPleaseWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppFunction\FrmPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,12 @@
     </Compile>
     <Compile Include="AppFunction\FrmSexType.Designer.cs">
       <DependentUpon>FrmSexType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmVipRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmVipRule.Designer.cs">
+      <DependentUpon>FrmVipRule.cs</DependentUpon>
     </Compile>
     <Compile Include="AppUserControls\ucPositionInformation.cs">
       <SubType>UserControl</SubType>
@@ -413,6 +425,12 @@
     <Compile Include="AppFunction\FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppUserControls\ucVipType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucVipType.Designer.cs">
+      <DependentUpon>ucVipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Font\UI-FontUtil.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -454,6 +472,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmMySpace.resx">
       <DependentUpon>FrmMySpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmPleaseWait.resx">
+      <DependentUpon>FrmPleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmVipRule.resx">
+      <DependentUpon>FrmVipRule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppMain\FrmBackgroundSystem.resx">
       <DependentUpon>FrmBackgroundSystem.cs</DependentUpon>
@@ -583,6 +607,9 @@
     <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\ucVipType.resx">
+      <DependentUpon>ucVipType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -686,6 +713,10 @@
     <None Include="Resources\获取用户编号-ia.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\普通会员.png" />
+    <Content Include="Resources\白金会员.png" />
+    <Content Include="Resources\钻石会员.png" />
+    <Content Include="Resources\黄金会员.png" />
     <None Include="Resources\添加管理员.png" />
     <None Include="Resources\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png" />
     <None Include="Resources\系统管理员.png" />
@@ -724,7 +755,6 @@
     <None Include="Resources\后勤部卡片.png" />
     <None Include="Resources\餐饮部卡片.png" />
     <None Include="Resources\财务部卡片.png" />
-    <None Include="Resources\組織圖塊.bmp" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\settings2.png" />
     <None Include="Resources\添加  增加   加.png" />
@@ -770,6 +800,7 @@
     <Content Include="icon\盾牌.ico" />
     <Content Include="icon\禁用.ico" />
     <Content Include="icon\职位.ico" />
+    <Content Include="icon\规则.ico" />
     <Content Include="icon\财务账单.ico" />
     <Content Include="icon\转换.ico" />
     <Content Include="icon\部门.ico" />
