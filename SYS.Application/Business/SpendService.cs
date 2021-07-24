@@ -56,7 +56,12 @@ namespace SYS.Application
         public List<Spend> SelectSpendByCustoNo(string No)
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.CustoNo == No && a.MoneyState == "未结算" && a.delete_mk != 1);
+            ls = base.GetList(a => a.CustoNo == No && a.MoneyState.Equals(SpendConsts.UnSettle) && a.delete_mk != 1);
+            ls.ForEach(source =>
+            {
+                source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
+                : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+            });
             return ls;
         }
         #endregion
@@ -70,7 +75,12 @@ namespace SYS.Application
         public List<Spend> SeletHistorySpendInfoAll(string custoNo)
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.CustoNo == custoNo && a.MoneyState.Equals("已结算") && a.delete_mk != 1);
+            ls = base.GetList(a => a.CustoNo == custoNo && a.MoneyState.Equals(SpendConsts.Settled) && a.delete_mk != 1);
+            ls.ForEach(source =>
+            {
+                source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
+                : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+            });
             return ls;
         }
         #endregion
@@ -84,7 +94,12 @@ namespace SYS.Application
         public List<Spend> SelectSpendByRoomNo(string No)
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.RoomNo == No && a.MoneyState == "未结算" && a.delete_mk != 1);
+            ls = base.GetList(a => a.RoomNo == No && a.MoneyState.Equals(SpendConsts.UnSettle) && a.delete_mk != 1);
+            ls.ForEach(source =>
+            {
+                source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
+                : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+            });
             return ls;
         }
         #endregion
@@ -97,7 +112,12 @@ namespace SYS.Application
         public List<Spend> SelectSpendInfoAll()
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.delete_mk != 1).OrderBy(a => a.MoneyState).ToList();
+            ls = base.GetList(a => a.delete_mk != 1).OrderByDescending(a => a.SpendTime).ToList();
+            ls.ForEach(source =>
+            {
+                source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
+                : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+            });
             return ls;
         }
         #endregion
@@ -110,7 +130,12 @@ namespace SYS.Application
         public List<Spend> SelectSpendInfoRoomNo(string RoomNo)
         {
             List<Spend> ls = new List<Spend>();
-            ls = base.GetList(a => a.RoomNo == RoomNo && a.delete_mk != 1 && a.MoneyState == "未结算");
+            ls = base.GetList(a => a.RoomNo == RoomNo && a.delete_mk != 1 && a.MoneyState.Equals(SpendConsts.UnSettle));
+            ls.ForEach(source =>
+            {
+                source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
+                : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+            });
             return ls;
         }
         #endregion
@@ -124,7 +149,7 @@ namespace SYS.Application
         /// <returns></returns>
         public object SelectMoneyByRoomNoAndTime(string roomno,string custono)
         {
-            return base.GetList(a => a.RoomNo == roomno && a.CustoNo == custono && a.MoneyState == "未结算").Sum(a => a.SpendMoney);
+            return base.GetList(a => a.RoomNo == roomno && a.CustoNo == custono && a.MoneyState.Equals(SpendConsts.UnSettle)).Sum(a => a.SpendMoney);
         }
         #endregion
 
@@ -139,7 +164,7 @@ namespace SYS.Application
         {
             return base.Update(a => new Spend()
             {
-                MoneyState = "已结算",
+                MoneyState = SpendConsts.Settled,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
             },a => a.RoomNo == roomno && a.SpendTime >= Convert.ToDateTime(checktime) && a.SpendTime <= DateTime.Now); 
@@ -163,7 +188,7 @@ namespace SYS.Application
                 RoomNo = newRoom,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
-            }, a => listSpendId.Contains(a.RoomNo) && a.CustoNo == custoNo && a.MoneyState == "未结算" && a.SpendTime >= DateTime.Now
+            }, a => listSpendId.Contains(a.RoomNo) && a.CustoNo == custoNo && a.MoneyState.Equals(SpendConsts.UnSettle) && a.SpendTime >= DateTime.Now
              && a.SpendTime <= DateTime.Now);
 
 

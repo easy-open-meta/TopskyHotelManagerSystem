@@ -175,7 +175,7 @@ namespace SYS.FormUI
                         SpendPrice = Convert.ToDecimal(txtPrice.Text),
                         SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value),
                         SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                        MoneyState = "未结算",
+                        MoneyState = SpendConsts.UnSettle,
                     };
                     bool m = new SpendService().InsertSpendInfo(s);
                     if (m == true)

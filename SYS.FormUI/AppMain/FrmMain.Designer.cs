@@ -65,6 +65,7 @@
             this.picCommodity = new Sunny.UI.UIImageButton();
             this.picExtend = new Sunny.UI.UIImageButton();
             this.picSetting = new Sunny.UI.UIButton();
+            this.tsmiExChange = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsMain.SuspendLayout();
             this.pnlCheckInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -129,6 +130,7 @@
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiChangeUser,
             this.tsmiMySpace,
+            this.tsmiExChange,
             this.toolStripSeparator3,
             this.tsmiLockScreen,
             this.toolStripSeparator4,
@@ -139,7 +141,7 @@
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
             this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.cmsMain.Size = new System.Drawing.Size(209, 204);
+            this.cmsMain.Size = new System.Drawing.Size(209, 230);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiChangeUser
@@ -511,6 +513,13 @@
             this.picSetting.MouseLeave += new System.EventHandler(this.picSetting_MouseLeave);
             this.picSetting.MouseHover += new System.EventHandler(this.picSetting_MouseHover);
             // 
+            // tsmiExChange
+            // 
+            this.tsmiExChange.Font = new System.Drawing.Font("阿里巴巴普惠体", 12F);
+            this.tsmiExChange.Name = "tsmiExChange";
+            this.tsmiExChange.Size = new System.Drawing.Size(208, 26);
+            this.tsmiExChange.Text = "换班";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -595,5 +604,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoginBackSystem;
         private Sunny.UI.UIButton picSetting;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExChange;
     }
 }

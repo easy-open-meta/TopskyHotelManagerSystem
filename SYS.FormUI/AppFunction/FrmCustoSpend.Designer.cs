@@ -43,6 +43,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSpendNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMoneyState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSpendState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +82,7 @@
             this.dataGridViewTextBoxColumn7,
             this.clSpendNo,
             this.clMoneyState,
+            this.clSpendState,
             this.Column6,
             this.Column7,
             this.Column9,
@@ -181,6 +183,14 @@
             this.clMoneyState.HeaderText = "结算状态";
             this.clMoneyState.Name = "clMoneyState";
             this.clMoneyState.ReadOnly = true;
+            this.clMoneyState.Visible = false;
+            // 
+            // clSpendState
+            // 
+            this.clSpendState.DataPropertyName = "SpendStateNm";
+            this.clSpendState.HeaderText = "结算状态";
+            this.clSpendState.Name = "clSpendState";
+            this.clSpendState.ReadOnly = true;
             // 
             // Column6
             // 
@@ -247,6 +257,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSpendNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMoneyState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSpendState;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

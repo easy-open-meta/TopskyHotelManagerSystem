@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\SpendConsts.cs" />
     <Compile Include="Customer\PassPortType.cs" />
     <Compile Include="Customer\SexType.cs" />
     <Compile Include="Util\ApplicationVersionUtil.cs" />

@@ -104,6 +104,8 @@ namespace SYS.Application
             List<CustoSpend> custoSpends = new List<CustoSpend>();
             string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
+            var listDates = new List<DateTime>();
+
             while (dr.Read())
             {
                 CustoSpend cso = new CustoSpend();

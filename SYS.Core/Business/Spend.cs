@@ -84,5 +84,11 @@ namespace SYS.Core
         /// 资料更新时间
         /// </summary>
         public DateTime datachg_date { get; set; }
+
+        /// <summary>
+        /// 结算状态描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string SpendStateNm { get; set; }
     }
 }
