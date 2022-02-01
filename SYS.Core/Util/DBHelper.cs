@@ -23,6 +23,7 @@
  *模块说明：数据库配置类
  */
 using MySql.Data.MySqlClient;
+using SYS.Core.Util;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -35,7 +36,7 @@ namespace SYS.Core
     public class DBHelper
     {
         //private static string conStr = ConfigurationManager.AppSettings["MySqlStr"];
-        private static string conStr = "";
+        private static string conStr = HttpHelper.dbString;
 
         private static MySqlConnection con = null;
 

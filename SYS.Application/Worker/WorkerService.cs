@@ -46,22 +46,46 @@ namespace SYS.Application
         public bool UpdateWorker(Worker worker)
         {
             //加密联系方式
-            var sourceTelStr = encrypt.EncryptStr(worker.WorkerTel);
+            var sourceTelStr =string.Empty;
+            if (!string.IsNullOrEmpty(worker.WorkerTel))
+            {
+                sourceTelStr = encrypt.Encryption(worker.WorkerTel);
+            }
+            //加密身份证
+            var sourceIdStr = string.Empty;
+            if (!string.IsNullOrEmpty(worker.CardId))
+            {
+                 sourceIdStr = encrypt.Encryption(worker.CardId);
+            }
             worker.WorkerTel = sourceTelStr;
+            worker.CardId = sourceIdStr;
             return base.Update(a => new Worker()
             {
                 WorkerName = worker.WorkerName,
                 WorkerTel = worker.WorkerTel,
                 WorkerAddress = worker.WorkerAddress,
-                WorkerFace = string.IsNullOrEmpty(worker.WorkerFace) ? "" : worker.WorkerFace,
-                WorkerEducation = string.IsNullOrEmpty(worker.WorkerEducation) ? "" : worker.WorkerEducation,
-                WorkerNation = string.IsNullOrEmpty(worker.WorkerNation) ? "" : worker.WorkerNation,
+                WorkerFace = worker.WorkerFace,
+                WorkerEducation = worker.WorkerEducation,
+                WorkerNation = worker.WorkerNation,
                 datachg_usr = AdminInfo.Account,
                 datachg_date = DateTime.Now
-            },a => a.WorkerId == worker.WorkerId);
+            },a => a.WorkerId.Equals(worker.WorkerId));
 
         }
         #endregion
+
+        /// <summary>
+        /// 员工账号禁/启用
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+        public bool ManagerWorkerAccount(Worker worker)
+        {
+            return new WorkerService().Update(a => new Worker()
+            {
+                delete_mk = worker.delete_mk
+            }, a => a.WorkerId == worker.WorkerId);
+        }
 
         /// <summary>
         /// 更新员工职位和部门
@@ -88,8 +112,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool AddWorker(Worker worker)
         {
-            string NewID = encrypt.EncryptStr(worker.CardId);
-            string NewTel = encrypt.EncryptStr(worker.WorkerTel);
+            string NewID = encrypt.Encryption(worker.CardId);
+            string NewTel = encrypt.Encryption(worker.WorkerTel);
             worker.CardId = NewID;
             worker.WorkerTel = NewTel;
             return base.Insert(worker);
@@ -120,14 +144,14 @@ namespace SYS.Application
             positions = base.Change<Position>().GetList(a => a.delete_mk != 1);
             //查询所有员工信息
             List<Worker> workers = new List<Worker>();
-            workers = base.Change<Worker>().GetList(a => a.delete_mk != 1);
+            workers = base.Change<Worker>().GetList();
             workers.ForEach(source =>
             {
                 //解密身份证号码
-                var sourceStr = source.CardId.Contains(":") ? encrypt.DeEncryptStr(source.CardId) : source.CardId;
+                var sourceStr = source.CardId.Contains("·") ? encrypt.Decryption(source.CardId) : source.CardId;
                 source.CardId = sourceStr;
                 //解密联系方式
-                var sourceTelStr = source.WorkerTel.Contains(":") ? encrypt.DeEncryptStr(source.WorkerTel) : source.WorkerTel;
+                var sourceTelStr = source.WorkerTel.Contains("·") ? encrypt.Decryption(source.WorkerTel) : source.WorkerTel;
                 source.WorkerTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.WorkerSex);
@@ -161,10 +185,10 @@ namespace SYS.Application
             Worker w = new Worker();
             w = base.Change<Worker>().GetSingle(a => a.WorkerId == workerId);
             //解密身份证号码
-            var sourceStr = w.CardId.Contains(":") ? encrypt.DeEncryptStr(w.CardId) : w.CardId;
+            var sourceStr = w.CardId.Contains("·") ? encrypt.Decryption(w.CardId) : w.CardId;
             w.CardId = sourceStr;
             //解密联系方式
-            var sourceTelStr = w.WorkerTel.Contains(":") ? encrypt.DeEncryptStr(w.WorkerTel) : w.WorkerTel;
+            var sourceTelStr = w.WorkerTel.Contains("·") ? encrypt.Decryption(w.WorkerTel) : w.WorkerTel;
             w.WorkerTel = sourceTelStr;
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
@@ -201,7 +225,7 @@ namespace SYS.Application
                 return w;
             }
 
-            var sourceStr = w.WorkerPwd.Contains(":") ? encrypt.DeEncryptStr(w.WorkerPwd) : w.WorkerPwd;
+            var sourceStr = w.WorkerPwd.Contains("·") ? encrypt.Decryption(w.WorkerPwd) : w.WorkerPwd;
             if (sourceStr != worker.WorkerPwd)
             {
                 w = null;
@@ -235,7 +259,7 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdWorkerPwdByWorkNo(string workId,string workPwd)
         {
-            string NewPwd = encrypt.EncryptStr(workPwd);
+            string NewPwd = encrypt.Decryption(workPwd);
             return base.Update(a => new Worker()
             {
                 WorkerPwd = NewPwd,

@@ -41,16 +41,6 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\MySql.Web.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SqlSugar.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Common.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Core.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\Google.Protobuf.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\Zstandard.Net.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\K4os.Compression.LZ4.Streams.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\Ubiety.Dns.Core.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\System.Memory.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\System.Buffers.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\K4os.Compression.LZ4.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\K4os.Hash.xxHash.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\System.Numerics.Vectors.dll
-E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Common.pdb
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Common.dll.config
 E:\Gitee\TopSkyHotelManagerSystem\SYS.Application\bin\Debug\SYS.Core.pdb

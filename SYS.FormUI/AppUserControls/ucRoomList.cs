@@ -15,8 +15,6 @@ namespace SYS.FormUI
     {
         FrmRoomManager frm = null;
 
-
-
         public ucRoomList()
         {
             InitializeComponent();
@@ -142,15 +140,6 @@ namespace SYS.FormUI
         public Custo romRoomInfo = new Custo();
         #endregion
 
-        #region 鼠标进入房态图可见范围内事件方法
-        private void ucRoomList_MouseEnter(object sender, EventArgs e)
-        {
-            //lblState.ForeColor = Color.Red;
-
-
-        }
-        #endregion
-
         #region 鼠标点击房态图传值到类
         private void ucRoomList_Click(object sender, EventArgs e)
         {
@@ -170,11 +159,7 @@ namespace SYS.FormUI
             }
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 6f));
-            //lblCustoNo.Text = romCustoInfo.CustoNo;
-            //lblRoomNo.Text = romCustoInfo.RoomNo;
-            //lblRoomType.Text = romCustoInfo.RoomName;
-            //co_CheckTime = romCustoInfo.CheckTime.ToString();
-
+            
             us_CustoNo = romRoomInfo.CustoNo;
             us_CustoName = romRoomInfo.CustoName;
             us_CustoSex = romRoomInfo.CustoSex == 1 ? "男" : "女";
@@ -357,7 +342,7 @@ namespace SYS.FormUI
         private void tsmiChangeRoom_Click(object sender, EventArgs e)
         {
             bool tf = UIMessageBox.Show("确定要进行转房吗？", "来自小T的提醒", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
-            if (!tf)
+            if (tf)
             {
                 RoomNo = lblRoomNo.Text;
                 CustoNo = lblCustoNo.Text;
@@ -379,16 +364,43 @@ namespace SYS.FormUI
         private void lblRoomType_Click(object sender, EventArgs e)
         {
             LoadRoomInfo();
+
+            try
+            {
+                FrmRoomManager.ReadInfo();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void lblRoomNo_Click(object sender, EventArgs e)
         {
             LoadRoomInfo();
+
+            try
+            {
+                FrmRoomManager.ReadInfo();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void lblCustoNo_Click(object sender, EventArgs e)
         {
             LoadRoomInfo();
+
+            try
+            {
+                FrmRoomManager.ReadInfo();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ucRoomList_SizeChanged(object sender, EventArgs e)
@@ -406,6 +418,7 @@ namespace SYS.FormUI
         private void ucRoomList_MouseHover(object sender, EventArgs e)
         {
             LoadRoomInfo();
+            //FrmRoomManager.ReadInfo();
         }
 
         public void LoadRoomInfo()
@@ -416,6 +429,7 @@ namespace SYS.FormUI
             co_CheckTime = romCustoInfo.CheckTimeFormat;
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
+
         }
 
         private void lblRoomType_MouseHover(object sender, EventArgs e)
@@ -431,6 +445,18 @@ namespace SYS.FormUI
         private void lblCustoNo_MouseHover(object sender, EventArgs e)
         {
             LoadRoomInfo();
+        }
+
+        private void ucRoomList_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FrmRoomManager.ReadInfo();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

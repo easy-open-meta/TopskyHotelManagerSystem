@@ -59,6 +59,7 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
+            this.Owner.Close();
             foreach (Control item in this.Controls)
             {
                 switch (item.GetType().ToString())

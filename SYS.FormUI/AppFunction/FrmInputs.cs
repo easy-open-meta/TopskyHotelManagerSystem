@@ -281,6 +281,14 @@ namespace SYS.FormUI
         {
             //获取得到输入的身份证号码
             string identityCard = txtCardID.Text.Trim();
+
+            if (!cbPassportType.SelectedText.ToString().Contains("身份证"))
+            {
+                dtpBirthday.Enabled = true;
+                dtpBirthday.ReadOnly = false;
+                return;
+            }
+
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回

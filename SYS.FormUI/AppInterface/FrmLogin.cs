@@ -54,27 +54,27 @@ namespace SYS.FormUI
         #endregion
 
         #region 调用淡出淡入效果函数
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
         #endregion
 
         #region 窗体淡出淡入方法
-        protected static extern bool AnimateWindow(IntPtr hWnd, int dwTime, int dwFlags);
+        //protected static extern bool AnimateWindow(IntPtr hWnd, int dwTime, int dwFlags);
 
-        /**********************************************************************************************/
-        //dwflag的取值如下  
-        public const Int32 AW_HOR_POSITIVE = 0x00000001;        //从左到右显示  
-        public const Int32 AW_HOR_NEGATIVE = 0x00000002;        //从右到左显示  
-        public const Int32 AW_VER_POSITIVE = 0x00000004;        //从上到下显示  
-        public const Int32 AW_VER_NEGATIVE = 0x00000008;        //从下到上显示  
+        ///**********************************************************************************************/
+        ////dwflag的取值如下  
+        //public const Int32 AW_HOR_POSITIVE = 0x00000001;        //从左到右显示  
+        //public const Int32 AW_HOR_NEGATIVE = 0x00000002;        //从右到左显示  
+        //public const Int32 AW_VER_POSITIVE = 0x00000004;        //从上到下显示  
+        //public const Int32 AW_VER_NEGATIVE = 0x00000008;        //从下到上显示  
 
-        //若使用了AW_HIDE标志，则使窗口向内重叠，即收缩窗口；否则使窗口向外扩展，即展开窗口  
-        public const Int32 AW_CENTER = 0x00000010;
-        public const Int32 AW_HIDE = 0x00010000;        //隐藏窗口，缺省则显示窗口  
-        public const Int32 AW_ACTIVATE = 0x00020000;        //激活窗口。在使用了AW_HIDE标志后不能使用这个标志  
+        ////若使用了AW_HIDE标志，则使窗口向内重叠，即收缩窗口；否则使窗口向外扩展，即展开窗口  
+        //public const Int32 AW_CENTER = 0x00000010;
+        //public const Int32 AW_HIDE = 0x00010000;        //隐藏窗口，缺省则显示窗口  
+        //public const Int32 AW_ACTIVATE = 0x00020000;        //激活窗口。在使用了AW_HIDE标志后不能使用这个标志  
 
-        //使用滑动类型。缺省则为滚动动画类型。当使用AW_CENTER标志时，这个标志就被忽略  
-        public const Int32 AW_SLIDE = 0x00040000;
-        public const Int32 AW_BLEND = 0x00080000;        //透明度从高到低 
+        ////使用滑动类型。缺省则为滚动动画类型。当使用AW_CENTER标志时，这个标志就被忽略  
+        //public const Int32 AW_SLIDE = 0x00040000;
+        //public const Int32 AW_BLEND = 0x00080000;        //透明度从高到低 
 
         #endregion
 
@@ -110,8 +110,6 @@ namespace SYS.FormUI
         #region 关闭窗体事件方法
         private void picClose_Click(object sender, EventArgs e)
         {
-            //f.Close();
-            //System.Windows.Forms.Application.Exit();
             this.Close();
         }
         #endregion
@@ -119,42 +117,15 @@ namespace SYS.FormUI
         #region 窗体打开时淡入效果
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            //FrmTopSkyLogo frm = new FrmTopSkyLogo();
-            //frm.ShowDialog();
-            
-            CheckUpdate();
+            this.Owner.Hide();
             txtWorkerId.Text = "WK010";
             txtWorkerPwd.Text = "admin";
-            AnimateWindow(this.Handle, 800, AW_BLEND | AW_CENTER | AW_ACTIVATE);
-            //CheckUpdate();
-        }
-        #endregion
-
-        #region 判断版本号
-        private void CheckUpdate()
-        {
-            var newversion = new ApplicationVersionUtil().CheckBaseVersion();
-
-            string version = System.Windows.Forms.Application.ProductVersion.ToString();
-            if (newversion.base_version != version)
-            {
-                UIMessageDialog.ShowErrorDialog(this, "系统提醒", "旧版已停止使用，请到github或gitee仓库更新最新发行版！");
-                System.Windows.Forms.Application.Exit();
-                this.Visible = false;
-                //调用系统默认的浏览器
-                System.Diagnostics.Process.Start("https://gitee.com/java-and-net/TopskyHotelManagerSystem/releases");
-            }
-            else
-            {
-                UIMessageDialog.ShowSuccessDialog(this, "系统提醒", "当前已为最新版本，无需更新！");
-            }
         }
         #endregion
 
         #region 窗体关闭时淡出效果
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            AnimateWindow(this.Handle, 800, AW_CENTER | AW_BLEND | AW_HIDE);
         }
         #endregion
 
@@ -181,12 +152,9 @@ namespace SYS.FormUI
         }
         #endregion
 
-
-
         #region 登录图片点击事件
         private void picLogin_Click(object sender, EventArgs e)
         {
-            //picLogin.BackgroundImage = Resources.Login_b;
             try
             {
                 if (CheckInput())//检验输入完整性
@@ -195,14 +163,20 @@ namespace SYS.FormUI
                     Worker w = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(worker);
                     if (w != null)//判断员工编号是否存在
                     {
+                        if (w.delete_mk == 1)
+                        {
+                            UIMessageBox.Show("账号已禁用，请联系上级解封！", "来自小T提示", UIStyle.Red);
+                            return;
+                        }
+
                         LoginInfo.WorkerNo = w.WorkerId;
                         LoginInfo.WorkerName = w.WorkerName;
-                        LoginInfo.WorkerClub = w.WorkerClub;
-                        LoginInfo.WorkerPosition = w.WorkerPosition;
+                        LoginInfo.WorkerClub = w.ClubName;
+                        LoginInfo.WorkerPosition = w.PositionName;
 
                         FrmMain frm = new FrmMain(this);
                         this.Hide();//隐藏登录窗体
-                        frm.Show();//打开主窗体
+                        frm.ShowDialog();//打开主窗体
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(txtWorkerId.Text + "于" + DateTime.Now + "登入了系统！", 1);
                         #endregion
@@ -232,8 +206,8 @@ namespace SYS.FormUI
         private void btnLoginBackSystem_Click(object sender, EventArgs e)
         {
             FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
-            frmAdminEnter.ShowDialog();
-            this.Hide();
+            frmAdminEnter.ShowDialog(this);
+            this.Close();
         }
 
         private void picFormSize_MouseDown(object sender, MouseEventArgs e)

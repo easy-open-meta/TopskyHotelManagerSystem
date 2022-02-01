@@ -23,6 +23,7 @@
  *模块说明：商品信息类
  */
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SYS.Core
 {
@@ -43,6 +44,11 @@ namespace SYS.Core
         /// 商品价格
         /// </summary>
         public decimal SellPrice { get; set; }
+        /// <summary>
+        /// 商品价格描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string SellPriceStr { get; set; }
         /// <summary>
         /// 规格型号
         /// </summary>

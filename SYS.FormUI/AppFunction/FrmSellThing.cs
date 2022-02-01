@@ -84,15 +84,15 @@ namespace SYS.FormUI
         private void LoadSpendInfoByRoomNo(string room)
         {
             List<Spend> lstSource = new SpendService().SelectSpendByRoomNo(room);
-            this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
+            this.dgvRoomSell.DataSource = lstSource;
         }
 
         private void LoadSpendInfoByCustoNo(string custoNo)
         {
             List<Spend> lstSource = new SpendService().SelectSpendByCustoNo(custoNo);
-            this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
+            this.dgvRoomSell.DataSource = lstSource;
         }
         #endregion
 
@@ -100,8 +100,8 @@ namespace SYS.FormUI
         public void LoadSellThingInfo()
         {
             List<SellThing> lstSource = new SellService().SelectSellThingAll();
-            this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
+            this.dgvSellthing.DataSource = lstSource;
 
         }
         #endregion

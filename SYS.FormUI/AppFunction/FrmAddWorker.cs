@@ -30,6 +30,10 @@ using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
 using SYS.Core.Util;
+using System.Net;
+using System.Configuration;
+using System.IO;
+using System.Text;
 
 namespace SYS.FormUI
 {
@@ -64,7 +68,6 @@ namespace SYS.FormUI
             cboEducation.DisplayMember = "education_name";
             cboEducation.ValueMember = "education_no";
 
-            pictureBox1.LoadAsync("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587209835893&di=02964b1de4a1ef4f938f7d3ae12b5b17&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F11%2F25%2F0ef5a188956c2717db96d72d58524dec.jpg");
             if (this.Text == "员工信息查看页")
             {
                 foreach (Control control in this.Controls)
@@ -97,6 +100,16 @@ namespace SYS.FormUI
                 WorkerTel.Text = FrmChangeWorker.wk_WorkerTel;
                 cboEducation.Text = FrmChangeWorker.wk_WorkerEducation;
                 cboClub.Text = FrmChangeWorker.wk_WorkerClub;
+                var workerPicSource = new WorkerPicService().WorkerPic(new WorkerPic
+                {
+                    WorkerId = WorkerNo.Text.Trim()
+                });
+                if (workerPicSource != null && !string.IsNullOrEmpty(workerPicSource.Pic))
+                {
+                    picWorkerPic.Enabled = false;
+                    picWorkerPic.BackgroundImage = null;
+                    picWorkerPic.LoadAsync(workerPicSource.Pic);
+                }
                 this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
                 List<WorkerHistory> workerHistories = new WorkerHistoryService().SelectHistoryByWorkerId(WorkerNo.Text);
                 for (int i = 0; i < workerHistories.Count; i++)
@@ -117,8 +130,6 @@ namespace SYS.FormUI
             {
                 WorkerNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.WorkerId);
                 ucHistory = new ucHistory();
-                //ucHistory.txtCompany.ReadOnly = false;
-                //ucHistory.txtPosition.ReadOnly = false;
                 ucHistory.dtpStartDate.Enabled = true;
                 ucHistory.dtpEndDate.Enabled = true;
                 ucHistory.txtCompany.Enabled = true;
@@ -132,7 +143,7 @@ namespace SYS.FormUI
             }
             else
             {
-                bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、民族、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr == true)
                 {
                     foreach (Control item in this.Controls)
@@ -163,6 +174,16 @@ namespace SYS.FormUI
                     WorkerTel.Text = FrmChangeWorker.wk_WorkerTel;
                     cboEducation.Text = FrmChangeWorker.wk_WorkerEducation;
                     cboClub.Text = FrmChangeWorker.wk_WorkerClub;
+
+                    var workerPicSource = new WorkerPicService().WorkerPic(new WorkerPic
+                    {
+                        WorkerId = WorkerNo.Text.Trim()
+                    });
+                    if (workerPicSource!=null &&!string.IsNullOrEmpty(workerPicSource.Pic))
+                    {
+                        picWorkerPic.BackgroundImage = null;
+                        picWorkerPic.LoadAsync(workerPicSource.Pic);
+                    }
                     this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
                     btnAdd.Text = "修改";
                     this.btnAdd.Click -= new EventHandler(btnAdd_Click);
@@ -205,6 +226,8 @@ namespace SYS.FormUI
                 if (i == true)
                 {
                     UIMessageBox.ShowSuccess("信息修改成功！");
+                    this.Close();
+                    FrmWorkerManager.Reload();
                     return;
                 }
                 else
@@ -320,6 +343,7 @@ namespace SYS.FormUI
                         if (n == true && j == true)
                         {
                             UIMessageBox.Show("员工信息/履历添加成功！该员工登录密码为：123456，请提醒员工妥善保管并首次登录系统时修改密码！");
+                            this.Close();
                             FrmWorkerManager.Reload();
                             #region 获取添加操作日志所需的信息
                             RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！", 2);
@@ -425,5 +449,27 @@ namespace SYS.FormUI
         {
 
         }
+
+        private void workerPic_Click(object sender, EventArgs e)
+        {
+            openPic.ShowDialog();
+        }
+
+        private void openPic_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var serverPath = HttpHelper.postUrl;
+            var result = HttpHelper.UpLoadFile(openPic.FileName, serverPath);
+            WorkerPic workerPic = new WorkerPic
+            {
+                WorkerId = WorkerNo.Text.Trim(),
+                Pic = result.Trim(),
+            };
+            new WorkerPicService().InsertWorkerPic(workerPic);
+
+
+            picWorkerPic.BackgroundImage = null;
+            picWorkerPic.LoadAsync(HttpHelper.baseUrl + result.Trim());
+        }
+
     }
 }

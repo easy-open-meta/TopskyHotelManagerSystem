@@ -42,6 +42,10 @@ namespace SYS.Application
         {
             List<SellThing> sellThings = new List<SellThing>();
             sellThings = base.GetList(a => a.delete_mk == 0);
+            sellThings.ForEach(sellThing =>
+            {
+                sellThing.SellPriceStr = Decimal.Parse(sellThing.SellPrice.ToString()).ToString("#,##0.00").ToString();
+            });
             return sellThings;
         }
 

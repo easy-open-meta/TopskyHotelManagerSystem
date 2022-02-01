@@ -56,6 +56,7 @@
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -75,10 +76,12 @@
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\CounterRuleConsts.cs" />
     <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="Util\HttpHelper.cs" />
     <Compile Include="Util\IDCardUtil.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Worker\GBType.cs" />
+    <Compile Include="Worker\WorkerPic.cs" />
     <Compile Include="Zero\Admin.cs" />
     <Compile Include="Zero\AdminInfo.cs" />
     <Compile Include="Business\Cash.cs" />
