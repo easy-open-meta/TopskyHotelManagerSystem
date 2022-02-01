@@ -161,7 +161,7 @@ namespace SYS.FormUI
             }
             var _education = new Education()
             {
-                education_no = new SYS.Core.CounterHelper().GetNewId("EducationId").ToString(),
+                education_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.EducationId).ToString(),
                 education_name = info,
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,

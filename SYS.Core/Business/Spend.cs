@@ -53,9 +53,19 @@ namespace SYS.Core
         /// </summary>
         public decimal SpendPrice { get; set; }
         /// <summary>
+        /// 商品单价描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string SpendPriceStr { get; set; }
+        /// <summary>
         /// 消费金额
         /// </summary>
         public decimal SpendMoney { get; set; }
+        /// <summary>
+        /// 消费金额描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string SpendMoneyStr { get; set; }
         /// <summary>
         /// 消费时间
         /// </summary>
@@ -84,5 +94,11 @@ namespace SYS.Core
         /// 资料更新时间
         /// </summary>
         public DateTime datachg_date { get; set; }
+
+        /// <summary>
+        /// 结算状态描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string SpendStateNm { get; set; }
     }
 }

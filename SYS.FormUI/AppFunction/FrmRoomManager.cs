@@ -40,12 +40,16 @@ namespace SYS.FormUI
 
         public delegate void ReLoadRoomList(string typeName);
 
+        public delegate void ReadRoomInfo();
+
         //定义委托类型的变量
+        public static ReadRoomInfo ReadInfo;
         public static ReLoadRoomList Reload;
 
         public FrmRoomManager()
         {
             InitializeComponent();
+            ReadInfo = LoadRoomInfo;
             Reload = LoadData;
 
 
@@ -55,22 +59,6 @@ namespace SYS.FormUI
         ucRoomList romt = null;
         #region 房间加载事件方法
         private void FrmRoomManager_Load(object sender, EventArgs e)
-        {
-
-            foreach (Control item in this.pnlRoomInfo.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    item.Font = UI_FontUtil.childControlFont;
-                }
-            }
-
-            LoadData();
-
-        }
-        #endregion
-
-        private void tmrGetData_Tick(object sender, EventArgs e)
         {
             lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
             lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
@@ -90,6 +78,23 @@ namespace SYS.FormUI
             }
 
             lblRoomState.Text = ucRoomList.co_RoomState;
+            foreach (Control item in this.pnlRoomInfo.Controls)
+            {
+                if (item.GetType().ToString() == "System.Windows.Forms.Label")
+                {
+                    item.Font = UI_FontUtil.childControlFont;
+                }
+            }
+
+            LoadData();
+
+        }
+        #endregion
+
+        private void tmrGetData_Tick(object sender, EventArgs e)
+        {
+
+           
         }
 
         private void btnAll_Click(object sender, EventArgs e)
@@ -100,6 +105,28 @@ namespace SYS.FormUI
         private void btnBD_Click(object sender, EventArgs e)
         {
             LoadData(btnBD.Text);
+        }
+
+        public void LoadRoomInfo() 
+        {
+            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
+            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
+            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
+            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
+            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
+            lblRoomNo.Text = ucRoomList.co_RoomNo;
+            lblCustoNo.Text = ucRoomList.co_CustoNo;
+            lblRoomPosition.Text = ucRoomList.co_RoomPosition;
+            if (ucRoomList.co_CheckTime == "0001/01/01")
+            {
+                lblCheckTime.Text = "";
+            }
+            else
+            {
+                lblCheckTime.Text = ucRoomList.co_CheckTime;
+            }
+
+            lblRoomState.Text = ucRoomList.co_RoomState;
         }
 
         private void LoadData(string typeName = "")

@@ -48,6 +48,7 @@ namespace SYS.Application
         /// <returns></returns>
         List<Spend> SelectSpendByCustoNo(string No);
         #endregion
+
         #region 根据房间编号查询消费信息
         /// <summary>
         /// 根据房间编号查询消费信息
@@ -55,6 +56,15 @@ namespace SYS.Application
         /// <param name="No"></param>
         /// <returns></returns>
         List<Spend> SelectSpendByRoomNo(string No);
+        #endregion
+
+        #region 根据客户编号查询历史消费信息
+        /// <summary>
+        /// 根据客户编号查询历史消费信息
+        /// </summary>
+        /// <param name="custoNo"></param>
+        /// <returns></returns>
+        List<Spend> SeletHistorySpendInfoAll(string custoNo);
         #endregion
 
         #region 查询消费的所有信息

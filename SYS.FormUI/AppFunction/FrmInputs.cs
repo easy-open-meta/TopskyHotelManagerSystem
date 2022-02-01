@@ -55,7 +55,7 @@ namespace SYS.FormUI
                 label.Font = UI_FontUtil.controlFont;
             }
 
-            string cardId = new CounterHelper().GetNewId("CustoId");
+            string cardId = new CounterHelper().GetNewId(CounterRuleConsts.CustoId);
             txtCustoNo.Text = cardId;
             
             #region 加载客户类型信息
@@ -281,6 +281,14 @@ namespace SYS.FormUI
         {
             //获取得到输入的身份证号码
             string identityCard = txtCardID.Text.Trim();
+
+            if (!cbPassportType.SelectedText.ToString().Contains("身份证"))
+            {
+                dtpBirthday.Enabled = true;
+                dtpBirthday.ReadOnly = false;
+                return;
+            }
+
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回

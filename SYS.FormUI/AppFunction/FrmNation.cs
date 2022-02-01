@@ -156,7 +156,7 @@ namespace SYS.FormUI
         {
             var _nation = new Nation()
             {
-                nation_no = new SYS.Core.CounterHelper().GetNewId("NationId").ToString(),
+                nation_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.NationId).ToString(),
                 nation_name = info,
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,

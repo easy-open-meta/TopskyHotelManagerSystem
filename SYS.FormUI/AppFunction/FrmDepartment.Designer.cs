@@ -33,6 +33,7 @@ namespace SYS.FormUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartment));
             this.dgvDeptList = new Sunny.UI.UIDataGridView();
             this.clDeptNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,7 @@ namespace SYS.FormUI
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDeptList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -114,9 +115,18 @@ namespace SYS.FormUI
             this.dgvDeptList.MultiSelect = false;
             this.dgvDeptList.Name = "dgvDeptList";
             this.dgvDeptList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDeptList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDeptList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDeptList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDeptList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvDeptList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDeptList.RowTemplate.Height = 29;
             this.dgvDeptList.SelectedIndex = -1;
             this.dgvDeptList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -225,6 +235,7 @@ namespace SYS.FormUI
             // 
             // cboDeptParent
             // 
+            this.cboDeptParent.DataSource = null;
             this.cboDeptParent.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboDeptParent.FillColor = System.Drawing.Color.White;
             this.cboDeptParent.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -232,9 +243,10 @@ namespace SYS.FormUI
             this.cboDeptParent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboDeptParent.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboDeptParent.Name = "cboDeptParent";
-            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboDeptParent.Radius = 20;
             this.cboDeptParent.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptParent.Sorted = true;
             this.cboDeptParent.TabIndex = 182;
             this.cboDeptParent.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cboDeptParent.Watermark = "";
@@ -274,6 +286,7 @@ namespace SYS.FormUI
             // 
             // cboDeptLeader
             // 
+            this.cboDeptLeader.DataSource = null;
             this.cboDeptLeader.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboDeptLeader.FillColor = System.Drawing.Color.White;
             this.cboDeptLeader.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -281,9 +294,10 @@ namespace SYS.FormUI
             this.cboDeptLeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboDeptLeader.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboDeptLeader.Name = "cboDeptLeader";
-            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboDeptLeader.Radius = 20;
             this.cboDeptLeader.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptLeader.Sorted = true;
             this.cboDeptLeader.TabIndex = 174;
             this.cboDeptLeader.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cboDeptLeader.Watermark = "";
@@ -316,6 +330,7 @@ namespace SYS.FormUI
             this.txtDeptDesc.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptDesc.StyleCustomMode = true;
             this.txtDeptDesc.TabIndex = 172;
+            this.txtDeptDesc.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -344,6 +359,7 @@ namespace SYS.FormUI
             this.txtDeptName.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptName.StyleCustomMode = true;
             this.txtDeptName.TabIndex = 170;
+            this.txtDeptName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label20
             // 
@@ -373,6 +389,7 @@ namespace SYS.FormUI
             this.txtDeptNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptNo.StyleCustomMode = true;
             this.txtDeptNo.TabIndex = 168;
+            this.txtDeptNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnUpdateDept
             // 

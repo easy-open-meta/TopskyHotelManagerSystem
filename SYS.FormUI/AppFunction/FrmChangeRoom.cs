@@ -93,7 +93,6 @@ namespace SYS.FormUI
                 if (rno.Contains("ZT"))
                 {
                     sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 1080);
-                    //sum = Convert.ToDouble(Convert.ToInt32(RoomManager.DayByRoomNo(rno).ToString()) * 1080);
                 }
                 Spend s = new Spend()
                 {

@@ -46,8 +46,8 @@ namespace SYS.Application
         public bool InsertCustomerInfo(Custo custo)
         {
             Encrypt encrypt = new Encrypt();
-            string NewID = encrypt.EncryptStr(custo.CustoID);
-            string NewTel = encrypt.EncryptStr(custo.CustoTel);
+            string NewID = encrypt.Encryption(custo.CustoID);
+            string NewTel = encrypt.Encryption(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Insert(custo);
@@ -62,8 +62,8 @@ namespace SYS.Application
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
             Encrypt encrypt = new Encrypt();
-            string NewID = encrypt.EncryptStr(custo.CustoID);
-            string NewTel = encrypt.EncryptStr(custo.CustoTel);
+            string NewID = encrypt.Encryption(custo.CustoID);
+            string NewTel = encrypt.Encryption(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Update(a => new Custo()
@@ -82,6 +82,20 @@ namespace SYS.Application
         }
 
         /// <summary>
+        /// 更新客户类型(即会员等级)
+        /// </summary>
+        /// <param name="custoNo"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public bool UpdCustomerTypeByCustoNo(string custoNo,int userType)
+        {
+            return base.Update(a => new Custo()
+            {
+                CustoType = userType
+            }, a => a.CustoNo.Equals(custoNo));
+        }
+
+        /// <summary>
         /// 查询酒店盈利情况
         /// </summary>
         /// <returns></returns>
@@ -90,6 +104,8 @@ namespace SYS.Application
             List<CustoSpend> custoSpends = new List<CustoSpend>();
             string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
             MySqlDataReader dr = DBHelper.ExecuteReader(sql);
+            var listDates = new List<DateTime>();
+
             while (dr.Read())
             {
                 CustoSpend cso = new CustoSpend();
@@ -125,10 +141,10 @@ namespace SYS.Application
             custos.ForEach(source =>
             {
                 //解密身份证号码
-                var sourceStr = source.CustoID.Contains(":") ? encrypt.DeEncryptStr(source.CustoID) : source.CustoID;
+                var sourceStr = source.CustoID.Contains("·") ? encrypt.Decryption(source.CustoID) : source.CustoID;
                 source.CustoID = sourceStr;
                 //解密联系方式
-                var sourceTelStr = source.CustoTel.Contains(":") ? encrypt.DeEncryptStr(source.CustoTel) : source.CustoTel;
+                var sourceTelStr = source.CustoTel.Contains("·") ? encrypt.Decryption(source.CustoTel) : source.CustoTel;
                 source.CustoTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
@@ -166,10 +182,10 @@ namespace SYS.Application
             var custoType = base.Change<CustoType>().GetSingle(a => a.UserType == c.CustoType);
             c.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
             //解密身份证号码
-            var sourceStr = c.CustoID.Contains(":") ? encrypt.DeEncryptStr(c.CustoID) : c.CustoID;
+            var sourceStr = c.CustoID.Contains("·") ? encrypt.Decryption(c.CustoID) : c.CustoID;
             c.CustoID = sourceStr;
             //解密联系方式
-            var sourceTelStr = c.CustoTel.Contains(":") ? encrypt.DeEncryptStr(c.CustoTel) : c.CustoTel;
+            var sourceTelStr = c.CustoTel.Contains("·") ? encrypt.Decryption(c.CustoTel) : c.CustoTel;
             c.CustoTel = sourceTelStr;
             return c;
         }

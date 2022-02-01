@@ -56,6 +56,7 @@
       <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -67,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\SpendConsts.cs" />
     <Compile Include="Customer\PassPortType.cs" />
     <Compile Include="Customer\SexType.cs" />
     <Compile Include="Util\ApplicationVersionUtil.cs" />
@@ -74,10 +76,12 @@
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\CounterRuleConsts.cs" />
     <Compile Include="Util\DBHelper.cs" />
+    <Compile Include="Util\HttpHelper.cs" />
     <Compile Include="Util\IDCardUtil.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Worker\GBType.cs" />
+    <Compile Include="Worker\WorkerPic.cs" />
     <Compile Include="Zero\Admin.cs" />
     <Compile Include="Zero\AdminInfo.cs" />
     <Compile Include="Business\Cash.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="Worker\WorkerHistory.cs" />
     <Compile Include="Business\Wti.cs" />
     <Compile Include="Zero\Position.cs" />
+    <Compile Include="Zero\VipRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\MySql.Data.dll" />

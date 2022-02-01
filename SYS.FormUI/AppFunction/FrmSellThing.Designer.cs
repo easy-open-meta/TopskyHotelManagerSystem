@@ -36,6 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSellThing));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPrice = new Sunny.UI.UITextBox();
@@ -47,6 +49,16 @@
             this.txtSellNo = new Sunny.UI.UITextBox();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.dgvRoomSell = new Sunny.UI.UIDataGridView();
+            this.dgvSellthing = new Sunny.UI.UIDataGridView();
+            this.btnAdd = new Sunny.UI.UIButton();
+            this.btnCancel = new Sunny.UI.UIButton();
+            this.btnFind = new Sunny.UI.UIButton();
+            this.txtFind = new Sunny.UI.UITextBox();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.txtRoomNo = new Sunny.UI.UITextBox();
+            this.lblState = new Sunny.UI.UILabel();
+            this.btnCheck = new Sunny.UI.UIButton();
             this.clRoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSpendName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +72,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSellthing = new Sunny.UI.UIDataGridView();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSellNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,15 +83,6 @@
             this.clSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new Sunny.UI.UIButton();
-            this.btnCancel = new Sunny.UI.UIButton();
-            this.btnFind = new Sunny.UI.UIButton();
-            this.txtFind = new Sunny.UI.UITextBox();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
-            this.txtRoomNo = new Sunny.UI.UITextBox();
-            this.lblState = new Sunny.UI.UILabel();
-            this.btnCheck = new Sunny.UI.UIButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomSell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellthing)).BeginInit();
@@ -120,6 +123,7 @@
             this.txtPrice.Size = new System.Drawing.Size(116, 29);
             this.txtPrice.Style = Sunny.UI.UIStyle.Custom;
             this.txtPrice.TabIndex = 30;
+            this.txtPrice.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel6
             // 
@@ -150,6 +154,7 @@
             this.nudNum.StyleCustomMode = true;
             this.nudNum.TabIndex = 25;
             this.nudNum.Text = null;
+            this.nudNum.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.nudNum.Value = 0D;
             this.nudNum.ValueChanged += new Sunny.UI.UIDoubleUpDown.OnValueChanged(this.nudNum_ValueChanged);
             // 
@@ -181,6 +186,7 @@
             this.txtSellName.Size = new System.Drawing.Size(145, 29);
             this.txtSellName.Style = Sunny.UI.UIStyle.Custom;
             this.txtSellName.TabIndex = 27;
+            this.txtSellName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel4
             // 
@@ -210,6 +216,7 @@
             this.txtSellNo.Size = new System.Drawing.Size(145, 29);
             this.txtSellNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtSellNo.TabIndex = 25;
+            this.txtSellNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel3
             // 
@@ -237,7 +244,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRoomSell.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -256,7 +263,8 @@
             this.Column6,
             this.Column7,
             this.Column9,
-            this.Column10});
+            this.Column10,
+            this.Column11});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -271,9 +279,18 @@
             this.dgvRoomSell.Location = new System.Drawing.Point(496, 218);
             this.dgvRoomSell.Name = "dgvRoomSell";
             this.dgvRoomSell.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRoomSell.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRoomSell.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvRoomSell.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRoomSell.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvRoomSell.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRoomSell.RowTemplate.Height = 29;
             this.dgvRoomSell.SelectedIndex = -1;
             this.dgvRoomSell.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -282,6 +299,202 @@
             this.dgvRoomSell.Size = new System.Drawing.Size(573, 269);
             this.dgvRoomSell.Style = Sunny.UI.UIStyle.Custom;
             this.dgvRoomSell.TabIndex = 15;
+            // 
+            // dgvSellthing
+            // 
+            this.dgvSellthing.AllowUserToAddRows = false;
+            this.dgvSellthing.AllowUserToDeleteRows = false;
+            this.dgvSellthing.AllowUserToResizeColumns = false;
+            this.dgvSellthing.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvSellthing.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSellthing.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSellthing.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSellthing.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSellthing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvSellthing.ColumnHeadersHeight = 32;
+            this.dgvSellthing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvSellthing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clSellNo,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.clSellName,
+            this.clSellPrice,
+            this.clFormat,
+            this.clStock});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSellthing.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvSellthing.EnableHeadersVisualStyles = false;
+            this.dgvSellthing.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.dgvSellthing.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.dgvSellthing.Location = new System.Drawing.Point(2, 88);
+            this.dgvSellthing.Name = "dgvSellthing";
+            this.dgvSellthing.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSellthing.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvSellthing.RowHeadersVisible = false;
+            this.dgvSellthing.RowHeight = 29;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvSellthing.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvSellthing.RowTemplate.Height = 29;
+            this.dgvSellthing.SelectedIndex = -1;
+            this.dgvSellthing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSellthing.ShowGridLine = true;
+            this.dgvSellthing.Size = new System.Drawing.Size(488, 399);
+            this.dgvSellthing.Style = Sunny.UI.UIStyle.Custom;
+            this.dgvSellthing.TabIndex = 16;
+            this.dgvSellthing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellthing_CellClick);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(496, 88);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Radius = 20;
+            this.btnAdd.Size = new System.Drawing.Size(115, 39);
+            this.btnAdd.Style = Sunny.UI.UIStyle.Custom;
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "确定添加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnCancel.Location = new System.Drawing.Point(496, 176);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Radius = 20;
+            this.btnCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnCancel.Style = Sunny.UI.UIStyle.Custom;
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "撤回添加";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnFind
+            // 
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnFind.Location = new System.Drawing.Point(414, 49);
+            this.btnFind.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Radius = 20;
+            this.btnFind.Size = new System.Drawing.Size(101, 28);
+            this.btnFind.Style = Sunny.UI.UIStyle.Custom;
+            this.btnFind.TabIndex = 19;
+            this.btnFind.Text = "查     找";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // txtFind
+            // 
+            this.txtFind.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind.FillColor = System.Drawing.Color.White;
+            this.txtFind.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.txtFind.Location = new System.Drawing.Point(210, 49);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFind.Maximum = 2147483647D;
+            this.txtFind.Minimum = -2147483648D;
+            this.txtFind.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Padding = new System.Windows.Forms.Padding(5);
+            this.txtFind.Radius = 20;
+            this.txtFind.Size = new System.Drawing.Size(197, 29);
+            this.txtFind.Style = Sunny.UI.UIStyle.Custom;
+            this.txtFind.TabIndex = 20;
+            this.txtFind.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel1.Location = new System.Drawing.Point(78, 49);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(125, 29);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel1.TabIndex = 21;
+            this.uiLabel1.Text = "要查找的商品：";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel2
+            // 
+            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel2.Location = new System.Drawing.Point(544, 48);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(92, 29);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel2.TabIndex = 22;
+            this.uiLabel2.Text = "消费房号：";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtRoomNo
+            // 
+            this.txtRoomNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtRoomNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRoomNo.FillColor = System.Drawing.Color.White;
+            this.txtRoomNo.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.txtRoomNo.Location = new System.Drawing.Point(634, 48);
+            this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomNo.Maximum = 2147483647D;
+            this.txtRoomNo.Minimum = -2147483648D;
+            this.txtRoomNo.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtRoomNo.Name = "txtRoomNo";
+            this.txtRoomNo.Padding = new System.Windows.Forms.Padding(5);
+            this.txtRoomNo.Radius = 20;
+            this.txtRoomNo.Size = new System.Drawing.Size(134, 29);
+            this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
+            this.txtRoomNo.TabIndex = 23;
+            this.txtRoomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtRoomNo.Validated += new System.EventHandler(this.txtRoomNo_Validated);
+            this.txtRoomNo.TextChanged += new System.EventHandler(this.txtRoomNo_TextChanged);
+            // 
+            // lblState
+            // 
+            this.lblState.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblState.Location = new System.Drawing.Point(864, 49);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(130, 29);
+            this.lblState.Style = Sunny.UI.UIStyle.Custom;
+            this.lblState.TabIndex = 24;
+            this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblState.Visible = false;
+            this.lblState.Click += new System.EventHandler(this.lblState_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheck.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnCheck.Location = new System.Drawing.Point(775, 49);
+            this.btnCheck.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Radius = 20;
+            this.btnCheck.Size = new System.Drawing.Size(83, 28);
+            this.btnCheck.Style = Sunny.UI.UIStyle.Custom;
+            this.btnCheck.TabIndex = 25;
+            this.btnCheck.Text = "可否消费";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // clRoomNo
             // 
@@ -317,7 +530,7 @@
             // 
             // clSpendPrice
             // 
-            this.clSpendPrice.DataPropertyName = "SpendPrice";
+            this.clSpendPrice.DataPropertyName = "SpendPriceStr";
             this.clSpendPrice.FillWeight = 102.6831F;
             this.clSpendPrice.HeaderText = "单价";
             this.clSpendPrice.Name = "clSpendPrice";
@@ -325,7 +538,7 @@
             // 
             // clSpendMoney
             // 
-            this.clSpendMoney.DataPropertyName = "SpendMoney";
+            this.clSpendMoney.DataPropertyName = "SpendMoneyStr";
             this.clSpendMoney.FillWeight = 102.6831F;
             this.clSpendMoney.HeaderText = "总额";
             this.clSpendMoney.Name = "clSpendMoney";
@@ -387,63 +600,13 @@
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
             // 
-            // dgvSellthing
+            // Column11
             // 
-            this.dgvSellthing.AllowUserToAddRows = false;
-            this.dgvSellthing.AllowUserToDeleteRows = false;
-            this.dgvSellthing.AllowUserToResizeColumns = false;
-            this.dgvSellthing.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvSellthing.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvSellthing.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSellthing.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSellthing.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSellthing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvSellthing.ColumnHeadersHeight = 32;
-            this.dgvSellthing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvSellthing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clSellNo,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.clSellName,
-            this.clSellPrice,
-            this.clFormat,
-            this.clStock});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSellthing.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvSellthing.EnableHeadersVisualStyles = false;
-            this.dgvSellthing.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.dgvSellthing.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgvSellthing.Location = new System.Drawing.Point(2, 88);
-            this.dgvSellthing.Name = "dgvSellthing";
-            this.dgvSellthing.ReadOnly = true;
-            this.dgvSellthing.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dgvSellthing.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvSellthing.RowTemplate.Height = 29;
-            this.dgvSellthing.SelectedIndex = -1;
-            this.dgvSellthing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSellthing.ShowGridLine = true;
-            this.dgvSellthing.Size = new System.Drawing.Size(488, 399);
-            this.dgvSellthing.Style = Sunny.UI.UIStyle.Custom;
-            this.dgvSellthing.TabIndex = 16;
-            this.dgvSellthing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellthing_CellClick);
+            this.Column11.DataPropertyName = "SpendStateNm";
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Visible = false;
             // 
             // clSellNo
             // 
@@ -501,7 +664,7 @@
             // 
             // clSellPrice
             // 
-            this.clSellPrice.DataPropertyName = "SellPrice";
+            this.clSellPrice.DataPropertyName = "SellPriceStr";
             this.clSellPrice.HeaderText = "价格(元)";
             this.clSellPrice.Name = "clSellPrice";
             this.clSellPrice.ReadOnly = true;
@@ -520,133 +683,6 @@
             this.clStock.HeaderText = "库存";
             this.clStock.Name = "clStock";
             this.clStock.ReadOnly = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(496, 88);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Radius = 20;
-            this.btnAdd.Size = new System.Drawing.Size(115, 39);
-            this.btnAdd.Style = Sunny.UI.UIStyle.Custom;
-            this.btnAdd.TabIndex = 17;
-            this.btnAdd.Text = "确定添加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnCancel.Location = new System.Drawing.Point(496, 176);
-            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Radius = 20;
-            this.btnCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnCancel.Style = Sunny.UI.UIStyle.Custom;
-            this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "撤回添加";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnFind
-            // 
-            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFind.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnFind.Location = new System.Drawing.Point(414, 49);
-            this.btnFind.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Radius = 20;
-            this.btnFind.Size = new System.Drawing.Size(101, 28);
-            this.btnFind.Style = Sunny.UI.UIStyle.Custom;
-            this.btnFind.TabIndex = 19;
-            this.btnFind.Text = "查     找";
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // txtFind
-            // 
-            this.txtFind.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind.FillColor = System.Drawing.Color.White;
-            this.txtFind.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtFind.Location = new System.Drawing.Point(210, 49);
-            this.txtFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtFind.Maximum = 2147483647D;
-            this.txtFind.Minimum = -2147483648D;
-            this.txtFind.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Padding = new System.Windows.Forms.Padding(5);
-            this.txtFind.Radius = 20;
-            this.txtFind.Size = new System.Drawing.Size(197, 29);
-            this.txtFind.Style = Sunny.UI.UIStyle.Custom;
-            this.txtFind.TabIndex = 20;
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel1.Location = new System.Drawing.Point(78, 49);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(125, 29);
-            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel1.TabIndex = 21;
-            this.uiLabel1.Text = "要查找的商品：";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel2
-            // 
-            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.Location = new System.Drawing.Point(544, 48);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(92, 29);
-            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel2.TabIndex = 22;
-            this.uiLabel2.Text = "消费房号：";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtRoomNo
-            // 
-            this.txtRoomNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtRoomNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRoomNo.FillColor = System.Drawing.Color.White;
-            this.txtRoomNo.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtRoomNo.Location = new System.Drawing.Point(634, 48);
-            this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRoomNo.Maximum = 2147483647D;
-            this.txtRoomNo.Minimum = -2147483648D;
-            this.txtRoomNo.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtRoomNo.Name = "txtRoomNo";
-            this.txtRoomNo.Padding = new System.Windows.Forms.Padding(5);
-            this.txtRoomNo.Radius = 20;
-            this.txtRoomNo.Size = new System.Drawing.Size(134, 29);
-            this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
-            this.txtRoomNo.TabIndex = 23;
-            this.txtRoomNo.TextChanged += new System.EventHandler(this.txtRoomNo_TextChanged);
-            this.txtRoomNo.Validated += new System.EventHandler(this.txtRoomNo_Validated);
-            // 
-            // lblState
-            // 
-            this.lblState.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblState.Location = new System.Drawing.Point(864, 49);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(130, 29);
-            this.lblState.Style = Sunny.UI.UIStyle.Custom;
-            this.lblState.TabIndex = 24;
-            this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblState.Visible = false;
-            this.lblState.Click += new System.EventHandler(this.lblState_Click);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheck.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnCheck.Location = new System.Drawing.Point(775, 49);
-            this.btnCheck.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Radius = 20;
-            this.btnCheck.Size = new System.Drawing.Size(83, 28);
-            this.btnCheck.Style = Sunny.UI.UIStyle.Custom;
-            this.btnCheck.TabIndex = 25;
-            this.btnCheck.Text = "可否消费";
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // FrmSellThing
             // 
@@ -703,16 +739,6 @@
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITextBox txtRoomNo;
         private Sunny.UI.UILabel lblState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSellPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clFormat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clStock;
         private Sunny.UI.UIButton btnCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn clRoomNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCustoNo;
@@ -727,5 +753,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSellPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clFormat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clStock;
     }
 }

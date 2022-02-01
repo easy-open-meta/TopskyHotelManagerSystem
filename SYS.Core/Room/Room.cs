@@ -23,6 +23,7 @@
  *模块说明：房间类
  */
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SYS.Core
 {
@@ -64,6 +65,11 @@ namespace SYS.Core
         /// 房间单价
         /// </summary>
         public decimal RoomMoney { get; set; }
+        /// <summary>
+        /// 房间押金
+        /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "deposit")]
+        public decimal RoomDeposit { get; set; }
         /// <summary>
         /// 房间位置
         /// </summary>

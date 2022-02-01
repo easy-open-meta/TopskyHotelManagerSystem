@@ -84,15 +84,15 @@ namespace SYS.FormUI
         private void LoadSpendInfoByRoomNo(string room)
         {
             List<Spend> lstSource = new SpendService().SelectSpendByRoomNo(room);
-            this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
+            this.dgvRoomSell.DataSource = lstSource;
         }
 
         private void LoadSpendInfoByCustoNo(string custoNo)
         {
             List<Spend> lstSource = new SpendService().SelectSpendByCustoNo(custoNo);
-            this.dgvRoomSell.DataSource = lstSource;
             this.dgvRoomSell.AutoGenerateColumns = false;
+            this.dgvRoomSell.DataSource = lstSource;
         }
         #endregion
 
@@ -100,8 +100,8 @@ namespace SYS.FormUI
         public void LoadSellThingInfo()
         {
             List<SellThing> lstSource = new SellService().SelectSellThingAll();
-            this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
+            this.dgvSellthing.DataSource = lstSource;
 
         }
         #endregion
@@ -175,7 +175,7 @@ namespace SYS.FormUI
                         SpendPrice = Convert.ToDecimal(txtPrice.Text),
                         SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value),
                         SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                        MoneyState = "未结算",
+                        MoneyState = SpendConsts.UnSettle,
                     };
                     bool m = new SpendService().InsertSpendInfo(s);
                     if (m == true)

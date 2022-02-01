@@ -61,7 +61,7 @@ namespace SYS.FormUI
                 AdminInfo.Account = a.AdminAccount;
                 AdminInfo.isAdmin = a.IsAdmin == 0 ? false : true;
                 FrmBackgroundSystem fm = new FrmBackgroundSystem();
-                fm.Show();//打开主窗体
+                fm.ShowDialog(this);//打开主窗体
                 this.Hide();//隐藏登录窗体
                 RecordHelper.Record(AdminInfo.Account + "于" + DateTime.Now + "成功登入后台管理系统！", 3);
             }
@@ -80,6 +80,7 @@ namespace SYS.FormUI
 
         private void FrmAdminEnter_Load(object sender, EventArgs e)
         {
+            this.Owner.Hide();
             txtAccount.Text = "admin";
             txtPassword.Text = "admin";
         }
