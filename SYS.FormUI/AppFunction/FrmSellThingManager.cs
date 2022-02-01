@@ -54,8 +54,8 @@ namespace SYS.FormUI
             }
             string SellId = new CounterHelper().GetNewId(CounterRuleConsts.SellId);
             txtSellNo.Text = SellId;
-            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
             dgvSellthing.AutoGenerateColumns = false;
+            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
         }
 
         private void btnFind_Click(object sender, EventArgs e)

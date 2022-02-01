@@ -39,6 +39,7 @@
             this.lblCustoNo = new System.Windows.Forms.Label();
             this.lblRoomType = new System.Windows.Forms.Label();
             this.lblRoomNo = new System.Windows.Forms.Label();
+            this.uttTips = new Sunny.UI.UIToolTip(this.components);
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,48 +53,48 @@
             this.tsmiSelectUserInfo,
             this.tsmiChangeState});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(149, 136);
+            this.cmsMain.Size = new System.Drawing.Size(153, 136);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiReserRoom
             // 
             this.tsmiReserRoom.Name = "tsmiReserRoom";
-            this.tsmiReserRoom.Size = new System.Drawing.Size(148, 22);
+            this.tsmiReserRoom.Size = new System.Drawing.Size(152, 22);
             this.tsmiReserRoom.Text = "预约房间";
             this.tsmiReserRoom.Click += new System.EventHandler(this.tsmiReserRoom_Click);
             // 
             // tsmiCheckIn
             // 
             this.tsmiCheckIn.Name = "tsmiCheckIn";
-            this.tsmiCheckIn.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCheckIn.Size = new System.Drawing.Size(152, 22);
             this.tsmiCheckIn.Text = "入住房间";
             this.tsmiCheckIn.Click += new System.EventHandler(this.tsmiCheckIn_Click);
             // 
             // tsmiCheckOut
             // 
             this.tsmiCheckOut.Name = "tsmiCheckOut";
-            this.tsmiCheckOut.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCheckOut.Size = new System.Drawing.Size(152, 22);
             this.tsmiCheckOut.Text = "结算退房";
             this.tsmiCheckOut.Click += new System.EventHandler(this.tsmiCheckOut_Click);
             // 
             // tsmiChangeRoom
             // 
             this.tsmiChangeRoom.Name = "tsmiChangeRoom";
-            this.tsmiChangeRoom.Size = new System.Drawing.Size(148, 22);
+            this.tsmiChangeRoom.Size = new System.Drawing.Size(152, 22);
             this.tsmiChangeRoom.Text = "转换房间";
             this.tsmiChangeRoom.Click += new System.EventHandler(this.tsmiChangeRoom_Click);
             // 
             // tsmiSelectUserInfo
             // 
             this.tsmiSelectUserInfo.Name = "tsmiSelectUserInfo";
-            this.tsmiSelectUserInfo.Size = new System.Drawing.Size(148, 22);
+            this.tsmiSelectUserInfo.Size = new System.Drawing.Size(152, 22);
             this.tsmiSelectUserInfo.Text = "查看用户信息";
             this.tsmiSelectUserInfo.Click += new System.EventHandler(this.tsmiSelectUserInfo_Click);
             // 
             // tsmiChangeState
             // 
             this.tsmiChangeState.Name = "tsmiChangeState";
-            this.tsmiChangeState.Size = new System.Drawing.Size(148, 22);
+            this.tsmiChangeState.Size = new System.Drawing.Size(152, 22);
             this.tsmiChangeState.Text = "修改房间状态";
             this.tsmiChangeState.Click += new System.EventHandler(this.tsmiChangeState_Click);
             // 
@@ -137,6 +138,14 @@
             this.lblRoomNo.Click += new System.EventHandler(this.lblRoomNo_Click);
             this.lblRoomNo.MouseHover += new System.EventHandler(this.lblRoomNo_MouseHover);
             // 
+            // uttTips
+            // 
+            this.uttTips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.uttTips.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.uttTips.OwnerDraw = true;
+            this.uttTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.uttTips.ToolTipTitle = "点击提示";
+            // 
             // ucRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -151,11 +160,12 @@
             this.DoubleBuffered = true;
             this.Name = "ucRoomList";
             this.Size = new System.Drawing.Size(95, 79);
+            this.uttTips.SetToolTip(this, "点击查看房间信息");
             this.Load += new System.EventHandler(this.ucRoomList_Load);
             this.SizeChanged += new System.EventHandler(this.ucRoomList_SizeChanged);
             this.Click += new System.EventHandler(this.ucRoomList_Click);
             this.DoubleClick += new System.EventHandler(this.ucRoomList_DoubleClick);
-            this.MouseEnter += new System.EventHandler(this.ucRoomList_MouseEnter);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ucRoomList_MouseClick);
             this.MouseLeave += new System.EventHandler(this.ucRoomList_MouseLeave);
             this.MouseHover += new System.EventHandler(this.ucRoomList_MouseHover);
             this.cmsMain.ResumeLayout(false);
@@ -175,5 +185,6 @@
         public System.Windows.Forms.Label lblCustoNo;
         public System.Windows.Forms.Label lblRoomType;
         public System.Windows.Forms.Label lblRoomNo;
+        private Sunny.UI.UIToolTip uttTips;
     }
 }

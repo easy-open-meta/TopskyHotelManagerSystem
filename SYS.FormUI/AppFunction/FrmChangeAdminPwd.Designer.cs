@@ -79,6 +79,7 @@ namespace SYS.FormUI
             this.lgCheckNewPwd.Location = new System.Drawing.Point(369, 145);
             this.lgCheckNewPwd.MinimumSize = new System.Drawing.Size(1, 1);
             this.lgCheckNewPwd.Name = "lgCheckNewPwd";
+            this.lgCheckNewPwd.OnCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
             this.lgCheckNewPwd.Radius = 35;
             this.lgCheckNewPwd.Size = new System.Drawing.Size(35, 35);
             this.lgCheckNewPwd.TabIndex = 137;
@@ -92,6 +93,7 @@ namespace SYS.FormUI
             this.lgCheckOldPwd.Location = new System.Drawing.Point(369, 57);
             this.lgCheckOldPwd.MinimumSize = new System.Drawing.Size(1, 1);
             this.lgCheckOldPwd.Name = "lgCheckOldPwd";
+            this.lgCheckOldPwd.OnCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
             this.lgCheckOldPwd.Radius = 35;
             this.lgCheckOldPwd.Size = new System.Drawing.Size(35, 35);
             this.lgCheckOldPwd.TabIndex = 136;
@@ -116,8 +118,9 @@ namespace SYS.FormUI
             this.txtOldPwd.Style = Sunny.UI.UIStyle.Custom;
             this.txtOldPwd.StyleCustomMode = true;
             this.txtOldPwd.TabIndex = 135;
-            this.txtOldPwd.TextChanged += new System.EventHandler(this.txtOldPwd_TextChanged);
+            this.txtOldPwd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtOldPwd.Validated += new System.EventHandler(this.txtOldPwd_Validated);
+            this.txtOldPwd.TextChanged += new System.EventHandler(this.txtOldPwd_TextChanged);
             // 
             // txtNewPwd
             // 
@@ -136,7 +139,8 @@ namespace SYS.FormUI
             this.txtNewPwd.Size = new System.Drawing.Size(272, 35);
             this.txtNewPwd.Style = Sunny.UI.UIStyle.Custom;
             this.txtNewPwd.StyleCustomMode = true;
-            this.txtNewPwd.TabIndex = 134;
+            this.txtNewPwd.TabIndex = 136;
+            this.txtNewPwd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 

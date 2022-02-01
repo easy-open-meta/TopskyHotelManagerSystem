@@ -54,6 +54,7 @@ namespace SYS.FormUI
             txtMoney.Text = r.RoomMoney.ToString();
             txtRoomPosition.Text = r.RoomPosition;
             txtState.Text = r.RoomState;
+            txtDeposit.Text = r.RoomDeposit.ToString();
             List<Custo> ctos = new CustoService().SelectCustoAll();
             List<Room> roms = new RoomService().SelectCanUseRoomAll();
             for (int i = 0; i < roms.Count; i++)
@@ -185,6 +186,10 @@ namespace SYS.FormUI
 
             try
             {
+                if (string.IsNullOrEmpty(txtCustoNo.Text))
+                {
+                    return;
+                }
                 Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
                 txtCustoName.Text = c.CustoName;
                 txtCustoTel.Text = c.CustoTel;

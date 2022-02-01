@@ -51,6 +51,7 @@
             // 
             // cbCustoType
             // 
+            this.cbCustoType.DataSource = null;
             this.cbCustoType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbCustoType.FillColor = System.Drawing.Color.White;
             this.cbCustoType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -58,7 +59,7 @@
             this.cbCustoType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCustoType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbCustoType.Name = "cbCustoType";
-            this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbCustoType.Radius = 20;
             this.cbCustoType.ReadOnly = true;
             this.cbCustoType.Size = new System.Drawing.Size(250, 35);
@@ -69,6 +70,7 @@
             // 
             // cbPassportType
             // 
+            this.cbPassportType.DataSource = null;
             this.cbPassportType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbPassportType.FillColor = System.Drawing.Color.White;
             this.cbPassportType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -76,7 +78,7 @@
             this.cbPassportType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPassportType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbPassportType.Name = "cbPassportType";
-            this.cbPassportType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbPassportType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbPassportType.Radius = 20;
             this.cbPassportType.ReadOnly = true;
             this.cbPassportType.Size = new System.Drawing.Size(250, 35);
@@ -86,6 +88,7 @@
             // 
             // cbSex
             // 
+            this.cbSex.DataSource = null;
             this.cbSex.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbSex.FillColor = System.Drawing.Color.White;
             this.cbSex.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -93,7 +96,7 @@
             this.cbSex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSex.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbSex.Name = "cbSex";
-            this.cbSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbSex.Radius = 20;
             this.cbSex.ReadOnly = true;
             this.cbSex.Size = new System.Drawing.Size(250, 35);
@@ -119,6 +122,7 @@
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;
             this.txtCustoNo.TabIndex = 125;
+            this.txtCustoNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCustoName
             // 
@@ -138,6 +142,7 @@
             this.txtCustoName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoName.StyleCustomMode = true;
             this.txtCustoName.TabIndex = 124;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCardID
             // 
@@ -157,6 +162,7 @@
             this.txtCardID.Style = Sunny.UI.UIStyle.Custom;
             this.txtCardID.StyleCustomMode = true;
             this.txtCardID.TabIndex = 123;
+            this.txtCardID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCustoTel
             // 
@@ -176,6 +182,7 @@
             this.txtCustoTel.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoTel.StyleCustomMode = true;
             this.txtCustoTel.TabIndex = 122;
+            this.txtCustoTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpBirthday
             // 
@@ -187,7 +194,7 @@
             this.dtpBirthday.MaxLength = 10;
             this.dtpBirthday.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpBirthday.Radius = 20;
             this.dtpBirthday.ReadOnly = true;
             this.dtpBirthday.Size = new System.Drawing.Size(250, 31);
@@ -217,6 +224,7 @@
             this.txtCustoAdress.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoAdress.StyleCustomMode = true;
             this.txtCustoAdress.TabIndex = 120;
+            this.txtCustoAdress.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -284,9 +292,9 @@
             this.label16.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(29, 160);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 25);
+            this.label16.Size = new System.Drawing.Size(74, 25);
             this.label16.TabIndex = 112;
-            this.label16.Text = "性      别";
+            this.label16.Text = "性    别";
             // 
             // label17
             // 

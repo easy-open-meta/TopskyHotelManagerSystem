@@ -32,6 +32,10 @@ namespace SYS.FormUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMySpace));
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tpWorkerInfo = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnUpdWorker = new Sunny.UI.UIButton();
+            this.cbWorkerNation = new Sunny.UI.UIComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cboWorkerClub = new Sunny.UI.UIComboBox();
             this.cboWorkerPosition = new Sunny.UI.UIComboBox();
             this.cboSex = new Sunny.UI.UIComboBox();
@@ -45,23 +49,25 @@ namespace SYS.FormUI
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.cbWorkerNation = new Sunny.UI.UIComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpSecurity = new System.Windows.Forms.TabPage();
+            this.btnUpdPwd = new Sunny.UI.UIButton();
+            this.lblNewMsg = new Sunny.UI.UILabel();
+            this.lblOldMsg = new Sunny.UI.UILabel();
+            this.lgCheckNewPwd = new Sunny.UI.UILight();
+            this.lgCheckOldPwd = new Sunny.UI.UILight();
             this.txtOldPwd = new Sunny.UI.UITextBox();
             this.txtNewPwd = new Sunny.UI.UITextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnUpdWorker = new Sunny.UI.UIButton();
-            this.lgCheckOldPwd = new Sunny.UI.UILight();
-            this.lgCheckNewPwd = new Sunny.UI.UILight();
-            this.lblOldMsg = new Sunny.UI.UILabel();
-            this.lblNewMsg = new Sunny.UI.UILabel();
-            this.btnUpdPwd = new Sunny.UI.UIButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tpPhoto = new System.Windows.Forms.TabPage();
+            this.picWorkerPic = new System.Windows.Forms.PictureBox();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.openPic = new System.Windows.Forms.OpenFileDialog();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpWorkerInfo.SuspendLayout();
             this.tpSecurity.SuspendLayout();
+            this.tpPhoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).BeginInit();
             this.SuspendLayout();
             // 
             // uiTabControlMenu1
@@ -69,6 +75,7 @@ namespace SYS.FormUI
             this.uiTabControlMenu1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.uiTabControlMenu1.Controls.Add(this.tpWorkerInfo);
             this.uiTabControlMenu1.Controls.Add(this.tpSecurity);
+            this.uiTabControlMenu1.Controls.Add(this.tpPhoto);
             this.uiTabControlMenu1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.uiTabControlMenu1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiTabControlMenu1.ItemSize = new System.Drawing.Size(40, 200);
@@ -109,8 +116,60 @@ namespace SYS.FormUI
             this.tpWorkerInfo.Text = "个人信息";
             this.tpWorkerInfo.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(26, 168);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 25);
+            this.label7.TabIndex = 131;
+            this.label7.Text = "联系方式";
+            // 
+            // btnUpdWorker
+            // 
+            this.btnUpdWorker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdWorker.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnUpdWorker.Location = new System.Drawing.Point(530, 267);
+            this.btnUpdWorker.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnUpdWorker.Name = "btnUpdWorker";
+            this.btnUpdWorker.Radius = 20;
+            this.btnUpdWorker.Size = new System.Drawing.Size(109, 42);
+            this.btnUpdWorker.TabIndex = 130;
+            this.btnUpdWorker.Text = "修    改";
+            this.btnUpdWorker.Click += new System.EventHandler(this.btnUpdWorker_Click);
+            // 
+            // cbWorkerNation
+            // 
+            this.cbWorkerNation.DataSource = null;
+            this.cbWorkerNation.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbWorkerNation.FillColor = System.Drawing.Color.White;
+            this.cbWorkerNation.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.cbWorkerNation.Location = new System.Drawing.Point(434, 113);
+            this.cbWorkerNation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbWorkerNation.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbWorkerNation.Name = "cbWorkerNation";
+            this.cbWorkerNation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cbWorkerNation.Radius = 20;
+            this.cbWorkerNation.Size = new System.Drawing.Size(203, 35);
+            this.cbWorkerNation.Style = Sunny.UI.UIStyle.Custom;
+            this.cbWorkerNation.TabIndex = 129;
+            this.cbWorkerNation.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbWorkerNation.SelectedIndexChanged += new System.EventHandler(this.cbWorkerNation_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(337, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.TabIndex = 128;
+            this.label1.Text = "民      族";
+            // 
             // cboWorkerClub
             // 
+            this.cboWorkerClub.DataSource = null;
             this.cboWorkerClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerClub.FillColor = System.Drawing.Color.White;
             this.cboWorkerClub.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -118,7 +177,7 @@ namespace SYS.FormUI
             this.cboWorkerClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboWorkerClub.Name = "cboWorkerClub";
-            this.cboWorkerClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboWorkerClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboWorkerClub.Radius = 20;
             this.cboWorkerClub.ReadOnly = true;
             this.cboWorkerClub.Size = new System.Drawing.Size(203, 35);
@@ -129,6 +188,7 @@ namespace SYS.FormUI
             // 
             // cboWorkerPosition
             // 
+            this.cboWorkerPosition.DataSource = null;
             this.cboWorkerPosition.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerPosition.FillColor = System.Drawing.Color.White;
             this.cboWorkerPosition.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -136,7 +196,7 @@ namespace SYS.FormUI
             this.cboWorkerPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerPosition.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboWorkerPosition.Name = "cboWorkerPosition";
-            this.cboWorkerPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboWorkerPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboWorkerPosition.Radius = 20;
             this.cboWorkerPosition.ReadOnly = true;
             this.cboWorkerPosition.Size = new System.Drawing.Size(203, 35);
@@ -146,6 +206,7 @@ namespace SYS.FormUI
             // 
             // cboSex
             // 
+            this.cboSex.DataSource = null;
             this.cboSex.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboSex.FillColor = System.Drawing.Color.White;
             this.cboSex.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -153,7 +214,7 @@ namespace SYS.FormUI
             this.cboSex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboSex.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboSex.Name = "cboSex";
-            this.cboSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboSex.Radius = 20;
             this.cboSex.Size = new System.Drawing.Size(203, 35);
             this.cboSex.Style = Sunny.UI.UIStyle.Custom;
@@ -178,6 +239,7 @@ namespace SYS.FormUI
             this.txtWorkerNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtWorkerNo.StyleCustomMode = true;
             this.txtWorkerNo.TabIndex = 122;
+            this.txtWorkerNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtWorkerName
             // 
@@ -196,6 +258,7 @@ namespace SYS.FormUI
             this.txtWorkerName.Style = Sunny.UI.UIStyle.Custom;
             this.txtWorkerName.StyleCustomMode = true;
             this.txtWorkerName.TabIndex = 121;
+            this.txtWorkerName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtTel
             // 
@@ -214,6 +277,7 @@ namespace SYS.FormUI
             this.txtTel.Style = Sunny.UI.UIStyle.Custom;
             this.txtTel.StyleCustomMode = true;
             this.txtTel.TabIndex = 119;
+            this.txtTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtTel.Watermark = "";
             // 
             // txtAddress
@@ -233,6 +297,7 @@ namespace SYS.FormUI
             this.txtAddress.Style = Sunny.UI.UIStyle.Custom;
             this.txtAddress.StyleCustomMode = true;
             this.txtAddress.TabIndex = 117;
+            this.txtAddress.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -294,33 +359,6 @@ namespace SYS.FormUI
             this.label32.TabIndex = 107;
             this.label32.Text = "员工编号";
             // 
-            // cbWorkerNation
-            // 
-            this.cbWorkerNation.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbWorkerNation.FillColor = System.Drawing.Color.White;
-            this.cbWorkerNation.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.cbWorkerNation.Location = new System.Drawing.Point(434, 113);
-            this.cbWorkerNation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbWorkerNation.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbWorkerNation.Name = "cbWorkerNation";
-            this.cbWorkerNation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.cbWorkerNation.Radius = 20;
-            this.cbWorkerNation.Size = new System.Drawing.Size(203, 35);
-            this.cbWorkerNation.Style = Sunny.UI.UIStyle.Custom;
-            this.cbWorkerNation.TabIndex = 129;
-            this.cbWorkerNation.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbWorkerNation.SelectedIndexChanged += new System.EventHandler(this.cbWorkerNation_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(337, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
-            this.label1.TabIndex = 128;
-            this.label1.Text = "民      族";
-            // 
             // tpSecurity
             // 
             this.tpSecurity.Controls.Add(this.btnUpdPwd);
@@ -334,11 +372,72 @@ namespace SYS.FormUI
             this.tpSecurity.Controls.Add(this.label6);
             this.tpSecurity.Location = new System.Drawing.Point(201, 0);
             this.tpSecurity.Name = "tpSecurity";
-            this.tpSecurity.Size = new System.Drawing.Size(663, 546);
+            this.tpSecurity.Size = new System.Drawing.Size(666, 546);
             this.tpSecurity.TabIndex = 2;
             this.tpSecurity.Text = "账号安全";
             this.tpSecurity.UseVisualStyleBackColor = true;
             this.tpSecurity.Click += new System.EventHandler(this.tpSecurity_Click);
+            // 
+            // btnUpdPwd
+            // 
+            this.btnUpdPwd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnUpdPwd.Location = new System.Drawing.Point(244, 260);
+            this.btnUpdPwd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnUpdPwd.Name = "btnUpdPwd";
+            this.btnUpdPwd.Radius = 20;
+            this.btnUpdPwd.Size = new System.Drawing.Size(175, 42);
+            this.btnUpdPwd.TabIndex = 131;
+            this.btnUpdPwd.Text = "修    改";
+            this.btnUpdPwd.Click += new System.EventHandler(this.btnUpdPwd_Click);
+            // 
+            // lblNewMsg
+            // 
+            this.lblNewMsg.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblNewMsg.Location = new System.Drawing.Point(209, 196);
+            this.lblNewMsg.Name = "lblNewMsg";
+            this.lblNewMsg.Size = new System.Drawing.Size(267, 23);
+            this.lblNewMsg.Style = Sunny.UI.UIStyle.Custom;
+            this.lblNewMsg.TabIndex = 130;
+            this.lblNewMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblOldMsg
+            // 
+            this.lblOldMsg.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblOldMsg.Location = new System.Drawing.Point(209, 105);
+            this.lblOldMsg.Name = "lblOldMsg";
+            this.lblOldMsg.Size = new System.Drawing.Size(267, 23);
+            this.lblOldMsg.Style = Sunny.UI.UIStyle.Custom;
+            this.lblOldMsg.TabIndex = 129;
+            this.lblOldMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lgCheckNewPwd
+            // 
+            this.lgCheckNewPwd.CenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
+            this.lgCheckNewPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lgCheckNewPwd.Location = new System.Drawing.Point(499, 144);
+            this.lgCheckNewPwd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lgCheckNewPwd.Name = "lgCheckNewPwd";
+            this.lgCheckNewPwd.OnCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
+            this.lgCheckNewPwd.Radius = 35;
+            this.lgCheckNewPwd.Size = new System.Drawing.Size(35, 35);
+            this.lgCheckNewPwd.TabIndex = 128;
+            this.lgCheckNewPwd.Text = "uiLight2";
+            this.lgCheckNewPwd.Visible = false;
+            // 
+            // lgCheckOldPwd
+            // 
+            this.lgCheckOldPwd.CenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
+            this.lgCheckOldPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lgCheckOldPwd.Location = new System.Drawing.Point(499, 56);
+            this.lgCheckOldPwd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lgCheckOldPwd.Name = "lgCheckOldPwd";
+            this.lgCheckOldPwd.OnCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
+            this.lgCheckOldPwd.Radius = 35;
+            this.lgCheckOldPwd.Size = new System.Drawing.Size(35, 35);
+            this.lgCheckOldPwd.TabIndex = 127;
+            this.lgCheckOldPwd.Text = "uiLight1";
+            this.lgCheckOldPwd.Visible = false;
             // 
             // txtOldPwd
             // 
@@ -358,8 +457,9 @@ namespace SYS.FormUI
             this.txtOldPwd.Style = Sunny.UI.UIStyle.Custom;
             this.txtOldPwd.StyleCustomMode = true;
             this.txtOldPwd.TabIndex = 126;
-            this.txtOldPwd.TextChanged += new System.EventHandler(this.txtOldPwd_TextChanged);
+            this.txtOldPwd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtOldPwd.Validated += new System.EventHandler(this.txtOldPwd_Validated);
+            this.txtOldPwd.TextChanged += new System.EventHandler(this.txtOldPwd_TextChanged);
             // 
             // txtNewPwd
             // 
@@ -379,6 +479,7 @@ namespace SYS.FormUI
             this.txtNewPwd.Style = Sunny.UI.UIStyle.Custom;
             this.txtNewPwd.StyleCustomMode = true;
             this.txtNewPwd.TabIndex = 125;
+            this.txtNewPwd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtNewPwd.Validated += new System.EventHandler(this.txtNewPwd_Validated);
             // 
             // label4
@@ -401,85 +502,46 @@ namespace SYS.FormUI
             this.label6.TabIndex = 123;
             this.label6.Text = "旧密码";
             // 
-            // btnUpdWorker
+            // tpPhoto
             // 
-            this.btnUpdWorker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdWorker.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnUpdWorker.Location = new System.Drawing.Point(530, 267);
-            this.btnUpdWorker.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnUpdWorker.Name = "btnUpdWorker";
-            this.btnUpdWorker.Radius = 20;
-            this.btnUpdWorker.Size = new System.Drawing.Size(109, 42);
-            this.btnUpdWorker.TabIndex = 130;
-            this.btnUpdWorker.Text = "修    改";
-            this.btnUpdWorker.Click += new System.EventHandler(this.btnUpdWorker_Click);
+            this.tpPhoto.Controls.Add(this.uiLabel1);
+            this.tpPhoto.Controls.Add(this.picWorkerPic);
+            this.tpPhoto.Location = new System.Drawing.Point(201, 0);
+            this.tpPhoto.Name = "tpPhoto";
+            this.tpPhoto.Size = new System.Drawing.Size(666, 546);
+            this.tpPhoto.TabIndex = 3;
+            this.tpPhoto.Text = "我的头像";
+            this.tpPhoto.UseVisualStyleBackColor = true;
             // 
-            // lgCheckOldPwd
+            // picWorkerPic
             // 
-            this.lgCheckOldPwd.CenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
-            this.lgCheckOldPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lgCheckOldPwd.Location = new System.Drawing.Point(499, 56);
-            this.lgCheckOldPwd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lgCheckOldPwd.Name = "lgCheckOldPwd";
-            this.lgCheckOldPwd.Radius = 35;
-            this.lgCheckOldPwd.Size = new System.Drawing.Size(35, 35);
-            this.lgCheckOldPwd.TabIndex = 127;
-            this.lgCheckOldPwd.Text = "uiLight1";
-            this.lgCheckOldPwd.Visible = false;
+            this.picWorkerPic.BackColor = System.Drawing.Color.Transparent;
+            this.picWorkerPic.BackgroundImage = global::SYS.FormUI.Properties.Resources.上传照片;
+            this.picWorkerPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picWorkerPic.Location = new System.Drawing.Point(250, 35);
+            this.picWorkerPic.Name = "picWorkerPic";
+            this.picWorkerPic.Size = new System.Drawing.Size(167, 211);
+            this.picWorkerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWorkerPic.TabIndex = 56;
+            this.picWorkerPic.TabStop = false;
+            this.picWorkerPic.Click += new System.EventHandler(this.picWorkerPic_Click);
             // 
-            // lgCheckNewPwd
+            // uiLabel1
             // 
-            this.lgCheckNewPwd.CenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(248)))), ((int)(((byte)(232)))));
-            this.lgCheckNewPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lgCheckNewPwd.Location = new System.Drawing.Point(499, 144);
-            this.lgCheckNewPwd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lgCheckNewPwd.Name = "lgCheckNewPwd";
-            this.lgCheckNewPwd.Radius = 35;
-            this.lgCheckNewPwd.Size = new System.Drawing.Size(35, 35);
-            this.lgCheckNewPwd.TabIndex = 128;
-            this.lgCheckNewPwd.Text = "uiLight2";
-            this.lgCheckNewPwd.Visible = false;
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.Red;
+            this.uiLabel1.Location = new System.Drawing.Point(128, 400);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(410, 23);
+            this.uiLabel1.TabIndex = 57;
+            this.uiLabel1.Text = "点击上方头像框即可更换头像，记得不要超过2MB哦~";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblOldMsg
+            // openPic
             // 
-            this.lblOldMsg.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblOldMsg.Location = new System.Drawing.Point(209, 105);
-            this.lblOldMsg.Name = "lblOldMsg";
-            this.lblOldMsg.Size = new System.Drawing.Size(267, 23);
-            this.lblOldMsg.TabIndex = 129;
-            this.lblOldMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNewMsg
-            // 
-            this.lblNewMsg.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblNewMsg.Location = new System.Drawing.Point(209, 196);
-            this.lblNewMsg.Name = "lblNewMsg";
-            this.lblNewMsg.Size = new System.Drawing.Size(267, 23);
-            this.lblNewMsg.TabIndex = 130;
-            this.lblNewMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnUpdPwd
-            // 
-            this.btnUpdPwd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdPwd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnUpdPwd.Location = new System.Drawing.Point(244, 260);
-            this.btnUpdPwd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnUpdPwd.Name = "btnUpdPwd";
-            this.btnUpdPwd.Radius = 20;
-            this.btnUpdPwd.Size = new System.Drawing.Size(175, 42);
-            this.btnUpdPwd.TabIndex = 131;
-            this.btnUpdPwd.Text = "修    改";
-            this.btnUpdPwd.Click += new System.EventHandler(this.btnUpdPwd_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(26, 168);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 25);
-            this.label7.TabIndex = 131;
-            this.label7.Text = "联系方式";
+            this.openPic.FileName = "openFileDialog1";
+            this.openPic.Filter = "PNG文件|*.png|JPG文件|*.jpg|位图文件|*.bmp";
+            this.openPic.FileOk += new System.ComponentModel.CancelEventHandler(this.openPic_FileOk);
             // 
             // FrmMySpace
             // 
@@ -499,6 +561,8 @@ namespace SYS.FormUI
             this.tpWorkerInfo.PerformLayout();
             this.tpSecurity.ResumeLayout(false);
             this.tpSecurity.PerformLayout();
+            this.tpPhoto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,5 +598,9 @@ namespace SYS.FormUI
         private Sunny.UI.UILabel lblNewMsg;
         private Sunny.UI.UIButton btnUpdPwd;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tpPhoto;
+        private Sunny.UI.UILabel uiLabel1;
+        private System.Windows.Forms.PictureBox picWorkerPic;
+        private System.Windows.Forms.OpenFileDialog openPic;
     }
 }

@@ -36,6 +36,7 @@
             this.btnCheck = new Sunny.UI.UIButton();
             this.btnClose = new Sunny.UI.UIButton();
             this.btnUpdate = new Sunny.UI.UIButton();
+            this.btnBlockAccount = new Sunny.UI.UIButton();
             this.SuspendLayout();
             // 
             // lblWorker
@@ -53,7 +54,7 @@
             // 
             this.btnWatchInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWatchInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnWatchInfo.Location = new System.Drawing.Point(55, 114);
+            this.btnWatchInfo.Location = new System.Drawing.Point(17, 114);
             this.btnWatchInfo.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnWatchInfo.Name = "btnWatchInfo";
             this.btnWatchInfo.Radius = 15;
@@ -66,7 +67,7 @@
             // 
             this.btnUpWorker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpWorker.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpWorker.Location = new System.Drawing.Point(247, 114);
+            this.btnUpWorker.Location = new System.Drawing.Point(197, 114);
             this.btnUpWorker.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUpWorker.Name = "btnUpWorker";
             this.btnUpWorker.Radius = 15;
@@ -79,7 +80,7 @@
             // 
             this.btnGoodBad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoodBad.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGoodBad.Location = new System.Drawing.Point(55, 149);
+            this.btnGoodBad.Location = new System.Drawing.Point(17, 149);
             this.btnGoodBad.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnGoodBad.Name = "btnGoodBad";
             this.btnGoodBad.Radius = 15;
@@ -92,7 +93,7 @@
             // 
             this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheck.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCheck.Location = new System.Drawing.Point(151, 149);
+            this.btnCheck.Location = new System.Drawing.Point(107, 149);
             this.btnCheck.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Radius = 15;
@@ -105,7 +106,7 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClose.Location = new System.Drawing.Point(247, 149);
+            this.btnClose.Location = new System.Drawing.Point(197, 149);
             this.btnClose.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnClose.Name = "btnClose";
             this.btnClose.Radius = 15;
@@ -118,7 +119,7 @@
             // 
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpdate.Location = new System.Drawing.Point(151, 114);
+            this.btnUpdate.Location = new System.Drawing.Point(107, 114);
             this.btnUpdate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Radius = 15;
@@ -126,6 +127,22 @@
             this.btnUpdate.TabIndex = 115;
             this.btnUpdate.Text = "修改信息";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnBlockAccount
+            // 
+            this.btnBlockAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlockAccount.FillColor = System.Drawing.Color.Red;
+            this.btnBlockAccount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBlockAccount.Location = new System.Drawing.Point(287, 114);
+            this.btnBlockAccount.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnBlockAccount.Name = "btnBlockAccount";
+            this.btnBlockAccount.Radius = 15;
+            this.btnBlockAccount.RectColor = System.Drawing.Color.Red;
+            this.btnBlockAccount.Size = new System.Drawing.Size(72, 29);
+            this.btnBlockAccount.Style = Sunny.UI.UIStyle.Custom;
+            this.btnBlockAccount.TabIndex = 116;
+            this.btnBlockAccount.Text = "禁用账号";
+            this.btnBlockAccount.Click += new System.EventHandler(this.btnBlockAccount_Click);
             // 
             // FrmChangeWorker
             // 
@@ -135,6 +152,7 @@
             this.BackgroundImage = global::SYS.FormUI.Properties.Resources.常规部门卡片;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(375, 239);
+            this.Controls.Add(this.btnBlockAccount);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCheck);
@@ -165,5 +183,6 @@
         private Sunny.UI.UIButton btnCheck;
         private Sunny.UI.UIButton btnClose;
         private Sunny.UI.UIButton btnUpdate;
+        private Sunny.UI.UIButton btnBlockAccount;
     }
 }

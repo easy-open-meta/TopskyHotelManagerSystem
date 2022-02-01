@@ -43,10 +43,10 @@ namespace SYS.FormUI
                     pfc.AddMemoryFont((System.IntPtr)pFontData, fontdata.Length);
                 }
             }
-            childControlFont = new Font(pfc.Families[0], 11);
-            mainFont = new Font(pfc.Families[0], 11);
-            scorllingFont = new Font(pfc.Families[0], 12);
-            controlFont = new Font(pfc.Families[0], 15);
+            childControlFont = new Font(pfc.Families[0], 10);
+            mainFont = new Font(pfc.Families[0], 10);
+            scorllingFont = new Font(pfc.Families[0], 10);
+            controlFont = new Font(pfc.Families[0], 11);
             roomControlFont = new Font(pfc.Families[0], 10);
         }
 

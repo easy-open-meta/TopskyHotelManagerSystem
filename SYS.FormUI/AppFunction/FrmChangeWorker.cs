@@ -25,6 +25,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Sunny.UI;
+using SYS.Application;
 using SYS.Core;
 using SYS.FormUI.Properties;
 
@@ -49,6 +50,7 @@ namespace SYS.FormUI
         public static string wk_WorkerFace;
         public static string wk_WorkerNation;
         public static string wk_WorkerEducation;
+        public static string wk_WorkerStatus;
 
         public FrmChangeWorker()
         {
@@ -84,6 +86,7 @@ namespace SYS.FormUI
             wk_WorkerFace = FrmWorkerManager.wk_WorkerFace;
             wk_WorkerNation = FrmWorkerManager.wk_WorkerNation;
             wk_WorkerEducation = FrmWorkerManager.wk_WorkerEducation;
+            wk_WorkerStatus = FrmWorkerManager.wk_WorkerStatus;
             lblWorker.Text = FrmWorkerManager.wk_WorkerClub + FrmWorkerManager.wk_WorkerPosition + "：" + FrmWorkerManager.wk_WorkerName + "的操作界面";
             
             switch (wk_WorkerClub)
@@ -196,7 +199,19 @@ namespace SYS.FormUI
                     this.btnGoodBad.FillColor = Color.FromArgb(255, 200, 35);
                     this.btnClose.FillColor = Color.FromArgb(255, 200, 35);
                     this.btnCheck.FillColor = Color.FromArgb(255, 200, 35);
+                    break;
+            }
 
+            switch (wk_WorkerStatus)
+            {
+                case "0":
+                    btnBlockAccount.Text = "禁用账号";
+                    btnBlockAccount.FillColor = Color.Red;
+                    break;
+                case "1":
+                    btnBlockAccount.Text = "启用账号";
+                    btnBlockAccount.FillColor = Color.Green;
+                    btnBlockAccount.RectColor = Color.Green;
                     break;
             }
         }
@@ -235,7 +250,34 @@ namespace SYS.FormUI
         {
             FrmAddWorker frmAddWorker = new FrmAddWorker();
             frmAddWorker.Text = "员工信息修改页";
-            frmAddWorker.ShowDialog();
+            frmAddWorker.Show();
+        }
+
+        private void btnBlockAccount_Click(object sender, EventArgs e)
+        {
+            //根据员工账号状态确定是否禁用或启用
+            if (wk_WorkerStatus.Equals("1"))
+            {
+                Worker worker = new Worker
+                {
+                    WorkerId = wk_WorkerNo,
+                    delete_mk = 0
+                };
+                new WorkerService().ManagerWorkerAccount(worker);
+                this.Close();
+                FrmWorkerManager.Reload();
+            }
+            else
+            {
+                Worker worker = new Worker
+                {
+                    WorkerId = wk_WorkerNo,
+                    delete_mk = 1
+                };
+                new WorkerService().ManagerWorkerAccount(worker);
+                this.Close();
+                FrmWorkerManager.Reload();
+            }
         }
     }
 }

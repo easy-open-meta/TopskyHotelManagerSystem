@@ -33,6 +33,7 @@ namespace SYS.FormUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddAdmin));
             this.cbAccountType = new Sunny.UI.UIComboBox();
             this.txtAccount = new Sunny.UI.UITextBox();
@@ -43,9 +44,6 @@ namespace SYS.FormUI
             this.txtPassword = new Sunny.UI.UITextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvAdminList = new Sunny.UI.UIDataGridView();
-            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            this.btnAdd = new Sunny.UI.UIButton();
-            this.btnReset = new Sunny.UI.UIButton();
             this.clId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clAdminAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clAdminPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +51,15 @@ namespace SYS.FormUI
             this.clAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clIsAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clDeleteMk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.btnAdd = new Sunny.UI.UIButton();
+            this.btnReset = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminList)).BeginInit();
             this.SuspendLayout();
             // 
             // cbAccountType
             // 
+            this.cbAccountType.DataSource = null;
             this.cbAccountType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbAccountType.FillColor = System.Drawing.Color.White;
             this.cbAccountType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -65,10 +67,10 @@ namespace SYS.FormUI
             this.cbAccountType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbAccountType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbAccountType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbAccountType.Radius = 20;
             this.cbAccountType.Size = new System.Drawing.Size(250, 35);
-            this.cbAccountType.TabIndex = 113;
+            this.cbAccountType.TabIndex = 118;
             this.cbAccountType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbAccountType.Watermark = "";
             this.cbAccountType.SelectedIndexChanged += new System.EventHandler(this.cbAccountType_SelectedIndexChanged);
@@ -90,6 +92,7 @@ namespace SYS.FormUI
             this.txtAccount.Style = Sunny.UI.UIStyle.Custom;
             this.txtAccount.StyleCustomMode = true;
             this.txtAccount.TabIndex = 111;
+            this.txtAccount.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtName
             // 
@@ -107,7 +110,8 @@ namespace SYS.FormUI
             this.txtName.Size = new System.Drawing.Size(250, 35);
             this.txtName.Style = Sunny.UI.UIStyle.Custom;
             this.txtName.StyleCustomMode = true;
-            this.txtName.TabIndex = 112;
+            this.txtName.TabIndex = 119;
+            this.txtName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -157,6 +161,7 @@ namespace SYS.FormUI
             this.txtPassword.Style = Sunny.UI.UIStyle.Custom;
             this.txtPassword.StyleCustomMode = true;
             this.txtPassword.TabIndex = 117;
+            this.txtPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -183,7 +188,7 @@ namespace SYS.FormUI
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAdminList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -211,63 +216,24 @@ namespace SYS.FormUI
             this.dgvAdminList.Location = new System.Drawing.Point(11, 224);
             this.dgvAdminList.Name = "dgvAdminList";
             this.dgvAdminList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAdminList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAdminList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvAdminList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAdminList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvAdminList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAdminList.RowTemplate.Height = 29;
             this.dgvAdminList.SelectedIndex = -1;
             this.dgvAdminList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAdminList.ShowGridLine = true;
             this.dgvAdminList.Size = new System.Drawing.Size(979, 386);
             this.dgvAdminList.TabIndex = 118;
-            // 
-            // uiGroupBox1
-            // 
-            this.uiGroupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiGroupBox1.Location = new System.Drawing.Point(4, 189);
-            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox1.Name = "uiGroupBox1";
-            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
-            this.uiGroupBox1.Size = new System.Drawing.Size(994, 429);
-            this.uiGroupBox1.TabIndex = 119;
-            this.uiGroupBox1.Text = "现有管理员列表";
-            this.uiGroupBox1.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(836, 63);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Radius = 20;
-            this.btnAdd.Size = new System.Drawing.Size(101, 35);
-            this.btnAdd.TabIndex = 120;
-            this.btnAdd.Text = "添       加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
-            this.btnReset.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(202)))), ((int)(((byte)(81)))));
-            this.btnReset.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnReset.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnReset.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnReset.Location = new System.Drawing.Point(838, 124);
-            this.btnReset.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Radius = 20;
-            this.btnReset.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
-            this.btnReset.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(202)))), ((int)(((byte)(81)))));
-            this.btnReset.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnReset.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnReset.Size = new System.Drawing.Size(101, 35);
-            this.btnReset.Style = Sunny.UI.UIStyle.Green;
-            this.btnReset.TabIndex = 121;
-            this.btnReset.Text = "重       置";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // clId
             // 
@@ -319,6 +285,46 @@ namespace SYS.FormUI
             this.clDeleteMk.Name = "clDeleteMk";
             this.clDeleteMk.ReadOnly = true;
             this.clDeleteMk.Visible = false;
+            // 
+            // uiGroupBox1
+            // 
+            this.uiGroupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiGroupBox1.Location = new System.Drawing.Point(4, 189);
+            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox1.Name = "uiGroupBox1";
+            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
+            this.uiGroupBox1.Size = new System.Drawing.Size(994, 429);
+            this.uiGroupBox1.TabIndex = 119;
+            this.uiGroupBox1.Text = "现有管理员列表";
+            this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiGroupBox1.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(836, 63);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Radius = 20;
+            this.btnAdd.Size = new System.Drawing.Size(101, 35);
+            this.btnAdd.TabIndex = 120;
+            this.btnAdd.Text = "添       加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnReset.Location = new System.Drawing.Point(838, 124);
+            this.btnReset.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Radius = 20;
+            this.btnReset.Size = new System.Drawing.Size(101, 35);
+            this.btnReset.TabIndex = 121;
+            this.btnReset.Text = "重       置";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FrmAddAdmin
             // 

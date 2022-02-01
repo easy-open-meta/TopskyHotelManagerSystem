@@ -58,6 +58,9 @@
     <Content Include="MySql.Data.dll" />
     <Content Include="MySql.Data.EntityFramework.dll" />
     <Content Include="MySql.Web.dll" />
+    <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="Newtonsoft.Json.xml" />
+    <Content Include="RequestHelper.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -117,6 +117,12 @@ namespace SYS.Application
             {
                 source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
                 : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+
+                source.SpendPriceStr = string.IsNullOrEmpty(source.SpendPrice + "") ? ""
+                : Decimal.Parse(source.SpendPrice.ToString()).ToString("#,##0.00").ToString();
+
+                source.SpendMoneyStr = string.IsNullOrEmpty(source.SpendMoney + "") ? ""
+                : Decimal.Parse(source.SpendMoney.ToString()).ToString("#,##0.00").ToString();
             });
             return ls;
         }
@@ -135,6 +141,12 @@ namespace SYS.Application
             {
                 source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
                 : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+
+                source.SpendPriceStr = string.IsNullOrEmpty(source.SpendPrice + "") ? ""
+                : Decimal.Parse(source.SpendPrice.ToString()).ToString("#,##0.00").ToString();
+
+                source.SpendMoneyStr = string.IsNullOrEmpty(source.SpendMoney + "") ? ""
+                : Decimal.Parse(source.SpendMoney.ToString()).ToString("#,##0.00").ToString();
             });
             return ls;
         }

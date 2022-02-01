@@ -52,6 +52,7 @@ namespace SYS.FormUI
                     RoomMoney = Convert.ToDecimal(txtMoney.Text),
                     RoomPosition = txtRoomPosition.Text,
                     RoomStateId = 0,
+                    RoomDeposit = Convert.ToDecimal(txtDeposit.Text),
                     datains_usr = AdminInfo.Account,
                     datains_date = DateTime.Now
                 };
@@ -148,6 +149,11 @@ namespace SYS.FormUI
                 ret = true;
             }
             return ret;
+        }
+
+        private void flpRoom_MouseEnter(object sender, EventArgs e)
+        {
+            return;
         }
     }
 }

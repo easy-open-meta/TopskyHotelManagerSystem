@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustoSpend));
             this.dgvSpendList = new Sunny.UI.UIDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSpendList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -101,9 +102,18 @@
             this.dgvSpendList.Location = new System.Drawing.Point(3, 38);
             this.dgvSpendList.Name = "dgvSpendList";
             this.dgvSpendList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSpendList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSpendList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvSpendList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSpendList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvSpendList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSpendList.RowTemplate.Height = 29;
             this.dgvSpendList.SelectedIndex = -1;
             this.dgvSpendList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -147,7 +157,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SpendPrice";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SpendPriceStr";
             this.dataGridViewTextBoxColumn5.FillWeight = 102.6831F;
             this.dataGridViewTextBoxColumn5.HeaderText = "单价(元)";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -155,7 +165,7 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SpendMoney";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SpendMoneyStr";
             this.dataGridViewTextBoxColumn6.FillWeight = 102.6831F;
             this.dataGridViewTextBoxColumn6.HeaderText = "总额";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";

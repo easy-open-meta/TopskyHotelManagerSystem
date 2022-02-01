@@ -49,6 +49,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtCustoType = new Sunny.UI.UITextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtDeposit = new Sunny.UI.UITextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCheckIn
@@ -93,10 +95,11 @@
             this.txtRoomPosition.Padding = new System.Windows.Forms.Padding(5);
             this.txtRoomPosition.Radius = 20;
             this.txtRoomPosition.ReadOnly = true;
-            this.txtRoomPosition.Size = new System.Drawing.Size(628, 35);
+            this.txtRoomPosition.Size = new System.Drawing.Size(251, 35);
             this.txtRoomPosition.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomPosition.StyleCustomMode = true;
             this.txtRoomPosition.TabIndex = 150;
+            this.txtRoomPosition.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -110,6 +113,7 @@
             // 
             // txtType
             // 
+            this.txtType.DataSource = null;
             this.txtType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.txtType.FillColor = System.Drawing.Color.White;
             this.txtType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -117,7 +121,7 @@
             this.txtType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtType.MinimumSize = new System.Drawing.Size(63, 0);
             this.txtType.Name = "txtType";
-            this.txtType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.txtType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.txtType.Radius = 20;
             this.txtType.Size = new System.Drawing.Size(250, 35);
             this.txtType.Style = Sunny.UI.UIStyle.Custom;
@@ -143,6 +147,7 @@
             this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomNo.StyleCustomMode = true;
             this.txtRoomNo.TabIndex = 147;
+            this.txtRoomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtState
             // 
@@ -162,6 +167,7 @@
             this.txtState.Style = Sunny.UI.UIStyle.Custom;
             this.txtState.StyleCustomMode = true;
             this.txtState.TabIndex = 146;
+            this.txtState.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtMoney
             // 
@@ -181,6 +187,7 @@
             this.txtMoney.Style = Sunny.UI.UIStyle.Custom;
             this.txtMoney.StyleCustomMode = true;
             this.txtMoney.TabIndex = 145;
+            this.txtMoney.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label13
             // 
@@ -242,8 +249,9 @@
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;
             this.txtCustoNo.TabIndex = 143;
-            this.txtCustoNo.TextChanged += new System.EventHandler(this.txtCustoNo_TextChanged);
+            this.txtCustoNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtCustoNo.Validated += new System.EventHandler(this.txtCustoNo_Validated);
+            this.txtCustoNo.TextChanged += new System.EventHandler(this.txtCustoNo_TextChanged);
             // 
             // txtCustoName
             // 
@@ -264,6 +272,7 @@
             this.txtCustoName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoName.StyleCustomMode = true;
             this.txtCustoName.TabIndex = 144;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -306,6 +315,7 @@
             this.txtCustoTel.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoTel.StyleCustomMode = true;
             this.txtCustoTel.TabIndex = 142;
+            this.txtCustoTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
@@ -337,6 +347,7 @@
             this.txtCustoType.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoType.StyleCustomMode = true;
             this.txtCustoType.TabIndex = 141;
+            this.txtCustoType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
@@ -349,6 +360,36 @@
             this.label12.TabIndex = 140;
             this.label12.Text = "会员等级";
             // 
+            // txtDeposit
+            // 
+            this.txtDeposit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeposit.FillColor = System.Drawing.Color.White;
+            this.txtDeposit.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDeposit.Location = new System.Drawing.Point(547, 156);
+            this.txtDeposit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeposit.Maximum = 2147483647D;
+            this.txtDeposit.Minimum = -2147483648D;
+            this.txtDeposit.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtDeposit.Name = "txtDeposit";
+            this.txtDeposit.Padding = new System.Windows.Forms.Padding(5);
+            this.txtDeposit.Radius = 20;
+            this.txtDeposit.ReadOnly = true;
+            this.txtDeposit.Size = new System.Drawing.Size(250, 35);
+            this.txtDeposit.Style = Sunny.UI.UIStyle.Custom;
+            this.txtDeposit.StyleCustomMode = true;
+            this.txtDeposit.TabIndex = 152;
+            this.txtDeposit.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(443, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 151;
+            this.label1.Text = "房间押金";
+            // 
             // FrmCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -356,6 +397,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(861, 382);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDeposit);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCustoNo);
             this.Controls.Add(this.txtCustoName);
             this.Controls.Add(this.txtRoomPosition);
@@ -376,7 +419,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCheckIn);
-            this.EscClose = false;
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsForbidAltF4 = true;
@@ -414,5 +456,7 @@
         private System.Windows.Forms.Label label14;
         private Sunny.UI.UITextBox txtCustoType;
         private System.Windows.Forms.Label label12;
+        private Sunny.UI.UITextBox txtDeposit;
+        private System.Windows.Forms.Label label1;
     }
 }

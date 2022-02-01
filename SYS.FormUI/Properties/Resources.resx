@@ -199,14 +199,8 @@
   <data name="組織圖塊" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\組織圖塊.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="内控部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\内控部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="已住状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="已住房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +208,14 @@
   <data name="预约房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="可住房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\可住房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="白金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\白金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="黄金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\黄金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="钻石会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\钻石会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="早上" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\早上.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +229,11 @@
   <data name="后勤部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\后勤部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="导出 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\导出 (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="可住房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\可住房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="维修房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\维修房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="锁屏" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\锁屏.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,6 +259,9 @@
   <data name="修改a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\修改a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="脏房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\脏房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="预约状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -267,6 +273,9 @@
   </data>
   <data name="转换" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\转换.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="咖啡" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\咖啡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="获取用户编号-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\获取用户编号-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,8 +292,8 @@
   <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="脏房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\脏房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="月亮" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\月亮.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,14 +301,17 @@
   <data name="Alibaba_PuHuiTi_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alibaba-PuHuiTi-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="普通会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\普通会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="系统管理员" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\系统管理员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="显示" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\显示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="咖啡" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\咖啡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="内控部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\内控部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,25 +325,16 @@
   <data name="增加 添加 加减 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\增加 添加 加减 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="维修房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\维修房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="导出 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\导出 (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="可住房icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\可住房icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="可住房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\可住房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="添 加a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添 加a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="钻石会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\钻石会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="白金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\白金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="黄金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\黄金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="普通会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\普通会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="上传照片" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\上传照片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

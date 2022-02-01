@@ -186,8 +186,8 @@ namespace SYS.FormUI
         #region 退出当前程序
         private void picClose_Click_1(object sender, EventArgs e)
         {
-            notifyIcon1.Dispose();
             System.Windows.Forms.Application.Exit();
+            notifyIcon1.Dispose();
         }
         #endregion
 
@@ -459,7 +459,7 @@ namespace SYS.FormUI
                     if (j == true)
                     {
                         lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
-                        UIMessageBox.Show("打卡成功！你已累计打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒",UIStyle.Green, UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("打卡成功！你已共打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒",UIStyle.Green, UIMessageBoxButtons.OK);
                         linkLabel1.Text = "已打卡";
                         linkLabel1.ForeColor = Color.Green;
                         linkLabel1.LinkColor = Color.Green;

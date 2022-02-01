@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddWorker));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cboSex = new Sunny.UI.UIComboBox();
             this.WorkerNo = new Sunny.UI.UITextBox();
@@ -59,20 +58,10 @@
             this.flpHistory = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new Sunny.UI.UIButton();
             this.cbWorkerNation = new Sunny.UI.UIComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picWorkerPic = new System.Windows.Forms.PictureBox();
+            this.openPic = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::SYS.FormUI.Properties.Resources._77377282_p0_master1200;
-            this.pictureBox1.Location = new System.Drawing.Point(628, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 193);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 55;
-            this.pictureBox1.TabStop = false;
             // 
             // label15
             // 
@@ -88,6 +77,7 @@
             // 
             // cboSex
             // 
+            this.cboSex.DataSource = null;
             this.cboSex.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboSex.FillColor = System.Drawing.Color.White;
             this.cboSex.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -95,7 +85,7 @@
             this.cboSex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboSex.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboSex.Name = "cboSex";
-            this.cboSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboSex.Radius = 20;
             this.cboSex.Size = new System.Drawing.Size(166, 35);
             this.cboSex.TabIndex = 113;
@@ -119,6 +109,7 @@
             this.WorkerNo.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerNo.StyleCustomMode = true;
             this.WorkerNo.TabIndex = 111;
+            this.WorkerNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpBirthday
             // 
@@ -130,7 +121,7 @@
             this.dtpBirthday.MaxLength = 10;
             this.dtpBirthday.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpBirthday.Radius = 20;
             this.dtpBirthday.Size = new System.Drawing.Size(166, 31);
             this.dtpBirthday.SymbolDropDown = 61555;
@@ -182,6 +173,7 @@
             // 
             // cboWorkerPosition
             // 
+            this.cboWorkerPosition.DataSource = null;
             this.cboWorkerPosition.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerPosition.FillColor = System.Drawing.Color.White;
             this.cboWorkerPosition.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -189,7 +181,7 @@
             this.cboWorkerPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerPosition.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboWorkerPosition.Name = "cboWorkerPosition";
-            this.cboWorkerPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboWorkerPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboWorkerPosition.Radius = 20;
             this.cboWorkerPosition.Size = new System.Drawing.Size(178, 35);
             this.cboWorkerPosition.TabIndex = 121;
@@ -212,6 +204,7 @@
             this.WorkerName.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerName.StyleCustomMode = true;
             this.WorkerName.TabIndex = 119;
+            this.WorkerName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpTime
             // 
@@ -223,7 +216,7 @@
             this.dtpTime.MaxLength = 10;
             this.dtpTime.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpTime.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpTime.Radius = 20;
             this.dtpTime.ReadOnly = true;
             this.dtpTime.Size = new System.Drawing.Size(166, 31);
@@ -276,6 +269,7 @@
             // 
             // cboClub
             // 
+            this.cboClub.DataSource = null;
             this.cboClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboClub.FillColor = System.Drawing.Color.White;
             this.cboClub.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -283,7 +277,7 @@
             this.cboClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboClub.Name = "cboClub";
-            this.cboClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboClub.Radius = 20;
             this.cboClub.Size = new System.Drawing.Size(178, 35);
             this.cboClub.TabIndex = 123;
@@ -301,6 +295,7 @@
             // 
             // cboEducation
             // 
+            this.cboEducation.DataSource = null;
             this.cboEducation.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboEducation.FillColor = System.Drawing.Color.White;
             this.cboEducation.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -308,7 +303,7 @@
             this.cboEducation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboEducation.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboEducation.Name = "cboEducation";
-            this.cboEducation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboEducation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboEducation.Radius = 20;
             this.cboEducation.Size = new System.Drawing.Size(338, 35);
             this.cboEducation.TabIndex = 125;
@@ -341,6 +336,7 @@
             this.txtAddress.Style = Sunny.UI.UIStyle.Custom;
             this.txtAddress.StyleCustomMode = true;
             this.txtAddress.TabIndex = 127;
+            this.txtAddress.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label25
             // 
@@ -369,6 +365,7 @@
             this.WorkerID.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerID.StyleCustomMode = true;
             this.WorkerID.TabIndex = 129;
+            this.WorkerID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.WorkerID.Validated += new System.EventHandler(this.WorkerID_Validated);
             // 
             // label26
@@ -398,6 +395,7 @@
             this.WorkerTel.Style = Sunny.UI.UIStyle.Custom;
             this.WorkerTel.StyleCustomMode = true;
             this.WorkerTel.TabIndex = 131;
+            this.WorkerTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label27
             // 
@@ -411,6 +409,7 @@
             // 
             // cboWorkerFace
             // 
+            this.cboWorkerFace.DataSource = null;
             this.cboWorkerFace.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerFace.FillColor = System.Drawing.Color.White;
             this.cboWorkerFace.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -422,7 +421,7 @@
             this.cboWorkerFace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerFace.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboWorkerFace.Name = "cboWorkerFace";
-            this.cboWorkerFace.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboWorkerFace.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboWorkerFace.Radius = 20;
             this.cboWorkerFace.Size = new System.Drawing.Size(178, 35);
             this.cboWorkerFace.TabIndex = 132;
@@ -451,6 +450,7 @@
             // 
             // cbWorkerNation
             // 
+            this.cbWorkerNation.DataSource = null;
             this.cbWorkerNation.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbWorkerNation.FillColor = System.Drawing.Color.White;
             this.cbWorkerNation.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -458,11 +458,30 @@
             this.cbWorkerNation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbWorkerNation.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbWorkerNation.Name = "cbWorkerNation";
-            this.cbWorkerNation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbWorkerNation.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbWorkerNation.Radius = 20;
             this.cbWorkerNation.Size = new System.Drawing.Size(166, 35);
             this.cbWorkerNation.TabIndex = 135;
             this.cbWorkerNation.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picWorkerPic
+            // 
+            this.picWorkerPic.BackColor = System.Drawing.Color.Transparent;
+            this.picWorkerPic.BackgroundImage = global::SYS.FormUI.Properties.Resources.上传照片;
+            this.picWorkerPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picWorkerPic.Location = new System.Drawing.Point(614, 38);
+            this.picWorkerPic.Name = "picWorkerPic";
+            this.picWorkerPic.Size = new System.Drawing.Size(167, 211);
+            this.picWorkerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWorkerPic.TabIndex = 55;
+            this.picWorkerPic.TabStop = false;
+            this.picWorkerPic.Click += new System.EventHandler(this.workerPic_Click);
+            // 
+            // openPic
+            // 
+            this.openPic.FileName = "openFileDialog1";
+            this.openPic.Filter = "PNG文件|*.png|JPG文件|*.jpg|位图文件|*.bmp";
+            this.openPic.FileOk += new System.ComponentModel.CancelEventHandler(this.openPic_FileOk);
             // 
             // FrmAddWorker
             // 
@@ -472,7 +491,7 @@
             this.ClientSize = new System.Drawing.Size(785, 768);
             this.Controls.Add(this.cbWorkerNation);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picWorkerPic);
             this.Controls.Add(this.flpHistory);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cboWorkerFace);
@@ -507,14 +526,14 @@
             this.ShowIcon = true;
             this.Text = "添加员工";
             this.Load += new System.EventHandler(this.FrmAddWorker_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picWorkerPic;
         private System.Windows.Forms.Label label15;
         private Sunny.UI.UIComboBox cboSex;
         private Sunny.UI.UITextBox WorkerNo;
@@ -544,5 +563,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpHistory;
         private Sunny.UI.UIButton btnAdd;
         private Sunny.UI.UIComboBox cbWorkerNation;
+        private System.Windows.Forms.OpenFileDialog openPic;
     }
 }

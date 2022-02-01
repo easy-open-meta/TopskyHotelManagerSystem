@@ -101,7 +101,13 @@ namespace SYS.FormUI
                 txtTInfo.Text = dgvWti.SelectedRows[0].Cells["clPowerUse"].Value.ToString();
                 pnlWtiInfo.Visible = true;
                 btnUpdWti.Enabled = true;
+                btnClose.Enabled = true;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.pnlWtiInfo.Visible = false;
         }
     }
 }

@@ -46,6 +46,7 @@ namespace SYS.FormUI
         public static string wk_WorkerFace;
         public static string wk_WorkerNation;
         public static string wk_WorkerEducation;
+        public static string wk_WorkerStatus;
 
         public delegate void ReLoadWorkerList();
 
@@ -61,6 +62,7 @@ namespace SYS.FormUI
 
         private void LoadWorker()
         {
+            dgvWorkerList.AutoGenerateColumns = false;
             dgvWorkerList.DataSource = new WorkerService().SelectWorkerAll();
         }
 
@@ -70,8 +72,7 @@ namespace SYS.FormUI
             {
                 item.Font = UI_FontUtil.childControlFont;
             }
-            dgvWorkerList.AutoGenerateColumns = false;
-            dgvWorkerList.DataSource = new WorkerService().SelectWorkerAll();
+            LoadWorker();
             if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
             {
                 btnAddWorker.Enabled = false;
@@ -97,6 +98,7 @@ namespace SYS.FormUI
                 wk_WorkerFace = dgvWorkerList.SelectedRows[0].Cells["clWorkerFace"].Value.ToString();
                 wk_WorkerEducation = dgvWorkerList.SelectedRows[0].Cells["clWorkerEducation"].Value.ToString();
                 wk_WorkerNation = dgvWorkerList.SelectedRows[0].Cells["clWorkerNation"].Value.ToString();
+                wk_WorkerStatus = dgvWorkerList.SelectedRows[0].Cells["Column1"].Value.ToString();
                 FrmChangeWorker aff = new FrmChangeWorker();
                 aff.ShowDialog();
 
