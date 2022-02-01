@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboRoomType = new Sunny.UI.UIComboBox();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.txtDeposit = new Sunny.UI.UITextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddRoom = new Sunny.UI.UIButton();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,6 +60,7 @@
             this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomNo.StyleCustomMode = true;
             this.txtRoomNo.TabIndex = 106;
+            this.txtRoomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -88,6 +89,7 @@
             this.txtRoomPosition.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomPosition.StyleCustomMode = true;
             this.txtRoomPosition.TabIndex = 108;
+            this.txtRoomPosition.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -116,6 +118,7 @@
             this.txtMoney.Style = Sunny.UI.UIStyle.Custom;
             this.txtMoney.StyleCustomMode = true;
             this.txtMoney.TabIndex = 110;
+            this.txtMoney.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -139,6 +142,7 @@
             // 
             // cboRoomType
             // 
+            this.cboRoomType.DataSource = null;
             this.cboRoomType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboRoomType.FillColor = System.Drawing.Color.White;
             this.cboRoomType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -146,52 +150,54 @@
             this.cboRoomType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboRoomType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboRoomType.Name = "cboRoomType";
-            this.cboRoomType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboRoomType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboRoomType.Radius = 20;
-            this.cboRoomType.Size = new System.Drawing.Size(184, 35);
+            this.cboRoomType.Size = new System.Drawing.Size(127, 35);
             this.cboRoomType.TabIndex = 112;
             this.cboRoomType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cboRoomType.TextChanged += new System.EventHandler(this.cboRoomType_TextChanged);
             // 
-            // uiTextBox1
+            // txtDeposit
             // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.FillColor = System.Drawing.Color.White;
-            this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(553, 564);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.Maximum = 2147483647D;
-            this.uiTextBox1.Minimum = -2147483648D;
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox1.Radius = 20;
-            this.uiTextBox1.ReadOnly = true;
-            this.uiTextBox1.Size = new System.Drawing.Size(128, 35);
-            this.uiTextBox1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiTextBox1.StyleCustomMode = true;
-            this.uiTextBox1.TabIndex = 114;
-            this.uiTextBox1.Text = "空房";
+            this.txtDeposit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDeposit.FillColor = System.Drawing.Color.White;
+            this.txtDeposit.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDeposit.Location = new System.Drawing.Point(490, 564);
+            this.txtDeposit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeposit.Maximum = 2147483647D;
+            this.txtDeposit.Minimum = -2147483648D;
+            this.txtDeposit.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtDeposit.Name = "txtDeposit";
+            this.txtDeposit.Padding = new System.Windows.Forms.Padding(5);
+            this.txtDeposit.Radius = 20;
+            this.txtDeposit.ReadOnly = true;
+            this.txtDeposit.Size = new System.Drawing.Size(128, 35);
+            this.txtDeposit.Style = Sunny.UI.UIStyle.Custom;
+            this.txtDeposit.StyleCustomMode = true;
+            this.txtDeposit.TabIndex = 114;
+            this.txtDeposit.Text = "0.00";
+            this.txtDeposit.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtDeposit.Type = Sunny.UI.UITextBox.UIEditType.Double;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(448, 568);
+            this.label2.Location = new System.Drawing.Point(385, 568);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 113;
-            this.label2.Text = "房间状态";
+            this.label2.Text = "房间押金";
             // 
             // btnAddRoom
             // 
             this.btnAddRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddRoom.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAddRoom.Location = new System.Drawing.Point(723, 564);
+            this.btnAddRoom.Location = new System.Drawing.Point(748, 564);
             this.btnAddRoom.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Radius = 30;
-            this.btnAddRoom.Size = new System.Drawing.Size(152, 35);
+            this.btnAddRoom.Size = new System.Drawing.Size(127, 35);
             this.btnAddRoom.TabIndex = 115;
             this.btnAddRoom.Text = "新增客房";
             this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
@@ -204,6 +210,7 @@
             this.flpRoom.Name = "flpRoom";
             this.flpRoom.Size = new System.Drawing.Size(838, 424);
             this.flpRoom.TabIndex = 116;
+            this.flpRoom.MouseEnter += new System.EventHandler(this.flpRoom_MouseEnter);
             // 
             // FrmAddRoom
             // 
@@ -215,7 +222,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.flpRoom);
             this.Controls.Add(this.btnAddRoom);
-            this.Controls.Add(this.uiTextBox1);
+            this.Controls.Add(this.txtDeposit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboRoomType);
             this.Controls.Add(this.label6);
@@ -246,7 +253,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private Sunny.UI.UIComboBox cboRoomType;
-        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UITextBox txtDeposit;
         private System.Windows.Forms.Label label2;
         private Sunny.UI.UIButton btnAddRoom;
         private System.Windows.Forms.FlowLayoutPanel flpRoom;

@@ -59,6 +59,7 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
+            this.Owner.Close();
             foreach (Control item in this.Controls)
             {
                 switch (item.GetType().ToString())
@@ -196,6 +197,15 @@ namespace SYS.FormUI
                         frmAddRoom.Show();
                         break;
                     case "客户管理":
+                        break;
+                    case "会员等级规则":
+                        pnlForm.Controls.Clear();
+                        FrmVipRule frmVipRule = new FrmVipRule();
+                        frmVipRule.TopLevel = false;
+                        pnlForm.Controls.Add(frmVipRule);
+                        frmVipRule.Show();
+                        break;
+                    case "会员信息管理":
                         break;
                     case "客户信息管理":
                         pnlForm.Controls.Clear();

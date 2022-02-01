@@ -154,7 +154,7 @@ namespace SYS.FormUI
         {
             var _position = new Position()
             {
-                position_no = new SYS.Core.CounterHelper().GetNewId("PositionId").ToString(),
+                position_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.PositionId).ToString(),
                 position_name = info,
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,

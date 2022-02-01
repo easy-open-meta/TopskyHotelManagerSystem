@@ -48,6 +48,14 @@ namespace SYS.Application
         bool UpdCustomerInfoByCustoNo(Custo custo);
 
         /// <summary>
+        /// 更新客户类型(即会员等级)
+        /// </summary>
+        /// <param name="custoNo"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        bool UpdCustomerTypeByCustoNo(string custoNo, int userType);
+
+        /// <summary>
         /// 查询酒店盈利情况
         /// </summary>
         /// <returns></returns>

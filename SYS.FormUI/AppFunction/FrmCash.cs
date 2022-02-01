@@ -55,7 +55,7 @@ namespace SYS.FormUI
 
             dgvCashList.AutoGenerateColumns = false;
             dgvCashList.DataSource = new CashService().SelectCashInfoAll();
-            txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
+            txtCashNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.CashInfo);
             if (AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "FinanceManager" && AdminInfo.isAdmin == false)
             {
                 btnOK.Enabled = false;

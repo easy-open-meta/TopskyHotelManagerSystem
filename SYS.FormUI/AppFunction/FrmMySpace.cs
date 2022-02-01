@@ -24,9 +24,11 @@
 using Sunny.UI;
 using SYS.Application;
 using SYS.Core;
+using SYS.Core.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -86,6 +88,16 @@ namespace SYS.FormUI
                 cbWorkerNation.SelectedValue = worker.WorkerNation;
                 txtAddress.Text = worker.WorkerAddress;
                 txtTel.Text = worker.WorkerTel;
+            }
+
+            var workerPicSource = new WorkerPicService().WorkerPic(new WorkerPic
+            {
+                WorkerId = LoginInfo.WorkerNo.Trim()
+            });
+            if (workerPicSource != null && !string.IsNullOrEmpty(workerPicSource.Pic))
+            {
+                picWorkerPic.BackgroundImage = null;
+                picWorkerPic.LoadAsync(workerPicSource.Pic);
             }
         }
 
@@ -221,6 +233,27 @@ namespace SYS.FormUI
 
         private void cbWorkerNation_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void picWorkerPic_Click(object sender, EventArgs e)
+        {
+            openPic.ShowDialog();
+        }
+
+        private void openPic_FileOk(object sender, CancelEventArgs e)
+        {
+            var serverPath = ConfigurationManager.AppSettings["post"].ToString();
+            var result = HttpHelper.UpLoadFile(openPic.FileName, serverPath);
+            WorkerPic workerPic = new WorkerPic
+            {
+                WorkerId = txtWorkerNo.Text.Trim(),
+                Pic = result.Trim(),
+            };
+            new WorkerPicService().InsertWorkerPic(workerPic);
+
+
+            picWorkerPic.BackgroundImage = null;
+            picWorkerPic.LoadAsync(ConfigurationManager.AppSettings["FileSite"] + result.Trim());
         }
     }
 }

@@ -186,8 +186,8 @@ namespace SYS.FormUI
 
             #region 加载消费信息
             string RoomNo = txtRoomNo.Text;
-            dgvSpendList.DataSource = new SpendService().SelectSpendInfoRoomNo(RoomNo);
             dgvSpendList.AutoGenerateColumns = false;
+            dgvSpendList.DataSource = new SpendService().SelectSpendInfoRoomNo(RoomNo);
             double result = 0;
             if (dgvSpendList.Rows.Count == 0)
             {
@@ -209,37 +209,37 @@ namespace SYS.FormUI
             if (cboCustoType.Text == "钻石会员")
             {
                 double m = result + sum;
-                lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.80);
+                lblGetReceipts.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
+                lblVIPPrice.Text = Decimal.Parse((m * 0.80).ToString()).ToString("#,##0.00");
                 lblVIP.Text = "八折";
             }
             else if (cboCustoType.Text == "白金会员")
             {
 
                 double m = result + sum;
-                lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.85);
+                lblGetReceipts.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
+                lblVIPPrice.Text = Decimal.Parse((m * 0.85).ToString()).ToString("#,##0.00");
                 lblVIP.Text = "八五折";
             }
             else if (cboCustoType.Text == "黄金会员")
             {
                 double m = result + sum;
-                lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.90);
+                lblGetReceipts.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
+                lblVIPPrice.Text = Decimal.Parse((m * 0.90).ToString()).ToString("#,##0.00");
                 lblVIP.Text = "九折";
             }
             else if (cboCustoType.Text == "普通会员")
             {
                 double m = result + sum;
-                lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m * 0.95);
+                lblGetReceipts.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
+                lblVIPPrice.Text = Decimal.Parse((m * 0.95).ToString()).ToString("#,##0.00");
                 lblVIP.Text = "九五折";
             }
             else if (cboCustoType.Text == "普通用户")
             {
                 double m = result + sum;
-                lblGetReceipts.Text = m.ToString();
-                lblVIPPrice.Text = Convert.ToString(m);
+                lblGetReceipts.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
+                lblVIPPrice.Text = Decimal.Parse(m.ToString()).ToString("#,##0.00");
                 lblVIP.Text = "不  打  折";
 
             }
@@ -264,11 +264,7 @@ namespace SYS.FormUI
                     double n = Convert.ToDouble(Convert.ToDecimal(txtReceipts.Text));
                     double m = Convert.ToDouble(Convert.ToDecimal(lblGetReceipts.Text));
                     double h = Convert.ToDouble(Convert.ToDecimal(lblVIPPrice.Text));
-                    lblChange.Text = Convert.ToString(n - h);
-                    if (n >= m)
-                    {
-
-                    }
+                    lblChange.Text = Decimal.Parse((n- h).ToString()).ToString("#,##0.00");
                 }
                 catch
                 {

@@ -57,7 +57,7 @@ namespace SYS.FormUI
             {
                 Notice notice = new Notice()
                 {
-                    NoticeNo = new CounterHelper().GetNewId("NoticeId"),
+                    NoticeNo = new CounterHelper().GetNewId(CounterRuleConsts.NoticeId),
                     Noticetheme = txtNoticeTheme.Text.Trim(),
                     NoticeContent = rtbNoticeContent.Html,
                     NoticeTime = dtpUpLoadDate.Value,

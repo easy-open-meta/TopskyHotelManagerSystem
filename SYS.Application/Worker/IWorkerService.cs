@@ -41,6 +41,13 @@ namespace SYS.Application
         #endregion
 
         /// <summary>
+        /// 员工账号禁/启用
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
+        bool ManagerWorkerAccount(Worker worker);
+
+        /// <summary>
         /// 更新员工职位和部门
         /// </summary>
         /// <param name="worker"></param>

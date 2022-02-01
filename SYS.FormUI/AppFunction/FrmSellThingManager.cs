@@ -52,10 +52,10 @@ namespace SYS.FormUI
             {
                 label.Font = UI_FontUtil.childControlFont;
             }
-            string SellId = new CounterHelper().GetNewId("SellId");
+            string SellId = new CounterHelper().GetNewId(CounterRuleConsts.SellId);
             txtSellNo.Text = SellId;
-            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
             dgvSellthing.AutoGenerateColumns = false;
+            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
         }
 
         private void btnFind_Click(object sender, EventArgs e)

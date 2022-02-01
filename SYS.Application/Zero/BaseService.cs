@@ -362,9 +362,10 @@ namespace SYS.Application
             depts.ForEach(source =>
             {
                 var dept = depts.FirstOrDefault(a => a.dept_no == source.dept_parent);
-                source.parent_name = dept == null ? "" : dept.dept_name;
+                source.parent_name = dept == null || string.IsNullOrEmpty(dept.dept_name) ? "无" : dept.dept_name;
                 var leader = workers.FirstOrDefault(a => source.dept_leader != null && a.WorkerId == source.dept_leader);
-                source.leader_name = leader == null ? "" : leader.WorkerName;
+                source.leader_name = leader == null || string.IsNullOrEmpty(leader.WorkerName) ? "无" : leader.WorkerName;
+
             });
             return depts;
         }
