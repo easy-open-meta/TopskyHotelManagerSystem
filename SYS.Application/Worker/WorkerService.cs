@@ -46,17 +46,7 @@ namespace SYS.Application
         public bool UpdateWorker(Worker worker)
         {
             //加密联系方式
-            var sourceTelStr =string.Empty;
-            if (!string.IsNullOrEmpty(worker.WorkerTel))
-            {
-                sourceTelStr = encrypt.Encryption(worker.WorkerTel);
-            }
-            //加密身份证
-            var sourceIdStr = string.Empty;
-            if (!string.IsNullOrEmpty(worker.CardId))
-            {
-                 sourceIdStr = encrypt.Encryption(worker.CardId);
-            }
+            var sourceTelStr = encrypt.EncryptStr(worker.WorkerTel);
             worker.WorkerTel = sourceTelStr;
             worker.CardId = sourceIdStr;
             return base.Update(a => new Worker()
