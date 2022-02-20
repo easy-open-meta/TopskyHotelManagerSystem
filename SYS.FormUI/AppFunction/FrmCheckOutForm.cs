@@ -29,6 +29,7 @@ using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -285,7 +286,7 @@ namespace SYS.FormUI
         #region 结算按钮点击事件
         private void btnBalance_Click(object sender, EventArgs e)
         {
-            if (txtReceipts.Text != "" && Convert.ToDecimal(txtReceipts.Text) > Convert.ToDecimal(lblVIPPrice.Text))//判断实收金额是否为空以及是否小于应收金额
+            if (!txtReceipts.Text.IsNullOrEmpty() && Convert.ToDecimal(txtReceipts.Text) > Convert.ToDecimal(lblVIPPrice.Text))//判断实收金额是否为空以及是否小于应收金额
             {
                 Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
                 string checktime = r.CheckTime.ToString();//获取入住时间
@@ -304,11 +305,8 @@ namespace SYS.FormUI
                     UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                     FrmRoomManager.Reload("");
 
-                    //添加一条最后入住的房间以及入住天数
-
-
                     #region 获取添加操作日志所需的信息
-                    RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
+                    RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName  + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                     #endregion
 
                 }
@@ -329,7 +327,7 @@ namespace SYS.FormUI
                         UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
                         FrmRoomManager.Reload("");
                         #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
+                        RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                         #endregion
                         return;
                     }
@@ -348,72 +346,5 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void btnReceiptsType_Click(object sender, EventArgs e)
-        {
-            //pnlMobile.Visible = true;
-            //pnlCreditCard.Visible = false;
-            //btnChangePay.Visible = true;
-        }
-
-        private void btnCreditCard_Click(object sender, EventArgs e)
-        {
-            //pnlMobile.Visible = false;
-            //pnlCreditCard.Visible = true;
-            //btnChangePay.Visible = false;
-        }
-
-
-        private void btnChangePay_Click(object sender, EventArgs e)
-        {
-            //DialogResult ret = MessageBox.Show("请选择支付类型：是:支付宝，否:微信？", "T仔的提醒", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            //if (ret == DialogResult.Yes)
-            //{
-            //    pnlMobile.BackgroundImage = Resources._1G_Q__21_3JZZCFW68O7NF;
-            //}
-            //else
-            //{
-            //    pnlMobile.BackgroundImage = Resources._1545891726;
-            //}
-        }
-
-        private void txtCardNo_TextChanged(object sender, EventArgs e)
-        {
-            //if (txtCardNo.TextLength == 19 || txtCardNo.TextLength <= 16)
-            //{
-            //    lblState.Text = "该卡为有效银行卡，可进行消费";
-            //    lblState.ForeColor = Color.Green;
-            //}
-            //else
-            //{
-            //    lblState.Text = "该卡为无效银行卡,不可进行消费";
-            //    lblState.ForeColor = Color.Red;
-            //}
-        }
-
-        private void llbCardReader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //txtCardNo.Text = "6212260000000006222";
-            //lblReaderState.Text = "卡号读取成功且有效，可继续进行结算操作";
-            //lblReaderState.ForeColor = Color.Green;
-        }
-
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            //Graphics g = e.Graphics;
-            //Font font = new Font("微软雅黑", 14f, System.Drawing.GraphicsUnit.Pixel);
-            //SolidBrush brush = new SolidBrush(Color.Black);
-            //if (e.Index == this.tabControl1.SelectedIndex)
-            //{
-            //    brush = new SolidBrush(Color.Blue);
-            //}
-
-            //RectangleF rectangle = (RectangleF)(tabControl1.GetTabRect(e.Index));
-            //RectangleF rectangle2 = new RectangleF(rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
-            //g.FillRectangle(new SolidBrush(SystemColors.ButtonHighlight), rectangle2);
-            //StringFormat sformat = new StringFormat();
-            //sformat.LineAlignment = StringAlignment.Center;
-            //sformat.Alignment = StringAlignment.Center;
-            //g.DrawString(((TabControl)sender).TabPages[e.Index].Text, font, brush, rectangle2, sformat);
-        }
     }
 }

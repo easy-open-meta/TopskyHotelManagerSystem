@@ -27,6 +27,9 @@ using SYS.Core;
 using Sunny.UI;
 using System.Text.RegularExpressions;
 using SYS.Application;
+using SYS.Common;
+using System.Net;
+using System.Diagnostics;
 
 namespace SYS.FormUI
 {
@@ -60,10 +63,14 @@ namespace SYS.FormUI
                 AdminInfo.Name = a.AdminName;
                 AdminInfo.Account = a.AdminAccount;
                 AdminInfo.isAdmin = a.IsAdmin == 0 ? false : true;
+                AdminInfo.SoftwareVersion = System.Windows.Forms.Application.ProductVersion.ToString();
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "版本登入了后台管理系统！", 3);
+                #endregion
                 FrmBackgroundSystem fm = new FrmBackgroundSystem();
                 fm.ShowDialog(this);//打开主窗体
                 this.Hide();//隐藏登录窗体
-                RecordHelper.Record(AdminInfo.Account + "于" + DateTime.Now + "成功登入后台管理系统！", 3);
+                
             }
             else
             {
@@ -80,7 +87,7 @@ namespace SYS.FormUI
 
         private void FrmAdminEnter_Load(object sender, EventArgs e)
         {
-            this.Owner.Hide();
+            //this.Owner.Hide();
             txtAccount.Text = "admin";
             txtPassword.Text = "admin";
         }

@@ -32,9 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOperation));
             this.dgvOperationlog = new Sunny.UI.UIDataGridView();
             this.clOperationTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSoftwareVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clOperationlog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clOperationAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +64,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOperationlog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -70,6 +72,7 @@
             this.dgvOperationlog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvOperationlog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clOperationTime,
+            this.clSoftwareVersion,
             this.clOperationlog,
             this.clOperationAccount,
             this.Column1,
@@ -94,9 +97,18 @@
             this.dgvOperationlog.MultiSelect = false;
             this.dgvOperationlog.Name = "dgvOperationlog";
             this.dgvOperationlog.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOperationlog.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOperationlog.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvOperationlog.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOperationlog.RowTemplate.Height = 29;
             this.dgvOperationlog.SelectedIndex = -1;
             this.dgvOperationlog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -111,9 +123,16 @@
             this.clOperationTime.Name = "clOperationTime";
             this.clOperationTime.ReadOnly = true;
             // 
+            // clSoftwareVersion
+            // 
+            this.clSoftwareVersion.DataPropertyName = "SoftwareVersion";
+            this.clSoftwareVersion.HeaderText = "软件版本";
+            this.clSoftwareVersion.Name = "clSoftwareVersion";
+            this.clSoftwareVersion.ReadOnly = true;
+            // 
             // clOperationlog
             // 
-            this.clOperationlog.DataPropertyName = "Operationlog";
+            this.clOperationlog.DataPropertyName = "LogContent";
             this.clOperationlog.HeaderText = "操作日志";
             this.clOperationlog.Name = "clOperationlog";
             this.clOperationlog.ReadOnly = true;
@@ -204,6 +223,7 @@
 
         private Sunny.UI.UIDataGridView dgvOperationlog;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOperationTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSoftwareVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOperationlog;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOperationAccount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {

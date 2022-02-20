@@ -30,6 +30,7 @@ namespace SYS.Core
     /// <summary>
     /// 房间实体类
     /// </summary>
+    [SqlSugar.SugarTable("room")]
     public class Room
     {
         /// <summary>

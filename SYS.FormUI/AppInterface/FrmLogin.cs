@@ -30,6 +30,8 @@ using SYS.FormUI.Properties;
 using System.Collections.Generic;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
+using System.Net;
 
 namespace SYS.FormUI
 {
@@ -173,13 +175,10 @@ namespace SYS.FormUI
                         LoginInfo.WorkerName = w.WorkerName;
                         LoginInfo.WorkerClub = w.ClubName;
                         LoginInfo.WorkerPosition = w.PositionName;
-
+                        LoginInfo.SoftwareVersion = System.Windows.Forms.Application.ProductVersion.ToString();
                         FrmMain frm = new FrmMain(this);
                         this.Hide();//隐藏登录窗体
                         frm.ShowDialog();//打开主窗体
-                        #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(txtWorkerId.Text + "于" + DateTime.Now + "登入了系统！", 1);
-                        #endregion
 
                     }
                     else
@@ -192,7 +191,7 @@ namespace SYS.FormUI
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
-                UIMessageBox.Show("服务器维护中，请稍后再试！", "温馨提示", UIStyle.Red);
+                //UIMessageBox.Show("服务器维护中，请稍后再试！", "温馨提示", UIStyle.Red);
             }
         }
         #endregion

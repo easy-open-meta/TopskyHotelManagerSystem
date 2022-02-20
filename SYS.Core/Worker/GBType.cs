@@ -29,6 +29,7 @@ namespace SYS.Application
     /// <summary>
     /// 奖惩类型实体类
     /// </summary>
+    [SqlSugar.SugarTable("gbtype")]
     public class GBType
     {
         /// <summary>

@@ -35,14 +35,17 @@ namespace SYS.Core
         /// <summary>
         /// 公告编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "NoticeNo")]
         public string NoticeNo { get; set; }
         /// <summary>
         /// 公告主题
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "Noticetheme")]
         public string Noticetheme { get; set; }
         /// <summary>
         /// 公告类型
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "NoticeType")]
         public string NoticeType { get; set; }
         /// <summary>
         /// 公告类型(描述)
@@ -52,18 +55,22 @@ namespace SYS.Core
         /// <summary>
         /// 公告时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "NoticeTime")]
         public DateTime NoticeTime { get; set; }
         /// <summary>
         /// 公告正文
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "NoticeContent")]
         public string NoticeContent { get; set; }
         /// <summary>
         /// 发文部门
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "NoticeClub")]
         public string NoticeClub { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "delete_mk")]
         public int delete_mk { get; set; }
         /// <summary>
         /// 资料创建人

@@ -23,8 +23,10 @@
  *模块说明：操作日志类
  */
 using System;
+using System.Linq;
+using System.Net;
 
-namespace SYS.Core
+namespace SYS.Common
 {
     /// <summary>
     /// 日志等级
@@ -48,30 +50,44 @@ namespace SYS.Core
     /// <summary>
     /// 操作日志
     /// </summary>
+    [SqlSugar.SugarTable("operationlog")]
     public class OperationLog
     {
-        
         /// <summary>
         /// 操作时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "OperationTime")]
         public DateTime OperationTime { get; set; }
         /// <summary>
         /// 操作信息
         /// </summary>
-        public string Operationlog { get; set; }
+        [SqlSugar.SugarColumn(ColumnName = "LogContent")]
+        public string LogContent { get; set; }
         /// <summary>
         /// 操作账号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "OperationAccount")]
         public string OperationAccount { get; set; }
         /// <summary>
         /// 日志等级
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "OperationLevel")]
         public RecordLevel OperationLevel { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "delete_mk")]
         public int delete_mk { get; set; }
         /// <summary>
+        /// 软件版本
+        /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "SoftwareVersion")]
+        public string SoftwareVersion { get; set; }
+        /// <summary>
+        /// 登录IP
+        /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "login_ip")]
+        public string login_ip { get; set; }
         /// 资料创建人
         /// </summary>
         public string datains_usr { get; set; }

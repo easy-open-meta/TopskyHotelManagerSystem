@@ -35,13 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new Sunny.UI.UITextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.swSecurity = new Sunny.UI.UISwitch();
-            this.label2 = new System.Windows.Forms.Label();
             this.uiToolTip1 = new Sunny.UI.UIToolTip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCheckIn = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -73,6 +69,7 @@
             this.txtAccount.Style = Sunny.UI.UIStyle.Custom;
             this.txtAccount.StyleCustomMode = true;
             this.txtAccount.TabIndex = 106;
+            this.txtAccount.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -103,6 +100,7 @@
             this.txtPassword.Style = Sunny.UI.UIStyle.Custom;
             this.txtPassword.StyleCustomMode = true;
             this.txtPassword.TabIndex = 108;
+            this.txtPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -114,29 +112,6 @@
             this.label3.TabIndex = 107;
             this.label3.Text = "管理员密码";
             // 
-            // swSecurity
-            // 
-            this.swSecurity.Active = true;
-            this.swSecurity.Enabled = false;
-            this.swSecurity.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.swSecurity.Location = new System.Drawing.Point(311, 517);
-            this.swSecurity.MinimumSize = new System.Drawing.Size(1, 1);
-            this.swSecurity.Name = "swSecurity";
-            this.swSecurity.Size = new System.Drawing.Size(95, 35);
-            this.swSecurity.Style = Sunny.UI.UIStyle.Custom;
-            this.swSecurity.TabIndex = 109;
-            this.swSecurity.Text = "uiSwitch1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(183, 521);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "进入安全模式";
-            // 
             // uiToolTip1
             // 
             this.uiToolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
@@ -145,22 +120,11 @@
             this.uiToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.uiToolTip1.ToolTipTitle = "安全模式：";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(474, 517);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 35);
-            this.pictureBox2.TabIndex = 111;
-            this.pictureBox2.TabStop = false;
-            this.uiToolTip1.SetToolTip(this.pictureBox2, "进入安全模式，意味着你所进行的所有操作\r\n将会被系统如实地记录在后台数据库中(超级管\r\n理员除外)，默认进入安全模式！");
-            // 
             // btnCheckIn
             // 
             this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckIn.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnCheckIn.Location = new System.Drawing.Point(240, 576);
+            this.btnCheckIn.Location = new System.Drawing.Point(240, 525);
             this.btnCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Radius = 20;
@@ -176,11 +140,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(700, 654);
+            this.ClientSize = new System.Drawing.Size(700, 607);
             this.Controls.Add(this.btnCheckIn);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.swSecurity);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAccount);
@@ -196,7 +157,6 @@
             this.Text = "超级管理员安全系统";
             this.Load += new System.EventHandler(this.FrmAdminEnter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,10 +168,7 @@
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UITextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private Sunny.UI.UISwitch swSecurity;
-        private System.Windows.Forms.Label label2;
         private Sunny.UI.UIToolTip uiToolTip1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Sunny.UI.UIButton btnCheckIn;
     }
 }

@@ -23,6 +23,7 @@
  */
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System;
@@ -121,6 +122,9 @@ namespace SYS.FormUI
                     if (n == true)
                     {
                         UIMessageBox.ShowSuccess("删除成功！");
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "删除民族类型操作！删除值为：" + _nation.nation_no, 2);
+                        #endregion
                         ReloadNationList();
                     }
                 }
@@ -145,6 +149,9 @@ namespace SYS.FormUI
                     if (n == true)
                     {
                         UIMessageBox.ShowSuccess("恢复成功！");
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "恢复民族类型操作！恢复值为：" + _nation.nation_no, 2);
+                        #endregion
                         ReloadNationList();
                     }
                 }
@@ -168,6 +175,9 @@ namespace SYS.FormUI
                 if (n == true)
                 {
                     UIMessageBox.ShowSuccess("新增成功！");
+                    #region 获取添加操作日志所需的信息
+                    RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增民族类型操作！新增值为：" + _nation.nation_no, 2);
+                    #endregion
                     ReloadNationList();
                 }
             }

@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 性别
     /// </summary>
+    [SqlSugar.SugarTable("sextype")]
     public class SexType
     {
         /// <summary>

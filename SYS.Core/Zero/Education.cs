@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 学历
     /// </summary>
+    [SqlSugar.SugarTable("education")]
     public class Education
     {
         /// <summary>

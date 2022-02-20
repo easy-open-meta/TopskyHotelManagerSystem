@@ -20,39 +20,38 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
- *模块说明：管理员信息静态类
+ *模块说明：登录信息静态类
  */
-namespace SYS.Core
+using System.Linq;
+using System.Net;
+
+namespace SYS.Common
 {
-    /// <summary>
-    /// 管理员信息静态类
-    /// </summary>
-    public class AdminInfo
+    public static class LoginInfo
     {
         /// <summary>
-        /// 存储当前超管账号
+        /// 存储当前员工编号
         /// </summary>
-        public static string Account = "";
+        public static string WorkerNo = "";
 
         /// <summary>
-        /// 存储当前超管类型
+        /// 存储当前员工姓名
         /// </summary>
-        public static string Type = "";
+        public static string WorkerName = "";
 
         /// <summary>
-        /// 存储当前超管用户组
+        /// 存储当前员工职位
         /// </summary>
-        public static string Group = "";
+        public static string WorkerPosition = "";
 
         /// <summary>
-        /// 存储当前超管名称
+        /// 存储当前员工部门
         /// </summary>
-        public static string Name = "";
+        public static string WorkerClub = "";
 
         /// <summary>
-        /// 是否为超管
+        /// 存储当前软件版本
         /// </summary>
-        public static bool isAdmin;
-
+        public static string SoftwareVersion = "";
     }
 }

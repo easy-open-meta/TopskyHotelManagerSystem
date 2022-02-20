@@ -20,51 +20,47 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
+ *模块说明：管理员信息静态类
  */
-using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using MySql.Data.MySqlClient;
-using SYS.Common;
-using SYS.Core;
+using System.Net;
 
-namespace SYS.Application
+namespace SYS.Common
 {
     /// <summary>
-    /// 操作日志数据访问层
+    /// 管理员信息静态类
     /// </summary>
-    public class OperationlogService:Repository<OperationLog>, IOperationlogService
+    public class AdminInfo
     {
         /// <summary>
-        /// 添加操作日志
+        /// 存储当前超管账号
         /// </summary>
-        /// <param name="opr"></param>
-        /// <returns></returns>
-        public bool InsertOperationLog(OperationLog opr)
-        {
-            if (AdminInfo.isAdmin == false)
-            {
-                return base.Insert(opr);
-            }
-            return true;
-        }
+        public static string Account = "";
 
         /// <summary>
-        /// 查询所有操作日志
+        /// 存储当前超管类型
         /// </summary>
-        /// <returns></returns>
-        public List<OperationLog> SelectOperationlogAll()
-        {
-            List<OperationLog> operationLogs = new List<OperationLog>();
-            operationLogs = base.GetList(a => a.delete_mk != 1).OrderByDescending(a => a.OperationTime).ToList();
-            operationLogs.ForEach(source =>
-            {
-                source.OperationLevelNm = source.OperationLevel == RecordLevel.Normal ? "常规操作" : source.OperationLevel == RecordLevel.Warning ? "敏感操作" : "严重操作";
-            });
-            return operationLogs;
-        }
+        public static string Type = "";
 
-        
+        /// <summary>
+        /// 存储当前超管用户组
+        /// </summary>
+        public static string Group = "";
+
+        /// <summary>
+        /// 存储当前超管名称
+        /// </summary>
+        public static string Name = "";
+
+        /// <summary>
+        /// 是否为超管
+        /// </summary>
+        public static bool isAdmin;
+
+        /// <summary>
+        /// 存储当前软件版本
+        /// </summary>
+        public static string SoftwareVersion = "";
+
     }
 }

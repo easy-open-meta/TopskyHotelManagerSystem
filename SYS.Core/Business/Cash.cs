@@ -44,6 +44,11 @@ namespace SYS.Core
         /// </summary>
         public decimal CashPrice { get; set; }
         /// <summary>
+        /// 资产总值描述
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string CashPriceStr { get; set; }
+        /// <summary>
         /// 所属部门
         /// </summary>
         public string CashClub { get; set; }

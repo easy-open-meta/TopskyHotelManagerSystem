@@ -40,4 +40,5 @@ namespace SYS.FormUI
             System.Windows.Forms.Application.Run(new FrmLoading());
         }
     }
+
 }

@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 员工奖罚
     /// </summary>
+    [SqlSugar.SugarTable("workergoodbad")]
     public class WorkerGoodBad
     {
         /// <summary>

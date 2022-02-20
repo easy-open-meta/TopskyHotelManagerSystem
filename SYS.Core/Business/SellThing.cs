@@ -30,6 +30,7 @@ namespace SYS.Core
     /// <summary>
     /// 商品信息
     /// </summary>
+    [SqlSugar.SugarTable("sellthing")]
     public class SellThing
     {
         /// <summary>

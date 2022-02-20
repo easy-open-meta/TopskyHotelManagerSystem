@@ -56,12 +56,25 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cboWorkerFace = new Sunny.UI.UIComboBox();
             this.flpHistory = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd = new Sunny.UI.UIButton();
             this.cbWorkerNation = new Sunny.UI.UIComboBox();
             this.picWorkerPic = new System.Windows.Forms.PictureBox();
             this.openPic = new System.Windows.Forms.OpenFileDialog();
+            this.pnlBtm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnlBtm
+            // 
+            this.pnlBtm.Location = new System.Drawing.Point(1, 705);
+            this.pnlBtm.Size = new System.Drawing.Size(783, 52);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(655, 12);
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(540, 12);
             // 
             // label15
             // 
@@ -435,19 +448,6 @@
             this.flpHistory.Size = new System.Drawing.Size(754, 199);
             this.flpHistory.TabIndex = 133;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(634, 709);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Radius = 30;
-            this.btnAdd.Size = new System.Drawing.Size(137, 46);
-            this.btnAdd.TabIndex = 134;
-            this.btnAdd.Text = "添     加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // cbWorkerNation
             // 
             this.cbWorkerNation.DataSource = null;
@@ -488,9 +488,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(785, 768);
+            this.ClientSize = new System.Drawing.Size(785, 760);
             this.Controls.Add(this.cbWorkerNation);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.picWorkerPic);
             this.Controls.Add(this.flpHistory);
             this.Controls.Add(this.label15);
@@ -520,12 +519,43 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FrmAddWorker";
             this.ShowIcon = true;
             this.Text = "添加员工";
+            this.ButtonOkClick += new System.EventHandler(this.FrmAddWorker_ButtonOkClick);
+            this.ButtonCancelClick += new System.EventHandler(this.FrmAddWorker_ButtonCancelClick);
             this.Load += new System.EventHandler(this.FrmAddWorker_Load);
+            this.Controls.SetChildIndex(this.label18, 0);
+            this.Controls.SetChildIndex(this.label17, 0);
+            this.Controls.SetChildIndex(this.label16, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.dtpBirthday, 0);
+            this.Controls.SetChildIndex(this.WorkerNo, 0);
+            this.Controls.SetChildIndex(this.cboSex, 0);
+            this.Controls.SetChildIndex(this.label22, 0);
+            this.Controls.SetChildIndex(this.label21, 0);
+            this.Controls.SetChildIndex(this.label20, 0);
+            this.Controls.SetChildIndex(this.label19, 0);
+            this.Controls.SetChildIndex(this.dtpTime, 0);
+            this.Controls.SetChildIndex(this.WorkerName, 0);
+            this.Controls.SetChildIndex(this.cboWorkerPosition, 0);
+            this.Controls.SetChildIndex(this.label23, 0);
+            this.Controls.SetChildIndex(this.cboClub, 0);
+            this.Controls.SetChildIndex(this.label24, 0);
+            this.Controls.SetChildIndex(this.cboEducation, 0);
+            this.Controls.SetChildIndex(this.label25, 0);
+            this.Controls.SetChildIndex(this.txtAddress, 0);
+            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.WorkerID, 0);
+            this.Controls.SetChildIndex(this.label27, 0);
+            this.Controls.SetChildIndex(this.WorkerTel, 0);
+            this.Controls.SetChildIndex(this.cboWorkerFace, 0);
+            this.Controls.SetChildIndex(this.label15, 0);
+            this.Controls.SetChildIndex(this.flpHistory, 0);
+            this.Controls.SetChildIndex(this.picWorkerPic, 0);
+            this.Controls.SetChildIndex(this.cbWorkerNation, 0);
+            this.Controls.SetChildIndex(this.pnlBtm, 0);
+            this.pnlBtm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picWorkerPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -561,7 +591,6 @@
         private System.Windows.Forms.Label label27;
         private Sunny.UI.UIComboBox cboWorkerFace;
         private System.Windows.Forms.FlowLayoutPanel flpHistory;
-        private Sunny.UI.UIButton btnAdd;
         private Sunny.UI.UIComboBox cbWorkerNation;
         private System.Windows.Forms.OpenFileDialog openPic;
     }

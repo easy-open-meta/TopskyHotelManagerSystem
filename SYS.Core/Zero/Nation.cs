@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 民族
     /// </summary>
+    [SqlSugar.SugarTable("nation")]
     public class Nation
     {
         /// <summary>

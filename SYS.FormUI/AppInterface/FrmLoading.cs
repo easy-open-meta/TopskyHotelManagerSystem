@@ -25,6 +25,8 @@ namespace SYS.FormUI
             lblSoftwareVersion.Text = System.Windows.Forms.Application.ProductVersion.ToString();
             lblDllVersion.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             CheckUpdate();
+            //Thread thread2 = new Thread(threadPro);//创建新线程
+            //thread2.Start();
         }
 
         public void threadPro()

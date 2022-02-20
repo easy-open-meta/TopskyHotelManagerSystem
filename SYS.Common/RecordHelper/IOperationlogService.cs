@@ -21,10 +21,9 @@
  *SOFTWARE.
  *
  */
-using SYS.Core;
 using System.Collections.Generic;
 
-namespace SYS.Application
+namespace SYS.Common
 {
     /// <summary>
     /// 操作日志数据访问层

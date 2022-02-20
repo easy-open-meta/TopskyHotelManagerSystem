@@ -30,14 +30,22 @@ using SYS.Application;
 using System.Transactions;
 using SYS.Application.Zero;
 using System.Linq;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
-    public partial class FrmCheckIn : UIForm
+    public partial class FrmCheckIn : UIEditForm
     {
         public FrmCheckIn()
         {
             InitializeComponent();
+        }
+
+        protected override bool CheckData()
+        {
+            return CheckEmpty(txtCustoName, "请输入姓名")
+                   && CheckEmpty(txtCustoNo, "请输入客户编号")
+                   && CheckEmpty(txtCustoTel, "输入11位手机号码");
         }
 
         #region 窗体加载事件方法
@@ -77,8 +85,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        
-
         #region 关闭窗口
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -86,67 +92,10 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 验证输入完整性
-        /// <summary>
-        /// 验证输入完整性
-        /// </summary>
-        private bool CheckInupt()
-        {
-            if (txtCustoNo.Text == "")
-            {
-                UIMessageBox.Show("请输入客户编号！", "来自小T的提示",UIStyle.Orange);
-                txtCustoNo.Focus();
-                return false;
-            }
-            
-            return true;
-        }
-        #endregion
-
         #region 入住按钮点击事件方法
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            if (CheckInupt())
-            {
-                if (new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text) != null)
-                {
-                    using (TransactionScope scope = new TransactionScope())
-                    {
-                        Room r = new Room() 
-                        {
-                            CheckTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                            CustoNo = txtCustoNo.Text,
-                            RoomStateId = 1,
-                            RoomNo = txtRoomNo.Text,
-                            datachg_usr = LoginInfo.WorkerNo,
-                            datachg_date = DateTime.Now,
-                        };
-                        
-                        bool n = new RoomService().UpdateRoomInfo(r);
-                        if (n == true)
-                        {
-                            UIMessageBox.Show("登记入住成功！", "登记提示",UIStyle.Green);
-                            txtCustoNo.Text = "";
-                            FrmRoomManager.Reload("");
-                            #region 获取添加操作日志所需的信息
-                            RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！", 1);
-                            #endregion
-                            scope.Complete();
-                            this.Close();
-                            return;
-                        }
-                        else
-                        {
-                            UIMessageBox.Show("登记入住失败！", "登记提示",UIStyle.Red);
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    UIMessageBox.Show("客户编号不存在！", "来自小T的提示",UIStyle.Red);
-                }
-            }
+            
         }
         #endregion
 
@@ -201,6 +150,53 @@ namespace SYS.FormUI
                 txtCustoTel.Text = "";
                 txtCustoType.Text = "";
             }
+        }
+
+        private void FrmCheckIn_ButtonOkClick(object sender, EventArgs e)
+        {
+            if (new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text) != null)
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    Room r = new Room()
+                    {
+                        CheckTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                        CustoNo = txtCustoNo.Text,
+                        RoomStateId = 1,
+                        RoomNo = txtRoomNo.Text,
+                        datachg_usr = LoginInfo.WorkerNo,
+                        datachg_date = DateTime.Now,
+                    };
+
+                    bool n = new RoomService().UpdateRoomInfo(r);
+                    if (n)
+                    {
+                        UIMessageBox.Show("登记入住成功！", "登记提示", UIStyle.Green);
+                        txtCustoNo.Text = "";
+                        FrmRoomManager.Reload("");
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + r.CustoNo + "进行了入住操作！", 1);
+                        #endregion
+                        scope.Complete();
+                        this.Close();
+                        return;
+                    }
+                    else
+                    {
+                        UIMessageBox.Show("登记入住失败！", "登记提示", UIStyle.Red);
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                UIMessageBox.Show("客户编号不存在！", "来自小T的提示", UIStyle.Red);
+            }
+        }
+
+        private void FrmCheckIn_ButtonCancelClick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

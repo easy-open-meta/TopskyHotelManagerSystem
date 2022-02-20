@@ -119,7 +119,6 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmCheckOutFor
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmCustoManager.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmCustoSpend.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmGoodOrBad.resources
-E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmInputs.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmOperation.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmReserList.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmRoomStateManager.resources
@@ -161,3 +160,13 @@ E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmVipRule.res
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.ucVipType.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmLoading.resources
 E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\App.config
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\SYS.FormUI.FrmEditInputs.resources
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\SYS.Core.dll.config
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\Npgsql.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.ValueTuple.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\obj\Debug\TS酒店管理系统.exe.config
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.Buffers.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.Memory.xml
+E:\Gitee\TopSkyHotelManagerSystem\SYS.FormUI\bin\Debug\System.Numerics.Vectors.xml

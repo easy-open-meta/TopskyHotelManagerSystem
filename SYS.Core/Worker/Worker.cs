@@ -100,6 +100,7 @@ namespace SYS.Core
         /// <summary>
         /// 证件号码
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "CardID")]
         public string CardId { get; set; }
         /// <summary>
         /// 员工密码

@@ -46,6 +46,17 @@ namespace SYS.Application
                 Pic = workerPic.Pic
             });
         }
+
+        /// <summary>
+        /// 删除员工照片
+        /// </summary>
+        /// <param name="workerPic"></param>
+        /// <returns></returns>
+        public bool DeleteWorkerPic(WorkerPic workerPic)
+        {
+            return base.Delete(a => a.WorkerId.Equals(workerPic.WorkerId));
+        }
+
         /// <summary>
         /// 更新员工照片
         /// </summary>

@@ -29,6 +29,7 @@ namespace SYS.Core
     /// <summary>
     /// 员工履历
     /// </summary>
+    [SqlSugar.SugarTable("workerhistory")]
     public class WorkerHistory
     {
         /// <summary>

@@ -25,6 +25,12 @@ namespace SYS.Application
         /// <returns></returns>
         bool InsertWorkerPic(WorkerPic workerPic);
         /// <summary>
+        /// 删除员工照片
+        /// </summary>
+        /// <param name="workerPic"></param>
+        /// <returns></returns>
+        bool DeleteWorkerPic(WorkerPic workerPic);
+        /// <summary>
         /// 更新员工照片
         /// </summary>
         /// <param name="workerPic"></param>

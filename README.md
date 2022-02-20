@@ -11,21 +11,25 @@
 
 1. ##### Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)      
 
-2. ##### SQLSugar，国内最受欢迎ORM框架[SQLSugar。 [Apache-2.0开源协议](https://gitee.com/sunkaixuan/SqlSugar) 
+2. ##### SQLSugar，国内最受欢迎ORM框架[SQLSugar。 [Apache-2.0开源协议](https://gitee.com/dotnetchina/SqlSugar) 
 
-3. ##### SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。
-
-   [SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
+3. ##### SunnyUI——SunnyUI.Net, 基于 C# .Net WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。[SunnyUI.Net,GPL3.0开源协议](https://gitee.com/yhuse/SunnyUI)
 
 #  :exclamation: 本项目说明：
 
-1、一切开发请遵照MIT开源协议进行,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应描述。
+1、二次开发本项目时请遵照MIT开源协议,SunnyUI.Net框架采用的是GPL3.0开源协议、SQLSugarORM框架采用的是Apache2.0，需要用到时请务必在项目介绍加上对应声明。
 
 2、有bug欢迎提出issue！或进行评论
 
-3、本系统90%页面基于SunnyUI.Net控件库进行创建，在此特别声明！
+3、本系统95%页面基于SunnyUI.Net控件库进行创建，在此特别声明！
 
-4、关于数据库脚本问题，请先移步至Scripts文件下，下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!
+4、关于数据库脚本问题，请先移步至数据库脚本文件夹下，选择Mysql版本或PostgreSQL版本任意文件夹下载Data和Table两个文件，再数据库中先执行Table.sql，再执行Data.sql!
+
+5、针对MySQL和PostgreSQL数据库的说明：
+
+​		5.1、本地数据库若为MySQL，则请将Application层里的业务逻辑类继承的Repository改为MysqlRepository，并在Common层对HttpHelper里的mysqlString常量数据库连接字符串进行配置。
+
+​		5.2、本地数据库若为PostgreSQL，则无需进行任何改动，只需要在Common层对HttpHelper里的pgsqlString常量数据库连接字符串进行配置。
 
 #  :thought_balloon: 开发目的：
 
@@ -37,7 +41,7 @@
 
 开发工具：Microsoft Visual Studio 2015(系统第一版本)/Microsoft Visual Studio 2019(系统最新版本)
 
-数据库：Microsoft SQL Server 2008 R2/MySQL v8.0.22(强烈推荐！)
+数据库：Microsoft SQL Server 2008 R2(最初版本所使用的)/MySQL v8.0.22(强烈推荐！)/PostgreSql13(强烈推荐！)
 
 数据库管理工具：Microsoft SQL Server 2008 R2 Mangerment Studio/Navicat 15
 
@@ -52,71 +56,115 @@
 #  :open_file_folder: 系统结构：
 ```tree
 TopSkyHotelManagerSystem
-├─SYS.Application
-├─ Business
-├─ Customer
-├─ RecordHelper
-├─ Room
-├─ SYS.Application.csproj
-├─ SYS.Application.csproj.user
-├─ SYS.Application.csproj.vspscc
-├─ Worker
-├─ Zero
-├─ app.config
-├─ bitbug_favicon (1).ico
-└─ packages.config
-├─SYS.Common
-├─ App.config
-├─ Base
-├─ Repository
-├─ SYS.Common.csproj
-├─ SYS.Common.csproj.vspscc
-├─ StatusCode
-│    └─ StatusCode.cs
-├─ bitbug_favicon (1).ico
-└─ packages.config
-├─SYS.Core
-├─ App.config
-├─ Business
-├─ Customer
-├─ Repository
-├─ Room
-├─ SYS.Core.csproj
-├─ SYS.Core.csproj.user
-├─ SYS.Core.csproj.vspscc
-├─ Util
-├─ Worker
-├─ Zero
-├─ bitbug_favicon (1).ico
-├─SYS.FormUI
-├─ App.config
-├─ AppFunction
-├─ AppInterface
-├─ AppMain
-├─ AppUserControls
-├─ Font
-├─ Logo
-├─ Program.cs
-├─ RequestHelper
-├─ Resources
-├─ RoomOption.Designer.cs
-├─ RoomOption.cs
-├─ RoomOption.resx
-├─ SETTINGS.CS
-├─ SYS.FormUI.csproj
-├─ SYS.FormUI.csproj.user
-├─ SYS.FormUI.csproj.vspscc
-├─ TSHotelManagerSystem_TemporaryKey.pfx
-├─ WebSite.Designer.cs
-├─ WebSite.cs
-├─ WebSite.resx
-├─ WtiInfo.Designer.cs
-├─ WtiInfo.cs
-├─ WtiInfo.resx
-├─ bitbug_favicon (1).ico
-├─ bitbug_favicon.ico
-├─ icon
-├─ logo.ico
+├─ JVNUI
+│    └─ js
+│           └─ parseUtil.js
+├─ LICENSE
+├─ README.md
+├─ SYS.Application
+│    ├─ .gitignore
+│    ├─ Business
+│    ├─ Customer
+│    ├─ Properties
+│    ├─ Room
+│    ├─ SYS.Application.csproj
+│    ├─ SYS.Application.csproj.user
+│    ├─ SYS.Application.csproj.vspscc
+│    ├─ Worker
+│    ├─ Zero
+│    ├─ app.config
+│    ├─ bin
+│    ├─ bitbug_favicon (1).ico
+│    ├─ obj
+│    ├─ packages.config
+│    └─ 基础核心类库jvncorelib(适用全平台).md
+├─ SYS.Common
+│    ├─ .gitignore
+│    ├─ App.config
+│    ├─ BaseDbContext.cs
+│    ├─ DbContext.cs
+│    ├─ DbContextOption.cs
+│    ├─ HttpHelper.cs
+│    ├─ Properties
+│    ├─ RecordHelper
+│    ├─ Repository
+│    ├─ SYS.Common.csproj
+│    ├─ SYS.Common.csproj.vspscc
+│    ├─ bin
+│    ├─ bitbug_favicon (1).ico
+│    ├─ obj
+│    └─ packages.config
+├─ SYS.Core
+│    ├─ .gitignore
+│    ├─ App.config
+│    ├─ Business
+│    ├─ Customer
+│    ├─ Properties
+│    ├─ Resources
+│    ├─ Room
+│    ├─ SYS.Core.csproj
+│    ├─ SYS.Core.csproj.user
+│    ├─ SYS.Core.csproj.vspscc
+│    ├─ Util
+│    ├─ Worker
+│    ├─ Zero
+│    ├─ bin
+│    ├─ bitbug_favicon (1).ico
+│    ├─ obj
+│    └─ packages.config
+├─ SYS.FormUI
+│    ├─ .gitignore
+│    ├─ App.config
+│    ├─ AppFunction
+│    ├─ AppInterface
+│    ├─ AppMain
+│    ├─ AppUserControls
+│    ├─ FodyWeavers.xml
+│    ├─ FodyWeavers.xsd
+│    ├─ Font
+│    ├─ Logo
+│    ├─ Program.cs
+│    ├─ Properties
+│    ├─ Resources
+│    ├─ SYS.FormUI.csproj
+│    ├─ SYS.FormUI.csproj.user
+│    ├─ SYS.FormUI.csproj.vspscc
+│    ├─ bi
+│    ├─ bitbug_favicon (1).ico
+│    ├─ bitbug_favicon.ico
+│    ├─ icon
+│    ├─ logo.ico
+│    ├─ obj
+│    ├─ packages.config
+│    └─ 基础核心类库jvncorelib(适用全平台).md
+├─ SYS.Library
+│    ├─ .gitignore
+│    ├─ MySql.Data.EntityFramework.dll
+│    ├─ MySql.Data.dll
+│    ├─ MySql.Web.dll
+│    ├─ Newtonsoft.Json.dll
+│    ├─ Newtonsoft.Json.xml
+│    ├─ Properties
+│    ├─ RequestHelper.dll
+│    ├─ SYS.Application.dll
+│    ├─ SYS.Application.xml
+│    ├─ SYS.Common.dll
+│    ├─ SYS.Core.dll
+│    ├─ SYS.Core.xml
+│    ├─ SYS.Library.csproj
+│    ├─ SYS.Library.csproj.user
+│    ├─ SYS.Library.csproj.vspscc
+│    ├─ app.config
+│    ├─ bin
+│    ├─ bitbug_favicon (1).ico
+│    ├─ kse.dll
+│    └─ obj
+├─ TSHotelManagerSystem.sln
+├─ packages
+├─ 数据库脚本
+├─ 版本迭代功能
+├─ 项目效果图
+└─ 项目相关文档
 ```
 
 #  :chart_with_upwards_trend: 系统数据库关系图(由PDMAN软件生成) :loudspeaker: 
@@ -153,17 +201,23 @@ TopSkyHotelManagerSystem
 
 **张黔广(开发，APP前后端开发)**
 
+**张家杰(开发，代码编写开发)**
+
+**咖啡与网络(Java&Net)(后期维护团队)**
+
 #  :computer: 项目运行部署：
 
 **下载并安装Microsoft Visual Studio Professional 2017及以上版本，并通过下载Zip包解压，打开.sln后缀格式文件运行。**
 
 #  :inbox_tray: 数据库运行部署(本地)：
 
-**作者及开发团队强烈建议使用MySQL数据库，安装MySQL数据库并开启服务，通过可视化管理工具对数据库进行建立，可通过打开执行数据库脚本文件夹内的.sql后缀格式文件进行快速建立数据表和导入数据，执行步骤(以MySQL数据库为例)：**
+**作者及开发团队强烈建议使用MySQL/PostgreSQL数据库，安装MySQL/PostgreSQL数据库并开启服务，通过可视化管理工具对数据库进行建立，可通过打开执行数据库脚本文件夹内的.sql后缀格式文件进行快速建立数据表和导入数据，执行步骤(以MySQL数据库为例)：**
 
-**1、通过可视化管理工具打开Table.sql文件进行数据表建立。**
+**1、通过可视化管理工具链接MySQL数据库或PostgreSQL数据库，随后新建名为‘tshoteldb’数据库。**
 
-**2、随后打开Data.sql文件进行数据导入。**
+**2、通过可视化管理工具打开Table.sql文件进行数据表建立。**
+
+**3、随后打开Data.sql文件进行数据导入。**
 
 #  :chart_with_upwards_trend: Star趋势图(感谢Giteye提供的趋势图报表功能！)：
 [![Giteye chart](https://chart.giteye.net/gitee/java-and-net/TopskyHotelManagerSystem/Z9DD26VK.png)](https://giteye.net/chart/Z9DD26VK)

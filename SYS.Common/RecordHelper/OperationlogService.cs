@@ -20,30 +20,46 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
- *模块说明：登录信息静态类
  */
-namespace SYS.Core
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Net;
+using SYS.Common;
+
+namespace SYS.Common
 {
-    public static class LoginInfo
+    /// <summary>
+    /// 操作日志数据访问层
+    /// </summary>
+    public class OperationlogService:Repository<OperationLog>, IOperationlogService
     {
         /// <summary>
-        /// 存储当前员工编号
+        /// 添加操作日志
         /// </summary>
-        public static string WorkerNo = "";
+        /// <param name="opr"></param>
+        /// <returns></returns>
+        public bool InsertOperationLog(OperationLog opr)
+        {
+            return base.Insert(opr);
+        }
 
         /// <summary>
-        /// 存储当前员工姓名
+        /// 查询所有操作日志
         /// </summary>
-        public static string WorkerName = "";
+        /// <returns></returns>
+        public List<OperationLog> SelectOperationlogAll()
+        {
+            List<OperationLog> operationLogs = new List<OperationLog>();
+            operationLogs = base.GetList(a => a.delete_mk != 1).OrderByDescending(a => a.OperationTime).ToList();
+            operationLogs.ForEach(source =>
+            {
+                source.OperationLevelNm = source.OperationLevel == RecordLevel.Normal ? "常规操作" : source.OperationLevel == RecordLevel.Warning ? "敏感操作" : "严重操作";
+            });
+            return operationLogs;
+        }
 
-        /// <summary>
-        /// 存储当前员工职位
-        /// </summary>
-        public static string WorkerPosition = "";
-
-        /// <summary>
-        /// 存储当前员工部门
-        /// </summary>
-        public static string WorkerClub = "";
+        
     }
 }

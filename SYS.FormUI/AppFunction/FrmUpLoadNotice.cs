@@ -27,6 +27,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using SYS.Application;
 using Sunny.UI;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -79,7 +80,7 @@ namespace SYS.FormUI
                 bool n = new NoticeService().InsertNotice(notice);
                 UIMessageBox.ShowSuccess("上传成功！");
                 #region 获取添加操作日志所需的信息
-                RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了上传公告操作！编号为：" + notice.NoticeNo, 2);
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "上传公告操作！新增值为：" + notice.NoticeNo, 2);
                 #endregion
             }
             else

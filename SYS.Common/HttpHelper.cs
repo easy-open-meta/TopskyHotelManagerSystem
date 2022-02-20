@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SYS.Core.Util
+namespace SYS.Common
 {
     /// <summary>
     /// 文件上传帮助类
@@ -17,15 +17,16 @@ namespace SYS.Core.Util
         /// <summary>
         /// 数据库配置连接
         /// </summary>
-        public const string dbString = "";
+        public const string mysqlString = "server = localhost; user id = softuser; password = .; database = tshoteldb;";
+        public const string pgsqlString = "PORT=5630;DATABASE=tshoteldb;HOST=localhost;PASSWORD=.;USER ID=postgres";
         /// <summary>
         /// 照片文件配置URL
         /// </summary>
-        public const string baseUrl = "";
+        public const string baseUrl = "http://localhost:5622/FileVisualPath/";
         /// <summary>
         /// 上传照片URL
         /// </summary>
-        public const string postUrl = "";
+        public const string postUrl = "http://localhost:5622/api/Upload";
 
         #endregion
 

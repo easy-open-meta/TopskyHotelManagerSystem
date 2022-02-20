@@ -34,14 +34,24 @@ using System.Net;
 using System.Configuration;
 using System.IO;
 using System.Text;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
-    public partial class FrmAddWorker : UIForm
+    public partial class FrmAddWorker : UIEditForm
     {
         public FrmAddWorker()
         {
             InitializeComponent();
+        }
+
+        protected override bool CheckData()
+        {
+            return CheckEmpty(WorkerName, "请输入姓名")
+                && CheckEmpty(WorkerNo, "请输入工号")
+                   && CheckEmpty(WorkerID, "请输入证件号码")
+                   && CheckEmpty(WorkerTel, "输入11位手机号码")
+                   && CheckEmpty(txtAddress, "请填写居住地址");
         }
 
         ucHistory ucHistory = null;
@@ -86,7 +96,8 @@ namespace SYS.FormUI
                     }
                     
                 }
-                btnAdd.Visible = false;
+                btnOK.Visible = false;
+                btnCancel.Visible = false;
                 WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
                 WorkerName.Text = FrmChangeWorker.wk_WorkerName;
                 cboSex.Text = FrmChangeWorker.wk_WorkerSex;
@@ -185,9 +196,9 @@ namespace SYS.FormUI
                         picWorkerPic.LoadAsync(workerPicSource.Pic);
                     }
                     this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
-                    btnAdd.Text = "修改";
-                    this.btnAdd.Click -= new EventHandler(btnAdd_Click);
-                    this.btnAdd.Click += new EventHandler(btnUpd_Click);
+                    btnOK.Text = "修改";
+                    this.ButtonOkClick -= new EventHandler(FrmAddWorker_ButtonOkClick);
+                    this.ButtonOkClick += new EventHandler(btnUpd_Click);
                     WorkerTel.ReadOnly = false;
                     txtAddress.ReadOnly = false;
                     List<WorkerHistory> workerHistories = new WorkerHistoryService().SelectHistoryByWorkerId(WorkerNo.Text);
@@ -226,6 +237,9 @@ namespace SYS.FormUI
                 if (i == true)
                 {
                     UIMessageBox.ShowSuccess("信息修改成功！");
+                    #region 获取添加操作日志所需的信息
+                    RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "修改员工操作！修改值为：" + worker.WorkerId, 2);
+                    #endregion
                     this.Close();
                     FrmWorkerManager.Reload();
                     return;
@@ -241,133 +255,6 @@ namespace SYS.FormUI
             {
                 UIMessageBox.ShowWarning("修改操作已取消！");
                 return;
-            }
-        }
-
-        public bool CheckInput(Worker worker)
-        {
-            if (string.IsNullOrWhiteSpace(worker.WorkerId))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerName))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerSex + ""))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerBirthday + ""))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerClub))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerNation))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerPosition))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerTel))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerAddress))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.CardId))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerEducation))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(worker.WorkerFace))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            Worker worker = new Worker
-            {
-                WorkerId = WorkerNo.Text.Trim(),
-                WorkerName = WorkerName.Text.Trim(),
-                WorkerBirthday = dtpBirthday.Value,
-                WorkerSex = (int)cboSex.SelectedValue,
-                WorkerNation = cbWorkerNation.SelectedValue.ToString(),
-                WorkerTel = WorkerTel.Text,
-                WorkerClub = cboClub.SelectedValue.ToString(),
-                WorkerAddress = txtAddress.Text,
-                WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
-                CardId = WorkerID.Text,
-                WorkerTime = dtpTime.Value,
-                WorkerFace = cboWorkerFace.Text,
-                WorkerEducation = cboEducation.SelectedValue.ToString(),
-                datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
-            };
-            try
-            {
-                if (CheckInput(worker))
-                {
-                    #region 员工信息添加代码块
-                    bool n = new WorkerService().AddWorker(worker);
-                    #endregion
-                    
-                    if (ucHistory.txtCompany != null && ucHistory.txtPosition != null && ucHistory.dtpStartDate.Value != null && ucHistory.dtpEndDate.Value != null)
-                    {
-                        #region 履历添加代码块
-                        WorkerHistory workerHistory = new WorkerHistory
-                        {
-                            StartDate = ucHistory.dtpStartDate.Value,
-                            EndDate = ucHistory.dtpEndDate.Value,
-                            Position = ucHistory.txtPosition.Text,
-                            Company = ucHistory.txtCompany.Text,
-                            WorkerId = WorkerNo.Text.Trim()
-                        };
-                        bool j = new WorkerHistoryService().AddHistoryByWorkerId(workerHistory);
-                        #endregion
-
-                        #region 判断履历和信息代码块
-                        if (n == true && j == true)
-                        {
-                            UIMessageBox.Show("员工信息/履历添加成功！该员工登录密码为：123456，请提醒员工妥善保管并首次登录系统时修改密码！");
-                            this.Close();
-                            FrmWorkerManager.Reload();
-                            #region 获取添加操作日志所需的信息
-                            RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行了添加员工操作，员工编号为：" + WorkerNo.Text + "！", 2);
-                            #endregion
-                        }
-                        else
-                        {
-                            UIMessageBox.Show("员工信息/履历添加失败，请检查数据格式或稍后再试！");
-                        }
-                        #endregion
-                    }
-                }
-                else
-                {
-                    UIMessageBox.Show("信息不能为空！");
-                }
-            }
-            catch(Exception ex)
-            {
-                UIMessageBox.Show("服务器繁忙或数据格式为空！");
-            }
-            finally
-            {
-                this.Close();
             }
         }
 
@@ -435,21 +322,6 @@ namespace SYS.FormUI
             return;
         }
 
-        private void pnlInfo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAddHistory_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void workerPic_Click(object sender, EventArgs e)
         {
             openPic.ShowDialog();
@@ -471,5 +343,76 @@ namespace SYS.FormUI
             picWorkerPic.LoadAsync(HttpHelper.baseUrl + result.Trim());
         }
 
+        private void FrmAddWorker_ButtonOkClick(object sender, EventArgs e)
+        {
+            Worker worker = new Worker
+            {
+                WorkerId = WorkerNo.Text.Trim(),
+                WorkerName = WorkerName.Text.Trim(),
+                WorkerBirthday = dtpBirthday.Value,
+                WorkerSex = (int)cboSex.SelectedValue,
+                WorkerNation = cbWorkerNation.SelectedValue.ToString(),
+                WorkerTel = WorkerTel.Text,
+                WorkerClub = cboClub.SelectedValue.ToString(),
+                WorkerAddress = txtAddress.Text,
+                WorkerPosition = cboWorkerPosition.SelectedValue.ToString(),
+                CardId = WorkerID.Text,
+                WorkerTime = dtpTime.Value,
+                WorkerFace = cboWorkerFace.Text,
+                WorkerEducation = cboEducation.SelectedValue.ToString(),
+                datains_usr = AdminInfo.Account,
+                datains_date = DateTime.Now
+            };
+            try
+            {
+                #region 员工信息添加代码块
+                bool n = new WorkerService().AddWorker(worker);
+                #endregion
+
+                if (ucHistory.txtCompany != null && ucHistory.txtPosition != null && ucHistory.dtpStartDate.Value != null && ucHistory.dtpEndDate.Value != null)
+                {
+                    #region 履历添加代码块
+                    WorkerHistory workerHistory = new WorkerHistory
+                    {
+                        StartDate = ucHistory.dtpStartDate.Value,
+                        EndDate = ucHistory.dtpEndDate.Value,
+                        Position = ucHistory.txtPosition.Text,
+                        Company = ucHistory.txtCompany.Text,
+                        WorkerId = WorkerNo.Text.Trim()
+                    };
+                    bool j = new WorkerHistoryService().AddHistoryByWorkerId(workerHistory);
+                    #endregion
+
+                    #region 判断履历和信息代码块
+                    if (n == true && j == true)
+                    {
+                        UIMessageBox.Show("员工信息/履历添加成功！该员工登录密码为：123456，请提醒员工妥善保管并首次登录系统时修改密码！");
+                        this.Close();
+                        FrmWorkerManager.Reload();
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "添加员工操作！新增值为：" + worker.WorkerId, 2);
+                        #endregion
+                    }
+                    else
+                    {
+                        UIMessageBox.Show("员工信息/履历添加失败，请检查数据格式或稍后再试！");
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception ex)
+            {
+                UIMessageBox.Show("服务器繁忙或数据格式为空！");
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
+        private void FrmAddWorker_ButtonCancelClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

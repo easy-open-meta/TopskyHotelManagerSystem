@@ -164,7 +164,7 @@ namespace SYS.FormUI
 
         private void btnAddCusto_BtnClick(object sender, EventArgs e)
         {
-            FrmInputs frmInputs = new FrmInputs();
+            FrmEditInputs frmInputs = new FrmEditInputs();
             frmInputs.ShowDialog();
         }
 
@@ -192,8 +192,8 @@ namespace SYS.FormUI
                 FrmCustoManager.cm_CustoBirth = Convert.ToDateTime(dgvCustomerList.SelectedRows[0].Cells["CustoBirth"].Value.ToString());
                 FrmCustoManager.cm_CustoID = dgvCustomerList.SelectedRows[0].Cells["Column3"].Value.ToString();
                 FrmCustoManager.cm_CustoTel = dgvCustomerList.SelectedRows[0].Cells["CustoTel"].Value.ToString();
-                FrmInputs frmInputs = new FrmInputs();
-                frmInputs.Text = "修改客户";
+                FrmEditInputs frmInputs = new FrmEditInputs();
+                frmInputs.Text = "修改客户信息";
                 frmInputs.ShowDialog();
             }
         }
