@@ -65,6 +65,9 @@ namespace SYS.Application
                 source.DeptName = dept == null ? "" : dept.dept_name;
                 var worker = workers.FirstOrDefault(a => a.WorkerId.Equals(source.CashPerson));
                 source.PersonName = worker == null ? "" : worker.WorkerName;
+
+                source.CashPriceStr = source.CashPrice == 0 ? "" : Decimal.Parse(source.CashPrice.ToString()).ToString("#,##0.00").ToString();
+
             });
             return cs;
         }

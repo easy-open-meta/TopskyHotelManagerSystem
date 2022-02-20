@@ -33,6 +33,7 @@ using SYS.FormUI.Properties;
 using Sunny.UI;
 using System.Management;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -53,6 +54,9 @@ namespace SYS.FormUI
             //Main = this;//储存主窗口实例对象
             // 接受Form1对象
             this.returnForm1 = F1;
+            #region 获取添加操作日志所需的信息
+            RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "版本登入了系统！", 3);
+            #endregion
             Stop = StopUseExit;
             Start = StartUseExit;
             CloseMy = CloseMine;
@@ -221,6 +225,7 @@ namespace SYS.FormUI
                 }
             }
 
+            
 
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
             
@@ -542,11 +547,8 @@ namespace SYS.FormUI
 
         private void tsmiLoginBackSystem_Click(object sender, EventArgs e)
         {
-            FrmAdminEnter frmAdminEnter = new FrmAdminEnter();
+            
 
-            frmAdminEnter.ShowDialog();
-
-            this.Hide();
         }
 
         private void picSetting_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@
  *
  *模块说明：检测软件版本
  */
+using SqlSugar;
 using SYS.Common;
 using System;
 using System.Collections.Generic;
@@ -42,22 +43,23 @@ namespace SYS.Core
         /// <returns></returns>
         public applicationversion CheckBaseVersion() 
         {
-            applicationversion applicationVerison = new applicationversion();
-            applicationVerison = base.GetSingle(a => a.base_versionId == 1);
-            return applicationVerison;
+            return base.GetSingle(a => a.base_versionId == 1);
         }
     }
 
+    [SqlSugar.SugarTable("applicationversion")]
     public class applicationversion
     {
         /// <summary>
         /// 流水号
         /// </summary>
+        [SugarColumn(ColumnName = "base_versionId")]//数据库是自增才配自增
         public int base_versionId { get; set; }
 
         /// <summary>
         /// 版本号
         /// </summary>
+        [SugarColumn(ColumnName = "base_version")]//数据库是自增才配自增
         public string base_version { get; set; }
     }
 }

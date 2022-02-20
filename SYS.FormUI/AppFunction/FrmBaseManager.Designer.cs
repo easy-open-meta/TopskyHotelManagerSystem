@@ -30,8 +30,8 @@ namespace SYS.FormUI
         private void InitializeComponent()
         {
             this.flpMenu = new Sunny.UI.UIFlowLayoutPanel();
-            this.btnRoomFix = new Sunny.UI.UIButton();
             this.uiButton1 = new Sunny.UI.UIButton();
+            this.btnRoomFix = new Sunny.UI.UIButton();
             this.flpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,18 +48,7 @@ namespace SYS.FormUI
             this.flpMenu.Size = new System.Drawing.Size(208, 486);
             this.flpMenu.TabIndex = 0;
             this.flpMenu.Text = "uiFlowLayoutPanel1";
-            // 
-            // btnRoomFix
-            // 
-            this.btnRoomFix.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoomFix.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnRoomFix.Location = new System.Drawing.Point(8, 9);
-            this.btnRoomFix.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnRoomFix.Name = "btnRoomFix";
-            this.btnRoomFix.Size = new System.Drawing.Size(192, 42);
-            this.btnRoomFix.Style = Sunny.UI.UIStyle.Custom;
-            this.btnRoomFix.TabIndex = 1;
-            this.btnRoomFix.Text = "客房报修";
+            this.flpMenu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiButton1
             // 
@@ -72,8 +61,20 @@ namespace SYS.FormUI
             this.uiButton1.TabIndex = 3;
             this.uiButton1.Text = "维修进度";
             // 
+            // btnRoomFix
+            // 
+            this.btnRoomFix.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomFix.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnRoomFix.Location = new System.Drawing.Point(8, 9);
+            this.btnRoomFix.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnRoomFix.Name = "btnRoomFix";
+            this.btnRoomFix.Size = new System.Drawing.Size(192, 42);
+            this.btnRoomFix.TabIndex = 1;
+            this.btnRoomFix.Text = "客房报修";
+            // 
             // FrmBaseManager
             // 
+            this.AllowShowTitle = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 490);

@@ -16,15 +16,19 @@ namespace SYS.Common
             {
                 base.Context = new SqlSugarClient(new ConnectionConfig()
                 {
-                    DbType = SqlSugar.DbType.MySql,
+                    DbType = SqlSugar.DbType.PostgreSQL,
                     InitKeyType = InitKeyType.Attribute,
                     IsAutoCloseConnection = true,
-                    ConnectionString = ""
-                }) ;
+                    MoreSettings = new ConnMoreSettings()
+                    {
+                        PgSqlIsAutoToLower = false //数据库存在大写字段的 ，需要把这个设为false ，并且实体和字段名称要一样
+                    },
+                    ConnectionString = HttpHelper.pgsqlString
+                });
 
-                base.Context.Aop.OnLogExecuting = (s, p) =>
+                base.Context.Aop.OnError = (ex) =>
                 {
-                    //Console.WriteLine(s);
+                    RecordHelper.Record(ex.ToString(), 3);
                 };
             }
         }

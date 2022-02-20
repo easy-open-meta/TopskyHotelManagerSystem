@@ -27,6 +27,7 @@ namespace SYS.Core
     /// <summary>
     /// 酒店宣传联动内容
     /// </summary>
+    [SqlSugar.SugarTable("fonts")]
     public class Fonts
     {
         /// <summary>

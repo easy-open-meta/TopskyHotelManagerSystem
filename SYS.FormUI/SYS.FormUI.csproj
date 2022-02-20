@@ -83,6 +83,9 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="jvncorelib-fr, Version=1.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jvncorelib.1.0.1.4\lib\net461\jvncorelib-fr.dll</HintPath>
+    </Reference>
     <Reference Include="kse">
       <HintPath>..\SYS.Library\kse.dll</HintPath>
     </Reference>
@@ -97,8 +100,11 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql, Version=4.0.10.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.10\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar">
-      <HintPath>..\packages\SqlSugar.5.0.2\lib\SqlSugar.dll</HintPath>
+      <HintPath>..\packages\SqlSugar.5.0.3.5\lib\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="SunnyUI, Version=3.0.6.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.3.0.6\lib\net462\SunnyUI.dll</HintPath>
@@ -107,12 +113,31 @@
       <HintPath>..\packages\SunnyUI.Common.3.0.6\lib\net462\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -160,6 +185,12 @@
     </Compile>
     <Compile Include="AppFunction\FrmDepartment.Designer.cs">
       <DependentUpon>FrmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppFunction\FrmEditInputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppFunction\FrmEditInputs.Designer.cs">
+      <DependentUpon>FrmEditInputs.cs</DependentUpon>
     </Compile>
     <Compile Include="AppFunction\FrmEducation.cs">
       <SubType>Form</SubType>
@@ -335,12 +366,6 @@
     <Compile Include="AppFunction\FrmGoodOrBad.Designer.cs">
       <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\FrmInputs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppFunction\FrmInputs.Designer.cs">
-      <DependentUpon>FrmInputs.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppFunction\FrmOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -460,7 +485,6 @@
     <Compile Include="AppFunction\FrmWtiInfo.Designer.cs">
       <DependentUpon>FrmWtiInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="RequestHelper\RequestHelper.cs" />
     <EmbeddedResource Include="AppFunction\FrmAddAdmin.resx">
       <DependentUpon>FrmAddAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmChangeAdminPwd.resx">
       <DependentUpon>FrmChangeAdminPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppFunction\FrmEditInputs.resx">
+      <DependentUpon>FrmEditInputs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmMySpace.resx">
       <DependentUpon>FrmMySpace.cs</DependentUpon>
@@ -557,9 +584,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmGoodOrBad.resx">
       <DependentUpon>FrmGoodOrBad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppFunction\FrmInputs.resx">
-      <DependentUpon>FrmInputs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppFunction\FrmOperation.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
@@ -661,7 +685,7 @@
     <EmbeddedResource Include="Resources\Alibaba-PuHuiTi-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="TSHotelManagerSystem_TemporaryKey.pfx" />
+    <None Include="基础核心类库jvncorelib%28适用全平台%29.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

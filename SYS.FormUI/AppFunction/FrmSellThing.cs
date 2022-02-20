@@ -28,6 +28,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -186,7 +187,7 @@ namespace SYS.FormUI
                         LoadSpendInfoByCustoNo(r.CustoNo);
                         LoadSellThingInfo();
                         #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(LoginInfo.WorkerClub + LoginInfo.WorkerPosition + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
+                        RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
                         #endregion
                         nudNum.Value = 0;
                         return;
@@ -229,6 +230,9 @@ namespace SYS.FormUI
                     {
                         bool n = new SellService().UpdateSellThing(Stock, s.SellNo);
                         UIMessageTip.ShowOk("撤销成功！", 1000);
+                        #region 获取添加操作日志所需的信息
+                        RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + custoNo + "撤销了消费商品:" + txtSellName.Text + "操作！", 2);
+                        #endregion
                         LoadSpendInfoByRoomNo(txtRoomNo.Text);
                         LoadSellThingInfo();
                         nudNum.Value = 0;

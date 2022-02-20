@@ -23,6 +23,7 @@
  */
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 using SYS.FormUI.AppFunction;
 using System;
@@ -48,6 +49,7 @@ namespace SYS.FormUI
         public FrmBackgroundSystem()
         {
             InitializeComponent();
+            
             closeform = Closeform;
             hideform = HideWinform;
         }
@@ -91,6 +93,7 @@ namespace SYS.FormUI
             {//下午
                 uiLabel1.Text = "下午好," + AdminInfo.Name;
             }
+            
         }
 
         /// <summary>
@@ -318,6 +321,7 @@ namespace SYS.FormUI
                     break;
                 }
             }
+
             
         }
 
@@ -391,6 +395,11 @@ namespace SYS.FormUI
         {
             //FrmMySpace frmMySpace = new FrmMySpace();
             //frmMySpace.ShowDialog();
+        }
+
+        private void FrmBackgroundSystem_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
         }
     }
 }

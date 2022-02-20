@@ -27,6 +27,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -85,7 +86,7 @@ namespace SYS.FormUI
             {
                 UIMessageBox.ShowSuccess("任命已生效!");
                 #region 获取添加操作日志所需的信息
-                RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "将员工：" + txtworkerName.Text + "晋升/降级为" + cboNewClub.Text + cboNewPosition.Text, 2);
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "职位任命操作！任命值为：" + worker.WorkerId, 2);
                 #endregion
                 FrmWorkerManager.Reload();
                 this.Close();

@@ -21,8 +21,10 @@
  *SOFTWARE.
  *
  */
+using jvncorelib_fr.Entitylib;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 using SYS.Core.Util;
 using System;
@@ -72,7 +74,7 @@ namespace SYS.FormUI
 
         }
 
-        public void LoadData() 
+        public void LoadData()
         {
             Worker worker = new WorkerService().SelectWorkerInfoByWorkerId(LoginInfo.WorkerNo);
             if (worker != null)
@@ -113,7 +115,7 @@ namespace SYS.FormUI
         private void txtOldPwd_Validated(object sender, EventArgs e)
         {
             //校验旧密码是否正确
-            Worker worker = new Worker() { WorkerId = LoginInfo.WorkerNo,WorkerPwd = txtOldPwd.Text.Trim() };
+            Worker worker = new Worker() { WorkerId = LoginInfo.WorkerNo, WorkerPwd = txtOldPwd.Text.Trim() };
             var result = new WorkerService().SelectWorkerInfoByWorkerIdAndWorkerPwd(worker);
             if (result != null)
             {
@@ -168,13 +170,17 @@ namespace SYS.FormUI
                 UIMessageBox.Show("服务器繁忙，修改失败！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                 return;
             }
+
             UIMessageBox.Show("修改成功，系统将在稍后退出，请使用新密码进行登录系统！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
+            #region 获取添加操作日志所需的信息
+            RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "修改密码操作！", 2);
+            #endregion
             FrmMain.CloseMy();
             this.Close();
             return;
         }
 
-        public bool CheckInput(Worker worker) 
+        public bool CheckInput(Worker worker)
         {
             if (string.IsNullOrWhiteSpace(worker.WorkerId))
             {
@@ -226,6 +232,9 @@ namespace SYS.FormUI
                     return;
                 }
                 UIMessageBox.Show("修改成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "修改个人信息操作！", 2);
+                #endregion
                 LoadData();
                 return;
             }
@@ -242,18 +251,43 @@ namespace SYS.FormUI
 
         private void openPic_FileOk(object sender, CancelEventArgs e)
         {
-            var serverPath = ConfigurationManager.AppSettings["post"].ToString();
+            WorkerPic workerPic = null;
+            //查询当前账号是否已存在对应的图片，如果已存在则移除旧图片
+            workerPic = new WorkerPic
+            {
+                WorkerId = txtWorkerNo.Text.Trim(),
+            };
+            var source = new WorkerPicService().WorkerPic(workerPic);
+            if (!source.IsNullOrEmpty())
+            {
+                if (new WorkerPicService().DeleteWorkerPic(workerPic))
+                {
+                    PicHandler();
+                }
+            }
+            else
+            {
+                PicHandler();
+            }
+
+        }
+
+        public void PicHandler()
+        {
+            var serverPath = HttpHelper.postUrl;
+            //var serverPath = ConfigurationManager.AppSettings["post"].ToString();
             var result = HttpHelper.UpLoadFile(openPic.FileName, serverPath);
-            WorkerPic workerPic = new WorkerPic
+            var workerPic = new WorkerPic
             {
                 WorkerId = txtWorkerNo.Text.Trim(),
                 Pic = result.Trim(),
             };
             new WorkerPicService().InsertWorkerPic(workerPic);
-
-
             picWorkerPic.BackgroundImage = null;
-            picWorkerPic.LoadAsync(ConfigurationManager.AppSettings["FileSite"] + result.Trim());
+            picWorkerPic.LoadAsync(HttpHelper.baseUrl + result.Trim());
+            UIMessageTip.ShowOk("头像上传成功！稍等将会加载头像哦..");
+            //picWorkerPic.LoadAsync(ConfigurationManager.AppSettings["FileSite"] + result.Trim());
         }
+
     }
 }

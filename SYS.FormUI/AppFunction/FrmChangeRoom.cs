@@ -28,6 +28,7 @@ using Sunny.UI;
 using System.Transactions;
 using System.Collections.Generic;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -119,7 +120,7 @@ namespace SYS.FormUI
                     bool m = new SpendService().InsertSpendInfo(s);
                     FrmRoomManager.Reload("");
                     #region 获取添加操作日志所需的信息
-                    RecordHelper.Record(ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房！", 2);
+                    RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" +ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房！", 2);
                     #endregion
                     scope.Complete();
                     this.Close();

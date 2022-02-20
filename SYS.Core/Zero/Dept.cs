@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 部门表
     /// </summary>
+    [SqlSugar.SugarTable("dept")]
     public class Dept
     {
         /// <summary>

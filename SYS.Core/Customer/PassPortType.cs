@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 证件类型
     /// </summary>
+    [SqlSugar.SugarTable("passporttype")]
     public class PassPortType
     {
         /// <summary>

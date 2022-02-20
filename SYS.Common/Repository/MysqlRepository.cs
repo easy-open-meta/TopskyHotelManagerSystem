@@ -1,4 +1,4 @@
-using SqlSugar;
+﻿using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SYS.Common
 {
-    public class Repository<T> : SimpleClient<T> where T : class, new()
+    public class MysqlRepository<T> : SimpleClient<T> where T : class, new()
     {
-        public Repository(ISqlSugarClient context = null) : base(context)//注意这里要有默认值等于null
+        public MysqlRepository(ISqlSugarClient context = null) : base(context)//注意这里要有默认值等于null
         {
             if (context == null)
             {
@@ -19,12 +19,12 @@ namespace SYS.Common
                     DbType = SqlSugar.DbType.MySql,
                     InitKeyType = InitKeyType.Attribute,
                     IsAutoCloseConnection = true,
-                    ConnectionString = ConfigurationManager.AppSettings["strSQL"].ToString()
+                    ConnectionString = HttpHelper.mysqlString
                 });
 
-                base.Context.Aop.OnLogExecuting = (s, p) =>
+                base.Context.Aop.OnError = (ex) =>
                 {
-                    Console.WriteLine(s);
+                    RecordHelper.Record(ex.ToString(), 3);
                 };
             }
         }

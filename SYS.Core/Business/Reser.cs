@@ -29,6 +29,7 @@ namespace SYS.Core
     /// <summary>
     /// 预约列表
     /// </summary>
+    [SqlSugar.SugarTable("reser")]
     public class Reser
     {
         /// <summary>

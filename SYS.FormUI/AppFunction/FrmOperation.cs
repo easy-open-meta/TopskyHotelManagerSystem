@@ -23,6 +23,7 @@
  */
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using System;
 using System.Windows.Forms;
 
@@ -44,8 +45,8 @@ namespace SYS.FormUI
                 label.Font = UI_FontUtil.childControlFont;
             }
 
-            dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
             dgvOperationlog.AutoGenerateColumns = false;
+            dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
         }
     }
 }

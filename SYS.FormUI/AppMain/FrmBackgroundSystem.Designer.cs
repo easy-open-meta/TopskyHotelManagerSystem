@@ -109,6 +109,7 @@ namespace SYS.FormUI
             // 
             this.Aside.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Aside.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.Aside.ExpandSelectFirst = true;
             this.Aside.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Aside.FullRowSelect = true;
             this.Aside.ItemHeight = 50;
@@ -218,6 +219,7 @@ namespace SYS.FormUI
             this.pnlForm.Style = Sunny.UI.UIStyle.Custom;
             this.pnlForm.TabIndex = 1;
             this.pnlForm.Text = "点击左侧导航栏";
+            this.pnlForm.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiLabel1
             // 
@@ -232,6 +234,7 @@ namespace SYS.FormUI
             // 
             // lblScroll
             // 
+            this.lblScroll.Active = true;
             this.lblScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -354,7 +357,6 @@ namespace SYS.FormUI
             this.Controls.Add(this.btnLocked);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.Aside);
-            this.EscClose = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsForbidAltF4 = true;
             this.MaximizeBox = false;
@@ -365,6 +367,7 @@ namespace SYS.FormUI
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "TS酒店管理后台安全系统";
             this.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmBackgroundSystem_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBackgroundSystem_FormClosed);
             this.Load += new System.EventHandler(this.FrmBackgroundSystem_Load);
             this.cmsMenu.ResumeLayout(false);

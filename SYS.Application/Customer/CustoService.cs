@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EncryptTools;
 using MySql.Data.MySqlClient;
+using Npgsql;
 using SYS.Common;
 using SYS.Core;
 
@@ -102,19 +103,23 @@ namespace SYS.Application
         public List<CustoSpend> SelectAllMoney()
         {
             List<CustoSpend> custoSpends = new List<CustoSpend>();
-            string sql = "select year(spendtime) as 年份,sum(spendmoney) as 总额 from CustoSpend group by year(spendtime)";
-            MySqlDataReader dr = DBHelper.ExecuteReader(sql);
-            var listDates = new List<DateTime>();
-
-            while (dr.Read())
+            var listSource = base.Change<Spend>().GetList(a => a.MoneyState.Equals(SpendConsts.Settled)).OrderBy(a => a.SpendTime).ToList();
+            var listDates = new List<CustoSpend>();
+            listSource.ForEach(source =>
             {
-                CustoSpend cso = new CustoSpend();
-                cso.Years = dr["年份"].ToString();
-                cso.Money = (decimal)dr["总额"];
-                custoSpends.Add(cso);
-            }
-            dr.Close();
-            DBHelper.Closecon();
+                var year = source.SpendTime.ToString("yyyy");
+                if (!custoSpends.Select(a => a.Years).ToList().Contains(year))
+                {
+                    var startDate = new DateTime(source.SpendTime.Year, 1, 1, 0, 0, 0);
+                    var endDate = new DateTime(source.SpendTime.Year, 12, 31, 23, 59, 59);
+                    custoSpends.Add(new CustoSpend
+                    {
+                        Years = year,
+                        Money = listSource.Where(a => a.SpendTime >= startDate && a.SpendTime <= endDate).Sum(a => a.SpendMoney)
+                    });
+                }
+            });
+            
             custoSpends = custoSpends.OrderBy(a => a.Years).ToList();
             return custoSpends;
         }

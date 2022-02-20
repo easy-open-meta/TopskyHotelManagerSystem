@@ -29,6 +29,7 @@ namespace SYS.Core
     /// <summary>
     /// 员工打卡考勤
     /// </summary>
+    [SqlSugar.SugarTable("workercheck")]
     public class WorkerCheck
     {
         /// <summary>

@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 职位
     /// </summary>
+    [SqlSugar.SugarTable("position")]
     public class Position
     {
         /// <summary>

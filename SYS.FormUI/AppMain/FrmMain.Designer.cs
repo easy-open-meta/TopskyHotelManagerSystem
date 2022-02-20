@@ -190,6 +190,7 @@
             // 
             // tsmiLoginBackSystem
             // 
+            this.tsmiLoginBackSystem.Enabled = false;
             this.tsmiLoginBackSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiLoginBackSystem.Image = global::SYS.FormUI.Properties.Resources.系统管理员;
             this.tsmiLoginBackSystem.Name = "tsmiLoginBackSystem";

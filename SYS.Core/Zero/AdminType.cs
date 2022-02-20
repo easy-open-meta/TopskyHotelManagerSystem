@@ -33,6 +33,7 @@ namespace SYS.Core
     /// <summary>
     /// 管理员类型
     /// </summary>
+    [SqlSugar.SugarTable("admintype")]
     public class AdminType
     {
         /// <summary>

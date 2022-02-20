@@ -23,6 +23,7 @@
  */
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using System;
@@ -109,15 +110,9 @@ namespace SYS.FormUI
                     return;
                 }
                 UIMessageBox.Show("添加成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
-                OperationLog operationLog = new OperationLog()
-                {
-                    OperationTime = DateTime.Now,
-                    Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now.ToString("yyyy年MM月dd日") + "添加了一个部门，部门编号为" + dept.dept_no,
-                    OperationAccount = AdminInfo.Account,
-                    datains_usr = AdminInfo.Account,
-                    datains_date = DateTime.Now
-                };
-                new OperationlogService().InsertOperationLog(operationLog);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "添加部门类型操作！新增值为：" + dept.dept_no, 2);
+                #endregion                
                 txtDeptName.Text = "";
                 txtDeptDesc.Text = "";
                 ReloadDeptList();
@@ -162,15 +157,9 @@ namespace SYS.FormUI
                     return;
                 }
                 UIMessageBox.Show("修改成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
-                OperationLog operationLog = new OperationLog()
-                {
-                    OperationTime = DateTime.Now,
-                    Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now.ToString("yyyy年MM月dd日") + "修改了一个部门，部门编号为" + dept.dept_no,
-                    OperationAccount = AdminInfo.Account,
-                    datains_usr = AdminInfo.Account,
-                    datains_date = DateTime.Now
-                };
-                new OperationlogService().InsertOperationLog(operationLog);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "修改部门类型操作！修改值为：" + dept.dept_no, 2);
+                #endregion   
                 txtDeptName.Text = "";
                 txtDeptDesc.Text = "";
                 ReloadDeptList();
@@ -200,15 +189,9 @@ namespace SYS.FormUI
                     return;
                 }
                 UIMessageBox.Show("删除成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
-                OperationLog operationLog = new OperationLog()
-                {
-                    OperationTime = DateTime.Now,
-                    Operationlog = AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now.ToString("yyyy年MM月dd日") + "修改了一个部门，部门编号为" + dept.dept_no,
-                    OperationAccount = AdminInfo.Account,
-                    datains_usr = AdminInfo.Account,
-                    datains_date = DateTime.Now
-                };
-                new OperationlogService().InsertOperationLog(operationLog);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "删除部门类型操作！删除值为：" + dept.dept_no, 2);
+                #endregion   
                 txtDeptName.Text = "";
                 txtDeptDesc.Text = "";
                 ReloadDeptList();

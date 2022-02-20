@@ -26,6 +26,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 using SYS.FormUI.Properties;
 
@@ -264,6 +265,9 @@ namespace SYS.FormUI
                     delete_mk = 0
                 };
                 new WorkerService().ManagerWorkerAccount(worker);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "启用员工账号操作！新增值为：" + worker.WorkerId, 2);
+                #endregion
                 this.Close();
                 FrmWorkerManager.Reload();
             }
@@ -275,6 +279,9 @@ namespace SYS.FormUI
                     delete_mk = 1
                 };
                 new WorkerService().ManagerWorkerAccount(worker);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "禁用员工账号操作！新增值为：" + worker.WorkerId, 2);
+                #endregion
                 this.Close();
                 FrmWorkerManager.Reload();
             }

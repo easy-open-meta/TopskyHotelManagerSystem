@@ -33,6 +33,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -104,7 +105,7 @@ namespace SYS.FormUI
                     {
                         UIMessageBox.Show("新增成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "对员工：" + lblName.Text + "进行了奖罚情况录入！", 3);
+                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "录入员工奖惩操作！新增值为：" + goodBad.GBInfo, 2);
                         #endregion
                         DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
                     }

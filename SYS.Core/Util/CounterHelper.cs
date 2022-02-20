@@ -20,7 +20,7 @@
  *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *SOFTWARE.
  *
- *模块说明：流水号规格
+ *模块说明：流水号规则
  */
 using MySql.Data.MySqlClient;
 using SYS.Common;

@@ -32,15 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCash));
             this.dgvCashList = new Sunny.UI.UIDataGridView();
-            this.clAssetsNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clStorageTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboCashPerson = new Sunny.UI.UIComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new Sunny.UI.UIButton();
@@ -56,6 +50,13 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtCashNo = new Sunny.UI.UITextBox();
             this.dtpDate = new Sunny.UI.UIDatePicker();
+            this.clAssetsNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clStorageTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCashList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -101,9 +102,18 @@
             this.dgvCashList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.dgvCashList.Location = new System.Drawing.Point(3, 38);
             this.dgvCashList.Name = "dgvCashList";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCashList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCashList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvCashList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCashList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvCashList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCashList.RowTemplate.Height = 29;
             this.dgvCashList.SelectedIndex = -1;
             this.dgvCashList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -111,50 +121,9 @@
             this.dgvCashList.Size = new System.Drawing.Size(809, 582);
             this.dgvCashList.TabIndex = 2;
             // 
-            // clAssetsNo
-            // 
-            this.clAssetsNo.DataPropertyName = "CashNo";
-            this.clAssetsNo.HeaderText = "资产编号";
-            this.clAssetsNo.Name = "clAssetsNo";
-            // 
-            // clAssetsName
-            // 
-            this.clAssetsName.DataPropertyName = "CashName";
-            this.clAssetsName.HeaderText = "资产名称";
-            this.clAssetsName.Name = "clAssetsName";
-            // 
-            // clAssetsValue
-            // 
-            this.clAssetsValue.DataPropertyName = "CashPrice";
-            this.clAssetsValue.HeaderText = "资产总值";
-            this.clAssetsValue.Name = "clAssetsValue";
-            // 
-            // clDepartment
-            // 
-            this.clDepartment.DataPropertyName = "DeptName";
-            this.clDepartment.HeaderText = "所属部门";
-            this.clDepartment.Name = "clDepartment";
-            // 
-            // clStorageTime
-            // 
-            this.clStorageTime.DataPropertyName = "CashTime";
-            this.clStorageTime.HeaderText = "入库时间";
-            this.clStorageTime.Name = "clStorageTime";
-            // 
-            // clAssetsSource
-            // 
-            this.clAssetsSource.DataPropertyName = "CashSource";
-            this.clAssetsSource.HeaderText = "资产来源";
-            this.clAssetsSource.Name = "clAssetsSource";
-            // 
-            // clAssetsManager
-            // 
-            this.clAssetsManager.DataPropertyName = "PersonName";
-            this.clAssetsManager.HeaderText = "资产经办人";
-            this.clAssetsManager.Name = "clAssetsManager";
-            // 
             // cboCashPerson
             // 
+            this.cboCashPerson.DataSource = null;
             this.cboCashPerson.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboCashPerson.FillColor = System.Drawing.Color.White;
             this.cboCashPerson.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -162,7 +131,7 @@
             this.cboCashPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCashPerson.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboCashPerson.Name = "cboCashPerson";
-            this.cboCashPerson.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboCashPerson.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboCashPerson.Radius = 20;
             this.cboCashPerson.Size = new System.Drawing.Size(165, 23);
             this.cboCashPerson.TabIndex = 167;
@@ -219,6 +188,7 @@
             this.txtFrom.Style = Sunny.UI.UIStyle.Custom;
             this.txtFrom.StyleCustomMode = true;
             this.txtFrom.TabIndex = 163;
+            this.txtFrom.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
@@ -242,6 +212,7 @@
             // 
             // cboClub
             // 
+            this.cboClub.DataSource = null;
             this.cboClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboClub.FillColor = System.Drawing.Color.White;
             this.cboClub.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -249,7 +220,7 @@
             this.cboClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboClub.Name = "cboClub";
-            this.cboClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboClub.Radius = 20;
             this.cboClub.Size = new System.Drawing.Size(165, 23);
             this.cboClub.TabIndex = 159;
@@ -283,6 +254,7 @@
             this.txtCashMoney.Style = Sunny.UI.UIStyle.Custom;
             this.txtCashMoney.StyleCustomMode = true;
             this.txtCashMoney.TabIndex = 157;
+            this.txtCashMoney.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -311,6 +283,7 @@
             this.txtCashName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCashName.StyleCustomMode = true;
             this.txtCashName.TabIndex = 155;
+            this.txtCashName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label20
             // 
@@ -340,6 +313,7 @@
             this.txtCashNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCashNo.StyleCustomMode = true;
             this.txtCashNo.TabIndex = 153;
+            this.txtCashNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpDate
             // 
@@ -351,7 +325,7 @@
             this.dtpDate.MaxLength = 10;
             this.dtpDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpDate.Radius = 20;
             this.dtpDate.Size = new System.Drawing.Size(165, 23);
             this.dtpDate.SymbolDropDown = 61555;
@@ -360,6 +334,48 @@
             this.dtpDate.Text = "2021-01-31";
             this.dtpDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.dtpDate.Value = new System.DateTime(2021, 1, 31, 14, 30, 7, 297);
+            // 
+            // clAssetsNo
+            // 
+            this.clAssetsNo.DataPropertyName = "CashNo";
+            this.clAssetsNo.HeaderText = "资产编号";
+            this.clAssetsNo.Name = "clAssetsNo";
+            // 
+            // clAssetsName
+            // 
+            this.clAssetsName.DataPropertyName = "CashName";
+            this.clAssetsName.HeaderText = "资产名称";
+            this.clAssetsName.Name = "clAssetsName";
+            // 
+            // clAssetsValue
+            // 
+            this.clAssetsValue.DataPropertyName = "CashPriceStr";
+            this.clAssetsValue.HeaderText = "资产总值";
+            this.clAssetsValue.Name = "clAssetsValue";
+            // 
+            // clDepartment
+            // 
+            this.clDepartment.DataPropertyName = "DeptName";
+            this.clDepartment.HeaderText = "所属部门";
+            this.clDepartment.Name = "clDepartment";
+            // 
+            // clStorageTime
+            // 
+            this.clStorageTime.DataPropertyName = "CashTime";
+            this.clStorageTime.HeaderText = "入库时间";
+            this.clStorageTime.Name = "clStorageTime";
+            // 
+            // clAssetsSource
+            // 
+            this.clAssetsSource.DataPropertyName = "CashSource";
+            this.clAssetsSource.HeaderText = "资产来源";
+            this.clAssetsSource.Name = "clAssetsSource";
+            // 
+            // clAssetsManager
+            // 
+            this.clAssetsManager.DataPropertyName = "PersonName";
+            this.clAssetsManager.HeaderText = "资产经办人";
+            this.clAssetsManager.Name = "clAssetsManager";
             // 
             // FrmCash
             // 
@@ -400,13 +416,6 @@
 
         #endregion
         private Sunny.UI.UIDataGridView dgvCashList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clStorageTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsManager;
         private Sunny.UI.UIComboBox cboCashPerson;
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UIButton btnOK;
@@ -422,5 +431,12 @@
         private System.Windows.Forms.Label label20;
         private Sunny.UI.UITextBox txtCashNo;
         private Sunny.UI.UIDatePicker dtpDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clStorageTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clAssetsManager;
     }
 }

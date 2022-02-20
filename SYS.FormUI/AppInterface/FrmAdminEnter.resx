@@ -121,7 +121,7 @@
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLgAAAKmCAYAAABOqSeHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAA/7JJREFUeF7s3Qd8E9ee93/ZphNI74ViSO+9995Dc8fdpqUnN733gA2kkApJIIHQ
+        EQAACxEBf2RfkQAA/7JJREFUeF7s3Qd8E9ee93/ZphNI74ViSO+9995Dc8fdpqUnN733gA2kkApJIIHQ
         Qye5uVueZ/9399ndu7t3+40bxbZkW12WIY3v//zOSERRBhgXaWTzfd3Xe2UmuGhmZEafPeeMo2jVDupl
         SlZHfLXTUbxqp34sWr3TUaj+W6H68+SV6lGJ/n3955iPY4xR3lJ/t1WBtiLyuMp4LFB/zloext1L2nHr
         Z+248ZMgrl0QxJUfB3Dxh35c9IHyvh9nv+vDaXO9OO0tL043ccbbSuTjU+Z6cMqcCPk41hzPzpPneLed
@@ -1749,22 +1749,6 @@
   <metadata name="uiToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJDSURBVFhH7Zc/TxtBEMXdUYUiUpSWmoIqTSIh0SIhnx3JVZpUFEkFdDTQUPGncIcE2IeQi8g1
-        EpWbJF06GsS34AsM7y1vzeL1nfdsEIrETxrJfjszN3s7Nz7X3vivqJ/bp6xj242uDWA3sDsZPw+aXftZ
-        z21J7s8HLrqMC/Rhlmh9xih8Nhod2x1JfomdfoO+ElqzY61Gbr9CX/jtK810IHF7mBDJm7l91lIh9Bkp
-        5EpL1UAgz/lhJ9id5GQQt+XjYR3JaWDnhz5Y0tQMi8htR1I5ajhf+ZbkCNzqtSy3HzjnjbKjcb2hfEmN
-        CceHbsc5SooYbbYK/n1J4+Ez7BMW7Yq30vvAerAD3IVrfs+6diS3J7jGVAxnieQYDhLnWLCb1bbNYf0f
-        ffgoSq5lZ/ZF2rWkCKxf0oeDTFIMHFznT+r61om910dHdmGLjKNJimDB8hlIisEiR6pxsEhKAv6njMNF
-        fkuKYE4VcCMpBouc65UKCHvia9fqkiOCAu4kxXDROSUWAN91JWXTbkoeS2oBlY4Avn/l/11SIUEBpUeQ
-        1IQeJUwqOKkJ4VT6GI4C3x4fvfqpvZNUCHwnP4YpgyikdWYfsPsFfS0keRAROE0cxR74/HFJe/ZR0liY
-        SwWUj2KS+mNEsHu+rBzr61gq/xgRJB6+iEiaGp8HhexJSgNBt0HwTC8kZROyFAb6JDzHlMZ0Dfd45rRb
-        LU0Hb12QjOZeSvkDtHph8zR+dmf99MKcD22lmQ015uu8loe82h+TN16OWu0eHcfWduBDinYAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAGABcAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAAFz

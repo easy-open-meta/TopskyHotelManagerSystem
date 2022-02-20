@@ -28,6 +28,7 @@ using SYS.Core;
 using SYS.FormUI.Properties;
 using SYS.Application;
 using Sunny.UI;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -67,6 +68,9 @@ namespace SYS.FormUI
         {
             bool n = new SellService().DeleteSellThingBySellNo(txtSellNo.Text.Trim());
             UIMessageBox.ShowSuccess("删除商品成功!");
+            #region 获取添加操作日志所需的信息
+            RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "删除商品操作！删除值为：" + st.SellNo, 2);
+            #endregion
             LoadData();
             return;
         }
@@ -115,6 +119,9 @@ namespace SYS.FormUI
 
                 new SellService().InsertSellThing(st);
                 UIMessageBox.Show("添加商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增商品操作！新增值为：" + st.SellNo, 2);
+                #endregion
                 LoadData();
                 string SellId = new CounterHelper().GetNewId("SellId");
                 txtSellNo.Text = SellId;
@@ -163,6 +170,9 @@ namespace SYS.FormUI
             {
                 new SellService().UpdateSellthingInfo(st);
                 UIMessageBox.Show("修改商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                #region 获取添加操作日志所需的信息
+                RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "修改商品操作！修改值为：" + st.SellNo, 2);
+                #endregion
                 LoadData();
             }
             else

@@ -91,7 +91,7 @@ namespace SYS.FormUI
         #region 添加会员信息事件方法
         private void picAddCusto_Click_1(object sender, EventArgs e)
         {
-            FrmInputs frmInputs = new FrmInputs();
+            FrmEditInputs frmInputs = new FrmEditInputs();
             frmInputs.ShowDialog();
             frmInputs.Text = "添加客户";
         }
@@ -114,8 +114,8 @@ namespace SYS.FormUI
             cm_CustoAddress = dgvCustomerList.SelectedRows[0].Cells["CustoAdress"].Value.ToString();
             cm_CustoBirth = Convert.ToDateTime(dgvCustomerList.SelectedRows[0].Cells["CustoBirth"].Value);
             cm_CustoType = (int)dgvCustomerList.SelectedRows[0].Cells["Column2"].Value;
-            FrmInputs frmInputs = new FrmInputs();
-            frmInputs.Text = "修改客户";
+            FrmEditInputs frmInputs = new FrmEditInputs();
+            frmInputs.Text = "修改客户信息";
             frmInputs.ShowDialog();
         }
         #endregion

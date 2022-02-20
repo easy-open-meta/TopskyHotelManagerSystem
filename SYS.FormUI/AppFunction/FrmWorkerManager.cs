@@ -26,6 +26,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Sunny.UI;
 using SYS.Application;
+using SYS.Common;
 using SYS.Core;
 
 namespace SYS.FormUI

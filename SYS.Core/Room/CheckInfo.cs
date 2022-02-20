@@ -29,6 +29,7 @@ namespace SYS.Core
     /// <summary>
     /// 监管统计
     /// </summary>
+    [SqlSugar.SugarTable("checkinfo")]
     public class CheckInfo
     {
         /// <summary>

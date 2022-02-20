@@ -29,6 +29,7 @@ namespace SYS.Core
     /// <summary>
     /// 房间状态
     /// </summary>
+    [SqlSugar.SugarTable("roomstate")]
     public class RoomState
     {
         /// <summary>

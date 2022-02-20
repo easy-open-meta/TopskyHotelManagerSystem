@@ -29,11 +29,13 @@ namespace SYS.Core
     /// <summary>
     /// 房间类型
     /// </summary>
+    [SqlSugar.SugarTable("roomtype")]
     public class RoomType
     {
         /// <summary>
         /// 类型编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "RoomType")]
         public int Roomtype { get; set; }
         /// <summary>
         /// 房间类型
