@@ -661,12 +661,6 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="bin\Debug\启用任务管理器.reg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bin\Debug\禁用任务管理器.reg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -797,7 +791,6 @@
     <None Include="Resources\月亮.png" />
     <None Include="Resources\咖啡.png" />
     <None Include="Resources\早上.png" />
-    <Content Include="bin\Debug\打卡.png" />
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\arrow-down-b.png" />
     <None Include="Resources\minus %281%29.png" />

@@ -133,13 +133,9 @@
     <Compile Include="Zero\VipRule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\MySql.Data.dll" />
-    <Content Include="bin\Debug\SYS.Core.dll" />
-    <Content Include="bin\Debug\SYS.Core.pdb" />
     <Content Include="bitbug_favicon %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Release\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
