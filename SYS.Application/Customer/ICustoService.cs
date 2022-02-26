@@ -68,6 +68,12 @@ namespace SYS.Application
         List<Custo> SelectCustoAll();
 
         /// <summary>
+        /// 查询指定客户信息
+        /// </summary>
+        /// <returns></returns>
+        List<Custo> SelectCustoByInfo(Custo custo);
+
+        /// <summary>
         /// 根据客户编号查询客户信息
         /// </summary>
         /// <param name="CustoNo"></param>

@@ -36,21 +36,7 @@ namespace SYS.Application
         /// 查询所有商品
         /// </summary>
         /// <returns></returns>
-        List<SellThing> SelectSellThingAll();
-
-        /// <summary>
-        /// 根据商品ID查询
-        /// </summary>
-        /// <param name="No"></param>
-        /// <returns></returns>
-        SellThing SelectSellThingByNo(string No);
-
-        /// <summary>
-        /// 根据商品名称查询
-        /// </summary>
-        /// <param name="Name"></param>
-        /// <returns></returns>
-        List<SellThing> SelectSellThingByName(string Name);
+        List<SellThing> SelectSellThingAll(SellThing sellThing = null);
 
         /// <summary>
         /// 修改商品
@@ -72,9 +58,9 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomNo"></param>
         /// <param name="custoNo"></param>
-        /// <param name="spendTime"></param>
+        /// <param name="sellName"></param>
         /// <returns></returns>
-        bool DeleteSellThing(string roomNo, string custoNo, DateTime spendTime);
+        bool DeleteSellThing(string roomNo, string custoNo, string sellName);
 
         /// <summary>
         /// 根据商品编号删除商品信息

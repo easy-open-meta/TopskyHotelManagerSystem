@@ -76,6 +76,7 @@
             this.txtCustoName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoName.StyleCustomMode = true;
             this.txtCustoName.TabIndex = 107;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCustoTel
             // 
@@ -85,6 +86,7 @@
             this.txtCustoTel.Location = new System.Drawing.Point(122, 147);
             this.txtCustoTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoTel.Maximum = 2147483647D;
+            this.txtCustoTel.MaxLength = 11;
             this.txtCustoTel.Minimum = -2147483648D;
             this.txtCustoTel.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCustoTel.Name = "txtCustoTel";
@@ -94,6 +96,7 @@
             this.txtCustoTel.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoTel.StyleCustomMode = true;
             this.txtCustoTel.TabIndex = 108;
+            this.txtCustoTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -117,6 +120,7 @@
             // 
             // cboReserWay
             // 
+            this.cboReserWay.DataSource = null;
             this.cboReserWay.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboReserWay.FillColor = System.Drawing.Color.White;
             this.cboReserWay.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -128,7 +132,7 @@
             this.cboReserWay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboReserWay.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboReserWay.Name = "cboReserWay";
-            this.cboReserWay.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboReserWay.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboReserWay.Radius = 20;
             this.cboReserWay.ReadOnly = true;
             this.cboReserWay.Size = new System.Drawing.Size(159, 35);
@@ -149,6 +153,7 @@
             // 
             // cboReserRoomNo
             // 
+            this.cboReserRoomNo.DataSource = null;
             this.cboReserRoomNo.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboReserRoomNo.FillColor = System.Drawing.Color.White;
             this.cboReserRoomNo.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -156,7 +161,7 @@
             this.cboReserRoomNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboReserRoomNo.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboReserRoomNo.Name = "cboReserRoomNo";
-            this.cboReserRoomNo.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboReserRoomNo.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboReserRoomNo.Radius = 20;
             this.cboReserRoomNo.Size = new System.Drawing.Size(159, 35);
             this.cboReserRoomNo.Style = Sunny.UI.UIStyle.Custom;
@@ -179,14 +184,14 @@
             this.dtpBouDate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.dtpBouDate.FillColor = System.Drawing.Color.White;
             this.dtpBouDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.dtpBouDate.Location = new System.Drawing.Point(119, 306);
+            this.dtpBouDate.Location = new System.Drawing.Point(122, 307);
             this.dtpBouDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpBouDate.MaxLength = 10;
             this.dtpBouDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpBouDate.Name = "dtpBouDate";
-            this.dtpBouDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpBouDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpBouDate.Radius = 20;
-            this.dtpBouDate.Size = new System.Drawing.Size(162, 31);
+            this.dtpBouDate.Size = new System.Drawing.Size(159, 31);
             this.dtpBouDate.Style = Sunny.UI.UIStyle.Custom;
             this.dtpBouDate.SymbolDropDown = 61555;
             this.dtpBouDate.SymbolNormal = 61555;
@@ -195,6 +200,8 @@
             this.dtpBouDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.dtpBouDate.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
             this.dtpBouDate.ValueChanged += new Sunny.UI.UIDatePicker.OnDateTimeChanged(this.dtpBouDate_ValueChanged);
+            this.dtpBouDate.TextChanged += new System.EventHandler(this.dtpBouDate_TextChanged);
+            this.dtpBouDate.Validated += new System.EventHandler(this.dtpBouDate_Validated);
             // 
             // label12
             // 
@@ -211,15 +218,15 @@
             this.dtpEndDate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.dtpEndDate.FillColor = System.Drawing.Color.White;
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.dtpEndDate.Location = new System.Drawing.Point(122, 355);
+            this.dtpEndDate.Location = new System.Drawing.Point(125, 356);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpEndDate.MaxLength = 10;
             this.dtpEndDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpEndDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpEndDate.Radius = 20;
             this.dtpEndDate.ReadOnly = true;
-            this.dtpEndDate.Size = new System.Drawing.Size(162, 31);
+            this.dtpEndDate.Size = new System.Drawing.Size(156, 31);
             this.dtpEndDate.Style = Sunny.UI.UIStyle.Custom;
             this.dtpEndDate.SymbolDropDown = 61555;
             this.dtpEndDate.SymbolNormal = 61555;
@@ -258,7 +265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(315, 476);
+            this.ClientSize = new System.Drawing.Size(315, 461);
             this.Controls.Add(this.btnReser);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.label13);

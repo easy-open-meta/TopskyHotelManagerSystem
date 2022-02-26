@@ -61,7 +61,7 @@ namespace SYS.FormUI
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            dgvSellthing.DataSource = new SellService().SelectSellThingByName(txtFind.Text);
+            dgvSellthing.DataSource = new SellService().SelectSellThingAll(new SellThing { SellNo = txtFind.Text.Trim(), SellName = txtFind.Text.Trim() });
         }
 
         private void btnDeleteSellThing_Click(object sender, EventArgs e)

@@ -252,6 +252,12 @@
     <Compile Include="AppInterface\FrmLoading.Designer.cs">
       <DependentUpon>FrmLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppUserControls\ucBaseInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
+      <DependentUpon>ucBaseInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppUserControls\ucPositionInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,12 +269,6 @@
     </Compile>
     <Compile Include="AppUserControls\ucEducationInformation.Designer.cs">
       <DependentUpon>ucEducationInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppUserControls\ucBaseInformation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
-      <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="AppMain\FrmBackgroundSystem.cs">
       <SubType>Form</SubType>
@@ -631,14 +631,14 @@
     <EmbeddedResource Include="AppFunction\FrmWorkerCheckInfo.resx">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
+      <DependentUpon>ucBaseInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucPositionInformation.resx">
       <DependentUpon>ucPositionInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucEducationInformation.resx">
       <DependentUpon>ucEducationInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
-      <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucVipType.resx">
       <DependentUpon>ucVipType.cs</DependentUpon>

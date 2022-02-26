@@ -157,9 +157,9 @@ namespace SYS.FormUI
                     label.Font = UI_FontUtil.roomControlFont;
                 }
             }
+
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 6f));
-            
             us_CustoNo = romRoomInfo.CustoNo;
             us_CustoName = romRoomInfo.CustoName;
             us_CustoSex = romRoomInfo.CustoSex == 1 ? "男" : "女";
@@ -361,64 +361,30 @@ namespace SYS.FormUI
 
         }
 
-        private void lblRoomType_Click(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-
-            try
-            {
-                FrmRoomManager.ReadInfo();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void lblRoomNo_Click(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-
-            try
-            {
-                FrmRoomManager.ReadInfo();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void lblCustoNo_Click(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-
-            try
-            {
-                FrmRoomManager.ReadInfo();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
         private void ucRoomList_SizeChanged(object sender, EventArgs e)
         {
-            //lblRoomType.Width = 61;
-            //lblRoomType.Height = 17;
-            //lblCustoNo.Width = 61;
-            //lblCustoNo.Height = 17;
-            //lblRoomNo.Width = 61;
-            //lblRoomNo.Height = 17;
             this.Width = 125;
             this.Height = 85;
         }
 
         private void ucRoomList_MouseHover(object sender, EventArgs e)
         {
-            LoadRoomInfo();
-            //FrmRoomManager.ReadInfo();
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         public void LoadRoomInfo()
@@ -432,26 +398,159 @@ namespace SYS.FormUI
 
         }
 
-        private void lblRoomType_MouseHover(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-        }
-
-        private void lblRoomNo_MouseHover(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-        }
-
-        private void lblCustoNo_MouseHover(object sender, EventArgs e)
-        {
-            LoadRoomInfo();
-        }
-
         private void ucRoomList_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                FrmRoomManager.ReadInfo();
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void ucRoomList_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblRoomType_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblRoomNo_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblCustoNo_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblRoomType_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblRoomNo_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void lblCustoNo_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblMark.Text.Trim().IsNullOrEmpty())
+                {
+                    FrmRoomManager.ReadInfo();
+                }
+                else
+                {
+                    cmsMain.Enabled = false;
+                    return;
+                }
             }
             catch (Exception)
             {

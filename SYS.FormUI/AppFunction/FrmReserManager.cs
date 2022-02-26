@@ -23,8 +23,7 @@ namespace SYS.FormUI
         private void btnReser_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            string reserid = "";
-            reserid = new CounterHelper().GetNewId(CounterRuleConsts.ReserId);
+            string reserid = new CounterHelper().GetNewId(CounterRuleConsts.ReserId);
             Reser reser = new Reser()
             {
                 ReserId = reserid,
@@ -33,7 +32,9 @@ namespace SYS.FormUI
                 ReserWay = cboReserWay.Text,
                 ReserRoom = cboReserRoomNo.Text,
                 ReserDate = dtpBouDate.Value,
-                ReserEndDay = dtpEndDate.Value
+                ReserEndDay = dtpEndDate.Value,
+                datains_usr = LoginInfo.WorkerNo,
+                datains_date = DateTime.Now
             };
             Room room = new Room() 
             {
@@ -79,7 +80,17 @@ namespace SYS.FormUI
 
         private void dtpBouDate_ValueChanged(object sender, DateTime value)
         {
-            dtpEndDate.Value = DateTime.Now.AddDays(3);
+            dtpEndDate.Value = dtpBouDate.Value.AddDays(3);
+        }
+
+        private void dtpBouDate_TextChanged(object sender, EventArgs e)
+        {
+            dtpEndDate.Value = dtpBouDate.Value.AddDays(3);
+        }
+
+        private void dtpBouDate_Validated(object sender, EventArgs e)
+        {
+            dtpEndDate.Value = dtpBouDate.Value.AddDays(3);
         }
     }
 }

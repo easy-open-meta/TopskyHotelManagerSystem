@@ -21,12 +21,15 @@
  *SOFTWARE.
  *
  */
+using jvncorelib_fr.Entitylib;
 using MySql.Data.MySqlClient;
+using SqlSugar;
 using SYS.Common;
 using SYS.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,25 +44,21 @@ namespace SYS.Application
         #region 性别模块
 
         /// <summary>
-        /// 查询所有性别类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        public List<SexType> SelectSexTypeAllCanUse()
-        {
-            List<SexType> sexTypes = new List<SexType>();
-            sexTypes = base.GetList(a => a.delete_mk != 1);
-            return sexTypes;
-        }
-
-        /// <summary>
         /// 查询所有性别类型
         /// </summary>
         /// <returns></returns>
-        public List<SexType> SelectSexTypeAll()
+        public List<SexType> SelectSexTypeAll(SexType sexType = null)
         {
-            List<SexType> sexTypes = new List<SexType>();
-            sexTypes = base.GetList();
-            return sexTypes;
+            var where = Expressionable.Create<SexType>();
+            if (sexType != null && sexType.sexName.IsNullOrEmpty())
+            {
+                where = where.And(a => a.delete_mk == sexType.delete_mk);
+            }
+            if (sexType != null && !sexType.sexName.IsNullOrEmpty())
+            {
+                where = where.And(a => a.sexName.Contains(sexType.sexName));
+            }
+            return base.Change<SexType>().GetList(where.ToExpression());
         }
 
         /// <summary>
@@ -118,25 +117,21 @@ namespace SYS.Application
         #region 职位模块
 
         /// <summary>
-        /// 查询所有职位类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        public List<Position> SelectPositionAllCanUse()
-        {
-            List<Position> positions = new List<Position>();
-            positions = base.Change<Position>().GetList(a => a.delete_mk != 1);
-            return positions;
-        }
-
-        /// <summary>
         /// 查询所有职位类型
         /// </summary>
         /// <returns></returns>
-        public List<Position> SelectPositionAll()
+        public List<Position> SelectPositionAll(Position position = null)
         {
-            List<Position> positions = new List<Position>();
-            positions = base.Change<Position>().GetList();
-            return positions;
+            var where = Expressionable.Create<Position>();
+            if (position != null && position.position_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.delete_mk == position.delete_mk);
+            }
+            if (position != null && !position.position_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.position_name.Contains(position.position_name));
+            }
+            return base.Change<Position>().GetList(where.ToExpression());
         }
 
         /// <summary>
@@ -195,25 +190,21 @@ namespace SYS.Application
         #region 民族模块
 
         /// <summary>
-        /// 查询所有民族类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        public List<Nation> SelectNationAllCanUse()
-        {
-            List<Nation> nations = new List<Nation>();
-            nations = base.Change<Nation>().GetList(a => a.delete_mk != 1);
-            return nations;
-        }
-
-        /// <summary>
         /// 查询所有民族类型
         /// </summary>
         /// <returns></returns>
-        public List<Nation> SelectNationAll()
+        public List<Nation> SelectNationAll(Nation nation = null)
         {
-            List<Nation> nations = new List<Nation>();
-            nations = base.Change<Nation>().GetList();
-            return nations;
+            var where = Expressionable.Create<Nation>();
+            if (nation != null && nation.nation_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.delete_mk == nation.delete_mk);
+            }
+            if (nation != null && !nation.nation_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.nation_name.Contains(nation.nation_name));
+            }
+            return base.Change<Nation>().GetList(where.ToExpression());
         }
 
         /// <summary>
@@ -273,25 +264,21 @@ namespace SYS.Application
         #region 学历模块
 
         /// <summary>
-        /// 查询所有学历类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        public List<Education> SelectEducationAllCanUse()
-        {
-            List<Education> educations = new List<Education>();
-            educations = base.Change<Education>().GetList(a => a.delete_mk != 1);
-            return educations;
-        }
-
-        /// <summary>
         /// 查询所有学历类型
         /// </summary>
         /// <returns></returns>
-        public List<Education> SelectEducationAll()
+        public List<Education> SelectEducationAll(Education education = null)
         {
-            List<Education> educations = new List<Education>();
-            educations = base.Change<Education>().GetList();
-            return educations;
+            var where = Expressionable.Create<Education>();
+            if (education != null && education.education_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.delete_mk == education.delete_mk);
+            }
+            if (education != null && !education.education_name.IsNullOrEmpty())
+            {
+                where = where.And(a => a.education_name.Contains(education.education_name));
+            }
+            return base.Change<Education>().GetList(where.ToExpression());
         }
 
         /// <summary>

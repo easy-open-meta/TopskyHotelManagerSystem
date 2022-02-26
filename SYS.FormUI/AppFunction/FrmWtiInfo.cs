@@ -71,7 +71,7 @@ namespace SYS.FormUI
         {
             Wti wti = new Wti
             {
-                WtiNo = txtRecordNo.Text.Trim(),
+                WtiNo = Convert.ToInt16(txtRecordNo.Text.Trim()),
                 RoomNo = txtRoomNo.Text.Trim(),
                 CustoNo = txtCustoNo.Text.Trim(),
                 UseDate = dtpStartDate.Value,

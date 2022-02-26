@@ -38,16 +38,10 @@ namespace SYS.Application
         #region 性别模块
 
         /// <summary>
-        /// 查询所有性别类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        List<SexType> SelectSexTypeAllCanUse();
-
-        /// <summary>
         /// 查询所有性别类型
         /// </summary>
         /// <returns></returns>
-        List<SexType> SelectSexTypeAll();
+        List<SexType> SelectSexTypeAll(SexType sexType = null);
 
         /// <summary>
         /// 查询性别类型
@@ -81,16 +75,10 @@ namespace SYS.Application
         #region 职位模块
 
         /// <summary>
-        /// 查询所有职位类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        List<Position> SelectPositionAllCanUse();
-
-        /// <summary>
         /// 查询所有职位类型
         /// </summary>
         /// <returns></returns>
-        List<Position> SelectPositionAll();
+        List<Position> SelectPositionAll(Position position = null);
 
         /// <summary>
         /// 查询职位类型
@@ -124,16 +112,10 @@ namespace SYS.Application
         #region 民族模块
 
         /// <summary>
-        /// 查询所有民族类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        List<Nation> SelectNationAllCanUse();
-
-        /// <summary>
         /// 查询所有民族类型
         /// </summary>
         /// <returns></returns>
-        List<Nation> SelectNationAll();
+        List<Nation> SelectNationAll(Nation nation = null);
 
         /// <summary>
         /// 查询民族类型
@@ -167,16 +149,10 @@ namespace SYS.Application
         #region 学历模块
 
         /// <summary>
-        /// 查询所有学历类型(可用)
-        /// </summary>
-        /// <returns></returns>
-        List<Education> SelectEducationAllCanUse();
-
-        /// <summary>
         /// 查询所有学历类型
         /// </summary>
         /// <returns></returns>
-        List<Education> SelectEducationAll();
+        List<Education> SelectEducationAll(Education education = null);
 
         /// <summary>
         /// 查询学历类型

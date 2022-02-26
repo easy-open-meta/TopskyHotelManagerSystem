@@ -53,7 +53,7 @@ namespace SYS.FormUI
             txtClub.Text = FrmChangeWorker.wk_WorkerClub;
             txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
             //获取所有职位信息
-            cboNewPosition.DataSource =  new BaseService().SelectPositionAllCanUse();
+            cboNewPosition.DataSource =  new BaseService().SelectPositionAll(new Position { delete_mk = 0 });
             cboNewPosition.DisplayMember = "position_name";
             cboNewPosition.ValueMember = "position_no";
             //获取所有部门信息

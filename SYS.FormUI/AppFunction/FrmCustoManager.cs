@@ -123,8 +123,20 @@ namespace SYS.FormUI
         #region 搜索会员信息事件方法
         private void picSearch_Click_1(object sender, EventArgs e)
         {
-            dgvCustomerList.AutoGenerateColumns = false;
-            dgvCustomerList.DataSource = new CustoService().SelectCardInfoByCustoNo(txtCardID.Text);
+            if (txtCustoNo.Text != "")
+            {
+                dgvCustomerList.ClearRows();
+                dgvCustomerList.AutoGenerateColumns = false;
+                List<Custo> custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
+                dgvCustomerList.DataSource = custos;
+            }
+            else
+            {
+                dgvCustomerList.ClearRows();
+                dgvCustomerList.AutoGenerateColumns = false;
+                List<Custo> custos = new CustoService().SelectCustoAll();
+                dgvCustomerList.DataSource = custos;
+            }
         }
         #endregion
 

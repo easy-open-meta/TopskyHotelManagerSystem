@@ -61,6 +61,12 @@ namespace SYS.Application
             {
                 source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
                 : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+
+                source.SpendPriceStr = string.IsNullOrEmpty(source.SpendPrice + "") ? ""
+                : Decimal.Parse(source.SpendPrice.ToString()).ToString("#,##0.00").ToString();
+
+                source.SpendMoneyStr = string.IsNullOrEmpty(source.SpendMoney + "") ? ""
+                : Decimal.Parse(source.SpendMoney.ToString()).ToString("#,##0.00").ToString();
             });
             return ls;
         }
@@ -80,6 +86,12 @@ namespace SYS.Application
             {
                 source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
                 : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+
+                source.SpendPriceStr = string.IsNullOrEmpty(source.SpendPrice + "") ? ""
+                : Decimal.Parse(source.SpendPrice.ToString()).ToString("#,##0.00").ToString();
+
+                source.SpendMoneyStr = string.IsNullOrEmpty(source.SpendMoney + "") ? ""
+                : Decimal.Parse(source.SpendMoney.ToString()).ToString("#,##0.00").ToString();
             });
             return ls;
         }
@@ -99,6 +111,12 @@ namespace SYS.Application
             {
                 source.SpendStateNm = string.IsNullOrEmpty(source.MoneyState) ? ""
                 : source.MoneyState.Equals(SpendConsts.Settled) ? "已结算" : "未结算";
+
+                source.SpendPriceStr = string.IsNullOrEmpty(source.SpendPrice + "") ? ""
+                : Decimal.Parse(source.SpendPrice.ToString()).ToString("#,##0.00").ToString();
+
+                source.SpendMoneyStr = string.IsNullOrEmpty(source.SpendMoney + "") ? ""
+                : Decimal.Parse(source.SpendMoney.ToString()).ToString("#,##0.00").ToString();
             });
             return ls;
         }
@@ -127,6 +145,8 @@ namespace SYS.Application
             return ls;
         }
         #endregion
+
+
 
         #region 根据房间号查询消费的所有信息
         /// <summary>
@@ -206,6 +226,24 @@ namespace SYS.Application
 
         }
         #endregion
+
+        /// <summary>
+        /// 更新消费信息
+        /// </summary>
+        /// <param name="spend"></param>
+        /// <returns></returns>
+        public bool UpdSpenInfo(Spend spend)
+        {
+            return base.Update(a => new Spend()
+            {
+                SpendAmount = spend.SpendAmount,
+                SpendMoney = spend.SpendMoney,
+
+            }, a => a.MoneyState.Equals(SpendConsts.UnSettle) 
+            && a.RoomNo.Equals(spend.RoomNo)
+            && a.CustoNo.Equals(spend.CustoNo)
+            && a.SpendName.Equals(spend.SpendName));
+        }
 
     }
 }

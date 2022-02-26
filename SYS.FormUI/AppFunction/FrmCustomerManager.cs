@@ -151,14 +151,17 @@ namespace SYS.FormUI
         {
             if (txtCustoNo.Text != "")
             {
-                //dgvCustomerList.ClearRows();
-                Custo source = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text.Trim());
-                dgvCustomerList.DataSource = source;
-                //dgvCustomerList.AutoGenerateColumns = false;
+                dgvCustomerList.ClearRows();
+                dgvCustomerList.AutoGenerateColumns = false;
+                List<Custo> custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
+                dgvCustomerList.DataSource = custos;
             }
             else
             {
-                UIMessageBox.ShowWarning("请输入客户编号！");
+                dgvCustomerList.ClearRows();
+                dgvCustomerList.AutoGenerateColumns = false;
+                List<Custo> custos = new CustoService().SelectCustoAll();
+                dgvCustomerList.DataSource = custos;
             }
         }
 

@@ -58,7 +58,6 @@ namespace SYS.FormUI
             operation = Visited;
             reload = ReloadPositionList;
             Accessed = Access;
-            insert = Insert;
         }
 
         ucPositionInformation baseInfo = null;
@@ -72,13 +71,6 @@ namespace SYS.FormUI
         public void ReloadPositionList()
         {
             flpInformation.Controls.Clear();
-            baseInfo = new ucPositionInformation();
-            baseInfo.BackgroundImage = Resources.添加__增加___加;
-            baseInfo.lbName.Text = "新增职位类型";
-            baseInfo.btnOperation.Text = "新增";
-            baseInfo.btnOperation.FillColor = Color.FromArgb(80, 160, 255);
-            baseInfo.btnOperation.FillHoverColor = Color.FromArgb(80, 180, 255);
-            flpInformation.Controls.Add(baseInfo);
             positions = new BaseService().SelectPositionAll();
             for (int i = 0; i < positions.Count; i++)
             {
@@ -157,12 +149,17 @@ namespace SYS.FormUI
 
         }
 
-        public void Insert()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtJobNm.Text.Trim().IsNullOrEmpty())
+            {
+                UIMessageTip.ShowError("职位名称为空，请检查", 3000);
+                return;
+            }
             var _position = new Position()
             {
                 position_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.PositionId).ToString(),
-                position_name = info,
+                position_name = txtJobNm.Text.Trim(),
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,
                 datains_date = DateTime.Now
@@ -177,7 +174,33 @@ namespace SYS.FormUI
                     RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增职位类型操作！新增值为：" + _position.position_no, 2);
                     #endregion
                     ReloadPositionList();
+                    txtJobNm.Text = "";
                 }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtJobNm.Text.Trim().IsNullOrEmpty())
+            {
+                UIMessageTip.ShowError("职位名称为空，请检查", 3000);
+                return;
+            }
+            var listSource = new BaseService().SelectPositionAll(new Position { position_name = txtJobNm.Text.Trim() });
+            flpInformation.Controls.Clear();
+            for (int i = 0; i < listSource.Count; i++)
+            {
+                baseInfo = new ucPositionInformation();
+                baseInfo.Tag = "职位";
+                baseInfo.lbName.Text = "名称:" + listSource[i].position_name;
+                if (listSource[i].delete_mk == 1)
+                {
+                    baseInfo.btnOperation.Text = "恢复";
+                    baseInfo.btnOperation.FillColor = Color.FromArgb(33, 179, 81);
+                    baseInfo.lbName.BackColor = Color.Red;
+                    baseInfo.btnOperation.FillHoverColor = Color.FromArgb(128, 255, 128);
+                }
+                flpInformation.Controls.Add(baseInfo);
             }
         }
     }

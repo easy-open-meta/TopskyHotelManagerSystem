@@ -35,38 +35,47 @@ namespace SYS.Core
         /// <summary>
         /// 信息编号
         /// </summary>
-        public string WtiNo { get; set; }
+        [SqlSugar.SugarColumn(ColumnName = "WtiNo")]
+        public int WtiNo { get; set; }
         /// <summary>
         /// 房间编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "RoomNo")]
         public string RoomNo { get; set; }
         /// <summary>
         /// 开始使用时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "UseDate")]
         public DateTime UseDate { get; set; }
         /// <summary>
         /// 结束使用时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "EndDate")]
         public DateTime EndDate { get; set; }
         /// <summary>
         /// 水费
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "WaterUse")]
         public decimal WaterUse { get; set; }
         /// <summary>
         /// 电费
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "PowerUse")]
         public decimal PowerUse { get; set; }
         /// <summary>
         /// 记录员
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "Record")]
         public string Record { get; set; }
         /// <summary>
         /// 客户编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "CustoNo")]
         public string CustoNo { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "delete_mk")]
         public int delete_mk { get; set; }
         /// <summary>
         /// 资料创建人

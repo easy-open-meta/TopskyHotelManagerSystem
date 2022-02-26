@@ -41,6 +41,7 @@ namespace SYS.FormUI.AppFunction
             this.flpRoom.Name = "flpRoom";
             this.flpRoom.Size = new System.Drawing.Size(838, 424);
             this.flpRoom.TabIndex = 72;
+            this.flpRoom.MouseEnter += new System.EventHandler(this.flpRoom_MouseEnter);
             // 
             // FrmRoomMap
             // 

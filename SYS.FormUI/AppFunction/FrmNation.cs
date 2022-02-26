@@ -59,7 +59,6 @@ namespace SYS.FormUI
             operation = Visited;
             reload = ReloadNationList;
             Accessed = Access;
-            insert = Insert;
         }
 
         ucBaseInformation baseInfo = null;
@@ -74,13 +73,6 @@ namespace SYS.FormUI
         public void ReloadNationList() 
         {
             flpInformation.Controls.Clear();
-            baseInfo = new ucBaseInformation();
-            baseInfo.BackgroundImage = Resources.添加__增加___加;
-            baseInfo.lbName.Text = "新增民族类型";
-            baseInfo.btnOperation.Text = "新增";
-            baseInfo.btnOperation.FillColor = Color.FromArgb(80, 160, 255);
-            baseInfo.btnOperation.FillHoverColor = Color.FromArgb(80, 180, 255);
-            flpInformation.Controls.Add(baseInfo);
             nations = new BaseService().SelectNationAll();
             for (int i = 0; i < nations.Count; i++)
             {
@@ -99,8 +91,8 @@ namespace SYS.FormUI
 
         private void flpInformation_SizeChanged(object sender, EventArgs e)
         {
-            flpInformation.Width = 660;
-            flpInformation.Height = 582;
+            //flpInformation.Width = 660;
+            //flpInformation.Height = 582;
         }
 
         public void Visited()
@@ -159,12 +151,17 @@ namespace SYS.FormUI
 
         }
 
-        public void Insert() 
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtNationNm.Text.Trim().IsNullOrEmpty())
+            {
+                UIMessageTip.ShowError("民族名称为空，请检查", 3000);
+                return;
+            }
             var _nation = new Nation()
             {
                 nation_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.NationId).ToString(),
-                nation_name = info,
+                nation_name = txtNationNm.Text.Trim(),
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,
                 datains_date = DateTime.Now
@@ -179,9 +176,34 @@ namespace SYS.FormUI
                     RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增民族类型操作！新增值为：" + _nation.nation_no, 2);
                     #endregion
                     ReloadNationList();
+                    txtNationNm.Text = "";
                 }
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtNationNm.Text.Trim().IsNullOrEmpty())
+            {
+                UIMessageTip.ShowError("民族名称为空，请检查", 3000);
+                return;
+            }
+            var listSource = new BaseService().SelectNationAll(new Nation { nation_name = txtNationNm.Text.Trim() });
+            flpInformation.Controls.Clear();
+            for (int i = 0; i < listSource.Count; i++)
+            {
+                baseInfo = new ucBaseInformation();
+                baseInfo.Tag = "民族";
+                baseInfo.lbName.Text = "名称:" + listSource[i].nation_name;
+                if (listSource[i].delete_mk == 1)
+                {
+                    baseInfo.btnOperation.Text = "恢复";
+                    baseInfo.btnOperation.FillColor = Color.FromArgb(33, 179, 81);
+                    baseInfo.lbName.BackColor = Color.Red;
+                    baseInfo.btnOperation.FillHoverColor = Color.FromArgb(128, 255, 128);
+                }
+                flpInformation.Controls.Add(baseInfo);
+            }
+        }
     }
 }

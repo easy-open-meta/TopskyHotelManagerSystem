@@ -62,19 +62,19 @@ namespace SYS.FormUI
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
             //加载民族信息
-            cbWorkerNation.DataSource = new BaseService().SelectNationAllCanUse();
+            cbWorkerNation.DataSource = new BaseService().SelectNationAll(new Nation { delete_mk = 0 });
             cbWorkerNation.DisplayMember = "nation_name";
             cbWorkerNation.ValueMember = "nation_no";
             //加载职位信息
-            cboWorkerPosition.DataSource = new BaseService().SelectPositionAllCanUse();
+            cboWorkerPosition.DataSource = new BaseService().SelectPositionAll(new Position { delete_mk = 0 });
             cboWorkerPosition.DisplayMember = "position_name";
             cboWorkerPosition.ValueMember = "position_no";
             //加载性别信息
-            cboSex.DataSource = new BaseService().SelectSexTypeAllCanUse();
+            cboSex.DataSource = new BaseService().SelectSexTypeAll(new SexType {delete_mk = 0 });
             cboSex.DisplayMember = "sexName";
             cboSex.ValueMember = "sexId";
             //加载学历信息
-            cboEducation.DataSource = new BaseService().SelectEducationAllCanUse();
+            cboEducation.DataSource = new BaseService().SelectEducationAll(new Education { delete_mk = 0 });
             cboEducation.DisplayMember = "education_name";
             cboEducation.ValueMember = "education_no";
 
