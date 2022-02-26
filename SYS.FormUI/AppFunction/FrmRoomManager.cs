@@ -27,6 +27,7 @@ using System.Windows.Forms;
 using SYS.Core;
 using SYS.FormUI.Properties;
 using SYS.Application;
+using System.Drawing;
 
 namespace SYS.FormUI
 {
@@ -143,6 +144,7 @@ namespace SYS.FormUI
             for (int i = 0; i < romsty.Count; i++)
             {
                 romt = new ucRoomList();
+                romt.lblMark.Text = String.Empty;
                 romt.lblRoomNo.Text = romsty[i].RoomNo;
                 romt.lblCustoNo.Text = romsty[i].CustoNo;
                 romt.lblRoomType.Text = romsty[i].RoomName;

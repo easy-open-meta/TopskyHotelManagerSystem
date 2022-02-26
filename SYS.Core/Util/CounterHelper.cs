@@ -22,7 +22,6 @@
  *
  *模块说明：流水号规则
  */
-using MySql.Data.MySqlClient;
 using SYS.Common;
 using System;
 using System.Collections.Generic;

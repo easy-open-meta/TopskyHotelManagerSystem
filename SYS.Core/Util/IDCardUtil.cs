@@ -22,7 +22,6 @@
  *
  *模块说明：身份证号码工具类
  */
-using MySql.Data.MySqlClient;
 using SYS.Common;
 using System;
 using System.Collections.Generic;

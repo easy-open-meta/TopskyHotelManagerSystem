@@ -373,6 +373,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -404,6 +405,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -424,6 +426,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -444,6 +447,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -464,6 +468,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -484,6 +489,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -504,6 +510,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -524,6 +531,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
@@ -544,6 +552,7 @@ namespace SYS.FormUI
             {
                 if (lblMark.Text.Trim().IsNullOrEmpty())
                 {
+                    LoadRoomInfo();
                     FrmRoomManager.ReadInfo();
                 }
                 else
