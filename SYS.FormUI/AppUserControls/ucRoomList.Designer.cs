@@ -40,6 +40,7 @@
             this.lblRoomType = new System.Windows.Forms.Label();
             this.lblRoomNo = new System.Windows.Forms.Label();
             this.uttTips = new Sunny.UI.UIToolTip(this.components);
+            this.lblMark = new Sunny.UI.UILabel();
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,8 +109,8 @@
             this.lblCustoNo.Size = new System.Drawing.Size(62, 17);
             this.lblCustoNo.TabIndex = 10;
             this.lblCustoNo.Text = "CustoNo";
-            this.lblCustoNo.Click += new System.EventHandler(this.lblCustoNo_Click);
-            this.lblCustoNo.MouseHover += new System.EventHandler(this.lblCustoNo_MouseHover);
+            this.lblCustoNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblCustoNo_MouseClick);
+            this.lblCustoNo.MouseEnter += new System.EventHandler(this.lblCustoNo_MouseEnter);
             // 
             // lblRoomType
             // 
@@ -121,8 +122,8 @@
             this.lblRoomType.Size = new System.Drawing.Size(61, 17);
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "RoomTy";
-            this.lblRoomType.Click += new System.EventHandler(this.lblRoomType_Click);
-            this.lblRoomType.MouseHover += new System.EventHandler(this.lblRoomType_MouseHover);
+            this.lblRoomType.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomType_MouseClick);
+            this.lblRoomType.MouseEnter += new System.EventHandler(this.lblRoomType_MouseEnter);
             // 
             // lblRoomNo
             // 
@@ -135,8 +136,8 @@
             this.lblRoomNo.Size = new System.Drawing.Size(63, 17);
             this.lblRoomNo.TabIndex = 8;
             this.lblRoomNo.Text = "RoomNo";
-            this.lblRoomNo.Click += new System.EventHandler(this.lblRoomNo_Click);
-            this.lblRoomNo.MouseHover += new System.EventHandler(this.lblRoomNo_MouseHover);
+            this.lblRoomNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomNo_MouseClick);
+            this.lblRoomNo.MouseEnter += new System.EventHandler(this.lblRoomNo_MouseEnter);
             // 
             // uttTips
             // 
@@ -146,6 +147,17 @@
             this.uttTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.uttTips.ToolTipTitle = "点击提示";
             // 
+            // lblMark
+            // 
+            this.lblMark.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lblMark.Location = new System.Drawing.Point(37, 48);
+            this.lblMark.Name = "lblMark";
+            this.lblMark.Size = new System.Drawing.Size(15, 23);
+            this.lblMark.TabIndex = 11;
+            this.lblMark.Text = "uiLabel1";
+            this.lblMark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMark.Visible = false;
+            // 
             // ucRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -154,18 +166,20 @@
             this.BackgroundImage = global::SYS.FormUI.Properties.Resources.可住状态;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ContextMenuStrip = this.cmsMain;
+            this.Controls.Add(this.lblMark);
             this.Controls.Add(this.lblCustoNo);
             this.Controls.Add(this.lblRoomType);
             this.Controls.Add(this.lblRoomNo);
             this.DoubleBuffered = true;
             this.Name = "ucRoomList";
             this.Size = new System.Drawing.Size(95, 79);
-            this.uttTips.SetToolTip(this, "点击查看房间信息");
+            this.uttTips.SetToolTip(this, "鼠标悬停可显示房间信息\r\n点击鼠标左键查看房间信息\r\n快速双击鼠标左键可快速入住");
             this.Load += new System.EventHandler(this.ucRoomList_Load);
             this.SizeChanged += new System.EventHandler(this.ucRoomList_SizeChanged);
             this.Click += new System.EventHandler(this.ucRoomList_Click);
             this.DoubleClick += new System.EventHandler(this.ucRoomList_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ucRoomList_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.ucRoomList_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ucRoomList_MouseLeave);
             this.MouseHover += new System.EventHandler(this.ucRoomList_MouseHover);
             this.cmsMain.ResumeLayout(false);
@@ -186,5 +200,6 @@
         public System.Windows.Forms.Label lblRoomType;
         public System.Windows.Forms.Label lblRoomNo;
         private Sunny.UI.UIToolTip uttTips;
+        public Sunny.UI.UILabel lblMark;
     }
 }

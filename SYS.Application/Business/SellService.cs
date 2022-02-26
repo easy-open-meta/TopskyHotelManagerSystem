@@ -23,7 +23,9 @@
  */
 using System;
 using System.Collections.Generic;
+using jvncorelib_fr.Entitylib;
 using MySql.Data.MySqlClient;
+using SqlSugar;
 using SYS.Common;
 using SYS.Core;
 
@@ -38,43 +40,41 @@ namespace SYS.Application
         /// 查询所有商品
         /// </summary>
         /// <returns></returns>
-        public List<SellThing> SelectSellThingAll()
+        public List<SellThing> SelectSellThingAll(SellThing sellThing = null)
         {
             List<SellThing> sellThings = new List<SellThing>();
-            sellThings = base.GetList(a => a.delete_mk == 0);
-            sellThings.ForEach(sellThing =>
+            var exp = Expressionable.Create<SellThing>().And(a => a.delete_mk == 0);
+            if (sellThing.IsNullOrEmpty())
             {
-                sellThing.SellPriceStr = Decimal.Parse(sellThing.SellPrice.ToString()).ToString("#,##0.00").ToString();
-            });
+                sellThings = base.GetList(exp.ToExpression());
+                sellThings.ForEach(_sellThing =>
+                {
+                    _sellThing.SellPriceStr = Decimal.Parse(_sellThing.SellPrice.ToString()).ToString("#,##0.00").ToString();
+                });
+            }
+            else
+            {
+                //商品编号
+                if (!sellThing.SellNo.IsNullOrEmpty())
+                {
+                    exp = exp.And(a => a.SellNo.Contains(sellThing.SellNo));
+                }
+                //商品名称
+                if (!sellThing.SellName.IsNullOrEmpty())
+                {
+                    exp = exp.Or(a => a.SellName.Contains(sellThing.SellName));
+                }
+                sellThings = base.GetList(exp.ToExpression());
+                sellThings.ForEach(_sellThing =>
+                {
+                    _sellThing.SellPriceStr = Decimal.Parse(_sellThing.SellPrice.ToString()).ToString("#,##0.00").ToString();
+                });
+            }
             return sellThings;
         }
 
         /// <summary>
-        /// 根据商品ID查询
-        /// </summary>
-        /// <param name="No"></param>
-        /// <returns></returns>
-        public SellThing SelectSellThingByNo(string No)
-        {
-            SellThing s = new SellThing();
-            s = base.GetSingle(a => a.SellNo == No && a.delete_mk != 1);
-            return s;
-        }
-
-        /// <summary>
-        /// 根据商品名称查询
-        /// </summary>
-        /// <param name="Name"></param>
-        /// <returns></returns>
-        public List<SellThing> SelectSellThingByName(string Name)
-        {
-            List<SellThing> sellThings = new List<SellThing>();
-            sellThings = base.GetList(a => a.SellName.Contains(Name) || a.SellNo.Contains(Name) || a.SellPrice == Convert.ToDecimal(Name) || a.format.Contains(Name));
-            return sellThings;
-        }
-
-        /// <summary>
-        /// 修改商品
+        /// 更新商品数量
         /// </summary>
         /// <param name="stock"></param>
         /// <param name="sellNo"></param>
@@ -110,17 +110,17 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomNo"></param>
         /// <param name="custoNo"></param>
-        /// <param name="spendTime"></param>
+        /// <param name="sellName"></param>
         /// <returns></returns>
-        public bool DeleteSellThing(string roomNo, string custoNo, DateTime spendTime)
+        public bool DeleteSellThing(string roomNo, string custoNo, string sellName)
         {
             return base.Change<Spend>().Update(a => new Spend()
             {
                 delete_mk = 1,
                 datachg_usr = LoginInfo.WorkerNo,
                 datachg_date = DateTime.Now
-            },a => a.MoneyState == "未结算" && a.RoomNo == roomNo && a.CustoNo == custoNo
-            && a.SpendTime == spendTime);
+            },a => a.MoneyState.Equals(SpendConsts.UnSettle) && a.RoomNo == roomNo && a.CustoNo == custoNo
+            && a.SpendName == sellName);
 
         }
 

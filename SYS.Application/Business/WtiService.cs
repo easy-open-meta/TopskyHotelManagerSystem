@@ -153,15 +153,15 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        public bool DeleteWtiInfo(string roomno)
-        {
-            return base.Update(a => new Wti()
-            {
-                delete_mk = 1,
-                datachg_usr = LoginInfo.WorkerNo,
-                datachg_date = DateTime.Now
-            }, a => a.WtiNo == roomno);
-        }
+        //public bool DeleteWtiInfo(string roomno)
+        //{
+        //    return base.Update(a => new Wti()
+        //    {
+        //        delete_mk = 1,
+        //        datachg_usr = LoginInfo.WorkerNo,
+        //        datachg_date = DateTime.Now
+        //    }, a => a.WtiNo == roomno);
+        //}
         #endregion
 
         #region 根据房间编号、使用时间删除水电费信息

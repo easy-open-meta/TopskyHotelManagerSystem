@@ -58,7 +58,6 @@ namespace SYS.FormUI
             operation = Visited;
             reload = ReloadEducationList;
             Accessed = Access;
-            insert = Insert;
         }
         ucEducationInformation baseInfo = null;
         List<Education> educations = null;
@@ -72,14 +71,6 @@ namespace SYS.FormUI
         public void ReloadEducationList()
         {
             flpInformation.Controls.Clear();
-            baseInfo = new ucEducationInformation();
-            baseInfo.Tag = "学历";
-            baseInfo.BackgroundImage = Resources.添加__增加___加;
-            baseInfo.lbName.Text = "新增学历类型";
-            baseInfo.btnOperation.Text = "新增";
-            baseInfo.btnOperation.FillColor = Color.FromArgb(80, 160, 255);
-            baseInfo.btnOperation.FillHoverColor = Color.FromArgb(80, 180, 255);
-            flpInformation.Controls.Add(baseInfo);
             educations = new BaseService().SelectEducationAll();
             for (int i = 0; i < educations.Count; i++)
             {
@@ -159,17 +150,17 @@ namespace SYS.FormUI
 
         }
 
-        public void Insert()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(info))
+            if (txtEducationNm.Text.Trim().IsNullOrEmpty())
             {
-                UIMessageBox.Show("学历名称不能为空，请检查！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                UIMessageTip.ShowError("学历名称为空，请检查", 3000);
                 return;
             }
             var _education = new Education()
             {
                 education_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.EducationId).ToString(),
-                education_name = info,
+                education_name = txtEducationNm.Text.Trim(),
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account,
                 datains_date = DateTime.Now
@@ -184,7 +175,33 @@ namespace SYS.FormUI
                     RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增学历类型操作！新增值为：" + _education.education_no, 2);
                     #endregion
                     ReloadEducationList();
+                    txtEducationNm.Text = "";
                 }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtEducationNm.Text.Trim().IsNullOrEmpty())
+            {
+                UIMessageTip.ShowError("学历名称为空，请检查", 3000);
+                return;
+            }
+            var listSource = new BaseService().SelectEducationAll(new Education { education_name = txtEducationNm.Text.Trim() });
+            flpInformation.Controls.Clear();
+            for (int i = 0; i < listSource.Count; i++)
+            {
+                baseInfo = new ucEducationInformation();
+                baseInfo.Tag = "学历";
+                baseInfo.lbName.Text = "名称:" + listSource[i].education_name;
+                if (listSource[i].delete_mk == 1)
+                {
+                    baseInfo.btnOperation.Text = "恢复";
+                    baseInfo.btnOperation.FillColor = Color.FromArgb(33, 179, 81);
+                    baseInfo.lbName.BackColor = Color.Red;
+                    baseInfo.btnOperation.FillHoverColor = Color.FromArgb(128, 255, 128);
+                }
+                flpInformation.Controls.Add(baseInfo);
             }
         }
     }

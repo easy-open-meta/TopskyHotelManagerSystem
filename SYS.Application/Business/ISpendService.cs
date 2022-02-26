@@ -114,5 +114,11 @@ namespace SYS.Application
         bool UpdateSpendInfoByRoomNo(List<Spend> spends, string newRoom, string custoNo);
         #endregion
 
+        /// <summary>
+        /// 更新消费信息
+        /// </summary>
+        /// <param name="spend"></param>
+        /// <returns></returns>
+        bool UpdSpenInfo(Spend spend);
     }
 }

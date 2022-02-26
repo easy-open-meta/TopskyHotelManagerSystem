@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EncryptTools;
+using jvncorelib_fr.Entitylib;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using SYS.Common;
@@ -165,17 +166,55 @@ namespace SYS.Application
         }
 
         /// <summary>
+        /// 查询指定客户信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Custo> SelectCustoByInfo(Custo custo)
+        {
+            //查询出所有性别类型
+            List<SexType> sexTypes = new List<SexType>();
+            sexTypes = base.Change<SexType>().GetList();
+            //查询出所有证件类型
+            List<PassPortType> passPortTypes = new List<PassPortType>();
+            passPortTypes = base.Change<PassPortType>().GetList();
+            //查询出所有客户类型
+            List<CustoType> custoTypes = new List<CustoType>();
+            custoTypes = base.Change<CustoType>().GetList();
+            //查询出所有客户信息
+            List<Custo> custos = new List<Custo>();
+            custos = base.GetList(a => a.CustoNo.Contains(custo.CustoNo)).OrderBy(a => a.CustoNo).ToList();
+            custos.ForEach(source =>
+            {
+                //解密身份证号码
+                var sourceStr = source.CustoID.Contains("·") ? encrypt.Decryption(source.CustoID) : source.CustoID;
+                source.CustoID = sourceStr;
+                //解密联系方式
+                var sourceTelStr = source.CustoTel.Contains("·") ? encrypt.Decryption(source.CustoTel) : source.CustoTel;
+                source.CustoTel = sourceTelStr;
+                //性别类型
+                var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
+                source.SexName = string.IsNullOrEmpty(sexType.sexName) ? "" : sexType.sexName;
+                //证件类型
+                var passPortType = passPortTypes.FirstOrDefault(a => a.PassportId == source.PassportType);
+                source.PassportName = string.IsNullOrEmpty(passPortType.PassportName) ? "" : passPortType.PassportName;
+                //客户类型
+                var custoType = custoTypes.FirstOrDefault(a => a.UserType == source.CustoType);
+                source.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
+            });
+            return custos;
+        }
+
+        /// <summary>
         /// 根据客户编号查询客户信息
         /// </summary>
         /// <param name="CustoNo"></param>
         /// <returns></returns>
         public Custo SelectCardInfoByCustoNo(string CustoNo)
         {
-            Custo c = new Custo();
-            c = base.GetSingle(a => a.CustoNo.Equals(CustoNo));
-            if (c == null)
+            Custo c = base.GetSingle(a => a.CustoNo.Contains(CustoNo));
+            if (c.IsNullOrEmpty())
             {
-                return c;
+                return null;
             }
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == c.CustoSex);

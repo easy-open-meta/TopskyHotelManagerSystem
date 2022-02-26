@@ -98,7 +98,6 @@ namespace SYS.FormUI
             FrmPosition.info = lbName.Text.Replace("名称:", string.Empty).ToString();
             FrmPosition.operation();
             return;
-            //MessageBox.Show(lbName.Text.Replace("名称:", string.Empty).ToString());
         }
 
         private void lbName_MouseLeave(object sender, EventArgs e)
@@ -118,8 +117,8 @@ namespace SYS.FormUI
 
         private void lbName_Validated(object sender, EventArgs e)
         {
-            FrmPosition.info = lbName.Text.ToString();
-            FrmPosition.insert();
+            //FrmPosition.info = lbName.Text.ToString();
+            //FrmPosition.insert();
         }
     }
 }

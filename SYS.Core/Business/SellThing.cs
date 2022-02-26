@@ -57,7 +57,7 @@ namespace SYS.Core
         /// <summary>
         /// 库存
         /// </summary>
-        public int Stock { get; set; }
+        public decimal Stock { get; set; }
         /// <summary>
         /// 删除标记
         /// </summary>

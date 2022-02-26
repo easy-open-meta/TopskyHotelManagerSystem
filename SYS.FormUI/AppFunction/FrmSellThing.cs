@@ -29,6 +29,8 @@ using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
 using SYS.Common;
+using jvncorelib_fr.Entitylib;
+using System.Linq;
 
 namespace SYS.FormUI
 {
@@ -74,7 +76,7 @@ namespace SYS.FormUI
         private void LoadThingByName()
         {
             
-            List<SellThing> lstSource = new SellService().SelectSellThingByName(txtFind.Text);
+            List<SellThing> lstSource = new SellService().SelectSellThingAll(new SellThing { SellNo = txtFind.Text.Trim(), SellName = txtFind.Text.Trim() });
             this.dgvSellthing.DataSource = lstSource;
             this.dgvSellthing.AutoGenerateColumns = false;
         }
@@ -84,15 +86,8 @@ namespace SYS.FormUI
         #region 根据客户编号加载消费信息的方法
         private void LoadSpendInfoByRoomNo(string room)
         {
+            this.dgvRoomSell.AutoGenerateColumns = false;
             List<Spend> lstSource = new SpendService().SelectSpendByRoomNo(room);
-            this.dgvRoomSell.AutoGenerateColumns = false;
-            this.dgvRoomSell.DataSource = lstSource;
-        }
-
-        private void LoadSpendInfoByCustoNo(string custoNo)
-        {
-            List<Spend> lstSource = new SpendService().SelectSpendByCustoNo(custoNo);
-            this.dgvRoomSell.AutoGenerateColumns = false;
             this.dgvRoomSell.DataSource = lstSource;
         }
         #endregion
@@ -164,38 +159,105 @@ namespace SYS.FormUI
             {
                 if (CheckInput())
                 {
-                    SellThing st = new SellService().SelectSellThingByNo(txtSellNo.Text);
+                    List<SellThing> st = new SellService().SelectSellThingAll(new SellThing { SellNo = txtSellNo.Text.Trim() }) ;
                     r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
-
-                    Spend s = new Spend()
+                    var listSource = new SpendService().SelectSpendInfoRoomNo(txtRoomNo.Text.Trim());
+                    Spend s = null;
+                    listSource = new SpendService().SelectSpendInfoRoomNo(txtRoomNo.Text.Trim());
+                    if (!listSource.IsNullOrEmpty())
                     {
-                        RoomNo = txtRoomNo.Text,
-                        SpendName = txtSellName.Text,
-                        SpendAmount = (int)nudNum.Value,
-                        CustoNo = r.CustoNo,
-                        SpendPrice = Convert.ToDecimal(txtPrice.Text),
-                        SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value),
-                        SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                        MoneyState = SpendConsts.UnSettle,
-                    };
-                    bool m = new SpendService().InsertSpendInfo(s);
-                    if (m == true)
-                    {
-                        string Stock = (st.Stock - nudNum.Value).ToString();
-                        bool n = new SellService().UpdateSellThing(Stock, st.SellNo);
-                        UIMessageBox.Show("添加成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK,true);
-                        LoadSpendInfoByCustoNo(r.CustoNo);
-                        LoadSellThingInfo();
-                        #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
-                        #endregion
-                        nudNum.Value = 0;
-                        return;
+                        var sellthing = listSource.FirstOrDefault(a => a.SpendName.Equals(txtSellName.Text));
+                        if (!sellthing.IsNullOrEmpty())
+                        {
+                            s = new Spend()
+                            {
+                                RoomNo = txtRoomNo.Text,
+                                SpendName = txtSellName.Text,
+                                SpendAmount = (int)nudNum.Value + listSource.FirstOrDefault(a => a.SpendName.Equals(txtSellName.Text.Trim())).SpendAmount,
+                                CustoNo = r.CustoNo,
+                                SpendPrice = Convert.ToDecimal(txtPrice.Text),
+                                SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value) + listSource.FirstOrDefault(a => a.SpendName.Equals(txtSellName.Text.Trim())).SpendMoney,
+                                SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                                MoneyState = SpendConsts.UnSettle,
+                            };
+                            if (new SpendService().UpdSpenInfo(s))
+                            {
+                                var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                                bool n = new SellService().UpdateSellthingInfo(new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format });
+                                UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK, true);
+                                LoadSpendInfoByRoomNo(r.RoomNo);
+                                LoadSellThingInfo();
+                                #region 获取添加操作日志所需的信息
+                                RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
+                                #endregion
+                            }
+                        }
+                        else
+                        {
+                            s = new Spend()
+                            {
+                                RoomNo = txtRoomNo.Text,
+                                SpendName = txtSellName.Text,
+                                SpendAmount = (int)nudNum.Value,
+                                CustoNo = r.CustoNo,
+                                SpendPrice = Convert.ToDecimal(txtPrice.Text),
+                                SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value),
+                                SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                                MoneyState = SpendConsts.UnSettle,
+                            };
+                            bool m = new SpendService().InsertSpendInfo(s);
+                            if (m == true)
+                            {
+                                var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                                bool n = new SellService().UpdateSellthingInfo(new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format });
+                                UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK, true);
+                                LoadSpendInfoByRoomNo(r.RoomNo);
+                                LoadSellThingInfo();
+                                #region 获取添加操作日志所需的信息
+                                RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
+                                #endregion
+                                nudNum.Value = 0;
+                                return;
+                            }
+                            else
+                            {
+                                UIMessageBox.ShowError("添加失败");
+                                return;
+                            }
+                        }
                     }
                     else
                     {
-                        UIMessageBox.ShowError("添加失败");
-                        return;
+                        s = new Spend()
+                        {
+                            RoomNo = txtRoomNo.Text,
+                            SpendName = txtSellName.Text,
+                            SpendAmount = (int)nudNum.Value,
+                            CustoNo = r.CustoNo,
+                            SpendPrice = Convert.ToDecimal(txtPrice.Text),
+                            SpendMoney = Convert.ToDecimal(Convert.ToDouble(txtPrice.Text) * nudNum.Value),
+                            SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                            MoneyState = SpendConsts.UnSettle,
+                        };
+                        bool m = new SpendService().InsertSpendInfo(s);
+                        if (m == true)
+                        {
+                            var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                            bool n = new SellService().UpdateSellthingInfo(new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format });
+                            UIMessageBox.Show("添加成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK, true);
+                            LoadSpendInfoByRoomNo(r.RoomNo);
+                            LoadSellThingInfo();
+                            #region 获取添加操作日志所需的信息
+                            RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + s.CustoNo + "进行了消费商品:" + txtSellName.Text + "操作！", 2);
+                            #endregion
+                            nudNum.Value = 0;
+                            return;
+                        }
+                        else
+                        {
+                            UIMessageBox.ShowError("添加失败");
+                            return;
+                        }
                     }
                 }
             }
@@ -226,9 +288,9 @@ namespace SYS.FormUI
                     SellThing s = new SellService().SelectSellThingByNameAndPrice(name, price);
                     decimal num = Convert.ToDecimal(dgvRoomSell.SelectedRows[0].Cells["clSpendAmount"].Value.ToString());
                     string Stock = (s.Stock + num).ToString();
-                    if (new SellService().DeleteSellThing(txtRoomNo.Text, custoNo, spendTime) == true)
+                    if (new SellService().DeleteSellThing(txtRoomNo.Text, custoNo, name) == true)
                     {
-                        bool n = new SellService().UpdateSellThing(Stock, s.SellNo);
+                        bool n = new SellService().UpdateSellthingInfo(new SellThing { SellName = s.SellName, SellPrice = s.SellPrice, Stock = s.Stock, SellNo = s.SellNo, format = s.format });
                         UIMessageTip.ShowOk("撤销成功！", 1000);
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" + "帮助" + custoNo + "撤销了消费商品:" + txtSellName.Text + "操作！", 2);
@@ -308,7 +370,7 @@ namespace SYS.FormUI
                 //LoadSpendInfo();
                 //清空
             }
-            else if (r != null)
+            else if (!r.IsNullOrEmpty())
             {
                 if (r.RoomStateId == 1)
                 {

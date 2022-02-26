@@ -89,22 +89,13 @@ namespace SYS.FormUI
                 FrmEducation.Accessed();
                 return;
             }
-            if (btnOperation.Text == "新增")
-            {
-                lbName.Enabled = true;
-                lbName.ReadOnly = false;
-                return;
-            }
             FrmEducation.info = lbName.Text.Replace("名称:", string.Empty).ToString();
             FrmEducation.operation();
             return;
-            //MessageBox.Show(lbName.Text.Replace("名称:", string.Empty).ToString());
         }
 
         private void lbName_MouseLeave(object sender, EventArgs e)
         {
-            //lbName.Enabled = false;
-            //lbName.ReadOnly = true;
             lbName.FillColor = Color.FromArgb(235, 243, 255);
             lbName.FillDisableColor = Color.FromArgb(235, 243, 255);
             lbName.RectColor = Color.FromArgb(235, 243, 255);
@@ -118,8 +109,8 @@ namespace SYS.FormUI
 
         private void lbName_Validated(object sender, EventArgs e)
         {
-            FrmEducation.info = lbName.Text.ToString();
-            FrmEducation.insert();
+            //FrmEducation.info = lbName.Text.ToString();
+            //FrmEducation.insert();
         }
     }
 }

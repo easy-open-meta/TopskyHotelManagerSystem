@@ -75,7 +75,7 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAllCanUse();
+            List<SexType> listSexType = new BaseService().SelectSexTypeAll(new SexType { delete_mk = 0 });
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";

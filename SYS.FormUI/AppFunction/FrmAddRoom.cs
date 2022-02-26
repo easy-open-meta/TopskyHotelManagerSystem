@@ -89,6 +89,7 @@ namespace SYS.FormUI
             for (int i = 0; i < rooms.Count; i++)
             {
                 romt = new ucRoomList();
+                romt.lblMark.Text = "Mark";
                 romt.lblRoomNo.Text = rooms[i].RoomNo;
                 romt.lblCustoNo.Text = rooms[i].CustoNo;
                 romt.lblRoomType.Text = rooms[i].RoomName;

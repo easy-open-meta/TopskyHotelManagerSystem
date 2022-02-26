@@ -92,7 +92,7 @@ namespace SYS.Application
         /// </summary>
         /// <param name="roomno"></param>
         /// <returns></returns>
-        bool DeleteWtiInfo(string roomno);
+        //bool DeleteWtiInfo(string roomno);
         #endregion
 
         #region 根据房间编号、使用时间删除水电费信息
