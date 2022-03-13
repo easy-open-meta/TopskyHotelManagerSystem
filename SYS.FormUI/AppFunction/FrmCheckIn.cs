@@ -47,7 +47,7 @@ namespace SYS.FormUI
                    && CheckEmpty(txtCustoNo, "请输入客户编号")
                    && CheckEmpty(txtCustoTel, "输入11位手机号码");
         }
-
+        int count = 0;
         #region 窗体加载事件方法
         private void FrmCheckIn_Load(object sender, EventArgs e)
         {
@@ -63,16 +63,10 @@ namespace SYS.FormUI
             txtRoomPosition.Text = r.RoomPosition;
             txtState.Text = r.RoomState;
             txtDeposit.Text = r.RoomDeposit.ToString();
-            List<Custo> ctos = new CustoService().SelectCustoAll();
-            List<Room> roms = new RoomService().SelectCanUseRoomAll();
-            for (int i = 0; i < roms.Count; i++)
-            {
-                txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
-            }
-            for (int j = 0; j < ctos.Count; j++)
-            {
-                txtCustoNo.AutoCompleteCustomSource.Add(ctos[j].CustoNo);
-            }
+            List<Custo> ctos = new CustoService().SelectCustoAll(ref count, null,null);
+            //List<Room> roms = new RoomService().SelectCanUseRoomAll();
+           
+            txtCustoNo.AutoCompleteCustomSource.AddRange(ctos.Select(a => a.CustoNo).ToArray());
             try
             {
                 txtCustoNo.Text = "";

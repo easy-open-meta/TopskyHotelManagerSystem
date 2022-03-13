@@ -150,7 +150,6 @@ namespace SYS.FormUI
                 romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
-
             }
             lblRoomNo.Text = "";
             lblRoomPosition.Text = "";

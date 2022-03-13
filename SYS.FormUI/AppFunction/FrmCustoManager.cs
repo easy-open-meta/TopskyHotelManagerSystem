@@ -78,11 +78,14 @@ namespace SYS.FormUI
         }
         #endregion
 
+        int count = 0;
         #region 加载用户信息列表
         private void LoadCustomer()
         {
-            List<Custo> lstSource = new CustoService().SelectCustoAll();
-            dgvCustomerList.AutoGenerateColumns = false;
+            var count = 0;
+            List<Custo> lstSource = new CustoService().SelectCustoAll(ref count, 1, 20);
+            btnPg.TotalCount = count;
+            this.dgvCustomerList.AutoGenerateColumns = false;
             this.dgvCustomerList.DataSource = lstSource;
         }
         #endregion
@@ -123,20 +126,23 @@ namespace SYS.FormUI
         #region 搜索会员信息事件方法
         private void picSearch_Click_1(object sender, EventArgs e)
         {
-            if (txtCustoNo.Text != "")
+            dgvCustomerList.ClearRows();
+            dgvCustomerList.AutoGenerateColumns = false;
+            List<Custo> custos = null;
+            if (!txtCustoNo.Text.IsNullOrEmpty())
             {
-                dgvCustomerList.ClearRows();
-                dgvCustomerList.AutoGenerateColumns = false;
-                List<Custo> custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
-                dgvCustomerList.DataSource = custos;
+                custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
+            }
+            else if (!txtCustoName.Text.IsNullOrEmpty())
+            {
+                custos = new CustoService().SelectCustoByInfo(new Custo { CustoName = txtCustoName.Text.Trim() });
             }
             else
             {
-                dgvCustomerList.ClearRows();
-                dgvCustomerList.AutoGenerateColumns = false;
-                List<Custo> custos = new CustoService().SelectCustoAll();
-                dgvCustomerList.DataSource = custos;
+                custos = new CustoService().SelectCustoAll(ref count,1,20);
+
             }
+            dgvCustomerList.DataSource = custos;
         }
         #endregion
 
@@ -205,8 +211,20 @@ namespace SYS.FormUI
             //}
             //#endregion
         }
+
         #endregion
 
+        private void btnPg_PageChanged(object sender, object pagingSource, int pageIndex, int count)
+        {
+            var totalCount = 0;
+            List<Custo> lstSource = new CustoService().SelectCustoAll(ref totalCount, pageIndex, count);
+            this.dgvCustomerList.AutoGenerateColumns = false;
+            this.dgvCustomerList.DataSource = lstSource;
+        }
 
+        private void btnPg_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

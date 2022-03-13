@@ -23,7 +23,7 @@
  */
 using System;
 using System.Collections.Generic;
-using EncryptTools;
+using jvncorelib_fr.Encryptor;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -35,7 +35,7 @@ namespace SYS.Application
     /// </summary>
     public class ReserService:Repository<Reser>,IReserService
     {
-        Encrypt encrypt = new Encrypt();
+        EncryptLib encryptLib = new EncryptLib();
         /// <summary>
         /// 获取所有预约信息
         /// </summary>
@@ -47,7 +47,7 @@ namespace SYS.Application
             rss.ForEach(source =>
             {
                 //解密联系方式
-                var sourceTelStr = source.CustoTel.Contains("·") ? encrypt.Decryption(source.CustoTel) : source.CustoTel;
+                var sourceTelStr = source.CustoTel.Contains("·") ? encryptLib.Decryption(source.CustoTel) : source.CustoTel;
                 source.CustoTel = sourceTelStr;
             });
             return rss;
@@ -63,7 +63,7 @@ namespace SYS.Application
             Reser res = null;
             res = base.GetSingle(a => a.ReserRoom == no && a.delete_mk != 1);
             //解密联系方式
-            var sourceTelStr = res.CustoTel.Contains("·") ? encrypt.Decryption(res.CustoTel) : res.CustoTel;
+            var sourceTelStr = res.CustoTel.Contains("·") ? encryptLib.Decryption(res.CustoTel) : res.CustoTel;
             res.CustoTel = sourceTelStr;
             return res;
         }
@@ -91,7 +91,7 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InserReserInfo(Reser r)
         {
-            var cryStr = encrypt.Encryption(r.CustoTel);
+            var cryStr = encryptLib.Encryption(r.CustoTel);
             r.CustoTel = cryStr;
             return base.Insert(r);
         }

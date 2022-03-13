@@ -64,10 +64,11 @@ namespace SYS.FormUI
         #region 加载用户信息列表
         private void LoadCustomer()
         {
-
-            List<Custo> lstSource = new CustoService().SelectCustoAll();
-            this.dgvCustomerList.DataSource = lstSource;
+            var count = 0;
+            List<Custo> lstSource = new CustoService().SelectCustoAll(ref count, 1, 20);
+            btnPg.TotalCount = count;
             this.dgvCustomerList.AutoGenerateColumns = false;
+            this.dgvCustomerList.DataSource = lstSource;
         }
         #endregion
 
@@ -146,23 +147,26 @@ namespace SYS.FormUI
         //}
         //#endregion
 
-
+        int count = 0;
         private void btnSerach_BtnClick(object sender, EventArgs e)
         {
-            if (txtCustoNo.Text != "")
+            dgvCustomerList.ClearRows();
+            dgvCustomerList.AutoGenerateColumns = false;
+            List<Custo> custos = null;
+            if (!txtCustoNo.Text.IsNullOrEmpty())
             {
-                dgvCustomerList.ClearRows();
-                dgvCustomerList.AutoGenerateColumns = false;
-                List<Custo> custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
-                dgvCustomerList.DataSource = custos;
+                custos = new CustoService().SelectCustoByInfo(new Custo { CustoNo = txtCustoNo.Text.Trim() });
+            }
+            else if (!txtCustoName.Text.IsNullOrEmpty())
+            {
+                custos = new CustoService().SelectCustoByInfo(new Custo { CustoName = txtCustoName.Text.Trim() });
             }
             else
             {
-                dgvCustomerList.ClearRows();
-                dgvCustomerList.AutoGenerateColumns = false;
-                List<Custo> custos = new CustoService().SelectCustoAll();
-                dgvCustomerList.DataSource = custos;
+                custos = new CustoService().SelectCustoAll(ref count, null,null);
+
             }
+            dgvCustomerList.DataSource = custos;
         }
 
         private void btnAddCusto_BtnClick(object sender, EventArgs e)
@@ -199,6 +203,19 @@ namespace SYS.FormUI
                 frmInputs.Text = "修改客户信息";
                 frmInputs.ShowDialog();
             }
+        }
+
+        private void btnPg_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnPg_PageChanged(object sender, object pagingSource, int pageIndex, int count)
+        {
+            var totalCount = 0;
+            List<Custo> lstSource = new CustoService().SelectCustoAll(ref totalCount,pageIndex, count);
+            this.dgvCustomerList.AutoGenerateColumns = false;
+            this.dgvCustomerList.DataSource = lstSource;
         }
     }
 

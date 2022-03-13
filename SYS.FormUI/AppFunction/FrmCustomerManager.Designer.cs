@@ -56,8 +56,11 @@
             this.btnAddCusto = new Sunny.UI.UIButton();
             this.btnUpdCustomer = new Sunny.UI.UIButton();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.txtCustoName = new Sunny.UI.UITextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCustoNo = new Sunny.UI.UITextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPg = new Sunny.UI.UIPagination();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +133,7 @@
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.ShowRect = false;
-            this.dgvCustomerList.Size = new System.Drawing.Size(1048, 402);
+            this.dgvCustomerList.Size = new System.Drawing.Size(1048, 381);
             this.dgvCustomerList.Style = Sunny.UI.UIStyle.Custom;
             this.dgvCustomerList.TabIndex = 83;
             this.toolTip1.SetToolTip(this.dgvCustomerList, "选中客户右键可进行更多操作");
@@ -308,6 +311,8 @@
             // 
             // uiGroupBox1
             // 
+            this.uiGroupBox1.Controls.Add(this.txtCustoName);
+            this.uiGroupBox1.Controls.Add(this.label1);
             this.uiGroupBox1.Controls.Add(this.txtCustoNo);
             this.uiGroupBox1.Controls.Add(this.label3);
             this.uiGroupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -320,6 +325,33 @@
             this.uiGroupBox1.TabIndex = 119;
             this.uiGroupBox1.Text = "条件搜索";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtCustoName
+            // 
+            this.txtCustoName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustoName.FillColor = System.Drawing.Color.White;
+            this.txtCustoName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCustoName.Location = new System.Drawing.Point(387, 23);
+            this.txtCustoName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustoName.Maximum = 2147483647D;
+            this.txtCustoName.Minimum = -2147483648D;
+            this.txtCustoName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtCustoName.Name = "txtCustoName";
+            this.txtCustoName.Padding = new System.Windows.Forms.Padding(5);
+            this.txtCustoName.Radius = 20;
+            this.txtCustoName.Size = new System.Drawing.Size(173, 33);
+            this.txtCustoName.TabIndex = 94;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(292, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "客户姓名";
             // 
             // txtCustoNo
             // 
@@ -334,7 +366,7 @@
             this.txtCustoNo.Name = "txtCustoNo";
             this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoNo.Radius = 20;
-            this.txtCustoNo.Size = new System.Drawing.Size(443, 33);
+            this.txtCustoNo.Size = new System.Drawing.Size(173, 33);
             this.txtCustoNo.TabIndex = 92;
             this.txtCustoNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -348,12 +380,27 @@
             this.label3.TabIndex = 91;
             this.label3.Text = "客户编号";
             // 
+            // btnPg
+            // 
+            this.btnPg.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnPg.Location = new System.Drawing.Point(12, 401);
+            this.btnPg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPg.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnPg.Name = "btnPg";
+            this.btnPg.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnPg.Size = new System.Drawing.Size(1048, 34);
+            this.btnPg.TabIndex = 120;
+            this.btnPg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPg.PageChanged += new Sunny.UI.UIPagination.OnPageChangeEventHandler(this.btnPg_PageChanged);
+            this.btnPg.Click += new System.EventHandler(this.btnPg_Click);
+            // 
             // FrmCustomerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1072, 490);
+            this.Controls.Add(this.btnPg);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.btnUpdCustomer);
             this.Controls.Add(this.btnAddCusto);
@@ -397,5 +444,8 @@
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox txtCustoNo;
         private System.Windows.Forms.Label label3;
+        private Sunny.UI.UITextBox txtCustoName;
+        private System.Windows.Forms.Label label1;
+        private Sunny.UI.UIPagination btnPg;
     }
 }

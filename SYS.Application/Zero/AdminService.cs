@@ -21,8 +21,7 @@
  *SOFTWARE.
  *
  */
-using EncryptTools;
-using MySql.Data.MySqlClient;
+using jvncorelib_fr.Encryptor;
 using SYS.Common;
 using SYS.Core;
 using System;
@@ -36,7 +35,7 @@ namespace SYS.Application
     /// </summary>
     public class AdminService:Repository<Admin>, IAdminService
     {
-        Encrypt encrypt = new Encrypt();
+        EncryptLib encryptLib = new EncryptLib();
 
         #region 根据超管密码查询员工类型和权限
         /// <summary>
