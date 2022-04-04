@@ -41,9 +41,6 @@
     <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptTools, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EncryptTools.2.0.0.1\lib\.net461\EncryptTools.dll</HintPath>
-    </Reference>
     <Reference Include="jvncorelib-fr, Version=1.0.1.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\jvncorelib.1.0.1.4\lib\net461\jvncorelib-fr.dll</HintPath>
     </Reference>
@@ -95,28 +92,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\FontsService.cs" />
-    <Compile Include="Business\ICashService.cs" />
-    <Compile Include="Business\IFontsService.cs" />
-    <Compile Include="Business\IReserService.cs" />
-    <Compile Include="Business\ISellService.cs" />
-    <Compile Include="Business\ISpendService.cs" />
-    <Compile Include="Business\IWtiService.cs" />
+    <Compile Include="Business\Fonts\FontsService.cs" />
+    <Compile Include="Business\Cash\ICashService.cs" />
+    <Compile Include="Business\Fonts\IFontsService.cs" />
+    <Compile Include="Business\Reser\IReserService.cs" />
+    <Compile Include="Business\Sellthing\ISellService.cs" />
+    <Compile Include="Business\Spend\ISpendService.cs" />
+    <Compile Include="Business\Wti\IWtiService.cs" />
     <Compile Include="Worker\IWorkerPicService.cs" />
     <Compile Include="Worker\WorkerPicService.cs" />
     <Compile Include="Zero\ICheckInfoService.cs" />
-    <Compile Include="Customer\ICustoService.cs" />
-    <Compile Include="Room\IRoomService.cs" />
-    <Compile Include="Room\IRoomTypeService.cs" />
+    <Compile Include="Business\Customer\ICustoService.cs" />
+    <Compile Include="Business\Room\IRoomService.cs" />
+    <Compile Include="Business\Room\IRoomTypeService.cs" />
     <Compile Include="Worker\IWorkerCheckService.cs" />
     <Compile Include="Worker\IWorkerGoodBadService.cs" />
     <Compile Include="Worker\IWorkerHistoryService.cs" />
     <Compile Include="Worker\IWorkerService.cs" />
     <Compile Include="Zero\AdminModuleZeroService.cs" />
     <Compile Include="Zero\AdminService.cs" />
-    <Compile Include="Business\CashService.cs" />
+    <Compile Include="Business\Cash\CashService.cs" />
     <Compile Include="Zero\CheckInfoService.cs" />
-    <Compile Include="Customer\CustoService.cs" />
+    <Compile Include="Business\Customer\CustoService.cs" />
     <Compile Include="Zero\BaseService.cs" />
     <Compile Include="Zero\IAdminModuleZeroService.cs" />
     <Compile Include="Zero\IAdminService.cs" />
@@ -124,16 +121,16 @@
     <Compile Include="Zero\INoticeService.cs" />
     <Compile Include="Zero\NoticeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Business\ReserService.cs" />
-    <Compile Include="Room\RoomService.cs" />
-    <Compile Include="Room\RoomTypeService.cs" />
-    <Compile Include="Business\SellService.cs" />
-    <Compile Include="Business\SpendService.cs" />
+    <Compile Include="Business\Reser\ReserService.cs" />
+    <Compile Include="Business\Room\RoomService.cs" />
+    <Compile Include="Business\Room\RoomTypeService.cs" />
+    <Compile Include="Business\Sellthing\SellService.cs" />
+    <Compile Include="Business\Spend\SpendService.cs" />
     <Compile Include="Worker\WorkerCheckService.cs" />
     <Compile Include="Worker\WorkerGoodBadService.cs" />
     <Compile Include="Worker\WorkerHistoryService.cs" />
     <Compile Include="Worker\WorkerService.cs" />
-    <Compile Include="Business\WtiService.cs" />
+    <Compile Include="Business\Wti\WtiService.cs" />
     <Compile Include="Zero\VipRule\IVipRuleAppService.cs" />
     <Compile Include="Zero\VipRule\VipRuleAppService.cs" />
   </ItemGroup>

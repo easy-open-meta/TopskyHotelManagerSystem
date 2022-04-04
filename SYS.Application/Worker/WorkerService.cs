@@ -24,10 +24,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EncryptTools;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
+using jvncorelib_fr.Encryptor;
 
 namespace SYS.Application
 {
@@ -36,7 +36,11 @@ namespace SYS.Application
     /// </summary>
     public class WorkerService:Repository<Worker>,IWorkerService
     {
-        Encrypt encrypt = new Encrypt();
+        /// <summary>
+        /// 实例化信息加密插件
+        /// </summary>
+        EncryptLib encryptLib = new EncryptLib();
+
         #region 修改员工信息
         /// <summary>
         /// 修改员工信息
@@ -49,13 +53,13 @@ namespace SYS.Application
             var sourceTelStr = string.Empty;
             if (!string.IsNullOrEmpty(worker.WorkerTel))
             {
-                sourceTelStr = encrypt.Encryption(worker.WorkerTel);
+                sourceTelStr = encryptLib.Encryption(worker.WorkerTel);
             }
             //加密身份证
             var sourceIdStr = string.Empty;
             if (!string.IsNullOrEmpty(worker.CardId))
             {
-                sourceIdStr = encrypt.Encryption(worker.CardId);
+                sourceIdStr = encryptLib.Encryption(worker.CardId);
             }
             worker.WorkerTel = sourceTelStr;
             worker.CardId = sourceIdStr;
@@ -112,8 +116,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool AddWorker(Worker worker)
         {
-            string NewID = encrypt.Encryption(worker.CardId);
-            string NewTel = encrypt.Encryption(worker.WorkerTel);
+            string NewID = encryptLib.Encryption(worker.CardId);
+            string NewTel = encryptLib.Encryption(worker.WorkerTel);
             worker.CardId = NewID;
             worker.WorkerTel = NewTel;
             return base.Insert(worker);
@@ -148,10 +152,10 @@ namespace SYS.Application
             workers.ForEach(source =>
             {
                 //解密身份证号码
-                var sourceStr = source.CardId.Contains("·") ? encrypt.Decryption(source.CardId) : source.CardId;
+                var sourceStr = source.CardId.Contains("·") ? encryptLib.Decryption(source.CardId) : source.CardId;
                 source.CardId = sourceStr;
                 //解密联系方式
-                var sourceTelStr = source.WorkerTel.Contains("·") ? encrypt.Decryption(source.WorkerTel) : source.WorkerTel;
+                var sourceTelStr = source.WorkerTel.Contains("·") ? encryptLib.Decryption(source.WorkerTel) : source.WorkerTel;
                 source.WorkerTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.WorkerSex);
@@ -185,10 +189,10 @@ namespace SYS.Application
             Worker w = new Worker();
             w = base.Change<Worker>().GetSingle(a => a.WorkerId == workerId);
             //解密身份证号码
-            var sourceStr = w.CardId.Contains("·") ? encrypt.Decryption(w.CardId) : w.CardId;
+            var sourceStr = w.CardId.Contains("·") ? encryptLib.Decryption(w.CardId) : w.CardId;
             w.CardId = sourceStr;
             //解密联系方式
-            var sourceTelStr = w.WorkerTel.Contains("·") ? encrypt.Decryption(w.WorkerTel) : w.WorkerTel;
+            var sourceTelStr = w.WorkerTel.Contains("·") ? encryptLib.Decryption(w.WorkerTel) : w.WorkerTel;
             w.WorkerTel = sourceTelStr;
             //性别类型
             var sexType = base.Change<SexType>().GetSingle(a => a.sexId == w.WorkerSex);
@@ -225,7 +229,7 @@ namespace SYS.Application
                 return w;
             }
 
-            var sourceStr = w.WorkerPwd.Contains("·") ? encrypt.Decryption(w.WorkerPwd) : w.WorkerPwd;
+            var sourceStr = w.WorkerPwd.Contains("·") ? encryptLib.Decryption(w.WorkerPwd) : w.WorkerPwd;
             if (sourceStr != worker.WorkerPwd)
             {
                 w = null;
@@ -259,7 +263,7 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdWorkerPwdByWorkNo(string workId,string workPwd)
         {
-            string NewPwd = encrypt.Decryption(workPwd);
+            string NewPwd = encryptLib.Decryption(workPwd);
             return base.Update(a => new Worker()
             {
                 WorkerPwd = NewPwd,

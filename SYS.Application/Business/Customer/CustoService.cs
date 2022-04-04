@@ -24,7 +24,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EncryptTools;
+using System.Linq.Expressions;
+using jvncorelib_fr.Encryptor;
 using jvncorelib_fr.Entitylib;
 using MySql.Data.MySqlClient;
 using Npgsql;
@@ -38,7 +39,8 @@ namespace SYS.Application
     /// </summary>
     public class CustoService:Repository<Custo>, ICustoService
     {
-        Encrypt encrypt = new Encrypt();
+        EncryptLib encryptLib = new EncryptLib();
+
         #region 添加客户信息
         /// <summary>
         /// 添加客户信息
@@ -47,9 +49,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool InsertCustomerInfo(Custo custo)
         {
-            Encrypt encrypt = new Encrypt();
-            string NewID = encrypt.Encryption(custo.CustoID);
-            string NewTel = encrypt.Encryption(custo.CustoTel);
+            string NewID = encryptLib.Encryption(custo.CustoID);
+            string NewTel = encryptLib.Encryption(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Insert(custo);
@@ -63,9 +64,8 @@ namespace SYS.Application
         /// <returns></returns>
         public bool UpdCustomerInfoByCustoNo(Custo custo)
         {
-            Encrypt encrypt = new Encrypt();
-            string NewID = encrypt.Encryption(custo.CustoID);
-            string NewTel = encrypt.Encryption(custo.CustoTel);
+            string NewID = encryptLib.Encryption(custo.CustoID);
+            string NewTel = encryptLib.Encryption(custo.CustoTel);
             custo.CustoID = NewID;
             custo.CustoTel = NewTel;
             return base.Update(a => new Custo()
@@ -129,7 +129,7 @@ namespace SYS.Application
         /// 查询所有客户信息
         /// </summary>
         /// <returns></returns>
-        public List<Custo> SelectCustoAll()
+        public List<Custo> SelectCustoAll(ref int count,int? pageIndex,int? pageSize)
         {
             
             //查询出所有性别类型
@@ -143,14 +143,23 @@ namespace SYS.Application
             custoTypes = base.Change<CustoType>().GetList();
             //查询出所有客户信息
             List<Custo> custos = new List<Custo>();
-            custos = base.GetList().OrderBy(a => a.CustoNo).ToList();
+
+            if (!pageIndex.IsNullOrEmpty() && !pageSize.IsNullOrEmpty())
+            {
+                custos = base.AsQueryable().ToPageList((int)pageIndex, (int)pageSize, ref count).OrderBy(a => a.CustoNo).ToList();
+            }
+            else
+            {
+                custos = base.AsQueryable().OrderBy(a => a.CustoNo).ToList();
+            }
+
             custos.ForEach(source =>
             {
                 //解密身份证号码
-                var sourceStr = source.CustoID.Contains("·") ? encrypt.Decryption(source.CustoID) : source.CustoID;
+                var sourceStr = source.CustoID.Contains("·") ? encryptLib.Decryption(source.CustoID) : source.CustoID;
                 source.CustoID = sourceStr;
                 //解密联系方式
-                var sourceTelStr = source.CustoTel.Contains("·") ? encrypt.Decryption(source.CustoTel) : source.CustoTel;
+                var sourceTelStr = source.CustoTel.Contains("·") ? encryptLib.Decryption(source.CustoTel) : source.CustoTel;
                 source.CustoTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
@@ -182,14 +191,21 @@ namespace SYS.Application
             custoTypes = base.Change<CustoType>().GetList();
             //查询出所有客户信息
             List<Custo> custos = new List<Custo>();
-            custos = base.GetList(a => a.CustoNo.Contains(custo.CustoNo)).OrderBy(a => a.CustoNo).ToList();
+            if (!custo.CustoNo.IsNullOrEmpty())
+            {
+                custos = base.GetList(a => a.CustoNo.Contains(custo.CustoNo)).OrderBy(a => a.CustoNo).ToList();
+            }
+            if (!custo.CustoName.IsNullOrEmpty())
+            {
+                custos = base.GetList(a => a.CustoName.Contains(custo.CustoName)).OrderBy(a => a.CustoNo).ToList();
+            }
             custos.ForEach(source =>
             {
                 //解密身份证号码
-                var sourceStr = source.CustoID.Contains("·") ? encrypt.Decryption(source.CustoID) : source.CustoID;
+                var sourceStr = source.CustoID.Contains("·") ? encryptLib.Decryption(source.CustoID) : source.CustoID;
                 source.CustoID = sourceStr;
                 //解密联系方式
-                var sourceTelStr = source.CustoTel.Contains("·") ? encrypt.Decryption(source.CustoTel) : source.CustoTel;
+                var sourceTelStr = source.CustoTel.Contains("·") ? encryptLib.Decryption(source.CustoTel) : source.CustoTel;
                 source.CustoTel = sourceTelStr;
                 //性别类型
                 var sexType = sexTypes.FirstOrDefault(a => a.sexId == source.CustoSex);
@@ -226,10 +242,10 @@ namespace SYS.Application
             var custoType = base.Change<CustoType>().GetSingle(a => a.UserType == c.CustoType);
             c.typeName = string.IsNullOrEmpty(custoType.TypeName) ? "" : custoType.TypeName;
             //解密身份证号码
-            var sourceStr = c.CustoID.Contains("·") ? encrypt.Decryption(c.CustoID) : c.CustoID;
+            var sourceStr = c.CustoID.Contains("·") ? encryptLib.Decryption(c.CustoID) : c.CustoID;
             c.CustoID = sourceStr;
             //解密联系方式
-            var sourceTelStr = c.CustoTel.Contains("·") ? encrypt.Decryption(c.CustoTel) : c.CustoTel;
+            var sourceTelStr = c.CustoTel.Contains("·") ? encryptLib.Decryption(c.CustoTel) : c.CustoTel;
             c.CustoTel = sourceTelStr;
             return c;
         }

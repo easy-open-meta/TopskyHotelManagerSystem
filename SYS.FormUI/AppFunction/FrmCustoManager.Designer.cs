@@ -52,8 +52,11 @@
             this.btnExport = new Sunny.UI.UIButton();
             this.btnUpdate = new Sunny.UI.UIButton();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.txtCustoName = new Sunny.UI.UITextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCustoNo = new Sunny.UI.UITextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPg = new Sunny.UI.UIPagination();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -124,7 +127,7 @@
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.ShowRect = false;
-            this.dgvCustomerList.Size = new System.Drawing.Size(999, 517);
+            this.dgvCustomerList.Size = new System.Drawing.Size(999, 482);
             this.dgvCustomerList.TabIndex = 111;
             // 
             // CustoNo
@@ -269,6 +272,8 @@
             // 
             // uiGroupBox1
             // 
+            this.uiGroupBox1.Controls.Add(this.txtCustoName);
+            this.uiGroupBox1.Controls.Add(this.label1);
             this.uiGroupBox1.Controls.Add(this.txtCustoNo);
             this.uiGroupBox1.Controls.Add(this.label3);
             this.uiGroupBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -282,12 +287,39 @@
             this.uiGroupBox1.Text = "条件搜索";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtCustoName
+            // 
+            this.txtCustoName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustoName.FillColor = System.Drawing.Color.White;
+            this.txtCustoName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCustoName.Location = new System.Drawing.Point(385, 23);
+            this.txtCustoName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustoName.Maximum = 2147483647D;
+            this.txtCustoName.Minimum = -2147483648D;
+            this.txtCustoName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtCustoName.Name = "txtCustoName";
+            this.txtCustoName.Padding = new System.Windows.Forms.Padding(5);
+            this.txtCustoName.Radius = 20;
+            this.txtCustoName.Size = new System.Drawing.Size(173, 33);
+            this.txtCustoName.TabIndex = 98;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(290, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 97;
+            this.label1.Text = "客户姓名";
+            // 
             // txtCustoNo
             // 
             this.txtCustoNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCustoNo.FillColor = System.Drawing.Color.White;
             this.txtCustoNo.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustoNo.Location = new System.Drawing.Point(112, 23);
+            this.txtCustoNo.Location = new System.Drawing.Point(110, 23);
             this.txtCustoNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustoNo.Maximum = 2147483647D;
             this.txtCustoNo.Minimum = -2147483648D;
@@ -295,19 +327,33 @@
             this.txtCustoNo.Name = "txtCustoNo";
             this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoNo.Radius = 20;
-            this.txtCustoNo.Size = new System.Drawing.Size(443, 33);
-            this.txtCustoNo.TabIndex = 92;
+            this.txtCustoNo.Size = new System.Drawing.Size(173, 33);
+            this.txtCustoNo.TabIndex = 96;
             this.txtCustoNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(17, 26);
+            this.label3.Location = new System.Drawing.Point(15, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 25);
-            this.label3.TabIndex = 91;
+            this.label3.TabIndex = 95;
             this.label3.Text = "客户编号";
+            // 
+            // btnPg
+            // 
+            this.btnPg.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnPg.Location = new System.Drawing.Point(3, 528);
+            this.btnPg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPg.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnPg.Name = "btnPg";
+            this.btnPg.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnPg.Size = new System.Drawing.Size(999, 34);
+            this.btnPg.TabIndex = 121;
+            this.btnPg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPg.PageChanged += new Sunny.UI.UIPagination.OnPageChangeEventHandler(this.btnPg_PageChanged);
+            this.btnPg.Paint += new System.Windows.Forms.PaintEventHandler(this.btnPg_Paint);
             // 
             // FrmCustoManager
             // 
@@ -316,6 +362,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPg);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnExport);
@@ -355,7 +402,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UITextBox txtCustoName;
+        private System.Windows.Forms.Label label1;
         private Sunny.UI.UITextBox txtCustoNo;
         private System.Windows.Forms.Label label3;
+        private Sunny.UI.UIPagination btnPg;
     }
 }

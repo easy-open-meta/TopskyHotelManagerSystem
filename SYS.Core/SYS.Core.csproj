@@ -90,9 +90,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\SpendConsts.cs" />
-    <Compile Include="Customer\PassPortType.cs" />
-    <Compile Include="Customer\SexType.cs" />
+    <Compile Include="Business\Spend\SpendConsts.cs" />
+    <Compile Include="Business\Customer\PassPortType.cs" />
+    <Compile Include="Business\Customer\SexType.cs" />
     <Compile Include="Util\ApplicationVersionUtil.cs" />
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\CounterRuleConsts.cs" />
@@ -102,12 +102,12 @@
     <Compile Include="Worker\GBType.cs" />
     <Compile Include="Worker\WorkerPic.cs" />
     <Compile Include="Zero\Admin.cs" />
-    <Compile Include="Business\Cash.cs" />
-    <Compile Include="Room\CheckInfo.cs" />
-    <Compile Include="Customer\Custo.cs" />
-    <Compile Include="Customer\CustoSpend.cs" />
-    <Compile Include="Customer\CustoType.cs" />
-    <Compile Include="Business\Fonts.cs" />
+    <Compile Include="Business\Cash\Cash.cs" />
+    <Compile Include="Zero\CheckInfo.cs" />
+    <Compile Include="Business\Customer\Custo.cs" />
+    <Compile Include="Business\Customer\CustoSpend.cs" />
+    <Compile Include="Business\Customer\CustoType.cs" />
+    <Compile Include="Business\Fonts\Fonts.cs" />
     <Compile Include="Zero\AdminType.cs" />
     <Compile Include="Zero\Base.cs" />
     <Compile Include="Zero\Dept.cs" />
@@ -118,26 +118,24 @@
     <Compile Include="Zero\Nation.cs" />
     <Compile Include="Zero\Notice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Business\Reser.cs" />
-    <Compile Include="Room\Room.cs" />
-    <Compile Include="Room\RoomState.cs" />
-    <Compile Include="Room\RoomType.cs" />
-    <Compile Include="Business\SellThing.cs" />
-    <Compile Include="Business\Spend.cs" />
+    <Compile Include="Business\Reser\Reser.cs" />
+    <Compile Include="Business\Room\Room.cs" />
+    <Compile Include="Business\Room\RoomState.cs" />
+    <Compile Include="Business\Room\RoomType.cs" />
+    <Compile Include="Business\Sellthing\SellThing.cs" />
+    <Compile Include="Business\Spend\Spend.cs" />
     <Compile Include="Worker\Worker.cs" />
     <Compile Include="Worker\WorkerCheck.cs" />
     <Compile Include="Worker\WorkerGoodBad.cs" />
     <Compile Include="Worker\WorkerHistory.cs" />
-    <Compile Include="Business\Wti.cs" />
+    <Compile Include="Business\Wti\Wti.cs" />
     <Compile Include="Zero\Position.cs" />
     <Compile Include="Zero\VipRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bitbug_favicon %281%29.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SYS.Common\SYS.Common.csproj">
       <Project>{65501af6-c629-448a-847e-1bcd60665865}</Project>

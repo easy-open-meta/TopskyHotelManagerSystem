@@ -65,7 +65,7 @@ namespace SYS.Application
         /// 查询所有客户信息
         /// </summary>
         /// <returns></returns>
-        List<Custo> SelectCustoAll();
+        List<Custo> SelectCustoAll(ref int count, int? pageIndex, int? pageSize);
 
         /// <summary>
         /// 查询指定客户信息
