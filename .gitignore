@@ -365,3 +365,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /SYS.FormUI/images
 /pdmanspace
+*.keep
