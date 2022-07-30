@@ -92,7 +92,7 @@
             // tmrDate
             // 
             this.tmrDate.Enabled = true;
-            this.tmrDate.Interval = 1000;
+            this.tmrDate.Interval = 60000;
             this.tmrDate.Tick += new System.EventHandler(this.tmrDate_Tick);
             // 
             // label1
@@ -141,7 +141,7 @@
             this.tsmiExitSystem});
             this.cmsMain.Name = "cmsMain";
             this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.cmsMain.Size = new System.Drawing.Size(208, 236);
+            this.cmsMain.Size = new System.Drawing.Size(208, 214);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiChangeUser

@@ -52,7 +52,7 @@ namespace SYS.Application
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        bool SelectToDayCheckInfoByWorkerNo(string wkn);
+        object SelectToDayCheckInfoByWorkerNo(string wkn);
 
         /// <summary>
         /// 添加员工打卡数据

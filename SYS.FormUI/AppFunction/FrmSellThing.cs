@@ -29,7 +29,7 @@ using SYS.Core;
 using Sunny.UI;
 using SYS.Application;
 using SYS.Common;
-using jvncorelib_fr.Entitylib;
+using jvncorelib_fr.EntityLib;
 using System.Linq;
 
 namespace SYS.FormUI

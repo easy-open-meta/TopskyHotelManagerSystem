@@ -41,8 +41,8 @@
     <ApplicationIcon>bitbug_favicon %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jvncorelib-fr, Version=1.0.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\jvncorelib.1.0.1.4\lib\net461\jvncorelib-fr.dll</HintPath>
+    <Reference Include="jvncorelib-fr, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jvncorelib.1.0.1.7\lib\net461\jvncorelib-fr.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

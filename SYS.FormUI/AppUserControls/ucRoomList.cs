@@ -346,7 +346,7 @@ namespace SYS.FormUI
             {
                 RoomNo = lblRoomNo.Text;
                 CustoNo = lblCustoNo.Text;
-                //RoomState = lblRoomType.Text;
+                RoomState = lblRoomType.Text;
                 FrmChangeRoom frm = new FrmChangeRoom();
                 frm.Show();
             }

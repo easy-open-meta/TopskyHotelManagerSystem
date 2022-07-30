@@ -21,7 +21,7 @@
  *SOFTWARE.
  *
  */
-using jvncorelib_fr.Entitylib;
+using jvncorelib_fr.EntityLib;
 using MySql.Data.MySqlClient;
 using SqlSugar;
 using SYS.Common;

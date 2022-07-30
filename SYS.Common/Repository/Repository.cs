@@ -1,3 +1,4 @@
+using jvncorelib_fr.EncryptorLib;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,11 @@ namespace SYS.Common
     {
         public Repository(ISqlSugarClient context = null) : base(context)//注意这里要有默认值等于null
         {
+            /// <summary>
+            /// 实例化信息加密插件
+            /// </summary>
+            EncryptLib encryptLib = new EncryptLib();
+
             if (context == null)
             {
                 base.Context = new SqlSugarClient(new ConnectionConfig()
@@ -23,7 +29,7 @@ namespace SYS.Common
                     {
                         PgSqlIsAutoToLower = false //数据库存在大写字段的 ，需要把这个设为false ，并且实体和字段名称要一样
                     },
-                    ConnectionString = HttpHelper.pgsqlString
+                    ConnectionString = encryptLib.Decryption(HttpHelper.pgsqlString)
                 });
 
                 base.Context.Aop.OnError = (ex) =>

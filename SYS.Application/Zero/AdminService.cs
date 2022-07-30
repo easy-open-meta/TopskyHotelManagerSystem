@@ -21,7 +21,7 @@
  *SOFTWARE.
  *
  */
-using jvncorelib_fr.Encryptor;
+using jvncorelib_fr.EncryptorLib;
 using SYS.Common;
 using SYS.Core;
 using System;

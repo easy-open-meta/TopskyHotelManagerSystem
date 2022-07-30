@@ -23,7 +23,7 @@
  */
 using System;
 using System.Collections.Generic;
-using jvncorelib_fr.Encryptor;
+using jvncorelib_fr.EncryptorLib;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;

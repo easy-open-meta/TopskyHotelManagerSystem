@@ -129,7 +129,7 @@ namespace SYS.FormUI
         #region 定时器：获取网络时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
         }
         #endregion
 
@@ -225,7 +225,7 @@ namespace SYS.FormUI
                 }
             }
 
-            
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
 
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
             
@@ -435,8 +435,8 @@ namespace SYS.FormUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            bool n = new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo);
-            if (n)
+            int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+            if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
                 linkLabel1.ForeColor = Color.Green;

@@ -83,8 +83,8 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
-    <Reference Include="jvncorelib-fr, Version=1.0.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\jvncorelib.1.0.1.4\lib\net461\jvncorelib-fr.dll</HintPath>
+    <Reference Include="jvncorelib-fr, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jvncorelib.1.0.1.7\lib\net461\jvncorelib-fr.dll</HintPath>
     </Reference>
     <Reference Include="kse">
       <HintPath>..\SYS.Library\kse.dll</HintPath>
@@ -456,12 +456,6 @@
     <Compile Include="AppFunction\FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppUserControls\ucRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AppUserControls\ucRoom.Designer.cs">
-      <DependentUpon>ucRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppUserControls\ucVipType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -645,9 +639,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucEducationInformation.resx">
       <DependentUpon>ucEducationInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\ucRoom.resx">
-      <DependentUpon>ucRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucVipType.resx">
       <DependentUpon>ucVipType.cs</DependentUpon>

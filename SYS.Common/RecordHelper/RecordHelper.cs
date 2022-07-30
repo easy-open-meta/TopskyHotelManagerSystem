@@ -20,36 +20,17 @@ namespace SYS.Common
         /// <param name="level"></param>
         public static void Record(string OperationLog, int level)
         {
-            var logDetail = new OperationLog();
-            if (AdminInfo.Account != null)
+            var logDetail = new OperationLog
             {
-                logDetail = new OperationLog
-                {
-                    OperationTime = DateTime.Now,
-                    LogContent = OperationLog,
-                    OperationAccount = AdminInfo.Account,
-                    OperationLevel = level == 1 ? RecordLevel.Normal : level == 2 ? RecordLevel.Warning : RecordLevel.Danger,
-                    SoftwareVersion = AdminInfo.SoftwareVersion,
-                    delete_mk = 0,
-                    datains_usr = AdminInfo.Account,
-                    datains_date = DateTime.Now
-                };
-            }
-            else
-            {
-                logDetail = new OperationLog
-                {
-                    OperationTime = DateTime.Now,
-                    LogContent = OperationLog,
-                    OperationAccount = LoginInfo.WorkerNo,
-                    OperationLevel = level == 1 ? RecordLevel.Normal : level == 2 ? RecordLevel.Warning : RecordLevel.Danger,
-                    SoftwareVersion = LoginInfo.SoftwareVersion,
-                    delete_mk = 0,
-                    datains_usr = LoginInfo.WorkerNo,
-                    datains_date = DateTime.Now
-                };
-            }
-            
+                OperationTime = DateTime.Now,
+                LogContent = OperationLog,
+                OperationAccount = LoginInfo.WorkerNo + AdminInfo.Account,
+                OperationLevel = level == 1 ? RecordLevel.Normal : level == 2 ? RecordLevel.Warning : RecordLevel.Danger,
+                SoftwareVersion = AdminInfo.SoftwareVersion + LoginInfo.SoftwareVersion,
+                delete_mk = 0,
+                datains_usr = AdminInfo.Account + LoginInfo.WorkerNo,
+                datains_date = DateTime.Now
+            };
             new OperationlogService().InsertOperationLog(logDetail);
         }
 

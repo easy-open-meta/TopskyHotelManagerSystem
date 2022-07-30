@@ -27,7 +27,7 @@ using System.Linq;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
-using jvncorelib_fr.Encryptor;
+using jvncorelib_fr.EncryptorLib;
 
 namespace SYS.Application
 {

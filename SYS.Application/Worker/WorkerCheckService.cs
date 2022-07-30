@@ -24,7 +24,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using jvncorelib_fr.Entitylib;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -69,14 +68,12 @@ namespace SYS.Application
         /// </summary>
         /// <param name="wkn"></param>
         /// <returns></returns>
-        public bool SelectToDayCheckInfoByWorkerNo(string wkn)
+        public object SelectToDayCheckInfoByWorkerNo(string wkn)
         {
             //string sql = "select Count(*) from WORKERCHECK where WorkerNo = '"+wkn+ "' and DATEDIFF(CURRENT_DATE(),workercheck.CheckTime)";
-            var startDate = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,0,0,0);
-            var endDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
-            var listCheckInfo = base.GetList(a => a.WorkerNo == wkn && a.CheckTime >= startDate && a.CheckTime <= endDate);
-            //var count = listCheckInfo.Where(a => a.CheckTime.ToShortDateString() == DateTime.Now.ToShortDateString()).Count() > 0 ? 1:0;
-            return !listCheckInfo.IsNullOrEmpty() ? true : false;
+            var listCheckInfo = base.GetList(a => a.WorkerNo == wkn && a.delete_mk != 1);
+            var count = listCheckInfo.Where(a => a.CheckTime.ToShortDateString() == DateTime.Now.ToShortDateString()).Count() > 0 ? 1:0;
+            return count;
         }
 
         /// <summary>

@@ -21,7 +21,8 @@
  *SOFTWARE.
  *
  */
-using jvncorelib_fr.Entitylib;
+using jvncorelib_fr.EncryptorLib;
+using jvncorelib_fr.EntityLib;
 using Sunny.UI;
 using SYS.Application;
 using SYS.Common;
@@ -48,6 +49,7 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        EncryptLib encryptLib = new EncryptLib();
         private void FrmMySpace_Load(object sender, EventArgs e)
         {
             //加载民族信息
@@ -274,7 +276,7 @@ namespace SYS.FormUI
 
         public void PicHandler()
         {
-            var serverPath = HttpHelper.postUrl;
+            var serverPath = encryptLib.Decryption(HttpHelper.postUrl);
             //var serverPath = ConfigurationManager.AppSettings["post"].ToString();
             var result = HttpHelper.UpLoadFile(openPic.FileName, serverPath);
             var workerPic = new WorkerPic
@@ -284,7 +286,7 @@ namespace SYS.FormUI
             };
             new WorkerPicService().InsertWorkerPic(workerPic);
             picWorkerPic.BackgroundImage = null;
-            picWorkerPic.LoadAsync(HttpHelper.baseUrl + result.Trim());
+            picWorkerPic.LoadAsync(encryptLib.Decryption(HttpHelper.baseUrl) + result.Trim());
             UIMessageTip.ShowOk("头像上传成功！稍等将会加载头像哦..");
             //picWorkerPic.LoadAsync(ConfigurationManager.AppSettings["FileSite"] + result.Trim());
         }

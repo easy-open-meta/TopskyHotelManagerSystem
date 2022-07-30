@@ -35,6 +35,7 @@ using System.Configuration;
 using System.IO;
 using System.Text;
 using SYS.Common;
+using jvncorelib_fr.EncryptorLib;
 
 namespace SYS.FormUI
 {
@@ -327,9 +328,10 @@ namespace SYS.FormUI
             openPic.ShowDialog();
         }
 
+        EncryptLib encryptLib = new EncryptLib();
         private void openPic_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var serverPath = HttpHelper.postUrl;
+            var serverPath = encryptLib.Decryption(HttpHelper.postUrl);
             var result = HttpHelper.UpLoadFile(openPic.FileName, serverPath);
             WorkerPic workerPic = new WorkerPic
             {
@@ -340,7 +342,7 @@ namespace SYS.FormUI
 
 
             picWorkerPic.BackgroundImage = null;
-            picWorkerPic.LoadAsync(HttpHelper.baseUrl + result.Trim());
+            picWorkerPic.LoadAsync(encryptLib.Decryption(HttpHelper.baseUrl) + result.Trim());
         }
 
         private void FrmAddWorker_ButtonOkClick(object sender, EventArgs e)

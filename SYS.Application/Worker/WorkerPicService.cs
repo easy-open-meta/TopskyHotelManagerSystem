@@ -1,4 +1,5 @@
-﻿using SYS.Common;
+﻿using jvncorelib_fr.EncryptorLib;
+using SYS.Common;
 using SYS.Core;
 using SYS.Core.Util;
 using System;
@@ -15,6 +16,7 @@ namespace SYS.Application
     /// </summary>
     public  class WorkerPicService:Repository<WorkerPic>,IWorkerPicService
     {
+        EncryptLib encryptLib = new EncryptLib();
         /// <summary>
         /// 查询员工照片
         /// </summary>
@@ -28,7 +30,7 @@ namespace SYS.Application
 
             if (workerPicSource != null)
             {
-                workerPicSource.Pic = workerPicSource == null || string.IsNullOrEmpty(workerPicSource.Pic) ? "" : HttpHelper.baseUrl + workerPicSource.Pic;
+                workerPicSource.Pic = workerPicSource == null || string.IsNullOrEmpty(workerPicSource.Pic) ? "" : encryptLib.Decryption(HttpHelper.baseUrl) + workerPicSource.Pic;
             }
 
             return workerPicSource;
