@@ -18,7 +18,7 @@ namespace SYS.Common
         /// 数据库配置连接
         /// </summary>
         public const string mysqlString = "server = localhost; user id = softuser; password = .; database = tshoteldb;";
-        public const string pgsqlString = "PORT=5630;DATABASE=tshoteldb;HOST=localhost;PASSWORD=.;USER ID=postgres";
+        public const string pgsqlString = "PORT=5620;DATABASE=tshoteldb;HOST=localhost;PASSWORD=.;USER ID=postgres";
         /// <summary>
         /// 照片文件配置URL
         /// </summary>
