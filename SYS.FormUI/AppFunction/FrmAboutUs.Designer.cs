@@ -49,7 +49,8 @@
             this.uiRichTextBox1.Size = new System.Drawing.Size(539, 180);
             this.uiRichTextBox1.Style = Sunny.UI.UIStyle.Custom;
             this.uiRichTextBox1.TabIndex = 0;
-            this.uiRichTextBox1.Text = resources.GetString("uiRichTextBox1.Text");
+            this.uiRichTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiRichTextBox1.WordWrap = true;
             // 
             // FrmAboutUs
             // 
@@ -63,6 +64,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmAboutUs";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "关于我们";
             this.Load += new System.EventHandler(this.FrmAboutUs_Load);

@@ -93,6 +93,7 @@
     <Compile Include="Business\Spend\SpendConsts.cs" />
     <Compile Include="Business\Customer\PassPortType.cs" />
     <Compile Include="Business\Customer\SexType.cs" />
+    <Compile Include="Sys\NavBar\NavBar.cs" />
     <Compile Include="Util\ApplicationVersionUtil.cs" />
     <Compile Include="Util\CounterHelper.cs" />
     <Compile Include="Util\CounterRuleConsts.cs" />

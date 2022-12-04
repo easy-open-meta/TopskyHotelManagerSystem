@@ -14,6 +14,7 @@ namespace SYS.FormUI
     public partial class ucRoomList : UserControl
     {
         FrmRoomManager frm = null;
+        Room r = null;
 
         public ucRoomList()
         {
@@ -191,13 +192,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 鼠标离开房态图可见范围事件方法
-        private void ucRoomList_MouseLeave(object sender, EventArgs e)
-        {
-            //lblState.ForeColor = Color.Blue;
-        }
-        #endregion
-        Room r = null;
         #region 当右键菜单打开时事件方法
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
@@ -367,27 +361,6 @@ namespace SYS.FormUI
             this.Height = 85;
         }
 
-        private void ucRoomList_MouseHover(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lblMark.Text.Trim().IsNullOrEmpty())
-                {
-                    LoadRoomInfo();
-                    FrmRoomManager.ReadInfo();
-                }
-                else
-                {
-                    cmsMain.Enabled = false;
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
         public void LoadRoomInfo()
         {
             co_RoomNo = romCustoInfo.RoomNo;
@@ -400,27 +373,6 @@ namespace SYS.FormUI
         }
 
         private void ucRoomList_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                if (lblMark.Text.Trim().IsNullOrEmpty())
-                {
-                    LoadRoomInfo();
-                    FrmRoomManager.ReadInfo();
-                }
-                else
-                {
-                    cmsMain.Enabled = false;
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void ucRoomList_MouseEnter(object sender, EventArgs e)
         {
             try
             {
@@ -504,67 +456,5 @@ namespace SYS.FormUI
             }
         }
 
-        private void lblRoomType_MouseEnter(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lblMark.Text.Trim().IsNullOrEmpty())
-                {
-                    LoadRoomInfo();
-                    FrmRoomManager.ReadInfo();
-                }
-                else
-                {
-                    cmsMain.Enabled = false;
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void lblRoomNo_MouseEnter(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lblMark.Text.Trim().IsNullOrEmpty())
-                {
-                    LoadRoomInfo();
-                    FrmRoomManager.ReadInfo();
-                }
-                else
-                {
-                    cmsMain.Enabled = false;
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void lblCustoNo_MouseEnter(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lblMark.Text.Trim().IsNullOrEmpty())
-                {
-                    LoadRoomInfo();
-                    FrmRoomManager.ReadInfo();
-                }
-                else
-                {
-                    cmsMain.Enabled = false;
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
     }
 }

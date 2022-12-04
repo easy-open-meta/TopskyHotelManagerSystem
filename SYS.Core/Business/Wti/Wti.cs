@@ -35,7 +35,7 @@ namespace SYS.Core
         /// <summary>
         /// 信息编号
         /// </summary>
-        [SqlSugar.SugarColumn(ColumnName = "WtiNo")]
+        [SqlSugar.SugarColumn(ColumnName = "WtiNo",IsIdentity =true,IsPrimaryKey =true)]
         public int WtiNo { get; set; }
         /// <summary>
         /// 房间编号

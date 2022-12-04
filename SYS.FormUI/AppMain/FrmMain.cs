@@ -34,6 +34,8 @@ using Sunny.UI;
 using System.Management;
 using SYS.Application;
 using SYS.Common;
+using SYS.FormUI.AppUserControls;
+using jvncorelib_fr.EntityLib;
 
 namespace SYS.FormUI
 {
@@ -85,9 +87,6 @@ namespace SYS.FormUI
             tsmiExitSystem.Enabled = true;
         }
         
-        //public static FrmMain Main;//全局保存主窗口实例对象
-        //private MyRoom Myroom;//房态图对象
-
         public static string wk_WorkerName;
         public static string wk_WorkerNames;
 
@@ -130,6 +129,24 @@ namespace SYS.FormUI
         private void tmrDate_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm");
+
+            DateTime tmCur = Convert.ToDateTime("2020-12-4" + lblTime.Text);
+
+            if (tmCur.Hour < 8 || tmCur.Hour > 18)
+            {//晚上
+                label3.Text = "(*´▽｀)ノノ晚上好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.月亮;
+            }
+            else if (tmCur.Hour > 8 && tmCur.Hour < 12)
+            {//上午
+                label3.Text = "上午好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.早上;
+            }
+            else
+            {//下午
+                label3.Text = "下午好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.咖啡;
+            }
         }
         #endregion
 
@@ -214,9 +231,100 @@ namespace SYS.FormUI
 
         #endregion
 
+        /// <summary>
+        /// 客房管理点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RoomManager_Event(object sender, EventArgs e)
+        {
+            pnlMID.Controls.Clear();
+            FrmRoomManager frm1 = new FrmRoomManager();
+            frm1.TopLevel = false;
+            pnlMID.Controls.Add(frm1);
+            frm1.Show();
+        }
+
+        /// <summary>
+        /// 用户管理点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustoManager_Event(object sender, EventArgs e)
+        {
+            pnlMID.Controls.Clear();
+            FrmCustomerManager frm1 = new FrmCustomerManager();
+            frm1.TopLevel = false;
+            pnlMID.Controls.Add(frm1);
+            frm1.Show();
+        }
+
+        /// <summary>
+        /// 商品消费点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SellManager_Event(object sender, EventArgs e)
+        {
+            pnlMID.Controls.Clear();
+            FrmSellThing frm1 = new FrmSellThing();
+            frm1.TopLevel = false;
+            pnlMID.Controls.Add(frm1);
+            frm1.Show();
+        }
+
+        /// <summary>
+        /// 加载导航控件列表
+        /// </summary>
+        private void LoadNavBar()
+        {
+            #region 菜单导航代码块
+
+            flpNav.Controls.Clear();
+            var listSource = new NavBarService().NavBarList();
+            ucNavBar ucNavBar = null;
+            if (!listSource.IsNullOrEmpty())
+            {
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    ucNavBar = new ucNavBar();
+                    ucNavBar.Name = listSource[i].nav_name;
+                    switch (listSource[i].nav_name)
+                    {
+                        case "客房管理":
+                            ucNavBar.Click += new EventHandler(RoomManager_Event);
+                            ucNavBar.BackgroundImage = Resources.picRoom_Image;
+                            break;
+                        case "用户管理":
+                            ucNavBar.Click += new EventHandler(CustoManager_Event);
+                            ucNavBar.BackgroundImage = Resources.picCustomer_Image;
+                            break;
+                        case "商品消费":
+                            ucNavBar.Click += new EventHandler(SellManager_Event);
+                            ucNavBar.BackgroundImage = Resources.picCommodity_Image;
+                            break;
+                    }
+                    if (i == 0)
+                    {
+                        ucNavBar.Margin = new Padding(0, 0, 0, 0);
+                    }
+                    else
+                    {
+                        ucNavBar.Margin = new Padding(180, 0, 0, 0);
+                    }
+                    flpNav.Controls.Add(ucNavBar);
+                }
+            }
+            #endregion
+        }
+
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            tmrDate.Enabled = true;
+
+            LoadNavBar();
+
             foreach (Control item in this.Controls)
             {
                 if (item.GetType().ToString() == "System.Windows.Forms.Label")
@@ -225,10 +333,8 @@ namespace SYS.FormUI
                 }
             }
 
-            lblTime.Text = DateTime.Now.ToString("HH:mm");
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
 
-            SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
-            
             DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
@@ -246,6 +352,8 @@ namespace SYS.FormUI
                 label3.Text = "下午好," + LoginInfo.WorkerName;
                 btnHello.BackgroundImage = Resources.咖啡;
             }
+            SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
+            
             int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
             if (n > 0)
             {
@@ -267,87 +375,8 @@ namespace SYS.FormUI
         }
         #endregion
 
-
-        #region 客房管理列表弹出事件方法
-        private void picRoom_Click(object sender, EventArgs e)
-        {
-            pnlMID.Controls.Clear();
-            FrmRoomManager frm1 = new FrmRoomManager();
-            frm1.TopLevel = false;
-            pnlMID.Controls.Add(frm1);
-            frm1.Show();
-
-
-        }
-        #endregion
-
-        #region 用户管理列表弹出事件方法
-        private void picCustomer_Click(object sender, EventArgs e)
-        {
-
-            pnlMID.Controls.Clear();
-            FrmCustomerManager frm1 = new FrmCustomerManager();
-            frm1.TopLevel = false;
-            pnlMID.Controls.Add(frm1);
-            frm1.Show();
-        }
-        #endregion
-
-
-        #region 扩展管理列表弹出事件方法
-        private void picExtend_Click(object sender, EventArgs e)
-        {
-            //pnlMID.Controls.Clear();
-            UIMessageTip.ShowError("界面维护，请稍后重试");
-            return;
-            //FrmExtendOption frm = new FrmExtendOption();
-            //frm.TopLevel = false;
-            //FrmExtendOption frm1 = new FrmExtendOption();
-            //frm1.TopLevel = false;
-            //pnlMID.Controls.Add(frm1);
-            //frm1.Show();
-        }
-        #endregion
-
-        #region 关闭按钮鼠标事件
-        private void picClose_MouseEnter(object sender, EventArgs e)
-        {
-            picClose.BackColor = Color.White;
-        }
-
-        private void picClose_MouseLeave(object sender, EventArgs e)
-        {
-            picClose.BackColor = Color.Transparent;
-        }
-        #endregion
-
-        #region 最小化按钮鼠标事件
-        private void picFormSize_MouseEnter(object sender, EventArgs e)
-        {
-            picFormSize.BackColor = Color.White;
-        }
-        private void picFormSize_MouseLeave(object sender, EventArgs e)
-        {
-            picFormSize.BackColor = Color.Transparent;
-        }
-
-
-
-
-
-
-        #endregion
-
-
         #region 计算后台系统的入口点击事件方法
         int i = 0;
-        #endregion
-
-        #region 后台系统入口事件方法
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         #region 调用系统锁屏方法
@@ -396,41 +425,10 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void tsmiSelectUserAdmin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picCommodity_Click(object sender, EventArgs e)
-        {
-            pnlMID.Controls.Clear();
-            FrmSellThing frm1 = new FrmSellThing();
-            frm1.TopLevel = false;
-            pnlMID.Controls.Add(frm1);
-            frm1.Show();
-        }
-
-        
-
-        private void cmsMain_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             notifyIcon1.Dispose();
             this.returnForm1.Visible = true;
-        }
-
-        private void tsmiMain_Click(object sender, EventArgs e)
-        {
-            //this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

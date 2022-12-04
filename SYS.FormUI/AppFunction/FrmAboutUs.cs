@@ -65,15 +65,9 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FrmAboutUs_Load(object sender, EventArgs e)
         {
-            
+            uiRichTextBox1.Text = "     我们团队一直都致力于打造一款人机交互方便，操作简单的管理软件，我们的愿景是“用技术创造易用的开源软件/组件”，一路心怀愿景去制作软件，我们的团队充满活力、激情！\r\n     关于我们团队，您可以浏览：https://www.oscode.top了解更多！  \r\n     关于本软件的详细信息，您可以浏览：https://gitee.com/java-and-net/TopskyHotelManagerSystem 了解更多！另外仍会提供后续的版本升级支持！";
         }
-
     }
 }

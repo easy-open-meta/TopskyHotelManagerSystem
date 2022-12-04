@@ -258,6 +258,12 @@
     <Compile Include="AppUserControls\ucBaseInformation.Designer.cs">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppUserControls\ucNavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppUserControls\ucNavBar.Designer.cs">
+      <DependentUpon>ucNavBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppUserControls\ucPositionInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -634,6 +640,9 @@
     <EmbeddedResource Include="AppUserControls\ucBaseInformation.resx">
       <DependentUpon>ucBaseInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppUserControls\ucNavBar.resx">
+      <DependentUpon>ucNavBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucPositionInformation.resx">
       <DependentUpon>ucPositionInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -969,6 +978,21 @@
     <Content Include="images\黄金会员.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\picCommodity.Image.png" />
+    <None Include="Resources\picCommodity.ImageHover.png" />
+    <None Include="Resources\picCommodity.ImagePress.png" />
+    <None Include="Resources\picCustomer.Image.png" />
+    <None Include="Resources\picCustomer.ImageHover.png" />
+    <None Include="Resources\picCustomer.ImagePress.png" />
+    <None Include="Resources\picExtend.Image.png" />
+    <None Include="Resources\picExtend.ImageHover.png" />
+    <None Include="Resources\picExtend.ImagePress.png" />
+    <None Include="Resources\picLogo.BackgroundImage.png" />
+    <None Include="Resources\picRoom.Image.png" />
+    <None Include="Resources\picRoom.ImageHover.png" />
+    <None Include="Resources\picRoom.ImagePress.png" />
+    <None Include="Resources\picRoom.ImageSelected.png" />
+    <None Include="Resources\uiButton1.BackgroundImage.png" />
     <Content Include="Resources\上传照片.png" />
     <Content Include="Resources\普通会员.png" />
     <Content Include="Resources\白金会员.png" />
