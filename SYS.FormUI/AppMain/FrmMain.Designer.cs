@@ -52,6 +52,7 @@
             this.tmrFont = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnHello = new Sunny.UI.UIButton();
+            this.picSetting = new Sunny.UI.UIButton();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.picFormSize = new Sunny.UI.UIButton();
             this.picClose = new Sunny.UI.UIButton();
@@ -61,18 +62,10 @@
             this.lblCheckDay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.picRoom = new Sunny.UI.UIImageButton();
-            this.picCustomer = new Sunny.UI.UIImageButton();
-            this.picCommodity = new Sunny.UI.UIImageButton();
-            this.picExtend = new Sunny.UI.UIImageButton();
-            this.picSetting = new Sunny.UI.UIButton();
+            this.flpNav = new System.Windows.Forms.FlowLayoutPanel();
             this.cmsMain.SuspendLayout();
             this.pnlCheckInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTime
@@ -111,9 +104,9 @@
             // 
             this.pnlMID.BackColor = System.Drawing.Color.Transparent;
             this.pnlMID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlMID.Location = new System.Drawing.Point(4, 225);
+            this.pnlMID.Location = new System.Drawing.Point(4, 226);
             this.pnlMID.Name = "pnlMID";
-            this.pnlMID.Size = new System.Drawing.Size(1072, 490);
+            this.pnlMID.Size = new System.Drawing.Size(1072, 489);
             this.pnlMID.TabIndex = 23;
             // 
             // notifyIcon1
@@ -142,7 +135,6 @@
             this.cmsMain.Name = "cmsMain";
             this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmsMain.Size = new System.Drawing.Size(208, 214);
-            this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiChangeUser
             // 
@@ -298,6 +290,27 @@
             this.btnHello.StyleCustomMode = true;
             this.btnHello.TabIndex = 33;
             // 
+            // picSetting
+            // 
+            this.picSetting.BackColor = System.Drawing.Color.Transparent;
+            this.picSetting.BackgroundImage = global::SYS.FormUI.Properties.Resources.settings2;
+            this.picSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picSetting.FillColor = System.Drawing.Color.Transparent;
+            this.picSetting.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.picSetting.Location = new System.Drawing.Point(958, 5);
+            this.picSetting.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Radius = 0;
+            this.picSetting.Size = new System.Drawing.Size(35, 35);
+            this.picSetting.Style = Sunny.UI.UIStyle.Custom;
+            this.picSetting.StyleCustomMode = true;
+            this.picSetting.TabIndex = 38;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            this.picSetting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picSetting_MouseDown);
+            this.picSetting.MouseLeave += new System.EventHandler(this.picSetting_MouseLeave);
+            this.picSetting.MouseHover += new System.EventHandler(this.picSetting_MouseHover);
+            // 
             // uiButton1
             // 
             this.uiButton1.BackColor = System.Drawing.Color.Transparent;
@@ -428,99 +441,14 @@
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
-            // picRoom
+            // flpNav
             // 
-            this.picRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picRoom.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.picRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.picRoom.Image = ((System.Drawing.Image)(resources.GetObject("picRoom.Image")));
-            this.picRoom.ImageHover = ((System.Drawing.Image)(resources.GetObject("picRoom.ImageHover")));
-            this.picRoom.ImagePress = ((System.Drawing.Image)(resources.GetObject("picRoom.ImagePress")));
-            this.picRoom.ImageSelected = ((System.Drawing.Image)(resources.GetObject("picRoom.ImageSelected")));
-            this.picRoom.Location = new System.Drawing.Point(257, 132);
-            this.picRoom.Name = "picRoom";
-            this.picRoom.Size = new System.Drawing.Size(124, 83);
-            this.picRoom.TabIndex = 34;
-            this.picRoom.TabStop = false;
-            this.picRoom.Text = null;
-            this.picRoom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.picRoom.WaitOnLoad = true;
-            this.picRoom.Click += new System.EventHandler(this.picRoom_Click);
-            // 
-            // picCustomer
-            // 
-            this.picCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCustomer.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.picCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.picCustomer.Image = ((System.Drawing.Image)(resources.GetObject("picCustomer.Image")));
-            this.picCustomer.ImageHover = ((System.Drawing.Image)(resources.GetObject("picCustomer.ImageHover")));
-            this.picCustomer.ImagePress = ((System.Drawing.Image)(resources.GetObject("picCustomer.ImagePress")));
-            this.picCustomer.Location = new System.Drawing.Point(479, 132);
-            this.picCustomer.Name = "picCustomer";
-            this.picCustomer.Size = new System.Drawing.Size(124, 83);
-            this.picCustomer.TabIndex = 35;
-            this.picCustomer.TabStop = false;
-            this.picCustomer.Text = null;
-            this.picCustomer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.picCustomer.WaitOnLoad = true;
-            this.picCustomer.Click += new System.EventHandler(this.picCustomer_Click);
-            // 
-            // picCommodity
-            // 
-            this.picCommodity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCommodity.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.picCommodity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.picCommodity.Image = ((System.Drawing.Image)(resources.GetObject("picCommodity.Image")));
-            this.picCommodity.ImageHover = ((System.Drawing.Image)(resources.GetObject("picCommodity.ImageHover")));
-            this.picCommodity.ImagePress = ((System.Drawing.Image)(resources.GetObject("picCommodity.ImagePress")));
-            this.picCommodity.Location = new System.Drawing.Point(710, 132);
-            this.picCommodity.Name = "picCommodity";
-            this.picCommodity.Size = new System.Drawing.Size(124, 83);
-            this.picCommodity.TabIndex = 36;
-            this.picCommodity.TabStop = false;
-            this.picCommodity.Text = null;
-            this.picCommodity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.picCommodity.WaitOnLoad = true;
-            this.picCommodity.Click += new System.EventHandler(this.picCommodity_Click);
-            // 
-            // picExtend
-            // 
-            this.picExtend.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExtend.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.picExtend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.picExtend.Image = ((System.Drawing.Image)(resources.GetObject("picExtend.Image")));
-            this.picExtend.ImageHover = ((System.Drawing.Image)(resources.GetObject("picExtend.ImageHover")));
-            this.picExtend.ImagePress = ((System.Drawing.Image)(resources.GetObject("picExtend.ImagePress")));
-            this.picExtend.Location = new System.Drawing.Point(928, 132);
-            this.picExtend.Name = "picExtend";
-            this.picExtend.Size = new System.Drawing.Size(124, 83);
-            this.picExtend.TabIndex = 37;
-            this.picExtend.TabStop = false;
-            this.picExtend.Text = null;
-            this.picExtend.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.picExtend.WaitOnLoad = true;
-            this.picExtend.Click += new System.EventHandler(this.picExtend_Click);
-            // 
-            // picSetting
-            // 
-            this.picSetting.BackColor = System.Drawing.Color.Transparent;
-            this.picSetting.BackgroundImage = global::SYS.FormUI.Properties.Resources.settings2;
-            this.picSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.picSetting.FillColor = System.Drawing.Color.Transparent;
-            this.picSetting.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.picSetting.Location = new System.Drawing.Point(958, 5);
-            this.picSetting.MinimumSize = new System.Drawing.Size(1, 1);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Radius = 0;
-            this.picSetting.Size = new System.Drawing.Size(35, 35);
-            this.picSetting.Style = Sunny.UI.UIStyle.Custom;
-            this.picSetting.StyleCustomMode = true;
-            this.picSetting.TabIndex = 38;
-            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
-            this.picSetting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picSetting_MouseDown);
-            this.picSetting.MouseLeave += new System.EventHandler(this.picSetting_MouseLeave);
-            this.picSetting.MouseHover += new System.EventHandler(this.picSetting_MouseHover);
+            this.flpNav.AutoScroll = true;
+            this.flpNav.BackColor = System.Drawing.Color.Transparent;
+            this.flpNav.Location = new System.Drawing.Point(282, 130);
+            this.flpNav.Name = "flpNav";
+            this.flpNav.Size = new System.Drawing.Size(793, 90);
+            this.flpNav.TabIndex = 72;
             // 
             // FrmMain
             // 
@@ -529,6 +457,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.Controls.Add(this.flpNav);
             this.Controls.Add(this.picSetting);
             this.Controls.Add(this.btnHello);
             this.Controls.Add(this.uiButton1);
@@ -542,10 +471,6 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.picRoom);
-            this.Controls.Add(this.picCustomer);
-            this.Controls.Add(this.picCommodity);
-            this.Controls.Add(this.picExtend);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -561,10 +486,6 @@
             this.pnlCheckInfo.ResumeLayout(false);
             this.pnlCheckInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCommodity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExtend)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,15 +518,12 @@
         private System.Windows.Forms.Label label3;
         private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UIButton btnHello;
-        private Sunny.UI.UIImageButton picRoom;
-        private Sunny.UI.UIImageButton picCustomer;
-        private Sunny.UI.UIImageButton picCommodity;
-        private Sunny.UI.UIImageButton picExtend;
         private System.Windows.Forms.ToolStripMenuItem tsmiMySpace;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoginBackSystem;
         private Sunny.UI.UIButton picSetting;
         private System.Windows.Forms.ToolStripMenuItem tsmiExChange;
+        private System.Windows.Forms.FlowLayoutPanel flpNav;
     }
 }

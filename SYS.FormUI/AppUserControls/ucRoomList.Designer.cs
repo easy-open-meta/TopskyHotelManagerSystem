@@ -103,6 +103,7 @@
             // 
             this.lblCustoNo.AutoSize = true;
             this.lblCustoNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustoNo.ContextMenuStrip = this.cmsMain;
             this.lblCustoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCustoNo.Location = new System.Drawing.Point(22, 59);
             this.lblCustoNo.Name = "lblCustoNo";
@@ -110,12 +111,12 @@
             this.lblCustoNo.TabIndex = 10;
             this.lblCustoNo.Text = "CustoNo";
             this.lblCustoNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblCustoNo_MouseClick);
-            this.lblCustoNo.MouseEnter += new System.EventHandler(this.lblCustoNo_MouseEnter);
             // 
             // lblRoomType
             // 
             this.lblRoomType.AutoSize = true;
             this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoomType.ContextMenuStrip = this.cmsMain;
             this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomType.Location = new System.Drawing.Point(23, 3);
             this.lblRoomType.Name = "lblRoomType";
@@ -123,12 +124,12 @@
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "RoomTy";
             this.lblRoomType.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomType_MouseClick);
-            this.lblRoomType.MouseEnter += new System.EventHandler(this.lblRoomType_MouseEnter);
             // 
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
             this.lblRoomNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoomNo.ContextMenuStrip = this.cmsMain;
             this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomNo.ForeColor = System.Drawing.Color.Black;
             this.lblRoomNo.Location = new System.Drawing.Point(23, 31);
@@ -137,7 +138,6 @@
             this.lblRoomNo.TabIndex = 8;
             this.lblRoomNo.Text = "RoomNo";
             this.lblRoomNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomNo_MouseClick);
-            this.lblRoomNo.MouseEnter += new System.EventHandler(this.lblRoomNo_MouseEnter);
             // 
             // uttTips
             // 
@@ -173,15 +173,12 @@
             this.DoubleBuffered = true;
             this.Name = "ucRoomList";
             this.Size = new System.Drawing.Size(95, 79);
-            this.uttTips.SetToolTip(this, "鼠标悬停可显示房间信息\r\n点击鼠标左键查看房间信息\r\n快速双击鼠标左键可快速入住");
+            this.uttTips.SetToolTip(this, "a)、点击鼠标左键查看房间信息\r\nb)、点击鼠标右键打开选项菜单\r\nc)、快速双击鼠标左键可快速入住");
             this.Load += new System.EventHandler(this.ucRoomList_Load);
             this.SizeChanged += new System.EventHandler(this.ucRoomList_SizeChanged);
             this.Click += new System.EventHandler(this.ucRoomList_Click);
             this.DoubleClick += new System.EventHandler(this.ucRoomList_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ucRoomList_MouseClick);
-            this.MouseEnter += new System.EventHandler(this.ucRoomList_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.ucRoomList_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.ucRoomList_MouseHover);
             this.cmsMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using Sunny.UI;
 using SYS.Application;
 using SYS.Common;
+using System.Transactions;
 
 namespace SYS.FormUI
 {
@@ -288,31 +289,11 @@ namespace SYS.FormUI
         {
             if (!txtReceipts.Text.IsNullOrEmpty() && Convert.ToDecimal(txtReceipts.Text) > Convert.ToDecimal(lblVIPPrice.Text))//判断实收金额是否为空以及是否小于应收金额
             {
-                Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
-                string checktime = r.CheckTime.ToString();//获取入住时间
-                if (dgvSpendList.Rows.Count == 0)
+                using (TransactionScope scope = new TransactionScope())
                 {
-                    bool n = new RoomService().UpdateRoomByRoomNo(txtRoomNo.Text);
-                    if (n == true)
-                    {
-                        new WtiService().InsertWtiInfo(w);//添加水电费信息
-                        this.Close();
-                    }
-                    else
-                    {
-                        return;
-                    }
-                    UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
-                    FrmRoomManager.Reload("");
-
-                    #region 获取添加操作日志所需的信息
-                    RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName  + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
-                    #endregion
-
-                }
-                else
-                {
-                    if (new SpendService().UpdateMoneyState(txtRoomNo.Text, checktime) == true)
+                    Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);//根据房间编号查询房间信息
+                    string checktime = r.CheckTime.ToString();//获取入住时间
+                    if (dgvSpendList.Rows.Count == 0)
                     {
                         bool n = new RoomService().UpdateRoomByRoomNo(txtRoomNo.Text);
                         if (n == true)
@@ -324,17 +305,41 @@ namespace SYS.FormUI
                         {
                             return;
                         }
-                        UIMessageBox.Show("结算成功！", "系统提示",UIStyle.Green);
+                        UIMessageBox.Show("结算成功！", "系统提示", UIStyle.Green);
                         FrmRoomManager.Reload("");
+
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
                         #endregion
-                        return;
+                        scope.Complete();
                     }
                     else
                     {
-                        UIMessageBox.Show("结算失败！", "系统提示", UIStyle.Red);
-                        return;
+                        if (new SpendService().UpdateMoneyState(txtRoomNo.Text, checktime) == true)
+                        {
+                            bool n = new RoomService().UpdateRoomByRoomNo(txtRoomNo.Text);
+                            if (n == true)
+                            {
+                                new WtiService().InsertWtiInfo(w);//添加水电费信息
+                                this.Close();
+                            }
+                            else
+                            {
+                                return;
+                            }
+                            UIMessageBox.Show("结算成功！", "系统提示", UIStyle.Green);
+                            FrmRoomManager.Reload("");
+                            #region 获取添加操作日志所需的信息
+                            RecordHelper.Record(LoginInfo.WorkerClub + "-" + LoginInfo.WorkerPosition + "-" + LoginInfo.WorkerName + "于" + DateTime.Now + "帮助" + txtCustoNo.Text + "进行了退房结算操作！", 3);
+                            #endregion
+                            scope.Complete();
+                            return;
+                        }
+                        else
+                        {
+                            UIMessageBox.Show("结算失败！", "系统提示", UIStyle.Red);
+                            return;
+                        }
                     }
                 }
             }

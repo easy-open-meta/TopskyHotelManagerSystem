@@ -99,6 +99,7 @@
     <Compile Include="Business\Sellthing\ISellService.cs" />
     <Compile Include="Business\Spend\ISpendService.cs" />
     <Compile Include="Business\Wti\IWtiService.cs" />
+    <Compile Include="Sys\NavBar\NavBarService.cs" />
     <Compile Include="Worker\IWorkerPicService.cs" />
     <Compile Include="Worker\WorkerPicService.cs" />
     <Compile Include="Zero\ICheckInfoService.cs" />
