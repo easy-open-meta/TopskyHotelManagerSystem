@@ -168,7 +168,7 @@ TopSkyHotelManagerSystem
 ```
 
 #  :chart_with_upwards_trend: 系统数据库关系图(由PDMAN软件生成) :loudspeaker: 
-[数据库关系图](https://www.jvnorg.site/tshoteldb.html)
+[数据库关系图](https://oscode.top/project/tshotel/db_design.html)
 
 #  :books: 系统功能模块汇总：
 
@@ -218,8 +218,5 @@ TopSkyHotelManagerSystem
 **2、通过可视化管理工具打开Table.sql文件进行数据表建立。**
 
 **3、随后打开Data.sql文件进行数据导入。**
-
-#  :chart_with_upwards_trend: Star趋势图(感谢Giteye提供的趋势图报表功能！)：
-[![Giteye chart](https://chart.giteye.net/gitee/java-and-net/TopskyHotelManagerSystem/Z9DD26VK.png)](https://giteye.net/chart/Z9DD26VK)
 
 [![java-and-net/TopskyHotelManagerSystem](https://gitee.com/java-and-net/TopskyHotelManagerSystem/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/java-and-net/TopskyHotelManagerSystem)
