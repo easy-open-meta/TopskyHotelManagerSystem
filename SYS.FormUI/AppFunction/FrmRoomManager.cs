@@ -69,23 +69,15 @@ namespace SYS.FormUI
             lblRoomNo.Text = ucRoomList.co_RoomNo;
             lblCustoNo.Text = ucRoomList.co_CustoNo;
             lblRoomPosition.Text = ucRoomList.co_RoomPosition;
-            if (ucRoomList.co_CheckTime == "0001/01/01")
-            {
-                lblCheckTime.Text = "";
-            }
-            else
-            {
-                lblCheckTime.Text = ucRoomList.co_CheckTime;
-            }
-
+            lblCheckTime.Text = ucRoomList.co_CheckTime == null ? "" : Convert.ToDateTime(ucRoomList.co_CheckTime).ToString("yyyy-MM-dd");
             lblRoomState.Text = ucRoomList.co_RoomState;
-            foreach (Control item in this.pnlRoomInfo.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    item.Font = UI_FontUtil.childControlFont;
-                }
-            }
+            //foreach (Control item in this.pnlRoomInfo.Controls)
+            //{
+            //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
+            //    {
+            //        item.Font = UI_FontUtil.childControlFont;
+            //    }
+            //}
 
             LoadData();
 
@@ -118,15 +110,7 @@ namespace SYS.FormUI
             lblRoomNo.Text = ucRoomList.co_RoomNo;
             lblCustoNo.Text = ucRoomList.co_CustoNo;
             lblRoomPosition.Text = ucRoomList.co_RoomPosition;
-            if (ucRoomList.co_CheckTime == "0001/01/01")
-            {
-                lblCheckTime.Text = "";
-            }
-            else
-            {
-                lblCheckTime.Text = ucRoomList.co_CheckTime;
-            }
-
+            lblCheckTime.Text = ucRoomList.co_CheckTime == null ? "" : Convert.ToDateTime(ucRoomList.co_CheckTime).ToString("yyyy-MM-dd");
             lblRoomState.Text = ucRoomList.co_RoomState;
         }
 

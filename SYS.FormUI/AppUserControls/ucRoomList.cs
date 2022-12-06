@@ -108,13 +108,14 @@ namespace SYS.FormUI
         #region 存放房间信息类
         public static string rm_RoomNo;
         public static string rm_CustoNo;
+        public static string rm_CustoName;
         public static string rm_RoomType;
         public static string rm_RoomMoney;
-        public static string rm_CheckTime;
+        public static DateTime? rm_CheckTime;
         public static int rm_RoomStateId;
         public static string co_RoomNo;
         public static string co_CustoNo;
-        public static string co_CheckTime;
+        public static DateTime? co_CheckTime;
         public static string co_RoomPosition;
         public static string co_RoomState;
         public static string co_CustoName;
@@ -151,14 +152,6 @@ namespace SYS.FormUI
         #region 房态图加载事件方法
         private void ucRoomList_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                if (label.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    label.Font = UI_FontUtil.roomControlFont;
-                }
-            }
-
             this.CanPenetrate();
             this.Region = new Region(GetRoundRectPath(new RectangleF(0, 0, this.Width, this.Height), 6f));
             us_CustoNo = romRoomInfo.CustoNo;
@@ -166,7 +159,7 @@ namespace SYS.FormUI
             us_CustoSex = romRoomInfo.CustoSex == 1 ? "男" : "女";
             us_CustoTel = romRoomInfo.CustoTel;
             us_CustoID = romRoomInfo.CustoID;
-            us_CustoBirthday = Convert.ToDateTime(romRoomInfo.CustoBirth).ToString();
+            us_CustoBirthday = romRoomInfo.CustoBirth == null? "":Convert.ToDateTime(romRoomInfo.CustoBirth).ToString();
             us_CustoPassportType = romRoomInfo.PassportType;
             us_CustoType = romRoomInfo.CustoType;
             us_CustoAddress = romRoomInfo.CustoAdress;
@@ -195,10 +188,6 @@ namespace SYS.FormUI
         #region 当右键菜单打开时事件方法
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
-            foreach (Control label in cmsMain.Controls)
-            {
-               label.Font = UI_FontUtil.roomControlFont;
-            }
             r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
             if (lblCustoNo.Text != "")
             {
@@ -277,7 +266,6 @@ namespace SYS.FormUI
             rm_CustoNo = lblCustoNo.Text;
             rm_RoomNo = lblRoomNo.Text;
             rm_RoomType = lblRoomType.Text;
-            //rm_CheckTime = co_CheckTime;
             FrmCheckOutForm frm = new FrmCheckOutForm();
             frm.Show();
         }
@@ -364,9 +352,9 @@ namespace SYS.FormUI
         public void LoadRoomInfo()
         {
             co_RoomNo = romCustoInfo.RoomNo;
-            co_CustoNo = romCustoInfo.CustoNo;
+            co_CustoNo = romCustoInfo.CustoName;
             romTypeName = romCustoInfo.RoomName;
-            co_CheckTime = romCustoInfo.CheckTimeFormat;
+            co_CheckTime = romCustoInfo.CheckTime;
             co_RoomPosition = romCustoInfo.RoomPosition;
             co_RoomState = romCustoInfo.RoomState;
 

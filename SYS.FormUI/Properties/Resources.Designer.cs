@@ -553,9 +553,9 @@ namespace SYS.FormUI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap 打卡 {
+        public static System.Drawing.Bitmap 打卡2 {
             get {
-                object obj = ResourceManager.GetObject("打卡", resourceCulture);
+                object obj = ResourceManager.GetObject("打卡2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

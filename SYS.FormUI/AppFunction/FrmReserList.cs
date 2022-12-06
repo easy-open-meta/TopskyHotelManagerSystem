@@ -21,11 +21,6 @@ namespace SYS.FormUI
 
         private void FrmReserList_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
-            //cbCustoType.SelectedIndex = 0;
             dgvReserList.AutoGenerateColumns = false;
             dgvReserList.DataSource = new ReserService().SelectReserAll();
 

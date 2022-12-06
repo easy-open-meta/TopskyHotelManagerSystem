@@ -62,21 +62,7 @@ namespace SYS.FormUI
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
             this.Owner.Close();
-            foreach (Control item in this.Controls)
-            {
-                switch (item.GetType().ToString())
-                {
-                    case "Sunny.UI.UILabel":
-                        item.Font = UI_FontUtil.mainFont;
-                        break;
-                    case "Sunny.UI.UIScrollingText":
-                        item.Font = UI_FontUtil.scorllingFont;
-                        break;
-                    case "Sunny.UI.UINavMenu":
-                        item.Font = UI_FontUtil.scorllingFont;
-                        break;
-                }
-            }
+            
             LoadModule();
 
             DateTime tmCur = DateTime.Now;

@@ -41,10 +41,6 @@ namespace SYS.FormUI
 
         private void FrmCash_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.mainFont;
-            }
             //获取所有部门信息
             cboClub.DataSource = new BaseService().SelectDeptAll();
             cboClub.DisplayMember = "dept_name";

@@ -58,10 +58,6 @@ namespace SYS.FormUI
 
         private void FrmCustoManager_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.childControlFont;
-            }
             //dgvCustomerList.AutoGenerateColumns = false;
             LoadCustomer();
             LoadCustoType();

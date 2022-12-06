@@ -33,11 +33,6 @@ namespace SYS.FormUI
 
         private void FrmEditInputs_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
-
             string cardId = new CounterHelper().GetNewId(CounterRuleConsts.CustoId);
             txtCustoNo.Text = cardId;
 

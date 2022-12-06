@@ -158,21 +158,6 @@ namespace SYS.FormUI
                 bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、民族、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr == true)
                 {
-                    foreach (Control item in this.Controls)
-                    {
-                        switch (item.Name)
-                        {
-                            case "Sunny.UI.UITextBox":
-                                (item as Sunny.UI.UITextBox).ReadOnly = true;
-                                break;
-                            case "Sunny.UI.UIComboBox":
-                                (item as Sunny.UI.UIComboBox).ReadOnly = true;
-                                break;
-                            case "Sunny.UI.UIDatePicker":
-                                (item as Sunny.UI.UIDatePicker).ReadOnly = true;
-                                break;
-                        }
-                    }
                     WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
                     WorkerName.Text = FrmChangeWorker.wk_WorkerName;
                     cboSex.Text = FrmChangeWorker.wk_WorkerSex;

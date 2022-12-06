@@ -44,10 +44,6 @@ namespace SYS.FormUI
 
         private void FrmChangePosition_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.scorllingFont;
-            }
             txtworkerId.Text = FrmChangeWorker.wk_WorkerNo;
             txtworkerName.Text = FrmChangeWorker.wk_WorkerName;
             txtClub.Text = FrmChangeWorker.wk_WorkerClub;

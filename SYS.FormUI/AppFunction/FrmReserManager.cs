@@ -60,10 +60,6 @@ namespace SYS.FormUI
 
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
             cboReserWay.SelectedIndex = 0;
             cboReserRoomNo.DataSource = new RoomService().SelectCanUseRoomAll();
             cboReserRoomNo.DisplayMember = "RoomNo";

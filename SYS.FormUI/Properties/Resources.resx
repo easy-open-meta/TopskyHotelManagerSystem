@@ -118,20 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="脏房状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\脏房状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picCustomer.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCustomer.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picExtend.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picExtend.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow-down-b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="餐饮部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\餐饮部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="维修部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\维修部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picLogo.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picLogo.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="商品部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\商品部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +159,9 @@
   </data>
   <data name="搜索--1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\搜索--1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="常规部门卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\常规部门卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,9 +193,6 @@
   <data name="主页 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\主页 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="打卡" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\打卡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="监管小组卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\监管小组卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,9 +208,6 @@
   <data name="已住状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已住状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="上传照片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\上传照片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,20 +220,26 @@
   <data name="白金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\白金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="可住房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\可住房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="黄金会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\黄金会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="钻石会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\钻石会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="可住房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\可住房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picRoom.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picRoom.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="早上" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\早上.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picCommodity.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCommodity.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="注销" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\注销.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="修改" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\修改.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="77377282_p0_master1200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\77377282_p0_master1200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -243,6 +249,9 @@
   </data>
   <data name="导出 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\导出 (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="系统管理员" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\系统管理员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="锁屏" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\锁屏.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,6 +265,18 @@
   <data name="个人中心" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\个人中心.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Alibaba_PuHuiTi_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alibaba-PuHuiTi-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="picCustomer.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCustomer.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picRoom.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picRoom.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picRoom.ImageSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picRoom.ImageSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="隐藏" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\隐藏.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -268,11 +289,17 @@
   <data name="修改a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\修改a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="脏房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\脏房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="预约状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\预约状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="总经办卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\总经办卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picExtend.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picExtend.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="获取用户编号" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\获取用户编号.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,14 +307,20 @@
   <data name="转换" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\转换.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="picRoom.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picRoom.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="获取用户编号-ia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\获取用户编号-ia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="修改" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\修改.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="uiButton1.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uiButton1.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picCommodity.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCommodity.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picCommodity.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCommodity.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="770e7b52ecafc807247aad51bb6c6b43" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\770e7b52ecafc807247aad51bb6c6b43.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,23 +328,32 @@
   <data name="delete2-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete2-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="脏房(hover)icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\脏房(hover)icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="月亮" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\月亮.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alibaba_PuHuiTi_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alibaba-PuHuiTi-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="picCustomer.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picCustomer.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="餐饮部卡片" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\餐饮部卡片.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="普通会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\普通会员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="系统管理员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\系统管理员.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="脏房状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\脏房状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="早上" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\早上.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="显示" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\显示.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picExtend.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picExtend.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="咖啡" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\咖啡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,49 +379,7 @@
   <data name="添 加a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添 加a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picCommodity.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCommodity.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picCommodity.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCommodity.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picCommodity.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCommodity.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picCustomer.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCustomer.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picCustomer.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCustomer.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picCustomer.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picCustomer.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picExtend.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picExtend.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picExtend.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picExtend.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picExtend.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picExtend.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picLogo.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picLogo.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picRoom.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picRoom.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picRoom.ImageHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picRoom.ImageHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picRoom.ImagePress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picRoom.ImagePress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picRoom.ImageSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picRoom.ImageSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="uiButton1.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uiButton1.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="打卡2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\打卡.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
