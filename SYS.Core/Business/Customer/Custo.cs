@@ -29,44 +29,53 @@ namespace SYS.Core
     /// <summary>
     /// 客户信息
     /// </summary>
-    [SqlSugar.SugarTable("userinfo")]
+    [SqlSugar.SugarTable("customer")]
     public class Custo
     {
         /// <summary>
         /// 客户编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_no",IsPrimaryKey = true)]
         public string CustoNo { get; set; }
         /// <summary>
         /// 客户名称
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_name", IsNullable = false)]
         public string CustoName { get; set; }
         /// <summary>
         /// 客户性别
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_sex", IsNullable = true)]
         public int CustoSex { get; set; }
         /// <summary>
         /// 客户电话
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_tel", IsNullable = false)]
         public string CustoTel { get; set; }
         /// <summary>
         /// 证件类型
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "passport_type", IsNullable = false)]
         public int PassportType { get; set; }
         /// <summary>
         /// 证件号码
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "passport_id", IsNullable = false)]
         public string CustoID { get; set; }
         /// <summary>
         /// 居住地址
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_address", IsNullable = true)]
         public string CustoAdress { get; set; }
         /// <summary>
         /// 出生日期
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_birth", IsNullable = true)]
         public DateTime CustoBirth { get; set; }
         /// <summary>
         /// 客户类型
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_type", IsNullable = false)]
         public int CustoType { get; set; }
         /// <summary>
         /// 客户类型

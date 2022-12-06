@@ -69,10 +69,6 @@ namespace SYS.FormUI
 
         private void FrmTopChange_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.childControlFont;
-            }
             LoadWorker();
             if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
             {

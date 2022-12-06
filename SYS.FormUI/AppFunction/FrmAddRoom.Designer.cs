@@ -170,7 +170,6 @@
             this.txtDeposit.Name = "txtDeposit";
             this.txtDeposit.Padding = new System.Windows.Forms.Padding(5);
             this.txtDeposit.Radius = 20;
-            this.txtDeposit.ReadOnly = true;
             this.txtDeposit.Size = new System.Drawing.Size(128, 35);
             this.txtDeposit.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeposit.StyleCustomMode = true;

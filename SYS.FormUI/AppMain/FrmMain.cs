@@ -128,9 +128,9 @@ namespace SYS.FormUI
         #region 定时器：获取网络时间
         private void tmrDate_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("HH:mm");
+            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
-            DateTime tmCur = Convert.ToDateTime("2020-12-4" + lblTime.Text);
+            DateTime tmCur = DateTime.Now;
 
             if (tmCur.Hour < 8 || tmCur.Hour > 18)
             {//晚上
@@ -239,8 +239,10 @@ namespace SYS.FormUI
         private void RoomManager_Event(object sender, EventArgs e)
         {
             pnlMID.Controls.Clear();
-            FrmRoomManager frm1 = new FrmRoomManager();
-            frm1.TopLevel = false;
+            FrmRoomManager frm1 = new FrmRoomManager
+            {
+                TopLevel = false
+            };
             pnlMID.Controls.Add(frm1);
             frm1.Show();
         }
@@ -279,7 +281,6 @@ namespace SYS.FormUI
         private void LoadNavBar()
         {
             #region 菜单导航代码块
-
             flpNav.Controls.Clear();
             var listSource = new NavBarService().NavBarList();
             ucNavBar ucNavBar = null;
@@ -304,16 +305,14 @@ namespace SYS.FormUI
                             ucNavBar.BackgroundImage = Resources.picCommodity_Image;
                             break;
                     }
-                    if (i == 0)
-                    {
-                        ucNavBar.Margin = new Padding(0, 0, 0, 0);
-                    }
-                    else
-                    {
-                        ucNavBar.Margin = new Padding(180, 0, 0, 0);
-                    }
+                    ucNavBar.Margin = new Padding(listSource[i].margin_left, 0, 0, 0);
                     flpNav.Controls.Add(ucNavBar);
                 }
+            }
+            else
+            {
+                UIMessageBox.ShowError("服务器维护中，请过会再试");
+                return;
             }
             #endregion
         }
@@ -321,19 +320,13 @@ namespace SYS.FormUI
         #region 窗体加载事件方法
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            lblSoftName.Text = System.Windows.Forms.Application.ProductName.ToString() + "_V" + System.Windows.Forms.Application.ProductVersion.ToString();
+
             tmrDate.Enabled = true;
 
             LoadNavBar();
 
-            foreach (Control item in this.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.Label")
-                {
-                    item.Font = UI_FontUtil.mainFont;
-                }
-            }
-
-            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
             DateTime tmCur = DateTime.Now;
 
@@ -556,12 +549,12 @@ namespace SYS.FormUI
 
         private void picSetting_MouseDown(object sender, MouseEventArgs e)
         {
-            this.picSetting.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+            this.picSetting.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
         }
 
         private void picSetting_MouseHover(object sender, EventArgs e)
         {
-            this.picSetting.BackColor = System.Drawing.Color.FromArgb(74, 131, 229);
+            this.picSetting.BackColor = System.Drawing.Color.FromArgb(111, 168, 255);
         }
 
         private void picSetting_MouseLeave(object sender, EventArgs e)

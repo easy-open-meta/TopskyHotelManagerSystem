@@ -105,15 +105,6 @@ namespace SYS.FormUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                switch (item.GetType().ToString())
-                {
-                    case "Sunny.UI.UITextBox":
-                        item.Text = "";
-                        break;
-                }
-            }
         }
     }
 }

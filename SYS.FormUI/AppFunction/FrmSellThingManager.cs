@@ -49,10 +49,6 @@ namespace SYS.FormUI
 
         private void FrmSellThingManager_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.childControlFont;
-            }
             string SellId = new CounterHelper().GetNewId(CounterRuleConsts.SellId);
             txtSellNo.Text = SellId;
             dgvSellthing.AutoGenerateColumns = false;

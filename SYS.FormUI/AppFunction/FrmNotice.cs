@@ -45,11 +45,6 @@ namespace SYS.FormUI
 
         private void FrmNotice_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
-
             List<Notice> notices = new NoticeService().SelectNoticeAll();
             notices.ForEach(source =>
             {

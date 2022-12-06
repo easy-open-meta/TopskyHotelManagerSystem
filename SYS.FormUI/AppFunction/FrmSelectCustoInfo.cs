@@ -52,11 +52,6 @@ namespace SYS.FormUI
 
         private void FrmSelectCustoInfo_Load(object sender, EventArgs e)
         {
-
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
             #region 加载客户类型信息
             List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
             this.cbCustoType.DataSource = lstSourceGrid;

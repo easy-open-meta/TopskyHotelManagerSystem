@@ -34,6 +34,10 @@ namespace SYS.Core
         /// </summary>
         public string nav_event { get; set; }
         /// <summary>
+        /// 导航控件事件
+        /// </summary>
+        public int margin_left { get; set; }
+        /// <summary>
         /// 删除标记
         /// </summary>
         public int delete_mk { get; set; }

@@ -55,10 +55,6 @@ namespace SYS.FormUI
                 txtRoomNo.AutoCompleteCustomSource.Add(roms[i].RoomNo);
             }
             LoadSellThingInfo();
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.childControlFont;
-            }
 
         }
         #endregion

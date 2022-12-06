@@ -39,10 +39,6 @@ namespace SYS.FormUI
         #region 窗体加载事件
         private void FrmRoomStateManager_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.controlFont;
-            }
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
             cboState.DataSource = new RoomService().SelectRoomStateAll();
             cboState.DisplayMember = "RoomStateName";

@@ -38,10 +38,6 @@ namespace SYS.FormUI
 
         private void FrmCashList_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.mainFont;
-            }
             
             dgvCheckInfo.AutoGenerateColumns = false;
             dgvCheckInfo.DataSource = new CheckInfoService().SelectCheckInfoAll();

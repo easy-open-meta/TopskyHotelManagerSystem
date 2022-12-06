@@ -45,10 +45,6 @@ namespace SYS.FormUI
 
         private void ucBaseInformation_Load(object sender, EventArgs e)
         {
-            foreach (Control label in this.Controls)
-            {
-                label.Font = UI_FontUtil.roomControlFont;
-            }
         }
 
         private void btnOperation_SizeChanged(object sender, EventArgs e)

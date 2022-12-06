@@ -59,10 +59,6 @@ namespace SYS.FormUI
         }
         private void FrmChangeWorker_Load(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                item.Font = UI_FontUtil.roomControlFont;
-            }
             if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
             {
                 btnUpWorker.Enabled = false;

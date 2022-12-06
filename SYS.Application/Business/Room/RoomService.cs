@@ -24,6 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using jvncorelib_fr.EntityLib;
 using MySql.Data.MySqlClient;
 using SYS.Common;
 using SYS.Core;
@@ -99,12 +100,18 @@ namespace SYS.Application
             roomTypes = base.Change<RoomType>().GetList(a => a.delete_mk != 1);
             List<Room> rooms = new List<Room>();
             rooms = base.GetList(a => a.delete_mk != 1).OrderBy(a => a.RoomNo).ToList();
+            var listCustoNo = rooms.Select(a => a.CustoNo).Distinct().ToList();
+            List<Custo> custos = new List<Custo>();
+            custos = base.Change<Custo>().GetList(a => listCustoNo.Contains(a.CustoNo));
             rooms.ForEach(source =>
             {
                 var roomState = roomStates.FirstOrDefault(a => a.RoomStateId == source.RoomStateId);
                 source.RoomState = string.IsNullOrEmpty(roomState.RoomStateName) ? "" : roomState.RoomStateName;
                 var roomType = roomTypes.FirstOrDefault(a => a.Roomtype == source.RoomType);
                 source.RoomName = string.IsNullOrEmpty(roomType.RoomName) ? "" : roomType.RoomName;
+
+                var custo = custos.FirstOrDefault(a => a.CustoNo.Equals(source.CustoNo));
+                source.CustoName = custo.IsNullOrEmpty() ? "" : custo.CustoName;
 
                 //把入住时间格式化
                 source.CheckTimeFormat = string.IsNullOrEmpty(source.CheckTime + "") ? "" 
@@ -129,12 +136,19 @@ namespace SYS.Application
             var listTypes = roomTypes.Select(a => a.Roomtype).Distinct().ToList();
             List<Room> rooms = new List<Room>();
             rooms = base.GetList(a => a.delete_mk != 1 && listTypes.Contains(a.RoomType)).OrderBy(a => a.RoomNo).ToList();
+            var listCustoNo = rooms.Select(a => a.CustoNo).Distinct().ToList();
+            List<Custo> custos = new List<Custo>();
+            custos = base.Change<Custo>().GetList(a => listCustoNo.Contains(a.CustoNo));
             rooms.ForEach(source =>
             {
                 var roomState = roomStates.FirstOrDefault(a => a.RoomStateId == source.RoomStateId);
                 source.RoomState = string.IsNullOrEmpty(roomState.RoomStateName) ? "" : roomState.RoomStateName;
                 var roomType = roomTypes.FirstOrDefault(a => a.Roomtype == source.RoomType);
                 source.RoomName = string.IsNullOrEmpty(roomType.RoomName) ? "" : roomType.RoomName;
+
+                var custo = custos.FirstOrDefault(a => a.CustoNo.Equals(source.CustoNo));
+                source.CustoName = custo.IsNullOrEmpty() ? "" : custo.CustoName;
+
             });
             return rooms;
         }

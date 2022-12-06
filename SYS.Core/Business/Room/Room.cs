@@ -36,26 +36,37 @@ namespace SYS.Core
         /// <summary>
         /// 房间编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "room_no", IsPrimaryKey = true)]
         public string RoomNo { get; set; }
         /// <summary>
         /// 房间类型
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "room_type")]
         public int RoomType { get; set; }
         /// <summary>
         /// 客户编号
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "custo_no")]
         public string CustoNo { get; set; }
+        /// <summary>
+        /// 客户姓名
+        /// </summary>
+        [SqlSugar.SugarColumn(IsIgnore = true)]
+        public string CustoName { get; set; }
         /// <summary>
         /// 最后一次入住时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "check_in_time")]
         public DateTime? CheckTime { get; set; }
         /// <summary>
         /// 最后一次退房时间
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "check_out_time")]
         public DateTime? CheckOutTime { get; set; }
         /// <summary>
         /// 房间状态ID
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "room_state_id")]
         public int RoomStateId { get; set; }
         /// <summary>
         /// 房间状态
@@ -65,15 +76,17 @@ namespace SYS.Core
         /// <summary>
         /// 房间单价
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "room_rent")]
         public decimal RoomMoney { get; set; }
         /// <summary>
         /// 房间押金
         /// </summary>
-        [SqlSugar.SugarColumn(ColumnName = "deposit")]
+        [SqlSugar.SugarColumn(ColumnName = "room_deposit")]
         public decimal RoomDeposit { get; set; }
         /// <summary>
         /// 房间位置
         /// </summary>
+        [SqlSugar.SugarColumn(ColumnName = "room_position")]
         public string RoomPosition { get; set; }
         /// <summary>
         /// 客户类型名称
