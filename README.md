@@ -7,6 +7,9 @@
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
 
+# 特别注明： 
+   ### 该项目已归档只读，未来只会在[easy-open-meta](https://github.com/easy-open-meta/TopskyHotelManagerSystem)下的仓库更新，请注意！ 
+
 #  :pray: 引用的开源项目：
 
 1. ##### Fody——将所有dll打包成exe应用程序。[Fody,MIT开源协议](https://github.com/Fody/Fody)      
