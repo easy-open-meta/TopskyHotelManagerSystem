@@ -6,7 +6,9 @@
         <a href='https://img.shields.io/badge/license-MIT-000000.svg'><img src="https://img.shields.io/badge/license-MIT-000000.svg" alt=""></img></a>
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
-
+<div align="center">
+	<p><a href="./README.md">中文文档</a> | English Document</p>
+</div>
 
 # :exclamation: Important Notice:
 
