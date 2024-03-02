@@ -7,8 +7,9 @@
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
 <div align="center">
-	<p>中文文档 | <a src="README.en.md">English Document</a></p>
+	<p>中文文档 | <a src="https://github.com/easy-open-meta/TopskyHotelManagerSystem/blob/master/README.en.md">English Document</a></p>
 </div>
+
 
 #  :exclamation: 重要说明：
 
