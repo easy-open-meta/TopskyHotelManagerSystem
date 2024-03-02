@@ -21,8 +21,11 @@
  *SOFTWARE.
  *
  */
+
 using Sunny.UI;
-using SYS.Application;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Windows.Forms;
 
@@ -37,8 +40,14 @@ namespace SYS.FormUI
 
         private void FrmCustoSpend_Load(object sender, EventArgs e)
         {
+            var result = HttpHelper.Request("Spend/SelectSpendInfoAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSpendInfoAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvSpendList.AutoGenerateColumns = false;
-            dgvSpendList.DataSource = new SpendService().SelectSpendInfoAll();
+            dgvSpendList.DataSource = HttpHelper.JsonToList<Spend>(result.message);
         }
     }
 }

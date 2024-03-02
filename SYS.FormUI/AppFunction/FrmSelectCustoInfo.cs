@@ -23,10 +23,11 @@
  */
 using System;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
 using System.Collections.Generic;
-using SYS.Application;
+
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -36,6 +37,9 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         #region 存放客户信息类
         public static string co_CustoNo;
@@ -53,7 +57,13 @@ namespace SYS.FormUI
         private void FrmSelectCustoInfo_Load(object sender, EventArgs e)
         {
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
+            result = HttpHelper.Request("Base/SelectCustoTypeAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCustoTypeAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<CustoType> lstSourceGrid = HttpHelper.JsonToList<CustoType>(result.message);
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -62,7 +72,13 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
+            result = HttpHelper.Request("Base/SelectPassPortTypeAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectPassPortTypeAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<PassPortType> passPorts = HttpHelper.JsonToList<PassPortType>(result.message);
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -70,7 +86,13 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAll(new SexType { delete_mk = 0 });
+            result = HttpHelper.Request("Base/SelectSexTypeAll?delete_mk=0");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSexTypeAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<SexType> listSexType = HttpHelper.JsonToList<SexType>(result.message);
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";
@@ -78,7 +100,17 @@ namespace SYS.FormUI
             #endregion
             
             txtCustoNo.Text = ucRoomList.rm_CustoNo;
-            Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
+            dic = new Dictionary<string, string>()
+            {
+                { "CustoNo",txtCustoNo.Text.Trim() }
+            };
+            result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo",null,dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCardInfoByCustoNo+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            Custo c = HttpHelper.JsonToModel<Custo>(result.message);
             txtCustoAdress.Text = c.CustoAdress;
             txtCustoName.Text = c.CustoName;
             txtCardID.Text = c.CustoID;
@@ -86,7 +118,7 @@ namespace SYS.FormUI
             cbSex.Text = c.CustoSex == 1 ? "男" : "女";
             cbCustoType.SelectedIndex = c.CustoType;
             cbPassportType.SelectedIndex = c.PassportType;
-            dtpBirthday.Value = c.CustoBirth;
+            dtpBirthday.Value = Convert.ToDateTime(c.CustoBirth);
         }
     }
 }

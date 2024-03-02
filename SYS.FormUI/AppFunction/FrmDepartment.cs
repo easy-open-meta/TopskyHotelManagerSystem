@@ -22,9 +22,9 @@
  *
  */
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using jvncorelib_fr.EntityLib;
 
 namespace SYS.FormUI
 {
@@ -50,25 +51,46 @@ namespace SYS.FormUI
             ReloadDeptList();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         public void ReloadDeptList()
         {
             LoadDept();
             LoadLeader();
-            txtDeptNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.DeptInfo);
+            txtDeptNo.Text = Util.GetListNewId("D", 3, 1, "-").FirstOrDefault();
             dgvDeptList.AutoGenerateColumns = false;
-            dgvDeptList.DataSource = new BaseService().SelectDeptAllCanUse();
+            result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            dgvDeptList.DataSource =HttpHelper.JsonToList<Dept>(result.message);
         }
 
         public void LoadDept()
         {
-            cboDeptParent.DataSource = new BaseService().SelectDeptAllCanUse();
+            result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboDeptParent.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboDeptParent.DisplayMember = "dept_name";
             cboDeptParent.ValueMember = "dept_no";
         }
 
         public void LoadLeader()
         {
-            cboDeptLeader.DataSource = new WorkerService().SelectWorkerAll();
+            result = HttpHelper.Request("Worker/SelectWorkerAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectWorkerAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboDeptLeader.DataSource = HttpHelper.JsonToList<Worker>(result.message);
             cboDeptLeader.DisplayMember = "WorkerName";
             cboDeptLeader.ValueMember = "WorkerId";
         }
@@ -99,12 +121,19 @@ namespace SYS.FormUI
                 dept_desc = txtDeptDesc.Text.Trim(),
                 dept_parent = cboDeptParent.SelectedValue.ToString(),
                 dept_date = DateTime.Now,
-                dept_leader = cboDeptLeader.SelectedValue.ToString()
+                dept_leader = cboDeptLeader.SelectedValue.ToString(),
+                datains_usr = AdminInfo.Account
             };
             if (CheckInput(dept))
             {
-                bool tf = new BaseService().AddDept(dept);
-                if (tf == false)
+                result = HttpHelper.Request("Base/AddDept",HttpHelper.ModelToJson(dept));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("AddDept+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (!tf)
                 {
                     UIMessageBox.Show("添加失败！或是服务器繁忙所致，请稍后重试！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                     return;
@@ -128,12 +157,7 @@ namespace SYS.FormUI
 
         private void dgvDeptList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDeptList.SelectedRows.Count == 1)
-            {
-                txtDeptNo.Text = dgvDeptList.SelectedRows[0].Cells["clDeptNo"].Value.ToString();
-                txtDeptName.Text = dgvDeptList.SelectedRows[0].Cells["clDeptName"].Value.ToString();
-                txtDeptDesc.Text = dgvDeptList.SelectedRows[0].Cells["clDeptDesc"].Value.ToString();
-            }
+           
         }
 
         private void btnUpdateDept_Click(object sender, EventArgs e)
@@ -146,12 +170,17 @@ namespace SYS.FormUI
                 dept_parent = cboDeptParent.SelectedValue == null ? "" : cboDeptParent.SelectedValue.ToString(),
                 dept_leader = cboDeptLeader.SelectedValue == null ? "" : cboDeptLeader.SelectedValue.ToString(),
                 datachg_usr = AdminInfo.Account,
-                datachg_date = DateTime.Now
             };
             if (CheckInput(dept))
             {
-                bool tf = new BaseService().UpdDept(dept);
-                if (tf == false)
+                result = HttpHelper.Request("Base/UpdDept", HttpHelper.ModelToJson(dept));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdDept+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (!tf)
                 {
                     UIMessageBox.Show("修改失败！或是服务器繁忙所致，请稍后重试！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                     return;
@@ -176,14 +205,38 @@ namespace SYS.FormUI
         {
             if (dgvDeptList.SelectedRows.Count > 0)
             {
+                //删除前先检索该部门下是否存在员工
+                dic = new Dictionary<string, string>()
+                {
+                    { "deptNo",txtDeptNo.Text.Trim()}
+                };
+                result = HttpHelper.Request("Worker/CheckWorkerBydepartment",null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("CheckWorkerBydepartment+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+
+                if (result.message.ToString().Equals("true"))
+                {
+                    UIMessageBox.ShowError("当前部门下存在工作人员信息，无法删除该部门");
+                    return;
+                }
+
                 Dept dept = new Dept()
                 {
                     dept_no = txtDeptNo.Text.Trim(),
-                    dept_name = txtDeptName.Text.Trim(),
-                    dept_desc = txtDeptDesc.Text.Trim()
+                    delete_mk = 1,
+                    datachg_usr = AdminInfo.Account,
                 };
-                bool tf = new BaseService().DelDept(dept);
-                if (tf == false)
+                result = HttpHelper.Request("Base/DelDept", HttpHelper.ModelToJson(dept));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("DelDept+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (!tf)
                 {
                     UIMessageBox.Show("删除失败！或是服务器繁忙所致，请稍后重试！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                     return;
@@ -198,6 +251,16 @@ namespace SYS.FormUI
                 return;
             }
             
+        }
+
+        private void dgvDeptList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvDeptList.SelectedRows.Count == 1)
+            {
+                txtDeptNo.Text = dgvDeptList.SelectedRows[0].Cells["clDeptNo"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptNo"].Value.ToString();
+                txtDeptName.Text = dgvDeptList.SelectedRows[0].Cells["clDeptName"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptName"].Value.ToString();
+                txtDeptDesc.Text = dgvDeptList.SelectedRows[0].Cells["clDeptDesc"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptDesc"].Value.ToString();
+            }
         }
     }
 

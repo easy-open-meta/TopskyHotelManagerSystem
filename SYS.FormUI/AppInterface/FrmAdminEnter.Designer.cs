@@ -46,7 +46,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(3, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(694, 354);
+            this.pictureBox1.Size = new System.Drawing.Size(579, 320);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -56,7 +56,7 @@
             this.txtAccount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAccount.FillColor = System.Drawing.Color.White;
             this.txtAccount.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAccount.Location = new System.Drawing.Point(309, 409);
+            this.txtAccount.Location = new System.Drawing.Point(243, 409);
             this.txtAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAccount.Maximum = 100D;
             this.txtAccount.MaxLength = 20;
@@ -75,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(202, 414);
+            this.label1.Location = new System.Drawing.Point(136, 414);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 105;
@@ -86,7 +86,7 @@
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.FillColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPassword.Location = new System.Drawing.Point(309, 463);
+            this.txtPassword.Location = new System.Drawing.Point(243, 463);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Maximum = 2147483647D;
             this.txtPassword.MaxLength = 20;
@@ -106,7 +106,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(202, 468);
+            this.label3.Location = new System.Drawing.Point(136, 468);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 25);
             this.label3.TabIndex = 107;
@@ -124,11 +124,11 @@
             // 
             this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckIn.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnCheckIn.Location = new System.Drawing.Point(240, 525);
+            this.btnCheckIn.Location = new System.Drawing.Point(203, 525);
             this.btnCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Radius = 20;
-            this.btnCheckIn.Size = new System.Drawing.Size(220, 54);
+            this.btnCheckIn.Size = new System.Drawing.Size(180, 35);
             this.btnCheckIn.Style = Sunny.UI.UIStyle.Custom;
             this.btnCheckIn.TabIndex = 112;
             this.btnCheckIn.Text = "登      录";
@@ -140,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(700, 607);
+            this.ClientSize = new System.Drawing.Size(586, 603);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -153,6 +153,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmAdminEnter";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "超级管理员安全系统";
             this.Load += new System.EventHandler(this.FrmAdminEnter_Load);

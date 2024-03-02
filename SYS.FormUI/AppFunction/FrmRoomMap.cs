@@ -21,9 +21,11 @@
  *SOFTWARE.
  *
  */
+
 using Sunny.UI;
-using SYS.Application;
-using SYS.Core;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +53,13 @@ namespace SYS.FormUI.AppFunction
         public void LoadRoom()
         {
             flpRoom.Controls.Clear();
-            List<Room> rooms = new RoomService().SelectRoomAll();
+            var result = HttpHelper.Request("Room/SelectRoomAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectRoomAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<Room> rooms = HttpHelper.JsonToList<Room>(result.message);
             for (int i = 0; i < rooms.Count; i++)
             {
                 romt = new ucRoomList();

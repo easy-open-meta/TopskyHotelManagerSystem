@@ -21,10 +21,11 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
 using SYS.Common;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -36,12 +37,19 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
-        
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         private void FrmOperation_Load(object sender, EventArgs e)
         {
+            result = HttpHelper.Request("App/SelectOperationlogAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectOperationlogAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvOperationlog.AutoGenerateColumns = false;
-            dgvOperationlog.DataSource = new OperationlogService().SelectOperationlogAll();
+            dgvOperationlog.DataSource = HttpHelper.JsonToList<OperationLog>(result.message);
         }
     }
 }

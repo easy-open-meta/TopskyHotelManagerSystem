@@ -21,8 +21,11 @@
  *SOFTWARE.
  *
  */
+
 using Sunny.UI;
-using SYS.Application;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Windows.Forms;
 
@@ -38,9 +41,14 @@ namespace SYS.FormUI
 
         private void FrmCashList_Load(object sender, EventArgs e)
         {
-            
+           var result = HttpHelper.Request("CheckInfo/SelectCheckInfoAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCheckInfoAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvCheckInfo.AutoGenerateColumns = false;
-            dgvCheckInfo.DataSource = new CheckInfoService().SelectCheckInfoAll();
+            dgvCheckInfo.DataSource = HttpHelper.JsonToList<CheckInfo>(result.message);
         }
     }
 }

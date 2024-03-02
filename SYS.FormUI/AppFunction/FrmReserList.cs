@@ -1,12 +1,16 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
+
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
 using System.Transactions;
-using SYS.Core.Util;
 using System.Collections.Generic;
-using SYS.Application;
+
+using System.Web.Script.Services;
+using SYS.Common;
+using System.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using System.Security.Cryptography;
 
 namespace SYS.FormUI
 {
@@ -17,15 +21,27 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
-        
+        ResponseMsg result = new ResponseMsg();
 
         private void FrmReserList_Load(object sender, EventArgs e)
         {
+            result = HttpHelper.Request("Reser/SelectReserAll", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectReserAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvReserList.AutoGenerateColumns = false;
-            dgvReserList.DataSource = new ReserService().SelectReserAll();
+            dgvReserList.DataSource = HttpHelper.JsonToList<Reser>(result.message);
 
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
+            result = HttpHelper.Request("Base/SelectCustoTypeAllCanUse", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCustoTypeAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<CustoType> lstSourceGrid = HttpHelper.JsonToList<CustoType>(result.message);
             this.cbCustoType.DataSource = lstSourceGrid;
             this.cbCustoType.DisplayMember = "TypeName";
             this.cbCustoType.ValueMember = "UserType";
@@ -34,7 +50,13 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载证件类型信息
-            List<PassPortType> passPorts = new BaseService().SelectPassPortTypeAllCanUse();
+            result = HttpHelper.Request("Base/SelectPassPortTypeAllCanUse", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectPassPortTypeAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<PassPortType> passPorts = HttpHelper.JsonToList<PassPortType>(result.message);
             this.cbPassportType.DataSource = passPorts;
             this.cbPassportType.DisplayMember = "PassportName";
             this.cbPassportType.ValueMember = "PassportId";
@@ -42,11 +64,16 @@ namespace SYS.FormUI
             #endregion
 
             #region 加载性别信息
-            List<SexType> listSexType = new BaseService().SelectSexTypeAll(new SexType { delete_mk = 0 });
+            result = HttpHelper.Request("Base/SelectSexTypeAll", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSexTypeAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            List<SexType> listSexType = HttpHelper.JsonToList<SexType>(result.message);
             this.cbSex.DataSource = listSexType;
             this.cbSex.DisplayMember = "sexName";
             this.cbSex.ValueMember = "sexId";
-            this.cbSex.SelectedIndex = 0;
             #endregion
         }
 
@@ -63,15 +90,22 @@ namespace SYS.FormUI
                 {
                     CustoNo = txtCustoNo.Text.Trim(),
                     CustoName = txtCustoName.Text.Trim(),
-                    CustoSex = cbSex.SelectedIndex,
+                    CustoSex = Convert.ToInt32(cbSex.SelectedValue.ToString()),
                     CustoTel = txtTel.Text.Trim(),
                     PassportType = cbPassportType.SelectedIndex,
                     CustoID = txtCardID.Text.Trim(),
                     CustoAdress = txtCustoAdress.Text.Trim(),
                     CustoBirth = dtpBirthday.Value,
-                    CustoType = cbCustoType.SelectedIndex
+                    CustoType = cbCustoType.SelectedIndex,
+                    delete_mk = 0,
+                    datains_usr = LoginInfo.WorkerNo
                 };
-                new CustoService().InsertCustomerInfo(custo);
+                result = HttpHelper.Request("Custo​/InsertCustomerInfo", HttpHelper.ModelToJson(custo));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("InsertCustomerInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
 
                 Room r = new Room() 
                 {
@@ -80,22 +114,41 @@ namespace SYS.FormUI
                     RoomStateId = 1,
                     RoomNo = dgvReserList.SelectedRows[0].Cells["clRoomNo"].Value.ToString()
                 };
-                
-                new RoomService().UpdateRoomInfo(r);
-                new ReserService().DeleteReserInfo(dgvReserList.SelectedRows[0].Cells["clReserNo"].Value.ToString());
-                scope.Complete();
-            }
-            UIMessageBox.ShowSuccess("操作成功");
-            dgvReserList.AutoGenerateColumns = false;
-            dgvReserList.DataSource = new ReserService().SelectReserAll();
-            FrmRoomManager.Reload("");
-            this.Close();
+                result = HttpHelper.Request("Room​/UpdateRoomInfo", HttpHelper.ModelToJson(r), null);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("InsertCustomerInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                var reser = new Reser
+                {
+                    ReserId = dgvReserList.SelectedRows[0].Cells["clReserNo"].Value.ToString()
+                };
+                result = HttpHelper.Request("Reser/DeleteReserInfo", HttpHelper.ModelToJson(reser));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("DeleteReserInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
 
+                UIMessageBox.ShowSuccess("操作成功");
+                dgvReserList.AutoGenerateColumns = false;
+                result = HttpHelper.Request("Reser/SelectReserAll", null, null);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectReserAll+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                dgvReserList.DataSource = HttpHelper.JsonToList<Reser>(result.message);
+                FrmRoomManager.Reload("");
+                scope.Complete();
+                this.Close();
+            }
         }
 
         private void dgvReserList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string custoNo = new CounterHelper().GetNewId("CustoId");
+            string custoNo = Util.GetListNewId("TS", 2, 1, "-").FirstOrDefault();
             txtCustoNo.Text = custoNo;
             txtCustoName.Text = dgvReserList.SelectedRows[0].Cells["clCustoNm"].Value.ToString();
             txtTel.Text = dgvReserList.SelectedRows[0].Cells["clTel"].Value.ToString();
@@ -105,6 +158,7 @@ namespace SYS.FormUI
         {
             //获取得到输入的身份证号码
             string identityCard = txtCardID.Text.Trim();
+
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回
@@ -128,33 +182,31 @@ namespace SYS.FormUI
                     return;
                 }
             }
-            string birthday = "";
-            string sex = "";
+
             if (identityCard.Length == 18)
             {
-                var result = new IDCardUtil().SelectCardCode(identityCard);
-                var address = result.Replace(",","").ToString();
-                birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
-                sex = identityCard.Substring(14, 3);
-                txtCustoAdress.Text = address;
-                //性别代码为偶数是女性奇数为男性
-                if (int.Parse(sex) % 2 == 0)
+                var result = Util.searchCode(identityCard);
+                if (result.message.IsNullOrEmpty()) //如果没有错误消息输出，则代表成功
                 {
-                    cbSex.Text = "女";
+                    try
+                    {
+                        cbSex.Text = result.sex;
+                        txtCustoAdress.Text = result.address;
+                        dtpBirthday.Value = Convert.ToDateTime(result.birthday);
+                    }
+                    catch
+                    {
+                        UIMessageBox.ShowError("请正确输入证件号码！");
+                        return;
+                    }
                 }
                 else
                 {
-                    cbSex.Text = "男";
+                    UIMessageBox.ShowError(result.message);
+                    return;
                 }
             }
-            try
-            {
-                dtpBirthday.Value = Convert.ToDateTime(birthday);
-            }
-            catch
-            {
-                UIMessageBox.ShowError("请正确输入证件号码！");
-            }
+            return;
 
         }
     }

@@ -23,18 +23,17 @@
  */
 using System;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
-using SYS.Core.Util;
+
 using System.Net;
 using System.Configuration;
 using System.IO;
 using System.Text;
 using SYS.Common;
+using System.Linq;
 using jvncorelib_fr.EncryptorLib;
 
 namespace SYS.FormUI
@@ -58,26 +57,67 @@ namespace SYS.FormUI
         ucHistory ucHistory = null;
         private void FrmAddWorker_Load(object sender, EventArgs e)
         {
+            var result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             //加载部门信息
-            cboClub.DataSource = new BaseService().SelectDeptAllCanUse();
+            cboClub.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
             //加载民族信息
-            cbWorkerNation.DataSource = new BaseService().SelectNationAll(new Nation { delete_mk = 0 });
+            Dictionary<string,string> dic = new Dictionary<string,string>();
+            dic.Add("delete_mk","0");
+            result = HttpHelper.Request("Base/SelectNationAll",null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectNationAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cbWorkerNation.DataSource = HttpHelper.JsonToList<Nation>(result.message);
             cbWorkerNation.DisplayMember = "nation_name";
             cbWorkerNation.ValueMember = "nation_no";
             //加载职位信息
-            cboWorkerPosition.DataSource = new BaseService().SelectPositionAll(new Position { delete_mk = 0 });
+            dic = new Dictionary<string, string>();
+            dic.Add("delete_mk", "0");
+            result = HttpHelper.Request("Base/SelectPositionAll", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectPositionAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboWorkerPosition.DataSource = HttpHelper.JsonToList<Position>(result.message);
             cboWorkerPosition.DisplayMember = "position_name";
             cboWorkerPosition.ValueMember = "position_no";
             //加载性别信息
-            cboSex.DataSource = new BaseService().SelectSexTypeAll(new SexType {delete_mk = 0 });
+            dic = new Dictionary<string, string>();
+            dic.Add("delete_mk", "0");
+            result = HttpHelper.Request("Base/SelectSexTypeAll", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSexTypeAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboSex.DataSource = HttpHelper.JsonToList<SexType>(result.message);
             cboSex.DisplayMember = "sexName";
             cboSex.ValueMember = "sexId";
             //加载学历信息
-            cboEducation.DataSource = new BaseService().SelectEducationAll(new Education { delete_mk = 0 });
+            dic = new Dictionary<string, string>();
+            dic.Add("delete_mk", "0");
+            result = HttpHelper.Request("Base/SelectEducationAll", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectEducationAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboEducation.DataSource = HttpHelper.JsonToList<Education>(result.message);
             cboEducation.DisplayMember = "education_name";
             cboEducation.ValueMember = "education_no";
+            //加载面貌信息
+            cboWorkerFace.DataSource = new List<string>() { "群众", "团员", "党员" };
+
 
             if (this.Text == "员工信息查看页")
             {
@@ -112,23 +152,40 @@ namespace SYS.FormUI
                 WorkerTel.Text = FrmChangeWorker.wk_WorkerTel;
                 cboEducation.Text = FrmChangeWorker.wk_WorkerEducation;
                 cboClub.Text = FrmChangeWorker.wk_WorkerClub;
-                var workerPicSource = new WorkerPicService().WorkerPic(new WorkerPic
+
+                dic = new Dictionary<string, string>
                 {
-                    WorkerId = WorkerNo.Text.Trim()
-                });
+                    { "WorkerId", WorkerNo.Text.Trim() }
+                };
+                result = HttpHelper.Request("WorkerPicture/WorkerPic", null, dic);
+                //if (result.statusCode != 200)
+                //{
+                //    UIMessageBox.ShowError("WorkerPic+接口服务异常，请提交Issue或尝试更新版本！");
+                //    return;
+                //}
+                var workerPicSource = HttpHelper.JsonToModel<WorkerPic>(result.message);
                 if (workerPicSource != null && !string.IsNullOrEmpty(workerPicSource.Pic))
                 {
+                    EncryptLib encryptLib = new EncryptLib();
                     picWorkerPic.Enabled = false;
                     picWorkerPic.BackgroundImage = null;
-                    picWorkerPic.LoadAsync(workerPicSource.Pic);
+                    picWorkerPic.LoadAsync(encryptLib.Decryption(HttpHelper.baseUrl) + workerPicSource.Pic);
                 }
                 this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
-                List<WorkerHistory> workerHistories = new WorkerHistoryService().SelectHistoryByWorkerId(WorkerNo.Text);
+                dic = new Dictionary<string, string>();
+                dic.Add("wid", WorkerNo.Text.Trim());
+                result = HttpHelper.Request("WorkerHistory/SelectHistoryByWorkerId", null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectHistoryByWorkerId+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                List<WorkerHistory> workerHistories = HttpHelper.JsonToList<WorkerHistory>(result.message);
                 for (int i = 0; i < workerHistories.Count; i++)
                 {
                     ucHistory = new ucHistory();
-                    ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
-                    ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
+                    ucHistory.dtpStartDate.Value = Convert.ToDateTime(workerHistories[i].StartDate);
+                    ucHistory.dtpEndDate.Value = Convert.ToDateTime(workerHistories[i].EndDate);
                     ucHistory.txtPosition.Text = workerHistories[i].Position;
                     ucHistory.txtCompany.Text = workerHistories[i].Company;
                     ucHistory.dtpStartDate.ReadOnly = true;
@@ -140,23 +197,23 @@ namespace SYS.FormUI
             }
             else if (this.Text == "添加员工")
             {
-                WorkerNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.WorkerId);
+                WorkerNo.Text = Util.GetListNewId("WK", 3, 1, "-").FirstOrDefault();
                 ucHistory = new ucHistory();
                 ucHistory.dtpStartDate.Enabled = true;
                 ucHistory.dtpEndDate.Enabled = true;
                 ucHistory.txtCompany.Enabled = true;
                 ucHistory.txtPosition.Enabled = true;
                 flpHistory.Controls.Add(ucHistory);
-                cboClub.SelectedIndex = 0;
-                cboEducation.SelectedIndex = 0;
-                cboSex.SelectedIndex = 0;
-                cboWorkerFace.SelectedIndex = 0;
-                cboWorkerPosition.SelectedIndex = 0;
+                //cboClub.SelectedIndex = 0;
+                //cboEducation.SelectedIndex = 0;
+                //cboSex.SelectedIndex = 0;
+                //cboWorkerFace.SelectedIndex = 0;
+                //cboWorkerPosition.SelectedIndex = 0;
             }
             else
             {
                 bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、民族、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
-                if (dr == true)
+                if (dr)
                 {
                     WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
                     WorkerName.Text = FrmChangeWorker.wk_WorkerName;
@@ -172,31 +229,49 @@ namespace SYS.FormUI
                     cboEducation.Text = FrmChangeWorker.wk_WorkerEducation;
                     cboClub.Text = FrmChangeWorker.wk_WorkerClub;
 
-                    var workerPicSource = new WorkerPicService().WorkerPic(new WorkerPic
+                    dic = new Dictionary<string, string>();
+                    dic.Add("WorkerId", WorkerNo.Text.Trim());
+                    result = HttpHelper.Request("WorkerPicture/WorkerPic", null, dic);
+                    if (result.statusCode != 200)
                     {
-                        WorkerId = WorkerNo.Text.Trim()
-                    });
+                        UIMessageBox.ShowError("WorkerPic+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    var workerPicSource = HttpHelper.JsonToModel<WorkerPic>(result.message);
                     if (workerPicSource!=null &&!string.IsNullOrEmpty(workerPicSource.Pic))
                     {
                         picWorkerPic.BackgroundImage = null;
                         picWorkerPic.LoadAsync(workerPicSource.Pic);
                     }
-                    this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
+                    //this.WorkerID.Validated -= new EventHandler(WorkerID_Validated);
                     btnOK.Text = "修改";
                     this.ButtonOkClick -= new EventHandler(FrmAddWorker_ButtonOkClick);
                     this.ButtonOkClick += new EventHandler(btnUpd_Click);
                     WorkerTel.ReadOnly = false;
                     txtAddress.ReadOnly = false;
-                    List<WorkerHistory> workerHistories = new WorkerHistoryService().SelectHistoryByWorkerId(WorkerNo.Text);
+                    cboWorkerFace.ReadOnly = false;
+                    dic = new Dictionary<string, string>();
+                    dic.Add("wid", WorkerNo.Text.Trim());
+                    result = HttpHelper.Request("WorkerHistory/SelectHistoryByWorkerId", null, dic);
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("SelectHistoryByWorkerId+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    List<WorkerHistory> workerHistories = HttpHelper.JsonToList<WorkerHistory>(result.message);
                     for (int i = 0; i < workerHistories.Count; i++)
                     {
                         ucHistory = new ucHistory();
-                        ucHistory.dtpStartDate.Value = workerHistories[i].StartDate;
-                        ucHistory.dtpEndDate.Value = workerHistories[i].EndDate;
+                        ucHistory.dtpStartDate.Value = Convert.ToDateTime(workerHistories[i].StartDate);
+                        ucHistory.dtpEndDate.Value = Convert.ToDateTime(workerHistories[i].EndDate);
                         ucHistory.txtPosition.Text = workerHistories[i].Position;
                         ucHistory.txtCompany.Text = workerHistories[i].Company;
                         flpHistory.Controls.Add(ucHistory);
                     }
+                }
+                else
+                {
+                    return;
                 }
             }
         }
@@ -204,23 +279,30 @@ namespace SYS.FormUI
         private void btnUpd_Click(object sender, EventArgs e)
         {
             bool dr = UIMessageBox.Show("是否确认修改员工信息？", "修改提醒", UIStyle.Green,UIMessageBoxButtons.OKCancel);
-            if (dr == true)
+            if (dr)
             {
                 #region 员工信息代码块
                 Worker worker = new Worker
                 {
                     WorkerId = WorkerNo.Text.Trim(),
                     WorkerName = WorkerName.Text.Trim(),
-                    WorkerNation = cbWorkerNation.SelectedValue == null ? "N-00001" : cbWorkerNation.SelectedValue.ToString(),
+                    WorkerNation = cbWorkerNation.SelectedValue.ToString(),
                     WorkerTel = WorkerTel.Text.Trim(),
+                    CardId = WorkerID.Text.Trim(),
                     WorkerAddress = txtAddress.Text.Trim(),
-                    WorkerFace = cboWorkerFace.Text.Trim(),
-                    WorkerEducation = cboEducation.SelectedValue.ToString() == null ? "E-00001" : cboEducation.SelectedValue.ToString(),
-                    datachg_usr = AdminInfo.Account,
-                    datachg_date = DateTime.Now
+                    WorkerFace = cboWorkerFace.SelectedValue.ToString(),
+                    WorkerEducation = cboEducation.SelectedValue.ToString(),
+                    WorkerBirthday = dtpBirthday.Value,
+                    datachg_usr = AdminInfo.Account
                 };
-                bool i = new WorkerService().UpdateWorker(worker);
-                if (i == true)
+                var result = HttpHelper.Request("Worker/UpdateWorker", HttpHelper.ModelToJson(worker));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdateWorker+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool i = result.message.ToString().Equals("true") ? true:false; /*new WorkerService().UpdateWorker(worker);*/
+                if (i)
                 {
                     UIMessageBox.ShowSuccess("信息修改成功！");
                     #region 获取添加操作日志所需的信息
@@ -249,14 +331,14 @@ namespace SYS.FormUI
         {
             //获取得到输入的身份证号码
             string identityCard = WorkerID.Text.Trim();
+
             if (string.IsNullOrEmpty(identityCard))
             {
                 //身份证号码不能为空，如果为空返回
-                UIMessageBox.ShowWarning("身份证号码不能为空！");
+                UIMessageBox.ShowError("身份证号码不能为空！");
                 if (WorkerID.CanFocus)
                 {
                     WorkerID.Focus();//设置当前输入焦点为txtCardID_identityCard
-                    
                 }
                 return;
             }
@@ -269,42 +351,34 @@ namespace SYS.FormUI
                     if (WorkerID.CanFocus)
                     {
                         WorkerID.Focus();
-                        
                     }
                     return;
                 }
             }
-            string birthday = "";
-            string sex = "";
+
             if (identityCard.Length == 18)
             {
-                var result = new IDCardUtil().SelectCardCode(identityCard);
-                var address = result.Replace(",", "").ToString();
-                birthday = identityCard.Substring(6, 4) + "-" + identityCard.Substring(10, 2) + "-" + identityCard.Substring(12, 2);
-                sex = identityCard.Substring(14, 3);
-                txtAddress.Text = address;
-                //性别代码为偶数是女性奇数为男性
-                if (int.Parse(sex) % 2 == 0)
+                var result = Util.searchCode(identityCard);
+                if (result.message.IsNullOrEmpty()) //如果没有错误消息输出，则代表成功
                 {
-                    cboSex.SelectedIndex = 0;
+                    try
+                    {
+                        cboSex.Text = result.sex;
+                        txtAddress.Text = result.address;
+                        dtpBirthday.Value = Convert.ToDateTime(result.birthday);
+                    }
+                    catch
+                    {
+                        UIMessageBox.ShowError("请正确输入证件号码！");
+                        return;
+                    }
                 }
                 else
                 {
-                    cboSex.SelectedIndex = 1;
+                    UIMessageBox.ShowError(result.message);
+                    return;
                 }
             }
-            try
-            {
-                dtpBirthday.Value = Convert.ToDateTime(birthday);
-            }
-            catch
-            {
-                UIMessageBox.ShowError("请正确输入证件号码！");
-                return;
-            }
-
-            dtpBirthday.Value = Convert.ToDateTime(birthday);
-            
             return;
         }
 
@@ -323,7 +397,13 @@ namespace SYS.FormUI
                 WorkerId = WorkerNo.Text.Trim(),
                 Pic = result.Trim(),
             };
-            new WorkerPicService().InsertWorkerPic(workerPic);
+
+            var response = HttpHelper.Request("WorkerPicture/InsertWorkerPic", HttpHelper.ModelToJson(workerPic));
+            if (response.statusCode != 200)
+            {
+                UIMessageBox.ShowError("InsertWorkerPic+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
 
 
             picWorkerPic.BackgroundImage = null;
@@ -347,13 +427,18 @@ namespace SYS.FormUI
                 WorkerTime = dtpTime.Value,
                 WorkerFace = cboWorkerFace.Text,
                 WorkerEducation = cboEducation.SelectedValue.ToString(),
-                datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
+                datains_usr = AdminInfo.Account
             };
             try
             {
                 #region 员工信息添加代码块
-                bool n = new WorkerService().AddWorker(worker);
+                var response = HttpHelper.Request("Worker/AddWorker", HttpHelper.ModelToJson(worker));
+                if (response.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("AddWorker+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool n = response.message.ToString().Equals("true")?true:false;
                 #endregion
 
                 if (ucHistory.txtCompany != null && ucHistory.txtPosition != null && ucHistory.dtpStartDate.Value != null && ucHistory.dtpEndDate.Value != null)
@@ -367,7 +452,14 @@ namespace SYS.FormUI
                         Company = ucHistory.txtCompany.Text,
                         WorkerId = WorkerNo.Text.Trim()
                     };
-                    bool j = new WorkerHistoryService().AddHistoryByWorkerId(workerHistory);
+
+                    response = HttpHelper.Request("WorkerHistory/AddHistoryByWorkerId", HttpHelper.ModelToJson(workerHistory));
+                    if (response.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("AddHistoryByWorkerId+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    bool j = response.message.ToString().Equals("true") ? true : false;
                     #endregion
 
                     #region 判断履历和信息代码块

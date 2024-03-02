@@ -21,10 +21,11 @@
  *SOFTWARE.
  *
  */
+using jvncorelib_fr.EntityLib;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,9 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmChangeAdminPwd_Load(object sender, EventArgs e)
         {
 
@@ -52,9 +56,15 @@ namespace SYS.FormUI
 
         private void btnUpdPwd_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtNewPwd.Text.Trim() };
-            bool tf = new AdminService().UpdateNewPwdByOldPwd(admin);
-            if (tf == false)
+            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtNewPwd.Text.Trim(),datachg_usr = AdminInfo.Account };
+            result = HttpHelper.Request("Admin​/UpdateNewPwdByOldPwd", HttpHelper.ModelToJson(admin));
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("UpdateNewPwdByOldPwd+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            bool tf = result.message.ToString().Equals("true");
+            if (!tf)
             {
                 UIMessageBox.Show("服务器繁忙，修改失败！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                 return;
@@ -78,8 +88,14 @@ namespace SYS.FormUI
         {
             //校验旧密码是否正确
             Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtOldPwd.Text.Trim() };
-            var result = new AdminService().SelectMangerByPass(admin);
-            if (result != null)
+            result = HttpHelper.Request("Admin​/SelectMangerByPass", HttpHelper.ModelToJson(admin));
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectMangerByPass+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var source = HttpHelper.JsonToModel<Admin>(result.message);
+            if (!source.IsNullOrEmpty())
             {
                 lgCheckOldPwd.Visible = true;
                 lgCheckOldPwd.OnColor = Color.Green;

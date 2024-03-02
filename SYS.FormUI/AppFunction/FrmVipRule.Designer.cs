@@ -54,6 +54,7 @@ namespace SYS.FormUI
             this.flpVipType.Size = new System.Drawing.Size(489, 578);
             this.flpVipType.TabIndex = 0;
             this.flpVipType.Text = "uiFlowLayoutPanel1";
+            this.flpVipType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOK
             // 
@@ -86,6 +87,7 @@ namespace SYS.FormUI
             this.txtRuleId.Style = Sunny.UI.UIStyle.Custom;
             this.txtRuleId.StyleCustomMode = true;
             this.txtRuleId.TabIndex = 184;
+            this.txtRuleId.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtRuleName
             // 
@@ -104,6 +106,7 @@ namespace SYS.FormUI
             this.txtRuleName.Style = Sunny.UI.UIStyle.Custom;
             this.txtRuleName.StyleCustomMode = true;
             this.txtRuleName.TabIndex = 185;
+            this.txtRuleName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -137,6 +140,7 @@ namespace SYS.FormUI
             // 
             // cboCustoType
             // 
+            this.cboCustoType.DataSource = null;
             this.cboCustoType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboCustoType.FillColor = System.Drawing.Color.White;
             this.cboCustoType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -144,7 +148,7 @@ namespace SYS.FormUI
             this.cboCustoType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCustoType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboCustoType.Name = "cboCustoType";
-            this.cboCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboCustoType.Radius = 20;
             this.cboCustoType.Size = new System.Drawing.Size(250, 35);
             this.cboCustoType.TabIndex = 188;
@@ -170,7 +174,9 @@ namespace SYS.FormUI
             this.dudSpendAmount.Location = new System.Drawing.Point(671, 157);
             this.dudSpendAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dudSpendAmount.Maximum = 999999999999999D;
+            this.dudSpendAmount.MaximumEnabled = true;
             this.dudSpendAmount.Minimum = 0D;
+            this.dudSpendAmount.MinimumEnabled = true;
             this.dudSpendAmount.MinimumSize = new System.Drawing.Size(100, 0);
             this.dudSpendAmount.Name = "dudSpendAmount";
             this.dudSpendAmount.Radius = 20;
@@ -178,6 +184,7 @@ namespace SYS.FormUI
             this.dudSpendAmount.Step = 5000D;
             this.dudSpendAmount.TabIndex = 189;
             this.dudSpendAmount.Text = null;
+            this.dudSpendAmount.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.dudSpendAmount.Value = 0D;
             // 
             // btnReset
@@ -214,6 +221,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmVipRule";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "会员等级规则";
             this.Load += new System.EventHandler(this.FrmVipRule_Load);
             this.ResumeLayout(false);

@@ -51,6 +51,7 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdWti = new Sunny.UI.UIButton();
             this.pnlWtiInfo = new Sunny.UI.UIPanel();
+            this.btnClose = new Sunny.UI.UIButton();
             this.txtCustoNo = new Sunny.UI.UITextBox();
             this.dtpEndDate = new Sunny.UI.UIDatePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.uiToolTip1 = new Sunny.UI.UIToolTip(this.components);
-            this.btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWti)).BeginInit();
             this.pnlWtiInfo.SuspendLayout();
             this.SuspendLayout();
@@ -283,6 +283,21 @@
             this.pnlWtiInfo.Text = "水电信息查看面板v1.0";
             this.pnlWtiInfo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.pnlWtiInfo.Visible = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Enabled = false;
+            this.btnClose.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnClose.Location = new System.Drawing.Point(640, 416);
+            this.btnClose.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Radius = 20;
+            this.btnClose.Size = new System.Drawing.Size(109, 28);
+            this.btnClose.Style = Sunny.UI.UIStyle.Custom;
+            this.btnClose.TabIndex = 136;
+            this.btnClose.Text = "关    闭";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtCustoNo
             // 
@@ -502,21 +517,6 @@
             this.uiToolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.uiToolTip1.OwnerDraw = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Enabled = false;
-            this.btnClose.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnClose.Location = new System.Drawing.Point(640, 416);
-            this.btnClose.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Radius = 20;
-            this.btnClose.Size = new System.Drawing.Size(109, 28);
-            this.btnClose.Style = Sunny.UI.UIStyle.Custom;
-            this.btnClose.TabIndex = 136;
-            this.btnClose.Text = "关    闭";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FrmWtiInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -533,6 +533,7 @@
             this.Name = "FrmWtiInfo";
             this.ShowIcon = true;
             this.ShowInTaskbar = false;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "水电信息";
             this.Load += new System.EventHandler(this.WtiInfo_Load);

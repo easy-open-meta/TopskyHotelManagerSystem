@@ -21,10 +21,11 @@
  *SOFTWARE.
  *
  */
+
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.AppFunction;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,9 @@ namespace SYS.FormUI
         {
             this.Text = string.Empty;
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
@@ -293,10 +297,16 @@ namespace SYS.FormUI
         public void LoadModule()
         {
             Admin admin = new Admin() { AdminAccount = AdminInfo.Account };
-            List <ModuleZero> moduleZeros  = new AdminModuleZeroService().GetAllModuleByAdmin(admin);
+            result = HttpHelper.Request("Module/GetAllModuleByAdmin", HttpHelper.ModelToJson(admin));
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("GetAllModuleByAdmin+接口服务异常，请提交issue");
+                return;
+            }
+            List<ModuleZero> moduleZeros = HttpHelper.JsonToList<ModuleZero>(result.message);
             for (int i = 0; i <= Aside.Nodes.Count; i++)
             {
-                var moduleZero = moduleZeros.FirstOrDefault(a => a.module_name.Split('|','|').FirstOrDefault().Equals(Aside.Nodes[i].Name.ToString()));
+                var moduleZero = moduleZeros.FirstOrDefault(a => a.module_name.Split('|', '|').FirstOrDefault().Equals(Aside.Nodes[i].Name.ToString()));
                 if (moduleZero == null)
                 {
                     Aside.Nodes[i].Remove();
@@ -307,8 +317,6 @@ namespace SYS.FormUI
                     break;
                 }
             }
-
-            
         }
 
         private void btnLocked_MouseHover(object sender, EventArgs e)

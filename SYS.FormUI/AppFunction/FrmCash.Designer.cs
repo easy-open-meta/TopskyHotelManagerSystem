@@ -35,6 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCash));
             this.dgvCashList = new Sunny.UI.UIDataGridView();
+            this.clAssetsNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clStorageTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clAssetsManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboCashPerson = new Sunny.UI.UIComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new Sunny.UI.UIButton();
@@ -50,13 +57,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtCashNo = new Sunny.UI.UITextBox();
             this.dtpDate = new Sunny.UI.UIDatePicker();
-            this.clAssetsNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clStorageTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clAssetsManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +120,48 @@
             this.dgvCashList.ShowGridLine = true;
             this.dgvCashList.Size = new System.Drawing.Size(809, 582);
             this.dgvCashList.TabIndex = 2;
+            // 
+            // clAssetsNo
+            // 
+            this.clAssetsNo.DataPropertyName = "CashNo";
+            this.clAssetsNo.HeaderText = "资产编号";
+            this.clAssetsNo.Name = "clAssetsNo";
+            // 
+            // clAssetsName
+            // 
+            this.clAssetsName.DataPropertyName = "CashName";
+            this.clAssetsName.HeaderText = "资产名称";
+            this.clAssetsName.Name = "clAssetsName";
+            // 
+            // clAssetsValue
+            // 
+            this.clAssetsValue.DataPropertyName = "CashPriceStr";
+            this.clAssetsValue.HeaderText = "资产总值";
+            this.clAssetsValue.Name = "clAssetsValue";
+            // 
+            // clDepartment
+            // 
+            this.clDepartment.DataPropertyName = "DeptName";
+            this.clDepartment.HeaderText = "所属部门";
+            this.clDepartment.Name = "clDepartment";
+            // 
+            // clStorageTime
+            // 
+            this.clStorageTime.DataPropertyName = "CashTime";
+            this.clStorageTime.HeaderText = "入库时间";
+            this.clStorageTime.Name = "clStorageTime";
+            // 
+            // clAssetsSource
+            // 
+            this.clAssetsSource.DataPropertyName = "CashSource";
+            this.clAssetsSource.HeaderText = "资产来源";
+            this.clAssetsSource.Name = "clAssetsSource";
+            // 
+            // clAssetsManager
+            // 
+            this.clAssetsManager.DataPropertyName = "PersonName";
+            this.clAssetsManager.HeaderText = "资产经办人";
+            this.clAssetsManager.Name = "clAssetsManager";
             // 
             // cboCashPerson
             // 
@@ -335,48 +377,6 @@
             this.dtpDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.dtpDate.Value = new System.DateTime(2021, 1, 31, 14, 30, 7, 297);
             // 
-            // clAssetsNo
-            // 
-            this.clAssetsNo.DataPropertyName = "CashNo";
-            this.clAssetsNo.HeaderText = "资产编号";
-            this.clAssetsNo.Name = "clAssetsNo";
-            // 
-            // clAssetsName
-            // 
-            this.clAssetsName.DataPropertyName = "CashName";
-            this.clAssetsName.HeaderText = "资产名称";
-            this.clAssetsName.Name = "clAssetsName";
-            // 
-            // clAssetsValue
-            // 
-            this.clAssetsValue.DataPropertyName = "CashPriceStr";
-            this.clAssetsValue.HeaderText = "资产总值";
-            this.clAssetsValue.Name = "clAssetsValue";
-            // 
-            // clDepartment
-            // 
-            this.clDepartment.DataPropertyName = "DeptName";
-            this.clDepartment.HeaderText = "所属部门";
-            this.clDepartment.Name = "clDepartment";
-            // 
-            // clStorageTime
-            // 
-            this.clStorageTime.DataPropertyName = "CashTime";
-            this.clStorageTime.HeaderText = "入库时间";
-            this.clStorageTime.Name = "clStorageTime";
-            // 
-            // clAssetsSource
-            // 
-            this.clAssetsSource.DataPropertyName = "CashSource";
-            this.clAssetsSource.HeaderText = "资产来源";
-            this.clAssetsSource.Name = "clAssetsSource";
-            // 
-            // clAssetsManager
-            // 
-            this.clAssetsManager.DataPropertyName = "PersonName";
-            this.clAssetsManager.HeaderText = "资产经办人";
-            this.clAssetsManager.Name = "clAssetsManager";
-            // 
             // FrmCash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -406,6 +406,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCash";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "内部财务账单";
             this.Load += new System.EventHandler(this.FrmCash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashList)).EndInit();

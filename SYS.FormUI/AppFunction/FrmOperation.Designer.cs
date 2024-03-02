@@ -106,6 +106,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOperationlog.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOperationlog.RowHeadersVisible = false;
+            this.dgvOperationlog.RowHeadersWidth = 72;
             this.dgvOperationlog.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -113,13 +114,14 @@
             this.dgvOperationlog.SelectedIndex = -1;
             this.dgvOperationlog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOperationlog.ShowGridLine = true;
-            this.dgvOperationlog.Size = new System.Drawing.Size(998, 582);
+            this.dgvOperationlog.Size = new System.Drawing.Size(998, 522);
             this.dgvOperationlog.TabIndex = 1;
             // 
             // clOperationTime
             // 
             this.clOperationTime.DataPropertyName = "OperationTime";
             this.clOperationTime.HeaderText = "操作时间";
+            this.clOperationTime.MinimumWidth = 9;
             this.clOperationTime.Name = "clOperationTime";
             this.clOperationTime.ReadOnly = true;
             // 
@@ -127,6 +129,7 @@
             // 
             this.clSoftwareVersion.DataPropertyName = "SoftwareVersion";
             this.clSoftwareVersion.HeaderText = "软件版本";
+            this.clSoftwareVersion.MinimumWidth = 9;
             this.clSoftwareVersion.Name = "clSoftwareVersion";
             this.clSoftwareVersion.ReadOnly = true;
             // 
@@ -134,6 +137,7 @@
             // 
             this.clOperationlog.DataPropertyName = "LogContent";
             this.clOperationlog.HeaderText = "操作日志";
+            this.clOperationlog.MinimumWidth = 9;
             this.clOperationlog.Name = "clOperationlog";
             this.clOperationlog.ReadOnly = true;
             // 
@@ -141,6 +145,7 @@
             // 
             this.clOperationAccount.DataPropertyName = "OperationAccount";
             this.clOperationAccount.HeaderText = "操作人";
+            this.clOperationAccount.MinimumWidth = 9;
             this.clOperationAccount.Name = "clOperationAccount";
             this.clOperationAccount.ReadOnly = true;
             // 
@@ -148,6 +153,7 @@
             // 
             this.Column1.DataPropertyName = "delete_mk";
             this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 9;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
@@ -156,6 +162,7 @@
             // 
             this.Column2.DataPropertyName = "datains_usr";
             this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 9;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Visible = false;
@@ -164,6 +171,7 @@
             // 
             this.Column3.DataPropertyName = "datains_date";
             this.Column3.HeaderText = "Column3";
+            this.Column3.MinimumWidth = 9;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Visible = false;
@@ -172,6 +180,7 @@
             // 
             this.Column4.DataPropertyName = "datachg_usr";
             this.Column4.HeaderText = "Column4";
+            this.Column4.MinimumWidth = 9;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Visible = false;
@@ -180,6 +189,7 @@
             // 
             this.Column5.DataPropertyName = "datachg_date";
             this.Column5.HeaderText = "Column5";
+            this.Column5.MinimumWidth = 9;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
@@ -188,6 +198,7 @@
             // 
             this.clOperationLevel.DataPropertyName = "OperationLevelNm";
             this.clOperationLevel.HeaderText = "日志级别";
+            this.clOperationLevel.MinimumWidth = 9;
             this.clOperationLevel.Name = "clOperationLevel";
             this.clOperationLevel.ReadOnly = true;
             // 
@@ -195,6 +206,7 @@
             // 
             this.Column6.DataPropertyName = "OperationLevel";
             this.Column6.HeaderText = "Column6";
+            this.Column6.MinimumWidth = 9;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Visible = false;
@@ -212,6 +224,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmOperation";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "员工操作日志";
             this.Load += new System.EventHandler(this.FrmOperation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperationlog)).EndInit();

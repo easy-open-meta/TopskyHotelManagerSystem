@@ -4,10 +4,13 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
-using SYS.Application;
+
 using Sunny.UI;
+using SYS.Common;
+using System.Collections.Generic;
+using SqlSugar;
 
 namespace SYS.FormUI
 {
@@ -188,7 +191,16 @@ namespace SYS.FormUI
         #region 当右键菜单打开时事件方法
         private void cmsMain_Opening(object sender, CancelEventArgs e)
         {
-            r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
+            Dictionary<string, string> room = new Dictionary<string, string>();
+            room.Add("no", lblRoomNo.Text);
+            var result = HttpHelper.Request("Room/SelectRoomByRoomNo", null,room);
+
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.Show("接口服务异常！", "来自小T提示", UIStyle.Red);
+                return;
+            }
+            r = HttpHelper.JsonToModel<Room>(result.message);
             if (lblCustoNo.Text != "")
             {
                 tsmiCheckIn.Enabled = false;
@@ -274,10 +286,21 @@ namespace SYS.FormUI
         #region 双击进入入住/退房事件方法
         private void ucRoomList_DoubleClick(object sender, EventArgs e)
         {
-
-            if (lblCustoNo.Text == "")
+            List<Custo> custos = new List<Custo>();
+            if (!lblCustoNo.Text.IsNullOrEmpty())
             {
-                Room r = new RoomService().SelectRoomByRoomNo(lblRoomNo.Text);
+                Dictionary<string, string> dic = new Dictionary<string, string>()
+                {
+                    { "CustoNo",lblCustoNo.Text.Trim() }
+                } ;
+                var result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo", null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectCardInfoByCustoNo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+
+                Room r = HttpHelper.JsonToModel<Room>(result.message);
                 if (r.RoomStateId == 0)
                 {
                     rm_RoomNo = lblRoomNo.Text;
@@ -311,7 +334,18 @@ namespace SYS.FormUI
         #region 修改房间状态
         private void tsmiChangeState_Click(object sender, EventArgs e)
         {
-            rm_RoomStateId = Convert.ToInt32(new RoomService().SelectRoomStateIdByRoomNo(lblRoomNo.Text));
+            Dictionary<string, string> room = new Dictionary<string, string>
+            {
+                { "roomno", lblRoomNo.Text }
+            };
+            var result = HttpHelper.Request("Room/SelectRoomStateIdByRoomNo", null, room);
+
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.Show("SelectRoomStateIdByRoomNo+接口服务异常！", "来自小T提示", UIStyle.Red);
+                return;
+            }
+            rm_RoomStateId = Convert.ToInt32(result.message);
             rm_RoomNo = lblRoomNo.Text;
             FrmRoomStateManager frsm = new FrmRoomStateManager();
             frsm.ShowDialog();

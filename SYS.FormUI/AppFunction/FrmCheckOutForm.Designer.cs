@@ -1070,7 +1070,8 @@
             this.MinimizeBox = false;
             this.Name = "FrmCheckOutForm";
             this.ShowIcon = true;
-            this.Text = "退房结算Check Out";
+            this.ShowTitleIcon = true;
+            this.Text = "退房结算";
             this.Load += new System.EventHandler(this.FrmCheckOutForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmCheckOutForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmCheckOutForm_MouseMove);

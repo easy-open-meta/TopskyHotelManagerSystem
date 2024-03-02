@@ -49,13 +49,14 @@
             // 
             // cboRoomList
             // 
+            this.cboRoomList.DataSource = null;
             this.cboRoomList.FillColor = System.Drawing.Color.White;
             this.cboRoomList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.cboRoomList.Location = new System.Drawing.Point(208, 55);
             this.cboRoomList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboRoomList.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboRoomList.Name = "cboRoomList";
-            this.cboRoomList.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboRoomList.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboRoomList.Radius = 15;
             this.cboRoomList.Size = new System.Drawing.Size(150, 29);
             this.cboRoomList.Style = Sunny.UI.UIStyle.Custom;
@@ -115,6 +116,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmChangeRoom";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "转换房间";
             this.Load += new System.EventHandler(this.FrmChangeRoom_Load);

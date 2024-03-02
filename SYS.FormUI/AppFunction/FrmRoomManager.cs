@@ -24,10 +24,13 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
-using SYS.Application;
+
 using System.Drawing;
+using SYS.Common;
+using Sunny.UI;
+using static SYS.FormUI.FrmRoomManager;
 
 namespace SYS.FormUI
 {
@@ -52,25 +55,18 @@ namespace SYS.FormUI
             InitializeComponent();
             ReadInfo = LoadRoomInfo;
             Reload = LoadData;
-
-
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         List<Room> romsty = null;
         ucRoomList romt = null;
         #region 房间加载事件方法
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
-            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
-            lblRoomNo.Text = ucRoomList.co_RoomNo;
-            lblCustoNo.Text = ucRoomList.co_CustoNo;
-            lblRoomPosition.Text = ucRoomList.co_RoomPosition;
-            lblCheckTime.Text = ucRoomList.co_CheckTime == null ? "" : Convert.ToDateTime(ucRoomList.co_CheckTime).ToString("yyyy-MM-dd");
-            lblRoomState.Text = ucRoomList.co_RoomState;
+            LoadRoomInfo();
+            
             //foreach (Control item in this.pnlRoomInfo.Controls)
             //{
             //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
@@ -84,12 +80,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        private void tmrGetData_Tick(object sender, EventArgs e)
-        {
-
-           
-        }
-
         private void btnAll_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -102,11 +92,41 @@ namespace SYS.FormUI
 
         public void LoadRoomInfo() 
         {
-            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
+            result = HttpHelper.Request("Room/SelectCanUseRoomAllByRoomState");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCanUseRoomAllByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            lblCanUse.Text = result.message.ToString();
+            result = HttpHelper.Request("Room/SelectNotUseRoomAllByRoomState");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectNotUseRoomAllByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            lblCheck.Text = result.message.ToString();
+            result = HttpHelper.Request("Room/SelectNotClearRoomAllByRoomState");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectNotClearRoomAllByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            lblNotClear.Text = result.message.ToString();
+            result = HttpHelper.Request("Room/SelectFixingRoomAllByRoomState");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectFixingRoomAllByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            lblFix.Text = result.message.ToString();
+            result = HttpHelper.Request("Room/SelectReseredRoomAllByRoomState");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectReseredRoomAllByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            lblReser.Text = result.message.ToString();
             lblRoomNo.Text = ucRoomList.co_RoomNo;
             lblCustoNo.Text = ucRoomList.co_CustoNo;
             lblRoomPosition.Text = ucRoomList.co_RoomPosition;
@@ -119,11 +139,27 @@ namespace SYS.FormUI
             flpRoom.Controls.Clear();
             if (string.IsNullOrEmpty(typeName))
             {
-                romsty = new RoomService().SelectRoomAll();
+                result = HttpHelper.Request("Room/SelectRoomAll");
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectRoomAll+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                romsty = HttpHelper.JsonToList<Room>(result.message);
             }
             else
             {
-                romsty = new RoomService().SelectRoomByTypeName(typeName);
+                dic =new Dictionary<string, string>()
+                {
+                    { "TypeName",typeName}
+                };
+                result = HttpHelper.Request("Room/SelectRoomByTypeName",null,dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectRoomByTypeName+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                romsty = HttpHelper.JsonToList<Room>(result.message);
             }
             for (int i = 0; i < romsty.Count; i++)
             {
@@ -140,16 +176,11 @@ namespace SYS.FormUI
             lblRoomState.Text = "";
             lblCustoNo.Text = "";
             lblCheckTime.Text = "";
-            lblCanUse.Text = new RoomService().SelectCanUseRoomAllByRoomState().ToString();
-            lblCheck.Text = new RoomService().SelectNotUseRoomAllByRoomState().ToString();
-            lblNotClear.Text = new RoomService().SelectNotClearRoomAllByRoomState().ToString();
-            lblFix.Text = new RoomService().SelectFixingRoomAllByRoomState().ToString();
-            lblReser.Text = new RoomService().SelectReseredRoomAllByRoomState().ToString();
+            LoadRoomInfo();
         }
 
         private void btnBS_Click(object sender, EventArgs e)
         {
-
             LoadData(btnBS.Text);
         }
 
@@ -178,11 +209,20 @@ namespace SYS.FormUI
             LoadData();
         }
 
-
         private void LoadRoomByState(int stateid)
         {
             flpRoom.Controls.Clear();
-            romsty = new RoomService().SelectRoomByRoomState(stateid);
+            dic = new Dictionary<string, string>()
+            {
+                { "stateid",stateid.ToString()}
+            };
+            result = HttpHelper.Request("Room/SelectRoomByRoomState", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectRoomByRoomState+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            romsty = HttpHelper.JsonToList<Room>(result.message);
             for (int i = 0; i < romsty.Count; i++)
             {
                 romt = new ucRoomList();

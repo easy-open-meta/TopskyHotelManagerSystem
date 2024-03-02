@@ -95,6 +95,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmChart";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "酒店盈利情况(仅含已结算)";
             this.Load += new System.EventHandler(this.FrmChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

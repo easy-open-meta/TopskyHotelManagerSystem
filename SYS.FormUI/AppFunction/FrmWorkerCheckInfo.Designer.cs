@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWorkerCheckInfo));
             this.lblWorkerInfo = new System.Windows.Forms.Label();
             this.DgvCheckInfoList = new Sunny.UI.UIDataGridView();
@@ -69,7 +70,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvCheckInfoList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -100,9 +101,18 @@
             this.DgvCheckInfoList.Location = new System.Drawing.Point(3, 88);
             this.DgvCheckInfoList.Name = "DgvCheckInfoList";
             this.DgvCheckInfoList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCheckInfoList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvCheckInfoList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DgvCheckInfoList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvCheckInfoList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.DgvCheckInfoList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvCheckInfoList.RowTemplate.Height = 29;
             this.DgvCheckInfoList.SelectedIndex = -1;
             this.DgvCheckInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -200,6 +210,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmWorkerCheckInfo";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "员工打卡考勤记录查看页";
             this.Load += new System.EventHandler(this.FrmWorkerCheckInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCheckInfoList)).EndInit();

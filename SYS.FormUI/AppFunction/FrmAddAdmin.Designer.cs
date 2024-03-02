@@ -350,6 +350,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmAddAdmin";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "添加管理员";
             this.Load += new System.EventHandler(this.FrmAddAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminList)).EndInit();

@@ -22,8 +22,11 @@
  *
  */
 using Sunny.UI;
-using SYS.Application;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -36,13 +39,24 @@ namespace SYS.FormUI
 
         }
 
-
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         private void FrmWorkerCheckInfo_Load(object sender, EventArgs e)
         {
-            lblWorkerInfo.Text = "以下为员工编号：" + FrmChangeWorker.wk_WorkerNo + "员工姓名：" + FrmChangeWorker.wk_WorkerName + "的所有打卡考勤记录:";
+            lblWorkerInfo.Text = "以下为员工：" + FrmChangeWorker.wk_WorkerNo + "-员工姓名：" + FrmChangeWorker.wk_WorkerName + "的所有打卡考勤记录:";
+            dic= new Dictionary<string, string>()
+            {
+                { "wid",FrmChangeWorker.wk_WorkerNo}
+            };
+            result = HttpHelper.Request("WorkerCheck/SelectCheckInfoByWorkerNo", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectCheckInfoByWorkerNo+接口服务异常，请提交issue");
+                return;
+            }
             DgvCheckInfoList.AutoGenerateColumns = false;
-            DgvCheckInfoList.DataSource = new WorkerCheckService().SelectCheckInfoByWorkerNo(FrmChangeWorker.wk_WorkerNo);
+            DgvCheckInfoList.DataSource = HttpHelper.JsonToList<WorkerCheck>(result.message);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

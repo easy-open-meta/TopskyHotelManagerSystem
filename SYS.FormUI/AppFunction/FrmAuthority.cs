@@ -1,6 +1,8 @@
-﻿using Sunny.UI;
-using SYS.Application;
-using SYS.Core;
+﻿using jvncorelib_fr.EntityLib;
+using Sunny.UI;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,9 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmAuthority_Load(object sender, EventArgs e)
         {
             
@@ -27,9 +32,18 @@ namespace SYS.FormUI
 
         public void LoadAdminInfo()
         {
-            Admin admin = new Admin() { AdminAccount = txtAccount.Text.Trim() };
-            var adminInfo = new AdminService().GetAdminInfoByAdminAccount(admin);
-            if (adminInfo == null)
+            dic =  new Dictionary<string, string>()
+            {
+                { "AdminAccount",txtAccount.Text.Trim() }
+            }; 
+            result = HttpHelper.Request("Admin/GetAdminInfoByAdminAccount", null,dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAdminInfoByAdminAccount+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var adminInfo = HttpHelper.JsonToModel<Admin>(result.message);
+            if (adminInfo.IsNullOrEmpty())
             {
                 UIMessageTip.ShowError("找不到对应的管理员，请检查是否输入有误！");
                 cbAccountType.Text = "";
@@ -45,13 +59,29 @@ namespace SYS.FormUI
         public void LoadAllMyModule()
         {
             tfModuleZero.ItemsLeft.Clear();
-            Admin admin = new Admin() { AdminAccount = txtAccount.Text.Trim() };
-            var listMyModule = new AdminModuleZeroService().GetAllModuleByAdmin(admin);
+            var admin = new Admin
+            {
+                AdminAccount = txtAccount.Text.Trim(),
+            };
+            
+            result = HttpHelper.Request("Module/GetAllModuleByAdmin", HttpHelper.ModelToJson(admin));
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllModuleByAdmin+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var listMyModule = HttpHelper.JsonToList<Module>(result.message);
             listMyModule.ForEach(myModule =>
             {
                 tfModuleZero.ItemsRight.Add(myModule.module_name);
             });
-            var listModules = new AdminModuleZeroService().GetAllModule();
+            result = HttpHelper.Request("Module/GetAllModule");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllModule+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var listModules = HttpHelper.JsonToList<Module>(result.message);
             listModules.ForEach(module =>
             {
                 var myModule = listMyModule.FirstOrDefault(a => a.module_name.Equals(module.module_name));
@@ -76,27 +106,48 @@ namespace SYS.FormUI
                 UIMessageTip.ShowError("账号不能为空，请检查！");
                 return;
             }
-            Admin admin = new Admin() { AdminAccount = txtAccount.Text.Trim() };
-            var listExsitModule = new AdminModuleZeroService().GetAllModuleByAdmin(admin);
+            dic = new Dictionary<string, string>()
+            {
+                { "AdminAccount",txtAccount.Text.Trim() }
+            };
+            result = HttpHelper.Request("Module/GetAllModuleByAdmin", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllModuleByAdmin+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var listExsitModule = HttpHelper.JsonToList<Module>(result.message);
             var listAddModule = new List<ModuleZero>();
             if (listExsitModule != null)
             {
                 ModuleZero moduleZero = new ModuleZero() { admin_account = txtAccount.Text.Trim() };
-                new AdminModuleZeroService().DelModuleZeroList(moduleZero);
+                result = HttpHelper.Request("Module/DelModuleZeroList", HttpHelper.ModelToJson(moduleZero));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("DelModuleZeroList+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
                 for (int i = 0; i < tfModuleZero.ItemsRight.Count; i++)
                 {
                     var newModule = tfModuleZero.ItemsRight[i].ToString();
                     listAddModule.Add(new ModuleZero() { admin_account = txtAccount.Text.Trim(), module_name = newModule, module_enable = 1 });
                 }
             }
-
-            bool result = new AdminModuleZeroService().AddModuleZeroList(listAddModule);
-            if (result == true)
+            if (!listAddModule.IsNullOrEmpty())
             {
-                UIMessageBox.ShowSuccess("批量授权成功！");
-                return;
+                result = HttpHelper.Request("Module/AddModuleZeroList", HttpHelper.ModelToJson(listAddModule));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("AddModuleZeroList+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (tf)
+                {
+                    UIMessageBox.ShowSuccess("批量授权成功！");
+                    return;
+                }
             }
-
         }
     }
 }

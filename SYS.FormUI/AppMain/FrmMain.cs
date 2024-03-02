@@ -28,14 +28,13 @@ using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
 using Sunny.UI;
 using System.Management;
-using SYS.Application;
+
 using SYS.Common;
 using SYS.FormUI.AppUserControls;
-using jvncorelib_fr.EntityLib;
 
 namespace SYS.FormUI
 {
@@ -74,6 +73,7 @@ namespace SYS.FormUI
 
         public static StarUseList CloseMy;
 
+        ResponseMsg result = new ResponseMsg();
 
         public void StopUseExit()
         {
@@ -125,31 +125,6 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 定时器：获取网络时间
-        private void tmrDate_Tick(object sender, EventArgs e)
-        {
-            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-
-            DateTime tmCur = DateTime.Now;
-
-            if (tmCur.Hour < 8 || tmCur.Hour > 18)
-            {//晚上
-                label3.Text = "(*´▽｀)ノノ晚上好," + LoginInfo.WorkerName;
-                btnHello.BackgroundImage = Resources.月亮;
-            }
-            else if (tmCur.Hour > 8 && tmCur.Hour < 12)
-            {//上午
-                label3.Text = "上午好," + LoginInfo.WorkerName;
-                btnHello.BackgroundImage = Resources.早上;
-            }
-            else
-            {//下午
-                label3.Text = "下午好," + LoginInfo.WorkerName;
-                btnHello.BackgroundImage = Resources.咖啡;
-            }
-        }
-        #endregion
-
         #region 获取网络时间
         public static string GetNetDateTime()
         {
@@ -187,14 +162,54 @@ namespace SYS.FormUI
         }
         #endregion
 
-        #region 从数据库读取文字滚动的内容
-        List<Fonts> fonts = new FontsService().SelectFontAll();
-        int fontn = 0;
+        #region 定时器：获取网络时间
+        private void tmrDate_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+
+            DateTime tmCur = DateTime.Now;
+
+            if (tmCur.Hour < 8 || tmCur.Hour > 18)
+            {//晚上
+                label3.Text = "(*´▽｀)ノノ晚上好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.月亮;
+            }
+            else if (tmCur.Hour > 8 && tmCur.Hour < 12)
+            {//上午
+                label3.Text = "上午好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.早上;
+            }
+            else
+            {//下午
+                label3.Text = "下午好," + LoginInfo.WorkerName;
+                btnHello.BackgroundImage = Resources.咖啡;
+            }
+        }
         #endregion
+
+        List<Fonts> fonts = null;
+        int fontn = 0;
+        private void LoadFonts()
+        {
+            #region 从数据库读取文字滚动的内容
+            result = HttpHelper.Request("Fonts/SelectFontAll");
+            if (result.statusCode != 200)
+            {
+                fonts = null;
+            }
+
+            fonts = HttpHelper.JsonToList<Fonts>(result.message);
+            #endregion
+        }
 
         #region 定时器：文字滚动间隔
         private void tmrFont_Tick(object sender, EventArgs e)
         {
+            if (fonts.IsNullOrEmpty())
+            {
+                lblScroll.Text = "接口服务异常";
+                return;
+            }
             fontn++;
             if (fontn == fonts.Count)
             {
@@ -280,9 +295,16 @@ namespace SYS.FormUI
         /// </summary>
         private void LoadNavBar()
         {
+            var listSource = new List<NavBar>();
             #region 菜单导航代码块
+            result = HttpHelper.Request("NavBar/NavBarList");
+            if (result.statusCode != 200)
+            {
+                listSource = null;
+                return;
+            }
             flpNav.Controls.Clear();
-            var listSource = new NavBarService().NavBarList();
+            listSource = HttpHelper.JsonToList<NavBar>(result.message);
             ucNavBar ucNavBar = null;
             if (!listSource.IsNullOrEmpty())
             {
@@ -326,6 +348,8 @@ namespace SYS.FormUI
 
             LoadNavBar();
 
+            LoadFonts();
+
             lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
             DateTime tmCur = DateTime.Now;
@@ -346,8 +370,16 @@ namespace SYS.FormUI
                 btnHello.BackgroundImage = Resources.咖啡;
             }
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
-            
-            int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+
+            Dictionary<string, string> user = new Dictionary<string, string>();
+            user.Add("wkn", LoginInfo.WorkerNo);
+            result = HttpHelper.Request("WorkerCheck/SelectToDayCheckInfoByWorkerNo", null, user);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("打卡接口异常，请提交issue");
+                return;
+            }
+            int n = Convert.ToInt32(result.message);
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
@@ -361,10 +393,6 @@ namespace SYS.FormUI
             frm1.TopLevel = false;
             pnlMID.Controls.Add(frm1);
             frm1.Show();
-            
-
-
-
         }
         #endregion
 
@@ -382,9 +410,17 @@ namespace SYS.FormUI
         #region 检查软件更新版本事件方法
         private void tsmiCheckUpdate_Click(object sender, EventArgs e)
         {
-            var tempUrl = new BaseService().GetBase();
+            result = HttpHelper.Request("Base/GetBase");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("接口服务异常，请重试");
+                return;
+            }
+
+            Base _base = HttpHelper.JsonToModel<Base>(result.message);
+
             //调用系统默认的浏览器
-            System.Diagnostics.Process.Start(tempUrl.url_addr);
+            System.Diagnostics.Process.Start(_base.url_addr);
         }
         #endregion
 
@@ -426,21 +462,35 @@ namespace SYS.FormUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int n = Convert.ToInt32(new WorkerCheckService().SelectToDayCheckInfoByWorkerNo(LoginInfo.WorkerNo));
+            Dictionary<string, string> user = new Dictionary<string, string>();
+            user.Add("wkn", LoginInfo.WorkerNo);
+            result = HttpHelper.Request("WorkerCheck/SelectToDayCheckInfoByWorkerNo", null, user);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("打卡接口异常，请提交issue");
+                return;
+            }
+            int n = Convert.ToInt32(result.message);
             if (n > 0)
             {
                 linkLabel1.Text = "已打卡";
                 linkLabel1.ForeColor = Color.Green;
                 linkLabel1.LinkColor = Color.Green;
                 pnlCheckInfo.Visible = true;
-                lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
+                result = HttpHelper.Request("WorkerCheck/SelectWorkerCheckDaySumByWorkerNo", null, user);
+                if (result.statusCode != 200)
+                {
+                    UIMessageTip.ShowError("打卡接口异常，请提交issue");
+                    return;
+                }
+                lblCheckDay.Text = Convert.ToString(result.message);
             }
             else
             {
                 linkLabel1.Text = "未打卡";
                 linkLabel1.ForeColor = Color.Red;
                 linkLabel1.LinkColor = Color.Red;
-                bool dr = UIMessageBox.Show("你今天还未打卡哦，请先打卡吧！", "打卡提醒",UIStyle.Blue, UIMessageBoxButtons.OK);
+                bool dr = UIMessageBox.Show("你今天还未打卡哦，请先打卡吧！", "打卡提醒", UIStyle.Blue, UIMessageBoxButtons.OK);
                 if (dr == true)
                 {
                     WorkerCheck workerCheck = new WorkerCheck
@@ -448,14 +498,25 @@ namespace SYS.FormUI
                         WorkerNo = LoginInfo.WorkerNo,
                         CheckWay = "系统界面",
                         CheckTime = DateTime.Parse(GetNetDateTime()),
-                        datains_usr = LoginInfo.WorkerNo,
-                        datains_date = DateTime.Now
+                        datains_usr = LoginInfo.WorkerNo
                     };
-                    bool j = new WorkerCheckService().AddCheckInfo(workerCheck);
-                    if (j == true)
+                    result = HttpHelper.Request("WorkerCheck/AddCheckInfo", workerCheck.ModelToJson(), null);
+                    if (result.statusCode != 200)
                     {
-                        lblCheckDay.Text = Convert.ToString(new WorkerCheckService().SelectWorkerCheckDaySumByWorkerNo(LoginInfo.WorkerNo));
-                        UIMessageBox.Show("打卡成功！你已共打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒",UIStyle.Green, UIMessageBoxButtons.OK);
+                        UIMessageTip.ShowError("打卡接口异常，请提交issue");
+                        return;
+                    }
+                    bool j = result.statusCode == 200 ? true : false;
+                    if (j)
+                    {
+                        result = HttpHelper.Request("WorkerCheck/SelectWorkerCheckDaySumByWorkerNo", null, user);
+                        if (result.statusCode != 200)
+                        {
+                            UIMessageTip.ShowError("打卡接口异常，请提交issue");
+                            return;
+                        }
+                        lblCheckDay.Text = Convert.ToString(result.message);
+                        UIMessageBox.Show("打卡成功！你已共打卡" + lblCheckDay.Text + "天，再接再厉吧！", "打卡提醒", UIStyle.Green, UIMessageBoxButtons.OK);
                         linkLabel1.Text = "已打卡";
                         linkLabel1.ForeColor = Color.Green;
                         linkLabel1.LinkColor = Color.Green;
@@ -465,13 +526,11 @@ namespace SYS.FormUI
                     }
                     else
                     {
-                        UIMessageBox.Show("服务器错误，请稍后再试！", "系统提示", UIStyle.Red,UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("服务器错误，请稍后再试！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                         return;
                     }
                 }
             }
-
-
         }
 
         private void lblClose_Click(object sender, EventArgs e)

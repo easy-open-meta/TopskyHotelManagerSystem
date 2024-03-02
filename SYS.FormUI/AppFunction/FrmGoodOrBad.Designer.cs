@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGoodOrBad));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,9 +47,6 @@
             this.DtpDate = new Sunny.UI.UIDatePicker();
             this.RtbGBInfo = new Sunny.UI.UIRichTextBox();
             this.DgvGoodBadList = new Sunny.UI.UIDataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new Sunny.UI.UIButton();
-            this.btnClose = new Sunny.UI.UIButton();
             this.clWorkNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGBInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new Sunny.UI.UIButton();
+            this.btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoodBadList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,6 +166,7 @@
             // 
             // CboType
             // 
+            this.CboType.DataSource = null;
             this.CboType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.CboType.FillColor = System.Drawing.Color.White;
             this.CboType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -171,7 +174,7 @@
             this.CboType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CboType.MinimumSize = new System.Drawing.Size(63, 0);
             this.CboType.Name = "CboType";
-            this.CboType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.CboType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.CboType.Radius = 20;
             this.CboType.Size = new System.Drawing.Size(158, 35);
             this.CboType.Style = Sunny.UI.UIStyle.Custom;
@@ -188,7 +191,7 @@
             this.DtpDate.MaxLength = 10;
             this.DtpDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.DtpDate.Name = "DtpDate";
-            this.DtpDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.DtpDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.DtpDate.Radius = 20;
             this.DtpDate.ReadOnly = true;
             this.DtpDate.Size = new System.Drawing.Size(158, 31);
@@ -214,6 +217,8 @@
             this.RtbGBInfo.Size = new System.Drawing.Size(486, 148);
             this.RtbGBInfo.Style = Sunny.UI.UIStyle.Custom;
             this.RtbGBInfo.TabIndex = 109;
+            this.RtbGBInfo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RtbGBInfo.WordWrap = true;
             // 
             // DgvGoodBadList
             // 
@@ -230,7 +235,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvGoodBadList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -249,6 +254,14 @@
             this.Column5,
             this.Column6,
             this.Column7});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvGoodBadList.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvGoodBadList.EnableHeadersVisualStyles = false;
             this.DgvGoodBadList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.DgvGoodBadList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -256,9 +269,18 @@
             this.DgvGoodBadList.MultiSelect = false;
             this.DgvGoodBadList.Name = "DgvGoodBadList";
             this.DgvGoodBadList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvGoodBadList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvGoodBadList.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.DgvGoodBadList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvGoodBadList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.DgvGoodBadList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvGoodBadList.RowTemplate.Height = 29;
             this.DgvGoodBadList.SelectedIndex = -1;
             this.DgvGoodBadList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -266,45 +288,6 @@
             this.DgvGoodBadList.Size = new System.Drawing.Size(593, 199);
             this.DgvGoodBadList.Style = Sunny.UI.UIStyle.Custom;
             this.DgvGoodBadList.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 355);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
-            this.label1.TabIndex = 110;
-            this.label1.Text = "历史奖罚情况：";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(421, 599);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Radius = 20;
-            this.btnAdd.Size = new System.Drawing.Size(100, 35);
-            this.btnAdd.Style = Sunny.UI.UIStyle.Custom;
-            this.btnAdd.TabIndex = 111;
-            this.btnAdd.Text = "新     增";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnClose.Location = new System.Drawing.Point(527, 599);
-            this.btnClose.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Radius = 20;
-            this.btnClose.Size = new System.Drawing.Size(100, 35);
-            this.btnClose.Style = Sunny.UI.UIStyle.Custom;
-            this.btnClose.TabIndex = 112;
-            this.btnClose.Text = "关     闭";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // clWorkNo
             // 
@@ -397,6 +380,45 @@
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 355);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.TabIndex = 110;
+            this.label1.Text = "历史奖罚情况：";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(421, 599);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Radius = 20;
+            this.btnAdd.Size = new System.Drawing.Size(100, 35);
+            this.btnAdd.Style = Sunny.UI.UIStyle.Custom;
+            this.btnAdd.TabIndex = 111;
+            this.btnAdd.Text = "新     增";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnClose.Location = new System.Drawing.Point(527, 599);
+            this.btnClose.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Radius = 20;
+            this.btnClose.Size = new System.Drawing.Size(100, 35);
+            this.btnClose.Style = Sunny.UI.UIStyle.Custom;
+            this.btnClose.TabIndex = 112;
+            this.btnClose.Text = "关     闭";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FrmGoodOrBad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -427,6 +449,7 @@
             this.ShowIcon = true;
             this.ShowRadius = false;
             this.ShowShadow = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "员工奖罚情况页";
             this.Load += new System.EventHandler(this.FrmGoodOrBad_Load);

@@ -53,6 +53,7 @@
             this.txtRoomNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtRoomNo.StyleCustomMode = true;
             this.txtRoomNo.TabIndex = 133;
+            this.txtRoomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -76,6 +77,7 @@
             // 
             // cboState
             // 
+            this.cboState.DataSource = null;
             this.cboState.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboState.FillColor = System.Drawing.Color.White;
             this.cboState.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -87,7 +89,7 @@
             this.cboState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboState.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboState.Name = "cboState";
-            this.cboState.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboState.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboState.Radius = 20;
             this.cboState.Size = new System.Drawing.Size(158, 35);
             this.cboState.TabIndex = 135;
@@ -124,6 +126,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmRoomStateManager";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "修改房间状态";
             this.Load += new System.EventHandler(this.FrmRoomStateManager_Load);
             this.ResumeLayout(false);

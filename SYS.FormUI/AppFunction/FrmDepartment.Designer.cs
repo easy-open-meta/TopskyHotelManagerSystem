@@ -133,7 +133,7 @@ namespace SYS.FormUI
             this.dgvDeptList.ShowGridLine = true;
             this.dgvDeptList.Size = new System.Drawing.Size(788, 582);
             this.dgvDeptList.TabIndex = 0;
-            this.dgvDeptList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptList_CellClick);
+            this.dgvDeptList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeptList_CellMouseClick);
             // 
             // clDeptNo
             // 
@@ -442,7 +442,8 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmDepartment";
             this.ShowIcon = true;
-            this.Text = "部门信息维护";
+            this.ShowTitleIcon = true;
+            this.Text = "部门信息";
             this.Load += new System.EventHandler(this.FrmDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeptList)).EndInit();
             this.ResumeLayout(false);

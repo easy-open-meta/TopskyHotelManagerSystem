@@ -24,11 +24,10 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
+
 using System.Transactions;
-using SYS.Application.Zero;
 using System.Linq;
 using SYS.Common;
 
@@ -48,21 +47,44 @@ namespace SYS.FormUI
                    && CheckEmpty(txtCustoTel, "输入11位手机号码");
         }
         int count = 0;
+
+        ResponseMsg result = new ResponseMsg();
+
         #region 窗体加载事件方法
         private void FrmCheckIn_Load(object sender, EventArgs e)
         {
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
-            Room r = new RoomService().SelectRoomByRoomNo(txtRoomNo.Text);
-            RoomType t = new RoomTypeService().SelectRoomTypeByRoomNo(txtRoomNo.Text);
+            Dictionary<string,string> pairs = new Dictionary<string,string>();
+            pairs.Add("no", txtRoomNo.Text.Trim());
+            result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, pairs);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectRoomByRoomNo+接口服务异常，请提交issue");
+                return;
+            }
+            Room r = HttpHelper.JsonToModel<Room>(result.message);
+            result = HttpHelper.Request("RoomType/SelectRoomTypeByRoomNo", null, pairs);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectRoomTypeByRoomNo+接口服务异常，请提交issue");
+                return;
+            }
+            RoomType t = HttpHelper.JsonToModel<RoomType>(result.message);
             txtType.Text = t.RoomName;
             txtMoney.Text = r.RoomMoney.ToString();
             txtRoomPosition.Text = r.RoomPosition;
             txtState.Text = r.RoomState;
             txtDeposit.Text = r.RoomDeposit.ToString();
-            List<Custo> ctos = new CustoService().SelectCustoAll(ref count, null,null);
+            result = HttpHelper.Request("Custo/SelectCustoAll", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectCustoAll+接口服务异常，请提交issue");
+                return;
+            }
+            var ctos = HttpHelper.JsonToList<Custo>(result.message).Select(a => a.CustoNo).ToArray();
             //List<Room> roms = new RoomService().SelectCanUseRoomAll();
            
-            txtCustoNo.AutoCompleteCustomSource.AddRange(ctos.Select(a => a.CustoNo).ToArray());
+            txtCustoNo.AutoCompleteCustomSource.AddRange(ctos);
             try
             {
                 txtCustoNo.Text = "";
@@ -98,11 +120,25 @@ namespace SYS.FormUI
 
         private void txtCustoNo_Validated(object sender, EventArgs e)
         {
+            result = HttpHelper.Request("VipRule/SelectVipRuleList", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectVipRuleList+接口服务异常，请提交issue");
+                return;
+            }
             //在每次完成输入验证之后，对该用户的会员等级进行初始化或升级以及降级操作
-            var listVipRule = new VipRuleAppService().SelectVipRuleList().OrderBy(a => a.rule_value).Distinct().ToList();
+            var listVipRule = HttpHelper.JsonToList<VipRule>(result.message).OrderBy(a => a.rule_value).Distinct().ToList();
             var new_type = 0;
             //查询该用户以往的消费记录总额是否达到指定金额,不为空则为老客户
-            var listCustoSpend = new SpendService().SeletHistorySpendInfoAll(txtCustoNo.Text.Trim());
+            Dictionary<string, string> user = new Dictionary<string, string>();
+            user.Add("custoNo", txtCustoNo.Text.Trim());
+            result = HttpHelper.Request("Spend/SeletHistorySpendInfoAll", null, user);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SeletHistorySpendInfoAll+接口服务异常，请提交issue");
+                return;
+            }
+            var listCustoSpend = HttpHelper.JsonToList<Spend>(result.message); 
             if (!listCustoSpend.IsNullOrEmpty())
             {
                 var spendAmount = listCustoSpend.Sum(a => a.SpendMoney);
@@ -117,11 +153,18 @@ namespace SYS.FormUI
                 //不等于0即会员等级有变，需进行及时会员等级
                 if (new_type != 0)
                 {
-                    new CustoService().UpdCustomerTypeByCustoNo(txtCustoNo.Text.Trim(), new_type);
+                    user = new Dictionary<string, string>();
+                    user.Add("custoNo", txtCustoNo.Text.Trim());
+                    user.Add("userType", new_type.ToString());
+                    result = HttpHelper.Request("Custo/UpdCustomerTypeByCustoNo", null, user);
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageTip.ShowError("UpdCustomerTypeByCustoNo+接口服务异常，请提交issue");
+                        return;
+                    }
                 }
 
             }
-
 
             try
             {
@@ -129,7 +172,16 @@ namespace SYS.FormUI
                 {
                     return;
                 }
-                Custo c = new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text);
+                user = new Dictionary<string, string>();
+                user.Add("CustoNo", txtCustoNo.Text.Trim());
+                result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo", null, user);
+                if (result.statusCode != 200)
+                {
+                    UIMessageTip.ShowError("SelectCardInfoByCustoNo+接口服务异常，请提交issue");
+                    return;
+                }
+
+                Custo c = HttpHelper.JsonToModel<Custo>(result.message);
                 txtCustoName.Text = c.CustoName;
                 txtCustoTel.Text = c.CustoTel;
                 txtCustoType.Text = c.typeName;
@@ -144,7 +196,15 @@ namespace SYS.FormUI
 
         private void FrmCheckIn_ButtonOkClick(object sender, EventArgs e)
         {
-            if (new CustoService().SelectCardInfoByCustoNo(txtCustoNo.Text) != null)
+            Dictionary<string, string> user = new Dictionary<string, string>();
+            user.Add("CustoNo", txtCustoNo.Text.Trim());
+            result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo", null, user);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectCardInfoByCustoNo+接口服务异常，请提交issue");
+                return;
+            }
+            if (!result.message.IsNullOrEmpty())
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
@@ -154,11 +214,15 @@ namespace SYS.FormUI
                         CustoNo = txtCustoNo.Text,
                         RoomStateId = 1,
                         RoomNo = txtRoomNo.Text,
-                        datachg_usr = LoginInfo.WorkerNo,
-                        datachg_date = DateTime.Now,
+                        datachg_usr = LoginInfo.WorkerNo
                     };
-
-                    bool n = new RoomService().UpdateRoomInfo(r);
+                    result = HttpHelper.Request("Room/UpdateRoomInfo", HttpHelper.ModelToJson(r), null);
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageTip.ShowError("UpdateRoomInfo+接口服务异常，请提交issue");
+                        return;
+                    }
+                    bool n = result.message.Equals("true") ? true : false;
                     if (n)
                     {
                         UIMessageBox.Show("登记入住成功！", "登记提示", UIStyle.Green);

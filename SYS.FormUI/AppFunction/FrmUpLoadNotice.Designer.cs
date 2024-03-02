@@ -67,6 +67,7 @@
             this.txtNoticeTheme.Style = Sunny.UI.UIStyle.Custom;
             this.txtNoticeTheme.StyleCustomMode = true;
             this.txtNoticeTheme.TabIndex = 112;
+            this.txtNoticeTheme.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -97,7 +98,7 @@
             this.dtpUpLoadDate.MaxLength = 10;
             this.dtpUpLoadDate.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpUpLoadDate.Name = "dtpUpLoadDate";
-            this.dtpUpLoadDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpUpLoadDate.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpUpLoadDate.Radius = 20;
             this.dtpUpLoadDate.Size = new System.Drawing.Size(188, 35);
             this.dtpUpLoadDate.SymbolDropDown = 61555;
@@ -119,6 +120,7 @@
             // 
             // cboSelectClub
             // 
+            this.cboSelectClub.DataSource = null;
             this.cboSelectClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboSelectClub.FillColor = System.Drawing.Color.White;
             this.cboSelectClub.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -126,7 +128,7 @@
             this.cboSelectClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboSelectClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboSelectClub.Name = "cboSelectClub";
-            this.cboSelectClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboSelectClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboSelectClub.Radius = 20;
             this.cboSelectClub.Size = new System.Drawing.Size(165, 35);
             this.cboSelectClub.TabIndex = 118;
@@ -157,6 +159,7 @@
             // 
             // cbNoticeType
             // 
+            this.cbNoticeType.DataSource = null;
             this.cbNoticeType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbNoticeType.FillColor = System.Drawing.Color.White;
             this.cbNoticeType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -167,7 +170,7 @@
             this.cbNoticeType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbNoticeType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbNoticeType.Name = "cbNoticeType";
-            this.cbNoticeType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbNoticeType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbNoticeType.Radius = 20;
             this.cbNoticeType.Size = new System.Drawing.Size(165, 35);
             this.cbNoticeType.TabIndex = 121;
@@ -195,6 +198,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmUpLoadNotice";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "上传任命公告";
             this.Load += new System.EventHandler(this.FrmUpLoad_Load);
             this.ResumeLayout(false);

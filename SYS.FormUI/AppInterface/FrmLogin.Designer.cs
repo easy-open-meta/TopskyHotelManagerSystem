@@ -88,6 +88,7 @@
             this.txtWorkerId.Style = Sunny.UI.UIStyle.Custom;
             this.txtWorkerId.TabIndex = 16;
             this.txtWorkerId.Text = "WK010";
+            this.txtWorkerId.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtWorkerPwd
             // 
@@ -109,6 +110,7 @@
             this.txtWorkerPwd.Style = Sunny.UI.UIStyle.Custom;
             this.txtWorkerPwd.TabIndex = 17;
             this.txtWorkerPwd.Text = "admin";
+            this.txtWorkerPwd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnLoginBackSystem
             // 

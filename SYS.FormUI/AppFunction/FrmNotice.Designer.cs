@@ -59,6 +59,7 @@ namespace SYS.FormUI
             // 
             this.dgvNoticeList.FillColor = System.Drawing.Color.White;
             this.dgvNoticeList.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.dgvNoticeList.FormatString = "";
             this.dgvNoticeList.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvNoticeList.Location = new System.Drawing.Point(4, 84);
             this.dgvNoticeList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -84,6 +85,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmNotice";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "历史公告";
             this.Load += new System.EventHandler(this.FrmNotice_Load);
             this.ResumeLayout(false);

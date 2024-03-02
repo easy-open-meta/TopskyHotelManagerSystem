@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TS酒店管理系统")]
 [assembly: AssemblyDescription("一款为中小型酒店打造的管理系统！")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("NF-TopSky小组&java-and-net")]
+[assembly: AssemblyCompany("易开元(EOM)")]
 [assembly: AssemblyProduct("TS酒店管理系统")]
-[assembly: AssemblyCopyright("Copyright ©  2018-2021 TopSky小组&java-and-net")]
+[assembly: AssemblyCopyright("Copyright ©  2018-2024 易开元(EOM)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.0.8")]
-[assembly: AssemblyFileVersion("1.5.0.8")]
+[assembly: AssemblyVersion("2.0.0.1")]
+[assembly: AssemblyFileVersion("2.0.0.1")]

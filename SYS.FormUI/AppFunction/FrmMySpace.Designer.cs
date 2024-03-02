@@ -60,8 +60,8 @@ namespace SYS.FormUI
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tpPhoto = new System.Windows.Forms.TabPage();
-            this.picWorkerPic = new System.Windows.Forms.PictureBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
+            this.picWorkerPic = new System.Windows.Forms.PictureBox();
             this.openPic = new System.Windows.Forms.OpenFileDialog();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpWorkerInfo.SuspendLayout();
@@ -513,6 +513,18 @@ namespace SYS.FormUI
             this.tpPhoto.Text = "我的头像";
             this.tpPhoto.UseVisualStyleBackColor = true;
             // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.Red;
+            this.uiLabel1.Location = new System.Drawing.Point(128, 400);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(410, 23);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel1.TabIndex = 57;
+            this.uiLabel1.Text = "点击上方头像框即可更换头像，记得不要超过2MB哦~";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // picWorkerPic
             // 
             this.picWorkerPic.BackColor = System.Drawing.Color.Transparent;
@@ -525,17 +537,6 @@ namespace SYS.FormUI
             this.picWorkerPic.TabIndex = 56;
             this.picWorkerPic.TabStop = false;
             this.picWorkerPic.Click += new System.EventHandler(this.picWorkerPic_Click);
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.Red;
-            this.uiLabel1.Location = new System.Drawing.Point(128, 400);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(410, 23);
-            this.uiLabel1.TabIndex = 57;
-            this.uiLabel1.Text = "点击上方头像框即可更换头像，记得不要超过2MB哦~";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // openPic
             // 
@@ -554,6 +555,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmMySpace";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "个人中心";
             this.Load += new System.EventHandler(this.FrmMySpace_Load);
             this.uiTabControlMenu1.ResumeLayout(false);

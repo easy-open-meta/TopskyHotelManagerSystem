@@ -22,13 +22,15 @@
  *
  */
 using System;
-using MySql.Data.MySqlClient;
+
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
-using SYS.Application;
+
 using Sunny.UI;
 using SYS.Common;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SYS.FormUI
 {
@@ -41,28 +43,56 @@ namespace SYS.FormUI
 
         public static SellThing st;
 
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
+
         public void LoadData()
         {
+            result = HttpHelper.Request("Sellthing/SelectSellThingAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSellThingAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvSellthing.AutoGenerateColumns = false;
-            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
+            dgvSellthing.DataSource = HttpHelper.JsonToList<SellThing>(result.message);
         }
 
         private void FrmSellThingManager_Load(object sender, EventArgs e)
         {
-            string SellId = new CounterHelper().GetNewId(CounterRuleConsts.SellId);
+            string SellId = Util.GetListNewId("ST",3,1,"-").FirstOrDefault();
             txtSellNo.Text = SellId;
-            dgvSellthing.AutoGenerateColumns = false;
-            dgvSellthing.DataSource = new SellService().SelectSellThingAll();
+            LoadData();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            dgvSellthing.DataSource = new SellService().SelectSellThingAll(new SellThing { SellNo = txtFind.Text.Trim(), SellName = txtFind.Text.Trim() });
+            dic= new Dictionary<string, string>()
+            {
+                {"SellNo",txtFind.Text.Trim() },
+                { "SellName",txtFind.Text.Trim()}
+            };
+            result = HttpHelper.Request("Sellthing/SelectSellThingAll",null,dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectSellThingAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            dgvSellthing.DataSource = HttpHelper.JsonToList<SellThing>(result.message);
         }
 
         private void btnDeleteSellThing_Click(object sender, EventArgs e)
         {
-            bool n = new SellService().DeleteSellThingBySellNo(txtSellNo.Text.Trim());
+            dic = new Dictionary<string, string>() 
+            {
+                { "sellNo",txtSellNo.Text.Trim()}
+            };
+            result = HttpHelper.Request("Sellthing/DeleteSellThingBySellNo", null,dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("DeleteSellThingBySellNo+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             UIMessageBox.ShowSuccess("删除商品成功!");
             #region 获取添加操作日志所需的信息
             RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "删除商品操作！删除值为：" + st.SellNo, 2);
@@ -102,34 +132,51 @@ namespace SYS.FormUI
                 format = string.IsNullOrWhiteSpace(txtformat.Text) ? "" : Convert.ToString(txtformat.Text),
                 Stock = txtStock.Value == 0 ? 0 : Convert.ToInt32(txtStock.Value),
                 datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
             };
             if (CheckInput(st))
             {
-                var SellThing = new SellService().SelectSellInfoBySellNo(st.SellNo);
+                dic = new Dictionary<string, string>()
+                {
+                    { "SellNo",st.SellNo}
+                };
+                result = HttpHelper.Request("Sellthing/SelectSellInfoBySellNo",null,dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectSellInfoBySellNo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                var SellThing = HttpHelper.JsonToModel<SellThing>(result.message);
                 if (SellThing != null && SellThing.SellName.Equals(st.SellName) && SellThing.format.Equals(st.format))
                 {
                     UIMessageBox.ShowError("信息已存在，请检查！");
                     return;
                 }
-
-                new SellService().InsertSellThing(st);
-                UIMessageBox.Show("添加商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                result = HttpHelper.Request("Sellthing​/InsertSellThing", HttpHelper.ModelToJson(st));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("InsertSellThing+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                if (!result.ToString().Equals("true"))
+                {
+                    UIMessageBox.Show("添加商品失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                    return;
+                }
+                UIMessageBox.Show("添加商品成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增商品操作！新增值为：" + st.SellNo, 2);
                 #endregion
                 LoadData();
-                string SellId = new CounterHelper().GetNewId("SellId");
+                string SellId = Util.GetListNewId("ST",3,1,"-").FirstOrDefault();
                 txtSellNo.Text = SellId;
             }
             else
             {
                 UIMessageBox.ShowError("信息不完整，请检查！");
-                return;
-                string SellId = new CounterHelper().GetNewId("SellId");
+                string SellId = Util.GetListNewId("ST", 3, 1, "-").FirstOrDefault();
                 txtSellNo.Text = SellId;
+                return;
             }
-            
         }
 
         private void dgvSellthing_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -160,11 +207,20 @@ namespace SYS.FormUI
                 format = string.IsNullOrWhiteSpace(txtformat.Text) ? "" : Convert.ToString(txtformat.Text),
                 Stock = txtStock.Value == 0 ? 0 : Convert.ToInt32(txtStock.Value),
                 datachg_usr = AdminInfo.Account,
-                datachg_date = DateTime.Now
             };
             if (CheckInput(st))
             {
-                new SellService().UpdateSellthingInfo(st);
+                result = HttpHelper.Request("Sellthing​/UpdateSellthingInfo", HttpHelper.ModelToJson(st));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdateSellthingInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                if (!result.message.ToString().Equals("true"))
+                {
+                    UIMessageBox.Show("修改商品失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                    return;
+                }
                 UIMessageBox.Show("修改商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "修改商品操作！修改值为：" + st.SellNo, 2);

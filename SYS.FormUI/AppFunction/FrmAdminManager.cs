@@ -1,7 +1,8 @@
-﻿using Sunny.UI;
-using SYS.Application;
+﻿
+using Sunny.UI;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,9 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmAdminManager_Load(object sender, EventArgs e)
         {
             LoadAdminList();
@@ -28,8 +32,14 @@ namespace SYS.FormUI
 
         public void LoadAdminList()
         {
-            dgvAdminList.DataSource = new AdminService().GetAllAdminList();
+            result = HttpHelper.Request("Admin/GetAllAdminList");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllAdminList+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvAdminList.AutoGenerateColumns = false;
+            dgvAdminList.DataSource =HttpHelper.JsonToList<Admin>(result.message);
         }
 
         private void btnAuthority_Click(object sender, EventArgs e)
@@ -39,10 +49,17 @@ namespace SYS.FormUI
                 Admin admin = new Admin()
                 {
                     Id = Convert.ToInt32(dgvAdminList.SelectedRows[0].Cells["clId"].Value),
-                    DeleteMk = Convert.ToInt32(dgvAdminList.SelectedRows[0].Cells["Column1"].Value)
+                    DeleteMk = Convert.ToInt32(dgvAdminList.SelectedRows[0].Cells["Column1"].Value),
+                    datachg_usr = AdminInfo.Account
                 };
-                bool result = new AdminService().UpdAccount(admin);
-                if (result == true)
+                result = HttpHelper.Request("Admin/UpdAccount",HttpHelper.ModelToJson(admin));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdAccount+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (tf)
                 {
                     UIMessageBox.ShowSuccess("操作成功！");
                     #region 获取添加操作日志所需的信息

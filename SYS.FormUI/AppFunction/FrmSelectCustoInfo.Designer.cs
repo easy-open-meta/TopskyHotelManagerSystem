@@ -345,6 +345,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmSelectCustoInfo";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "客户信息";
             this.Load += new System.EventHandler(this.FrmSelectCustoInfo_Load);

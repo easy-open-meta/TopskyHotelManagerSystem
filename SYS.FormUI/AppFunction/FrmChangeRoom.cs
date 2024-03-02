@@ -23,11 +23,11 @@
  */
 using System;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
 using System.Transactions;
 using System.Collections.Generic;
-using SYS.Application;
+
 using SYS.Common;
 
 namespace SYS.FormUI
@@ -39,14 +39,21 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmChangeRoom_Load(object sender, EventArgs e)
         {
-            string rno = cboRoomList.Text;
-            cboRoomList.DataSource = new RoomService().SelectCanUseRoomAll();
+            //string rno = cboRoomList.Text;
+            result = HttpHelper.Request("Room/SelectCanUseRoomAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCanUseRoomAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboRoomList.DataSource = HttpHelper.JsonToList<Room>(result.message);
             cboRoomList.ValueMember = "RoomNo";
             cboRoomList.DisplayMember = "RoomNo";
-
-
         }
 
         private void btnChangeRoom_Click(object sender, EventArgs e)
@@ -63,57 +70,104 @@ namespace SYS.FormUI
                     CustoNo = ucRoomList.CustoNo,
                     RoomStateId = 1,
                     CheckTime = DateTime.Now,
-                    datains_usr = LoginInfo.WorkerNo,
-                    datains_date = DateTime.Now
+                    datains_usr = LoginInfo.WorkerNo
                 };
-
-                if (rno.Contains("BD"))
+                dic = new Dictionary<string, string>()
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 300);
+                    { "roomno",rno}
+                };
+                result = HttpHelper.Request("Room/DayByRoomNo",null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("DayByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
                 }
-                if (rno.Contains("BS"))
+                if (rno.StartsWith("BD"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 425);
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 300);
                 }
-                if (rno.Contains("HD"))
+                if (rno.StartsWith("BS"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 625);
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 425);
                 }
-                if (rno.Contains("HS"))
+                if (rno.StartsWith("HD"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 660);
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 625);
                 }
-                if (rno.Contains("QL"))
+                if (rno.StartsWith("HS"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 845);
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 660);
                 }
-                if (rno.Contains("ZT"))
+                if (rno.StartsWith("QL"))
                 {
-                    sum = Convert.ToDouble(Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) * 1080);
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 845);
+                }
+                if (rno.StartsWith("ZT"))
+                {
+                    sum = Convert.ToDouble(Convert.ToInt32(result.message) * 1080);
                 }
                 Spend s = new Spend()
                 {
                     RoomNo = cboRoomList.Text,
-                    SpendName = "居住" + rno + "共" + Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()) + "天",
-                    SpendAmount = Convert.ToInt32(new RoomService().DayByRoomNo(rno).ToString()),
+                    SpendName = "居住" + rno + "共" + Convert.ToInt32(result.message) + "天",
+                    SpendAmount = Convert.ToInt32(result.message),
                     CustoNo = ucRoomList.CustoNo,
                     SpendPrice = Convert.ToDecimal(sum),
                     SpendMoney = Convert.ToDecimal(sum),
                     SpendTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                    MoneyState = "未结算",
+                    MoneyState = SpendConsts.UnSettle,
                 };
 
-                bool result1 = new RoomService().UpdateRoomInfo(checkInRoom);
-                bool result2 = new RoomService().UpdateRoomByRoomNo(rno);
-                var result3 = new SpendService().SelectSpendByCustoNo(rno);
+                result = HttpHelper.Request("Room​/UpdateRoomInfo",HttpHelper.ModelToJson(checkInRoom), null);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdateRoomInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool result1 = result.message.ToString().Equals("true");
+                dic = new Dictionary<string, string>() 
+                {
+                    { "room",rno}
+                };
+                result = HttpHelper.Request("Room​/UpdateRoomByRoomNo", null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("UpdateRoomByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool result2 = result.message.ToString().Equals("true");
+                dic = new Dictionary<string, string>()
+                {
+                    { "No",rno}
+                };
+                result = HttpHelper.Request("Spend​/SelectSpendByCustoNo", null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("SelectSpendByCustoNo+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                var result3 = HttpHelper.JsonToList<Spend>(result.message);
                 if (result3.Count != 0)
                 {
-                    bool result4 = new SpendService().UpdateSpendInfoByRoomNo(result3, nrno, ucRoomList.CustoNo);
+                    Spend spend = new Spend() { RoomNo = nrno, CustoNo = ucRoomList.CustoNo };
+                    result = HttpHelper.Request("Spend​/UpdateSpendInfoByRoomNo", HttpHelper.ModelToJson(spend));
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("UpdateSpendInfoByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    bool result4 = result.message.ToString().Equals("true");
                 }
-                if (result1 == true && result2 == true)
+                if (result1&& result2)
                 {
                     UIMessageBox.ShowSuccess("转房成功");
-                    bool m = new SpendService().InsertSpendInfo(s);
+                    result = HttpHelper.Request("Spend​/InsertSpendInfo", HttpHelper.ModelToJson(s));
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("InsertSpendInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    bool m = result.message.ToString().Equals("true");
                     FrmRoomManager.Reload("");
                     #region 获取添加操作日志所需的信息
                     RecordHelper.Record(LoginInfo.WorkerNo + "-" + LoginInfo.WorkerName + "在" + DateTime.Now + "位于" + LoginInfo.SoftwareVersion + "执行：" +ucRoomList.CustoNo + "于" + DateTime.Now + "进行了换房！", 2);

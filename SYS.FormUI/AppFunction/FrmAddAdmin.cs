@@ -1,7 +1,7 @@
 ﻿using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +21,9 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmAddAdmin_Load(object sender, EventArgs e)
         {
             LoadAdminType();
@@ -28,10 +31,16 @@ namespace SYS.FormUI
             LoadAdminList();
         }
 
-        public void LoadAdminList() 
+        public void LoadAdminList()
         {
+            result = HttpHelper.Request("Admin/GetAllAdmin");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllAdmin+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
             dgvAdminList.AutoGenerateColumns = false;
-            dgvAdminList.DataSource = new AdminService().GetAllAdmin();
+            dgvAdminList.DataSource = HttpHelper.JsonToList<Admin>(result.message);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -44,26 +53,35 @@ namespace SYS.FormUI
                 AdminType = cbAccountType.SelectedValue.ToString(),
                 IsAdmin = cbAccountType.SelectedValue.ToString() == "超级管理员" ? 1 : 0,
                 DeleteMk = 0,
-                datains_usr = AdminInfo.Account,
-                datains_time = DateTime.Now
+                datains_usr = AdminInfo.Account
             };
-            if (CheckInputs(admin) == true)
+            if (CheckInputs(admin))
             {
-                bool result = new AdminService().AddAdmin(admin);
-                if (result == true)
+                result = HttpHelper.Request("Admin​/AddAdmin", HttpHelper.ModelToJson(admin));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("AddAdmin+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                bool tf = result.message.ToString().Equals("true");
+                if (tf)
                 {
                     UIMessageBox.ShowSuccess("添加管理员成功！");
                     LoadAdminList();
                     return;
-
-
                 }
             }
         }
 
         public void LoadAdminType()
         {
-            cbAccountType.DataSource = new AdminService().GetAllAdminTypes();
+            result = HttpHelper.Request("Admin/GetAllAdminTypes");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("GetAllAdminTypes+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cbAccountType.DataSource = HttpHelper.JsonToList<AdminType>(result.message);
             cbAccountType.ValueMember = "type_id";
             cbAccountType.DisplayMember = "type_name";
         }

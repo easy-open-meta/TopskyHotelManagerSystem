@@ -22,11 +22,12 @@
  *
  */
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -36,6 +37,9 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         #region 窗体加载事件
         private void WtiInfo_Load(object sender, EventArgs e)
@@ -57,8 +61,14 @@ namespace SYS.FormUI
         /// </summary>
         private void LoadWtiInfo()
         {
+            result = HttpHelper.Request("Wti/SelectWtiInfoAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectWtiInfoAll+接口服务异常，请提交issue");
+                return;
+            }
             //将水电费信息加载到Dgv
-            dgvWti.DataSource = new WtiService().SelectWtiInfoAll();
+            dgvWti.DataSource = HttpHelper.JsonToList<Wti>(result.message);
             dgvWti.AutoGenerateColumns = false;
         }
         #endregion
@@ -76,9 +86,17 @@ namespace SYS.FormUI
                 WaterUse = string.IsNullOrEmpty(txtWInfo.Text.Trim()) ? 0 : Convert.ToDecimal(txtWInfo.Text.Trim()),
                 Record = AdminInfo.Account,
                 datachg_usr = AdminInfo.Account,
-                datachg_date = DateTime.Now
             };
-            new WtiService().UpdateWtiInfo(wti);
+            result = HttpHelper.Request("Wti/UpdateWtiInfo",HttpHelper.ModelToJson(wti));
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("UpdateWtiInfo+接口服务异常，请提交issue");
+                return;
+            }
+            if (!result.message.ToString().Equals("true"))
+            {
+                UIMessageTip.ShowError("修改失败！", 1500);
+            }
             UIMessageTip.ShowOk("修改成功！", 1500);
             pnlWtiInfo.Visible = false;
             LoadWtiInfo();

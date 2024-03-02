@@ -426,10 +426,6 @@
             this.cboWorkerFace.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboWorkerFace.FillColor = System.Drawing.Color.White;
             this.cboWorkerFace.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.cboWorkerFace.Items.AddRange(new object[] {
-            "群众",
-            "团员",
-            "党员"});
             this.cboWorkerFace.Location = new System.Drawing.Point(433, 98);
             this.cboWorkerFace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboWorkerFace.MinimumSize = new System.Drawing.Size(63, 0);
@@ -521,6 +517,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddWorker";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "添加员工";
             this.ButtonOkClick += new System.EventHandler(this.FrmAddWorker_ButtonOkClick);
             this.ButtonCancelClick += new System.EventHandler(this.FrmAddWorker_ButtonCancelClick);

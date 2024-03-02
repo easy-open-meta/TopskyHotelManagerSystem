@@ -1,6 +1,7 @@
 ﻿using Sunny.UI;
-using SYS.Application;
-using SYS.Core;
+
+using SYS.Common;
+using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,9 @@ namespace SYS.FormUI
             InitializeComponent();
             this.CanPenetrate();
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         #region 存放房间信息类
         public static string rm_RoomNo;
@@ -150,7 +154,17 @@ namespace SYS.FormUI
         Room r = null;
         private void cmsControlPanel_Opening(object sender, CancelEventArgs e)
         {
-            r = new RoomService().SelectRoomByRoomNo(leRoomNo.Text);
+            dic = new Dictionary<string, string>() 
+            {
+                { "no",leRoomNo.Text.Trim()}
+            };
+            result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectRoomByRoomNo+接口服务异常，请提交issue");
+                return;
+            }
+            r = HttpHelper.JsonToModel<Room>(result.message);
             if (!r.CustoNo.IsNullOrEmpty())
             {
                 tsmiCheckIn.Enabled = false;
@@ -242,7 +256,17 @@ namespace SYS.FormUI
         {
             if (leCustoNo.Text.IsNullOrEmpty())
             {
-                Room r = new RoomService().SelectRoomByRoomNo(leRoomNo.Text);
+                dic = new Dictionary<string, string>()
+                {
+                    { "no",leRoomNo.Text.Trim()}
+                };
+                result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, dic);
+                if (result.statusCode != 200)
+                {
+                    UIMessageTip.ShowError("SelectRoomByRoomNo+接口服务异常，请提交issue");
+                    return;
+                }
+                Room r = HttpHelper.JsonToModel<Room>(result.message);
                 if (r.RoomStateId == 0)
                 {
                     rm_RoomNo = leRoomNo.Text;
@@ -283,7 +307,17 @@ namespace SYS.FormUI
         /// <param name="e"></param>
         private void tsmiChangeState_Click(object sender, EventArgs e)
         {
-            rm_RoomStateId = Convert.ToInt32(new RoomService().SelectRoomStateIdByRoomNo(leRoomNo.Text));
+            dic = new Dictionary<string, string>()
+            {
+                { "roomno",leRoomNo.Text.Trim()}
+            };
+            result = HttpHelper.Request("Room/SelectRoomStateIdByRoomNo", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectRoomStateIdByRoomNo+接口服务异常，请提交issue");
+                return;
+            }
+            rm_RoomStateId = Convert.ToInt32(result.message.ToString());
             rm_RoomNo = leRoomNo.Text;
             FrmRoomStateManager frsm = new FrmRoomStateManager();
             frsm.ShowDialog();

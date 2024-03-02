@@ -22,15 +22,16 @@
  *
  */
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -70,9 +71,22 @@ namespace SYS.FormUI
 
         }
 
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
+
         private void btnUnLock_Click(object sender, EventArgs e)
         {
-            var account = new AdminService().SelectAdminPwdByAccount(AdminInfo.Account);
+            dic= new Dictionary<string, string>()
+            {
+                { "account",AdminInfo.Account.Trim()}
+            };
+            result = HttpHelper.Request("Admin/SelectAdminPwdByAccount", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectAdminPwdByAccount+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            var account = HttpHelper.JsonToModel<Admin>(result.message);
             if (account != null)
             {
                 if (account.AdminPassword != txtUnLockPwd.Text.Trim())
@@ -85,8 +99,6 @@ namespace SYS.FormUI
                 this.Close();
                 string regPath = System.Windows.Forms.Application.StartupPath + @"\启用任务管理器.reg";
                 ExecuteReg(regPath);
-                
-
             }
 
         }

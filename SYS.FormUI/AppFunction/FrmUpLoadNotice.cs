@@ -22,12 +22,15 @@
  *
  */
 using System;
-using MySql.Data.MySqlClient;
+
 using System.Windows.Forms;
-using SYS.Core;
-using SYS.Application;
+using EOM.TSHotelManager.Common.Core;
+
 using Sunny.UI;
 using SYS.Common;
+using System.Linq;
+
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -37,6 +40,9 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
+
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         public bool CheckInput(string Content) 
         {
@@ -58,13 +64,12 @@ namespace SYS.FormUI
             {
                 Notice notice = new Notice()
                 {
-                    NoticeNo = new CounterHelper().GetNewId(CounterRuleConsts.NoticeId),
+                    NoticeNo = Util.GetListNewId("UP",3,1,"-").FirstOrDefault(),
                     Noticetheme = txtNoticeTheme.Text.Trim(),
                     NoticeContent = rtbNoticeContent.Html,
                     NoticeTime = dtpUpLoadDate.Value,
                     NoticeClub = cboSelectClub.SelectedValue.ToString(),
                     datains_usr = AdminInfo.Account,
-                    datains_date = DateTime.Now
                 };
 
                 switch (cbNoticeType.Text)
@@ -76,8 +81,17 @@ namespace SYS.FormUI
                         notice.NoticeTypeName = "GeneralNotice";
                         break;
                 }
-
-                bool n = new NoticeService().InsertNotice(notice);
+                result = HttpHelper.Request("Notice​/InsertNotice", HttpHelper.ModelToJson(notice));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("InsertNotice+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
+                if (!result.message.ToString().Equals("true"))
+                {
+                    UIMessageBox.Show("上传失败！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
+                    return;
+                }
                 UIMessageBox.ShowSuccess("上传成功！");
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "上传公告操作！新增值为：" + notice.NoticeNo, 2);
@@ -105,20 +119,17 @@ namespace SYS.FormUI
 
         private void FrmUpLoad_Load(object sender, EventArgs e)
         {
-            cboSelectClub.DataSource = new BaseService().SelectDeptAll();
+            result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            //加载部门信息
+            cboSelectClub.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboSelectClub.DisplayMember = "dept_name";
             cboSelectClub.ValueMember = "dept_no";
             
         }
-
-        private void dgvNoticeList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //txtUpLoadNo.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticeNo"].Value.ToString();
-            //txtNoticeTheme.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticetheme"].Value.ToString();
-            //rtbNoticeContent.Text = dgvNoticeList.SelectedRows[0].Cells["clNoticeContent"].Value.ToString();
-            //cboSelectClub.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticeClub"].ToString();
-            //txtNoticePerson.Text= dgvNoticeList.SelectedRows[0].Cells["clNoticePerson"].ToString();
-        }
-
     }
 }

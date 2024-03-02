@@ -1,0 +1,3 @@
+[submodule "TopskyHotelManagerSystem-WebApi"]
+	path = TopskyHotelManagerSystem-WebApi
+	url = https://github.com/easy-open-meta/TopskyHotelManagerSystem-WebApi.git

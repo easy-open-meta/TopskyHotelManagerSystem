@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dgvCustomerList = new Sunny.UI.UIDataGridView();
             this.CustoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +52,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsCustoManager = new Sunny.UI.UIContextMenuStrip();
+            this.tsmiCustoNo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSerach = new Sunny.UI.UIButton();
             this.btnAddCusto = new Sunny.UI.UIButton();
             this.btnUpdCustomer = new Sunny.UI.UIButton();
@@ -61,7 +63,9 @@
             this.txtCustoNo = new Sunny.UI.UITextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPg = new Sunny.UI.UIPagination();
+            this.uiLine1 = new Sunny.UI.UILine();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
+            this.cmsCustoManager.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,21 +80,21 @@
             this.dgvCustomerList.AllowUserToDeleteRows = false;
             this.dgvCustomerList.AllowUserToResizeColumns = false;
             this.dgvCustomerList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvCustomerList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvCustomerList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCustomerList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerList.BackgroundColor = System.Drawing.Color.White;
             this.dgvCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomerList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvCustomerList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCustomerList.ColumnHeadersHeight = 25;
             this.dgvCustomerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,24 +115,25 @@
             this.Column7,
             this.Column8,
             this.Column9});
+            this.dgvCustomerList.ContextMenuStrip = this.cmsCustoManager;
             this.dgvCustomerList.EnableHeadersVisualStyles = false;
             this.dgvCustomerList.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgvCustomerList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.dgvCustomerList.Location = new System.Drawing.Point(12, 12);
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomerList.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomerList.RowHeadersVisible = false;
             this.dgvCustomerList.RowHeight = 29;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCustomerList.RowTemplate.Height = 29;
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -267,6 +272,22 @@
             this.Column9.ReadOnly = true;
             this.Column9.Visible = false;
             // 
+            // cmsCustoManager
+            // 
+            this.cmsCustoManager.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cmsCustoManager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCustoNo});
+            this.cmsCustoManager.Name = "cmsCustoManager";
+            this.cmsCustoManager.Size = new System.Drawing.Size(177, 30);
+            // 
+            // tsmiCustoNo
+            // 
+            this.tsmiCustoNo.Image = global::SYS.FormUI.Properties.Resources.复制;
+            this.tsmiCustoNo.Name = "tsmiCustoNo";
+            this.tsmiCustoNo.Size = new System.Drawing.Size(176, 26);
+            this.tsmiCustoNo.Text = "复制用户编号";
+            this.tsmiCustoNo.Click += new System.EventHandler(this.tsmiCustoNo_Click);
+            // 
             // btnSerach
             // 
             this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -382,17 +403,29 @@
             // 
             // btnPg
             // 
+            this.btnPg.ButtonInterval = 5;
             this.btnPg.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnPg.Location = new System.Drawing.Point(12, 401);
             this.btnPg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPg.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnPg.Name = "btnPg";
+            this.btnPg.PageSize = 15;
             this.btnPg.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPg.Size = new System.Drawing.Size(1048, 34);
+            this.btnPg.Size = new System.Drawing.Size(755, 34);
             this.btnPg.TabIndex = 120;
+            this.btnPg.Text = null;
             this.btnPg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPg.PageChanged += new Sunny.UI.UIPagination.OnPageChangeEventHandler(this.btnPg_PageChanged);
-            this.btnPg.Click += new System.EventHandler(this.btnPg_Click);
+            // 
+            // uiLine1
+            // 
+            this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLine1.Location = new System.Drawing.Point(774, 404);
+            this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
+            this.uiLine1.Name = "uiLine1";
+            this.uiLine1.Size = new System.Drawing.Size(286, 29);
+            this.uiLine1.TabIndex = 124;
+            this.uiLine1.Text = "右键可复制快速客户编号";
             // 
             // FrmCustomerManager
             // 
@@ -400,6 +433,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1072, 490);
+            this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.btnPg);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.btnUpdCustomer);
@@ -412,6 +446,7 @@
             this.Text = "TS酒店管理系统";
             this.Load += new System.EventHandler(this.FrmCustomerManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).EndInit();
+            this.cmsCustoManager.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
             this.uiGroupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -447,5 +482,8 @@
         private Sunny.UI.UITextBox txtCustoName;
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UIPagination btnPg;
+        private Sunny.UI.UIContextMenuStrip cmsCustoManager;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCustoNo;
+        private Sunny.UI.UILine uiLine1;
     }
 }

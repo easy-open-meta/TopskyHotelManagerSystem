@@ -33,6 +33,7 @@ namespace SYS.FormUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminManager));
             this.btnAuthority = new Sunny.UI.UIButton();
             this.dgvAdminList = new Sunny.UI.UIDataGridView();
@@ -81,7 +82,7 @@ namespace SYS.FormUI
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAdminList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -116,9 +117,18 @@ namespace SYS.FormUI
             this.dgvAdminList.Location = new System.Drawing.Point(3, 38);
             this.dgvAdminList.Name = "dgvAdminList";
             this.dgvAdminList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAdminList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAdminList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvAdminList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAdminList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvAdminList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAdminList.RowTemplate.Height = 29;
             this.dgvAdminList.SelectedIndex = -1;
             this.dgvAdminList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -210,7 +220,7 @@ namespace SYS.FormUI
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "datains_time";
+            this.Column5.DataPropertyName = "datains_date";
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -226,7 +236,7 @@ namespace SYS.FormUI
             // 
             // Column7
             // 
-            this.Column7.DataPropertyName = "datachg_time";
+            this.Column7.DataPropertyName = "datachg_date";
             this.Column7.HeaderText = "Column7";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -245,6 +255,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmAdminManager";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "启/禁用管理员";
             this.Load += new System.EventHandler(this.FrmAdminManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminList)).EndInit();

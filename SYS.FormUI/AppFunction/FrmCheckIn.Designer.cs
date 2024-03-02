@@ -411,8 +411,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCheckIn";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
-            this.Text = "房间入住CheckIn Room";
+            this.Text = "房间入住";
             this.ButtonOkClick += new System.EventHandler(this.FrmCheckIn_ButtonOkClick);
             this.ButtonCancelClick += new System.EventHandler(this.FrmCheckIn_ButtonCancelClick);
             this.Load += new System.EventHandler(this.FrmCheckIn_Load);

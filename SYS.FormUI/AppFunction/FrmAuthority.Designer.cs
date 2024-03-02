@@ -56,9 +56,11 @@ namespace SYS.FormUI
             this.tfModuleZero.Size = new System.Drawing.Size(987, 341);
             this.tfModuleZero.TabIndex = 0;
             this.tfModuleZero.Text = "uiTransfer1";
+            this.tfModuleZero.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbAccountType
             // 
+            this.cbAccountType.DataSource = null;
             this.cbAccountType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbAccountType.Enabled = false;
             this.cbAccountType.FillColor = System.Drawing.Color.White;
@@ -70,7 +72,7 @@ namespace SYS.FormUI
             this.cbAccountType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbAccountType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbAccountType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbAccountType.Radius = 20;
             this.cbAccountType.Size = new System.Drawing.Size(250, 35);
             this.cbAccountType.TabIndex = 123;
@@ -94,6 +96,7 @@ namespace SYS.FormUI
             this.txtAccount.Style = Sunny.UI.UIStyle.Custom;
             this.txtAccount.StyleCustomMode = true;
             this.txtAccount.TabIndex = 121;
+            this.txtAccount.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtName
             // 
@@ -113,6 +116,7 @@ namespace SYS.FormUI
             this.txtName.Style = Sunny.UI.UIStyle.Custom;
             this.txtName.StyleCustomMode = true;
             this.txtName.TabIndex = 122;
+            this.txtName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -160,21 +164,12 @@ namespace SYS.FormUI
             // btnAuthority
             // 
             this.btnAuthority.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAuthority.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
-            this.btnAuthority.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(202)))), ((int)(((byte)(81)))));
-            this.btnAuthority.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnAuthority.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
             this.btnAuthority.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btnAuthority.Location = new System.Drawing.Point(888, 577);
             this.btnAuthority.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAuthority.Name = "btnAuthority";
             this.btnAuthority.Radius = 20;
-            this.btnAuthority.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
-            this.btnAuthority.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(202)))), ((int)(((byte)(81)))));
-            this.btnAuthority.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
-            this.btnAuthority.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(168)))), ((int)(((byte)(35)))));
             this.btnAuthority.Size = new System.Drawing.Size(106, 35);
-            this.btnAuthority.Style = Sunny.UI.UIStyle.Green;
             this.btnAuthority.TabIndex = 125;
             this.btnAuthority.Text = "分配权限";
             this.btnAuthority.Click += new System.EventHandler(this.btnAuthority_Click);
@@ -186,11 +181,10 @@ namespace SYS.FormUI
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.RectColor = System.Drawing.Color.Transparent;
             this.uiPanel1.Size = new System.Drawing.Size(454, 35);
-            this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel1.TabIndex = 126;
             this.uiPanel1.Text = "我未拥有的系统模块";
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel2
             // 
@@ -199,11 +193,10 @@ namespace SYS.FormUI
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.RectColor = System.Drawing.Color.Transparent;
             this.uiPanel2.Size = new System.Drawing.Size(453, 38);
-            this.uiPanel2.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel2.TabIndex = 127;
             this.uiPanel2.Text = "我拥有的系统模块";
+            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAuthority
             // 
@@ -227,6 +220,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmAuthority";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "权限分配";
             this.Load += new System.EventHandler(this.FrmAuthority_Load);
             this.ResumeLayout(false);

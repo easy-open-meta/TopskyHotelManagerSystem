@@ -22,11 +22,12 @@
  *
  */
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -37,28 +38,52 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = new ResponseMsg();
         
 
         private void FrmCash_Load(object sender, EventArgs e)
         {
             //获取所有部门信息
-            cboClub.DataSource = new BaseService().SelectDeptAll();
+            result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboClub.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
             //获取所有员工信息
-            cboCashPerson.DataSource = new WorkerService().SelectWorkerAll();
+            result = HttpHelper.Request("Worker/SelectWorkerAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectWorkerAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboCashPerson.DataSource = HttpHelper.JsonToList<Worker>(result.message);
             cboCashPerson.DisplayMember = "WorkerName";
             cboCashPerson.ValueMember = "WorkerId";
 
-            dgvCashList.AutoGenerateColumns = false;
-            dgvCashList.DataSource = new CashService().SelectCashInfoAll();
-            txtCashNo.Text = new CounterHelper().GetNewId(CounterRuleConsts.CashInfo);
+            LoadCashInfo();
+            txtCashNo.Text = Util.GetListNewId("CN",3,1,"-").FirstOrDefault();
             if (AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "FinanceManager" && AdminInfo.isAdmin == false)
             {
                 btnOK.Enabled = false;
                 btnOK.Text = "权限不足";
             }
 
+        }
+
+        private void LoadCashInfo()
+        {
+            dgvCashList.AutoGenerateColumns = false;
+            result = HttpHelper.Request("Cash/SelectCashInfoAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectCashInfoAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            dgvCashList.DataSource = HttpHelper.JsonToList<Cash>(result.message);
         }
 
         public bool CheckInput(Cash cash)
@@ -101,24 +126,27 @@ namespace SYS.FormUI
                 CashTime = dtpDate.Value,
                 CashSource = txtFrom.Text.Trim(),
                 CashPerson = cboCashPerson.SelectedValue.ToString(),
-                datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
+                datains_usr = AdminInfo.Account
             };
             if (CheckInput(cash))
             {
                 bool dr = UIMessageBox.Show("请确认信息没有错误，一旦录入则无法修改！", "警告提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr == true)
                 {
-                    
-                    bool n = new CashService().AddCashInfo(cash);
-                    if (n == true)
+                    result = HttpHelper.Request("Cash/AddCashInfo",HttpHelper.ModelToJson(cash));
+                    if (result.statusCode != 200)
                     {
-                        UIMessageBox.Show("录入成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OKCancel);
-                        dgvCashList.AutoGenerateColumns = false;
-                        dgvCashList.DataSource = new CashService().SelectCashInfoAll();
+                        UIMessageBox.ShowError("AddCashInfo+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    bool n = result.message.ToString().Equals("true")?true:false;
+                    if (n)
+                    {
+                        UIMessageBox.Show("录入成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                        LoadCashInfo();
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim(), 3);
-                        txtCashNo.Text = new CounterHelper().GetNewId("CashInfo");
+                        txtCashNo.Text = Util.GetListNewId("CN", 3, 1, "-").FirstOrDefault();
                         #endregion
                     }
                     else

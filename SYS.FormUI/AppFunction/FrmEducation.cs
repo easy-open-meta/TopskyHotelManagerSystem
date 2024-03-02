@@ -21,10 +21,11 @@
  *SOFTWARE.
  *
  */
+
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
@@ -48,18 +49,11 @@ namespace SYS.FormUI
 
         public static OperationEducation reload;
 
-        public static OperationEducation Accessed;
-
-        public static OperationEducation insert;
-
         public FrmEducation()
         {
             InitializeComponent();
-            operation = Visited;
             reload = ReloadEducationList;
-            Accessed = Access;
         }
-        ucEducationInformation baseInfo = null;
         List<Education> educations = null;
         public static string info = null;
         private void FrmEducation_Load(object sender, EventArgs e)
@@ -67,141 +61,129 @@ namespace SYS.FormUI
             ReloadEducationList();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
 
         public void ReloadEducationList()
         {
-            flpInformation.Controls.Clear();
-            educations = new BaseService().SelectEducationAll();
-            for (int i = 0; i < educations.Count; i++)
+            //flpInformation.Controls.Clear();
+            txtEducationNo.Text = Util.GetListNewId("E", 3, 1, "-").FirstOrDefault();
+            result = HttpHelper.Request("Base/SelectEducationAll");
+            if (result.statusCode != 200)
             {
-                baseInfo = new ucEducationInformation();
-                baseInfo.Tag = "学历";
-                baseInfo.lbName.Text = "名称:" + educations[i].education_name;
-                if (educations[i].delete_mk == 1)
-                {
-                    baseInfo.btnOperation.Text = "恢复";
-                    baseInfo.btnOperation.FillColor = Color.FromArgb(33, 179, 81);
-                    baseInfo.lbName.BackColor = Color.Red;
-                    baseInfo.btnOperation.FillHoverColor = Color.FromArgb(128, 255, 128);
-                }
-                flpInformation.Controls.Add(baseInfo);
-            }
-        }
-
-        private void flpInformation_SizeChanged(object sender, EventArgs e)
-        {
-            flpInformation.Width = 660;
-            flpInformation.Height = 582;
-        }
-
-        public void Visited()
-        {
-            //筛选出只与当前学历对应的数据
-            Education education = educations.FirstOrDefault(a => a.education_name.Equals(info));
-            if (education.education_name.Equals(info))
-            {
-                var _education = new Education()
-                {
-                    education_no = education.education_no,
-                    delete_mk = 1,
-                    datachg_usr = AdminInfo.Account,
-                    datachg_date = DateTime.Now
-                };
-                if (_education != null)
-                {
-                    bool n = new BaseService().DelEducation(_education);
-                    if (n == true)
-                    {
-                        UIMessageBox.ShowSuccess("删除成功！");
-                        #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "删除学历类型操作！删除值为：" + _education.education_no, 2);
-                        #endregion
-                        ReloadEducationList();
-                    }
-                }
-            }
-        }
-        public void Access()
-        {
-            //筛选出只与当前学历对应的数据
-            Education education = educations.FirstOrDefault(a => a.education_name.Equals(info));
-            if (education.education_name.Equals(info))
-            {
-                var _education = new Education()
-                {
-                    education_no = education.education_no,
-                    delete_mk = 0,
-                    datachg_usr = AdminInfo.Account,
-                    datachg_date = DateTime.Now
-                };
-                if (_education != null)
-                {
-                    bool n = new BaseService().DelEducation(_education);
-                    if (n == true)
-                    {
-                        UIMessageBox.ShowSuccess("恢复成功！");
-                        #region 获取添加操作日志所需的信息
-                        RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "恢复学历类型操作！删除值为：" + _education.education_no, 2);
-                        #endregion
-                        ReloadEducationList();
-                    }
-                }
-            }
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txtEducationNm.Text.Trim().IsNullOrEmpty())
-            {
-                UIMessageTip.ShowError("学历名称为空，请检查", 3000);
+                UIMessageBox.ShowError("SelectEducationAll+接口服务异常，请提交Issue或尝试更新版本！");
                 return;
             }
-            var _education = new Education()
+            educations = HttpHelper.JsonToList<Education>(result.message);
+            dgvEducationList.AutoGenerateColumns = false;
+            dgvEducationList.DataSource = educations;
+        }
+
+        private void btnAddEducation_Click(object sender, EventArgs e)
+        {
+            if (txtEducationName.Text.Trim().IsNullOrEmpty())
             {
-                education_no = new SYS.Core.CounterHelper().GetNewId(CounterRuleConsts.EducationId).ToString(),
-                education_name = txtEducationNm.Text.Trim(),
+                UIMessageTip.ShowWarning("学历名称为空，请检查",1500);
+                txtEducationName.Focus();
+                return;
+            }
+            var edu = new Education()
+            {
+                education_no = txtEducationNo.Text.Trim(),
+                education_name = txtEducationName.Text.Trim(),
                 delete_mk = 0,
-                datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
+                datains_usr = AdminInfo.Account
             };
-            if (_education != null)
+            result = HttpHelper.Request("Base​/AddEducation",HttpHelper.ModelToJson(edu));
+            if (result.statusCode != 200 || result.message.ToString().Equals("false"))
             {
-                bool n = new BaseService().AddEducation(_education);
-                if (n == true)
-                {
-                    UIMessageBox.ShowSuccess("新增成功！");
-                    #region 获取添加操作日志所需的信息
-                    RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增学历类型操作！新增值为：" + _education.education_no, 2);
-                    #endregion
-                    ReloadEducationList();
-                    txtEducationNm.Text = "";
-                }
+                UIMessageTip.ShowError("AddEducation+接口服务异常，请提交Issue或尝试更新版本！", 1500);
+                return;
+            }
+            UIMessageTip.ShowOk("添加学历成功！", 1500);
+            #region 获取添加操作日志所需的信息
+            RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增学历类型操作！新增值为：" + edu.education_no, 2);
+            #endregion
+            ReloadEducationList();
+            return;
+
+        }
+
+        private void btnUpdateEducation_Click(object sender, EventArgs e)
+        {
+            if (dgvEducationList.SelectedRows.Count <= 0)
+            {
+                UIMessageTip.ShowWarning("未选择需修改的学历数据，请检查",1500);
+                return;
+            }
+            var edu = new Education()
+            {
+                education_no = txtEducationNo.Text.Trim(),
+                education_name = txtEducationName.Text.Trim(),
+                datachg_usr = AdminInfo.Account,
+            };
+            result = HttpHelper.Request("Base​/UpdEducation", HttpHelper.ModelToJson(edu));
+            if (result.statusCode != 200 || result.message.ToString().Equals("false"))
+            {
+                UIMessageTip.ShowError("UpdEducation+接口服务异常，请提交Issue或尝试更新版本！", 1500);
+                return;
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnDeleteEducation_Click(object sender, EventArgs e)
         {
-            if (txtEducationNm.Text.Trim().IsNullOrEmpty())
+            if (dgvEducationList.SelectedRows.Count <= 0)
             {
-                UIMessageTip.ShowError("学历名称为空，请检查", 3000);
+                UIMessageTip.ShowWarning("未选择需修改的学历数据，请检查", 1500);
                 return;
             }
-            var listSource = new BaseService().SelectEducationAll(new Education { education_name = txtEducationNm.Text.Trim() });
-            flpInformation.Controls.Clear();
-            for (int i = 0; i < listSource.Count; i++)
+            var edu = new Education()
             {
-                baseInfo = new ucEducationInformation();
-                baseInfo.Tag = "学历";
-                baseInfo.lbName.Text = "名称:" + listSource[i].education_name;
-                if (listSource[i].delete_mk == 1)
-                {
-                    baseInfo.btnOperation.Text = "恢复";
-                    baseInfo.btnOperation.FillColor = Color.FromArgb(33, 179, 81);
-                    baseInfo.lbName.BackColor = Color.Red;
-                    baseInfo.btnOperation.FillHoverColor = Color.FromArgb(128, 255, 128);
-                }
-                flpInformation.Controls.Add(baseInfo);
+                education_no = txtEducationNo.Text.Trim(),
+                education_name = txtEducationName.Text.Trim(),
+                datachg_usr = AdminInfo.Account,
+            };
+            result = HttpHelper.Request("Base​/DelEducation", HttpHelper.ModelToJson(edu));
+            if (result.statusCode != 200 || result.message.ToString().Equals("false"))
+            {
+                UIMessageTip.ShowError("DelEducation+接口服务异常，请提交Issue或尝试更新版本！", 1500);
+                return;
+            }
+            UIMessageTip.ShowOk("删除成功！");
+            return;
+        }
+
+        private void dgvEducationList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtEducationNo.Text = dgvEducationList.SelectedRows[0].Cells["clEducationNo"].Value.ToString();
+            txtEducationName.Text = dgvEducationList.SelectedRows[0].Cells["clEducationName"].Value.ToString();
+            if (dgvEducationList.SelectedRows[0].Cells["clDeleteMk"].Value.ToString() == "1")
+            {
+                btnDeleteEducation.Text = "恢复学历";
+                btnDeleteEducation.FillColor = Color.Green;
+                btnDeleteEducation.Click += btnRecoveryEducation_Click;
+            }
+        }
+
+        private void btnRecoveryEducation_Click(object sender, EventArgs e)
+        {
+            if (dgvEducationList.SelectedRows.Count <= 0)
+            {
+                UIMessageTip.ShowWarning("未选择需修改的学历数据，请检查", 1500);
+                return;
+            }
+            var edu = new Education()
+            {
+                education_no = txtEducationNo.Text.Trim(),
+                education_name = txtEducationName.Text.Trim(),
+                delete_mk = 0,
+                datachg_usr = AdminInfo.Account,
+            };
+            result = HttpHelper.Request("Base​/UpdEducation", HttpHelper.ModelToJson(edu));
+            if (result.statusCode != 200 || result.message.ToString().Equals("false"))
+            {
+                UIMessageTip.ShowError("UpdEducation+接口服务异常，请提交Issue或尝试更新版本！", 1500);
+                return;
             }
         }
     }

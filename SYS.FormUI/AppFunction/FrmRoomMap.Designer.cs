@@ -55,6 +55,7 @@ namespace SYS.FormUI.AppFunction
             this.MinimizeBox = false;
             this.Name = "FrmRoomMap";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "房态图一览";
             this.Load += new System.EventHandler(this.FrmRoomMap_Load);
             this.ResumeLayout(false);

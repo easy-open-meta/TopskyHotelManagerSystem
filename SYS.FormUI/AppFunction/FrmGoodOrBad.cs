@@ -30,9 +30,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
 
 namespace SYS.FormUI
@@ -44,18 +44,41 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
-
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
 
         private void FrmGoodOrBad_Load(object sender, EventArgs e)
         {
-            lblWorkerNo.Text = FrmWorkerManager.wk_WorkerNo;
-            lblName.Text = FrmWorkerManager.wk_WorkerName;
-            lblDate.Text = Convert.ToDateTime(FrmWorkerManager.wk_WorkerTime).ToString("yyyy年MM月dd日").Substring(0,9);
-            DgvGoodBadList.AutoGenerateColumns = false;
-            DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
-            CboType.DataSource = new BaseService().SelectGBTypeAll();
+            LoadGoodBadInfo();
+            result = HttpHelper.Request("Base/SelectGBTypeAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectGBTypeAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            CboType.DataSource = HttpHelper.JsonToList<GBType>(result.message);
             CboType.DisplayMember = "GBName";
             CboType.ValueMember = "GBTypeId";
+        }
+
+        public void LoadGoodBadInfo()
+        {
+            DgvGoodBadList.Rows.Clear();
+            lblWorkerNo.Text = FrmWorkerManager.wk_WorkerNo;
+            lblName.Text = FrmWorkerManager.wk_WorkerName;
+            lblDate.Text = Convert.ToDateTime(FrmWorkerManager.wk_WorkerTime).ToString("yyyy年MM月dd日").Substring(0, 9);
+            dic = new Dictionary<string, string>()
+            {
+                { "wn",lblWorkerNo.Text}
+            };
+            result = HttpHelper.Request("WorkerGoodBad/SelectAllGoodBadByWorkNo", null, dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectAllGoodBadByWorkNo+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            DgvGoodBadList.AutoGenerateColumns = false;
+            DgvGoodBadList.DataSource = HttpHelper.JsonToList<WorkerGoodBad>(result.message);
         }
 
         public bool CheckInput(WorkerGoodBad workerGoodBad)
@@ -93,21 +116,26 @@ namespace SYS.FormUI
                 GBOperation = AdminInfo.Account,
                 GBTime = DtpDate.Value,
                 datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
             };
             if (CheckInput(goodBad))
             {
                 bool dr = UIMessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
-                if (!dr)
+                if (dr)
                 {
-                    bool n = new WorkerGoodBadService().AddGoodBad(goodBad);
-                    if (n == true)
+                    result = HttpHelper.Request("WorkerGoodBad​/AddGoodBad",HttpHelper.ModelToJson(goodBad));
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("AddGoodBad+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    bool n = result.message.ToString().Equals("true");
+                    if (n)
                     {
                         UIMessageBox.Show("新增成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "录入员工奖惩操作！新增值为：" + goodBad.GBInfo, 2);
                         #endregion
-                        DgvGoodBadList.DataSource = new WorkerGoodBadService().SelectAllGoodBadByWorkNo(lblWorkerNo.Text);
+                        LoadGoodBadInfo();
                     }
                     else
                     {
@@ -126,7 +154,6 @@ namespace SYS.FormUI
             {
                 UIMessageBox.Show("信息不能为空！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
             }
-            
         }
 
         private void btnClose_Click(object sender, EventArgs e)

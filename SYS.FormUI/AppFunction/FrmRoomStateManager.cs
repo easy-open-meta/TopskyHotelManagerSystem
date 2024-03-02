@@ -23,9 +23,11 @@
  */
 using System;
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
+
+using System.Collections.Generic;
+using SYS.Common;
 
 namespace SYS.FormUI
 {
@@ -36,11 +38,20 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
+
         #region 窗体加载事件
         private void FrmRoomStateManager_Load(object sender, EventArgs e)
         {
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
-            cboState.DataSource = new RoomService().SelectRoomStateAll();
+            result = HttpHelper.Request("Room/SelectRoomStateAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectRoomStateAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboState.DataSource = HttpHelper.JsonToList<RoomState>(result.message);
             cboState.DisplayMember = "RoomStateName";
             cboState.ValueMember = "RoomStateId";
             cboState.SelectedIndex = 0;
@@ -59,7 +70,18 @@ namespace SYS.FormUI
                 case 2:
                 case 3:
                 case 4:
-                    if (new RoomService().UpdateRoomStateByRoomNo(txtRoomNo.Text, cboState.SelectedIndex) == true)
+                    dic = new Dictionary<string, string>()
+                    {
+                        { "roomno",txtRoomNo.Text},
+                        { "stateid",cboState.SelectedIndex.ToString()}
+                    };
+                    result = HttpHelper.Request("Room/UpdateRoomStateByRoomNo",null,dic);
+                    if (result.statusCode != 200)
+                    {
+                        UIMessageBox.ShowError("UpdateRoomStateByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");
+                        return;
+                    }
+                    if (result.message.ToString().Equals("true"))
                     {
                         UIMessageBox.Show("房间" + txtRoomNo.Text + "成功修改为" + cboState.Text, "修改提示", UIStyle.Green);
                         FrmRoomManager.Reload("");

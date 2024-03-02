@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReserList));
             this.dgvReserList = new Sunny.UI.UIDataGridView();
             this.clReserNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -108,9 +109,18 @@
             this.dgvReserList.Location = new System.Drawing.Point(18, 104);
             this.dgvReserList.Name = "dgvReserList";
             this.dgvReserList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvReserList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvReserList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvReserList.RowHeight = 29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvReserList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReserList.RowTemplate.Height = 29;
             this.dgvReserList.SelectedIndex = -1;
             this.dgvReserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -177,6 +187,7 @@
             // 
             // cbCustoType
             // 
+            this.cbCustoType.DataSource = null;
             this.cbCustoType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbCustoType.FillColor = System.Drawing.Color.White;
             this.cbCustoType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -184,7 +195,7 @@
             this.cbCustoType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCustoType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbCustoType.Name = "cbCustoType";
-            this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbCustoType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbCustoType.Radius = 20;
             this.cbCustoType.ReadOnly = true;
             this.cbCustoType.Size = new System.Drawing.Size(250, 35);
@@ -194,6 +205,7 @@
             // 
             // cbPassportType
             // 
+            this.cbPassportType.DataSource = null;
             this.cbPassportType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbPassportType.FillColor = System.Drawing.Color.White;
             this.cbPassportType.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -201,7 +213,7 @@
             this.cbPassportType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPassportType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbPassportType.Name = "cbPassportType";
-            this.cbPassportType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbPassportType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbPassportType.Radius = 20;
             this.cbPassportType.Size = new System.Drawing.Size(250, 35);
             this.cbPassportType.TabIndex = 133;
@@ -209,6 +221,7 @@
             // 
             // cbSex
             // 
+            this.cbSex.DataSource = null;
             this.cbSex.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbSex.FillColor = System.Drawing.Color.White;
             this.cbSex.Font = new System.Drawing.Font("微软雅黑", 15.75F);
@@ -216,7 +229,7 @@
             this.cbSex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSex.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbSex.Name = "cbSex";
-            this.cbSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cbSex.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cbSex.Radius = 20;
             this.cbSex.Size = new System.Drawing.Size(250, 35);
             this.cbSex.TabIndex = 132;
@@ -240,6 +253,7 @@
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.StyleCustomMode = true;
             this.txtCustoNo.TabIndex = 131;
+            this.txtCustoNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCustoName
             // 
@@ -258,6 +272,7 @@
             this.txtCustoName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoName.StyleCustomMode = true;
             this.txtCustoName.TabIndex = 130;
+            this.txtCustoName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCardID
             // 
@@ -276,6 +291,7 @@
             this.txtCardID.Style = Sunny.UI.UIStyle.Custom;
             this.txtCardID.StyleCustomMode = true;
             this.txtCardID.TabIndex = 129;
+            this.txtCardID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtCardID.Validated += new System.EventHandler(this.txtCardID_Validated);
             // 
             // txtTel
@@ -295,6 +311,7 @@
             this.txtTel.Style = Sunny.UI.UIStyle.Custom;
             this.txtTel.StyleCustomMode = true;
             this.txtTel.TabIndex = 128;
+            this.txtTel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpBirthday
             // 
@@ -306,7 +323,7 @@
             this.dtpBirthday.MaxLength = 10;
             this.dtpBirthday.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.dtpBirthday.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.dtpBirthday.Radius = 20;
             this.dtpBirthday.ReadOnly = true;
             this.dtpBirthday.Size = new System.Drawing.Size(250, 31);
@@ -334,6 +351,7 @@
             this.txtCustoAdress.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoAdress.StyleCustomMode = true;
             this.txtCustoAdress.TabIndex = 126;
+            this.txtCustoAdress.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
@@ -467,6 +485,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmReserList";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "预约列表";
             this.Load += new System.EventHandler(this.FrmReserList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserList)).EndInit();

@@ -103,6 +103,7 @@
             this.txtworkerId.Style = Sunny.UI.UIStyle.Custom;
             this.txtworkerId.StyleCustomMode = true;
             this.txtworkerId.TabIndex = 106;
+            this.txtworkerId.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -132,6 +133,7 @@
             this.txtworkerName.Style = Sunny.UI.UIStyle.Custom;
             this.txtworkerName.StyleCustomMode = true;
             this.txtworkerName.TabIndex = 108;
+            this.txtworkerName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -161,6 +163,7 @@
             this.txtPosition.Style = Sunny.UI.UIStyle.Custom;
             this.txtPosition.StyleCustomMode = true;
             this.txtPosition.TabIndex = 110;
+            this.txtPosition.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtClub
             // 
@@ -181,9 +184,11 @@
             this.txtClub.Style = Sunny.UI.UIStyle.Custom;
             this.txtClub.StyleCustomMode = true;
             this.txtClub.TabIndex = 109;
+            this.txtClub.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cboNewClub
             // 
+            this.cboNewClub.DataSource = null;
             this.cboNewClub.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboNewClub.FillColor = System.Drawing.Color.White;
             this.cboNewClub.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -191,7 +196,7 @@
             this.cboNewClub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboNewClub.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboNewClub.Name = "cboNewClub";
-            this.cboNewClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboNewClub.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboNewClub.Radius = 20;
             this.cboNewClub.Size = new System.Drawing.Size(125, 29);
             this.cboNewClub.TabIndex = 111;
@@ -200,6 +205,7 @@
             // 
             // cboNewPosition
             // 
+            this.cboNewPosition.DataSource = null;
             this.cboNewPosition.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cboNewPosition.FillColor = System.Drawing.Color.White;
             this.cboNewPosition.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -207,7 +213,7 @@
             this.cboNewPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboNewPosition.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboNewPosition.Name = "cboNewPosition";
-            this.cboNewPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.cboNewPosition.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cboNewPosition.Radius = 20;
             this.cboNewPosition.Size = new System.Drawing.Size(125, 29);
             this.cboNewPosition.TabIndex = 112;
@@ -252,6 +258,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmChangePosition";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "将XXX任命为XXX";
             this.Load += new System.EventHandler(this.FrmChangePosition_Load);
             this.ResumeLayout(false);

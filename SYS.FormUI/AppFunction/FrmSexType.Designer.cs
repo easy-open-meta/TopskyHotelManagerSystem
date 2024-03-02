@@ -42,6 +42,7 @@ namespace SYS.FormUI
             this.MinimizeBox = false;
             this.Name = "FrmSexType";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "性别类型维护";
             this.Load += new System.EventHandler(this.FrmSexType_Load);
             this.ResumeLayout(false);

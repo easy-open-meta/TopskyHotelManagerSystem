@@ -179,6 +179,7 @@ namespace SYS.FormUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmChangeAdminPwd";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "修改密码";
             this.Load += new System.EventHandler(this.FrmChangeAdminPwd_Load);
             this.ResumeLayout(false);

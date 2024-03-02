@@ -22,12 +22,13 @@
  *
  */
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -61,10 +62,19 @@ namespace SYS.FormUI
             Reload = LoadWorker;
         }
 
+        Dictionary<string, string> dic = null;
+        ResponseMsg result = null;
+
         private void LoadWorker()
         {
+            result = HttpHelper.Request("Worker/SelectWorkerAll");
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectWorkerAll+接口服务异常，请提交issue");
+                return;
+            }
             dgvWorkerList.AutoGenerateColumns = false;
-            dgvWorkerList.DataSource = new WorkerService().SelectWorkerAll();
+            dgvWorkerList.DataSource = HttpHelper.JsonToList<Worker>(result.message);
         }
 
         private void FrmTopChange_Load(object sender, EventArgs e)

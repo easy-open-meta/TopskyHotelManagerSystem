@@ -351,7 +351,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEditInputs";
             this.ShowTitleIcon = true;
-            this.Text = "添加会员信息Add Member Information";
+            this.Text = "添加会员信息";
             this.ButtonOkClick += new System.EventHandler(this.FrmEditInputs_ButtonOkClick);
             this.ButtonCancelClick += new System.EventHandler(this.FrmEditInputs_ButtonCancelClick);
             this.Load += new System.EventHandler(this.FrmEditInputs_Load);

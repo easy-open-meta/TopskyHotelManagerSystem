@@ -247,6 +247,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCustoSpend";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "顾客消费账单";
             this.Load += new System.EventHandler(this.FrmCustoSpend_Load);

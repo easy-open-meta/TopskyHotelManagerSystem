@@ -1,8 +1,8 @@
-﻿using Sunny.UI;
-using SYS.Application;
-using SYS.Application.Zero;
+﻿
+using Sunny.UI;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,17 +24,25 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = new ResponseMsg();
+
         private void FrmVipRule_Load(object sender, EventArgs e)
         {
             #region 加载客户类型信息
-            List<CustoType> lstSourceGrid = new BaseService().SelectCustoTypeAllCanUse();
+            result = HttpHelper.Request("Base/SelectCustoTypeAllCanUse", null, null);
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectCustoTypeAllCanUse+接口服务异常，请提交issue");
+                return;
+            }
+            List<CustoType> lstSourceGrid = HttpHelper.JsonToList<CustoType>(result.message);
             this.cboCustoType.DataSource = lstSourceGrid;
             this.cboCustoType.DisplayMember = "TypeName";
             this.cboCustoType.ValueMember = "UserType";
             this.cboCustoType.SelectedIndex = 0;
             #endregion
             //生成流水号
-            txtRuleId.Text = new CounterHelper().GetNewId(CounterRuleConsts.VipRuleId);
+            txtRuleId.Text = Util.GetListNewId("VR", 3, 1, "-").FirstOrDefault();
             LoadVipType();
         }
 
@@ -43,7 +52,13 @@ namespace SYS.FormUI
         public void LoadVipType()
         {
             flpVipType.Clear();
-            var listVipTypes = new VipRuleAppService().SelectVipRuleList();
+            result = HttpHelper.Request("VipRule/SelectVipRuleList");
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("SelectVipRuleList+接口服务异常，请提交issue");
+                return;
+            }
+            var listVipTypes = HttpHelper.JsonToList<VipRule>(result.message);
             listVipTypes.ForEach(vipType =>
             {
                 ucVipType ucVipType = new ucVipType();
@@ -69,10 +84,15 @@ namespace SYS.FormUI
                 rule_value = vipRule.rule_value,
                 type_id = vipRule.type_id,
                 delete_mk = 0,
-                datains_usr = AdminInfo.Account,
-                datains_date = DateTime.Now
+                datains_usr = AdminInfo.Account
             };
-            return new VipRuleAppService().AddVipRule(vipRule1);
+            result = HttpHelper.Request("VipRule/AddVipRule",HttpHelper.ModelToJson(vipRule1));
+            if (result.statusCode != 200)
+            {
+                UIMessageTip.ShowError("AddVipRule+接口服务异常，请提交issue");
+                return false;
+            }
+            return true;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -85,7 +105,8 @@ namespace SYS.FormUI
                     rule_id = txtRuleId.Text.Trim(),
                     rule_name = txtRuleName.Text.Trim(),
                     rule_value = Convert.ToDecimal(dudSpendAmount.Value),
-                    type_id = Convert.ToInt32(cboCustoType.SelectedValue)
+                    type_id = Convert.ToInt32(cboCustoType.SelectedValue),
+                    datains_usr = AdminInfo.Account
                 };
                 if (InsertVipRule(vipRule1))
                 {

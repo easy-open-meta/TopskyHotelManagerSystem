@@ -22,12 +22,13 @@
  *
  */
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using SYS.FormUI.Properties;
 
 namespace SYS.FormUI
@@ -57,6 +58,10 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
+
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmChangeWorker_Load(object sender, EventArgs e)
         {
             if (AdminInfo.isAdmin == false && AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "HRManager")
@@ -260,7 +265,12 @@ namespace SYS.FormUI
                     WorkerId = wk_WorkerNo,
                     delete_mk = 0
                 };
-                new WorkerService().ManagerWorkerAccount(worker);
+                result = HttpHelper.Request("Worker​/ManagerWorkerAccount", HttpHelper.ModelToJson(worker));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("ManagerWorkerAccount+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "启用员工账号操作！新增值为：" + worker.WorkerId, 2);
                 #endregion
@@ -274,7 +284,12 @@ namespace SYS.FormUI
                     WorkerId = wk_WorkerNo,
                     delete_mk = 1
                 };
-                new WorkerService().ManagerWorkerAccount(worker);
+                result = HttpHelper.Request("Worker​/ManagerWorkerAccount", HttpHelper.ModelToJson(worker));
+                if (result.statusCode != 200)
+                {
+                    UIMessageBox.ShowError("ManagerWorkerAccount+接口服务异常，请提交Issue或尝试更新版本！");
+                    return;
+                }
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "禁用员工账号操作！新增值为：" + worker.WorkerId, 2);
                 #endregion

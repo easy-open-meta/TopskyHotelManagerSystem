@@ -61,6 +61,7 @@
             this.txtRoomNo.StyleCustomMode = true;
             this.txtRoomNo.TabIndex = 106;
             this.txtRoomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtRoomNo.Validated += new System.EventHandler(this.txtRoomNo_Validated);
             // 
             // label3
             // 
@@ -118,7 +119,9 @@
             this.txtMoney.Style = Sunny.UI.UIStyle.Custom;
             this.txtMoney.StyleCustomMode = true;
             this.txtMoney.TabIndex = 110;
+            this.txtMoney.Text = "0.00";
             this.txtMoney.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtMoney.Type = Sunny.UI.UITextBox.UIEditType.Double;
             // 
             // label4
             // 
@@ -236,6 +239,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmAddRoom";
             this.ShowIcon = true;
+            this.ShowTitleIcon = true;
             this.Text = "新增客房";
             this.Load += new System.EventHandler(this.FrmAddRoom_Load);
             this.ResumeLayout(false);

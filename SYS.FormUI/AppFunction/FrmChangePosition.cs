@@ -22,12 +22,13 @@
  *
  */
 using System;
-using MySql.Data.MySqlClient;
+
 using System.Windows.Forms;
-using SYS.Core;
+using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using SYS.Application;
+
 using SYS.Common;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -42,6 +43,9 @@ namespace SYS.FormUI
             InitializeComponent();
         }
 
+        ResponseMsg result = null;
+        Dictionary<string, string> dic = null;
+
         private void FrmChangePosition_Load(object sender, EventArgs e)
         {
             txtworkerId.Text = FrmChangeWorker.wk_WorkerNo;
@@ -49,11 +53,27 @@ namespace SYS.FormUI
             txtClub.Text = FrmChangeWorker.wk_WorkerClub;
             txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
             //获取所有职位信息
-            cboNewPosition.DataSource =  new BaseService().SelectPositionAll(new Position { delete_mk = 0 });
+            dic= new Dictionary<string, string>()
+            {
+                { "delete_mk","0"}
+            };
+            result = HttpHelper.Request("Base/SelectPositionAll",null,dic);
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectPositionAll+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboNewPosition.DataSource = HttpHelper.JsonToList<Position>(result.message);
             cboNewPosition.DisplayMember = "position_name";
             cboNewPosition.ValueMember = "position_no";
             //获取所有部门信息
-            cboNewClub.DataSource = new BaseService().SelectDeptAllCanUse();
+            result = HttpHelper.Request("Base/SelectDeptAllCanUse");
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            cboNewClub.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboNewClub.DisplayMember = "dept_name";
             cboNewClub.ValueMember = "dept_no";
         }
@@ -75,10 +95,17 @@ namespace SYS.FormUI
             {
                 WorkerClub = cboNewClub.SelectedValue.ToString(),
                 WorkerPosition = cboNewPosition.SelectedValue.ToString(),
-                WorkerId = txtworkerId.Text
+                WorkerId = txtworkerId.Text,
+                datachg_usr = AdminInfo.Account
             };
-             bool n = new WorkerService().UpdateWorkerPositionAndClub(worker);
-            if (n == true)
+            result = HttpHelper.Request("Worker​/UpdateWorkerPositionAndClub", HttpHelper.ModelToJson(worker));
+            if (result.statusCode != 200)
+            {
+                UIMessageBox.ShowError("UpdateWorkerPositionAndClub+接口服务异常，请提交Issue或尝试更新版本！");
+                return;
+            }
+            bool n = result.message.ToString().Equals("true");
+            if (n)
             {
                 UIMessageBox.ShowSuccess("任命已生效!");
                 #region 获取添加操作日志所需的信息
@@ -87,8 +114,6 @@ namespace SYS.FormUI
                 FrmWorkerManager.Reload();
                 this.Close();
             }
-
-
         }
 
     }
