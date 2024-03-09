@@ -87,7 +87,7 @@
       <HintPath>..\packages\jvncorelib.1.0.1.7\lib\net461\jvncorelib-fr.dll</HintPath>
     </Reference>
     <Reference Include="kse">
-      <HintPath>..\topsky-hotel-manager-system-web-api\Library\kse.dll</HintPath>
+      <HintPath>..\TopskyHotelManagerSystem-WebApi\Library\kse.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -996,7 +996,7 @@
       <Name>SYS.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\TopskyHotelManagerSystem-WebApi\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj">
-      <Project>{48b3f864-88d2-4bd1-a766-b9ebf342aed1}</Project>
+      <Project>{317c0928-5b3a-4e93-859a-52f6c307c074}</Project>
       <Name>EOM.TSHotelManager.Common.Core</Name>
     </ProjectReference>
   </ItemGroup>
