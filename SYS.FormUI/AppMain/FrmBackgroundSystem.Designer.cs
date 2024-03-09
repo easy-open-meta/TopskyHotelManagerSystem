@@ -324,7 +324,7 @@ namespace SYS.FormUI
             // btnLocked
             // 
             this.btnLocked.BackColor = System.Drawing.Color.Transparent;
-            this.btnLocked.BackgroundImage = global::SYS.FormUI.Properties.Resources._lock;
+            this.btnLocked.BackgroundImage = global::SYS.FormUI.Properties.Resources.lockicon;
             this.btnLocked.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLocked.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnLocked.FillColor = System.Drawing.Color.Transparent;

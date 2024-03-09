@@ -92,9 +92,6 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SqlSugar">
-      <HintPath>..\packages\SqlSugar.5.0.3.5\lib\SqlSugar.dll</HintPath>
-    </Reference>
     <Reference Include="SunnyUI, Version=3.6.5.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.3.6.5\lib\net40\SunnyUI.dll</HintPath>
     </Reference>
@@ -122,8 +119,8 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -137,8 +134,8 @@
       <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    <Reference Include="System.Text.Encoding.CodePages, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.6.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -454,12 +451,6 @@
     <Compile Include="AppFunction\FrmWorkerCheckInfo.Designer.cs">
       <DependentUpon>FrmWorkerCheckInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppUserControls\ucRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AppUserControls\ucRoom.Designer.cs">
-      <DependentUpon>ucRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppUserControls\ucVipType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -635,9 +626,6 @@
     <EmbeddedResource Include="AppUserControls\ucNavBar.resx">
       <DependentUpon>ucNavBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppUserControls\ucRoom.resx">
-      <DependentUpon>ucRoom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppUserControls\ucVipType.resx">
       <DependentUpon>ucVipType.cs</DependentUpon>
     </EmbeddedResource>
@@ -734,7 +722,7 @@
     <Content Include="images\jpg_auto_04N58PICPw2s58PICaP4M8cef_PIC2018.jpg!w1024_new_small.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\lock.png">
+    <Content Include="images\lockicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\settings2.png">
@@ -883,6 +871,7 @@
     <None Include="Resources\picRoom.ImagePress.png" />
     <None Include="Resources\picRoom.ImageSelected.png" />
     <None Include="Resources\uiButton1.BackgroundImage.png" />
+    <None Include="Resources\lock1.png" />
     <Content Include="Resources\上传照片.png" />
     <Content Include="Resources\打卡.png" />
     <Content Include="Resources\普通会员.png" />

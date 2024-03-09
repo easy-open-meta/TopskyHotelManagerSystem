@@ -1,5 +1,4 @@
 ﻿using EOM.TSHotelManager.Common.Core;
-using SqlSugar;
 using Sunny.UI;
 using SYS.Common;
 using SYS.FormUI.Properties;

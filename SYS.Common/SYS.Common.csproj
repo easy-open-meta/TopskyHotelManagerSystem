@@ -156,6 +156,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TopskyHotelManagerSystem-WebApi\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj">
+      <Project>{317c0928-5b3a-4e93-859a-52f6c307c074}</Project>
+      <Name>EOM.TSHotelManager.Common.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
