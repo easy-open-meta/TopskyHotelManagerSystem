@@ -1,15 +1,8 @@
-﻿using Sunny.UI;
+﻿using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
 using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -20,7 +13,7 @@ namespace SYS.FormUI
         {
             InitializeComponent();
         }
-       
+
         private void FrmLoading_Load(object sender, EventArgs e)
         {
             lblSoftwareVersion.Text = System.Windows.Forms.Application.ProductVersion.ToString();

@@ -21,18 +21,15 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using jvncorelib_fr.EntityLib;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
-using Sunny.UI;
-
-using SYS.Common;
-using jvncorelib_fr.EntityLib;
 using System.Linq;
-using System.Collections;
-using Microsoft.Office.Interop.Excel;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -77,7 +74,7 @@ namespace SYS.FormUI
         #endregion
 
         #region 查询文本框更改事件
-        
+
         private void LoadThingByName()
         {
             dic = new Dictionary<string, string>()
@@ -85,7 +82,7 @@ namespace SYS.FormUI
                 { "SellNo",txtFind.Text.Trim()},
                 {"SellName", txtFind.Text.Trim()}
             };
-            result = HttpHelper.Request("Sellthing/SelectSellThingAll",null,dic);
+            result = HttpHelper.Request("Sellthing/SelectSellThingAll", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectSellThingAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -137,7 +134,7 @@ namespace SYS.FormUI
         {
             if (txtRoomNo.Text == "")
             {
-                UIMessageBox.Show("消费房间不能为空", "提示信息",UIStyle.Red, UIMessageBoxButtons.OKCancel);
+                UIMessageBox.Show("消费房间不能为空", "提示信息", UIStyle.Red, UIMessageBoxButtons.OKCancel);
                 txtRoomNo.Focus();
                 return false;
             }
@@ -186,11 +183,11 @@ namespace SYS.FormUI
             {
                 if (CheckInput())
                 {
-                    dic  = new Dictionary<string, string>()
+                    dic = new Dictionary<string, string>()
                     {
                         { "SellNo",txtSellNo.Text.Trim()}
                     };
-                    result = HttpHelper.Request("Sellthing/SelectSellThingAll",null,dic);
+                    result = HttpHelper.Request("Sellthing/SelectSellThingAll", null, dic);
                     if (result.statusCode != 200)
                     {
                         UIMessageBox.ShowError("SelectSellThingAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -245,7 +242,7 @@ namespace SYS.FormUI
                             }
                             if (result.message.ToString().Equals("true"))
                             {
-                                var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                                var stock = (st.First().Stock - (decimal)nudNum.Value);
                                 var sellThing = new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format };
                                 result = HttpHelper.Request("Sellthing/UpdateSellthingInfo", HttpHelper.ModelToJson(sellThing));
                                 if (result.statusCode != 200)
@@ -284,7 +281,7 @@ namespace SYS.FormUI
                             bool m = result.message.ToString().Equals("true");
                             if (m)
                             {
-                                var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                                var stock = (st.First().Stock - (decimal)nudNum.Value);
                                 var sellThing = new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format };
                                 result = HttpHelper.Request("Sellthing/UpdateSellthingInfo", HttpHelper.ModelToJson(sellThing));
                                 if (result.statusCode != 200)
@@ -330,7 +327,7 @@ namespace SYS.FormUI
                         bool m = result.message.ToString().Equals("true");
                         if (m)
                         {
-                            var stock = ((decimal)st.First().Stock - (decimal)nudNum.Value);
+                            var stock = (st.First().Stock - (decimal)nudNum.Value);
                             var sellThing = new SellThing { SellName = st.First().SellName, SellPrice = st.First().SellPrice, Stock = stock, SellNo = st.First().SellNo, format = st.First().format };
                             result = HttpHelper.Request("Sellthing/UpdateSellthingInfo", HttpHelper.ModelToJson(sellThing));
                             if (result.statusCode != 200)
@@ -373,7 +370,7 @@ namespace SYS.FormUI
                     UIMessageBox.Show("此条消费记录为住房记录，无法删除！", "提示信息", UIStyle.Red);
                     return;
                 }
-                if(UIMessageDialog.ShowMessageDialog("你确定要删除该消费记录吗？", UILocalize.WarningTitle, true,Style))
+                if (UIMessageDialog.ShowMessageDialog("你确定要删除该消费记录吗？", UILocalize.WarningTitle, true, Style))
                 {
                     var spendTime = Convert.ToDateTime(dgvRoomSell.SelectedRows[0].Cells["clSpendTime"].Value.ToString());
                     string custoNo = dgvRoomSell.SelectedRows[0].Cells["clCustoNo"].Value.ToString();
@@ -429,12 +426,12 @@ namespace SYS.FormUI
                 }
                 else
                 {
-                    UIMessageTip.ShowError("操作取消！",1000);
+                    UIMessageTip.ShowError("操作取消！", 1000);
                 }
             }
             else
             {
-                UIMessageBox.Show("请选择要删除的消费记录！", "提示信息",UIStyle.Red);
+                UIMessageBox.Show("请选择要删除的消费记录！", "提示信息", UIStyle.Red);
             }
         }
         #endregion
@@ -463,12 +460,12 @@ namespace SYS.FormUI
 
         private void txtRoomNo_Validated(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtRoomNo_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -476,7 +473,7 @@ namespace SYS.FormUI
             string room = txtRoomNo.Text.Trim();
             if (string.IsNullOrWhiteSpace(room) == true)
             {
-                UIMessageTip.ShowWarning("请输入消费房间号！",1000);
+                UIMessageTip.ShowWarning("请输入消费房间号！", 1000);
                 return;
             }
             dic = new Dictionary<string, string>()
@@ -532,7 +529,7 @@ namespace SYS.FormUI
 
         private void FrmSellThing_Activated(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

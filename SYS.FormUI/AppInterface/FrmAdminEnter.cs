@@ -21,17 +21,13 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
+using jvncorelib_fr.EncryptorLib;
 using Sunny.UI;
-using System.Text.RegularExpressions;
-
 using SYS.Common;
-using System.Net;
-using System.Diagnostics;
-
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace SYS.FormUI
 {
@@ -55,7 +51,7 @@ namespace SYS.FormUI
                 return;
             }
 
-            Admin admin = new Admin() { AdminAccount = account, AdminPassword = pass };
+            Admin admin = new Admin() { AdminAccount = account, AdminPassword = new EncryptLib().Encryption(pass, EncryptionLevel.Enhanced) };
             result = HttpHelper.Request("Admin/SelectMangerByPass", HttpHelper.ModelToJson(admin));
             if (result.statusCode != 200)
             {
@@ -76,6 +72,7 @@ namespace SYS.FormUI
                 AdminInfo.Account = a.AdminAccount;
                 AdminInfo.isAdmin = a.IsAdmin == 0 ? false : true;
                 AdminInfo.SoftwareVersion = System.Windows.Forms.Application.ProductVersion.ToString();
+                AdminInfo.UserToken = a.user_token;
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "版本登入了后台管理系统！", 3);
                 #endregion
@@ -110,7 +107,7 @@ namespace SYS.FormUI
         /// <param name="adminaccount"></param>
         /// <param name="adminpassword"></param>
         /// <returns></returns>
-        public bool CheckInputString(string adminaccount,string adminpassword)
+        public bool CheckInputString(string adminaccount, string adminpassword)
         {
             if (string.IsNullOrWhiteSpace(adminaccount))
             {

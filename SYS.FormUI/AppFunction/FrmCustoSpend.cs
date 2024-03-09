@@ -22,12 +22,10 @@
  *
  */
 
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {

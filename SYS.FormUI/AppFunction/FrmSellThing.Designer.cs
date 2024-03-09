@@ -139,7 +139,6 @@
             // nudNum
             // 
             this.nudNum.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.nudNum.Decimal = 0;
             this.nudNum.Font = new System.Drawing.Font("新宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.nudNum.Location = new System.Drawing.Point(310, 30);
             this.nudNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -288,13 +287,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRoomSell.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRoomSell.RowHeadersVisible = false;
-            this.dgvRoomSell.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvRoomSell.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRoomSell.RowTemplate.Height = 29;
             this.dgvRoomSell.SelectedIndex = -1;
             this.dgvRoomSell.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoomSell.ShowGridLine = true;
             this.dgvRoomSell.ShowRowErrors = false;
             this.dgvRoomSell.Size = new System.Drawing.Size(573, 269);
             this.dgvRoomSell.Style = Sunny.UI.UIStyle.Custom;
@@ -467,13 +464,11 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSellthing.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSellthing.RowHeadersVisible = false;
-            this.dgvSellthing.RowHeight = 29;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             this.dgvSellthing.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSellthing.RowTemplate.Height = 29;
             this.dgvSellthing.SelectedIndex = -1;
             this.dgvSellthing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSellthing.ShowGridLine = true;
             this.dgvSellthing.Size = new System.Drawing.Size(488, 399);
             this.dgvSellthing.Style = Sunny.UI.UIStyle.Custom;
             this.dgvSellthing.TabIndex = 16;

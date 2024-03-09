@@ -21,16 +21,13 @@
  *SOFTWARE.
  *
  */
-using System;
-
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-
 using Sunny.UI;
 using SYS.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -60,19 +57,19 @@ namespace SYS.FormUI
 
         private void FrmSellThingManager_Load(object sender, EventArgs e)
         {
-            string SellId = Util.GetListNewId("ST",3,1,"-").FirstOrDefault();
+            string SellId = Util.GetListNewId("ST", 3, 1, "-").FirstOrDefault();
             txtSellNo.Text = SellId;
             LoadData();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            dic= new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 {"SellNo",txtFind.Text.Trim() },
                 { "SellName",txtFind.Text.Trim()}
             };
-            result = HttpHelper.Request("Sellthing/SelectSellThingAll",null,dic);
+            result = HttpHelper.Request("Sellthing/SelectSellThingAll", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectSellThingAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -83,11 +80,11 @@ namespace SYS.FormUI
 
         private void btnDeleteSellThing_Click(object sender, EventArgs e)
         {
-            dic = new Dictionary<string, string>() 
+            dic = new Dictionary<string, string>()
             {
                 { "sellNo",txtSellNo.Text.Trim()}
             };
-            result = HttpHelper.Request("Sellthing/DeleteSellThingBySellNo", null,dic);
+            result = HttpHelper.Request("Sellthing/DeleteSellThingBySellNo", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("DeleteSellThingBySellNo+接口服务异常，请提交Issue或尝试更新版本！");
@@ -101,9 +98,9 @@ namespace SYS.FormUI
             return;
         }
 
-        public bool CheckInput(SellThing sellThing) 
+        public bool CheckInput(SellThing sellThing)
         {
-            if(string.IsNullOrWhiteSpace(sellThing.SellNo))
+            if (string.IsNullOrWhiteSpace(sellThing.SellNo))
             {
                 return false;
             }
@@ -139,7 +136,7 @@ namespace SYS.FormUI
                 {
                     { "SellNo",st.SellNo}
                 };
-                result = HttpHelper.Request("Sellthing/SelectSellInfoBySellNo",null,dic);
+                result = HttpHelper.Request("Sellthing/SelectSellInfoBySellNo", null, dic);
                 if (result.statusCode != 200)
                 {
                     UIMessageBox.ShowError("SelectSellInfoBySellNo+接口服务异常，请提交Issue或尝试更新版本！");
@@ -167,7 +164,7 @@ namespace SYS.FormUI
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "新增商品操作！新增值为：" + st.SellNo, 2);
                 #endregion
                 LoadData();
-                string SellId = Util.GetListNewId("ST",3,1,"-").FirstOrDefault();
+                string SellId = Util.GetListNewId("ST", 3, 1, "-").FirstOrDefault();
                 txtSellNo.Text = SellId;
             }
             else
@@ -221,7 +218,7 @@ namespace SYS.FormUI
                     UIMessageBox.Show("修改商品失败", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
                     return;
                 }
-                UIMessageBox.Show("修改商品成功","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                UIMessageBox.Show("修改商品成功", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
                 #region 获取添加操作日志所需的信息
                 RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "修改商品操作！修改值为：" + st.SellNo, 2);
                 #endregion

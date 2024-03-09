@@ -1,19 +1,11 @@
 ﻿
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -65,7 +57,7 @@ namespace SYS.FormUI
                 ucVipType.picVip.BackgroundImage = vipType.type_id == 0 ? Resources.普通会员
                 : vipType.type_id == 1 ? Resources.钻石会员 : vipType.type_id == 2 ? Resources.白金会员 : Resources.黄金会员;
                 ucVipType.lblValue.Text = vipType.type_name;
-                flpVipType.AddControl(ucVipType);
+                flpVipType.Add(ucVipType);
             });
 
         }
@@ -86,7 +78,7 @@ namespace SYS.FormUI
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account
             };
-            result = HttpHelper.Request("VipRule/AddVipRule",HttpHelper.ModelToJson(vipRule1));
+            result = HttpHelper.Request("VipRule/AddVipRule", HttpHelper.ModelToJson(vipRule1));
             if (result.statusCode != 200)
             {
                 UIMessageTip.ShowError("AddVipRule+接口服务异常，请提交issue");

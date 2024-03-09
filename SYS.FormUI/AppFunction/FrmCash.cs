@@ -21,13 +21,11 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Linq;
-using System.Windows.Forms;
-using Sunny.UI;
-
-using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -39,7 +37,7 @@ namespace SYS.FormUI
         }
 
         ResponseMsg result = new ResponseMsg();
-        
+
 
         private void FrmCash_Load(object sender, EventArgs e)
         {
@@ -65,7 +63,7 @@ namespace SYS.FormUI
             cboCashPerson.ValueMember = "WorkerId";
 
             LoadCashInfo();
-            txtCashNo.Text = Util.GetListNewId("CN",3,1,"-").FirstOrDefault();
+            txtCashNo.Text = Util.GetListNewId("CN", 3, 1, "-").FirstOrDefault();
             if (AdminInfo.Type != "GeneralManager" && AdminInfo.Type != "FinanceManager" && AdminInfo.isAdmin == false)
             {
                 btnOK.Enabled = false;
@@ -130,19 +128,19 @@ namespace SYS.FormUI
             };
             if (CheckInput(cash))
             {
-                bool dr = UIMessageBox.Show("请确认信息没有错误，一旦录入则无法修改！", "警告提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                bool dr = UIMessageBox.Show("请确认信息没有错误，一旦录入则无法修改！", "警告提醒", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr == true)
                 {
-                    result = HttpHelper.Request("Cash/AddCashInfo",HttpHelper.ModelToJson(cash));
+                    result = HttpHelper.Request("Cash/AddCashInfo", HttpHelper.ModelToJson(cash));
                     if (result.statusCode != 200)
                     {
                         UIMessageBox.ShowError("AddCashInfo+接口服务异常，请提交Issue或尝试更新版本！");
                         return;
                     }
-                    bool n = result.message.ToString().Equals("true")?true:false;
+                    bool n = result.message.ToString().Equals("true") ? true : false;
                     if (n)
                     {
-                        UIMessageBox.Show("录入成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("录入成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
                         LoadCashInfo();
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(AdminInfo.Account + AdminInfo.Name + "于" + DateTime.Now + "进行资产录入，资产编号为：" + txtCashNo.Text.Trim(), 3);

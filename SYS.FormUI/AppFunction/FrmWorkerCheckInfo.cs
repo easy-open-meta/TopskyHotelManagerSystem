@@ -21,13 +21,11 @@
  *SOFTWARE.
  *
  */
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -45,7 +43,7 @@ namespace SYS.FormUI
         private void FrmWorkerCheckInfo_Load(object sender, EventArgs e)
         {
             lblWorkerInfo.Text = "以下为员工：" + FrmChangeWorker.wk_WorkerNo + "-员工姓名：" + FrmChangeWorker.wk_WorkerName + "的所有打卡考勤记录:";
-            dic= new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 { "wid",FrmChangeWorker.wk_WorkerNo}
             };

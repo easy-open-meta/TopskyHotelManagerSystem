@@ -48,7 +48,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsCustoManager = new Sunny.UI.UIContextMenuStrip();
-            this.tsmiCustoNo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSerach = new Sunny.UI.UIButton();
             this.btnAddCusto = new Sunny.UI.UIButton();
             this.btnExport = new Sunny.UI.UIButton();
@@ -61,6 +60,8 @@
             this.btnPg = new Sunny.UI.UIPagination();
             this.uiLine1 = new Sunny.UI.UILine();
             this.cbExportAll = new Sunny.UI.UICheckBox();
+            this.tsmiCustoNo = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbOnlyVip = new Sunny.UI.UICheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.cmsCustoManager.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
@@ -126,14 +127,13 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomerList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCustomerList.RowHeadersVisible = false;
-            this.dgvCustomerList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomerList.RowTemplate.Height = 29;
             this.dgvCustomerList.SelectedIndex = -1;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerList.ShowRect = false;
             this.dgvCustomerList.Size = new System.Drawing.Size(999, 482);
+            this.dgvCustomerList.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvCustomerList.Style = Sunny.UI.UIStyle.Custom;
             this.dgvCustomerList.TabIndex = 111;
             // 
@@ -234,14 +234,6 @@
             this.cmsCustoManager.Name = "cmsCustoManager";
             this.cmsCustoManager.Size = new System.Drawing.Size(177, 30);
             // 
-            // tsmiCustoNo
-            // 
-            this.tsmiCustoNo.Image = global::SYS.FormUI.Properties.Resources.复制;
-            this.tsmiCustoNo.Name = "tsmiCustoNo";
-            this.tsmiCustoNo.Size = new System.Drawing.Size(176, 26);
-            this.tsmiCustoNo.Text = "复制用户编号";
-            this.tsmiCustoNo.Click += new System.EventHandler(this.tsmiCustoNo_Click);
-            // 
             // btnSerach
             // 
             this.btnSerach.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -323,16 +315,14 @@
             // txtCustoName
             // 
             this.txtCustoName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustoName.FillColor = System.Drawing.Color.White;
             this.txtCustoName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCustoName.Location = new System.Drawing.Point(385, 23);
             this.txtCustoName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCustoName.Maximum = 2147483647D;
-            this.txtCustoName.Minimum = -2147483648D;
             this.txtCustoName.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCustoName.Name = "txtCustoName";
             this.txtCustoName.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoName.Radius = 20;
+            this.txtCustoName.ShowText = false;
             this.txtCustoName.Size = new System.Drawing.Size(173, 33);
             this.txtCustoName.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoName.TabIndex = 98;
@@ -352,16 +342,14 @@
             // txtCustoNo
             // 
             this.txtCustoNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustoNo.FillColor = System.Drawing.Color.White;
             this.txtCustoNo.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCustoNo.Location = new System.Drawing.Point(110, 23);
             this.txtCustoNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCustoNo.Maximum = 2147483647D;
-            this.txtCustoNo.Minimum = -2147483648D;
             this.txtCustoNo.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCustoNo.Name = "txtCustoNo";
             this.txtCustoNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtCustoNo.Radius = 20;
+            this.txtCustoNo.ShowText = false;
             this.txtCustoNo.Size = new System.Drawing.Size(173, 33);
             this.txtCustoNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtCustoNo.TabIndex = 96;
@@ -388,7 +376,8 @@
             this.btnPg.Name = "btnPg";
             this.btnPg.PageSize = 15;
             this.btnPg.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPg.Size = new System.Drawing.Size(677, 34);
+            this.btnPg.ShowText = false;
+            this.btnPg.Size = new System.Drawing.Size(543, 34);
             this.btnPg.Style = Sunny.UI.UIStyle.Custom;
             this.btnPg.TabIndex = 121;
             this.btnPg.Text = null;
@@ -397,11 +386,13 @@
             // 
             // uiLine1
             // 
+            this.uiLine1.BackColor = System.Drawing.Color.Transparent;
             this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLine1.Location = new System.Drawing.Point(792, 533);
+            this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLine1.Location = new System.Drawing.Point(791, 533);
             this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
             this.uiLine1.Name = "uiLine1";
-            this.uiLine1.Size = new System.Drawing.Size(203, 29);
+            this.uiLine1.Size = new System.Drawing.Size(204, 29);
             this.uiLine1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLine1.TabIndex = 123;
             this.uiLine1.Text = "右键可复制客户编号";
@@ -410,6 +401,7 @@
             // 
             this.cbExportAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbExportAll.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cbExportAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbExportAll.Location = new System.Drawing.Point(687, 533);
             this.cbExportAll.MinimumSize = new System.Drawing.Size(1, 1);
             this.cbExportAll.Name = "cbExportAll";
@@ -419,12 +411,36 @@
             this.cbExportAll.TabIndex = 124;
             this.cbExportAll.Text = "导出全部";
             // 
+            // tsmiCustoNo
+            // 
+            this.tsmiCustoNo.Image = global::SYS.FormUI.Properties.Resources.复制;
+            this.tsmiCustoNo.Name = "tsmiCustoNo";
+            this.tsmiCustoNo.Size = new System.Drawing.Size(176, 26);
+            this.tsmiCustoNo.Text = "复制用户编号";
+            this.tsmiCustoNo.Click += new System.EventHandler(this.tsmiCustoNo_Click);
+            // 
+            // cbOnlyVip
+            // 
+            this.cbOnlyVip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbOnlyVip.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cbOnlyVip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbOnlyVip.Location = new System.Drawing.Point(567, 533);
+            this.cbOnlyVip.MinimumSize = new System.Drawing.Size(1, 1);
+            this.cbOnlyVip.Name = "cbOnlyVip";
+            this.cbOnlyVip.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.cbOnlyVip.Size = new System.Drawing.Size(113, 29);
+            this.cbOnlyVip.Style = Sunny.UI.UIStyle.Custom;
+            this.cbOnlyVip.TabIndex = 125;
+            this.cbOnlyVip.Text = "仅查看会员";
+            this.cbOnlyVip.CheckedChanged += new System.EventHandler(this.cbOnlyVip_CheckedChanged);
+            // 
             // FrmCustoManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
+            this.Controls.Add(this.cbOnlyVip);
             this.Controls.Add(this.cbExportAll);
             this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.btnPg);
@@ -441,6 +457,7 @@
             this.ShowTitleIcon = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "客户信息管理";
+            this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 1005, 623);
             this.Load += new System.EventHandler(this.FrmCustoManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).EndInit();
             this.cmsCustoManager.ResumeLayout(false);
@@ -478,5 +495,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustoNo;
         private Sunny.UI.UILine uiLine1;
         private Sunny.UI.UICheckBox cbExportAll;
+        private Sunny.UI.UICheckBox cbOnlyVip;
     }
 }

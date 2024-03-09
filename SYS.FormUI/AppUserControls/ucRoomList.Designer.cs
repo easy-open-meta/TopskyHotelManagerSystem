@@ -46,6 +46,7 @@
             // 
             // cmsMain
             // 
+            this.cmsMain.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiReserRoom,
             this.tsmiCheckIn,
@@ -54,48 +55,48 @@
             this.tsmiSelectUserInfo,
             this.tsmiChangeState});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(153, 136);
+            this.cmsMain.Size = new System.Drawing.Size(211, 208);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiReserRoom
             // 
             this.tsmiReserRoom.Name = "tsmiReserRoom";
-            this.tsmiReserRoom.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReserRoom.Size = new System.Drawing.Size(210, 34);
             this.tsmiReserRoom.Text = "预约房间";
             this.tsmiReserRoom.Click += new System.EventHandler(this.tsmiReserRoom_Click);
             // 
             // tsmiCheckIn
             // 
             this.tsmiCheckIn.Name = "tsmiCheckIn";
-            this.tsmiCheckIn.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCheckIn.Size = new System.Drawing.Size(210, 34);
             this.tsmiCheckIn.Text = "入住房间";
             this.tsmiCheckIn.Click += new System.EventHandler(this.tsmiCheckIn_Click);
             // 
             // tsmiCheckOut
             // 
             this.tsmiCheckOut.Name = "tsmiCheckOut";
-            this.tsmiCheckOut.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCheckOut.Size = new System.Drawing.Size(210, 34);
             this.tsmiCheckOut.Text = "结算退房";
             this.tsmiCheckOut.Click += new System.EventHandler(this.tsmiCheckOut_Click);
             // 
             // tsmiChangeRoom
             // 
             this.tsmiChangeRoom.Name = "tsmiChangeRoom";
-            this.tsmiChangeRoom.Size = new System.Drawing.Size(152, 22);
+            this.tsmiChangeRoom.Size = new System.Drawing.Size(210, 34);
             this.tsmiChangeRoom.Text = "转换房间";
             this.tsmiChangeRoom.Click += new System.EventHandler(this.tsmiChangeRoom_Click);
             // 
             // tsmiSelectUserInfo
             // 
             this.tsmiSelectUserInfo.Name = "tsmiSelectUserInfo";
-            this.tsmiSelectUserInfo.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSelectUserInfo.Size = new System.Drawing.Size(210, 34);
             this.tsmiSelectUserInfo.Text = "查看用户信息";
             this.tsmiSelectUserInfo.Click += new System.EventHandler(this.tsmiSelectUserInfo_Click);
             // 
             // tsmiChangeState
             // 
             this.tsmiChangeState.Name = "tsmiChangeState";
-            this.tsmiChangeState.Size = new System.Drawing.Size(152, 22);
+            this.tsmiChangeState.Size = new System.Drawing.Size(210, 34);
             this.tsmiChangeState.Text = "修改房间状态";
             this.tsmiChangeState.Click += new System.EventHandler(this.tsmiChangeState_Click);
             // 
@@ -105,9 +106,10 @@
             this.lblCustoNo.BackColor = System.Drawing.Color.Transparent;
             this.lblCustoNo.ContextMenuStrip = this.cmsMain;
             this.lblCustoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCustoNo.Location = new System.Drawing.Point(22, 59);
+            this.lblCustoNo.Location = new System.Drawing.Point(40, 103);
+            this.lblCustoNo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCustoNo.Name = "lblCustoNo";
-            this.lblCustoNo.Size = new System.Drawing.Size(62, 17);
+            this.lblCustoNo.Size = new System.Drawing.Size(111, 29);
             this.lblCustoNo.TabIndex = 10;
             this.lblCustoNo.Text = "CustoNo";
             this.lblCustoNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblCustoNo_MouseClick);
@@ -118,9 +120,10 @@
             this.lblRoomType.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomType.ContextMenuStrip = this.cmsMain;
             this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRoomType.Location = new System.Drawing.Point(23, 3);
+            this.lblRoomType.Location = new System.Drawing.Point(42, 5);
+            this.lblRoomType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(61, 17);
+            this.lblRoomType.Size = new System.Drawing.Size(109, 29);
             this.lblRoomType.TabIndex = 9;
             this.lblRoomType.Text = "RoomTy";
             this.lblRoomType.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomType_MouseClick);
@@ -132,9 +135,10 @@
             this.lblRoomNo.ContextMenuStrip = this.cmsMain;
             this.lblRoomNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoomNo.ForeColor = System.Drawing.Color.Black;
-            this.lblRoomNo.Location = new System.Drawing.Point(23, 31);
+            this.lblRoomNo.Location = new System.Drawing.Point(42, 54);
+            this.lblRoomNo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRoomNo.Name = "lblRoomNo";
-            this.lblRoomNo.Size = new System.Drawing.Size(63, 17);
+            this.lblRoomNo.Size = new System.Drawing.Size(113, 29);
             this.lblRoomNo.TabIndex = 8;
             this.lblRoomNo.Text = "RoomNo";
             this.lblRoomNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblRoomNo_MouseClick);
@@ -150,9 +154,10 @@
             // lblMark
             // 
             this.lblMark.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblMark.Location = new System.Drawing.Point(37, 48);
+            this.lblMark.Location = new System.Drawing.Point(68, 84);
+            this.lblMark.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMark.Name = "lblMark";
-            this.lblMark.Size = new System.Drawing.Size(15, 23);
+            this.lblMark.Size = new System.Drawing.Size(28, 40);
             this.lblMark.TabIndex = 11;
             this.lblMark.Text = "uiLabel1";
             this.lblMark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,7 +165,7 @@
             // 
             // ucRoomList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = global::SYS.FormUI.Properties.Resources.可住状态;
@@ -171,9 +176,10 @@
             this.Controls.Add(this.lblRoomType);
             this.Controls.Add(this.lblRoomNo);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "ucRoomList";
-            this.Size = new System.Drawing.Size(95, 79);
-            this.uttTips.SetToolTip(this, "a)、点击鼠标左键查看房间信息\r\nb)、点击鼠标右键打开选项菜单\r\nc)、快速双击鼠标左键可快速入住");
+            this.Size = new System.Drawing.Size(174, 138);
+            this.uttTips.SetToolTip(this, "a)、点击鼠标左键查看房间信息\r\nb)、点击鼠标右键打开选项菜单\r\nc)、快速双击鼠标左键可快速入住/查看信息");
             this.Load += new System.EventHandler(this.ucRoomList_Load);
             this.SizeChanged += new System.EventHandler(this.ucRoomList_SizeChanged);
             this.Click += new System.EventHandler(this.ucRoomList_Click);

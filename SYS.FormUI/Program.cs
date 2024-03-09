@@ -22,8 +22,6 @@
  *
  */
 using System;
-using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {

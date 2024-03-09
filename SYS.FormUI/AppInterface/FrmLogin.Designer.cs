@@ -63,7 +63,7 @@
             this.picLogin.Radius = 30;
             this.picLogin.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.picLogin.Size = new System.Drawing.Size(184, 60);
-            this.picLogin.Style = Sunny.UI.UIStyle.LightBlue;
+            this.picLogin.Style = Sunny.UI.UIStyle.Blue;
             this.picLogin.TabIndex = 15;
             this.picLogin.Text = "登      录";
             this.picLogin.Click += new System.EventHandler(this.picLogin_Click);
@@ -126,7 +126,7 @@
             this.btnLoginBackSystem.Radius = 30;
             this.btnLoginBackSystem.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.btnLoginBackSystem.Size = new System.Drawing.Size(184, 60);
-            this.btnLoginBackSystem.Style = Sunny.UI.UIStyle.LightBlue;
+            this.btnLoginBackSystem.Style = Sunny.UI.UIStyle.Blue;
             this.btnLoginBackSystem.TabIndex = 18;
             this.btnLoginBackSystem.Text = "进入后台管理系统";
             this.btnLoginBackSystem.Click += new System.EventHandler(this.btnLoginBackSystem_Click);

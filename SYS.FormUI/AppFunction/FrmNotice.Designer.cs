@@ -69,7 +69,7 @@ namespace SYS.FormUI
             this.dgvNoticeList.Size = new System.Drawing.Size(195, 534);
             this.dgvNoticeList.TabIndex = 113;
             this.dgvNoticeList.Text = "uiListBox1";
-            this.dgvNoticeList.ItemClick += new System.EventHandler(this.dgvNoticeList_ItemClick);
+            //this.dgvNoticeList.ItemClick += new System.EventHandler(this.dgvNoticeList_ItemClick);
             // 
             // FrmNotice
             // 

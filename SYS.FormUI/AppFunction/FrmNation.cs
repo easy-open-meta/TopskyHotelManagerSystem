@@ -21,20 +21,14 @@
  *SOFTWARE.
  *
  */
-using Sunny.UI;
-
-using SYS.Common;
 //using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -65,7 +59,7 @@ namespace SYS.FormUI
         public void ReloadNationList()
         {
             txtNationNo.Text = Util.GetListNewId("N", 3, 1, "-").FirstOrDefault();
-            
+
             result = HttpHelper.Request("Base/SelectNationAll");
             if (result.statusCode != 200)
             {

@@ -21,21 +21,14 @@
  *SOFTWARE.
  *
  */
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
+using jvncorelib_fr.EntityLib;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using jvncorelib_fr.EntityLib;
 
 namespace SYS.FormUI
 {
@@ -49,6 +42,8 @@ namespace SYS.FormUI
         private void FrmDepartment_Load(object sender, EventArgs e)
         {
             ReloadDeptList();
+            LoadDept();
+            LoadLeader();
         }
 
         ResponseMsg result = null;
@@ -56,17 +51,15 @@ namespace SYS.FormUI
 
         public void ReloadDeptList()
         {
-            LoadDept();
-            LoadLeader();
             txtDeptNo.Text = Util.GetListNewId("D", 3, 1, "-").FirstOrDefault();
-            dgvDeptList.AutoGenerateColumns = false;
             result = HttpHelper.Request("Base/SelectDeptAllCanUse");
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectDeptAllCanUse+接口服务异常，请提交Issue或尝试更新版本！");
                 return;
             }
-            dgvDeptList.DataSource =HttpHelper.JsonToList<Dept>(result.message);
+            dgvDeptList.AutoGenerateColumns = false;
+            dgvDeptList.DataSource = HttpHelper.JsonToList<Dept>(result.message);
         }
 
         public void LoadDept()
@@ -95,7 +88,7 @@ namespace SYS.FormUI
             cboDeptLeader.ValueMember = "WorkerId";
         }
 
-        public bool CheckInput(Dept dept) 
+        public bool CheckInput(Dept dept)
         {
             if (string.IsNullOrWhiteSpace(dept.dept_no))
             {
@@ -126,7 +119,7 @@ namespace SYS.FormUI
             };
             if (CheckInput(dept))
             {
-                result = HttpHelper.Request("Base/AddDept",HttpHelper.ModelToJson(dept));
+                result = HttpHelper.Request("Base/AddDept", HttpHelper.ModelToJson(dept));
                 if (result.statusCode != 200)
                 {
                     UIMessageBox.ShowError("AddDept+接口服务异常，请提交Issue或尝试更新版本！");
@@ -152,12 +145,12 @@ namespace SYS.FormUI
                 UIMessageBox.Show("信息不完整，请检查！", "系统提示", UIStyle.Orange, UIMessageBoxButtons.OK);
                 return;
             }
-            
+
         }
 
         private void dgvDeptList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void btnUpdateDept_Click(object sender, EventArgs e)
@@ -167,7 +160,7 @@ namespace SYS.FormUI
                 dept_no = txtDeptNo.Text.Trim(),
                 dept_name = txtDeptName.Text.Trim(),
                 dept_desc = txtDeptDesc.Text.Trim(),
-                dept_parent = cboDeptParent.SelectedValue == null ? "" : cboDeptParent.SelectedValue.ToString(),
+                dept_parent = cboDeptParent.SelectedValue == null ? "" : cboDeptParent.ToString(),
                 dept_leader = cboDeptLeader.SelectedValue == null ? "" : cboDeptLeader.SelectedValue.ToString(),
                 datachg_usr = AdminInfo.Account,
             };
@@ -210,7 +203,7 @@ namespace SYS.FormUI
                 {
                     { "deptNo",txtDeptNo.Text.Trim()}
                 };
-                result = HttpHelper.Request("Worker/CheckWorkerBydepartment",null, dic);
+                result = HttpHelper.Request("Worker/CheckWorkerBydepartment", null, dic);
                 if (result.statusCode != 200)
                 {
                     UIMessageBox.ShowError("CheckWorkerBydepartment+接口服务异常，请提交Issue或尝试更新版本！");
@@ -250,7 +243,7 @@ namespace SYS.FormUI
                 ReloadDeptList();
                 return;
             }
-            
+
         }
 
         private void dgvDeptList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -260,10 +253,17 @@ namespace SYS.FormUI
                 txtDeptNo.Text = dgvDeptList.SelectedRows[0].Cells["clDeptNo"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptNo"].Value.ToString();
                 txtDeptName.Text = dgvDeptList.SelectedRows[0].Cells["clDeptName"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptName"].Value.ToString();
                 txtDeptDesc.Text = dgvDeptList.SelectedRows[0].Cells["clDeptDesc"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptDesc"].Value.ToString();
+                cboDeptLeader.SelectedValue = dgvDeptList.SelectedRows[0].Cells["clDeptLeaderNo"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptLeaderNo"].Value.ToString();
+                cboDeptParent.SelectedValue = dgvDeptList.SelectedRows[0].Cells["clDeptParentNo"].Value.IsNullOrEmpty() ? "" : dgvDeptList.SelectedRows[0].Cells["clDeptParentNo"].Value.ToString();
             }
+        }
+
+        private void cboDeptLeader_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //UIMessageBox.Show(cboDeptLeader.SelectedValue.ToString());
         }
     }
 
-    
+
 
 }

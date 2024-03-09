@@ -21,21 +21,14 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
 using jvncorelib_fr.EntityLib;
 using Sunny.UI;
-
 using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -56,7 +49,7 @@ namespace SYS.FormUI
 
         private void btnUpdPwd_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtNewPwd.Text.Trim(),datachg_usr = AdminInfo.Account };
+            Admin admin = new Admin() { AdminAccount = AdminInfo.Account, AdminPassword = txtNewPwd.Text.Trim(), datachg_usr = AdminInfo.Account };
             result = HttpHelper.Request("Admin​/UpdateNewPwdByOldPwd", HttpHelper.ModelToJson(admin));
             if (result.statusCode != 200)
             {

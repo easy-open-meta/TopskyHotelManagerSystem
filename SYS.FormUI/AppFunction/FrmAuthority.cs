@@ -1,17 +1,10 @@
-﻿using jvncorelib_fr.EntityLib;
+﻿using EOM.TSHotelManager.Common.Core;
+using jvncorelib_fr.EntityLib;
 using Sunny.UI;
-
 using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -27,16 +20,16 @@ namespace SYS.FormUI
 
         private void FrmAuthority_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public void LoadAdminInfo()
         {
-            dic =  new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 { "AdminAccount",txtAccount.Text.Trim() }
-            }; 
-            result = HttpHelper.Request("Admin/GetAdminInfoByAdminAccount", null,dic);
+            };
+            result = HttpHelper.Request("Admin/GetAdminInfoByAdminAccount", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("GetAdminInfoByAdminAccount+接口服务异常，请提交Issue或尝试更新版本！");
@@ -63,7 +56,7 @@ namespace SYS.FormUI
             {
                 AdminAccount = txtAccount.Text.Trim(),
             };
-            
+
             result = HttpHelper.Request("Module/GetAllModuleByAdmin", HttpHelper.ModelToJson(admin));
             if (result.statusCode != 200)
             {

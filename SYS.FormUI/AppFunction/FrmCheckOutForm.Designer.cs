@@ -346,13 +346,11 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSpendList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSpendList.RowHeadersVisible = false;
-            this.dgvSpendList.RowHeight = 29;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvSpendList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSpendList.RowTemplate.Height = 29;
             this.dgvSpendList.SelectedIndex = -1;
             this.dgvSpendList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSpendList.ShowGridLine = true;
             this.dgvSpendList.ShowRowErrors = false;
             this.dgvSpendList.Size = new System.Drawing.Size(648, 202);
             this.dgvSpendList.Style = Sunny.UI.UIStyle.Custom;
@@ -963,13 +961,11 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWti.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvWti.RowHeadersVisible = false;
-            this.dgvWti.RowHeight = 29;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             this.dgvWti.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvWti.RowTemplate.Height = 29;
             this.dgvWti.SelectedIndex = -1;
             this.dgvWti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWti.ShowGridLine = true;
             this.dgvWti.Size = new System.Drawing.Size(656, 291);
             this.dgvWti.Style = Sunny.UI.UIStyle.Custom;
             this.dgvWti.TabIndex = 0;

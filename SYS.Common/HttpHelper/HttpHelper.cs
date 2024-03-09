@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using jvncorelib_fr.EncryptorLib;
+using jvncorelib_fr.EntityLib;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -6,15 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Security;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Script.Serialization;
-using jvncorelib_fr.EncryptorLib;
-using jvncorelib_fr.EntityLib;
 
 namespace SYS.Common
 {
@@ -23,7 +21,7 @@ namespace SYS.Common
     /// </summary>
     public static class HttpHelper
     {
-        static  EncryptLib encrypt = new EncryptLib();
+        static EncryptLib encrypt = new EncryptLib();
 
         #region 受限于打包插件的限制才放在这，个人开发时建议统一在App.Config进行配置
 
@@ -47,10 +45,10 @@ namespace SYS.Common
         /// <summary>
         /// WebApi URL(release)
         /// </summary>
-        //public const string apiUrl = "";
+        public const string apiUrl = "";
 
         // Debug
-        public const string apiUrl = "";
+        //public const string apiUrl = "";
         #endregion
 
         public class IgnoreNullValuesConverter : JsonConverter
@@ -125,7 +123,7 @@ namespace SYS.Common
         /// <returns></returns>
         public static ResponseMsg Request(string url, string json = null, Dictionary<string, string> dic = null)
         {
-            ResponseMsg msg= new ResponseMsg();
+            ResponseMsg msg = new ResponseMsg();
 
             //处理url
             var sourceStr = url.Replace("​", string.Empty);
@@ -210,6 +208,10 @@ namespace SYS.Common
                         req.Headers.Add(key, dicHeaders[key]);
                     }
                 }
+
+                var token = LoginInfo.UserToken.IsNullOrEmpty() ? AdminInfo.UserToken : LoginInfo.UserToken;
+
+                req.Headers.Add("Authorization", string.Format("Bearer {0}", token));
 
                 rsp = (HttpWebResponse)req.GetResponse();
 
@@ -306,6 +308,11 @@ namespace SYS.Common
                     request.Headers.Add(key, dicHeaders[key]);
                 }
             }
+
+            var token = LoginInfo.UserToken.IsNullOrEmpty() ? AdminInfo.UserToken : LoginInfo.UserToken;
+
+            request.Headers.Add("Authorization", string.Format("Bearer {0}", token));
+
             Stream writer = null;
 
             if (jsonParam != null)
@@ -442,7 +449,7 @@ namespace SYS.Common
             {
                 return JsonConvert.DeserializeObject<T>(input);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return default(T);
             }

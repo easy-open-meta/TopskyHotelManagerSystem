@@ -42,14 +42,14 @@ namespace SYS.FormUI
             this.txtNationName = new Sunny.UI.UITextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtNationNo = new Sunny.UI.UITextBox();
-            this.dgvNationList = new Sunny.UI.UIDataGridView();
-            this.clNationNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDeleteMk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDeleteMk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNationNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvNationList = new Sunny.UI.UIDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNationList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +116,6 @@ namespace SYS.FormUI
             this.txtNationName.Padding = new System.Windows.Forms.Padding(5);
             this.txtNationName.Radius = 20;
             this.txtNationName.Size = new System.Drawing.Size(165, 29);
-            this.txtNationName.Style = Sunny.UI.UIStyle.Custom;
             this.txtNationName.StyleCustomMode = true;
             this.txtNationName.TabIndex = 202;
             this.txtNationName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,10 +145,63 @@ namespace SYS.FormUI
             this.txtNationNo.Radius = 20;
             this.txtNationNo.ReadOnly = true;
             this.txtNationNo.Size = new System.Drawing.Size(165, 29);
-            this.txtNationNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtNationNo.StyleCustomMode = true;
             this.txtNationNo.TabIndex = 200;
             this.txtNationNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "datachg_date";
+            this.Column5.HeaderText = "datachg_date";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "datachg_usr";
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "datains_date";
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "datains_usr";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            // 
+            // clDeleteMk
+            // 
+            this.clDeleteMk.DataPropertyName = "delete_mk";
+            this.clDeleteMk.HeaderText = "Column1";
+            this.clDeleteMk.Name = "clDeleteMk";
+            this.clDeleteMk.ReadOnly = true;
+            this.clDeleteMk.Visible = false;
+            // 
+            // clNationName
+            // 
+            this.clNationName.DataPropertyName = "nation_name";
+            this.clNationName.HeaderText = "民族名称";
+            this.clNationName.Name = "clNationName";
+            this.clNationName.ReadOnly = true;
+            // 
+            // clNationNo
+            // 
+            this.clNationNo.DataPropertyName = "nation_no";
+            this.clNationNo.HeaderText = "民族编号";
+            this.clNationNo.Name = "clNationNo";
+            this.clNationNo.ReadOnly = true;
             // 
             // dgvNationList
             // 
@@ -157,7 +209,7 @@ namespace SYS.FormUI
             this.dgvNationList.AllowUserToDeleteRows = false;
             this.dgvNationList.AllowUserToResizeColumns = false;
             this.dgvNationList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.dgvNationList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNationList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNationList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
@@ -204,70 +256,14 @@ namespace SYS.FormUI
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvNationList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNationList.RowHeadersVisible = false;
-            this.dgvNationList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvNationList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvNationList.RowTemplate.Height = 29;
             this.dgvNationList.SelectedIndex = -1;
             this.dgvNationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNationList.ShowGridLine = true;
             this.dgvNationList.Size = new System.Drawing.Size(788, 582);
             this.dgvNationList.TabIndex = 199;
             this.dgvNationList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNationList_CellMouseClick);
-            // 
-            // clNationNo
-            // 
-            this.clNationNo.DataPropertyName = "nation_no";
-            this.clNationNo.HeaderText = "民族编号";
-            this.clNationNo.Name = "clNationNo";
-            this.clNationNo.ReadOnly = true;
-            // 
-            // clNationName
-            // 
-            this.clNationName.DataPropertyName = "nation_name";
-            this.clNationName.HeaderText = "民族名称";
-            this.clNationName.Name = "clNationName";
-            this.clNationName.ReadOnly = true;
-            // 
-            // clDeleteMk
-            // 
-            this.clDeleteMk.DataPropertyName = "delete_mk";
-            this.clDeleteMk.HeaderText = "Column1";
-            this.clDeleteMk.Name = "clDeleteMk";
-            this.clDeleteMk.ReadOnly = true;
-            this.clDeleteMk.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "datains_usr";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "datains_date";
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "datachg_usr";
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "datachg_date";
-            this.Column5.HeaderText = "datachg_date";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
             // 
             // FrmNation
             // 
@@ -306,13 +302,13 @@ namespace SYS.FormUI
         private Sunny.UI.UITextBox txtNationName;
         private System.Windows.Forms.Label label20;
         private Sunny.UI.UITextBox txtNationNo;
-        private Sunny.UI.UIDataGridView dgvNationList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNationNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNationName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDeleteMk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDeleteMk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clNationName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clNationNo;
+        private Sunny.UI.UIDataGridView dgvNationList;
     }
 }

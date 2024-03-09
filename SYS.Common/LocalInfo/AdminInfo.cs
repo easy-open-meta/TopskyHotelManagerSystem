@@ -22,9 +22,6 @@
  *
  *模块说明：管理员信息静态类
  */
-using System.Linq;
-using System.Net;
-
 namespace SYS.Common
 {
     /// <summary>
@@ -61,6 +58,11 @@ namespace SYS.Common
         /// 存储当前软件版本
         /// </summary>
         public static string SoftwareVersion = "";
+
+        /// <summary>
+        /// 存储当前用户Token
+        /// </summary>
+        public static string UserToken = "";
 
     }
 }

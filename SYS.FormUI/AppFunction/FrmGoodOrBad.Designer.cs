@@ -278,13 +278,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvGoodBadList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvGoodBadList.RowHeadersVisible = false;
-            this.DgvGoodBadList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.DgvGoodBadList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvGoodBadList.RowTemplate.Height = 29;
             this.DgvGoodBadList.SelectedIndex = -1;
             this.DgvGoodBadList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvGoodBadList.ShowGridLine = true;
             this.DgvGoodBadList.Size = new System.Drawing.Size(593, 199);
             this.DgvGoodBadList.Style = Sunny.UI.UIStyle.Custom;
             this.DgvGoodBadList.TabIndex = 3;

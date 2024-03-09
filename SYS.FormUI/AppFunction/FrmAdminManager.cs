@@ -1,17 +1,9 @@
 ﻿
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -39,7 +31,7 @@ namespace SYS.FormUI
                 return;
             }
             dgvAdminList.AutoGenerateColumns = false;
-            dgvAdminList.DataSource =HttpHelper.JsonToList<Admin>(result.message);
+            dgvAdminList.DataSource = HttpHelper.JsonToList<Admin>(result.message);
         }
 
         private void btnAuthority_Click(object sender, EventArgs e)
@@ -52,7 +44,7 @@ namespace SYS.FormUI
                     DeleteMk = Convert.ToInt32(dgvAdminList.SelectedRows[0].Cells["Column1"].Value),
                     datachg_usr = AdminInfo.Account
                 };
-                result = HttpHelper.Request("Admin/UpdAccount",HttpHelper.ModelToJson(admin));
+                result = HttpHelper.Request("Admin/UpdAccount", HttpHelper.ModelToJson(admin));
                 if (result.statusCode != 200)
                 {
                     UIMessageBox.ShowError("UpdAccount+接口服务异常，请提交Issue或尝试更新版本！");

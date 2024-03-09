@@ -21,13 +21,10 @@
  *SOFTWARE.
  *
  */
-using System;
-
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-
 using SYS.Common;
+using System;
 using System.Collections.Generic;
 
 namespace SYS.FormUI
@@ -53,11 +50,11 @@ namespace SYS.FormUI
             txtClub.Text = FrmChangeWorker.wk_WorkerClub;
             txtPosition.Text = FrmChangeWorker.wk_WorkerPosition;
             //获取所有职位信息
-            dic= new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 { "delete_mk","0"}
             };
-            result = HttpHelper.Request("Base/SelectPositionAll",null,dic);
+            result = HttpHelper.Request("Base/SelectPositionAll", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectPositionAll+接口服务异常，请提交Issue或尝试更新版本！");

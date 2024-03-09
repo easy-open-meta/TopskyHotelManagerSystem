@@ -58,36 +58,34 @@ namespace SYS.FormUI
             treeNode14,
             treeNode15});
             System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("会员等级规则");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("会员信息管理");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("客户信息管理");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("顾客消费账单");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("客户管理", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("客户信息管理");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("顾客消费账单");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("客户管理", new System.Windows.Forms.TreeNode[] {
             treeNode17,
             treeNode18,
-            treeNode19,
-            treeNode20});
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("员工管理");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("公告日志");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("上传公告日志");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("人事管理", new System.Windows.Forms.TreeNode[] {
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("员工管理");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("公告日志");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("上传公告日志");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("人事管理", new System.Windows.Forms.TreeNode[] {
+            treeNode21,
             treeNode22,
-            treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("商品管理");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("仓库物资");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("物资管理", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode27});
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("员工操作日志");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("添加管理员");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("权限分配");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("启/禁用管理员");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("系统模块管理");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("系统管理", new System.Windows.Forms.TreeNode[] {
+            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("商品管理");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("仓库物资");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("物资管理", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("员工操作日志");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("添加管理员");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("权限分配");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("启/禁用管理员");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("系统模块管理");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("系统管理", new System.Windows.Forms.TreeNode[] {
+            treeNode29,
             treeNode30,
             treeNode31,
-            treeNode32,
-            treeNode33});
+            treeNode32});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackgroundSystem));
             this.Aside = new Sunny.UI.UINavMenu();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -109,7 +107,6 @@ namespace SYS.FormUI
             // 
             this.Aside.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Aside.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
-            this.Aside.ExpandSelectFirst = true;
             this.Aside.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Aside.FullRowSelect = true;
             this.Aside.ItemHeight = 50;
@@ -150,55 +147,54 @@ namespace SYS.FormUI
             treeNode16.Text = "客房管理";
             treeNode17.Name = "节点0";
             treeNode17.Text = "会员等级规则";
-            treeNode18.Name = "节点1";
-            treeNode18.Text = "会员信息管理";
-            treeNode19.Name = "节点8";
-            treeNode19.Text = "客户信息管理";
-            treeNode20.Name = "节点9";
-            treeNode20.Text = "顾客消费账单";
-            treeNode21.Name = "CustomerManager";
-            treeNode21.Text = "客户管理";
-            treeNode22.Name = "节点6";
-            treeNode22.Text = "员工管理";
-            treeNode23.Name = "节点15";
-            treeNode23.Text = "公告日志";
-            treeNode24.Name = "节点16";
-            treeNode24.Text = "上传公告日志";
-            treeNode25.Name = "HumanResourcesManager";
-            treeNode25.Text = "人事管理";
-            treeNode26.Name = "节点11";
-            treeNode26.Text = "商品管理";
-            treeNode27.Name = "节点12";
-            treeNode27.Text = "仓库物资";
-            treeNode28.Name = "MaterialManager";
-            treeNode28.Text = "物资管理";
-            treeNode29.Name = "OperationLogManager";
-            treeNode29.Text = "员工操作日志";
-            treeNode30.Name = "节点2";
-            treeNode30.Text = "添加管理员";
-            treeNode31.Name = "节点1";
-            treeNode31.Text = "权限分配";
-            treeNode32.Name = "节点3";
-            treeNode32.Text = "启/禁用管理员";
-            treeNode33.Name = "节点2";
-            treeNode33.Text = "系统模块管理";
-            treeNode34.Name = "AdminManager";
-            treeNode34.Text = "系统管理";
+            treeNode18.Name = "节点8";
+            treeNode18.Text = "客户信息管理";
+            treeNode19.Name = "节点9";
+            treeNode19.Text = "顾客消费账单";
+            treeNode20.Name = "CustomerManager";
+            treeNode20.Text = "客户管理";
+            treeNode21.Name = "节点6";
+            treeNode21.Text = "员工管理";
+            treeNode22.Name = "节点15";
+            treeNode22.Text = "公告日志";
+            treeNode23.Name = "节点16";
+            treeNode23.Text = "上传公告日志";
+            treeNode24.Name = "HumanResourcesManager";
+            treeNode24.Text = "人事管理";
+            treeNode25.Name = "节点11";
+            treeNode25.Text = "商品管理";
+            treeNode26.Name = "节点12";
+            treeNode26.Text = "仓库物资";
+            treeNode27.Name = "MaterialManager";
+            treeNode27.Text = "物资管理";
+            treeNode28.Name = "OperationLogManager";
+            treeNode28.Text = "员工操作日志";
+            treeNode29.Name = "节点2";
+            treeNode29.Text = "添加管理员";
+            treeNode30.Name = "节点1";
+            treeNode30.Text = "权限分配";
+            treeNode31.Name = "节点3";
+            treeNode31.Text = "启/禁用管理员";
+            treeNode32.Name = "节点2";
+            treeNode32.Text = "系统模块管理";
+            treeNode33.Name = "AdminManager";
+            treeNode33.Text = "系统管理";
             this.Aside.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode9,
             treeNode11,
             treeNode13,
             treeNode16,
-            treeNode21,
-            treeNode25,
+            treeNode20,
+            treeNode24,
+            treeNode27,
             treeNode28,
-            treeNode29,
-            treeNode34});
+            treeNode33});
             this.Aside.ShowLines = false;
             this.Aside.Size = new System.Drawing.Size(234, 624);
             this.Aside.Style = Sunny.UI.UIStyle.Custom;
             this.Aside.TabIndex = 0;
+            this.Aside.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Aside.MenuItemClick += new Sunny.UI.UINavMenu.OnMenuItemClick(this.Aside_MenuItemClick);
             this.Aside.Enter += new System.EventHandler(this.Aside_Enter);
             // 
@@ -224,6 +220,7 @@ namespace SYS.FormUI
             // uiLabel1
             // 
             this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel1.Location = new System.Drawing.Point(250, 44);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(217, 35);
@@ -237,7 +234,6 @@ namespace SYS.FormUI
             this.lblScroll.Active = true;
             this.lblScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.lblScroll.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.lblScroll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.lblScroll.Interval = 800;
             this.lblScroll.Location = new System.Drawing.Point(473, 41);
             this.lblScroll.MinimumSize = new System.Drawing.Size(1, 1);
@@ -251,6 +247,7 @@ namespace SYS.FormUI
             // lbTime
             // 
             this.lbTime.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTime.Location = new System.Drawing.Point(11, 44);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(229, 35);
@@ -267,6 +264,7 @@ namespace SYS.FormUI
             // 
             // cmsMenu
             // 
+            this.cmsMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.cmsMenu.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMySpace,
@@ -317,6 +315,7 @@ namespace SYS.FormUI
             this.btnSetting.Style = Sunny.UI.UIStyle.Custom;
             this.btnSetting.StyleCustomMode = true;
             this.btnSetting.TabIndex = 31;
+            this.btnSetting.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             this.btnSetting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSetting_MouseDown);
             this.btnSetting.MouseLeave += new System.EventHandler(this.btnSetting_MouseLeave);
@@ -341,14 +340,14 @@ namespace SYS.FormUI
             this.btnLocked.Style = Sunny.UI.UIStyle.Custom;
             this.btnLocked.StyleCustomMode = true;
             this.btnLocked.TabIndex = 30;
+            this.btnLocked.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLocked.Click += new System.EventHandler(this.btnLocked_Click);
             this.btnLocked.MouseLeave += new System.EventHandler(this.btnLocked_MouseLeave);
             this.btnLocked.MouseHover += new System.EventHandler(this.btnLocked_MouseHover);
             // 
             // FrmBackgroundSystem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1255, 718);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lblScroll);
@@ -361,12 +360,10 @@ namespace SYS.FormUI
             this.IsForbidAltF4 = true;
             this.MaximizeBox = false;
             this.Name = "FrmBackgroundSystem";
-            this.ShowIcon = true;
-            this.ShowRadius = false;
-            this.ShowShadow = true;
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "TS酒店管理后台安全系统";
             this.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 1255, 718);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmBackgroundSystem_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBackgroundSystem_FormClosed);
             this.Load += new System.EventHandler(this.FrmBackgroundSystem_Load);

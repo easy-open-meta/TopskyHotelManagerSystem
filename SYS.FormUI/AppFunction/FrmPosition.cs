@@ -21,19 +21,13 @@
  *SOFTWARE.
  *
  */
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -162,6 +156,13 @@ namespace SYS.FormUI
                 btnDeletePosition.FillColor = Color.Green;
                 btnDeletePosition.RectColor = Color.Green;
                 btnDeletePosition.Click += btnRecoveryPosition_Click;
+            }
+            else
+            {
+                btnDeletePosition.Text = "删除职位";
+                btnDeletePosition.FillColor = Color.FromArgb(80, 160, 255);
+                btnDeletePosition.RectColor = Color.FromArgb(80, 160, 255);
+                btnDeletePosition.Click += btnDeletePosition_Click;
             }
         }
 

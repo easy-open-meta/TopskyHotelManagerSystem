@@ -21,13 +21,11 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using System.Collections.Generic;
-
 using SYS.Common;
+using System;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -98,13 +96,13 @@ namespace SYS.FormUI
             this.cbSex.ValueMember = "sexId";
             this.cbSex.SelectedIndex = 0;
             #endregion
-            
+
             txtCustoNo.Text = ucRoomList.rm_CustoNo;
             dic = new Dictionary<string, string>()
             {
                 { "CustoNo",txtCustoNo.Text.Trim() }
             };
-            result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo",null,dic);
+            result = HttpHelper.Request("Custo/SelectCardInfoByCustoNo", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectCardInfoByCustoNo+接口服务异常，请提交Issue或尝试更新版本！");

@@ -167,16 +167,11 @@ namespace SYS.FormUI
             // dudSpendAmount
             // 
             this.dudSpendAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dudSpendAmount.Decimal = 2;
             this.dudSpendAmount.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.dudSpendAmount.HasMaximum = true;
-            this.dudSpendAmount.HasMinimum = true;
             this.dudSpendAmount.Location = new System.Drawing.Point(671, 157);
             this.dudSpendAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dudSpendAmount.Maximum = 999999999999999D;
-            this.dudSpendAmount.MaximumEnabled = true;
             this.dudSpendAmount.Minimum = 0D;
-            this.dudSpendAmount.MinimumEnabled = true;
             this.dudSpendAmount.MinimumSize = new System.Drawing.Size(100, 0);
             this.dudSpendAmount.Name = "dudSpendAmount";
             this.dudSpendAmount.Radius = 20;

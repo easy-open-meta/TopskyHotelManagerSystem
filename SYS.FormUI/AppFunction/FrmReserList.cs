@@ -1,16 +1,11 @@
-﻿using System;
-
-using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
+﻿using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-using System.Transactions;
-using System.Collections.Generic;
-
-using System.Web.Script.Services;
 using SYS.Common;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using System.Security.Cryptography;
+using System.Transactions;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -107,7 +102,7 @@ namespace SYS.FormUI
                     return;
                 }
 
-                Room r = new Room() 
+                Room r = new Room()
                 {
                     CheckTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                     CustoNo = custo.CustoNo,

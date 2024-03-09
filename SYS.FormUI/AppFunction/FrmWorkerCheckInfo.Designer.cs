@@ -110,13 +110,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvCheckInfoList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvCheckInfoList.RowHeadersVisible = false;
-            this.DgvCheckInfoList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.DgvCheckInfoList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvCheckInfoList.RowTemplate.Height = 29;
             this.DgvCheckInfoList.SelectedIndex = -1;
             this.DgvCheckInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCheckInfoList.ShowGridLine = true;
             this.DgvCheckInfoList.Size = new System.Drawing.Size(550, 154);
             this.DgvCheckInfoList.TabIndex = 2;
             // 

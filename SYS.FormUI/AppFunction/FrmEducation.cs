@@ -22,19 +22,13 @@
  *
  */
 
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -83,7 +77,7 @@ namespace SYS.FormUI
         {
             if (txtEducationName.Text.Trim().IsNullOrEmpty())
             {
-                UIMessageTip.ShowWarning("学历名称为空，请检查",1500);
+                UIMessageTip.ShowWarning("学历名称为空，请检查", 1500);
                 txtEducationName.Focus();
                 return;
             }
@@ -94,7 +88,7 @@ namespace SYS.FormUI
                 delete_mk = 0,
                 datains_usr = AdminInfo.Account
             };
-            result = HttpHelper.Request("Base​/AddEducation",HttpHelper.ModelToJson(edu));
+            result = HttpHelper.Request("Base​/AddEducation", HttpHelper.ModelToJson(edu));
             if (result.statusCode != 200 || result.message.ToString().Equals("false"))
             {
                 UIMessageTip.ShowError("AddEducation+接口服务异常，请提交Issue或尝试更新版本！", 1500);
@@ -113,7 +107,7 @@ namespace SYS.FormUI
         {
             if (dgvEducationList.SelectedRows.Count <= 0)
             {
-                UIMessageTip.ShowWarning("未选择需修改的学历数据，请检查",1500);
+                UIMessageTip.ShowWarning("未选择需修改的学历数据，请检查", 1500);
                 return;
             }
             var edu = new Education()

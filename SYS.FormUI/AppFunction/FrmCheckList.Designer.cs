@@ -106,13 +106,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCheckInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCheckInfo.RowHeadersVisible = false;
-            this.dgvCheckInfo.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvCheckInfo.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCheckInfo.RowTemplate.Height = 29;
             this.dgvCheckInfo.SelectedIndex = -1;
             this.dgvCheckInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheckInfo.ShowGridLine = true;
             this.dgvCheckInfo.Size = new System.Drawing.Size(999, 582);
             this.dgvCheckInfo.TabIndex = 2;
             // 

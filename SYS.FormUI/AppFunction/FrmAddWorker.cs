@@ -21,20 +21,14 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using jvncorelib_fr.EncryptorLib;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
-using Sunny.UI;
-
-using System.Net;
-using System.Configuration;
-using System.IO;
-using System.Text;
-using SYS.Common;
 using System.Linq;
-using jvncorelib_fr.EncryptorLib;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -68,9 +62,9 @@ namespace SYS.FormUI
             cboClub.DisplayMember = "dept_name";
             cboClub.ValueMember = "dept_no";
             //加载民族信息
-            Dictionary<string,string> dic = new Dictionary<string,string>();
-            dic.Add("delete_mk","0");
-            result = HttpHelper.Request("Base/SelectNationAll",null, dic);
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("delete_mk", "0");
+            result = HttpHelper.Request("Base/SelectNationAll", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectNationAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -135,7 +129,7 @@ namespace SYS.FormUI
                             (control as Sunny.UI.UIDatePicker).ReadOnly = true;
                             break;
                     }
-                    
+
                 }
                 btnOK.Visible = false;
                 btnCancel.Visible = false;
@@ -212,7 +206,7 @@ namespace SYS.FormUI
             }
             else
             {
-                bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、民族、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                bool dr = UIMessageBox.Show("修改操作仅能修改姓名、性别、电话号码、联系地址、民族、面貌以及最高学历，以上是否知晓？点击确定继续进行修改！", "修改提醒", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr)
                 {
                     WorkerNo.Text = FrmChangeWorker.wk_WorkerNo;
@@ -238,7 +232,7 @@ namespace SYS.FormUI
                         return;
                     }
                     var workerPicSource = HttpHelper.JsonToModel<WorkerPic>(result.message);
-                    if (workerPicSource!=null &&!string.IsNullOrEmpty(workerPicSource.Pic))
+                    if (workerPicSource != null && !string.IsNullOrEmpty(workerPicSource.Pic))
                     {
                         picWorkerPic.BackgroundImage = null;
                         picWorkerPic.LoadAsync(workerPicSource.Pic);
@@ -278,7 +272,7 @@ namespace SYS.FormUI
 
         private void btnUpd_Click(object sender, EventArgs e)
         {
-            bool dr = UIMessageBox.Show("是否确认修改员工信息？", "修改提醒", UIStyle.Green,UIMessageBoxButtons.OKCancel);
+            bool dr = UIMessageBox.Show("是否确认修改员工信息？", "修改提醒", UIStyle.Green, UIMessageBoxButtons.OKCancel);
             if (dr)
             {
                 #region 员工信息代码块
@@ -301,7 +295,7 @@ namespace SYS.FormUI
                     UIMessageBox.ShowError("UpdateWorker+接口服务异常，请提交Issue或尝试更新版本！");
                     return;
                 }
-                bool i = result.message.ToString().Equals("true") ? true:false; /*new WorkerService().UpdateWorker(worker);*/
+                bool i = result.message.ToString().Equals("true") ? true : false; /*new WorkerService().UpdateWorker(worker);*/
                 if (i)
                 {
                     UIMessageBox.ShowSuccess("信息修改成功！");
@@ -438,7 +432,7 @@ namespace SYS.FormUI
                     UIMessageBox.ShowError("AddWorker+接口服务异常，请提交Issue或尝试更新版本！");
                     return;
                 }
-                bool n = response.message.ToString().Equals("true")?true:false;
+                bool n = response.message.ToString().Equals("true") ? true : false;
                 #endregion
 
                 if (ucHistory.txtCompany != null && ucHistory.txtPosition != null && ucHistory.dtpStartDate.Value != null && ucHistory.dtpEndDate.Value != null)
@@ -479,7 +473,7 @@ namespace SYS.FormUI
                     #endregion
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 UIMessageBox.Show("服务器繁忙或数据格式为空！");
             }

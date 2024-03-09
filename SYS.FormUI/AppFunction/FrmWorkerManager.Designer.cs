@@ -133,13 +133,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkerList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWorkerList.RowHeadersVisible = false;
-            this.dgvWorkerList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvWorkerList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWorkerList.RowTemplate.Height = 29;
             this.dgvWorkerList.SelectedIndex = -1;
             this.dgvWorkerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWorkerList.ShowGridLine = true;
             this.dgvWorkerList.Size = new System.Drawing.Size(999, 540);
             this.dgvWorkerList.Style = Sunny.UI.UIStyle.Custom;
             this.dgvWorkerList.TabIndex = 3;

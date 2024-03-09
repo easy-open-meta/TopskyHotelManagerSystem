@@ -107,13 +107,11 @@
             this.dgvOperationlog.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOperationlog.RowHeadersVisible = false;
             this.dgvOperationlog.RowHeadersWidth = 72;
-            this.dgvOperationlog.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvOperationlog.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOperationlog.RowTemplate.Height = 29;
             this.dgvOperationlog.SelectedIndex = -1;
             this.dgvOperationlog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOperationlog.ShowGridLine = true;
             this.dgvOperationlog.Size = new System.Drawing.Size(998, 522);
             this.dgvOperationlog.TabIndex = 1;
             // 

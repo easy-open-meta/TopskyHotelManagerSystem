@@ -21,19 +21,12 @@
  *SOFTWARE.
  *
  */
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -66,11 +59,11 @@ namespace SYS.FormUI
         {
             //根据:来分割字符串并返回第一项数据即为公告编号
             var str = dgvNoticeList.SelectedItem.ToString().Split(":").First();
-            dic= new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 { "noticeId",str}
             };
-            result = HttpHelper.Request("Notice/SelectNoticeByNoticeNo",null,dic);
+            result = HttpHelper.Request("Notice/SelectNoticeByNoticeNo", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectNoticeAll+接口服务异常，请提交Issue或尝试更新版本！");

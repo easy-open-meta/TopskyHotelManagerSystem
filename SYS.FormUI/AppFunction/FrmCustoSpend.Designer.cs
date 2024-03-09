@@ -111,13 +111,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSpendList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSpendList.RowHeadersVisible = false;
-            this.dgvSpendList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvSpendList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSpendList.RowTemplate.Height = 29;
             this.dgvSpendList.SelectedIndex = -1;
             this.dgvSpendList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSpendList.ShowGridLine = true;
             this.dgvSpendList.ShowRowErrors = false;
             this.dgvSpendList.Size = new System.Drawing.Size(999, 582);
             this.dgvSpendList.Style = Sunny.UI.UIStyle.Custom;

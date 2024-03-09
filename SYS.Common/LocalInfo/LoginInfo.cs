@@ -22,9 +22,6 @@
  *
  *模块说明：登录信息静态类(前台工作人员登入后的本地信息存储)
  */
-using System.Linq;
-using System.Net;
-
 namespace SYS.Common
 {
     /// <summary>
@@ -56,5 +53,10 @@ namespace SYS.Common
         /// 存储当前软件版本
         /// </summary>
         public static string SoftwareVersion = "";
+
+        /// <summary>
+        /// 存储当前用户Token
+        /// </summary>
+        public static string UserToken = "";
     }
 }

@@ -21,16 +21,13 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
+using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-
-using System.Drawing;
-using SYS.Common;
-using Sunny.UI;
-using static SYS.FormUI.FrmRoomManager;
 
 namespace SYS.FormUI
 {
@@ -66,7 +63,7 @@ namespace SYS.FormUI
         private void FrmRoomManager_Load(object sender, EventArgs e)
         {
             LoadRoomInfo();
-            
+
             //foreach (Control item in this.pnlRoomInfo.Controls)
             //{
             //    if (item.GetType().ToString() == "System.Windows.Forms.Label")
@@ -90,7 +87,7 @@ namespace SYS.FormUI
             LoadData(btnBD.Text);
         }
 
-        public void LoadRoomInfo() 
+        public void LoadRoomInfo()
         {
             result = HttpHelper.Request("Room/SelectCanUseRoomAllByRoomState");
             if (result.statusCode != 200)
@@ -149,11 +146,11 @@ namespace SYS.FormUI
             }
             else
             {
-                dic =new Dictionary<string, string>()
+                dic = new Dictionary<string, string>()
                 {
                     { "TypeName",typeName}
                 };
-                result = HttpHelper.Request("Room/SelectRoomByTypeName",null,dic);
+                result = HttpHelper.Request("Room/SelectRoomByTypeName", null, dic);
                 if (result.statusCode != 200)
                 {
                     UIMessageBox.ShowError("SelectRoomByTypeName+接口服务异常，请提交Issue或尝试更新版本！");
@@ -226,12 +223,12 @@ namespace SYS.FormUI
             for (int i = 0; i < romsty.Count; i++)
             {
                 romt = new ucRoomList();
+                romt.lblMark.Text = String.Empty;
                 romt.lblRoomNo.Text = romsty[i].RoomNo;
                 romt.lblCustoNo.Text = romsty[i].CustoNo;
                 romt.lblRoomType.Text = romsty[i].RoomName;
                 romt.romCustoInfo = romsty[i];
                 flpRoom.Controls.Add(romt);
-
             }
             lblRoomNo.Text = "";
             lblRoomPosition.Text = "";

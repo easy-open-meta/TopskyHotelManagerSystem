@@ -21,17 +21,15 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Sunny.UI;
-
-using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -76,7 +74,7 @@ namespace SYS.FormUI
 
         private void btnUnLock_Click(object sender, EventArgs e)
         {
-            dic= new Dictionary<string, string>()
+            dic = new Dictionary<string, string>()
             {
                 { "account",AdminInfo.Account.Trim()}
             };
@@ -170,9 +168,9 @@ namespace SYS.FormUI
 
         private void FrmUnLockSystem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F4 && e.Modifiers == Keys.Alt) 
+            if (e.KeyCode == Keys.F4 && e.Modifiers == Keys.Alt)
             {
-                UIMessageBox.Show("请输入解锁密码！", "错误",UIStyle.Red, UIMessageBoxButtons.OK);
+                UIMessageBox.Show("请输入解锁密码！", "错误", UIStyle.Red, UIMessageBoxButtons.OK);
                 e.Handled = true;
             }
         }
@@ -184,7 +182,7 @@ namespace SYS.FormUI
 
         private void btnUnLock_Click_1(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

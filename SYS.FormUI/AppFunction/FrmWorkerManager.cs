@@ -21,14 +21,12 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
-using Sunny.UI;
-
-using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 
 namespace SYS.FormUI
 {
@@ -112,7 +110,7 @@ namespace SYS.FormUI
             }
         }
 
-        
+
 
         private void btnAddWorker_Click(object sender, EventArgs e)
         {

@@ -21,19 +21,11 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-
 using SYS.Common;
+using System;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -119,10 +111,10 @@ namespace SYS.FormUI
             };
             if (CheckInput(goodBad))
             {
-                bool dr = UIMessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告",UIStyle.Orange, UIMessageBoxButtons.OKCancel);
+                bool dr = UIMessageBox.Show("确定录入？一旦录入后将无法修改及删除，或会影响员工的晋升！", "录入警告", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
                 if (dr)
                 {
-                    result = HttpHelper.Request("WorkerGoodBad​/AddGoodBad",HttpHelper.ModelToJson(goodBad));
+                    result = HttpHelper.Request("WorkerGoodBad​/AddGoodBad", HttpHelper.ModelToJson(goodBad));
                     if (result.statusCode != 200)
                     {
                         UIMessageBox.ShowError("AddGoodBad+接口服务异常，请提交Issue或尝试更新版本！");
@@ -131,7 +123,7 @@ namespace SYS.FormUI
                     bool n = result.message.ToString().Equals("true");
                     if (n)
                     {
-                        UIMessageBox.Show("新增成功！","系统提示",UIStyle.Green,UIMessageBoxButtons.OK);
+                        UIMessageBox.Show("新增成功！", "系统提示", UIStyle.Green, UIMessageBoxButtons.OK);
                         #region 获取添加操作日志所需的信息
                         RecordHelper.Record(AdminInfo.Account + "-" + AdminInfo.Name + "在" + DateTime.Now + "位于" + AdminInfo.SoftwareVersion + "执行：" + "录入员工奖惩操作！新增值为：" + goodBad.GBInfo, 2);
                         #endregion

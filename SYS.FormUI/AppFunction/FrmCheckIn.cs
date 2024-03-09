@@ -21,15 +21,13 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-
-using System.Transactions;
-using System.Linq;
 using SYS.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Transactions;
 
 namespace SYS.FormUI
 {
@@ -54,7 +52,7 @@ namespace SYS.FormUI
         private void FrmCheckIn_Load(object sender, EventArgs e)
         {
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
-            Dictionary<string,string> pairs = new Dictionary<string,string>();
+            Dictionary<string, string> pairs = new Dictionary<string, string>();
             pairs.Add("no", txtRoomNo.Text.Trim());
             result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, pairs);
             if (result.statusCode != 200)
@@ -83,7 +81,7 @@ namespace SYS.FormUI
             }
             var ctos = HttpHelper.JsonToList<Custo>(result.message).Select(a => a.CustoNo).ToArray();
             //List<Room> roms = new RoomService().SelectCanUseRoomAll();
-           
+
             txtCustoNo.AutoCompleteCustomSource.AddRange(ctos);
             try
             {
@@ -107,7 +105,7 @@ namespace SYS.FormUI
         #region 入住按钮点击事件方法
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            
+
         }
         #endregion
 
@@ -138,7 +136,7 @@ namespace SYS.FormUI
                 UIMessageTip.ShowError("SeletHistorySpendInfoAll+接口服务异常，请提交issue");
                 return;
             }
-            var listCustoSpend = HttpHelper.JsonToList<Spend>(result.message); 
+            var listCustoSpend = HttpHelper.JsonToList<Spend>(result.message);
             if (!listCustoSpend.IsNullOrEmpty())
             {
                 var spendAmount = listCustoSpend.Sum(a => a.SpendMoney);

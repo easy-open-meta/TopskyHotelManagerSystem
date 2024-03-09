@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.Common
@@ -22,7 +20,7 @@ namespace SYS.Common
         /// <param name="dataGridView"></param>
         /// <param name="filePath"></param>
         /// <param name="ignoreColumns"></param>
-        public void ExportDataGridViewToExcel(DataGridView dataGridView, string filePath,List<string> ignoreColumns = null)
+        public void ExportDataGridViewToExcel(DataGridView dataGridView, string filePath, List<string> ignoreColumns = null)
         {
             var workbook = new XSSFWorkbook(); // 创建XSSFWorkbook实例
             ISheet sheet = workbook.CreateSheet("Customer List"); // 创建工作表

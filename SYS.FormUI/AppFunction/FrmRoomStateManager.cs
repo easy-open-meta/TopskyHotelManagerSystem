@@ -21,13 +21,11 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-
-using System.Collections.Generic;
 using SYS.Common;
+using System;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -75,7 +73,7 @@ namespace SYS.FormUI
                         { "roomno",txtRoomNo.Text},
                         { "stateid",cboState.SelectedIndex.ToString()}
                     };
-                    result = HttpHelper.Request("Room/UpdateRoomStateByRoomNo",null,dic);
+                    result = HttpHelper.Request("Room/UpdateRoomStateByRoomNo", null, dic);
                     if (result.statusCode != 200)
                     {
                         UIMessageBox.ShowError("UpdateRoomStateByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");
@@ -96,7 +94,7 @@ namespace SYS.FormUI
                     UIMessageBox.Show("请选择房间状态", "来自小T的提示", UIStyle.Orange);
                     break;
             }
-            
+
         }
         #endregion
     }

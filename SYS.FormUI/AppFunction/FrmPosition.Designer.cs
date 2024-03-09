@@ -204,13 +204,11 @@ namespace SYS.FormUI
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPositionList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPositionList.RowHeadersVisible = false;
-            this.dgvPositionList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvPositionList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPositionList.RowTemplate.Height = 29;
             this.dgvPositionList.SelectedIndex = -1;
             this.dgvPositionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPositionList.ShowGridLine = true;
             this.dgvPositionList.Size = new System.Drawing.Size(788, 582);
             this.dgvPositionList.TabIndex = 207;
             this.dgvPositionList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPositionList_CellMouseClick);

@@ -21,20 +21,17 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
+using SYS.FormUI.AppUserControls;
+using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-using Sunny.UI;
-using System.Management;
-
-using SYS.Common;
-using SYS.FormUI.AppUserControls;
 
 namespace SYS.FormUI
 {
@@ -86,7 +83,7 @@ namespace SYS.FormUI
             notifyIcon1.Visible = true;
             tsmiExitSystem.Enabled = true;
         }
-        
+
         public static string wk_WorkerName;
         public static string wk_WorkerNames;
 
@@ -386,7 +383,7 @@ namespace SYS.FormUI
                 linkLabel1.ForeColor = Color.Green;
                 linkLabel1.LinkColor = Color.Green;
             }
-            notifyIcon1.Text = "TS酒店管理系统-"+ LoginInfo.WorkerName +"-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
+            notifyIcon1.Text = "TS酒店管理系统-" + LoginInfo.WorkerName + "-版本号：" + System.Windows.Forms.Application.ProductVersion.ToString();
             wk_WorkerName = LoginInfo.WorkerName;
             pnlMID.Controls.Clear();
             FrmRoomManager frm1 = new FrmRoomManager();
@@ -584,7 +581,7 @@ namespace SYS.FormUI
             frmMySpace.ShowDialog();
         }
 
-        public void CloseMine() 
+        public void CloseMine()
         {
             this.Close();
         }
@@ -597,7 +594,7 @@ namespace SYS.FormUI
 
         private void tsmiLoginBackSystem_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 

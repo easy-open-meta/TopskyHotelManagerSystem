@@ -47,13 +47,11 @@ namespace SYS.FormUI
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboDeptParent = new Sunny.UI.UIComboBox();
+            this.clDeptLeaderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDeptParentNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddDept = new Sunny.UI.UIButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboDeptLeader = new Sunny.UI.UIComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDeptDesc = new Sunny.UI.UITextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@ namespace SYS.FormUI
             this.txtDeptNo = new Sunny.UI.UITextBox();
             this.btnUpdateDept = new Sunny.UI.UIButton();
             this.btnDeleteDept = new Sunny.UI.UIButton();
+            this.cboDeptParent = new Sunny.UI.UIComboBox();
+            this.cboDeptLeader = new Sunny.UI.UIComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeptList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,8 +98,8 @@ namespace SYS.FormUI
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.Column7});
+            this.clDeptLeaderNo,
+            this.clDeptParentNo});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -124,14 +124,13 @@ namespace SYS.FormUI
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDeptList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDeptList.RowHeadersVisible = false;
-            this.dgvDeptList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvDeptList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDeptList.RowTemplate.Height = 29;
             this.dgvDeptList.SelectedIndex = -1;
             this.dgvDeptList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeptList.ShowGridLine = true;
             this.dgvDeptList.Size = new System.Drawing.Size(788, 582);
+            this.dgvDeptList.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvDeptList.TabIndex = 0;
             this.dgvDeptList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeptList_CellMouseClick);
             // 
@@ -217,39 +216,21 @@ namespace SYS.FormUI
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
             // 
-            // Column6
+            // clDeptLeaderNo
             // 
-            this.Column6.DataPropertyName = "dept_leader";
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
+            this.clDeptLeaderNo.DataPropertyName = "dept_leader";
+            this.clDeptLeaderNo.HeaderText = "Column6";
+            this.clDeptLeaderNo.Name = "clDeptLeaderNo";
+            this.clDeptLeaderNo.ReadOnly = true;
+            this.clDeptLeaderNo.Visible = false;
             // 
-            // Column7
+            // clDeptParentNo
             // 
-            this.Column7.DataPropertyName = "dept_parent";
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // cboDeptParent
-            // 
-            this.cboDeptParent.DataSource = null;
-            this.cboDeptParent.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cboDeptParent.FillColor = System.Drawing.Color.White;
-            this.cboDeptParent.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboDeptParent.Location = new System.Drawing.Point(820, 443);
-            this.cboDeptParent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDeptParent.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cboDeptParent.Name = "cboDeptParent";
-            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cboDeptParent.Radius = 20;
-            this.cboDeptParent.Size = new System.Drawing.Size(165, 29);
-            this.cboDeptParent.Sorted = true;
-            this.cboDeptParent.TabIndex = 182;
-            this.cboDeptParent.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cboDeptParent.Watermark = "";
+            this.clDeptParentNo.DataPropertyName = "dept_parent";
+            this.clDeptParentNo.HeaderText = "Column7";
+            this.clDeptParentNo.Name = "clDeptParentNo";
+            this.clDeptParentNo.ReadOnly = true;
+            this.clDeptParentNo.Visible = false;
             // 
             // label1
             // 
@@ -272,6 +253,7 @@ namespace SYS.FormUI
             this.btnAddDept.Size = new System.Drawing.Size(165, 33);
             this.btnAddDept.TabIndex = 180;
             this.btnAddDept.Text = "新增部门";
+            this.btnAddDept.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
             // 
             // label9
@@ -283,24 +265,6 @@ namespace SYS.FormUI
             this.label9.Size = new System.Drawing.Size(85, 19);
             this.label9.TabIndex = 175;
             this.label9.Text = "部门主管";
-            // 
-            // cboDeptLeader
-            // 
-            this.cboDeptLeader.DataSource = null;
-            this.cboDeptLeader.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cboDeptLeader.FillColor = System.Drawing.Color.White;
-            this.cboDeptLeader.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboDeptLeader.Location = new System.Drawing.Point(820, 371);
-            this.cboDeptLeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDeptLeader.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cboDeptLeader.Name = "cboDeptLeader";
-            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cboDeptLeader.Radius = 20;
-            this.cboDeptLeader.Size = new System.Drawing.Size(165, 29);
-            this.cboDeptLeader.Sorted = true;
-            this.cboDeptLeader.TabIndex = 174;
-            this.cboDeptLeader.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cboDeptLeader.Watermark = "";
             // 
             // label8
             // 
@@ -315,22 +279,21 @@ namespace SYS.FormUI
             // txtDeptDesc
             // 
             this.txtDeptDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptDesc.FillColor = System.Drawing.Color.White;
             this.txtDeptDesc.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDeptDesc.Location = new System.Drawing.Point(820, 225);
             this.txtDeptDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptDesc.Maximum = 2147483647D;
-            this.txtDeptDesc.Minimum = -2147483648D;
             this.txtDeptDesc.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDeptDesc.Multiline = true;
             this.txtDeptDesc.Name = "txtDeptDesc";
             this.txtDeptDesc.Padding = new System.Windows.Forms.Padding(5);
             this.txtDeptDesc.Radius = 10;
+            this.txtDeptDesc.ShowText = false;
             this.txtDeptDesc.Size = new System.Drawing.Size(165, 103);
             this.txtDeptDesc.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptDesc.StyleCustomMode = true;
             this.txtDeptDesc.TabIndex = 172;
             this.txtDeptDesc.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtDeptDesc.Watermark = "";
             // 
             // label7
             // 
@@ -345,21 +308,20 @@ namespace SYS.FormUI
             // txtDeptName
             // 
             this.txtDeptName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptName.FillColor = System.Drawing.Color.White;
             this.txtDeptName.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDeptName.Location = new System.Drawing.Point(820, 153);
             this.txtDeptName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptName.Maximum = 2147483647D;
-            this.txtDeptName.Minimum = -2147483648D;
             this.txtDeptName.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDeptName.Name = "txtDeptName";
             this.txtDeptName.Padding = new System.Windows.Forms.Padding(5);
             this.txtDeptName.Radius = 20;
+            this.txtDeptName.ShowText = false;
             this.txtDeptName.Size = new System.Drawing.Size(165, 29);
             this.txtDeptName.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptName.StyleCustomMode = true;
             this.txtDeptName.TabIndex = 170;
             this.txtDeptName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtDeptName.Watermark = "";
             // 
             // label20
             // 
@@ -374,22 +336,21 @@ namespace SYS.FormUI
             // txtDeptNo
             // 
             this.txtDeptNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDeptNo.FillColor = System.Drawing.Color.White;
             this.txtDeptNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDeptNo.Location = new System.Drawing.Point(820, 81);
             this.txtDeptNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDeptNo.Maximum = 2147483647D;
-            this.txtDeptNo.Minimum = -2147483648D;
             this.txtDeptNo.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDeptNo.Name = "txtDeptNo";
             this.txtDeptNo.Padding = new System.Windows.Forms.Padding(5);
             this.txtDeptNo.Radius = 20;
             this.txtDeptNo.ReadOnly = true;
+            this.txtDeptNo.ShowText = false;
             this.txtDeptNo.Size = new System.Drawing.Size(165, 29);
             this.txtDeptNo.Style = Sunny.UI.UIStyle.Custom;
             this.txtDeptNo.StyleCustomMode = true;
             this.txtDeptNo.TabIndex = 168;
             this.txtDeptNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtDeptNo.Watermark = "";
             // 
             // btnUpdateDept
             // 
@@ -402,6 +363,7 @@ namespace SYS.FormUI
             this.btnUpdateDept.Size = new System.Drawing.Size(165, 33);
             this.btnUpdateDept.TabIndex = 183;
             this.btnUpdateDept.Text = "更新部门";
+            this.btnUpdateDept.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUpdateDept.Click += new System.EventHandler(this.btnUpdateDept_Click);
             // 
             // btnDeleteDept
@@ -415,21 +377,60 @@ namespace SYS.FormUI
             this.btnDeleteDept.Size = new System.Drawing.Size(165, 33);
             this.btnDeleteDept.TabIndex = 184;
             this.btnDeleteDept.Text = "删除部门";
+            this.btnDeleteDept.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDeleteDept.Click += new System.EventHandler(this.btnDeleteDept_Click);
+            // 
+            // cboDeptParent
+            // 
+            this.cboDeptParent.DataSource = null;
+            this.cboDeptParent.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboDeptParent.FillColor = System.Drawing.Color.White;
+            this.cboDeptParent.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboDeptParent.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cboDeptParent.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cboDeptParent.Location = new System.Drawing.Point(820, 443);
+            this.cboDeptParent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboDeptParent.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboDeptParent.Name = "cboDeptParent";
+            this.cboDeptParent.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cboDeptParent.Radius = 10;
+            this.cboDeptParent.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptParent.SymbolSize = 24;
+            this.cboDeptParent.TabIndex = 185;
+            this.cboDeptParent.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboDeptParent.Watermark = "";
+            // 
+            // cboDeptLeader
+            // 
+            this.cboDeptLeader.DataSource = null;
+            this.cboDeptLeader.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cboDeptLeader.FillColor = System.Drawing.Color.White;
+            this.cboDeptLeader.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboDeptLeader.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cboDeptLeader.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cboDeptLeader.Location = new System.Drawing.Point(820, 371);
+            this.cboDeptLeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboDeptLeader.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboDeptLeader.Name = "cboDeptLeader";
+            this.cboDeptLeader.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cboDeptLeader.Size = new System.Drawing.Size(165, 29);
+            this.cboDeptLeader.SymbolSize = 24;
+            this.cboDeptLeader.TabIndex = 186;
+            this.cboDeptLeader.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboDeptLeader.Watermark = "";
             // 
             // FrmDepartment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1005, 623);
             this.ControlBox = false;
+            this.Controls.Add(this.cboDeptLeader);
+            this.Controls.Add(this.cboDeptParent);
             this.Controls.Add(this.btnDeleteDept);
             this.Controls.Add(this.btnUpdateDept);
-            this.Controls.Add(this.cboDeptParent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddDept);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.cboDeptLeader);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDeptDesc);
             this.Controls.Add(this.label7);
@@ -441,9 +442,9 @@ namespace SYS.FormUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmDepartment";
-            this.ShowIcon = true;
             this.ShowTitleIcon = true;
             this.Text = "部门信息";
+            this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 1005, 623);
             this.Load += new System.EventHandler(this.FrmDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeptList)).EndInit();
             this.ResumeLayout(false);
@@ -454,11 +455,9 @@ namespace SYS.FormUI
         #endregion
 
         private Sunny.UI.UIDataGridView dgvDeptList;
-        private Sunny.UI.UIComboBox cboDeptParent;
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UIButton btnAddDept;
         private System.Windows.Forms.Label label9;
-        private Sunny.UI.UIComboBox cboDeptLeader;
         private System.Windows.Forms.Label label8;
         private Sunny.UI.UITextBox txtDeptDesc;
         private System.Windows.Forms.Label label7;
@@ -478,7 +477,9 @@ namespace SYS.FormUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDeptLeaderNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDeptParentNo;
+        private Sunny.UI.UIComboBox cboDeptParent;
+        private Sunny.UI.UIComboBox cboDeptLeader;
     }
 }

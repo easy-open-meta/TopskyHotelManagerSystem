@@ -21,16 +21,14 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Drawing;
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-using System.Collections.Generic;
 using Sunny.UI;
-
 using SYS.Common;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Transactions;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -132,13 +130,13 @@ namespace SYS.FormUI
             txtCustoNo.Text = ucRoomList.rm_CustoNo;
             CustoNo.Text = ucRoomList.rm_CustoNo;
             txtRoomNo.Text = ucRoomList.rm_RoomNo;
-            
-            dic = new Dictionary<string, string>() 
+
+            dic = new Dictionary<string, string>()
             {
                 { "no",txtRoomNo.Text.ToString()}
             };
 
-            result = HttpHelper.Request("Room/SelectRoomByRoomNo",null, dic);
+            result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectSexTypeAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -323,11 +321,11 @@ namespace SYS.FormUI
                     double n = Convert.ToDouble(Convert.ToDecimal(txtReceipts.Text));
                     double m = Convert.ToDouble(Convert.ToDecimal(lblGetReceipts.Text));
                     double h = Convert.ToDouble(Convert.ToDecimal(lblVIPPrice.Text));
-                    lblChange.Text = Decimal.Parse((n- h).ToString()).ToString("#,##0.00");
+                    lblChange.Text = Decimal.Parse((n - h).ToString()).ToString("#,##0.00");
                 }
                 catch
                 {
-                    UIMessageBox.Show("非法输入，请重新输入！", "系统提示",UIStyle.Orange);
+                    UIMessageBox.Show("非法输入，请重新输入！", "系统提示", UIStyle.Orange);
                     txtReceipts.Clear();
                     txtReceipts.Focus();
                     return;

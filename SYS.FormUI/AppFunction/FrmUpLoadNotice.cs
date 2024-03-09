@@ -21,16 +21,13 @@
  *SOFTWARE.
  *
  */
-using System;
-
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
-
 using Sunny.UI;
 using SYS.Common;
-using System.Linq;
-
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -44,7 +41,7 @@ namespace SYS.FormUI
         Dictionary<string, string> dic = null;
         ResponseMsg result = null;
 
-        public bool CheckInput(string Content) 
+        public bool CheckInput(string Content)
         {
             if (string.IsNullOrWhiteSpace(Content))
             {
@@ -64,7 +61,7 @@ namespace SYS.FormUI
             {
                 Notice notice = new Notice()
                 {
-                    NoticeNo = Util.GetListNewId("UP",3,1,"-").FirstOrDefault(),
+                    NoticeNo = Util.GetListNewId("UP", 3, 1, "-").FirstOrDefault(),
                     Noticetheme = txtNoticeTheme.Text.Trim(),
                     NoticeContent = rtbNoticeContent.Html,
                     NoticeTime = dtpUpLoadDate.Value,
@@ -115,7 +112,7 @@ namespace SYS.FormUI
             }
         }
 
-        
+
 
         private void FrmUpLoad_Load(object sender, EventArgs e)
         {
@@ -129,7 +126,7 @@ namespace SYS.FormUI
             cboSelectClub.DataSource = HttpHelper.JsonToList<Dept>(result.message);
             cboSelectClub.DisplayMember = "dept_name";
             cboSelectClub.ValueMember = "dept_no";
-            
+
         }
     }
 }

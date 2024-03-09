@@ -1,11 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
+﻿using EOM.TSHotelManager.Common.Core;
 using Sunny.UI;
-
 using SYS.Common;
-using System.Linq;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -40,12 +39,12 @@ namespace SYS.FormUI
                 ReserEndDay = dtpEndDate.Value,
                 datains_usr = LoginInfo.WorkerNo
             };
-            Room room = new Room() 
+            Room room = new Room()
             {
                 RoomNo = cboReserRoomNo.Text,
                 RoomStateId = 4
             };
-            result = HttpHelper.Request("Reser​/InserReserInfo",HttpHelper.ModelToJson(reser));
+            result = HttpHelper.Request("Reser​/InserReserInfo", HttpHelper.ModelToJson(reser));
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("InserReserInfo+接口服务异常，请提交Issue或尝试更新版本！");

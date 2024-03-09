@@ -21,18 +21,12 @@
  *SOFTWARE.
  *
  */
-using System;
-
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-using System.Collections.Generic;
-
 using Sunny.UI;
 using SYS.Common;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -48,7 +42,7 @@ namespace SYS.FormUI
         public static DateTime cm_CustoBirth;
         public static int cm_CustoType;
 
-        public delegate void ReloadCustomerList();
+        public delegate void ReloadCustomerList(bool onlyVip);
 
 
         //定义委托类型的变量
@@ -84,14 +78,18 @@ namespace SYS.FormUI
 
         int count = 0;
         #region 加载用户信息列表
-        private void LoadCustomer()
+        private void LoadCustomer(bool onlyVip = false)
         {
             dic = new Dictionary<string, string>()
             {
                 { "pageIndex","1"},
                 { "pageSize","15"}
             };
-            result = HttpHelper.Request("Custo/SelectCustoAll",null,dic);
+            if (onlyVip)
+            {
+                dic.Add("onlyVip", onlyVip.ToString());
+            }
+            result = HttpHelper.Request("Custo/SelectCustoAll", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectCustoAll+接口服务异常，请提交Issue或尝试更新版本！");
@@ -267,8 +265,13 @@ namespace SYS.FormUI
 
         private void tsmiCustoNo_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(dgvCustomerList.Rows[0].Cells["CustoNo"].Value as string);
+            Clipboard.SetText(dgvCustomerList.SelectedRows[0].Cells["CustoNo"].Value as string);
             UIMessageTip.ShowOk("复制完成！", 1500);
+        }
+
+        private void cbOnlyVip_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadCustomer(cbOnlyVip.Checked);
         }
     }
 }

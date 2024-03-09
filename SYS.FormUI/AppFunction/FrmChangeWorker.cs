@@ -21,15 +21,14 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
+using SYS.FormUI.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Sunny.UI;
-
-using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
 
 namespace SYS.FormUI
 {
@@ -90,7 +89,7 @@ namespace SYS.FormUI
             wk_WorkerEducation = FrmWorkerManager.wk_WorkerEducation;
             wk_WorkerStatus = FrmWorkerManager.wk_WorkerStatus;
             lblWorker.Text = FrmWorkerManager.wk_WorkerClub + FrmWorkerManager.wk_WorkerPosition + "：" + FrmWorkerManager.wk_WorkerName + "的操作界面";
-            
+
             switch (wk_WorkerClub)
             {
                 case "经理部":
@@ -112,7 +111,7 @@ namespace SYS.FormUI
                     this.btnCheck.FillColor = Color.FromArgb(67, 123, 232);
                     break;
                 case "人力资源部":
-                    this.BackgroundImage = Resources.人力资源部卡片; 
+                    this.BackgroundImage = Resources.人力资源部卡片;
                     this.btnWatchInfo.FillColor = Color.FromArgb(101, 165, 72);
                     this.btnUpdate.FillColor = Color.FromArgb(101, 165, 72);
                     this.btnUpWorker.FillColor = Color.FromArgb(101, 165, 72);
@@ -139,7 +138,7 @@ namespace SYS.FormUI
                     this.btnCheck.FillColor = Color.FromArgb(255, 185, 38);
                     break;
                 case "内控部":
-                    this.BackgroundImage = Resources.内控部卡片; 
+                    this.BackgroundImage = Resources.内控部卡片;
                     var btnColor = Color.FromArgb(251, 157, 63);
                     this.btnWatchInfo.FillColor = btnColor;
                     this.btnUpdate.FillColor = btnColor;
@@ -176,7 +175,7 @@ namespace SYS.FormUI
                     this.btnCheck.FillColor = Color.FromArgb(106, 229, 162);
                     break;
                 case "维修部":
-                    this.BackgroundImage = Resources.维修部卡片; 
+                    this.BackgroundImage = Resources.维修部卡片;
                     this.btnWatchInfo.FillColor = Color.FromArgb(16, 90, 152);
                     this.btnUpdate.FillColor = Color.FromArgb(16, 90, 152);
                     this.btnUpWorker.FillColor = Color.FromArgb(16, 90, 152);

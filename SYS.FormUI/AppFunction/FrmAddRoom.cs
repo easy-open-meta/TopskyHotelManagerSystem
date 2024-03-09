@@ -21,16 +21,11 @@
  *SOFTWARE.
  *
  */
-using System;
-using System.Data;
-
-using System.Windows.Forms;
 using EOM.TSHotelManager.Common.Core;
-
-using System.Collections.Generic;
 using Sunny.UI;
 using SYS.Common;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System;
+using System.Collections.Generic;
 
 namespace SYS.FormUI
 {
@@ -63,7 +58,7 @@ namespace SYS.FormUI
             txtMoney.Text = Convert.ToDecimal(txtMoney.Text) <= 0 ? roomType.RoomRent.ToString() : txtMoney.Text;
             txtDeposit.Text = Convert.ToDecimal(txtDeposit.Text) <= 0 ? roomType.RoomDeposit.ToString() : txtDeposit.Text;
 
-            if (!string.IsNullOrWhiteSpace(txtRoomNo.Text)&& !txtMoney.Text.IsNullOrWhiteSpace() && !txtDeposit.Text.IsNullOrWhiteSpace())
+            if (!string.IsNullOrWhiteSpace(txtRoomNo.Text) && !txtMoney.Text.IsNullOrWhiteSpace() && !txtDeposit.Text.IsNullOrWhiteSpace())
             {
                 rn = new Room()
                 {
@@ -144,7 +139,7 @@ namespace SYS.FormUI
 
         private void cboRoomType_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -155,7 +150,7 @@ namespace SYS.FormUI
             {
                 { "no", RoomNo }
             };
-            result = HttpHelper.Request("Room/SelectRoomByRoomNo",null, dic);
+            result = HttpHelper.Request("Room/SelectRoomByRoomNo", null, dic);
             if (result.statusCode != 200)
             {
                 UIMessageBox.ShowError("SelectRoomByRoomNo+接口服务异常，请提交Issue或尝试更新版本！");

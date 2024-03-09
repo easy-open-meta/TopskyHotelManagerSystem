@@ -111,13 +111,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCashList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCashList.RowHeadersVisible = false;
-            this.dgvCashList.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvCashList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCashList.RowTemplate.Height = 29;
             this.dgvCashList.SelectedIndex = -1;
             this.dgvCashList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCashList.ShowGridLine = true;
             this.dgvCashList.Size = new System.Drawing.Size(809, 582);
             this.dgvCashList.TabIndex = 2;
             // 

@@ -198,13 +198,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSellthing.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSellthing.RowHeadersVisible = false;
-            this.dgvSellthing.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvSellthing.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSellthing.RowTemplate.Height = 29;
             this.dgvSellthing.SelectedIndex = -1;
             this.dgvSellthing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSellthing.ShowGridLine = true;
             this.dgvSellthing.Size = new System.Drawing.Size(803, 538);
             this.dgvSellthing.TabIndex = 118;
             this.dgvSellthing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellthing_CellClick);
@@ -287,7 +285,6 @@
             // 
             // txtStock
             // 
-            this.txtStock.Decimal = 0;
             this.txtStock.Font = new System.Drawing.Font("微软雅黑", 15.75F);
             this.txtStock.Location = new System.Drawing.Point(825, 422);
             this.txtStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -21,23 +21,16 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
 using jvncorelib_fr.EncryptorLib;
 using jvncorelib_fr.EntityLib;
 using Sunny.UI;
-
 using SYS.Common;
-using EOM.TSHotelManager.Common.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SYS.FormUI
 {
@@ -286,7 +279,7 @@ namespace SYS.FormUI
                     UIMessageBox.ShowError("UpdateWorker+接口服务异常，请提交Issue或尝试更新版本！");
                     return;
                 }
-                bool tf = result.message.ToString().Equals("true") ? true:false;
+                bool tf = result.message.ToString().Equals("true") ? true : false;
                 if (!tf)
                 {
                     UIMessageBox.Show("修改失败！服务器处于繁忙，请稍后再试！", "系统提示", UIStyle.Red, UIMessageBoxButtons.OK);
@@ -318,7 +311,7 @@ namespace SYS.FormUI
             {
                 WorkerId = txtWorkerNo.Text.Trim(),
             };
-            Dictionary<string,string> dic = new Dictionary<string,string>();
+            Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("WorkerId", txtWorkerNo.Text.Trim());
             result = HttpHelper.Request("WorkerPicture/WorkerPic", null, dic);
             if (result.statusCode != 200)

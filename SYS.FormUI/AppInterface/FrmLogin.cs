@@ -21,17 +21,13 @@
  *SOFTWARE.
  *
  */
+using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
+using SYS.FormUI.Properties;
 using System;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
-using EOM.TSHotelManager.Common.Core;
-using SYS.FormUI.Properties;
-using System.Collections.Generic;
-using Sunny.UI;
-
-using SYS.Common;
-using System.Net;
 
 namespace SYS.FormUI
 {
@@ -142,7 +138,7 @@ namespace SYS.FormUI
         {
             if (txtWorkerId.Text == "")
             {
-                UIMessageBox.Show("请输入员工编号！", "输入提示",UIStyle.Red);
+                UIMessageBox.Show("请输入员工编号！", "输入提示", UIStyle.Red);
                 txtWorkerId.Focus();
                 return false;
             }
@@ -189,6 +185,7 @@ namespace SYS.FormUI
                         LoginInfo.WorkerClub = w.ClubName;
                         LoginInfo.WorkerPosition = w.PositionName;
                         LoginInfo.SoftwareVersion = System.Windows.Forms.Application.ProductVersion.ToString();
+                        LoginInfo.UserToken = w.user_token;
                         FrmMain frm = new FrmMain(this);
                         this.Hide();//隐藏登录窗体
                         frm.ShowDialog();//打开主窗体
@@ -201,7 +198,7 @@ namespace SYS.FormUI
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Console.WriteLine(ex);
                 UIMessageBox.Show("服务器维护中，请稍后再试！", "温馨提示", UIStyle.Red);

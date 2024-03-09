@@ -22,19 +22,14 @@
  *
  */
 
-using Sunny.UI;
-
-using SYS.Common;
 using EOM.TSHotelManager.Common.Core;
+using Sunny.UI;
+using SYS.Common;
 using SYS.FormUI.AppFunction;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYS.FormUI
@@ -50,7 +45,7 @@ namespace SYS.FormUI
         public FrmBackgroundSystem()
         {
             InitializeComponent();
-            
+
             closeform = Closeform;
             hideform = HideWinform;
         }
@@ -66,7 +61,9 @@ namespace SYS.FormUI
         private void FrmBackgroundSystem_Load(object sender, EventArgs e)
         {
             this.Owner.Close();
-            
+            //清除前台Token使其无效
+            LoginInfo.UserToken = null;
+
             LoadModule();
 
             DateTime tmCur = DateTime.Now;
@@ -83,13 +80,13 @@ namespace SYS.FormUI
             {//下午
                 uiLabel1.Text = "下午好," + AdminInfo.Name;
             }
-            
+
         }
 
         /// <summary>
         /// 关闭当前窗体
         /// </summary>
-        public void Closeform() 
+        public void Closeform()
         {
             this.Close();
         }
@@ -198,8 +195,6 @@ namespace SYS.FormUI
                         pnlForm.Controls.Add(frmVipRule);
                         frmVipRule.Show();
                         break;
-                    case "会员信息管理":
-                        break;
                     case "客户信息管理":
                         pnlForm.Controls.Clear();
                         FrmCustoManager frmCustoManager = new FrmCustoManager();
@@ -288,7 +283,7 @@ namespace SYS.FormUI
             this.btnSetting.RectHoverColor = Color.Black;
             this.btnSetting.Radius = 20;
             this.btnSetting.RadiusSides = UICornerRadiusSides.All;
-            
+
         }
 
         /// <summary>
@@ -341,7 +336,7 @@ namespace SYS.FormUI
         private void btnLocked_Click(object sender, EventArgs e)
         {
             bool tf = UIMessageBox.Show("确定要锁定屏幕吗？锁定后不能做任何操作!", "锁屏", UIStyle.Orange, UIMessageBoxButtons.OKCancel);
-            if(tf)
+            if (tf)
                 new FrmUnLockSystem().ShowDialog();
             //this.Hide();
         }
@@ -393,7 +388,7 @@ namespace SYS.FormUI
 
         private void FrmBackgroundSystem_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+
         }
     }
 }

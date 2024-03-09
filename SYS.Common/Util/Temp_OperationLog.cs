@@ -23,8 +23,6 @@
  *模块说明：操作日志类
  */
 using System;
-using System.Linq;
-using System.Net;
 
 namespace SYS.Common
 {

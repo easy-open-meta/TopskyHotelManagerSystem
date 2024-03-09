@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SYS.Common
 {
@@ -24,8 +22,8 @@ namespace SYS.Common
         /// <returns></returns>
         public static card searchCode(string code)
         {
-            Dictionary<string,string> dic = new Dictionary<string, string>();
-            dic.Add("identityCard", code.Substring(0,6));
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("identityCard", code.Substring(0, 6));
             ResponseMsg result = HttpHelper.Request("App/SelectCardCode", null, dic);
             if (result.statusCode != 200)
             {
@@ -115,7 +113,7 @@ namespace SYS.Common
     /// <summary>
     /// 身份证实体类
     /// </summary>
-    public class card 
+    public class card
     {
         /// <summary>
         /// 消息

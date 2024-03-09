@@ -131,7 +131,6 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWti.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWti.RowHeadersVisible = false;
-            this.dgvWti.RowHeight = 29;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvWti.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWti.RowTemplate.Height = 29;
