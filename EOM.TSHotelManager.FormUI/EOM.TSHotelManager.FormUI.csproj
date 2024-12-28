@@ -206,7 +206,9 @@
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="All" />
 		<PackageReference Include="Fody" Version="6.6.0" PrivateAssets="All" />
+		<PackageReference Include="RestSharp" Version="112.0.0" />
 		<PackageReference Include="SunnyUI" Version="3.6.5" />
+		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<FodyWeavers Include="Costura" />

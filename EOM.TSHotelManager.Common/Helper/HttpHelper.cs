@@ -3,10 +3,6 @@ using jvncorelib.EntityLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
 
 namespace EOM.TSHotelManager.Common
 {
@@ -171,21 +167,23 @@ namespace EOM.TSHotelManager.Common
         /// <returns></returns>
         public static ResponseMsg DoGet(string url, IDictionary<string, string>? parameters = null, string? contentType = null, string? referer = null, string? cookie = null, Dictionary<string, string>? dicHeaders = null)
         {
-            if (parameters != null && parameters.Count > 0)
-            {
-                if (url.Contains("?"))
-                {
-                    url = url + "&" + BuildQuery(parameters);
-                }
-                else
-                {
-                    url = url + "?" + BuildQuery(parameters);
-                }
-            }
-
             var reponse = new RestResponse();
             var client = new RestClient(url);
             var request = new RestRequest();
+
+            if (parameters != null && parameters.Count > 0)
+            {
+                foreach (var param in parameters)
+                {
+                    string name = param.Key;
+                    string value = param.Value;
+
+                    if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(value))
+                    {
+                        request.AddQueryParameter(name, value);
+                    }
+                }
+            }
 
             string? resultContent = null;
             RestResponse? rsp = null;
@@ -285,57 +283,6 @@ namespace EOM.TSHotelManager.Common
         }
 
         /// <summary>
-        /// 组装普通文本请求参数。
-        /// </summary>
-        /// <param name="parameters">Key-Value形式请求参数字典</param>
-        /// <returns>URL编码后的请求数据</returns>
-        public static string BuildQuery(IDictionary<string, string> parameters)
-        {
-            StringBuilder postData = new StringBuilder();
-            bool hasParam = false;
-
-            IEnumerator<KeyValuePair<string, string>> dem = parameters.GetEnumerator();
-            while (dem.MoveNext())
-            {
-                string name = dem.Current.Key;
-                string value = dem.Current.Value;
-                // 忽略参数名或参数值为空的参数
-                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(value))
-                {
-                    if (hasParam)
-                    {
-                        postData.Append("&");
-                    }
-
-                    postData.Append(name);
-                    postData.Append("=");
-                    postData.Append(UrlEncode(value, Encoding.UTF8));
-                    hasParam = true;
-                }
-            }
-
-            return postData.ToString();
-        }
-
-        /**
-        * C#的URL encoding有两个问题：
-        * 1.左右括号没有转移（Java的URLEncoder.encode有）
-        * 2.转移符合都是小写的，Java是大写的
-        */
-        public static string? UrlEncode(string? str, Encoding e)
-        {
-            var REG_URL_ENCODING = new Regex(@"%[a-f0-9]{2}");
-
-            if (str == null)
-            {
-                return null;
-            }
-
-            String stringToEncode = HttpUtility.UrlEncode(str, e).Replace("+", "%20").Replace("*", "%2A").Replace("(", "%28").Replace(")", "%29");
-            return REG_URL_ENCODING.Replace(stringToEncode, m => m.Value.ToUpperInvariant());
-        }
-
-        /// <summary>
         /// Json转数组列表
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -378,10 +325,10 @@ namespace EOM.TSHotelManager.Common
         {
             try
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(input, new JsonSerializerSettings
+                return JsonConvert.SerializeObject(input, new JsonSerializerSettings
                 {
                     Converters = { new IgnoreNullValuesConverter(true) },
-                    Formatting = Formatting.Indented // 如果需要格式化输出
+                    Formatting = Formatting.None
                 });
             }
             catch (Exception ex)

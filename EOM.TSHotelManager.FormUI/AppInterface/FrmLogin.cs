@@ -197,7 +197,7 @@ namespace EOM.TSHotelManager.FormUI
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Console.WriteLine(ex);
                 UIMessageBox.Show("服务器维护中，请稍后再试！", "温馨提示", UIStyle.Red);

@@ -1,7 +1,6 @@
 ﻿using EOM.TSHotelManager.Common;
 using EOM.TSHotelManager.Common.Core;
 using EOM.TSHotelManager.FormUI.Properties;
-using jvncorelib.EntityLib;
 using Sunny.UI;
 using System.ComponentModel;
 using System.Drawing.Drawing2D;

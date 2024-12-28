@@ -33,7 +33,7 @@ namespace EOM.TSHotelManager.FormUI
 {
     public partial class FrmRoomManager : Form
     {
-        
+
 
         public delegate void ReLoadRoomList(string typeName);
 
@@ -80,7 +80,7 @@ namespace EOM.TSHotelManager.FormUI
                 EmptyCount = "0";
                 OccupiedCount = "0";
                 DirtyCount = "0";
-                UnderRepairCount =  "0";
+                UnderRepairCount = "0";
                 ReservedCount = "0";
 
                 var requests = new Dictionary<string, (string? json, Dictionary<string, string>? parameters)>

@@ -22,11 +22,9 @@
  *
  */
 using EOM.TSHotelManager.Common;
-using EOM.TSHotelManager.Common.Core;
 using Newtonsoft.Json;
 using Sunny.UI;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace EOM.TSHotelManager.FormUI
 {

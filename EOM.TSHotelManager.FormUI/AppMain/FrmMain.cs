@@ -25,7 +25,6 @@
 using AntdUI;
 using EOM.TSHotelManager.Common;
 using EOM.TSHotelManager.Common.Core;
-using EOM.TSHotelManager.FormUI.AppUserControls;
 using EOM.TSHotelManager.FormUI.Properties;
 using Sunny.UI;
 using System.Diagnostics;
@@ -260,7 +259,7 @@ namespace EOM.TSHotelManager.FormUI
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Owner.Hide();
-            
+
             lblSoftName.Text = System.Windows.Forms.Application.ProductName.ToString() + "_V" + ApplicationUtil.GetApplicationVersion();
 
             tmrDate.Enabled = true;
