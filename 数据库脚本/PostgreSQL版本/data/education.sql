@@ -1,0 +1,10 @@
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00003', '高中', 0, 'System', '2021-02-02', 'System', '2021-02-02');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00004', '中专', 0, 'System', '2021-02-03', 'WK009', '2021-05-29');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00005', '大专', 0, 'System', '2021-02-04', 'System', '2021-02-04');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00006', '本科', 0, 'System', '2021-02-05', 'System', '2021-02-05');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00007', '研究生', 0, 'System', '2021-02-06', 'System', '2021-02-06');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00008', '博士', 0, 'System', '2021-02-07', '', '2022-02-26');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-202101', '硕士', 0, 'admin', '2021-05-10', '', '2022-02-26');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00009', '博士后', 0, 'System', '2021-02-08', '', '2022-02-26');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00001', '小学', 0, 'System', '2021-01-31', '', '2023-01-21');
+INSERT INTO "education" ("education_no", "education_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('E-00002', '初中', 1, 'System', '2021-02-01', 'admin', '2023-03-10');

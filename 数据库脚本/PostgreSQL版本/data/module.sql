@@ -1,0 +1,10 @@
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (1, 'BaseInfo', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (2, 'CashInfo', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (3, 'WtiInfo', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (4, 'CheckInfo', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (5, 'RoomManager', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (6, 'CustomerManager', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (7, 'HumanResourcesManager', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (8, 'MaterialManager', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (9, 'OperationLogManager', NULL, 0, NULL, NULL, NULL, NULL);
+INSERT INTO "module" ("module_id", "module_name", "module_desc", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (10, 'AdminManager', NULL, 0, NULL, NULL, NULL, NULL);

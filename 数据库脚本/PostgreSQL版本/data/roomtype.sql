@@ -1,0 +1,7 @@
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (1, '标准双人间', 0, NULL, NULL, NULL, NULL, '425.00', '180.00');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (2, '豪华单人间', 0, NULL, NULL, NULL, NULL, '660.00', '200.00');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (3, '豪华双人间', 0, NULL, NULL, NULL, NULL, '845.00', '230.00');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (5, '总统套房', 0, NULL, NULL, NULL, NULL, '1080.00', '300.00');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (0, '标准单人间', 0, NULL, NULL, 'admin', NULL, '200.0', '100.0');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (4, '情侣套房', 0, NULL, NULL, NULL, NULL, '865.00', '260.00');
+INSERT INTO "roomtype" ("RoomType", "RoomName", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "room_rent", "room_deposit") VALUES (6, '特价单人间', 0, 'admin', '2024-03-23', NULL, '2024-03-24', '180.0', '65.0');

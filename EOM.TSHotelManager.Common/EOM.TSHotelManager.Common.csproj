@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\jacks\.nuget\packages\jvncorelib\1.0.1.7\contentFiles\any\netstandard2.1\基础核心类库jvncorelib%28适用全平台%29.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jvncorelib" Version="1.0.1.7" />
+    <PackageReference Include="NPOI" Version="2.6.2" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj" />
+  </ItemGroup>
+
+</Project>

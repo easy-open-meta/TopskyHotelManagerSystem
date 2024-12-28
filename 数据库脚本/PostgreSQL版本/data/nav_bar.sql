@@ -1,0 +1,3 @@
+INSERT INTO "nav_bar" ("nav_id", "nav_name", "nav_or", "nav_pic", "nav_event", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "margin_left") VALUES (708, '客房管理', 1, NULL, 'RoomManager_Event', 0, NULL, NULL, NULL, NULL, 0);
+INSERT INTO "nav_bar" ("nav_id", "nav_name", "nav_or", "nav_pic", "nav_event", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "margin_left") VALUES (709, '用户管理', 2, NULL, 'CustoManager_Event', 0, NULL, NULL, NULL, NULL, 120);
+INSERT INTO "nav_bar" ("nav_id", "nav_name", "nav_or", "nav_pic", "nav_event", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date", "margin_left") VALUES (710, '商品消费', 3, NULL, 'SellManager_Event', 0, NULL, NULL, NULL, NULL, 120);

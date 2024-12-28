@@ -1,0 +1,1 @@
+INSERT INTO "admininfo" ("Id", "AdminAccount", "AdminPassword", "AdminType", "AdminName", "IsAdmin", "DeleteMk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES (1, 'admin', 'admin', 'Admin', '阿杰', 1, 0, NULL, NULL, NULL, NULL);

@@ -1,0 +1,6 @@
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-0003', '职员', 0, 'System', '2021-02-02', '', '2023-03-22');
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-0005', '监管组员', 0, 'System', '2021-02-04', '', '2022-01-05');
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-2021001', '主管', 0, 'admin', '2021-02-17', NULL, '0001-01-01');
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-0001', '总经理', 0, 'System', '2021-01-31', '', '2022-04-06');
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-0004', '监管组长', 0, 'System', '2021-02-03', '', '2022-12-07');
+INSERT INTO "position" ("position_no", "position_name", "delete_mk", "datains_usr", "datains_date", "datachg_usr", "datachg_date") VALUES ('P-0002', '经理', 0, 'System', '2021-02-01', '', '2023-03-05');

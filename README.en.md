@@ -1,8 +1,8 @@
 <h1 align="center"><img src="https://foruda.gitee.com/avatar/1677165732744604624/7158691_java-and-net_1677165732.png!avatar100" alt="Organization Logo.png" /></h1>
 <h1 align="center">TopskyHotelManagerSystem</h1>
 <p align="center">
-	<a href='https://github.com/easy-open-meta/TopskyHotelManagerSystem/stargazers'><img src='https://img.shields.io/github/stars/easy-open-meta/TopskyHotelManagerSystem?style=social' alt='star'></img></a>
-        <a href='https://github.com/easy-open-meta/TopskyHotelManagerSystem/forks'><img src='https://img.shields.io/github/forks/easy-open-meta/TopskyHotelManagerSystem' alt='fork'></img></a>
+	<a href='https://gitee.com/java-and-net/TopskyHotelManagerSystem/stargazers'><img src='https://gitee.com/java-and-net/TopskyHotelManagerSystem/badge/star.svg?theme=white' alt='star'></img></a>
+        <a href='https://gitee.com/java-and-net/TopskyHotelManagerSystem/members'><img src='https://gitee.com/java-and-net/TopskyHotelManagerSystem/badge/fork.svg?theme=white' alt='fork'></img></a>
         <a href='https://img.shields.io/badge/license-MIT-000000.svg'><img src="https://img.shields.io/badge/license-MIT-000000.svg" alt=""></img></a>
         <a href='https://img.shields.io/badge/language-C#-red.svg'><img src="https://img.shields.io/badge/language-CSharp-red.svg" alt=""></img></a>
 </p>
@@ -10,9 +10,12 @@
 	<p><a href="./README.md">中文文档</a> | English Document</p>
 </div>
 
+
 # :exclamation: Important Notice:
 
 **Note: The master branch changes with the v2.x version, which significantly differs from the v1.x version. Those interested in the v1.x version can move to the v1.x branch address**: https://gitee.com/java-and-net/TopskyHotelManagerSystem/tree/v1.x/
+
+**Effective immediately, version numbers will follow the format x.x.x.x. First digit: program version, second: framework version, third: major updates, fourth: bug fixes. For example, version 2.0 on .NET 8 is 2.8.0.0. On .NET 9, it will be 2.9.0.0, and so on.**
 
 # :pray: Open Source Projects Referenced:
 
@@ -22,9 +25,13 @@
 
 3. ##### SunnyUI—SunnyUI.Net, based on C# .Net WinForm open-source control library, tool library, extension library, and multi-page development framework. [SunnyUI.Net, GPL3.0 License](https://gitee.com/yhuse/SunnyUI)
 
+4. ##### RestSharp——Simple REST and HTTP API Client for .NET。[RestSharp,Apache-2.0 License](https://github.com/restsharp/RestSharp)
+
+5. ##### AntdUI——基于 Ant Design 设计语言的 Winform 界面库. AntdUI。[AntdUI,Apache-2.0 License](https://gitee.com/antdui/AntdUI)
+
 # :exclamation: Project Description:
 
-1. When redeveloping this project, please follow the MIT open-source license. The SunnyUI.Net framework uses the GPL3.0 open-source license, and the SQLSugarORM framework uses the Apache2.0 license. Please be sure to include the corresponding statement in the project introduction.
+1. When conducting secondary development of this project, please comply with the MIT open source license. All referenced open source projects adopt their respective open source licenses. When using these open source projects, be sure to include the appropriate declarations in the project description and conduct any open source actions in accordance with their respective licenses.
 
 2. Bugs and comments are welcome!
 
@@ -34,7 +41,7 @@
 
 5. For MySQL and PostgreSQL databases:
 
-        5.1 If the local database is MySQL, please change the Repository inherited by the business logic class in the Application layer to MysqlRepository, and configure the mysqlString constant database connection string in the Common layer’s HttpHelper.
+        5.1 If your local database is MySQL, please pull the [MySQL special branch](https://gitee.com/java-and-net/topsky-hotel-manager-system-web-api/tree/MySQL_Version/).
         
         5.2 If the local database is PostgreSQL, no changes are needed, just configure the pgsqlString constant database connection string in the Common layer’s HttpHelper.
 
@@ -44,21 +51,21 @@ In today's rapidly developing hotel industry, with the increase in daily hotel w
 
 # :mag_right: System Development Environment:
 
-Operating System: Windows 10(x64)
+Operating System: Windows 11(x64)
 
-Development Tools: Microsoft Visual Studio 2015 (first version of the system)/Microsoft Visual Studio 2019 (latest version of the system)
+Development Tools: Microsoft Visual Studio 2022 (latest version of the system)
 
-Database: Microsoft SQL Server 2008 R2 (used in the earliest version)/MySQL v8.0.22 (highly recommended!)/PostgreSQL13 (highly recommended!)
+Database: PostgreSQL16 (highly recommended!)
 
-Database Management Tools: Microsoft SQL Server 2008 R2 Management Studio/Navicat 15
+Database Management Tools: DbGate
 
 Programming Languages: C# language, T-SQL language
 
 Development Platform: .Net
 
-Development Framework: .Net Framework 4.5.2/.Net Framework 4.6.1 (fully upgraded) —>.Net Framework 4.7.1
+Development Framework: .Net 8
 
-Development Technology: .NET WinForm
+Development Technology: .NET 8 WinForm
 
 # :open_file_folder: System Structure:
 
@@ -70,9 +77,9 @@ EOM.Client.TopSkyHotelManagerSystem
 ├─ FodyWeavers.xml
 ├─ LICENSE
 ├─ README.md
-├─ SYS.Common
-├─ SYS.Core
-├─ SYS.FormUI
+├─ EOM.TSHotelManager.Common
+├─ EOM.TSHotelManager.Common.Core
+├─ EOM.TSHotelManager.FormUI
 │    ├─ .gitignore
 │    ├─ App.config
 │    ├─ AppFunction
@@ -123,7 +130,8 @@ EOM.Client.TopSkyHotelManagerSystem
 
 # :computer: Project Setup and Deployment:
 
-**Download and install Microsoft Visual Studio Professional 2019 or above, unzip the downloaded Zip package, and run the .sln file.**
+**Download and install .NET SDK version 8 or above.**
+**Download and install Microsoft Visual Studio Professional 2022 or above, unzip the downloaded Zip package, and run the .sln file.**
 
 # :inbox_tray: Database Setup and Deployment (Local):
 

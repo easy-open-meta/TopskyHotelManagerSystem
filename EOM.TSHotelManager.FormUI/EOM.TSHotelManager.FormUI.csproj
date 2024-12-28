@@ -1,0 +1,253 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <OutputType>WinExe</OutputType>
+	  <TargetFramework>net8.0-windows</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+	  <Version>2.8.1.0</Version>
+	  <StartupObject>EOM.TSHotelManager.FormUI.Program</StartupObject>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <AssemblyName>TS酒店管理系统</AssemblyName>
+	  <ApplicationIcon>logo.ico</ApplicationIcon>
+	  <FodyWeavingTaskPath>$(SolutionDir)packages\Fody\build\Fody.targets</FodyWeavingTaskPath>
+	  <FodyDisabled>false</FodyDisabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AppFunction\FrmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmAddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmAdminManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmBaseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmChangeAdminPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmChangePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmChangeRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCheckList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCheckOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCustoManager.cs" />
+    <Compile Update="AppFunction\FrmCustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmCustoSpend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmEditInputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmEducation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmGoodOrBad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmMySpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmNation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmPleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmReserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmReserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmRoomConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmRoomMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmRoomStateManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmSelectCustoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmSellThing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmSellThingManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmSexType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmUnLockSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmVipRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmWoEInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmWorkerCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmWorkerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmWorkerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppFunction\FrmWorkerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppInterface\FrmAdminEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppInterface\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppInterface\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppMain\FrmBackgroundSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppMain\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppUserControls\ucHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AppUserControls\ucNavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AppUserControls\ucRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AppUserControls\ucRoomType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AppUserControls\ucVipType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+	<Content Include="bin\Debug\*.xml" CopyToOutputDirectory="PreserveNewest" />
+	<Content Include="bin\Release\*.xml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\EOM.TSHotelManager.Common\EOM.TSHotelManager.Common.csproj">
+		  <Private>True</Private>
+		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
+		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
+		</ProjectReference>
+		<ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj">
+		  <Private>True</Private>
+		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
+		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
+		</ProjectReference>
+		<ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Util\EOM.TSHotelManager.Common.Util.csproj">
+		  <Private>True</Private>
+		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
+		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="antdui" Version="1.6.6" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="All" />
+		<PackageReference Include="Fody" Version="6.6.0" PrivateAssets="All" />
+		<PackageReference Include="SunnyUI" Version="3.6.5" />
+	</ItemGroup>
+	<ItemGroup>
+		<FodyWeavers Include="Costura" />
+		<FodyWeavers Include="FodyWeavers.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="AppFunction\FrmChart.cs" />
+		<Compile Remove="AppFunction\FrmChart.Designer.cs" />
+		<Compile Remove="AppFunction\FrmNotice.cs" />
+		<Compile Remove="AppFunction\FrmNotice.Designer.cs" />
+		<Compile Remove="AppFunction\FrmUpLoadNotice.cs" />
+		<Compile Remove="AppFunction\FrmUpLoadNotice.Designer.cs" />
+		<Compile Remove="AppInterface\FrmNewLogin.cs" />
+		<Compile Remove="AppInterface\FrmNewLogin.Designer.cs" />
+		<EmbeddedResource Remove="AppFunction\FrmChart.resx" />
+		<EmbeddedResource Remove="AppFunction\FrmNotice.resx" />
+		<EmbeddedResource Remove="AppFunction\FrmUpLoadNotice.resx" />
+		<EmbeddedResource Remove="AppInterface\FrmNewLogin.resx" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="FodyWeavers.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="logo.ico" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="FodyWeavers.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+</Project>
