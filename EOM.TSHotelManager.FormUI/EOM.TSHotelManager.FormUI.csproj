@@ -189,12 +189,12 @@
 		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
 		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
 		</ProjectReference>
-		<ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj">
+		<ProjectReference Include="..\TopskyHotelManagerSystem-WebApi\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj">
 		  <Private>True</Private>
 		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
 		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
 		</ProjectReference>
-		<ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Util\EOM.TSHotelManager.Common.Util.csproj">
+		<ProjectReference Include="..\TopskyHotelManagerSystem-WebApi\EOM.TSHotelManager.Common.Util\EOM.TSHotelManager.Common.Util.csproj">
 		  <Private>True</Private>
 		  <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
 		  <ReferenceOutputAssembly>True</ReferenceOutputAssembly>

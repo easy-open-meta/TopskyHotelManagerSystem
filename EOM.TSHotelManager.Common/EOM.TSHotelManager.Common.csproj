@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\topsky-hotel-manager-system-web-api\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj" />
+    <ProjectReference Include="..\TopskyHotelManagerSystem-WebApi\EOM.TSHotelManager.Common.Core\EOM.TSHotelManager.Common.Core.csproj" />
   </ItemGroup>
 
 </Project>
